@@ -12,11 +12,10 @@ r_github_packages:
 
 install:
   - Rscript -e "if (!require('pacman')) install.packages('pacman')"
-  - Rscript -e "pacman::p_install(data.table)"
-  - Rscript -e "pacman::p_install(bookdown)"
-  - Rscript -e "pacman::p_install(formatR)"
-  - Rscript -e "if (!require('dplyr')) install.packages('dplyr')"
-  - Rscript -e "if (!require('tidyr')) install.packages('tidyr')"
+  - Rscript -e "pacman::p_load(data.table)"
+  - Rscript -e "pacman::p_load(bookdown)"
+  - Rscript -e "pacman::p_load(formatR)"
+  - Rscript -e "pacman::p_load(tidyverse)"
 
 before_script:
   - chmod +x ./_build.sh
