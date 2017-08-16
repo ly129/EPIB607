@@ -5,9 +5,8 @@ pandoc_version: 1.19.2.1
 env:
   global:
     - R_PKG="$(basename $TRAVIS_REPO_SLUG)" R_KNITR_OPTIONS="knitr.chunk.tidy=TRUE" PATH=$HOME/bin:$PATH
-    - secure: "VZjaMtwthLBES2V4mwY7Ns8dHrv7UDvH21wMVUI42tNMcK94aPHErzX8orcr4vPZ3U20eCKkLZDYbdOrmn1SRWVFio+6yEcwG8n/UEg3G9U87sR6V2XkWGWcLDGXirMWIpy+bmVhp/2UC2Iea5mhup/K5XIOarqPvW+uJ2nL6oQ8ci8Y0k13zUX9Zg+motBA/nXFeKbwaMPGDHwzTo0AfH0HttdYuKiiQdoGPp9O9674td/ecygUprvkyXY7AU+ikglPe02uhboY4BJ4jBVuV8H0K3tEP1jGsFPov+0Tqe7MHxnJb+46U7BQWkgywhxe30DJtH8iiU8W8b/w2fBqE1TePXt/f8vQug6F8K3knj08REtDW07mC+ZR5WOgMHSFfK1FnBgHF+vDVDImjm7UyoMp3z6Io9ACoTAQ+s2r3W/tbVW4/+KFEyFuzJAFe8lrzSsSvfQjCuqW1zcJDpDnvEIvLmEUE2yCyh/Eg4LXCRTOpoEufw+YsMS9tjVU+GtqQqeKwL4ls+HgdUrWA+HuAdghXhYoGO8jkH+pg8vD5fIicUs2vGNtUtxt5beqq1iSDO+b5gmZhF2Lqx/zvs1r5UXEFTRLIjeuAK5EXH9VGHmcOjFklYtL1OR27wwd+P0o8Mb+fU52sUS9ZqYEY+LUa+EnhVuK+YHi+esi1BChuEs="
-
-
+    - secure: "dpBGu8eMvtu24fhqc0Qx6fgHDpMx7aZMAZC4uqNlI/q/ZT8vXkX/hZJ5WgVlK7ijiHfsZTDEOB9N7+xwiZ0xKOTJ+kuHLz+BMmi5x8QF0I516+3/FzPi601Pm17+2KvN7SLZBNOzIPI4VOfBFOB2uOjHPzlF7ZQyU+w0C9WNaadXsUK3v265SPo7Zy9MXOihfyjTnynd+zmVhp9nzNFjzDrfcAEblAbFEMRJtDZ5VPPujU9oMRRlrtZw1j/+SlOKUx4LU86ZPBMipnDXtL2od4k/4SpJi9uTxXSPLCtgp3LZzZyV6c9e0mPFnFGj2cw/VK0jwTRtER7alr4DyXhmWStT7qS1kFXhDNf04y8QK7LDAlNr8DNWqoc9DRKLFz6ahrI+kKmGgoGGRVRDhBcxUlL12K/fOBvl+B/ek/iv9lDh3TsWNuihhClt1f1Xm7VTPPHTcJkcE0s1jEd7VekIJMVuiHwRyjV8/8b9WaI98ObJk9/TK35JXEl/J/pgNNKz7Y1ZicdYQhQDvrdh2qfoqm3/vr2McB/N5zSGizsG97Yw4Q/96N/WvQlqMfejbuOd71Lq9yPFywIwsNRpvX/I7AhgnvtSA9sbYIMUhzFZq8DosvgFFAOhcbVOanG3P5nKjYx7Zmp9NnJk5bTjB9JKChwTlV7U2ZKU7E1A0Fq4PCQ="
+    
 r_github_packages:
   - rstudio/bookdown
 
@@ -15,6 +14,7 @@ install:
   - Rscript -e "if (!require('pacman')) install.packages('pacman')"
   - Rscript -e "pacman::p_install(data.table)"
   - Rscript -e "pacman::p_install(bookdown)"
+  - Rscript -e "pacman::p_install(formatR)"
   - Rscript -e "if (!require('dplyr')) install.packages('dplyr')"
   - Rscript -e "if (!require('tidyr')) install.packages('tidyr')"
 
