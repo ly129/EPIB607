@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="intro.html">
-<link rel="next" href="methods.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="intro.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -168,29 +168,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="literature" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Literature</h1>
-
-<div class="rmdcaution">
-R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
+<div id="prerequisites" class="section level1 unnumbered">
+<h1>Prerequisites</h1>
+<div id="install-r-and-rstudio" class="section level2 unnumbered">
+<h2>Install R and RStudio</h2>
+<p>All examples in this book are run in an <a href="https://cran.r-project.org/">R</a> environment. You also need a recent version of <a href="https://www.rstudio.com/products/rstudio/download/preview/">RStudio</a>, which is a software application that facilitates how you interact with <code>R</code>. It is developed by data enthusiasts who consider statistics to be more than just simulations, formulas and proofs. RStudio emphasizes the following:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Version control</strong>: <a href="http://stackoverflow.com/questions/1408450/why-should-i-use-version-control">Why I should use version control</a> especially for the <a href="http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst">solo data analyst</a>.</p></li>
+<li><p><strong>Reproducible research</strong>: seamless integration with <a href="http://rmarkdown.rstudio.com/">RMarkdown</a> for creating <a href="http://yihui.name/knitr/">dynamic documents</a> and presentations</p></li>
+<li><p><strong>Creating R Packages</strong>: seamless integration with the <a href="https://github.com/hadley/devtools">devtools</a> package for creating software that implements your statistical method or analysis.</p></li>
+</ol>
 </div>
-
-
-<div class="rmdimportant">
-R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
+<div id="r-packages" class="section level2 unnumbered">
+<h2>R Packages</h2>
+<p>The following packages will be called upon at some point, so please install them before getting started with the tutorials. Enter the following command in <code>R</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;pacman&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;data.table&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, 
+    <span class="st">&quot;boot&quot;</span>, <span class="st">&quot;Hmisc&quot;</span>))</code></pre></div>
 </div>
-
-
-<div class="rmdtip">
-R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
+<div id="introduction-to-r" class="section level2 unnumbered">
+<h2>Introduction to R</h2>
+<p>Try out the interactive tutorial: <a href="http://swirlstats.com/" class="uri">http://swirlstats.com/</a></p>
 </div>
+<div id="background-reading" class="section level2 unnumbered">
+<h2>Background Reading</h2>
+<p>The greatest thing about <code>R</code> is that there are so many people out there willing to help you. <code>R</code> users are constantly writing tutorials and creating packages to make your analysis tasks easier. Here is a very targeted list that I suggest reading prior to starting the tutorials</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://r4ds.had.co.nz/functions.html">Writing Functions</a></li>
+<li><a href="http://r4ds.had.co.nz/iteration.html"><code>for</code> loops</a></li>
+<li><a href="https://kbroman.wordpress.com/2013/04/02/apply-vs-for/"><code>apply</code> vs. <code>for</code></a></li>
+</ol>
 
-
-<div class="rmdwarning">
-R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
 </div>
-
-
 </div>
 
 
@@ -200,8 +208,8 @@ R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to red
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -230,7 +238,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sahirbhatnagar/MATH697/edit/master/02-literature.Rmd",
+"link": "https://github.com/sahirbhatnagar/MATH697/edit/master/index.Rmd",
 "text": "Edit"
 },
 "download": ["math697.pdf", "math697.epub"],
