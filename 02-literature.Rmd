@@ -1,3 +1,14 @@
 # Literature
 
-Here is a review of existing methods.
+```{block2, note-text, type='rmdcaution'}
+```
+
+
+```{block2, note-text, type='rmdimportant'}
+```
+
+```{block2, note-text, type='rmdtip'}
+```
+
+```{block2, note-text, type='rmdwarning'}
+```
