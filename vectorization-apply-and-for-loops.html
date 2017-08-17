@@ -214,13 +214,13 @@ x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##           x1        x2
-## 1 0.03525143 0.9555014
-## 2 0.97273853 0.5124502
-## 3 0.76081585 0.9119049
-## 4 0.65855316 0.2733112
-## 5 0.89742192 0.8573299
-## 6 0.46030782 0.8157758</code></pre>
+<pre><code>##          x1        x2
+## 1 0.3895096 0.4823478
+## 2 0.3281467 0.5019961
+## 3 0.7466166 0.6980731
+## 4 0.5629992 0.9750955
+## 5 0.2971453 0.2773225
+## 6 0.9066159 0.8012754</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -308,13 +308,13 @@ sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</
 randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
-<pre><code>##          [,1]      [,2]       [,3]
-## [1,] 5.260759  5.607978  -7.518264
-## [2,] 6.821780 19.526251   9.449707
-## [3,] 3.730784  3.915302 -13.429993
-## [4,] 5.547984  9.928478  -5.005589
-## [5,] 3.873929  9.004710   5.398864
-## [6,] 3.857927 14.761656  -8.890438</code></pre>
+<pre><code>##          [,1]      [,2]        [,3]
+## [1,] 4.638971 12.294736   0.9952141
+## [2,] 3.049786 10.837393  -0.3994674
+## [3,] 4.515985 10.375482 -10.0728834
+## [4,] 7.008581  8.258701 -24.5168346
+## [5,] 6.049094 14.634266  -6.7660759
+## [6,] 3.808168  7.339895 -13.7712703</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
