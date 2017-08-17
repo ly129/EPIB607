@@ -10,7 +10,7 @@ This section will cover the basics of vectorizations, the `*apply` family of fun
 Almost everything in `R` is a vector. A scalar is really a vector of length 1 and a `data.frame` is a collection of vectors. An nice feature of \texttt{R} is its vectorized capabilities. Vectorization indicates that a function operates on a whole vector of values at the same time and not just on a single value^[[http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html](http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html)]. If you have have ever taken a basic linear algebra course, this concept will be familiar to you.
 \newline 
 \vspace{0.1in}
-\pause Take for example two vectors: 
+Take for example two vectors: 
 \newline
 \vspace{0.1in}
 $$
