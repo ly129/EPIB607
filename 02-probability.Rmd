@@ -1,73 +1,37 @@
 # Probability
 
-```{block2, note-text, type='rmdcaution'}
-```
+## Introduction[^1]
+
+The random variation associated with _measurement_ procedures in a scientific analysis requires a framework in which the **uncertainty** and **variability** that are inherent in the procedure can be handled. The key goal of Probability and Statistical modelling is to establish a mathematical framework within which _random_ variation (due, for example, to experimental error or natural variation) can be quantified so that
+_systematic_ variation (arising due to potentially important biological differences) can be studied.  
+
+[^1]: Reproduced with permission from http://www.math.mcgill.ca/dstephens/
 
 
-```{block2, note-text, type='rmdimportant'}
-```
-
-```{block2, note-text, type='rmdtip'}
-```
-
-```{block2, note-text, type='rmdwarning'}
-```
-
-
-
-The random variation associated with ``measurement'' procedures in a
-scientific analysis requires a framework in which the
-\textbf{uncertainty} and \textbf{variability} that are inherent in
-the procedure can be handled. The key goal of Probability and
-Statistical modelling is to establish a mathematical framework
-within which \textit{random} variation (due, for example, to
-experimental error or natural variation) can be quantified so that
-\textit{systematic }variation (arising due to potentially important
-biological differences) can be studied.
-\bigskip
-
-\bigskip
-
-Broadly, the ``\textit{Scientific Process}'' involves several different
-stages:
-
-\bigskip
+Broadly, the \textit{Scientific Process} involves several different stages:  
 
 \begin{equation*}
 \begin{array}{cl}
-\text{{THEORETICAL MODELLING}} & \longrightarrow \text{{MATHEMATICAL}} \\
-\downarrow & \text{\qquad \qquad {/PROBABILISTIC MODELLING}} \\
+\text{{THEORETICAL MODELLING}} & \rightarrow \text{{MATHEMATICAL/PROBABILISTIC MODELLING}} \\
+\downarrow &  \\
 \text{{PREDICTION}} &  \\
 \downarrow &  \\
 \text{{EXPERIMENTATION/OBSERVATION}} &  \\
 \downarrow &  \\
 \text{{VALIDATION}} &
 \end{array}
-\end{equation*}
+\end{equation*}  
 
-\bigskip
 
-\textit{Mathematical/Probabilistic} \textit{modelling} facilitates
-PREDICTION; \textit{Statistical Analysis }provides the means of validation
-of predicted behaviour.
+_Mathematical/Probabilistic_ _modelling_ facilitates PREDICTION; _Statistical Analysis_ provides the means of validation
+of predicted behaviour.  
 
-\bigskip
+To explain the variation in observed data, we need to introduce the concept of a _probability distribution_. Essentially we need
+to be able to model, or specify, or compute the _chance_ of observing the data that we collect or expect to collect. This will then allow us to assess how likely the data were to occur by chance alone, that is, how _surprising_ the observed data are in light of an assumed theoretical model.
 
-\bigskip
+For example, consider two nucleotide sequences of the same length that we wish to assess for similarity:
 
-To explain the variation in observed data, we need to introduce the
-concept of a \textit{probability distribution}. Essentially we need
-to be able to model, or specify, or compute the ``chance'' of
-observing the data that we collect or expect to collect. This will
-then allow us to assess how likely the data were to occur by chance
-alone, that is, how ``surprising'' the observed data are in light of
-an assumed theoretical model.
-\bigskip
-
-\bigskip
-
-For example, consider two nucleotide sequences of the same length that we
-wish to assess for similarity:
+```{example, name="Two nucleotide sequences"}
 \begin{equation*}
 \begin{array}{ll}
 \text{{Sequence 1}}{\qquad } & ATAGTAGATACGCACCGAGGA \\
@@ -75,12 +39,8 @@ wish to assess for similarity:
 \text{{Sequence 2}}{\qquad } & ATCTTAGATAGGCACTGAGGA
 \end{array}
 \end{equation*}
-How can we assess sequence similarity formally ? The number of
-discordant positions is 4, but how informative is that summary
-measure ? Perhaps we need to assess the chance, for example, that a
-point mutation $A\rightarrow C $ occurs (as in the discordant
-position 3).in unit evolutionary time. \ Perhaps the chance of
-observing a sub-sequence
+
+How can we assess sequence similarity formally ? The number of discordant positions is 4, but how informative is that summary measure ? Perhaps we need to assess the chance, for example, that a point mutation $$ A\rightarrow C $$ occurs (as in the discordant position 3) in unit evolutionary time. Perhaps the chance of observing a sub-sequence
 \begin{equation*}
 ATCTTA
 \end{equation*}
@@ -88,13 +48,29 @@ rather than
 \begin{equation*}
 ATAGTA
 \end{equation*}
-(in positions 1-6) in important. Is the hidden (or \textit{latent})
-structure in the sequence, corresponding to whether the sequence
-originates from a coding region or otherwise, important ? Can we
-even infer the hidden structure in light of the data we have
-observed ?
+(in positions 1-6) is important. 
 
-These questions can only really be answered when we have an
-understanding of randomness and variation. The framework that we
-will use to pose and answer such questions formally is given to us
-by \textit{probability theory}.
+- Is the hidden (or _latent_) structure in the sequence, corresponding to whether the sequence originates from a coding region or otherwise, important ? 
+- Can we even infer the hidden structure in light of the data we have observed ?  
+
+```
+
+These questions can only really be answered when we have an understanding of randomness and variation. The framework that we will use to pose and answer such questions formally is given to us by _probability theory_.  
+
+
+### Probability: A Measure of Uncertainty[^2]
+
+Often in life we are confronted by our own ignorance. Whether we are pondering tonight's traffic jam, tomorrow's weather, next week's stock prices, an upcoming election, or where we left our hat, often we do not know an outcome with certainty. Instead, we are forced to guess, to estimate, to hedge our bets. 
+
+> Probability is the science of uncertainty. 
+
+It provides precise mathematical rules for understanding and analyzing our own ignorance. It does not tell us tomorrow's weather
+or next week's stock prices; rather, it gives us a **framework for working with our limited knowledge** and for **making sensible decisions based on what we do and do not know**.    
+
+To say there is a 40% chance of rain tomorrow is not to know tomorrow’s weather. Rather, it is to **know what we do not know** about tomorrow's weather.
+In this course, we will develop a more precise understanding of what it means to say there is a 40% chance of rain tomorrow. We will learn how to work with ideas of randomness, probability, expected value, prediction, estimation, etc., in ways that are sensible and mathematically clear.
+
+
+[^2]: http://www.utstat.toronto.edu/mikevans/jeffrosenthal/book.pdf
+
+

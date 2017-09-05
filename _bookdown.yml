@@ -2,3 +2,6 @@ book_filename: "math697"
 language:
   ui:
     chapter_name: "Chapter "
+rmd_files:
+  html: ["index.Rmd", "01-intro.Rmd", "02-probability.Rmd"]
+  latex: ["index.Rmd", "01-intro.Rmd", "02-probability.Rmd"]
