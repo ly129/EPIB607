@@ -17,8 +17,8 @@ description: "Course material for MATH 697"
 
 ## General Information {-}
 
-- Instructor: Sahir Bhatnagar
-- Email: [sahir.bhatnagar@mail.mcgill.ca](mailto:sahir.bhatnagar@mail.mcgill.ca)
+- Instructor(s): Sahir Bhatnagar and Dr. Alexandra M. Schmidt
+- Email: [sahir.bhatnagar@mail.mcgill.ca](mailto:sahir.bhatnagar@mail.mcgill.ca), 
 - Website: [http://sahirbhatnagar.com/MATH697/](http://sahirbhatnagar.com/MATH697/)
 - Lectures: Tuesdays 9am - 12pm
 - Office: TBD

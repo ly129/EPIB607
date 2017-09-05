@@ -74,3 +74,81 @@ In this course, we will develop a more precise understanding of what it means to
 [^2]: http://www.utstat.toronto.edu/mikevans/jeffrosenthal/book.pdf
 
 
+## Sample Spaces and Events
+
+### Sample Spaces
+
+```{definition, name="Sample Space"}
+The sample space $\Omega$ is the set of possible outcomes of an experiment. Points $\omega$ in $\Omega$ are called sample outcomes, realizations, or elements. 
+```
+
+```{example, name="Coin tossing"}
+$\Omega = \left\lbrace  H, T  \right\rbrace$
+```
+
+```{example, name="Dice"}
+$\Omega = \left\lbrace  1,2,3,4,5,6  \right\rbrace$
+```
+
+```{example, name="Proportions"}
+$\Omega = \left\lbrace  x : 0 \leq x \leq 1  \right\rbrace$
+```
+
+```{example, name="Time measurement"}
+$\Omega = \left\lbrace  x :  x > 0  \right\rbrace = {\mathbb{R}}^{+}$
+```
+
+
+```{example, name="Temperature measurement"}
+$\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}$
+```
+
+
+```{example, name="Biological Sequence Analysis"}
+The experiment may involve the observation of a nucleotide or protein sequence, so that the sample space $\Omega$ may comprise all sequences (of bases/amino acids) up to a given length, and a sample outcome would be a particular observed sequence.
+```
+
+There are two basic types of experiment:
+- Counting
+- Measurement  
+
+We shall see that these two types lead to two distinct ways of specifying probability distributions.
+
+The collection of sample outcomes is a **set** (a collection of items) written as
+\begin{equation*}
+s\in \Omega
+\end{equation*}
+if $s$ _is a member of the set_ $\Omega$.
+
+### Events
+
+```{definition, name="Event"}
+An event $E$ is a subset of the sample space $\Omega$ ($E \subseteq \Omega$). Events are usually denoted by upper case letters near the beginning of the alphabet, like $A, B, C$. An event which consists of only one outcome is called a simple (or elementary event); otherwise it is a compound event.
+```
+
+
+```{block2, type='rmdnote'}
+The sets $\Omega$ and $E$ can be either be written as a list of items, for example,
+\begin{equation*}
+E=\left\{ s_{1},s_{2},...,s_{n},...\right\}
+\end{equation*}
+which may a finite or infinite list, or can only be represented by a continuum of outcomes, for example
+\begin{equation*}
+E=\left\{ x:0.6<x\leq 2.3\right\}
+\end{equation*}
+```
+
+
+Events are manipulated using **set theory** notation; if $A$ and $B$ are two events, $A, B \subseteq \Omega$, then
+
+- $A \cup B$ is the set of outcomes that belong to $A$ **or** to $B$, or to both,
+- $A \cap B$ is the set of outcomes that belong to both $A$ **and** to $B$.
+- $A^c$ (complement of $A$) is the set of outcomes **not** in $A$
+- $A \backslash B = A \cap B^c$ 
+
+
+The empty event will be denoted by $\varnothing$. Two events $A$ and $B$ are mutually exclusive if $A \cap B = \varnothing$, i.e., the collection of sample outcomes have no element in common. 
+
+
+
+
