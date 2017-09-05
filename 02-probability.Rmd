@@ -1,0 +1,100 @@
+# Probability
+
+```{block2, note-text, type='rmdcaution'}
+```
+
+
+```{block2, note-text, type='rmdimportant'}
+```
+
+```{block2, note-text, type='rmdtip'}
+```
+
+```{block2, note-text, type='rmdwarning'}
+```
+
+
+
+The random variation associated with ``measurement'' procedures in a
+scientific analysis requires a framework in which the
+\textbf{uncertainty} and \textbf{variability} that are inherent in
+the procedure can be handled. The key goal of Probability and
+Statistical modelling is to establish a mathematical framework
+within which \textit{random} variation (due, for example, to
+experimental error or natural variation) can be quantified so that
+\textit{systematic }variation (arising due to potentially important
+biological differences) can be studied.
+\bigskip
+
+\bigskip
+
+Broadly, the ``\textit{Scientific Process}'' involves several different
+stages:
+
+\bigskip
+
+\begin{equation*}
+\begin{array}{cl}
+\text{{THEORETICAL MODELLING}} & \longrightarrow \text{{MATHEMATICAL}} \\
+\downarrow & \text{\qquad \qquad {/PROBABILISTIC MODELLING}} \\
+\text{{PREDICTION}} &  \\
+\downarrow &  \\
+\text{{EXPERIMENTATION/OBSERVATION}} &  \\
+\downarrow &  \\
+\text{{VALIDATION}} &
+\end{array}
+\end{equation*}
+
+\bigskip
+
+\textit{Mathematical/Probabilistic} \textit{modelling} facilitates
+PREDICTION; \textit{Statistical Analysis }provides the means of validation
+of predicted behaviour.
+
+\bigskip
+
+\bigskip
+
+To explain the variation in observed data, we need to introduce the
+concept of a \textit{probability distribution}. Essentially we need
+to be able to model, or specify, or compute the ``chance'' of
+observing the data that we collect or expect to collect. This will
+then allow us to assess how likely the data were to occur by chance
+alone, that is, how ``surprising'' the observed data are in light of
+an assumed theoretical model.
+\bigskip
+
+\bigskip
+
+For example, consider two nucleotide sequences of the same length that we
+wish to assess for similarity:
+\begin{equation*}
+\begin{array}{ll}
+\text{{Sequence 1}}{\qquad } & ATAGTAGATACGCACCGAGGA \\
+&  \\
+\text{{Sequence 2}}{\qquad } & ATCTTAGATAGGCACTGAGGA
+\end{array}
+\end{equation*}
+How can we assess sequence similarity formally ? The number of
+discordant positions is 4, but how informative is that summary
+measure ? Perhaps we need to assess the chance, for example, that a
+point mutation $A\rightarrow C $ occurs (as in the discordant
+position 3).in unit evolutionary time. \ Perhaps the chance of
+observing a sub-sequence
+\begin{equation*}
+ATCTTA
+\end{equation*}
+rather than
+\begin{equation*}
+ATAGTA
+\end{equation*}
+(in positions 1-6) in important. Is the hidden (or \textit{latent})
+structure in the sequence, corresponding to whether the sequence
+originates from a coding region or otherwise, important ? Can we
+even infer the hidden structure in light of the data we have
+observed ?
+
+These questions can only really be answered when we have an
+understanding of randomness and variation. The framework that we
+will use to pose and answer such questions formally is given to us
+by \textit{probability theory}.
