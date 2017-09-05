@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="vectorization-apply-and-for-loops.html">
-<link rel="next" href="references.html">
+<link rel="prev" href="intro.html">
+<link rel="next" href="methods.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -168,17 +168,79 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix-b" class="section level1">
-<h1><span class="header-section-number">B</span> Appendix B</h1>
+<div id="probability" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Probability</h1>
+
+<div class="rmdcaution">
+R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
+</div>
+
+
+<div class="rmdimportant">
+R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
+</div>
+
+
+<div class="rmdtip">
+R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
+</div>
+
+
+<div class="rmdwarning">
+R is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under the terms of the GNU General Public License versions 2 or 3. For more information about these matters see <a href="http://www.gnu.org/licenses/" class="uri">http://www.gnu.org/licenses/</a>.
+</div>
+
+<p>The random variation associated with ``measurement’’ procedures in a scientific analysis requires a framework in which the  and  that are inherent in the procedure can be handled. The key goal of Probability and Statistical modelling is to establish a mathematical framework within which  variation (due, for example, to experimental error or natural variation) can be quantified so that variation (arising due to potentially important biological differences) can be studied. </p>
+
+<p>Broadly, the ``’’ involves several different stages:</p>
+
+<span class="math display">\[\begin{equation*}
+\begin{array}{cl}
+\text{{THEORETICAL MODELLING}} &amp; \longrightarrow \text{{MATHEMATICAL}} \\
+\downarrow &amp; \text{\qquad \qquad {/PROBABILISTIC MODELLING}} \\
+\text{{PREDICTION}} &amp;  \\
+\downarrow &amp;  \\
+\text{{EXPERIMENTATION/OBSERVATION}} &amp;  \\
+\downarrow &amp;  \\
+\text{{VALIDATION}} &amp;
+\end{array}
+\end{equation*}\]</span>
+
+<p>  facilitates PREDICTION; provides the means of validation of predicted behaviour.</p>
+
+
+<p>To explain the variation in observed data, we need to introduce the concept of a . Essentially we need to be able to model, or specify, or compute the <code>chance'' of observing the data that we collect or expect to collect. This will then allow us to assess how likely the data were to occur by chance alone, that is, how</code>surprising’’ the observed data are in light of an assumed theoretical model. </p>
+
+For example, consider two nucleotide sequences of the same length that we wish to assess for similarity:
+<span class="math display">\[\begin{equation*}
+\begin{array}{ll}
+\text{{Sequence 1}}{\qquad } &amp; ATAGTAGATACGCACCGAGGA \\
+&amp;  \\
+\text{{Sequence 2}}{\qquad } &amp; ATCTTAGATAGGCACTGAGGA
+\end{array}
+\end{equation*}\]</span>
+How can we assess sequence similarity formally ? The number of discordant positions is 4, but how informative is that summary measure ? Perhaps we need to assess the chance, for example, that a point mutation $AC $ occurs (as in the discordant position 3).in unit evolutionary time.  Perhaps the chance of observing a sub-sequence
+<span class="math display">\[\begin{equation*}
+ATCTTA
+\end{equation*}\]</span>
+rather than
+<span class="math display">\[\begin{equation*}
+ATAGTA
+\end{equation*}\]</span>
+<p>(in positions 1-6) in important. Is the hidden (or ) structure in the sequence, corresponding to whether the sequence originates from a coding region or otherwise, important ? Can we even infer the hidden structure in light of the data we have observed ?</p>
+<p>These questions can only really be answered when we have an understanding of randomness and variation. The framework that we will use to pose and answer such questions formally is given to us by .</p>
 
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="vectorization-apply-and-for-loops.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -207,7 +269,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sahirbhatnagar/MATH697/edit/master/05-Rtutorial.Rmd",
+"link": "https://github.com/sahirbhatnagar/MATH697/edit/master/02-probability.Rmd",
 "text": "Edit"
 },
 "download": ["math697.pdf", "math697.epub"],
