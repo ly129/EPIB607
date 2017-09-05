@@ -279,10 +279,10 @@
 \begin{itemize}
 \tightlist
 \item
-  Instructor: Sahir Bhatnagar
+  Instructor(s): Sahir Bhatnagar and Dr.~Alexandra M. Schmidt
 \item
   Email:
-  \href{mailto:sahir.bhatnagar@mail.mcgill.ca}{\nolinkurl{sahir.bhatnagar@mail.mcgill.ca}}
+  \href{mailto:sahir.bhatnagar@mail.mcgill.ca}{\nolinkurl{sahir.bhatnagar@mail.mcgill.ca}},
 \item
   Website: \url{http://sahirbhatnagar.com/MATH697/}
 \item
@@ -815,6 +815,490 @@ understanding of what it means to say there is a 40\% chance of rain
 tomorrow. We will learn how to work with ideas of randomness,
 probability, expected value, prediction, estimation, etc., in ways that
 are sensible and mathematically clear.
+
+\section{Sample Spaces and Events}\label{sample-spaces-and-events}
+
+\subsection{Sample Spaces}\label{sample-spaces}
+
+\BeginKnitrBlock{definition}[Sample Space]
+\protect\hypertarget{def:unnamed-chunk-8}{}{\label{def:unnamed-chunk-8}
+\iffalse (Sample Space) \fi{} }The sample space \(\Omega\) is the set of
+possible outcomes of an experiment. Points \(\omega\) in \(\Omega\) are
+called sample outcomes, realizations, or elements.
+\EndKnitrBlock{definition}
+
+\BeginKnitrBlock{example}[Coin tossing]
+\protect\hypertarget{ex:unnamed-chunk-9}{}{\label{ex:unnamed-chunk-9}
+\iffalse (Coin tossing) \fi{}
+}\(\Omega = \left\lbrace H, T \right\rbrace\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Dice]
+\protect\hypertarget{ex:unnamed-chunk-10}{}{\label{ex:unnamed-chunk-10}
+\iffalse (Dice) \fi{}
+}\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Proportions]
+\protect\hypertarget{ex:unnamed-chunk-11}{}{\label{ex:unnamed-chunk-11}
+\iffalse (Proportions) \fi{}
+}\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Time measurement]
+\protect\hypertarget{ex:unnamed-chunk-12}{}{\label{ex:unnamed-chunk-12}
+\iffalse (Time measurement) \fi{}
+}\(\Omega = \left\lbrace x : x > 0 \right\rbrace = {\mathbb{R}}^{+}\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Temperature measurement]
+\protect\hypertarget{ex:unnamed-chunk-13}{}{\label{ex:unnamed-chunk-13}
+\iffalse (Temperature measurement) \fi{}
+}\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Biological Sequence Analysis]
+\protect\hypertarget{ex:unnamed-chunk-14}{}{\label{ex:unnamed-chunk-14}
+\iffalse (Biological Sequence Analysis) \fi{} }The experiment may
+involve the observation of a nucleotide or protein sequence, so that the
+sample space \(\Omega\) may comprise all sequences (of bases/amino
+acids) up to a given length, and a sample outcome would be a particular
+observed sequence.
+\EndKnitrBlock{example}
+
+There are two basic types of experiment: - Counting - Measurement
+
+We shall see that these two types lead to two distinct ways of
+specifying probability distributions.
+
+The collection of sample outcomes is a \textbf{set} (a collection of
+items) written as
+
+\begin{equation*}
+s\in \Omega
+\end{equation*}
+
+if \(s\) \emph{is a member of the set} \(\Omega\).
+
+\subsection{Events}\label{events}
+
+\BeginKnitrBlock{definition}[Event]
+\protect\hypertarget{def:unnamed-chunk-15}{}{\label{def:unnamed-chunk-15}
+\iffalse (Event) \fi{} }An event \(E\) is a subset of the sample space
+\(\Omega\) (\(E \subseteq \Omega\)). Events are usually denoted by upper
+case letters near the beginning of the alphabet, like \(A, B, C\). An
+event which consists of only one outcome is called a simple (or
+elementary event); otherwise it is a compound event.
+\EndKnitrBlock{definition}
+
+\BeginKnitrBlock{rmdnote}
+The sets \(\Omega\) and \(E\) can be either be written as a list of
+items, for example,
+
+\begin{equation*}
+E=\left\{ s_{1},s_{2},...,s_{n},...\right\}
+\end{equation*}
+
+which may a finite or infinite list, or can only be represented by a
+continuum of outcomes, for example
+
+\begin{equation*}
+E=\left\{ x:0.6<x\leq 2.3\right\}
+\end{equation*}
+\EndKnitrBlock{rmdnote}
+
+Events are manipulated using \textbf{set theory} notation; if \(A\) and
+\(B\) are two events, \(A, B \subseteq \Omega\), then
+
+\begin{itemize}
+\tightlist
+\item
+  \(A \cup B\) is the set of outcomes that belong to \(A\) \textbf{or}
+  to \(B\), or to both,
+\item
+  \(A \cap B\) is the set of outcomes that belong to both \(A\)
+  \textbf{and} to \(B\).
+\item
+  \(A^c\) (complement of \(A\)) is the set of outcomes \textbf{not} in
+  \(A\)
+\item
+  \(A \backslash B = A \cap B^c\)
+\end{itemize}
+
+The empty event will be denoted by \(\varnothing\). Two events \(A\) and
+\(B\) are mutually exclusive if \(A \cap B = \varnothing\), i.e., the
+collection of sample outcomes have no element in common.
+
+\appendix
+
+
+\chapter{Vectorization, *apply and for
+loops}\label{vectorization-apply-and-for-loops}
+
+This section will cover the basics of vectorizations, the
+\texttt{*apply} family of functions and \texttt{for} loops.
+
+\section{Vectorization}\label{vectorization}
+
+Almost everything in \texttt{R} is a vector. A scalar is really a vector
+of length 1 and a \texttt{data.frame} is a collection of vectors. An
+nice feature of \texttt{R} is its vectorized capabilities. Vectorization
+indicates that a function operates on a whole vector of values at the
+same time and not just on a single value\footnote{\url{http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html}}.
+If you have have ever taken a basic linear algebra course, this concept
+will be familiar to you. \newline  \vspace{0.1in} Take for example two
+vectors: \newline
+\vspace{0.1in} \[
+\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + 
+\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} =
+\begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}
+\] \newline  \vspace{0.1in} The corresponding \texttt{R} code is given
+by:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 4 6
+\end{verbatim}
+
+Many of the \texttt{base} functions in \texttt{R} are already
+vectorized. Here are some common examples:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# generate a sequence of numbers from 1 to 10}
+\NormalTok{(a <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# sum the numbers from 1 to 10}
+\KeywordTok{sum}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 55
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# calculate sums of each column}
+\KeywordTok{colSums}\NormalTok{(iris[, }\OperatorTok{-}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
+##        876.5        458.6        563.7        179.9
+\end{verbatim}
+
+\begin{quote}
+\textbf{Exercise}: What happens when you sum two vectors of different
+lengths?
+\end{quote}
+
+\section{\texorpdfstring{Family of \texttt{*apply}
+functions}{Family of *apply functions}}\label{family-of-apply-functions}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{apply}, \texttt{lapply} and \texttt{sapply} are some of the
+  most commonly used class of functions in \texttt{R}
+\item
+  \texttt{*apply} functions are not necessarily faster than loops, but
+  can be easier to read (and vice cersa)
+\item
+  \texttt{apply} is used when you need to perform an operation on every
+  row or column of a matrix or data.frame
+\item
+  \texttt{lapply} and \texttt{sapply} differ in the format of the
+  output. The former returns a list while the ladder returns a vector
+\item
+  There are other \texttt{*apply} functions such as \texttt{tapply},
+  \texttt{vapply} and \texttt{mapply} with similar functionality and
+  purpose
+\end{itemize}
+
+\subsection{Loops vs.~Apply}\label{loops-vs.apply}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Getting the row means of two columns Generate data}
+\NormalTok{N <-}\StringTok{ }\DecValTok{10000}
+\NormalTok{x1 <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(N)}
+\NormalTok{x2 <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(N)}
+\NormalTok{d <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(x1, x2))}
+\KeywordTok{head}\NormalTok{(d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          x1        x2
+## 1 0.6538214 0.8353257
+## 2 0.7115308 0.1304793
+## 3 0.5469451 0.4690657
+## 4 0.5364395 0.1933305
+## 5 0.1795313 0.6602322
+## 6 0.9472046 0.8250495
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Loop: create a vector to store the results in}
+\NormalTok{rowMeanFor <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"double"}\NormalTok{, N)}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq_len}\NormalTok{(N)) \{}
+\NormalTok{    rowMeanFor[[i]] <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{c}\NormalTok{(d[i, }\DecValTok{1}\NormalTok{], d[i, }\DecValTok{2}\NormalTok{]))}
+\NormalTok{\}}
+
+\CommentTok{# Apply:}
+\NormalTok{rowMeanApply <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(d, }\DecValTok{1}\NormalTok{, mean)}
+
+\CommentTok{# are the results equal}
+\KeywordTok{all.equal}\NormalTok{(rowMeanFor, rowMeanApply)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\subsection{\texorpdfstring{Descriptive Statistics using
+\texttt{*apply}}{Descriptive Statistics using *apply}}\label{descriptive-statistics-using-apply}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data}\NormalTok{(women)}
+\CommentTok{# data structure}
+\KeywordTok{str}\NormalTok{(women)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    15 obs. of  2 variables:
+##  $ height: num  58 59 60 61 62 63 64 65 66 67 ...
+##  $ weight: num  115 117 120 123 126 129 132 135 139 142 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# calculate the mean for each column}
+\KeywordTok{apply}\NormalTok{(women, }\DecValTok{2}\NormalTok{, mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   height   weight 
+##  65.0000 136.7333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# apply 'fivenum' function to each column}
+\KeywordTok{vapply}\NormalTok{(women, fivenum, }\KeywordTok{c}\NormalTok{(}\DataTypeTok{Min. =} \DecValTok{0}\NormalTok{, }\StringTok{`}\DataTypeTok{1st Qu.}\StringTok{`}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\DataTypeTok{Median =} \DecValTok{0}\NormalTok{, }\StringTok{`}\DataTypeTok{3rd Qu.}\StringTok{`}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }
+    \DataTypeTok{Max. =} \DecValTok{0}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         height weight
+## Min.      58.0  115.0
+## 1st Qu.   61.5  124.5
+## Median    65.0  135.0
+## 3rd Qu.   68.5  148.0
+## Max.      72.0  164.0
+\end{verbatim}
+
+\subsection{\texorpdfstring{Creating new columns using
+\texttt{sapply}}{Creating new columns using sapply}}\label{creating-new-columns-using-sapply}
+
+You can apply a \emph{user defined function} to columns or the entire
+data frame:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# the ouput of sapply is a vector the 's' in sapply stands for 'simplified'}
+\CommentTok{# apply}
+\NormalTok{mtcars}\OperatorTok{$}\NormalTok{gear2 <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{gear, }\ControlFlowTok{function}\NormalTok{(i) }\ControlFlowTok{if}\NormalTok{ (i }\OperatorTok{==}\StringTok{ }\DecValTok{4}\NormalTok{) }\StringTok{"alot"} \ControlFlowTok{else} \StringTok{"some"}\NormalTok{)}
+
+\KeywordTok{head}\NormalTok{(mtcars)[, }\KeywordTok{c}\NormalTok{(}\StringTok{"gear"}\NormalTok{, }\StringTok{"gear2"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                   gear gear2
+## Mazda RX4            4  alot
+## Mazda RX4 Wag        4  alot
+## Datsun 710           4  alot
+## Hornet 4 Drive       3  some
+## Hornet Sportabout    3  some
+## Valiant              3  some
+\end{verbatim}
+
+\subsection{\texorpdfstring{Applying functions to subsets using
+\texttt{tapply}}{Applying functions to subsets using tapply}}\label{applying-functions-to-subsets-using-tapply}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Fisher's famous dataset}
+\KeywordTok{data}\NormalTok{(iris)}
+\KeywordTok{str}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# mean sepal length by species}
+\KeywordTok{tapply}\NormalTok{(iris}\OperatorTok{$}\NormalTok{Sepal.Length, iris}\OperatorTok{$}\NormalTok{Species, mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     setosa versicolor  virginica 
+##      5.006      5.936      6.588
+\end{verbatim}
+
+\subsection{\texorpdfstring{Nested for loops using
+\texttt{mapply}}{Nested for loops using mapply}}\label{nested-for-loops-using-mapply}
+
+\texttt{mapply} is my favorite \texttt{base} \texttt{R} function and
+here are some reasons why:
+
+\begin{itemize}
+\tightlist
+\item
+  Using \texttt{mapply} is equivalent to writing nested \texttt{for}
+  loops except that it is 100\% more human readable and less prone to
+  errors
+\item
+  It is an effective way of conducting simulations because it iterates
+  of many arguments
+\end{itemize}
+
+Let's say you want to generate random samples from a normal distribution
+with varying means and standard deviations. Of course the brute force
+way would be to write out the command once, copy paste as many times as
+you want, and then manually change the arguments for \texttt{mean} and
+\texttt{sd} in the \texttt{rnorm} function as so:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{5}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{)}
+\NormalTok{v2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{10}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{5}\NormalTok{)}
+\NormalTok{v3 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \OperatorTok{-}\DecValTok{3}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+This isn't too bad for three vectors. But what if you want to generate
+many more combinations of means and sds ? Furthermore, how can you keep
+track of the parameters you used? Now lets consider the \texttt{mapply}
+function:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{means <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\OperatorTok{-}\DecValTok{3}\NormalTok{)}
+\NormalTok{sds <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+
+\CommentTok{# MoreArgs is a list of arguments that dont change}
+\NormalTok{randomNormals <-}\StringTok{ }\KeywordTok{mapply}\NormalTok{(rnorm, }\DataTypeTok{mean =}\NormalTok{ means, }\DataTypeTok{sd =}\NormalTok{ sds, }\DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
+
+\KeywordTok{head}\NormalTok{(randomNormals)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          [,1]      [,2]       [,3]
+## [1,] 6.192057 18.937216  9.4129157
+## [2,] 4.888136 16.256050 -7.0966183
+## [3,] 4.890432  4.314502 -6.3761752
+## [4,] 4.212868  3.417552 -0.4870348
+## [5,] 5.612230 16.915892 -6.0727833
+## [6,] 7.521550 14.989053  9.5417020
+\end{verbatim}
+
+The following diagram (from
+\href{http://r4ds.had.co.nz/iteration.html\#mapping-over-multiple-arguments}{r4ds})
+describes exactly what is going on in the above function call to
+\texttt{mapply}:
+
+\begin{figure}
+\centering
+\includegraphics{images/mapply.png}
+\caption{}
+\end{figure}
+
+Advantages:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Result is automatically stored in a matrix
+\item
+  The parameters are also saved in \texttt{R} objects so that they can
+  be easily manipulated and/or recovered
+\end{enumerate}
+
+Consider a more complex scenario where you want to consider many
+possible combinations of means and sds. We take advantage of the
+\texttt{expand.grid} function to create a \texttt{data.frame} of
+simulation parameters:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{simParams <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{means =} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{sds =} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}
+
+\NormalTok{randomNormals <-}\StringTok{ }\KeywordTok{mapply}\NormalTok{(rnorm, }\DataTypeTok{mean =}\NormalTok{ simParams}\OperatorTok{$}\NormalTok{means, }\DataTypeTok{sd =}\NormalTok{ simParams}\OperatorTok{$}\NormalTok{sds, }\DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
+
+\KeywordTok{dim}\NormalTok{(randomNormals)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 100 100
+\end{verbatim}
+
+\section{\texorpdfstring{Creating dynamic documents with
+\texttt{mapply}}{Creating dynamic documents with mapply}}\label{creating-dynamic-documents-with-mapply}
+
+\texttt{mapply} together with the \texttt{rmarkdown} package
+\citep{R-rmarkdown} can be very useful to create dynamic documents for
+exploratory analysis. We illustrate this using the Motor Trend Car Road
+Tests data which comes pre-loaded in \texttt{R}.
+
+\begin{quote}
+The data was extracted from the 1974 Motor Trend US magazine, and
+comprises fuel consumption and 10 aspects of automobile design and
+performance for 32 automobiles (1973--74 models).
+\end{quote}
+
+Copy the code below in a file called \texttt{mapplyRmarkdown.Rmd} :
+
+Copy the code below in a file called \texttt{boxplotTemplate} :
+
+\chapter{Appendix B}\label{appendix-b}
 
 \bibliography{packages.bib,book.bib}
 

@@ -32,7 +32,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="applications.html">
+<link rel="prev" href="probability.html">
 <link rel="next" href="appendix-b.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -126,13 +126,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#background-reading"><i class="fa fa-check"></i>Background Reading</a></li>
 </ul></li>
 <li class="part"><span><b>I Part I</b></span></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Overview and Descriptive Statistics</a></li>
-<li class="chapter" data-level="2" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2</b> Probability</a></li>
-<li class="part"><span><b>II Part II</b></span></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
-<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
-<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
-<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Overview and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#populations-and-samples"><i class="fa fa-check"></i><b>1.1</b> Populations and Samples</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#variable"><i class="fa fa-check"></i><b>1.1.1</b> Variable</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#branches-of-statistics"><i class="fa fa-check"></i><b>1.1.2</b> Branches of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#pictorial-and-tabular-methods-in-descriptive-statistics"><i class="fa fa-check"></i><b>1.2</b> Pictorial and Tabular Methods in Descriptive Statistics</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#measures-of-location"><i class="fa fa-check"></i><b>1.3</b> Measures of Location</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#measures-of-variability"><i class="fa fa-check"></i><b>1.4</b> Measures of Variability</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2</b> Probability</a><ul>
+<li class="chapter" data-level="2.1" data-path="probability.html"><a href="probability.html#introduction1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="probability.html"><a href="probability.html#probability-a-measure-of-uncertainty2"><i class="fa fa-check"></i><b>2.1.1</b> Probability: A Measure of Uncertainty</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="probability.html"><a href="probability.html#sample-spaces-and-events"><i class="fa fa-check"></i><b>2.2</b> Sample Spaces and Events</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="probability.html"><a href="probability.html#sample-spaces"><i class="fa fa-check"></i><b>2.2.1</b> Sample Spaces</a></li>
+<li class="chapter" data-level="2.2.2" data-path="probability.html"><a href="probability.html#events"><i class="fa fa-check"></i><b>2.2.2</b> Events</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>R Tutorial</b></span></li>
 <li class="chapter" data-level="A" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html"><i class="fa fa-check"></i><b>A</b> Vectorization, *apply and for loops</a><ul>
@@ -173,7 +183,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This section will cover the basics of vectorizations, the <code>*apply</code> family of functions and <code>for</code> loops.</p>
 <div id="vectorization" class="section level2">
 <h2><span class="header-section-number">A.1</span> Vectorization</h2>
-<p>Almost everything in <code>R</code> is a vector. A scalar is really a vector of length 1 and a <code>data.frame</code> is a collection of vectors. An nice feature of  is its vectorized capabilities. Vectorization indicates that a function operates on a whole vector of values at the same time and not just on a single value<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. If you have have ever taken a basic linear algebra course, this concept will be familiar to you.   Take for example two vectors:  <span class="math display">\[
+<p>Almost everything in <code>R</code> is a vector. A scalar is really a vector of length 1 and a <code>data.frame</code> is a collection of vectors. An nice feature of  is its vectorized capabilities. Vectorization indicates that a function operates on a whole vector of values at the same time and not just on a single value<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. If you have have ever taken a basic linear algebra course, this concept will be familiar to you.   Take for example two vectors:  <span class="math display">\[
 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + 
 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} =
 \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}
@@ -215,12 +225,12 @@ x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
 <pre><code>##           x1        x2
-## 1 0.40703624 0.7451352
-## 2 0.02876542 0.1142625
-## 3 0.46024349 0.4849091
-## 4 0.28862078 0.8373120
-## 5 0.89659754 0.2545197
-## 6 0.92207049 0.9980492</code></pre>
+## 1 0.33092222 0.7447474
+## 2 0.50108759 0.8885564
+## 3 0.73776118 0.4313797
+## 4 0.61081970 0.3718305
+## 5 0.16821849 0.8226250
+## 6 0.08465941 0.7163170</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -309,12 +319,12 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
 <pre><code>##          [,1]      [,2]        [,3]
-## [1,] 3.638769 11.691841 -11.4440809
-## [2,] 4.506916  8.218193  11.4111408
-## [3,] 4.650225  5.770493  -1.2790651
-## [4,] 4.096412  5.419309 -11.7484418
-## [5,] 3.432780  5.312663  11.8383127
-## [6,] 3.508842  6.394317  -0.1281642</code></pre>
+## [1,] 5.675456  4.865048  -6.2332404
+## [2,] 2.634576  8.262338   3.4304285
+## [3,] 4.581335 10.949912  -7.3553875
+## [4,] 5.324288 16.917329   3.1616172
+## [5,] 5.282263  8.674564   0.8546586
+## [6,] 5.856334  9.849042 -14.2067405</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
@@ -354,8 +364,8 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p><a href="http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html" class="uri">http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html</a><a href="vectorization-apply-and-for-loops.html#fnref1">↩</a></p></li>
+<ol start="4">
+<li id="fn4"><p><a href="http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html" class="uri">http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html</a><a href="vectorization-apply-and-for-loops.html#fnref4">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -363,7 +373,7 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
           </div>
         </div>
       </div>
-<a href="applications.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="appendix-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

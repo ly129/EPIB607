@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="intro.html">
-
+<link rel="next" href="vectorization-apply-and-for-loops.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -139,7 +139,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1" data-path="probability.html"><a href="probability.html#introduction1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="probability.html"><a href="probability.html#probability-a-measure-of-uncertainty2"><i class="fa fa-check"></i><b>2.1.1</b> Probability: A Measure of Uncertainty</a></li>
 </ul></li>
+<li class="chapter" data-level="2.2" data-path="probability.html"><a href="probability.html#sample-spaces-and-events"><i class="fa fa-check"></i><b>2.2</b> Sample Spaces and Events</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="probability.html"><a href="probability.html#sample-spaces"><i class="fa fa-check"></i><b>2.2.1</b> Sample Spaces</a></li>
+<li class="chapter" data-level="2.2.2" data-path="probability.html"><a href="probability.html#events"><i class="fa fa-check"></i><b>2.2.2</b> Events</a></li>
 </ul></li>
+</ul></li>
+<li class="appendix"><span><b>R Tutorial</b></span></li>
+<li class="chapter" data-level="A" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html"><i class="fa fa-check"></i><b>A</b> Vectorization, *apply and for loops</a><ul>
+<li class="chapter" data-level="A.1" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#vectorization"><i class="fa fa-check"></i><b>A.1</b> Vectorization</a></li>
+<li class="chapter" data-level="A.2" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#family-of-apply-functions"><i class="fa fa-check"></i><b>A.2</b> Family of <code>*apply</code> functions</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#loops-vs.apply"><i class="fa fa-check"></i><b>A.2.1</b> Loops vs. Apply</a></li>
+<li class="chapter" data-level="A.2.2" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#descriptive-statistics-using-apply"><i class="fa fa-check"></i><b>A.2.2</b> Descriptive Statistics using <code>*apply</code></a></li>
+<li class="chapter" data-level="A.2.3" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#creating-new-columns-using-sapply"><i class="fa fa-check"></i><b>A.2.3</b> Creating new columns using <code>sapply</code></a></li>
+<li class="chapter" data-level="A.2.4" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#applying-functions-to-subsets-using-tapply"><i class="fa fa-check"></i><b>A.2.4</b> Applying functions to subsets using <code>tapply</code></a></li>
+<li class="chapter" data-level="A.2.5" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#nested-for-loops-using-mapply"><i class="fa fa-check"></i><b>A.2.5</b> Nested for loops using <code>mapply</code></a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#creating-dynamic-documents-with-mapply"><i class="fa fa-check"></i><b>A.3</b> Creating dynamic documents with <code>mapply</code></a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -215,15 +233,86 @@ ATAGTA
 </blockquote>
 <p>It provides precise mathematical rules for understanding and analyzing our own ignorance. It does not tell us tomorrow’s weather or next week’s stock prices; rather, it gives us a <strong>framework for working with our limited knowledge</strong> and for <strong>making sensible decisions based on what we do and do not know</strong>.</p>
 <p>To say there is a 40% chance of rain tomorrow is not to know tomorrow’s weather. Rather, it is to <strong>know what we do not know</strong> about tomorrow’s weather. In this course, we will develop a more precise understanding of what it means to say there is a 40% chance of rain tomorrow. We will learn how to work with ideas of randomness, probability, expected value, prediction, estimation, etc., in ways that are sensible and mathematically clear.</p>
+</div>
+</div>
+<div id="sample-spaces-and-events" class="section level2">
+<h2><span class="header-section-number">2.2</span> Sample Spaces and Events</h2>
+<div id="sample-spaces" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Sample Spaces</h3>
+
+<div class="definition">
+<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 2.1  (Sample Space)  </strong></span>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible outcomes of an experiment. Points <span class="math inline">\(\omega\)</span> in <span class="math inline">\(\Omega\)</span> are called sample outcomes, realizations, or elements.
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-9" class="example"><strong>Example 2.2  (Coin tossing)  </strong></span><span class="math inline">\(\Omega = \left\lbrace H, T \right\rbrace\)</span>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-10" class="example"><strong>Example 2.3  (Dice)  </strong></span><span class="math inline">\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)</span>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-11" class="example"><strong>Example 2.4  (Proportions)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)</span>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-12" class="example"><strong>Example 2.5  (Time measurement)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : x &gt; 0 \right\rbrace = {\mathbb{R}}^{+}\)</span>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-13" class="example"><strong>Example 2.6  (Temperature measurement)  </strong></span><span class="math inline">\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)</span>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-14" class="example"><strong>Example 2.7  (Biological Sequence Analysis)  </strong></span>The experiment may involve the observation of a nucleotide or protein sequence, so that the sample space <span class="math inline">\(\Omega\)</span> may comprise all sequences (of bases/amino acids) up to a given length, and a sample outcome would be a particular observed sequence.
+</div>
+
+<p>There are two basic types of experiment: - Counting - Measurement</p>
+<p>We shall see that these two types lead to two distinct ways of specifying probability distributions.</p>
+The collection of sample outcomes is a <strong>set</strong> (a collection of items) written as
+<span class="math display">\[\begin{equation*}
+s\in \Omega
+\end{equation*}\]</span>
+<p>if <span class="math inline">\(s\)</span> <em>is a member of the set</em> <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+<div id="events" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Events</h3>
+
+<div class="definition">
+<span id="def:unnamed-chunk-15" class="definition"><strong>Definition 2.2  (Event)  </strong></span>An event <span class="math inline">\(E\)</span> is a subset of the sample space <span class="math inline">\(\Omega\)</span> (<span class="math inline">\(E \subseteq \Omega\)</span>). Events are usually denoted by upper case letters near the beginning of the alphabet, like <span class="math inline">\(A, B, C\)</span>. An event which consists of only one outcome is called a simple (or elementary event); otherwise it is a compound event.
+</div>
+
+
+<div class="rmdnote">
+The sets <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(E\)</span> can be either be written as a list of items, for example,
+<span class="math display">\[\begin{equation*}
+E=\left\{ s_{1},s_{2},...,s_{n},...\right\}
+\end{equation*}\]</span>
+which may a finite or infinite list, or can only be represented by a continuum of outcomes, for example
+<span class="math display">\[\begin{equation*}
+E=\left\{ x:0.6&lt;x\leq 2.3\right\}
+\end{equation*}\]</span>
+</div>
+
+<p>Events are manipulated using <strong>set theory</strong> notation; if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are two events, <span class="math inline">\(A, B \subseteq \Omega\)</span>, then</p>
+<ul>
+<li><span class="math inline">\(A \cup B\)</span> is the set of outcomes that belong to <span class="math inline">\(A\)</span> <strong>or</strong> to <span class="math inline">\(B\)</span>, or to both,</li>
+<li><span class="math inline">\(A \cap B\)</span> is the set of outcomes that belong to both <span class="math inline">\(A\)</span> <strong>and</strong> to <span class="math inline">\(B\)</span>.</li>
+<li><span class="math inline">\(A^c\)</span> (complement of <span class="math inline">\(A\)</span>) is the set of outcomes <strong>not</strong> in <span class="math inline">\(A\)</span></li>
+<li><span class="math inline">\(A \backslash B = A \cap B^c\)</span></li>
+</ul>
+<p>The empty event will be denoted by <span class="math inline">\(\varnothing\)</span>. Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive if <span class="math inline">\(A \cap B = \varnothing\)</span>, i.e., the collection of sample outcomes have no element in common.</p>
 
 </div>
 </div>
 </div>
-
-
-
-
-
 
 
 
@@ -239,8 +328,8 @@ ATAGTA
           </div>
         </div>
       </div>
-<a href="intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vectorization-apply-and-for-loops.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
