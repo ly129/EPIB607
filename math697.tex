@@ -1030,17 +1030,332 @@ Conditional probability is the means by which probabilities are updated
 in the light of new information. We examine how the information \emph{an
 event B has occurred} affects the probability assigned to \(A\).
 
-\BeginKnitrBlock{example}[]
-\protect\hypertarget{ex:unnamed-chunk-25}{}{\label{ex:unnamed-chunk-25}
-\iffalse () \fi{} }
+\BeginKnitrBlock{example}[Flipping Coins]
+\protect\hypertarget{ex:flipcoins}{}{\label{ex:flipcoins} \iffalse (Flipping
+Coins) \fi{} }We flip three different fair coins, and\\
+\[ \Omega = {H H H, H H T, H T H, H T T, T H H, T H T, T T H, T T T } \]
+with \(P(s) = 1/8\) for each \(s \in \Omega\). What is the probability
+that the first coin comes up heads?
+
+\[ P(\textrm{first coin heads}) = P({H H H, H H T, H T H, H T T }) = 4/8 = 1/2 \]
+
+But suppose now that an informant tells us that exactly two of the three
+coins came up heads. Now what is the probability that the first coin was
+heads? if we know that exactly two of the coins were heads, then we know
+that the outcome was one of \({H H T , H T H, T H H}\).
+
+Because those three outcomes should (in this case) still all be equally
+likely, and because only the first two correspond to the first coin
+being heads, we conclude the following: If we know that exactly two of
+the three coins are heads, then the probability that the first coin is
+heads is \(2/3\).
+
+More precisely, we have computed a conditional probability. That is, we
+have determined that, conditional on knowing that exactly two coins came
+up heads, the conditional probability of the first coin being heads is
+2/3. We write this in mathematical notation as
+
+\[ P(\textrm{first coin heads} | \textrm{two coins heads}) = 2/3. \]
+
+Here the vertical bar \textbar{} stands for \emph{conditional on} or
+\emph{given that}.
 \EndKnitrBlock{example}
 
+\BeginKnitrBlock{example}[Assembly Lines]
+\protect\hypertarget{ex:assembly}{}{\label{ex:assembly} \iffalse (Assembly
+Lines) \fi{} }Complex components are assembled in a plant that uses two
+different assembly lines, \(A\) and \(A^c\) . Line \(A\) uses older
+equipment than \(A^c\), so it is somewhat slower and less reliable.
+\(B\) are the defective components and \(B^c\) are the nondefective.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+& Condition &\tabularnewline
+\midrule
+\endhead
+\textbf{Line} & \(B\) & \(B^c\)\tabularnewline
+\(A\) & 2 & 6\tabularnewline
+\(A^c\) & 1 & 9\tabularnewline
+\bottomrule
+\end{longtable}
+
+The sales manager randomly selects 1 of these 18 components for a
+demonstration\\
+\[ P(\textrm{line A component was selected}) = P(A) = \frac{N(A)}{N} = \frac{8}{18} = 0.444 \]
+
+However, if the chosen component turns out to be defective, then the
+event \(B\) has occurred, so the component must have been 1 of the 3 in
+the \(B\) column of the table. Since these 3 components are equally
+likely among themselves after \(B\) has occurred
+
+\[ P(\textrm{line A component was selected} | \textrm{Defective}) = \frac{2}{3} = \frac{2/18}{3/18} = \frac{P(A \cap B)}{P(B)} \]
+\EndKnitrBlock{example}
+
+In Example \ref{exm:assembly}, the conditional probability is expressed
+as a ratio of \textbf{unconditional probabilities}. The numerator is the
+probability of the intersection of the two events, whereas the
+denominator is the probability of the conditioning event \(B\). Given
+that \(B\) has occurred, the relevant sample space is no longer
+\(\Omega\) but consists of just outcomes in \(B\); A has occurred if and
+only if \emph{one of the outcomes in the intersection} occurred, so the
+conditional probability of A given B is proportional to \(P(A \cap B)\).
+The proportionality constant \(1/P(B)\) is used to ensure that the
+probability \(P(B | B)\) of the new sample space \(B\) equals 1.
+
 \BeginKnitrBlock{definition}[Conditional Probability]
-\protect\hypertarget{def:unnamed-chunk-26}{}{\label{def:unnamed-chunk-26}
-\iffalse (Conditional Probability) \fi{} }
+\protect\hypertarget{def:condprob}{}{\label{def:condprob}
+\iffalse (Conditional Probability) \fi{} }Given two events \(A\) and
+\(B\), with \(P(B) > 0\), the conditional probability of \(A\) given
+\(B\) is equal to
+
+\[ P(A|B) = \frac{P(A \cap B)}{P(B)}  \]
 \EndKnitrBlock{definition}
 
+In example \ref{exm:flipcoins}, let\\
+- \(A = {H H H, H H T, H T H, H T T }\) be the event that the first coin
+is heads\\
+- \(B = {H H T, H T H, T H H}\) be the event that exactly two coins were
+heads
+
+It follows that
+
+\[ A \cap B = {H H T, H T H}\]
+
+Therefore
+
+\[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P({H H T, H T H})}{P({H H T, H T H, T H H})} = \frac{2/8}{3/8} = \frac{2}{3}\]
+
+\BeginKnitrBlock{example}[Balanced die]
+\protect\hypertarget{ex:unnamed-chunk-25}{}{\label{ex:unnamed-chunk-25}
+\iffalse (Balanced die) \fi{} }Suppose a balanced die is tossed in the
+next room. We are told that a number less than 4 was observed. What is
+the probability the number was either 1 or 2?
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Two Balanced Dice v1]
+\protect\hypertarget{ex:unnamed-chunk-26}{}{\label{ex:unnamed-chunk-26}
+\iffalse (Two Balanced Dice v1) \fi{} }Toss two balanced dice. Let \(A\)
+= \{sum of 5\} and \(B\) = \{first die is \(\leq\) 2\}. Find \(P(A|B)\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Two Balanced Dice v2]
+\protect\hypertarget{ex:unnamed-chunk-27}{}{\label{ex:unnamed-chunk-27}
+\iffalse (Two Balanced Dice v2) \fi{} }Two balanced dice are tossed.
+What is the probability that the first die gives a number less than
+three, given that the sum is odd?
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Unbalanced Die]
+\protect\hypertarget{ex:unbalanced}{}{\label{ex:unbalanced}
+\iffalse (Unbalanced Die) \fi{} }Toss an unbalanced die with probs
+\(P(1)=.1\), \(P(2)=.1\), \(P(3)=.3\), \(P(4)=.2\), \(P(5)=.1\),
+\(P(6)=.2\). Let \(A={\geq 5}\) and \(B={\geq 2}\). Find \(P(A|B)\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Two Balanced Coins]
+\protect\hypertarget{ex:unnamed-chunk-28}{}{\label{ex:unnamed-chunk-28}
+\iffalse (Two Balanced Coins) \fi{} }Two balanced coins were tossed, and
+it is known that at least one was a head. What is the probability that
+both were heads?
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Two Cards]
+\protect\hypertarget{ex:unnamed-chunk-29}{}{\label{ex:unnamed-chunk-29}
+\iffalse (Two Cards) \fi{} }Two cards are drawn without replacement from
+a standard deck. Find the probability that
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  the second is an ace, given that the first is not an ace.\\
+\item
+  the second is an ace.\\
+\item
+  the first was an ace, given that the second is an ace.
+\end{enumerate}
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Numbers in a Hat]
+\protect\hypertarget{ex:unnamed-chunk-30}{}{\label{ex:unnamed-chunk-30}
+\iffalse (Numbers in a Hat) \fi{} }The numbers 1 to 5 are written on
+five slips of paper and placed in a hat. Two slips are drawn at random
+without replacement. What is the probability that the first number is 3,
+given a sum of seven?
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[One Card]
+\protect\hypertarget{ex:unnamed-chunk-31}{}{\label{ex:unnamed-chunk-31}
+\iffalse (One Card) \fi{} }A card is selected at random (i.e.~every card
+has the same probability of being chosen) from a deck of 52. What is the
+probability it is a red card or a face card?
+\EndKnitrBlock{example}
+
+Definition \ref{def:condprob} immediately leads to the
+\emph{multiplication formula}
+
+\BeginKnitrBlock{definition}[Multiplicative Rule]
+\protect\hypertarget{def:multformula}{}{\label{def:multformula}
+\iffalse (Multiplicative Rule) \fi{} }\[P(A \cap B) = P(A|B) P(B)\]
+
+and
+
+\[P(A \cap B) = P(B|A) P(A)\]
+\EndKnitrBlock{definition}
+
+This allows us to compute the joint probability of \(A\) and \(B\) when
+we are given the probability of \(B\) and the conditional probability of
+\(A\) given \(B\), and vice versa.
+
+\BeginKnitrBlock{example}[Fish in a Tank]
+\protect\hypertarget{ex:unnamed-chunk-32}{}{\label{ex:unnamed-chunk-32}
+\iffalse (Fish in a Tank) \fi{} }A tank has three red fish and two blue
+fish. Two fish are chosen at random and without replacement. What is the
+probability of getting
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  red fish first and then a blue fish?\\
+\item
+  both fish red?\\
+\item
+  one red fish and one blue fish?
+\end{enumerate}
+\EndKnitrBlock{example}
+
+\subsection{Law of Total Probability}\label{law-of-total-probability}
+
+Recall that events \(A_1, A_2, \ldots, A_k\) are mutually exclusive if
+no two have any common outcomes. The events are exhaustive if one
+\(A_i\) must occure, so that\\
+\[A_1 \cup A_2 \cup \cdots \cup A_k = \Omega \]
+
+\BeginKnitrBlock{theorem}[Law of Total Probability]
+\protect\hypertarget{thm:totprob}{}{\label{thm:totprob} \iffalse (Law of
+Total Probability) \fi{} }Let \(A_1, A_2, \ldots, A_k\) be mutually
+exclusive and exhaustive events. Then for any other event \(B\),\\
+\[P(B) = P(B|A_1) P(A_1) + \cdots + P(B|A_k)P(A_k) = \sum_{i=1}^{k} P(B|A_i) P(A_i)\]
+\EndKnitrBlock{theorem}
+
+\textbf{Proof}: Because the \(A_i\)'s are mutually exclusive and
+exhaustive, if \(B\) occurs it must be in conjunction with exactly one
+of the \(A_i\)'s. That is, \(B= (A_1\textrm{ and }B)\) or \(\ldots\) or
+\((A_k\textrm{ and }B)\) which is equal to
+\((A_1 \cap B) \cup \cdots \cup (A_k \cap B)\), where the events
+\((A_i \cap B)\) are mutually exclusive.
+
+\begin{figure}
+\centering
+\includegraphics{images/totalprob.png}
+\caption{}
+\end{figure}
+
+Thus we have
+
+\[P(B) =\sum_{i=1}^{k} P(A_i \cap B) = \sum_{i=1}^{k} P(B|A_i) P(A_i) \]
+
+\BeginKnitrBlock{example}[Long Hair]
+\protect\hypertarget{ex:unnamed-chunk-33}{}{\label{ex:unnamed-chunk-33}
+\iffalse (Long Hair) \fi{} }Suppose a class contains 60\% girls and 40\%
+boys. Suppose that 30\% of the girls have long hair, and 20\% of the
+boys have long hair. A student is chosen uniformly at random from the
+class. What is the probability that the chosen student will have long
+hair?
+\EndKnitrBlock{example}
+
+\subsection{Bayes' Rule}\label{bayes-rule}
+
+\BeginKnitrBlock{theorem}[Bayes' Rule]
+\protect\hypertarget{thm:bayesdef}{}{\label{thm:bayesdef} \iffalse (Bayes'
+Rule) \fi{} }Let \(A_1, \ldots, A_k\) be a collection of mutually
+exclusive and exhaustive events with \(P(A_i) > 0\) for
+\(i=1, \ldots, k\). Then for any other event B, for which \(P(B)>0\), we
+have
+
+\[ P(A_j | B) = \frac{P(A_j \cap B)}{P(B)} = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^k P(B|A_i) P(A_i)}, \quad j=1, \ldots, k   \]
+\EndKnitrBlock{theorem}
+
+The transition from the second to the third expression in Theorem
+\ref{thm:bayesdef} rests on using the multiplication rule in the
+numerator and the law of total probability in the denominator.
+
+\BeginKnitrBlock{example}[Urns]
+\protect\hypertarget{ex:unnamed-chunk-34}{}{\label{ex:unnamed-chunk-34}
+\iffalse (Urns) \fi{} }Suppose urn \#1 has 3 red and 2 blue balls, and
+urn \#2 has 4 red and 7 blue balls. Suppose one of the two urns is
+selected with probability \(1/2\) each, and then one of the balls within
+that urn is picked uniformly at random.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  What is the probability that urn \#2 is selected at the first stage
+  (event A) and a blue ball is selected at the second stage (event B)?\\
+\item
+  Compute the probability that a blue ball is obtained.\\
+\item
+  Now suppose we are given the information that the ball picked is blue.
+  What is probability that we had selected urn \#2?
+\end{enumerate}
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Large Bridges]
+\protect\hypertarget{ex:unnamed-chunk-35}{}{\label{ex:unnamed-chunk-35}
+\iffalse (Large Bridges) \fi{} }There are three Canadian firms which
+build large bridges, firm 1, firm 2, and firm 3. 20\% of Canadian large
+bridges have been built by firm 1, 30\% by firm 2, and the rest by firm
+3. 5\% of the bridges built by firm 1 have collapsed, while 10\% of
+those by firm 2 have collapsed, and 30\% by firm 3 have collapsed.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  What is the probability that a bridge collapses?\\
+\item
+  Suppose it is reported in tomorrow's newspaper that a large bridge has
+  collapsed. What is the probability it was built by firm 1?
+\end{enumerate}
+\EndKnitrBlock{example}
+
 \section{Independence}\label{independence}
+
+If we flip a fair coin twice, then the probability of two heads is
+\(1/2 \times 1/2\). We multiply the probabilities because we regard the
+two tosses as independent. The formal definition of independence is as
+follows:
+
+\BeginKnitrBlock{definition}[Indepent Events]
+\protect\hypertarget{def:indep}{}{\label{def:indep} \iffalse (Indepent
+Events) \fi{} }Two events \(A\) and \(B\) are independent if\\
+\[ P(A \cap B) = P(A) P(B) \]
+\EndKnitrBlock{definition}
+
+Now, because \(P(A | B) = P( A \cap B)/P(B)\), we see that \(A\) and
+\(B\) are independent if and only if \(P(A | B) = P(A)\) or
+\(P(B | A) = P(B)\), provided that \(P(A) > 0\) and \(P(B) > 0\).
+Definition \ref{def:indep} has the advantage that it remains valid even
+if \(P(B) = 0\) or \(P(A) = 0\), respectively. Intuitively, events \(A\)
+and \(B\) are independent if neither one has any impact on the
+probability of the other.
+
+\BeginKnitrBlock{example}[Toss a fair coin 10 times]
+\protect\hypertarget{ex:unnamed-chunk-36}{}{\label{ex:unnamed-chunk-36}
+\iffalse (Toss a fair coin 10 times) \fi{} }Toss a fair coin 10 times.
+Let \(A = {\textrm{at least one head}}\). Let \(T_j\) be the event that
+tails occurs on the \(j^{th}\) toss. Find \(P(A)\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Unbalance Die Revisited]
+\protect\hypertarget{ex:unnamed-chunk-37}{}{\label{ex:unnamed-chunk-37}
+\iffalse (Unbalance Die Revisited) \fi{} }In Example
+\ref{exm:unbalanced}, if \(A\) is the event that the die was 5, and
+\(B\) is the event that the coin was tails, then calculate
+\(P(A), P(B)\) and \(P(A\cap B)\)
+\EndKnitrBlock{example}
 
 \appendix
 
@@ -1159,13 +1474,13 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \end{Shaded}
 
 \begin{verbatim}
-##           x1         x2
-## 1 0.64870088 0.74703487
-## 2 0.33200087 0.35791966
-## 3 0.01155646 0.84240065
-## 4 0.81397243 0.18195049
-## 5 0.49752317 0.09354495
-## 6 0.04255033 0.41102094
+##           x1        x2
+## 1 0.68553762 0.4586745
+## 2 0.67376359 0.3287504
+## 3 0.41416085 0.5905993
+## 4 0.05087929 0.3238623
+## 5 0.86426444 0.4142932
+## 6 0.87687081 0.8253642
 \end{verbatim}
 
 \begin{Shaded}
@@ -1343,12 +1658,12 @@ function:
 
 \begin{verbatim}
 ##          [,1]      [,2]       [,3]
-## [1,] 5.268941 15.241578  -7.939710
-## [2,] 5.534837  6.284061  -8.965358
-## [3,] 3.988739  6.987539   9.444327
-## [4,] 5.767137 10.381598 -17.553147
-## [5,] 6.728720  2.503015  22.107234
-## [6,] 5.056595  6.401967   8.257844
+## [1,] 3.186478 10.985202 10.2925124
+## [2,] 5.532437 13.573425  1.6549714
+## [3,] 6.075208  9.183887  3.7558830
+## [4,] 4.632367  5.980021  5.4397640
+## [5,] 5.119464 15.713389 -7.0329618
+## [6,] 4.525059  7.016918 -0.3420266
 \end{verbatim}
 
 The following diagram (from
