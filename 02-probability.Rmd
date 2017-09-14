@@ -1,6 +1,6 @@
 # Probability
 
-## Introduction[^1]
+## Introduction[^1] {-}
 
 The random variation associated with _measurement_ procedures in a scientific analysis requires a framework in which the **uncertainty** and **variability** that are inherent in the procedure can be handled. The key goal of Probability and Statistical modelling is to establish a mathematical framework within which _random_ variation (due, for example, to experimental error or natural variation) can be quantified so that
 _systematic_ variation (arising due to potentially important biological differences) can be studied.  
@@ -58,7 +58,7 @@ ATAGTA
 These questions can only really be answered when we have an understanding of randomness and variation. The framework that we will use to pose and answer such questions formally is given to us by _probability theory_.  
 
 
-### Probability: A Measure of Uncertainty[^2]
+### Probability: A Measure of Uncertainty[^2]  {-}
 
 Often in life we are confronted by our own ignorance. Whether we are pondering tonight's traffic jam, tomorrow's weather, next week's stock prices, an upcoming election, or where we left our hat, often we do not know an outcome with certainty. Instead, we are forced to guess, to estimate, to hedge our bets. 
 
@@ -149,6 +149,95 @@ Events are manipulated using **set theory** notation; if $A$ and $B$ are two eve
 
 The empty event will be denoted by $\varnothing$. Two events $A$ and $B$ are mutually exclusive if $A \cap B = \varnothing$, i.e., the collection of sample outcomes have no element in common. 
 
+
+![](images/venn.png)
+
+
+## Axioms, Interpretations, and Properties of Probability
+
+```{definition, name="Axioms (basic properties) of Probability"}
+To ensure that the probability assignments will be consistent with our intuitive notions of probability, all assign-
+ments should satisfy the following axioms (basic properties) of probability  
+
+- **AXIOM 1:** For any event $A$, \[ P(A) \geq 0 \]
+- **AXIOM 2:** \[ P(\Omega) = 1 \]
+- **AXIOM 3:** If $A_1, A_2, \ldots$ is an infinite collection of disjoint events, then
+\[   P\left(A_1 \cup A_2 \cup \cdots \right) = \sum_{i=1}^{\infty} P(A_i)  \]
+
+```
+
+
+```{proposition}
+$P(\varnothing) = 0$ where $\varnothing$ is the null event. This in turn implies that the property contained in Axiom 3 is valid for a finite collection of events.
+```
+
+
+
+```{proposition}
+For any event $A$,  
+\[ P(A) = 1 - P(A^c) \]
+```
+
+
+```{proposition}
+For any event $A$,  
+\[ P(A) \leq 1 \]
+```
+
+
+```{proposition}
+For any events $A$ and $B$,   
+\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
+```
+
+
+
+## Counting Techniques
+
+When the various outcomes of an experiment are equally likely (the same probability is assigned to each simple event), the task of computing probabilities reduces to counting. In particular, if $N$ is the number of outcomes in a sample space and
+$N(A)$ is the number of outcomes contained in an event $A$, then  \[ P(A) = \frac{N(A)}{N} \]
+
+
+```{proposition, name="Product rule for ordered pairs"}
+If the first element or object of an ordered pair can be selected in $n_1$ ways, and for each of these $n_1$ ways the second element of the pair can be selected in $n_2$ ways, then the number of pairs is $n_1 \cdot n_2$.
+```
+
+### Permutations
+
+```{definition, name="Permutation"}
+Any ordered sequence of $k$ objects taken from a set of $n$ distinct objects is called a permutation of size $k$ of the objects. The number of permutations of size $k$ that can be constructed from the $n$ objects is denoted by $P_k^n$:  
+
+\[ P_k^n = \frac{n!}{(n-k)!} \]
+```
+
+
+### Combinations
+
+```{definition, name="Combination"}
+Given a set of $n$ distinct objects, any unordered subset of size $k$ of the objects is called a combination. The number of combinations $n$ of size $k$ that can be formed from $n$ distinct objects will be denoted by  
+
+\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{P_k^n}{k!} \]
+```
+
+
+## Conditional Probability
+
+Conditional probability is the means by which probabilities are updated in the light of new information. We examine how the information _an event B has occurred_ affects the probability assigned to $A$. 
+
+
+```{example, name=""}
+
+```
+
+
+
+```{definition, name="Conditional Probability"}
+
+
+```
+
+
+## Independence
 
 
 
