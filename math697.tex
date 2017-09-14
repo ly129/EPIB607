@@ -124,7 +124,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2017-09-05}
+  \date{2017-09-14}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -698,8 +698,9 @@ Statistics}\label{pictorial-and-tabular-methods-in-descriptive-statistics}
 
 \chapter{Probability}\label{probability}
 
-\section[Introduction]{\texorpdfstring{Introduction\footnote{Reproduced
-  with permission from \url{http://www.math.mcgill.ca/dstephens/}}}{Introduction}}\label{introduction1}
+\section*{\texorpdfstring{Introduction\footnote{Reproduced with
+  permission from \url{http://www.math.mcgill.ca/dstephens/}}}{Introduction}}\label{introduction1}
+\addcontentsline{toc}{section}{Introduction}
 
 The random variation associated with \emph{measurement} procedures in a
 scientific analysis requires a framework in which the
@@ -788,9 +789,9 @@ understanding of randomness and variation. The framework that we will
 use to pose and answer such questions formally is given to us by
 \emph{probability theory}.
 
-\subsection[Probability: A Measure of
-Uncertainty]{\texorpdfstring{Probability: A Measure of
+\subsection*{\texorpdfstring{Probability: A Measure of
 Uncertainty\footnote{\url{http://www.utstat.toronto.edu/mikevans/jeffrosenthal/book.pdf}}}{Probability: A Measure of Uncertainty}}\label{probability-a-measure-of-uncertainty2}
+\addcontentsline{toc}{subsection}{Probability: A Measure of Uncertainty}
 
 Often in life we are confronted by our own ignorance. Whether we are
 pondering tonight's traffic jam, tomorrow's weather, next week's stock
@@ -929,6 +930,118 @@ The empty event will be denoted by \(\varnothing\). Two events \(A\) and
 \(B\) are mutually exclusive if \(A \cap B = \varnothing\), i.e., the
 collection of sample outcomes have no element in common.
 
+\begin{figure}
+\centering
+\includegraphics{images/venn.png}
+\caption{}
+\end{figure}
+
+\section{Axioms, Interpretations, and Properties of
+Probability}\label{axioms-interpretations-and-properties-of-probability}
+
+\BeginKnitrBlock{definition}[Axioms (basic properties) of Probability]
+\protect\hypertarget{def:unnamed-chunk-17}{}{\label{def:unnamed-chunk-17}
+\iffalse (Axioms (basic properties) of Probability) \fi{} }To ensure
+that the probability assignments will be consistent with our intuitive
+notions of probability, all assign- ments should satisfy the following
+axioms (basic properties) of probability
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AXIOM 1:} For any event \(A\), \[ P(A) \geq 0 \]
+\item
+  \textbf{AXIOM 2:} \[ P(\Omega) = 1 \]
+\item
+  \textbf{AXIOM 3:} If \(A_1, A_2, \ldots\) is an infinite collection of
+  disjoint events, then
+  \[   P\left(A_1 \cup A_2 \cup \cdots \right) = \sum_{i=1}^{\infty} P(A_i)  \]
+\end{itemize}
+\EndKnitrBlock{definition}
+
+\BeginKnitrBlock{proposition}
+\protect\hypertarget{prp:unnamed-chunk-18}{}{\label{prp:unnamed-chunk-18}}\(P(\varnothing) = 0\)
+where \(\varnothing\) is the null event. This in turn implies that the
+property contained in Axiom 3 is valid for a finite collection of
+events.
+\EndKnitrBlock{proposition}
+
+\BeginKnitrBlock{proposition}
+\protect\hypertarget{prp:unnamed-chunk-19}{}{\label{prp:unnamed-chunk-19}}For
+any event \(A\),\\
+\[ P(A) = 1 - P(A^c) \]
+\EndKnitrBlock{proposition}
+
+\BeginKnitrBlock{proposition}
+\protect\hypertarget{prp:unnamed-chunk-20}{}{\label{prp:unnamed-chunk-20}}For
+any event \(A\),\\
+\[ P(A) \leq 1 \]
+\EndKnitrBlock{proposition}
+
+\BeginKnitrBlock{proposition}
+\protect\hypertarget{prp:unnamed-chunk-21}{}{\label{prp:unnamed-chunk-21}}For
+any events \(A\) and \(B\),\\
+\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
+\EndKnitrBlock{proposition}
+
+\section{Counting Techniques}\label{counting-techniques}
+
+When the various outcomes of an experiment are equally likely (the same
+probability is assigned to each simple event), the task of computing
+probabilities reduces to counting. In particular, if \(N\) is the number
+of outcomes in a sample space and \(N(A)\) is the number of outcomes
+contained in an event \(A\), then \[ P(A) = \frac{N(A)}{N} \]
+
+\BeginKnitrBlock{proposition}[Product rule for ordered pairs]
+\protect\hypertarget{prp:unnamed-chunk-22}{}{\label{prp:unnamed-chunk-22}
+\iffalse (Product rule for ordered pairs) \fi{} }If the first element or
+object of an ordered pair can be selected in \(n_1\) ways, and for each
+of these \(n_1\) ways the second element of the pair can be selected in
+\(n_2\) ways, then the number of pairs is \(n_1 \cdot n_2\).
+\EndKnitrBlock{proposition}
+
+\subsection{Permutations}\label{permutations}
+
+\BeginKnitrBlock{definition}[Permutation]
+\protect\hypertarget{def:unnamed-chunk-23}{}{\label{def:unnamed-chunk-23}
+\iffalse (Permutation) \fi{} }Any ordered sequence of \(k\) objects
+taken from a set of \(n\) distinct objects is called a permutation of
+size \(k\) of the objects. The number of permutations of size \(k\) that
+can be constructed from the \(n\) objects is denoted by \(P_k^n\):
+
+\[ P_k^n = \frac{n!}{(n-k)!} \]
+\EndKnitrBlock{definition}
+
+\subsection{Combinations}\label{combinations}
+
+\BeginKnitrBlock{definition}[Combination]
+\protect\hypertarget{def:unnamed-chunk-24}{}{\label{def:unnamed-chunk-24}
+\iffalse (Combination) \fi{} }Given a set of \(n\) distinct objects, any
+unordered subset of size \(k\) of the objects is called a combination.
+The number of combinations \(n\) of size \(k\) that can be formed from
+\(n\) distinct objects will be denoted by
+
+\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{P_k^n}{k!} \]
+\EndKnitrBlock{definition}
+
+\section{Conditional Probability}\label{conditional-probability}
+
+Conditional probability is the means by which probabilities are updated
+in the light of new information. We examine how the information \emph{an
+event B has occurred} affects the probability assigned to \(A\).
+
+\BeginKnitrBlock{example}[]
+\protect\hypertarget{ex:unnamed-chunk-25}{}{\label{ex:unnamed-chunk-25}
+\iffalse () \fi{} }
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{definition}[Conditional Probability]
+\protect\hypertarget{def:unnamed-chunk-26}{}{\label{def:unnamed-chunk-26}
+\iffalse (Conditional Probability) \fi{} }
+\EndKnitrBlock{definition}
+
+\section{Independence}\label{independence}
+
 \appendix
 
 
@@ -1046,13 +1159,13 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \end{Shaded}
 
 \begin{verbatim}
-##          x1        x2
-## 1 0.6538214 0.8353257
-## 2 0.7115308 0.1304793
-## 3 0.5469451 0.4690657
-## 4 0.5364395 0.1933305
-## 5 0.1795313 0.6602322
-## 6 0.9472046 0.8250495
+##           x1         x2
+## 1 0.64870088 0.74703487
+## 2 0.33200087 0.35791966
+## 3 0.01155646 0.84240065
+## 4 0.81397243 0.18195049
+## 5 0.49752317 0.09354495
+## 6 0.04255033 0.41102094
 \end{verbatim}
 
 \begin{Shaded}
@@ -1230,12 +1343,12 @@ function:
 
 \begin{verbatim}
 ##          [,1]      [,2]       [,3]
-## [1,] 6.192057 18.937216  9.4129157
-## [2,] 4.888136 16.256050 -7.0966183
-## [3,] 4.890432  4.314502 -6.3761752
-## [4,] 4.212868  3.417552 -0.4870348
-## [5,] 5.612230 16.915892 -6.0727833
-## [6,] 7.521550 14.989053  9.5417020
+## [1,] 5.268941 15.241578  -7.939710
+## [2,] 5.534837  6.284061  -8.965358
+## [3,] 3.988739  6.987539   9.444327
+## [4,] 5.767137 10.381598 -17.553147
+## [5,] 6.728720  2.503015  22.107234
+## [6,] 5.056595  6.401967   8.257844
 \end{verbatim}
 
 The following diagram (from

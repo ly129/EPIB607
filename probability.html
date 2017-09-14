@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-09-05">
+<meta name="date" content="2017-09-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -136,13 +136,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#measures-of-variability"><i class="fa fa-check"></i><b>1.4</b> Measures of Variability</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2</b> Probability</a><ul>
-<li class="chapter" data-level="2.1" data-path="probability.html"><a href="probability.html#introduction1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="probability.html"><a href="probability.html#probability-a-measure-of-uncertainty2"><i class="fa fa-check"></i><b>2.1.1</b> Probability: A Measure of Uncertainty</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#introduction1"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#probability-a-measure-of-uncertainty2"><i class="fa fa-check"></i>Probability: A Measure of Uncertainty</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="probability.html"><a href="probability.html#sample-spaces-and-events"><i class="fa fa-check"></i><b>2.2</b> Sample Spaces and Events</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="probability.html"><a href="probability.html#sample-spaces"><i class="fa fa-check"></i><b>2.2.1</b> Sample Spaces</a></li>
-<li class="chapter" data-level="2.2.2" data-path="probability.html"><a href="probability.html#events"><i class="fa fa-check"></i><b>2.2.2</b> Events</a></li>
+<li class="chapter" data-level="2.1" data-path="probability.html"><a href="probability.html#sample-spaces-and-events"><i class="fa fa-check"></i><b>2.1</b> Sample Spaces and Events</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="probability.html"><a href="probability.html#sample-spaces"><i class="fa fa-check"></i><b>2.1.1</b> Sample Spaces</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probability.html"><a href="probability.html#events"><i class="fa fa-check"></i><b>2.1.2</b> Events</a></li>
 </ul></li>
+<li class="chapter" data-level="2.2" data-path="probability.html"><a href="probability.html#axioms-interpretations-and-properties-of-probability"><i class="fa fa-check"></i><b>2.2</b> Axioms, Interpretations, and Properties of Probability</a></li>
+<li class="chapter" data-level="2.3" data-path="probability.html"><a href="probability.html#counting-techniques"><i class="fa fa-check"></i><b>2.3</b> Counting Techniques</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="probability.html"><a href="probability.html#permutations"><i class="fa fa-check"></i><b>2.3.1</b> Permutations</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probability.html"><a href="probability.html#combinations"><i class="fa fa-check"></i><b>2.3.2</b> Combinations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probability.html"><a href="probability.html#conditional-probability"><i class="fa fa-check"></i><b>2.4</b> Conditional Probability</a></li>
+<li class="chapter" data-level="2.5" data-path="probability.html"><a href="probability.html#independence"><i class="fa fa-check"></i><b>2.5</b> Independence</a></li>
 </ul></li>
 <li class="appendix"><span><b>R Tutorial</b></span></li>
 <li class="chapter" data-level="A" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html"><i class="fa fa-check"></i><b>A</b> Vectorization, *apply and for loops</a><ul>
@@ -180,8 +187,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="probability" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Probability</h1>
-<div id="introduction1" class="section level2">
-<h2><span class="header-section-number">2.1</span> Introduction<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h2>
+<div id="introduction1" class="section level2 unnumbered">
+<h2>Introduction<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h2>
 <p>The random variation associated with <em>measurement</em> procedures in a scientific analysis requires a framework in which the <strong>uncertainty</strong> and <strong>variability</strong> that are inherent in the procedure can be handled. The key goal of Probability and Statistical modelling is to establish a mathematical framework within which <em>random</em> variation (due, for example, to experimental error or natural variation) can be quantified so that <em>systematic</em> variation (arising due to potentially important biological differences) can be studied.</p>
 <p>Broadly, the  involves several different stages:</p>
 <span class="math display">\[\begin{equation*}
@@ -225,8 +232,8 @@ ATAGTA
 </div>
 
 <p>These questions can only really be answered when we have an understanding of randomness and variation. The framework that we will use to pose and answer such questions formally is given to us by <em>probability theory</em>.</p>
-<div id="probability-a-measure-of-uncertainty2" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Probability: A Measure of Uncertainty<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></h3>
+<div id="probability-a-measure-of-uncertainty2" class="section level3 unnumbered">
+<h3>Probability: A Measure of Uncertainty<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></h3>
 <p>Often in life we are confronted by our own ignorance. Whether we are pondering tonight’s traffic jam, tomorrow’s weather, next week’s stock prices, an upcoming election, or where we left our hat, often we do not know an outcome with certainty. Instead, we are forced to guess, to estimate, to hedge our bets.</p>
 <blockquote>
 <p>Probability is the science of uncertainty.</p>
@@ -236,9 +243,9 @@ ATAGTA
 </div>
 </div>
 <div id="sample-spaces-and-events" class="section level2">
-<h2><span class="header-section-number">2.2</span> Sample Spaces and Events</h2>
+<h2><span class="header-section-number">2.1</span> Sample Spaces and Events</h2>
 <div id="sample-spaces" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Sample Spaces</h3>
+<h3><span class="header-section-number">2.1.1</span> Sample Spaces</h3>
 
 <div class="definition">
 <span id="def:unnamed-chunk-8" class="definition"><strong>Definition 2.1  (Sample Space)  </strong></span>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible outcomes of an experiment. Points <span class="math inline">\(\omega\)</span> in <span class="math inline">\(\Omega\)</span> are called sample outcomes, realizations, or elements.
@@ -283,7 +290,7 @@ s\in \Omega
 <p>if <span class="math inline">\(s\)</span> <em>is a member of the set</em> <span class="math inline">\(\Omega\)</span>.</p>
 </div>
 <div id="events" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Events</h3>
+<h3><span class="header-section-number">2.1.2</span> Events</h3>
 
 <div class="definition">
 <span id="def:unnamed-chunk-15" class="definition"><strong>Definition 2.2  (Event)  </strong></span>An event <span class="math inline">\(E\)</span> is a subset of the sample space <span class="math inline">\(\Omega\)</span> (<span class="math inline">\(E \subseteq \Omega\)</span>). Events are usually denoted by upper case letters near the beginning of the alphabet, like <span class="math inline">\(A, B, C\)</span>. An event which consists of only one outcome is called a simple (or elementary event); otherwise it is a compound event.
@@ -309,8 +316,92 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 <li><span class="math inline">\(A \backslash B = A \cap B^c\)</span></li>
 </ul>
 <p>The empty event will be denoted by <span class="math inline">\(\varnothing\)</span>. Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive if <span class="math inline">\(A \cap B = \varnothing\)</span>, i.e., the collection of sample outcomes have no element in common.</p>
+<div class="figure">
+<img src="images/venn.png" />
 
 </div>
+</div>
+</div>
+<div id="axioms-interpretations-and-properties-of-probability" class="section level2">
+<h2><span class="header-section-number">2.2</span> Axioms, Interpretations, and Properties of Probability</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-17" class="definition"><strong>Definition 2.3  (Axioms (basic properties) of Probability)  </strong></span>To ensure that the probability assignments will be consistent with our intuitive notions of probability, all assign- ments should satisfy the following axioms (basic properties) of probability</p>
+<ul>
+<li><strong>AXIOM 1:</strong> For any event <span class="math inline">\(A\)</span>, <span class="math display">\[ P(A) \geq 0 \]</span></li>
+<li><strong>AXIOM 2:</strong> <span class="math display">\[ P(\Omega) = 1 \]</span></li>
+<li><strong>AXIOM 3:</strong> If <span class="math inline">\(A_1, A_2, \ldots\)</span> is an infinite collection of disjoint events, then <span class="math display">\[   P\left(A_1 \cup A_2 \cup \cdots \right) = \sum_{i=1}^{\infty} P(A_i)  \]</span></li>
+</ul>
+</div>
+
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-18" class="proposition"><strong>Proposition 2.1 </strong></span><span class="math inline">\(P(\varnothing) = 0\)</span> where <span class="math inline">\(\varnothing\)</span> is the null event. This in turn implies that the property contained in Axiom 3 is valid for a finite collection of events.
+</div>
+
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-19" class="proposition"><strong>Proposition 2.2 </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
+<span class="math display">\[ P(A) = 1 - P(A^c) \]</span>
+</div>
+
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-20" class="proposition"><strong>Proposition 2.3 </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
+<span class="math display">\[ P(A) \leq 1 \]</span>
+</div>
+
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-21" class="proposition"><strong>Proposition 2.4 </strong></span>For any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,<br />
+<span class="math display">\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]</span>
+</div>
+
+</div>
+<div id="counting-techniques" class="section level2">
+<h2><span class="header-section-number">2.3</span> Counting Techniques</h2>
+<p>When the various outcomes of an experiment are equally likely (the same probability is assigned to each simple event), the task of computing probabilities reduces to counting. In particular, if <span class="math inline">\(N\)</span> is the number of outcomes in a sample space and <span class="math inline">\(N(A)\)</span> is the number of outcomes contained in an event <span class="math inline">\(A\)</span>, then <span class="math display">\[ P(A) = \frac{N(A)}{N} \]</span></p>
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-22" class="proposition"><strong>Proposition 2.5  (Product rule for ordered pairs)  </strong></span>If the first element or object of an ordered pair can be selected in <span class="math inline">\(n_1\)</span> ways, and for each of these <span class="math inline">\(n_1\)</span> ways the second element of the pair can be selected in <span class="math inline">\(n_2\)</span> ways, then the number of pairs is <span class="math inline">\(n_1 \cdot n_2\)</span>.
+</div>
+
+<div id="permutations" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Permutations</h3>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-23" class="definition"><strong>Definition 2.4  (Permutation)  </strong></span>Any ordered sequence of <span class="math inline">\(k\)</span> objects taken from a set of <span class="math inline">\(n\)</span> distinct objects is called a permutation of size <span class="math inline">\(k\)</span> of the objects. The number of permutations of size <span class="math inline">\(k\)</span> that can be constructed from the <span class="math inline">\(n\)</span> objects is denoted by <span class="math inline">\(P_k^n\)</span>:</p>
+<span class="math display">\[ P_k^n = \frac{n!}{(n-k)!} \]</span>
+</div>
+
+</div>
+<div id="combinations" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Combinations</h3>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-24" class="definition"><strong>Definition 2.5  (Combination)  </strong></span>Given a set of <span class="math inline">\(n\)</span> distinct objects, any unordered subset of size <span class="math inline">\(k\)</span> of the objects is called a combination. The number of combinations <span class="math inline">\(n\)</span> of size <span class="math inline">\(k\)</span> that can be formed from <span class="math inline">\(n\)</span> distinct objects will be denoted by</p>
+<span class="math display">\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{P_k^n}{k!} \]</span>
+</div>
+
+</div>
+</div>
+<div id="conditional-probability" class="section level2">
+<h2><span class="header-section-number">2.4</span> Conditional Probability</h2>
+<p>Conditional probability is the means by which probabilities are updated in the light of new information. We examine how the information <em>an event B has occurred</em> affects the probability assigned to <span class="math inline">\(A\)</span>.</p>
+
+<div class="example">
+<span id="ex:unnamed-chunk-25" class="example"><strong>Example 2.8  ()  </strong></span>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-26" class="definition"><strong>Definition 2.6  (Conditional Probability)  </strong></span></p>
+</div>
+
+</div>
+<div id="independence" class="section level2">
+<h2><span class="header-section-number">2.5</span> Independence</h2>
+
 </div>
 </div>
 
