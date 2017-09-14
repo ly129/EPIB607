@@ -322,9 +322,11 @@ Two balanced coins were tossed, and it is known that at least one was a head. Wh
 
 ```{example, name="Two Cards"}
 Two cards are drawn without replacement from a standard deck. Find the probability that  
+
 1) the second is an ace, given that the first is not an ace.  
 2) the second is an ace.  
 3) the first was an ace, given that the second is an ace.  
+
 
 ```
 
@@ -363,6 +365,8 @@ A tank has three red fish and two blue fish. Two fish are chosen at random and w
 1) red fish first and then a blue fish?  
 2) both fish red?  
 3) one red fish and one blue fish?  
+
+
 
 ```
 
@@ -408,7 +412,9 @@ Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls
 
 1) What is the probability that urn #2 is selected at the first stage (event A) and a blue ball is selected at the second stage (event B)?  
 2) Compute the probability that a blue ball is obtained.  
-3) Now suppose we are given the information that the ball picked is blue. What is probability that we had selected urn #2?    
+3) Now suppose we are given the information that the ball picked is blue. What is probability that we had selected urn #2?  
+
+
 ```
 
 
@@ -417,6 +423,8 @@ There are three Canadian firms which build large bridges, firm 1, firm 2, and fi
 
 1) What is the probability that a bridge collapses?  
 2) Suppose it is reported in tomorrow's newspaper that a large bridge has collapsed. What is the probability it was built by firm 1?   
+
+
 
 ```
 
