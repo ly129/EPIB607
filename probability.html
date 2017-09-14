@@ -148,7 +148,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.3.1" data-path="probability.html"><a href="probability.html#permutations"><i class="fa fa-check"></i><b>2.3.1</b> Permutations</a></li>
 <li class="chapter" data-level="2.3.2" data-path="probability.html"><a href="probability.html#combinations"><i class="fa fa-check"></i><b>2.3.2</b> Combinations</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="probability.html"><a href="probability.html#conditional-probability"><i class="fa fa-check"></i><b>2.4</b> Conditional Probability</a></li>
+<li class="chapter" data-level="2.4" data-path="probability.html"><a href="probability.html#conditional-probability"><i class="fa fa-check"></i><b>2.4</b> Conditional Probability</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="probability.html"><a href="probability.html#law-of-total-probability"><i class="fa fa-check"></i><b>2.4.1</b> Law of Total Probability</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probability.html"><a href="probability.html#bayes-rule"><i class="fa fa-check"></i><b>2.4.2</b> Bayes’ Rule</a></li>
+</ul></li>
 <li class="chapter" data-level="2.5" data-path="probability.html"><a href="probability.html#independence"><i class="fa fa-check"></i><b>2.5</b> Independence</a></li>
 </ul></li>
 <li class="appendix"><span><b>R Tutorial</b></span></li>
@@ -390,17 +393,206 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 <p>Conditional probability is the means by which probabilities are updated in the light of new information. We examine how the information <em>an event B has occurred</em> affects the probability assigned to <span class="math inline">\(A\)</span>.</p>
 
 <div class="example">
-<span id="ex:unnamed-chunk-25" class="example"><strong>Example 2.8  ()  </strong></span>
+<p><span id="ex:flipcoins" class="example"><strong>Example 2.8  (Flipping Coins)  </strong></span>We flip three different fair coins, and<br />
+<span class="math display">\[ \Omega = {H H H, H H T, H T H, H T T, T H H, T H T, T T H, T T T } \]</span> with <span class="math inline">\(P(s) = 1/8\)</span> for each <span class="math inline">\(s \in \Omega\)</span>. What is the probability that the first coin comes up heads?</p>
+<p><span class="math display">\[ P(\textrm{first coin heads}) = P({H H H, H H T, H T H, H T T }) = 4/8 = 1/2 \]</span></p>
+<p>But suppose now that an informant tells us that exactly two of the three coins came up heads. Now what is the probability that the first coin was heads? if we know that exactly two of the coins were heads, then we know that the outcome was one of <span class="math inline">\({H H T , H T H, T H H}\)</span>.</p>
+<p>Because those three outcomes should (in this case) still all be equally likely, and because only the first two correspond to the first coin being heads, we conclude the following: If we know that exactly two of the three coins are heads, then the probability that the first coin is heads is <span class="math inline">\(2/3\)</span>.</p>
+<p>More precisely, we have computed a conditional probability. That is, we have determined that, conditional on knowing that exactly two coins came up heads, the conditional probability of the first coin being heads is 2/3. We write this in mathematical notation as</p>
+<p><span class="math display">\[ P(\textrm{first coin heads} | \textrm{two coins heads}) = 2/3. \]</span></p>
+Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em>.
 </div>
 
+
+<div class="example">
+<p><span id="ex:assembly" class="example"><strong>Example 2.9  (Assembly Lines)  </strong></span>Complex components are assembled in a plant that uses two different assembly lines, <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span> . Line <span class="math inline">\(A\)</span> uses older equipment than <span class="math inline">\(A^c\)</span>, so it is somewhat slower and less reliable. <span class="math inline">\(B\)</span> are the defective components and <span class="math inline">\(B^c\)</span> are the nondefective.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Condition</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Line</strong></td>
+<td><span class="math inline">\(B\)</span></td>
+<td><span class="math inline">\(B^c\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A\)</span></td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A^c\)</span></td>
+<td>1</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>The sales manager randomly selects 1 of these 18 components for a demonstration<br />
+<span class="math display">\[ P(\textrm{line A component was selected}) = P(A) = \frac{N(A)}{N} = \frac{8}{18} = 0.444 \]</span></p>
+<p>However, if the chosen component turns out to be defective, then the event <span class="math inline">\(B\)</span> has occurred, so the component must have been 1 of the 3 in the <span class="math inline">\(B\)</span> column of the table. Since these 3 components are equally likely among themselves after <span class="math inline">\(B\)</span> has occurred</p>
+<p><span class="math display">\[ P(\textrm{line A component was selected} | \textrm{Defective}) = \frac{2}{3} = \frac{2/18}{3/18} = \frac{P(A \cap B)}{P(B)} \]</span></p>
+</div>
+
+<p>In Example <a href="#exm:assembly"><strong>??</strong></a>, the conditional probability is expressed as a ratio of <strong>unconditional probabilities</strong>. The numerator is the probability of the intersection of the two events, whereas the denominator is the probability of the conditioning event <span class="math inline">\(B\)</span>. Given that <span class="math inline">\(B\)</span> has occurred, the relevant sample space is no longer <span class="math inline">\(\Omega\)</span> but consists of just outcomes in <span class="math inline">\(B\)</span>; A has occurred if and only if <em>one of the outcomes in the intersection</em> occurred, so the conditional probability of A given B is proportional to <span class="math inline">\(P(A \cap B)\)</span>. The proportionality constant <span class="math inline">\(1/P(B)\)</span> is used to ensure that the probability <span class="math inline">\(P(B | B)\)</span> of the new sample space <span class="math inline">\(B\)</span> equals 1.</p>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-26" class="definition"><strong>Definition 2.6  (Conditional Probability)  </strong></span></p>
+<p><span id="def:condprob" class="definition"><strong>Definition 2.6  (Conditional Probability)  </strong></span>Given two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, with <span class="math inline">\(P(B) &gt; 0\)</span>, the conditional probability of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span> is equal to</p>
+<p><span class="math display">\[ P(A|B) = \frac{P(A \cap B)}{P(B)}  \]</span></p>
 </div>
 
+<p>In example <a href="#exm:flipcoins"><strong>??</strong></a>, let<br />
+- <span class="math inline">\(A = {H H H, H H T, H T H, H T T }\)</span> be the event that the first coin is heads<br />
+- <span class="math inline">\(B = {H H T, H T H, T H H}\)</span> be the event that exactly two coins were heads</p>
+<p>It follows that</p>
+<p><span class="math display">\[ A \cap B = {H H T, H T H}\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P({H H T, H T H})}{P({H H T, H T H, T H H})} = \frac{2/8}{3/8} = \frac{2}{3}\]</span></p>
+
+<div class="example">
+<p><span id="ex:unnamed-chunk-25" class="example"><strong>Example 2.10  (Balanced die)  </strong></span>Suppose a balanced die is tossed in the next room. We are told that a number less than 4 was observed. What is the probability the number was either 1 or 2?</p>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-26" class="example"><strong>Example 2.11  (Two Balanced Dice v1)  </strong></span>Toss two balanced dice. Let <span class="math inline">\(A\)</span> = {sum of 5} and <span class="math inline">\(B\)</span> = {first die is <span class="math inline">\(\leq\)</span> 2}. Find <span class="math inline">\(P(A|B)\)</span>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-27" class="example"><strong>Example 2.12  (Two Balanced Dice v2)  </strong></span>Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?
+</div>
+
+
+<div class="example">
+<span id="ex:unbalanced" class="example"><strong>Example 2.13  (Unbalanced Die)  </strong></span>Toss an unbalanced die with probs <span class="math inline">\(P(1)=.1\)</span>, <span class="math inline">\(P(2)=.1\)</span>, <span class="math inline">\(P(3)=.3\)</span>, <span class="math inline">\(P(4)=.2\)</span>, <span class="math inline">\(P(5)=.1\)</span>, <span class="math inline">\(P(6)=.2\)</span>. Let <span class="math inline">\(A={\geq 5}\)</span> and <span class="math inline">\(B={\geq 2}\)</span>. Find <span class="math inline">\(P(A|B)\)</span>.
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-28" class="example"><strong>Example 2.14  (Two Balanced Coins)  </strong></span>Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-29" class="example"><strong>Example 2.15  (Two Cards)  </strong></span>Two cards are drawn without replacement from a standard deck. Find the probability that<br />
+1) the second is an ace, given that the first is not an ace.<br />
+2) the second is an ace.<br />
+3) the first was an ace, given that the second is an ace.
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-30" class="example"><strong>Example 2.16  (Numbers in a Hat)  </strong></span>The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-31" class="example"><strong>Example 2.17  (One Card)  </strong></span>A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?
+</div>
+
+<p>Definition <a href="probability.html#def:condprob">2.6</a> immediately leads to the <em>multiplication formula</em></p>
+
+<div class="definition">
+<p><span id="def:multformula" class="definition"><strong>Definition 2.7  (Multiplicative Rule)  </strong></span><span class="math display">\[P(A \cap B) = P(A|B) P(B)\]</span></p>
+<p>and</p>
+<p><span class="math display">\[P(A \cap B) = P(B|A) P(A)\]</span></p>
+</div>
+
+<p>This allows us to compute the joint probability of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> when we are given the probability of <span class="math inline">\(B\)</span> and the conditional probability of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, and vice versa.</p>
+
+<div class="example">
+<p><span id="ex:unnamed-chunk-32" class="example"><strong>Example 2.18  (Fish in a Tank)  </strong></span>A tank has three red fish and two blue fish. Two fish are chosen at random and without replacement. What is the probability of getting</p>
+<ol style="list-style-type: decimal">
+<li>red fish first and then a blue fish?<br />
+</li>
+<li>both fish red?<br />
+</li>
+<li>one red fish and one blue fish?<br />
+</li>
+</ol>
+</div>
+
+<div id="law-of-total-probability" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Law of Total Probability</h3>
+<p>Recall that events <span class="math inline">\(A_1, A_2, \ldots, A_k\)</span> are mutually exclusive if no two have any common outcomes. The events are exhaustive if one <span class="math inline">\(A_i\)</span> must occure, so that<br />
+<span class="math display">\[A_1 \cup A_2 \cup \cdots \cup A_k = \Omega \]</span></p>
+
+<div class="theorem">
+<span id="thm:totprob" class="theorem"><strong>Theorem 2.1  (Law of Total Probability)  </strong></span>Let <span class="math inline">\(A_1, A_2, \ldots, A_k\)</span> be mutually exclusive and exhaustive events. Then for any other event <span class="math inline">\(B\)</span>,<br />
+<span class="math display">\[P(B) = P(B|A_1) P(A_1) + \cdots + P(B|A_k)P(A_k) = \sum_{i=1}^{k} P(B|A_i) P(A_i)\]</span>
+</div>
+
+<p><strong>Proof</strong>: Because the <span class="math inline">\(A_i\)</span>’s are mutually exclusive and exhaustive, if <span class="math inline">\(B\)</span> occurs it must be in conjunction with exactly one of the <span class="math inline">\(A_i\)</span>’s. That is, <span class="math inline">\(B= (A_1\textrm{ and }B)\)</span> or <span class="math inline">\(\ldots\)</span> or <span class="math inline">\((A_k\textrm{ and }B)\)</span> which is equal to <span class="math inline">\((A_1 \cap B) \cup \cdots \cup (A_k \cap B)\)</span>, where the events <span class="math inline">\((A_i \cap B)\)</span> are mutually exclusive.</p>
+<div class="figure">
+<img src="images/totalprob.png" />
+
+</div>
+<p>Thus we have</p>
+<p><span class="math display">\[P(B) =\sum_{i=1}^{k} P(A_i \cap B) = \sum_{i=1}^{k} P(B|A_i) P(A_i) \]</span></p>
+
+<div class="example">
+<span id="ex:unnamed-chunk-33" class="example"><strong>Example 2.19  (Long Hair)  </strong></span>Suppose a class contains 60% girls and 40% boys. Suppose that 30% of the girls have long hair, and 20% of the boys have long hair. A student is chosen uniformly at random from the class. What is the probability that the chosen student will have long hair?
+</div>
+
+</div>
+<div id="bayes-rule" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Bayes’ Rule</h3>
+
+<div class="theorem">
+<p><span id="thm:bayesdef" class="theorem"><strong>Theorem 2.2  (Bayes’ Rule)  </strong></span>Let <span class="math inline">\(A_1, \ldots, A_k\)</span> be a collection of mutually exclusive and exhaustive events with <span class="math inline">\(P(A_i) &gt; 0\)</span> for <span class="math inline">\(i=1, \ldots, k\)</span>. Then for any other event B, for which <span class="math inline">\(P(B)&gt;0\)</span>, we have</p>
+<span class="math display">\[ P(A_j | B) = \frac{P(A_j \cap B)}{P(B)} = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^k P(B|A_i) P(A_i)}, \quad j=1, \ldots, k   \]</span>
+</div>
+
+<p>The transition from the second to the third expression in Theorem <a href="probability.html#thm:bayesdef">2.2</a> rests on using the multiplication rule in the numerator and the law of total probability in the denominator.</p>
+
+<div class="example">
+<p><span id="ex:unnamed-chunk-34" class="example"><strong>Example 2.20  (Urns)  </strong></span>Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls. Suppose one of the two urns is selected with probability <span class="math inline">\(1/2\)</span> each, and then one of the balls within that urn is picked uniformly at random.</p>
+<ol style="list-style-type: decimal">
+<li>What is the probability that urn #2 is selected at the first stage (event A) and a blue ball is selected at the second stage (event B)?<br />
+</li>
+<li>Compute the probability that a blue ball is obtained.<br />
+</li>
+<li>Now suppose we are given the information that the ball picked is blue. What is probability that we had selected urn #2?
+</div>
+</li>
+</ol>
+
+<div class="example">
+<p><span id="ex:unnamed-chunk-35" class="example"><strong>Example 2.21  (Large Bridges)  </strong></span>There are three Canadian firms which build large bridges, firm 1, firm 2, and firm 3. 20% of Canadian large bridges have been built by firm 1, 30% by firm 2, and the rest by firm 3. 5% of the bridges built by firm 1 have collapsed, while 10% of those by firm 2 have collapsed, and 30% by firm 3 have collapsed.</p>
+<ol style="list-style-type: decimal">
+<li>What is the probability that a bridge collapses?<br />
+</li>
+<li>Suppose it is reported in tomorrow’s newspaper that a large bridge has collapsed. What is the probability it was built by firm 1?
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div id="independence" class="section level2">
 <h2><span class="header-section-number">2.5</span> Independence</h2>
+<p>If we flip a fair coin twice, then the probability of two heads is <span class="math inline">\(1/2 \times 1/2\)</span>. We multiply the probabilities because we regard the two tosses as independent. The formal definition of independence is as follows:</p>
+
+<div class="definition">
+<span id="def:indep" class="definition"><strong>Definition 2.8  (Indepent Events)  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if<br />
+<span class="math display">\[ P(A \cap B) = P(A) P(B) \]</span>
+</div>
+
+<p>Now, because <span class="math inline">\(P(A | B) = P( A \cap B)/P(B)\)</span>, we see that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if and only if <span class="math inline">\(P(A | B) = P(A)\)</span> or <span class="math inline">\(P(B | A) = P(B)\)</span>, provided that <span class="math inline">\(P(A) &gt; 0\)</span> and <span class="math inline">\(P(B) &gt; 0\)</span>. Definition <a href="probability.html#def:indep">2.8</a> has the advantage that it remains valid even if <span class="math inline">\(P(B) = 0\)</span> or <span class="math inline">\(P(A) = 0\)</span>, respectively. Intuitively, events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if neither one has any impact on the probability of the other.</p>
+
+<div class="example">
+<p><span id="ex:unnamed-chunk-36" class="example"><strong>Example 2.22  (Toss a fair coin 10 times)  </strong></span>Toss a fair coin 10 times. Let <span class="math inline">\(A = {\textrm{at least one head}}\)</span>. Let <span class="math inline">\(T_j\)</span> be the event that tails occurs on the <span class="math inline">\(j^{th}\)</span> toss. Find <span class="math inline">\(P(A)\)</span></p>
+</div>
+
+
+<div class="example">
+<span id="ex:unnamed-chunk-37" class="example"><strong>Example 2.23  (Unbalance Die Revisited)  </strong></span>In Example <a href="#exm:unbalanced"><strong>??</strong></a>, if <span class="math inline">\(A\)</span> is the event that the die was 5, and <span class="math inline">\(B\)</span> is the event that the coin was tails, then calculate <span class="math inline">\(P(A), P(B)\)</span> and <span class="math inline">\(P(A\cap B)\)</span>
+</div>
+
 
 </div>
 </div>
