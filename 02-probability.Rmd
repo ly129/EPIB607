@@ -297,22 +297,26 @@ Suppose a balanced die is tossed in the next room. We are told that a number les
 
 
 ```{example, name="Two Balanced Dice v1"}
-Toss two balanced dice. Let $A$ = {sum of 5} and $B$ = {first die is $\leq$ 2}. Find $P(A|B)$
+Toss two balanced dice. Let $A$ = {sum of 5} and $B$ = {first die is $\leq$ 2}. Find $P(A|B)$  
+
 ```
 
 
 ```{example, name="Two Balanced Dice v2"}
-Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?
+Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?  
+
 ```
 
 
 ```{example, unbalanced, name="Unbalanced Die"}
-Toss an unbalanced die with probs $P(1)=.1$, $P(2)=.1$, $P(3)=.3$, $P(4)=.2$, $P(5)=.1$, $P(6)=.2$. Let $A={\geq 5}$ and $B={\geq 2}$. Find $P(A|B)$.
+Toss an unbalanced die with probs $P(1)=.1$, $P(2)=.1$, $P(3)=.3$, $P(4)=.2$, $P(5)=.1$, $P(6)=.2$. Let $A={\geq 5}$ and $B={\geq 2}$. Find $P(A|B)$.  
+
 ```
 
 
 ```{example, name="Two Balanced Coins"}
-Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?
+Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?  
+
 ```
 
 
@@ -321,16 +325,19 @@ Two cards are drawn without replacement from a standard deck. Find the probabili
 1) the second is an ace, given that the first is not an ace.  
 2) the second is an ace.  
 3) the first was an ace, given that the second is an ace.  
+
 ```
 
 
 ```{example, name="Numbers in a Hat"}
-The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?
+The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?  
+
 ```
 
 
 ```{example, name="One Card"}
-A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?
+A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?  
+
 ```
 
 
@@ -389,7 +396,8 @@ Suppose a class contains 60% girls and 40% boys. Suppose that 30% of the girls h
 ```{theorem, bayesdef, name="Bayes' Rule"}
 Let $A_1, \ldots, A_k$ be a collection of mutually exclusive and exhaustive events with $P(A_i) > 0$ for $i=1, \ldots, k$. Then for any other event B, for which $P(B)>0$, we have  
 
-\[ P(A_j | B) = \frac{P(A_j \cap B)}{P(B)} = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^k P(B|A_i) P(A_i)}, \quad j=1, \ldots, k   \]
+\[ P(A_j | B) = \frac{P(A_j \cap B)}{P(B)} = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^k P(B|A_i) P(A_i)}, \quad j=1, \ldots, k   \]  
+
 ```
 
 The transition from the second to the third expression in Theorem \@ref(thm:bayesdef) rests on using the multiplication rule in the numerator and the law of total probability in the denominator.
@@ -400,7 +408,7 @@ Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls
 
 1) What is the probability that urn #2 is selected at the first stage (event A) and a blue ball is selected at the second stage (event B)?  
 2) Compute the probability that a blue ball is obtained.  
-3) Now suppose we are given the information that the ball picked is blue. What is probability that we had selected urn #2?  
+3) Now suppose we are given the information that the ball picked is blue. What is probability that we had selected urn #2?    
 ```
 
 
@@ -408,7 +416,8 @@ Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls
 There are three Canadian firms which build large bridges, firm 1, firm 2, and firm 3. 20% of Canadian large bridges have been built by firm 1, 30% by firm 2, and the rest by firm 3. 5% of the bridges built by firm 1 have collapsed, while 10% of those by firm 2 have collapsed, and 30% by firm 3 have collapsed.  
 
 1) What is the probability that a bridge collapses?  
-2) Suppose it is reported in tomorrow's newspaper that a large bridge has collapsed. What is the probability it was built by firm 1?  
+2) Suppose it is reported in tomorrow's newspaper that a large bridge has collapsed. What is the probability it was built by firm 1?   
+
 ```
 
 
@@ -426,14 +435,15 @@ Now, because $P(A | B) = P( A \cap B)/P(B)$, we see that $A$ and $B$ are indepen
 has any impact on the probability of the other.
 
 ```{example, name="Toss a fair coin 10 times"}
-Toss a fair coin 10 times. Let $A = {\textrm{at least one head}}$. Let $T_j$ be the event that tails occurs on the $j^{th}$ toss. Find $P(A)$
+Toss a fair coin 10 times. Let $A = {\textrm{at least one head}}$. Let $T_j$ be the event that tails occurs on the $j^{th}$ toss. Find $P(A)$  
 
 ```
 
 
 
 ```{example, name="Unbalance Die Revisited"}
-In Example \@ref(exm:unbalanced), if $A$ is the event that the die was 5, and $B$ is the event that the coin was tails, then calculate $P(A), P(B)$ and $P(A\cap B)$
+In Example \@ref(exm:unbalanced), if $A$ is the event that the die was 5, and $B$ is the event that the coin was tails, then calculate $P(A), P(B)$ and $P(A\cap B)$  
+
 ```
 
 
