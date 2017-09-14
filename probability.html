@@ -459,40 +459,40 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-26" class="example"><strong>Example 2.11  (Two Balanced Dice v1)  </strong></span>Toss two balanced dice. Let <span class="math inline">\(A\)</span> = {sum of 5} and <span class="math inline">\(B\)</span> = {first die is <span class="math inline">\(\leq\)</span> 2}. Find <span class="math inline">\(P(A|B)\)</span>
+<p><span id="ex:unnamed-chunk-26" class="example"><strong>Example 2.11  (Two Balanced Dice v1)  </strong></span>Toss two balanced dice. Let <span class="math inline">\(A\)</span> = {sum of 5} and <span class="math inline">\(B\)</span> = {first die is <span class="math inline">\(\leq\)</span> 2}. Find <span class="math inline">\(P(A|B)\)</span></p>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-27" class="example"><strong>Example 2.12  (Two Balanced Dice v2)  </strong></span>Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?
+<p><span id="ex:unnamed-chunk-27" class="example"><strong>Example 2.12  (Two Balanced Dice v2)  </strong></span>Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?</p>
 </div>
 
 
 <div class="example">
-<span id="ex:unbalanced" class="example"><strong>Example 2.13  (Unbalanced Die)  </strong></span>Toss an unbalanced die with probs <span class="math inline">\(P(1)=.1\)</span>, <span class="math inline">\(P(2)=.1\)</span>, <span class="math inline">\(P(3)=.3\)</span>, <span class="math inline">\(P(4)=.2\)</span>, <span class="math inline">\(P(5)=.1\)</span>, <span class="math inline">\(P(6)=.2\)</span>. Let <span class="math inline">\(A={\geq 5}\)</span> and <span class="math inline">\(B={\geq 2}\)</span>. Find <span class="math inline">\(P(A|B)\)</span>.
+<p><span id="ex:unbalanced" class="example"><strong>Example 2.13  (Unbalanced Die)  </strong></span>Toss an unbalanced die with probs <span class="math inline">\(P(1)=.1\)</span>, <span class="math inline">\(P(2)=.1\)</span>, <span class="math inline">\(P(3)=.3\)</span>, <span class="math inline">\(P(4)=.2\)</span>, <span class="math inline">\(P(5)=.1\)</span>, <span class="math inline">\(P(6)=.2\)</span>. Let <span class="math inline">\(A={\geq 5}\)</span> and <span class="math inline">\(B={\geq 2}\)</span>. Find <span class="math inline">\(P(A|B)\)</span>.</p>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-28" class="example"><strong>Example 2.14  (Two Balanced Coins)  </strong></span>Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?
+<p><span id="ex:unnamed-chunk-28" class="example"><strong>Example 2.14  (Two Balanced Coins)  </strong></span>Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?</p>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-29" class="example"><strong>Example 2.15  (Two Cards)  </strong></span>Two cards are drawn without replacement from a standard deck. Find the probability that<br />
+<p><span id="ex:unnamed-chunk-29" class="example"><strong>Example 2.15  (Two Cards)  </strong></span>Two cards are drawn without replacement from a standard deck. Find the probability that<br />
 1) the second is an ace, given that the first is not an ace.<br />
 2) the second is an ace.<br />
-3) the first was an ace, given that the second is an ace.
+3) the first was an ace, given that the second is an ace.</p>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-30" class="example"><strong>Example 2.16  (Numbers in a Hat)  </strong></span>The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?
+<p><span id="ex:unnamed-chunk-30" class="example"><strong>Example 2.16  (Numbers in a Hat)  </strong></span>The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?</p>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-31" class="example"><strong>Example 2.17  (One Card)  </strong></span>A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?
+<p><span id="ex:unnamed-chunk-31" class="example"><strong>Example 2.17  (One Card)  </strong></span>A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?</p>
 </div>
 
 <p>Definition <a href="probability.html#def:condprob">2.6</a> immediately leads to the <em>multiplication formula</em></p>
@@ -545,7 +545,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 <div class="theorem">
 <p><span id="thm:bayesdef" class="theorem"><strong>Theorem 2.2  (Bayes’ Rule)  </strong></span>Let <span class="math inline">\(A_1, \ldots, A_k\)</span> be a collection of mutually exclusive and exhaustive events with <span class="math inline">\(P(A_i) &gt; 0\)</span> for <span class="math inline">\(i=1, \ldots, k\)</span>. Then for any other event B, for which <span class="math inline">\(P(B)&gt;0\)</span>, we have</p>
-<span class="math display">\[ P(A_j | B) = \frac{P(A_j \cap B)}{P(B)} = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^k P(B|A_i) P(A_i)}, \quad j=1, \ldots, k   \]</span>
+<p><span class="math display">\[ P(A_j | B) = \frac{P(A_j \cap B)}{P(B)} = \frac{P(B|A_j) P(A_j)}{\sum_{i=1}^k P(B|A_i) P(A_i)}, \quad j=1, \ldots, k   \]</span></p>
 </div>
 
 <p>The transition from the second to the third expression in Theorem <a href="probability.html#thm:bayesdef">2.2</a> rests on using the multiplication rule in the numerator and the law of total probability in the denominator.</p>
@@ -567,10 +567,11 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <ol style="list-style-type: decimal">
 <li>What is the probability that a bridge collapses?<br />
 </li>
-<li>Suppose it is reported in tomorrow’s newspaper that a large bridge has collapsed. What is the probability it was built by firm 1?
-</div>
+<li>Suppose it is reported in tomorrow’s newspaper that a large bridge has collapsed. What is the probability it was built by firm 1?<br />
 </li>
 </ol>
+</div>
+
 </div>
 </div>
 <div id="independence" class="section level2">
@@ -590,7 +591,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-37" class="example"><strong>Example 2.23  (Unbalance Die Revisited)  </strong></span>In Example <a href="#exm:unbalanced"><strong>??</strong></a>, if <span class="math inline">\(A\)</span> is the event that the die was 5, and <span class="math inline">\(B\)</span> is the event that the coin was tails, then calculate <span class="math inline">\(P(A), P(B)\)</span> and <span class="math inline">\(P(A\cap B)\)</span>
+<p><span id="ex:unnamed-chunk-37" class="example"><strong>Example 2.23  (Unbalance Die Revisited)  </strong></span>In Example <a href="#exm:unbalanced"><strong>??</strong></a>, if <span class="math inline">\(A\)</span> is the event that the die was 5, and <span class="math inline">\(B\)</span> is the event that the coin was tails, then calculate <span class="math inline">\(P(A), P(B)\)</span> and <span class="math inline">\(P(A\cap B)\)</span></p>
 </div>
 
 
