@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>MATH 697</title>
   <meta name="description" content="Course material for MATH 697">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="MATH 697" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-09-14">
+<meta name="date" content="2017-09-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -210,7 +210,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>For example, consider two nucleotide sequences of the same length that we wish to assess for similarity:</p>
 
 <div class="example">
-<span id="ex:unnamed-chunk-7" class="example"><strong>Example 2.1  (Two nucleotide sequences)  </strong></span>
+<span id="exm:unnamed-chunk-7" class="example"><strong>Example 2.1  (Two nucleotide sequences)  </strong></span>
 <span class="math display">\[\begin{equation*}
 \begin{array}{ll}
 \text{{Sequence 1}}{\qquad } &amp; ATAGTAGATACGCACCGAGGA \\
@@ -256,32 +256,32 @@ ATAGTA
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-9" class="example"><strong>Example 2.2  (Coin tossing)  </strong></span><span class="math inline">\(\Omega = \left\lbrace H, T \right\rbrace\)</span>
+<span id="exm:unnamed-chunk-9" class="example"><strong>Example 2.2  (Coin tossing)  </strong></span><span class="math inline">\(\Omega = \left\lbrace H, T \right\rbrace\)</span>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-10" class="example"><strong>Example 2.3  (Dice)  </strong></span><span class="math inline">\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)</span>
+<span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.3  (Dice)  </strong></span><span class="math inline">\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)</span>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-11" class="example"><strong>Example 2.4  (Proportions)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)</span>
+<span id="exm:unnamed-chunk-11" class="example"><strong>Example 2.4  (Proportions)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)</span>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-12" class="example"><strong>Example 2.5  (Time measurement)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : x &gt; 0 \right\rbrace = {\mathbb{R}}^{+}\)</span>
+<span id="exm:unnamed-chunk-12" class="example"><strong>Example 2.5  (Time measurement)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : x &gt; 0 \right\rbrace = {\mathbb{R}}^{+}\)</span>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-13" class="example"><strong>Example 2.6  (Temperature measurement)  </strong></span><span class="math inline">\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)</span>
+<span id="exm:unnamed-chunk-13" class="example"><strong>Example 2.6  (Temperature measurement)  </strong></span><span class="math inline">\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)</span>
 </div>
 
 
 <div class="example">
-<span id="ex:unnamed-chunk-14" class="example"><strong>Example 2.7  (Biological Sequence Analysis)  </strong></span>The experiment may involve the observation of a nucleotide or protein sequence, so that the sample space <span class="math inline">\(\Omega\)</span> may comprise all sequences (of bases/amino acids) up to a given length, and a sample outcome would be a particular observed sequence.
+<span id="exm:unnamed-chunk-14" class="example"><strong>Example 2.7  (Biological Sequence Analysis)  </strong></span>The experiment may involve the observation of a nucleotide or protein sequence, so that the sample space <span class="math inline">\(\Omega\)</span> may comprise all sequences (of bases/amino acids) up to a given length, and a sample outcome would be a particular observed sequence.
 </div>
 
 <p>There are two basic types of experiment: - Counting - Measurement</p>
@@ -339,24 +339,24 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-18" class="proposition"><strong>Proposition 2.1 </strong></span><span class="math inline">\(P(\varnothing) = 0\)</span> where <span class="math inline">\(\varnothing\)</span> is the null event. This in turn implies that the property contained in Axiom 3 is valid for a finite collection of events.
+<span id="prp:unnamed-chunk-18" class="proposition"><strong>Proposition 2.1  </strong></span><span class="math inline">\(P(\varnothing) = 0\)</span> where <span class="math inline">\(\varnothing\)</span> is the null event. This in turn implies that the property contained in Axiom 3 is valid for a finite collection of events.
 </div>
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-19" class="proposition"><strong>Proposition 2.2 </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
+<span id="prp:unnamed-chunk-19" class="proposition"><strong>Proposition 2.2  </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
 <span class="math display">\[ P(A) = 1 - P(A^c) \]</span>
 </div>
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-20" class="proposition"><strong>Proposition 2.3 </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
+<span id="prp:unnamed-chunk-20" class="proposition"><strong>Proposition 2.3  </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
 <span class="math display">\[ P(A) \leq 1 \]</span>
 </div>
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-21" class="proposition"><strong>Proposition 2.4 </strong></span>For any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,<br />
+<span id="prp:unnamed-chunk-21" class="proposition"><strong>Proposition 2.4  </strong></span>For any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,<br />
 <span class="math display">\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]</span>
 </div>
 
@@ -393,7 +393,7 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 <p>Conditional probability is the means by which probabilities are updated in the light of new information. We examine how the information <em>an event B has occurred</em> affects the probability assigned to <span class="math inline">\(A\)</span>.</p>
 
 <div class="example">
-<p><span id="ex:flipcoins" class="example"><strong>Example 2.8  (Flipping Coins)  </strong></span>We flip three different fair coins, and<br />
+<p><span id="exm:flipcoins" class="example"><strong>Example 2.8  (Flipping Coins)  </strong></span>We flip three different fair coins, and<br />
 <span class="math display">\[ \Omega = {H H H, H H T, H T H, H T T, T H H, T H T, T T H, T T T } \]</span> with <span class="math inline">\(P(s) = 1/8\)</span> for each <span class="math inline">\(s \in \Omega\)</span>. What is the probability that the first coin comes up heads?</p>
 <p><span class="math display">\[ P(\textrm{first coin heads}) = P({H H H, H H T, H T H, H T T }) = 4/8 = 1/2 \]</span></p>
 <p>But suppose now that an informant tells us that exactly two of the three coins came up heads. Now what is the probability that the first coin was heads? if we know that exactly two of the coins were heads, then we know that the outcome was one of <span class="math inline">\({H H T , H T H, T H H}\)</span>.</p>
@@ -405,7 +405,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<p><span id="ex:assembly" class="example"><strong>Example 2.9  (Assembly Lines)  </strong></span>Complex components are assembled in a plant that uses two different assembly lines, <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span> . Line <span class="math inline">\(A\)</span> uses older equipment than <span class="math inline">\(A^c\)</span>, so it is somewhat slower and less reliable. <span class="math inline">\(B\)</span> are the defective components and <span class="math inline">\(B^c\)</span> are the nondefective.</p>
+<p><span id="exm:assembly" class="example"><strong>Example 2.9  (Assembly Lines)  </strong></span>Complex components are assembled in a plant that uses two different assembly lines, <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span> . Line <span class="math inline">\(A\)</span> uses older equipment than <span class="math inline">\(A^c\)</span>, so it is somewhat slower and less reliable. <span class="math inline">\(B\)</span> are the defective components and <span class="math inline">\(B^c\)</span> are the nondefective.</p>
 <table>
 <thead>
 <tr class="header">
@@ -438,14 +438,14 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p><span class="math display">\[ P(\textrm{line A component was selected} | \textrm{Defective}) = \frac{2}{3} = \frac{2/18}{3/18} = \frac{P(A \cap B)}{P(B)} \]</span></p>
 </div>
 
-<p>In Example <a href="#exm:assembly"><strong>??</strong></a>, the conditional probability is expressed as a ratio of <strong>unconditional probabilities</strong>. The numerator is the probability of the intersection of the two events, whereas the denominator is the probability of the conditioning event <span class="math inline">\(B\)</span>. Given that <span class="math inline">\(B\)</span> has occurred, the relevant sample space is no longer <span class="math inline">\(\Omega\)</span> but consists of just outcomes in <span class="math inline">\(B\)</span>; A has occurred if and only if <em>one of the outcomes in the intersection</em> occurred, so the conditional probability of A given B is proportional to <span class="math inline">\(P(A \cap B)\)</span>. The proportionality constant <span class="math inline">\(1/P(B)\)</span> is used to ensure that the probability <span class="math inline">\(P(B | B)\)</span> of the new sample space <span class="math inline">\(B\)</span> equals 1.</p>
+<p>In Example <a href="probability.html#exm:assembly">2.9</a>, the conditional probability is expressed as a ratio of <strong>unconditional probabilities</strong>. The numerator is the probability of the intersection of the two events, whereas the denominator is the probability of the conditioning event <span class="math inline">\(B\)</span>. Given that <span class="math inline">\(B\)</span> has occurred, the relevant sample space is no longer <span class="math inline">\(\Omega\)</span> but consists of just outcomes in <span class="math inline">\(B\)</span>; A has occurred if and only if <em>one of the outcomes in the intersection</em> occurred, so the conditional probability of A given B is proportional to <span class="math inline">\(P(A \cap B)\)</span>. The proportionality constant <span class="math inline">\(1/P(B)\)</span> is used to ensure that the probability <span class="math inline">\(P(B | B)\)</span> of the new sample space <span class="math inline">\(B\)</span> equals 1.</p>
 
 <div class="definition">
 <p><span id="def:condprob" class="definition"><strong>Definition 2.6  (Conditional Probability)  </strong></span>Given two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, with <span class="math inline">\(P(B) &gt; 0\)</span>, the conditional probability of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span> is equal to</p>
 <p><span class="math display">\[ P(A|B) = \frac{P(A \cap B)}{P(B)}  \]</span></p>
 </div>
 
-<p>In example <a href="#exm:flipcoins"><strong>??</strong></a>, let<br />
+<p>In example <a href="probability.html#exm:flipcoins">2.8</a>, let<br />
 - <span class="math inline">\(A = {H H H, H H T, H T H, H T T }\)</span> be the event that the first coin is heads<br />
 - <span class="math inline">\(B = {H H T, H T H, T H H}\)</span> be the event that exactly two coins were heads</p>
 <p>It follows that</p>
@@ -454,32 +454,32 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p><span class="math display">\[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P({H H T, H T H})}{P({H H T, H T H, T H H})} = \frac{2/8}{3/8} = \frac{2}{3}\]</span></p>
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-25" class="example"><strong>Example 2.10  (Balanced die)  </strong></span>Suppose a balanced die is tossed in the next room. We are told that a number less than 4 was observed. What is the probability the number was either 1 or 2?</p>
+<p><span id="exm:unnamed-chunk-25" class="example"><strong>Example 2.10  (Balanced die)  </strong></span>Suppose a balanced die is tossed in the next room. We are told that a number less than 4 was observed. What is the probability the number was either 1 or 2?</p>
 </div>
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-26" class="example"><strong>Example 2.11  (Two Balanced Dice v1)  </strong></span>Toss two balanced dice. Let <span class="math inline">\(A\)</span> = {sum of 5} and <span class="math inline">\(B\)</span> = {first die is <span class="math inline">\(\leq\)</span> 2}. Find <span class="math inline">\(P(A|B)\)</span></p>
+<p><span id="exm:unnamed-chunk-26" class="example"><strong>Example 2.11  (Two Balanced Dice v1)  </strong></span>Toss two balanced dice. Let <span class="math inline">\(A\)</span> = {sum of 5} and <span class="math inline">\(B\)</span> = {first die is <span class="math inline">\(\leq\)</span> 2}. Find <span class="math inline">\(P(A|B)\)</span></p>
 </div>
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-27" class="example"><strong>Example 2.12  (Two Balanced Dice v2)  </strong></span>Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?</p>
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Example 2.12  (Two Balanced Dice v2)  </strong></span>Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?</p>
 </div>
 
 
 <div class="example">
-<p><span id="ex:unbalanced" class="example"><strong>Example 2.13  (Unbalanced Die)  </strong></span>Toss an unbalanced die with probs <span class="math inline">\(P(1)=.1\)</span>, <span class="math inline">\(P(2)=.1\)</span>, <span class="math inline">\(P(3)=.3\)</span>, <span class="math inline">\(P(4)=.2\)</span>, <span class="math inline">\(P(5)=.1\)</span>, <span class="math inline">\(P(6)=.2\)</span>. Let <span class="math inline">\(A={\geq 5}\)</span> and <span class="math inline">\(B={\geq 2}\)</span>. Find <span class="math inline">\(P(A|B)\)</span>.</p>
+<p><span id="exm:unbalanced" class="example"><strong>Example 2.13  (Unbalanced Die)  </strong></span>Toss an unbalanced die with probs <span class="math inline">\(P(1)=.1\)</span>, <span class="math inline">\(P(2)=.1\)</span>, <span class="math inline">\(P(3)=.3\)</span>, <span class="math inline">\(P(4)=.2\)</span>, <span class="math inline">\(P(5)=.1\)</span>, <span class="math inline">\(P(6)=.2\)</span>. Let <span class="math inline">\(A={\geq 5}\)</span> and <span class="math inline">\(B={\geq 2}\)</span>. Find <span class="math inline">\(P(A|B)\)</span>.</p>
 </div>
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-28" class="example"><strong>Example 2.14  (Two Balanced Coins)  </strong></span>Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?</p>
+<p><span id="exm:unnamed-chunk-28" class="example"><strong>Example 2.14  (Two Balanced Coins)  </strong></span>Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?</p>
 </div>
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-29" class="example"><strong>Example 2.15  (Two Cards)  </strong></span>Two cards are drawn without replacement from a standard deck. Find the probability that</p>
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 2.15  (Two Cards)  </strong></span>Two cards are drawn without replacement from a standard deck. Find the probability that</p>
 <ol style="list-style-type: decimal">
 <li>the second is an ace, given that the first is not an ace.<br />
 </li>
@@ -491,12 +491,12 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-30" class="example"><strong>Example 2.16  (Numbers in a Hat)  </strong></span>The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?</p>
+<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 2.16  (Numbers in a Hat)  </strong></span>The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?</p>
 </div>
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-31" class="example"><strong>Example 2.17  (One Card)  </strong></span>A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?</p>
+<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 2.17  (One Card)  </strong></span>A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?</p>
 </div>
 
 <p>Definition <a href="probability.html#def:condprob">2.6</a> immediately leads to the <em>multiplication formula</em></p>
@@ -510,7 +510,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p>This allows us to compute the joint probability of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> when we are given the probability of <span class="math inline">\(B\)</span> and the conditional probability of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, and vice versa.</p>
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-32" class="example"><strong>Example 2.18  (Fish in a Tank)  </strong></span>A tank has three red fish and two blue fish. Two fish are chosen at random and without replacement. What is the probability of getting</p>
+<p><span id="exm:unnamed-chunk-32" class="example"><strong>Example 2.18  (Fish in a Tank)  </strong></span>A tank has three red fish and two blue fish. Two fish are chosen at random and without replacement. What is the probability of getting</p>
 <ol style="list-style-type: decimal">
 <li>red fish first and then a blue fish?<br />
 </li>
@@ -539,7 +539,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p><span class="math display">\[P(B) =\sum_{i=1}^{k} P(A_i \cap B) = \sum_{i=1}^{k} P(B|A_i) P(A_i) \]</span></p>
 
 <div class="example">
-<span id="ex:unnamed-chunk-33" class="example"><strong>Example 2.19  (Long Hair)  </strong></span>Suppose a class contains 60% girls and 40% boys. Suppose that 30% of the girls have long hair, and 20% of the boys have long hair. A student is chosen uniformly at random from the class. What is the probability that the chosen student will have long hair?
+<span id="exm:unnamed-chunk-33" class="example"><strong>Example 2.19  (Long Hair)  </strong></span>Suppose a class contains 60% girls and 40% boys. Suppose that 30% of the girls have long hair, and 20% of the boys have long hair. A student is chosen uniformly at random from the class. What is the probability that the chosen student will have long hair?
 </div>
 
 </div>
@@ -554,7 +554,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p>The transition from the second to the third expression in Theorem <a href="probability.html#thm:bayesdef">2.2</a> rests on using the multiplication rule in the numerator and the law of total probability in the denominator.</p>
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-34" class="example"><strong>Example 2.20  (Urns)  </strong></span>Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls. Suppose one of the two urns is selected with probability <span class="math inline">\(1/2\)</span> each, and then one of the balls within that urn is picked uniformly at random.</p>
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 2.20  (Urns)  </strong></span>Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls. Suppose one of the two urns is selected with probability <span class="math inline">\(1/2\)</span> each, and then one of the balls within that urn is picked uniformly at random.</p>
 <ol style="list-style-type: decimal">
 <li>What is the probability that urn #2 is selected at the first stage (event A) and a blue ball is selected at the second stage (event B)?<br />
 </li>
@@ -566,7 +566,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-35" class="example"><strong>Example 2.21  (Large Bridges)  </strong></span>There are three Canadian firms which build large bridges, firm 1, firm 2, and firm 3. 20% of Canadian large bridges have been built by firm 1, 30% by firm 2, and the rest by firm 3. 5% of the bridges built by firm 1 have collapsed, while 10% of those by firm 2 have collapsed, and 30% by firm 3 have collapsed.</p>
+<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 2.21  (Large Bridges)  </strong></span>There are three Canadian firms which build large bridges, firm 1, firm 2, and firm 3. 20% of Canadian large bridges have been built by firm 1, 30% by firm 2, and the rest by firm 3. 5% of the bridges built by firm 1 have collapsed, while 10% of those by firm 2 have collapsed, and 30% by firm 3 have collapsed.</p>
 <ol style="list-style-type: decimal">
 <li>What is the probability that a bridge collapses?<br />
 </li>
@@ -588,12 +588,12 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p>Now, because <span class="math inline">\(P(A | B) = P( A \cap B)/P(B)\)</span>, we see that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if and only if <span class="math inline">\(P(A | B) = P(A)\)</span> or <span class="math inline">\(P(B | A) = P(B)\)</span>, provided that <span class="math inline">\(P(A) &gt; 0\)</span> and <span class="math inline">\(P(B) &gt; 0\)</span>. Definition <a href="probability.html#def:indep">2.8</a> has the advantage that it remains valid even if <span class="math inline">\(P(B) = 0\)</span> or <span class="math inline">\(P(A) = 0\)</span>, respectively. Intuitively, events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if neither one has any impact on the probability of the other.</p>
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-36" class="example"><strong>Example 2.22  (Toss a fair coin 10 times)  </strong></span>Toss a fair coin 10 times. Let <span class="math inline">\(A = {\textrm{at least one head}}\)</span>. Let <span class="math inline">\(T_j\)</span> be the event that tails occurs on the <span class="math inline">\(j^{th}\)</span> toss. Find <span class="math inline">\(P(A)\)</span></p>
+<p><span id="exm:unnamed-chunk-36" class="example"><strong>Example 2.22  (Toss a fair coin 10 times)  </strong></span>Toss a fair coin 10 times. Let <span class="math inline">\(A = {\textrm{at least one head}}\)</span>. Let <span class="math inline">\(T_j\)</span> be the event that tails occurs on the <span class="math inline">\(j^{th}\)</span> toss. Find <span class="math inline">\(P(A)\)</span></p>
 </div>
 
 
 <div class="example">
-<p><span id="ex:unnamed-chunk-37" class="example"><strong>Example 2.23  (Unbalance Die Revisited)  </strong></span>In Example <a href="#exm:unbalanced"><strong>??</strong></a>, if <span class="math inline">\(A\)</span> is the event that the die was 5, and <span class="math inline">\(B\)</span> is the event that the coin was tails, then calculate <span class="math inline">\(P(A), P(B)\)</span> and <span class="math inline">\(P(A\cap B)\)</span></p>
+<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 2.23  (Unbalance Die Revisited)  </strong></span>In Example <a href="probability.html#exm:unbalanced">2.13</a>, if <span class="math inline">\(A\)</span> is the event that the die was 5, and <span class="math inline">\(B\)</span> is the event that the coin was tails, then calculate <span class="math inline">\(P(A), P(B)\)</span> and <span class="math inline">\(P(A\cap B)\)</span></p>
 </div>
 
 
@@ -626,7 +626,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,

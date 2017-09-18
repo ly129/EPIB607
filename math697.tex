@@ -124,7 +124,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2017-09-14}
+  \date{2017-09-18}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -260,8 +260,11 @@
 \newtheorem{proposition}{Proposition}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \maketitle
@@ -672,7 +675,7 @@ taking a sample from a given population. This is why we study
 probability before statistics.
 
 \BeginKnitrBlock{example}[Use of manual lap belts in cars equipped with automatic shoulder belt systems]
-\protect\hypertarget{ex:unnamed-chunk-6}{}{\label{ex:unnamed-chunk-6}
+\protect\hypertarget{exm:unnamed-chunk-6}{}{\label{exm:unnamed-chunk-6}
 \iffalse (Use of manual lap belts in cars equipped with automatic
 shoulder belt systems) \fi{} }\emph{Probability}: assume that 50\% of
 all drivers in a certain metropolitan area regularly use their lap belt
@@ -743,7 +746,7 @@ For example, consider two nucleotide sequences of the same length that
 we wish to assess for similarity:
 
 \BeginKnitrBlock{example}[Two nucleotide sequences]
-\protect\hypertarget{ex:unnamed-chunk-7}{}{\label{ex:unnamed-chunk-7}
+\protect\hypertarget{exm:unnamed-chunk-7}{}{\label{exm:unnamed-chunk-7}
 \iffalse (Two nucleotide sequences) \fi{} }
 
 \begin{equation*}
@@ -829,37 +832,37 @@ called sample outcomes, realizations, or elements.
 \EndKnitrBlock{definition}
 
 \BeginKnitrBlock{example}[Coin tossing]
-\protect\hypertarget{ex:unnamed-chunk-9}{}{\label{ex:unnamed-chunk-9}
+\protect\hypertarget{exm:unnamed-chunk-9}{}{\label{exm:unnamed-chunk-9}
 \iffalse (Coin tossing) \fi{}
 }\(\Omega = \left\lbrace H, T \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Dice]
-\protect\hypertarget{ex:unnamed-chunk-10}{}{\label{ex:unnamed-chunk-10}
+\protect\hypertarget{exm:unnamed-chunk-10}{}{\label{exm:unnamed-chunk-10}
 \iffalse (Dice) \fi{}
 }\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Proportions]
-\protect\hypertarget{ex:unnamed-chunk-11}{}{\label{ex:unnamed-chunk-11}
+\protect\hypertarget{exm:unnamed-chunk-11}{}{\label{exm:unnamed-chunk-11}
 \iffalse (Proportions) \fi{}
 }\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Time measurement]
-\protect\hypertarget{ex:unnamed-chunk-12}{}{\label{ex:unnamed-chunk-12}
+\protect\hypertarget{exm:unnamed-chunk-12}{}{\label{exm:unnamed-chunk-12}
 \iffalse (Time measurement) \fi{}
 }\(\Omega = \left\lbrace x : x > 0 \right\rbrace = {\mathbb{R}}^{+}\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Temperature measurement]
-\protect\hypertarget{ex:unnamed-chunk-13}{}{\label{ex:unnamed-chunk-13}
+\protect\hypertarget{exm:unnamed-chunk-13}{}{\label{exm:unnamed-chunk-13}
 \iffalse (Temperature measurement) \fi{}
 }\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Biological Sequence Analysis]
-\protect\hypertarget{ex:unnamed-chunk-14}{}{\label{ex:unnamed-chunk-14}
+\protect\hypertarget{exm:unnamed-chunk-14}{}{\label{exm:unnamed-chunk-14}
 \iffalse (Biological Sequence Analysis) \fi{} }The experiment may
 involve the observation of a nucleotide or protein sequence, so that the
 sample space \(\Omega\) may comprise all sequences (of bases/amino
@@ -960,27 +963,27 @@ axioms (basic properties) of probability
 \EndKnitrBlock{definition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-18}{}{\label{prp:unnamed-chunk-18}}\(P(\varnothing) = 0\)
-where \(\varnothing\) is the null event. This in turn implies that the
-property contained in Axiom 3 is valid for a finite collection of
-events.
+\protect\hypertarget{prp:unnamed-chunk-18}{}{\label{prp:unnamed-chunk-18}
+}\(P(\varnothing) = 0\) where \(\varnothing\) is the null event. This in
+turn implies that the property contained in Axiom 3 is valid for a
+finite collection of events.
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-19}{}{\label{prp:unnamed-chunk-19}}For
-any event \(A\),\\
+\protect\hypertarget{prp:unnamed-chunk-19}{}{\label{prp:unnamed-chunk-19}
+}For any event \(A\),\\
 \[ P(A) = 1 - P(A^c) \]
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-20}{}{\label{prp:unnamed-chunk-20}}For
-any event \(A\),\\
+\protect\hypertarget{prp:unnamed-chunk-20}{}{\label{prp:unnamed-chunk-20}
+}For any event \(A\),\\
 \[ P(A) \leq 1 \]
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-21}{}{\label{prp:unnamed-chunk-21}}For
-any events \(A\) and \(B\),\\
+\protect\hypertarget{prp:unnamed-chunk-21}{}{\label{prp:unnamed-chunk-21}
+}For any events \(A\) and \(B\),\\
 \[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
 \EndKnitrBlock{proposition}
 
@@ -1031,8 +1034,9 @@ in the light of new information. We examine how the information \emph{an
 event B has occurred} affects the probability assigned to \(A\).
 
 \BeginKnitrBlock{example}[Flipping Coins]
-\protect\hypertarget{ex:flipcoins}{}{\label{ex:flipcoins} \iffalse (Flipping
-Coins) \fi{} }We flip three different fair coins, and\\
+\protect\hypertarget{exm:flipcoins}{}{\label{exm:flipcoins}
+\iffalse (Flipping Coins) \fi{} }We flip three different fair coins,
+and\\
 \[ \Omega = {H H H, H H T, H T H, H T T, T H H, T H T, T T H, T T T } \]
 with \(P(s) = 1/8\) for each \(s \in \Omega\). What is the probability
 that the first coin comes up heads?
@@ -1062,7 +1066,7 @@ Here the vertical bar \textbar{} stands for \emph{conditional on} or
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Assembly Lines]
-\protect\hypertarget{ex:assembly}{}{\label{ex:assembly} \iffalse (Assembly
+\protect\hypertarget{exm:assembly}{}{\label{exm:assembly} \iffalse (Assembly
 Lines) \fi{} }Complex components are assembled in a plant that uses two
 different assembly lines, \(A\) and \(A^c\) . Line \(A\) uses older
 equipment than \(A^c\), so it is somewhat slower and less reliable.
@@ -1126,41 +1130,41 @@ Therefore
 \[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P({H H T, H T H})}{P({H H T, H T H, T H H})} = \frac{2/8}{3/8} = \frac{2}{3}\]
 
 \BeginKnitrBlock{example}[Balanced die]
-\protect\hypertarget{ex:unnamed-chunk-25}{}{\label{ex:unnamed-chunk-25}
+\protect\hypertarget{exm:unnamed-chunk-25}{}{\label{exm:unnamed-chunk-25}
 \iffalse (Balanced die) \fi{} }Suppose a balanced die is tossed in the
 next room. We are told that a number less than 4 was observed. What is
 the probability the number was either 1 or 2?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Dice v1]
-\protect\hypertarget{ex:unnamed-chunk-26}{}{\label{ex:unnamed-chunk-26}
+\protect\hypertarget{exm:unnamed-chunk-26}{}{\label{exm:unnamed-chunk-26}
 \iffalse (Two Balanced Dice v1) \fi{} }Toss two balanced dice. Let \(A\)
 = \{sum of 5\} and \(B\) = \{first die is \(\leq\) 2\}. Find \(P(A|B)\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Dice v2]
-\protect\hypertarget{ex:unnamed-chunk-27}{}{\label{ex:unnamed-chunk-27}
+\protect\hypertarget{exm:unnamed-chunk-27}{}{\label{exm:unnamed-chunk-27}
 \iffalse (Two Balanced Dice v2) \fi{} }Two balanced dice are tossed.
 What is the probability that the first die gives a number less than
 three, given that the sum is odd?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Unbalanced Die]
-\protect\hypertarget{ex:unbalanced}{}{\label{ex:unbalanced}
+\protect\hypertarget{exm:unbalanced}{}{\label{exm:unbalanced}
 \iffalse (Unbalanced Die) \fi{} }Toss an unbalanced die with probs
 \(P(1)=.1\), \(P(2)=.1\), \(P(3)=.3\), \(P(4)=.2\), \(P(5)=.1\),
 \(P(6)=.2\). Let \(A={\geq 5}\) and \(B={\geq 2}\). Find \(P(A|B)\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Coins]
-\protect\hypertarget{ex:unnamed-chunk-28}{}{\label{ex:unnamed-chunk-28}
+\protect\hypertarget{exm:unnamed-chunk-28}{}{\label{exm:unnamed-chunk-28}
 \iffalse (Two Balanced Coins) \fi{} }Two balanced coins were tossed, and
 it is known that at least one was a head. What is the probability that
 both were heads?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Cards]
-\protect\hypertarget{ex:unnamed-chunk-29}{}{\label{ex:unnamed-chunk-29}
+\protect\hypertarget{exm:unnamed-chunk-29}{}{\label{exm:unnamed-chunk-29}
 \iffalse (Two Cards) \fi{} }Two cards are drawn without replacement from
 a standard deck. Find the probability that
 
@@ -1177,7 +1181,7 @@ a standard deck. Find the probability that
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Numbers in a Hat]
-\protect\hypertarget{ex:unnamed-chunk-30}{}{\label{ex:unnamed-chunk-30}
+\protect\hypertarget{exm:unnamed-chunk-30}{}{\label{exm:unnamed-chunk-30}
 \iffalse (Numbers in a Hat) \fi{} }The numbers 1 to 5 are written on
 five slips of paper and placed in a hat. Two slips are drawn at random
 without replacement. What is the probability that the first number is 3,
@@ -1185,7 +1189,7 @@ given a sum of seven?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[One Card]
-\protect\hypertarget{ex:unnamed-chunk-31}{}{\label{ex:unnamed-chunk-31}
+\protect\hypertarget{exm:unnamed-chunk-31}{}{\label{exm:unnamed-chunk-31}
 \iffalse (One Card) \fi{} }A card is selected at random (i.e.~every card
 has the same probability of being chosen) from a deck of 52. What is the
 probability it is a red card or a face card?
@@ -1208,7 +1212,7 @@ we are given the probability of \(B\) and the conditional probability of
 \(A\) given \(B\), and vice versa.
 
 \BeginKnitrBlock{example}[Fish in a Tank]
-\protect\hypertarget{ex:unnamed-chunk-32}{}{\label{ex:unnamed-chunk-32}
+\protect\hypertarget{exm:unnamed-chunk-32}{}{\label{exm:unnamed-chunk-32}
 \iffalse (Fish in a Tank) \fi{} }A tank has three red fish and two blue
 fish. Two fish are chosen at random and without replacement. What is the
 probability of getting
@@ -1257,7 +1261,7 @@ Thus we have
 \[P(B) =\sum_{i=1}^{k} P(A_i \cap B) = \sum_{i=1}^{k} P(B|A_i) P(A_i) \]
 
 \BeginKnitrBlock{example}[Long Hair]
-\protect\hypertarget{ex:unnamed-chunk-33}{}{\label{ex:unnamed-chunk-33}
+\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33}
 \iffalse (Long Hair) \fi{} }Suppose a class contains 60\% girls and 40\%
 boys. Suppose that 30\% of the girls have long hair, and 20\% of the
 boys have long hair. A student is chosen uniformly at random from the
@@ -1282,7 +1286,7 @@ The transition from the second to the third expression in Theorem
 numerator and the law of total probability in the denominator.
 
 \BeginKnitrBlock{example}[Urns]
-\protect\hypertarget{ex:unnamed-chunk-34}{}{\label{ex:unnamed-chunk-34}
+\protect\hypertarget{exm:unnamed-chunk-34}{}{\label{exm:unnamed-chunk-34}
 \iffalse (Urns) \fi{} }Suppose urn \#1 has 3 red and 2 blue balls, and
 urn \#2 has 4 red and 7 blue balls. Suppose one of the two urns is
 selected with probability \(1/2\) each, and then one of the balls within
@@ -1303,7 +1307,7 @@ that urn is picked uniformly at random.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Large Bridges]
-\protect\hypertarget{ex:unnamed-chunk-35}{}{\label{ex:unnamed-chunk-35}
+\protect\hypertarget{exm:unnamed-chunk-35}{}{\label{exm:unnamed-chunk-35}
 \iffalse (Large Bridges) \fi{} }There are three Canadian firms which
 build large bridges, firm 1, firm 2, and firm 3. 20\% of Canadian large
 bridges have been built by firm 1, 30\% by firm 2, and the rest by firm
@@ -1343,14 +1347,14 @@ and \(B\) are independent if neither one has any impact on the
 probability of the other.
 
 \BeginKnitrBlock{example}[Toss a fair coin 10 times]
-\protect\hypertarget{ex:unnamed-chunk-36}{}{\label{ex:unnamed-chunk-36}
+\protect\hypertarget{exm:unnamed-chunk-36}{}{\label{exm:unnamed-chunk-36}
 \iffalse (Toss a fair coin 10 times) \fi{} }Toss a fair coin 10 times.
 Let \(A = {\textrm{at least one head}}\). Let \(T_j\) be the event that
 tails occurs on the \(j^{th}\) toss. Find \(P(A)\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Unbalance Die Revisited]
-\protect\hypertarget{ex:unnamed-chunk-37}{}{\label{ex:unnamed-chunk-37}
+\protect\hypertarget{exm:unnamed-chunk-37}{}{\label{exm:unnamed-chunk-37}
 \iffalse (Unbalance Die Revisited) \fi{} }In Example
 \ref{exm:unbalanced}, if \(A\) is the event that the die was 5, and
 \(B\) is the event that the coin was tails, then calculate
@@ -1474,13 +1478,13 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \end{Shaded}
 
 \begin{verbatim}
-##           x1        x2
-## 1 0.68553762 0.4586745
-## 2 0.67376359 0.3287504
-## 3 0.41416085 0.5905993
-## 4 0.05087929 0.3238623
-## 5 0.86426444 0.4142932
-## 6 0.87687081 0.8253642
+##          x1         x2
+## 1 0.6051126 0.09188132
+## 2 0.4990848 0.36588547
+## 3 0.8790005 0.55376276
+## 4 0.5335933 0.46295243
+## 5 0.3245898 0.13274605
+## 6 0.2432290 0.12794512
 \end{verbatim}
 
 \begin{Shaded}
@@ -1657,13 +1661,13 @@ function:
 \end{Shaded}
 
 \begin{verbatim}
-##          [,1]      [,2]       [,3]
-## [1,] 3.186478 10.985202 10.2925124
-## [2,] 5.532437 13.573425  1.6549714
-## [3,] 6.075208  9.183887  3.7558830
-## [4,] 4.632367  5.980021  5.4397640
-## [5,] 5.119464 15.713389 -7.0329618
-## [6,] 4.525059  7.016918 -0.3420266
+##          [,1]       [,2]        [,3]
+## [1,] 5.343873  0.9892018  -3.1376097
+## [2,] 6.025159  7.9792247  -9.0490769
+## [3,] 7.412069  7.1234388  -0.1376387
+## [4,] 4.878006  8.1844405 -12.4196699
+## [5,] 5.362921  7.5240432  -3.1643408
+## [6,] 4.802038 11.1000747   4.0711384
 \end{verbatim}
 
 The following diagram (from

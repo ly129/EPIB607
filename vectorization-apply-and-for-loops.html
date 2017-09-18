@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>MATH 697</title>
   <meta name="description" content="Course material for MATH 697">
-  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="MATH 697" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-09-14">
+<meta name="date" content="2017-09-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -234,13 +234,13 @@ x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##           x1        x2
-## 1 0.04018653 0.3983392
-## 2 0.87019284 0.5489565
-## 3 0.07512734 0.1141428
-## 4 0.09120978 0.5896352
-## 5 0.48950180 0.6169389
-## 6 0.22437694 0.7142692</code></pre>
+<pre><code>##          x1         x2
+## 1 0.6876743 0.94328211
+## 2 0.9313341 0.73070022
+## 3 0.6198773 0.58033540
+## 4 0.4169165 0.81112769
+## 5 0.3198594 0.87481196
+## 6 0.6502184 0.02511157</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -328,13 +328,13 @@ sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</
 randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
-<pre><code>##          [,1]       [,2]      [,3]
-## [1,] 4.301292  0.3850515 -3.851081
-## [2,] 4.591087  9.0488157 -3.800616
-## [3,] 5.316037  6.1834042 -6.598739
-## [4,] 4.892046 12.0096597  8.198266
-## [5,] 5.933785 14.0405276 -9.805655
-## [6,] 5.310477 18.9297284  7.658953</code></pre>
+<pre><code>##          [,1]       [,2]       [,3]
+## [1,] 4.846230  7.4712316  11.013574
+## [2,] 6.258669  5.0256228   1.883102
+## [3,] 5.332062  0.8759125  18.859919
+## [4,] 5.630250 12.4202382  -4.422589
+## [5,] 4.630219  9.5648819 -14.732212
+## [6,] 4.510484 11.4100521  -9.193020</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
@@ -395,7 +395,7 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
