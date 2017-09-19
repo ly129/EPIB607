@@ -25,14 +25,14 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-09-18">
+<meta name="date" content="2017-09-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="probability.html">
+<link rel="prev" href="continuous-variables-and-probability-distributions.html">
 <link rel="next" href="appendix-b.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -154,6 +154,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="probability.html"><a href="probability.html#independence"><i class="fa fa-check"></i><b>2.5</b> Independence</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html"><i class="fa fa-check"></i><b>3</b> Discrete Random Variables and Probability Distributions</a><ul>
+<li class="chapter" data-level="" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="3.1" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#random-variables"><i class="fa fa-check"></i><b>3.1</b> Random Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#probability-distributions-for-discrete-random-variables"><i class="fa fa-check"></i><b>3.2</b> Probability Distributions for Discrete Random Variables</a></li>
+<li class="chapter" data-level="3.3" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#expected-values-of-discrete-random-variables"><i class="fa fa-check"></i><b>3.3</b> Expected Values of Discrete Random Variables</a></li>
+<li class="chapter" data-level="3.4" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#moments-and-moment-generating-functions"><i class="fa fa-check"></i><b>3.4</b> Moments and Moment Generating Functions</a></li>
+<li class="chapter" data-level="3.5" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#the-binomial-probability-distribution"><i class="fa fa-check"></i><b>3.5</b> The Binomial Probability Distribution</a></li>
+<li class="chapter" data-level="3.6" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#the-poisson-probability-distribution"><i class="fa fa-check"></i><b>3.6</b> The Poisson Probability Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="continuous-variables-and-probability-distributions.html"><a href="continuous-variables-and-probability-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Variables and Probability Distributions</a><ul>
+<li class="chapter" data-level="" data-path="continuous-variables-and-probability-distributions.html"><a href="continuous-variables-and-probability-distributions.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+</ul></li>
 <li class="appendix"><span><b>R Tutorial</b></span></li>
 <li class="chapter" data-level="A" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html"><i class="fa fa-check"></i><b>A</b> Vectorization, *apply and for loops</a><ul>
 <li class="chapter" data-level="A.1" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#vectorization"><i class="fa fa-check"></i><b>A.1</b> Vectorization</a></li>
@@ -234,13 +246,13 @@ x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##          x1         x2
-## 1 0.6876743 0.94328211
-## 2 0.9313341 0.73070022
-## 3 0.6198773 0.58033540
-## 4 0.4169165 0.81112769
-## 5 0.3198594 0.87481196
-## 6 0.6502184 0.02511157</code></pre>
+<pre><code>##           x1        x2
+## 1 0.62448608 0.2691239
+## 2 0.22118725 0.3726419
+## 3 0.02841099 0.9063829
+## 4 0.19461948 0.7356637
+## 5 0.65862263 0.1532220
+## 6 0.69820742 0.9659926</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -328,13 +340,13 @@ sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</
 randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
-<pre><code>##          [,1]       [,2]       [,3]
-## [1,] 4.846230  7.4712316  11.013574
-## [2,] 6.258669  5.0256228   1.883102
-## [3,] 5.332062  0.8759125  18.859919
-## [4,] 5.630250 12.4202382  -4.422589
-## [5,] 4.630219  9.5648819 -14.732212
-## [6,] 4.510484 11.4100521  -9.193020</code></pre>
+<pre><code>##          [,1]      [,2]       [,3]
+## [1,] 4.301902 13.540206  -8.775104
+## [2,] 5.458597 10.863247   4.740910
+## [3,] 5.752544  7.859484  -6.789515
+## [4,] 3.429779 15.924731 -10.120672
+## [5,] 5.268718  9.902122   1.356848
+## [6,] 6.490492  6.452203   6.279114</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
@@ -383,7 +395,7 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
           </div>
         </div>
       </div>
-<a href="probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="continuous-variables-and-probability-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="appendix-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

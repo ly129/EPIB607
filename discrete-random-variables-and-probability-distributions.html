@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="vectorization-apply-and-for-loops.html">
-<link rel="next" href="references.html">
+<link rel="prev" href="probability.html">
+<link rel="next" href="continuous-variables-and-probability-distributions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -200,17 +200,167 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix-b" class="section level1">
-<h1><span class="header-section-number">B</span> Appendix B</h1>
+<div id="discrete-random-variables-and-probability-distributions" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Discrete Random Variables and Probability Distributions</h1>
+<div id="introduction" class="section level2 unnumbered">
+<h2>Introduction</h2>
+<p>In Chapter <a href="probability.html#probability">2</a>, we discussed the probability model as the central object of study in the theory of probability. This required defining a probability measure <span class="math inline">\(P\)</span> on a class of subsets of the sample space <span class="math inline">\(\Omega\)</span>. For example, for an experiment with possible sample outcomes denoted by the  <span class="math inline">\(\Omega\)</span>, an  <span class="math inline">\(E\)</span> was defined as any collection of sample outcomes, that is, any subset of the set <span class="math inline">\(\Omega\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{ccll}
+\text{EXPERIMENT} &amp; \longrightarrow \text{SAMPLE OUTCOMES} &amp; \longrightarrow
+\text{EVENTS} &amp; \longrightarrow \text{PROBABILITIES} \\
+&amp; \Omega=\left\{ s_{1},s_{2},...\right\} &amp; \longrightarrow E\subseteq S &amp;
+\longrightarrow P(E)
+\end{array}
+\]</span></p>
+<p>In this framework, it is necessary to consider each experiment with its associated sample space separately - the nature of sample space <span class="math inline">\(\Omega\)</span> is typically different for different experiments.</p>
+<p><br></p>
 
+<div class="example">
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 3.1  (Rainy days)  </strong></span>Count the number of days in February which have zero precipitation.</p>
+<p><span class="math display">\[ \Omega = \left\{ 0,1,2,\ldots,28\right\} \]</span></p>
+<p>Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)</span> days have zero precipitation. <span class="math inline">\(E_{0},\ldots,E_{28}\)</span> partition <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-39" class="example"><strong>Example 3.2  (Footbal Match)  </strong></span>Count the number of goals in a football match.</p>
+<p><span class="math display">\[ \Omega = \left\{ 0,1,2,3,\ldots \right\} \]</span></p>
+Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)</span> goals in the match. <span class="math inline">\(E_{0},E_{1},E_{2},\ldots\)</span> partition <span class="math inline">\(\Omega\)</span><br />
+
+</div>
+
+<p><br></p>
+
+<div class="rmdnote">
+<p>In both of these examples, we need a formula to specify each</p>
+<p><span class="math display">\[ P(E_{i}) = p_{i} \]</span></p>
+</div>
+
+<p><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-41" class="example"><strong>Example 3.3  (Operating Temperature)  </strong></span>Measure the operating temperature of an experimental process.</p>
+<p><span class="math display">\[ \Omega = \left\{ x: x &gt; T_{min} \right\} \]</span></p>
+</div>
+
+<p>Here it is difficult to express</p>
+<p><span class="math display">\[ P(``\textrm{Measurement is }x&quot;) \]</span></p>
+<p>but possible to think about</p>
+<p><span class="math display">\[ P (``\textrm{Measurement is }\leq x&quot;)=F(x) \]</span></p>
+<p>and now we seek a formula for <span class="math inline">\(F(x)\)</span> which is a simpler way of presenting a particular probability assignment.</p>
+<p><br><br></p>
+<p>This chapter is concerned with the definitions of random variables, distribution functions <span class="math inline">\(F(x)\)</span>, probability/density functions <span class="math inline">\(f(x)\)</span>, and the development of the concepts necessary for carrying out calculations for a probability model using these entities <span class="citation">(Evans and Rosenthal <a href="#ref-evans2004probability">2004</a>)</span>.</p>
+<p>The concept of a random variable allows us to pass from the experimental outcomes themselves to a numerical function of the outcomes. There are two fundamentally different types of random variables <span class="citation">(Devore and Berk <a href="#ref-devore2011modern">2011</a>)</span>:</p>
+<ol style="list-style-type: lower-roman">
+<li>discrete random variables<br />
+</li>
+<li>continuous random variables</li>
+</ol>
+<p>In this chapter, we examine the basic properties and discuss the most important examples of <strong>discrete</strong> variables. Chapter <a href="continuous-variables-and-probability-distributions.html#continuous-variables-and-probability-distributions">4</a> focuses on continuous random variables.</p>
+</div>
+<div id="random-variables" class="section level2">
+<h2><span class="header-section-number">3.1</span> Random Variables</h2>
+<p>A general notation useful for all such examples can be obtained by considering a sample space that is <strong>equivalent</strong> to <span class="math inline">\(\Omega\)</span> for a general experiment, but whose form is more familiar.</p>
+
+<div class="definition">
+<p><span id="def:rv" class="definition"><strong>Definition 3.1  (Random Variable)  </strong></span>A random variable <span class="math inline">\(X\)</span> on <span class="math inline">\(\Omega\)</span> is a function from the sample space <span class="math inline">\(\Omega\)</span> to the set <span class="math inline">\(\mathbb{R}\)</span> of all real numbers denoted by</p>
+<p><span class="math display">\[ X : \Omega \rightarrow \mathbb{R}  \]</span></p>
+<p>Let <span class="math inline">\(R_X\)</span> denote the range of <span class="math inline">\(X\)</span>.</p>
+</div>
+
+<p><br></p>
+<p><span class="math inline">\(X\)</span> is called a <em>discrete</em> random variable if <span class="math inline">\(R_X\)</span> is a countable set.</p>
+<div class="figure">
+<img src="images/rv.png" />
+
+</div>
+<p><br></p>
+
+<div class="rmdnote">
+<p>Random variables are customarily denoted by uppercase letters, such as <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, lowercase letters to represent some particular value of the corresponding random variable. The notation <span class="math inline">\(X(s) = x\)</span> means that <span class="math inline">\(x\)</span> is the value associated with the outcome <span class="math inline">\(s\)</span> by the rv <span class="math inline">\(X\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-43" class="example"><strong>Example 3.4  (Coin Toss)  </strong></span>Suppose a coin is tossed three times. Let <span class="math inline">\(X\)</span> be the number of heads observed. The sample space is</p>
+<p><span class="math display">\[ \Omega = \left\lbrace \underbrace{HHT}_{3},\underbrace{HHT}_{2},\underbrace{HTH}_{2},\underbrace{HTT}_{1}, \underbrace{THH}_{2}, \underbrace{THT}_{1}, \underbrace{TTH}_{1}, \underbrace{TTT}_{0} \right\rbrace   \]</span></p>
+That is, we have <span class="math inline">\(X(HHH) = 3\)</span>, <span class="math inline">\(X(HHT) = 2\)</span>, <span class="math inline">\(X(HTH) = 2\)</span>, and so on. Hence <span class="math inline">\(R_X = \left\lbrace 0,1,2,3 \right\rbrace\)</span>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<span id="exm:simple" class="example"><strong>Example 3.5  (A Very Simple Random Variable)  </strong></span>Let the random variable <span class="math inline">\(X: \left\lbrace \textrm{rain, snow, clear} \right\rbrace \rightarrow \mathbb{R}\)</span> by <span class="math inline">\(X(rain) = 3\)</span>, <span class="math inline">\(X(snow) = 6\)</span>, and <span class="math inline">\(X(clear) = -2.7\)</span>.
+</div>
+
+<p><br></p>
+<p>We now present several further examples. The point is, we can define random variables any way we like, as long as they are functions from the sample space to <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-44" class="example"><strong>Example 3.6  (A Very Simple Random Variable 2)  </strong></span>For the case <span class="math inline">\(\Omega = \left\lbrace \textrm{rain, snow, clear} \right\rbrace\)</span>, we might define a second random variable <span class="math inline">\(Y\)</span> by saying that <span class="math inline">\(Y = 0\)</span> if it rains, <span class="math inline">\(Y = -1/2\)</span> if it snows, and <span class="math inline">\(Y = 7/8\)</span> if it is clear. That is <span class="math inline">\(Y(rain) = 0\)</span>, <span class="math inline">\(Y(snow) = 1/2\)</span>, and <span class="math inline">\(Y(rain) = 7/8\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 3.7  (A Very Simple Random Variable 3)  </strong></span>If the sample space corresponds to flipping three different coins, then we could let <span class="math inline">\(X\)</span> be the total number of heads showing, let <span class="math inline">\(Y\)</span> be the total number of tails showing, let <span class="math inline">\(Z = 0\)</span> if there is exactly one head, and otherwise <span class="math inline">\(Z = 17\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-46" class="example"><strong>Example 3.8  (Constants as Random Variables)  </strong></span>As a special case, every constant value <span class="math inline">\(c\)</span> is also a random variable, by saying that <span class="math inline">\(c(s) = c\)</span> for all <span class="math inline">\(s \in \Omega\)</span>. Thus, 5 is a random variable, as is 3 or −21.6.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-47" class="example"><strong>Example 3.9  (Indicator Functions)  </strong></span>If <span class="math inline">\(A\)</span> is any event, then we can define the indicator function of <span class="math inline">\(A\)</span>, written <span class="math inline">\(I_A\)</span>, to be the random variable</p>
+<p><span class="math display">\[I_A(s)  = \begin{cases} 1 &amp; s \in A \\ 0 &amp; s \notin A   \end{cases} \]</span></p>
+</div>
+
+<p><br><br></p>
+<p>Suppose <span class="math inline">\(X\)</span> is a random variable. We know that different states <span class="math inline">\(s\)</span> occur with different probabilities. It follows that <span class="math inline">\(X(s)\)</span> also takes different values with different probabilities. These probabilities are called the <strong>distribution</strong> of <span class="math inline">\(X\)</span>; we consider them next.</p>
+</div>
+<div id="probability-distributions-for-discrete-random-variables" class="section level2">
+<h2><span class="header-section-number">3.2</span> Probability Distributions for Discrete Random Variables</h2>
+<p>Because random variables are defined to be functions of the outcome <span class="math inline">\(s\)</span>, and because the outcome <span class="math inline">\(s\)</span> is assumed to be random (i.e., to take on different values with different probabilities), it follows that the value of a random variable will itself be random (as the name implies).</p>
+<p>Specifically, if <span class="math inline">\(X\)</span> is a random variable, then what is the probability that <span class="math inline">\(X\)</span> will equal some particular value <span class="math inline">\(x\)</span>? Well, <span class="math inline">\(X = x\)</span> precisely when the outcome <span class="math inline">\(s\)</span> is chosen such that <span class="math inline">\(X(s) = x\)</span>.</p>
+</div>
+<div id="expected-values-of-discrete-random-variables" class="section level2">
+<h2><span class="header-section-number">3.3</span> Expected Values of Discrete Random Variables</h2>
+</div>
+<div id="moments-and-moment-generating-functions" class="section level2">
+<h2><span class="header-section-number">3.4</span> Moments and Moment Generating Functions</h2>
+</div>
+<div id="the-binomial-probability-distribution" class="section level2">
+<h2><span class="header-section-number">3.5</span> The Binomial Probability Distribution</h2>
+</div>
+<div id="the-poisson-probability-distribution" class="section level2">
+<h2><span class="header-section-number">3.6</span> The Poisson Probability Distribution</h2>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-evans2004probability">
+<p>Evans, Michael J, and Jeffrey S Rosenthal. 2004. <em>Probability and Statistics: The Science of Uncertainty</em>. Macmillan.</p>
+</div>
+<div id="ref-devore2011modern">
+<p>Devore, Jay L, and Kenneth N Berk. 2011. <em>Modern Mathematical Statistics with Applications</em>. Springer Science &amp; Business Media.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="vectorization-apply-and-for-loops.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="continuous-variables-and-probability-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -239,7 +389,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sahirbhatnagar/MATH697/edit/master/05-Rtutorial.Rmd",
+"link": "https://github.com/sahirbhatnagar/MATH697/edit/master/03-discrete.Rmd",
 "text": "Edit"
 },
 "download": ["math697.pdf", "math697.epub"],

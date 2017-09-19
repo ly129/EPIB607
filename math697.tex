@@ -124,7 +124,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2017-09-18}
+  \date{2017-09-19}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -699,7 +699,7 @@ Statistics}\label{pictorial-and-tabular-methods-in-descriptive-statistics}
 
 \section{Measures of Variability}\label{measures-of-variability}
 
-\chapter{Probability}\label{probability}
+\hypertarget{probability}{\chapter{Probability}\label{probability}}
 
 \section*{\texorpdfstring{Introduction\footnote{Reproduced with
   permission from \url{http://www.math.mcgill.ca/dstephens/}}}{Introduction}}\label{introduction1}
@@ -1361,6 +1361,234 @@ tails occurs on the \(j^{th}\) toss. Find \(P(A)\)
 \(P(A), P(B)\) and \(P(A\cap B)\)
 \EndKnitrBlock{example}
 
+\chapter{Discrete Random Variables and Probability
+Distributions}\label{discrete-random-variables-and-probability-distributions}
+
+\section*{Introduction}\label{introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+In Chapter \protect\hyperlink{probability}{2}, we discussed the
+probability model as the central object of study in the theory of
+probability. This required defining a probability measure \(P\) on a
+class of subsets of the sample space \(\Omega\). For example, for an
+experiment with possible sample outcomes denoted by the
+\emph{sample space} \(\Omega\), an \emph{event} \(E\) was defined as any
+collection of sample outcomes, that is, any subset of the set
+\(\Omega\).
+
+\[
+\begin{array}{ccll}
+\text{EXPERIMENT} & \longrightarrow \text{SAMPLE OUTCOMES} & \longrightarrow
+\text{EVENTS} & \longrightarrow \text{PROBABILITIES} \\
+& \Omega=\left\{ s_{1},s_{2},...\right\} & \longrightarrow E\subseteq S &
+\longrightarrow P(E)
+\end{array}
+\]
+
+In this framework, it is necessary to consider each experiment with its
+associated sample space separately - the nature of sample space
+\(\Omega\) is typically different for different experiments.
+
+\BeginKnitrBlock{example}[Rainy days]
+\protect\hypertarget{exm:unnamed-chunk-38}{}{\label{exm:unnamed-chunk-38}
+\iffalse (Rainy days) \fi{} }Count the number of days in February which
+have zero precipitation.
+
+\[ \Omega = \left\{ 0,1,2,\ldots,28\right\} \]
+
+Let \(E_{i}\) = \(i\) days have zero precipitation.
+\(E_{0},\ldots,E_{28}\) partition \(\Omega\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Footbal Match]
+\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39}
+\iffalse (Footbal Match) \fi{} }Count the number of goals in a football
+match.
+
+\[ \Omega = \left\{ 0,1,2,3,\ldots \right\} \]
+
+Let \(E_{i}\) = \(i\) goals in the match. \(E_{0},E_{1},E_{2},\ldots\)
+partition \(\Omega\)\\
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{rmdnote}
+In both of these examples, we need a formula to specify each
+
+\[ P(E_{i}) = p_{i} \]
+\EndKnitrBlock{rmdnote}
+
+\BeginKnitrBlock{example}[Operating Temperature]
+\protect\hypertarget{exm:unnamed-chunk-41}{}{\label{exm:unnamed-chunk-41}
+\iffalse (Operating Temperature) \fi{} }Measure the operating
+temperature of an experimental process.
+
+\[ \Omega = \left\{ x: x > T_{min} \right\} \]
+\EndKnitrBlock{example}
+
+Here it is difficult to express
+
+\[ P(``\textrm{Measurement is }x") \]
+
+but possible to think about
+
+\[ P (``\textrm{Measurement is }\leq x")=F(x) \]
+
+and now we seek a formula for \(F(x)\) which is a simpler way of
+presenting a particular probability assignment.
+
+This chapter is concerned with the definitions of random variables,
+distribution functions \(F(x)\), probability/density functions \(f(x)\),
+and the development of the concepts necessary for carrying out
+calculations for a probability model using these entities
+\citep{evans2004probability}.
+
+The concept of a random variable allows us to pass from the experimental
+outcomes themselves to a numerical function of the outcomes. There are
+two fundamentally different types of random variables
+\citep{devore2011modern}:
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  discrete random variables\\
+\item
+  continuous random variables
+\end{enumerate}
+
+In this chapter, we examine the basic properties and discuss the most
+important examples of \textbf{discrete} variables. Chapter
+\protect\hyperlink{continuous-variables-and-probability-distributions}{4}
+focuses on continuous random variables.
+
+\section{Random Variables}\label{random-variables}
+
+A general notation useful for all such examples can be obtained by
+considering a sample space that is \textbf{equivalent} to \(\Omega\) for
+a general experiment, but whose form is more familiar.
+
+\BeginKnitrBlock{definition}[Random Variable]
+\protect\hypertarget{def:rv}{}{\label{def:rv} \iffalse (Random Variable)
+\fi{} }A random variable \(X\) on \(\Omega\) is a function from the
+sample space \(\Omega\) to the set \(\mathbb{R}\) of all real numbers
+denoted by
+
+\[ X : \Omega \rightarrow \mathbb{R}  \]
+
+Let \(R_X\) denote the range of \(X\).
+\EndKnitrBlock{definition}
+
+\(X\) is called a \emph{discrete} random variable if \(R_X\) is a
+countable set.
+
+\begin{figure}
+\centering
+\includegraphics{images/rv.png}
+\caption{}
+\end{figure}
+
+\BeginKnitrBlock{rmdnote}
+Random variables are customarily denoted by uppercase letters, such as
+\(X\) and \(Y\), lowercase letters to represent some particular value of
+the corresponding random variable. The notation \(X(s) = x\) means that
+\(x\) is the value associated with the outcome \(s\) by the rv \(X\).
+\EndKnitrBlock{rmdnote}
+
+\BeginKnitrBlock{example}[Coin Toss]
+\protect\hypertarget{exm:unnamed-chunk-43}{}{\label{exm:unnamed-chunk-43}
+\iffalse (Coin Toss) \fi{} }Suppose a coin is tossed three times. Let
+\(X\) be the number of heads observed. The sample space is
+
+\[ \Omega = \left\lbrace \underbrace{HHT}_{3},\underbrace{HHT}_{2},\underbrace{HTH}_{2},\underbrace{HTT}_{1}, \underbrace{THH}_{2}, \underbrace{THT}_{1}, \underbrace{TTH}_{1}, \underbrace{TTT}_{0} \right\rbrace   \]
+
+That is, we have \(X(HHH) = 3\), \(X(HHT) = 2\), \(X(HTH) = 2\), and so
+on. Hence \(R_X = \left\lbrace 0,1,2,3 \right\rbrace\)
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[A Very Simple Random Variable]
+\protect\hypertarget{exm:simple}{}{\label{exm:simple} \iffalse (A Very
+Simple Random Variable) \fi{} }Let the random variable
+\(X: \left\lbrace \textrm{rain, snow, clear} \right\rbrace \rightarrow \mathbb{R}\)
+by \(X(rain) = 3\), \(X(snow) = 6\), and \(X(clear) = -2.7\).
+\EndKnitrBlock{example}
+
+We now present several further examples. The point is, we can define
+random variables any way we like, as long as they are functions from the
+sample space to \(\mathbb{R}\).
+
+\BeginKnitrBlock{example}[A Very Simple Random Variable 2]
+\protect\hypertarget{exm:unnamed-chunk-44}{}{\label{exm:unnamed-chunk-44}
+\iffalse (A Very Simple Random Variable 2) \fi{} }For the case
+\(\Omega = \left\lbrace \textrm{rain, snow, clear} \right\rbrace\), we
+might define a second random variable \(Y\) by saying that \(Y = 0\) if
+it rains, \(Y = -1/2\) if it snows, and \(Y = 7/8\) if it is clear. That
+is \(Y(rain) = 0\), \(Y(snow) = 1/2\), and \(Y(rain) = 7/8\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[A Very Simple Random Variable 3]
+\protect\hypertarget{exm:unnamed-chunk-45}{}{\label{exm:unnamed-chunk-45}
+\iffalse (A Very Simple Random Variable 3) \fi{} }If the sample space
+corresponds to flipping three different coins, then we could let \(X\)
+be the total number of heads showing, let \(Y\) be the total number of
+tails showing, let \(Z = 0\) if there is exactly one head, and otherwise
+\(Z = 17\).
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Constants as Random Variables]
+\protect\hypertarget{exm:unnamed-chunk-46}{}{\label{exm:unnamed-chunk-46}
+\iffalse (Constants as Random Variables) \fi{} }As a special case, every
+constant value \(c\) is also a random variable, by saying that
+\(c(s) = c\) for all \(s \in \Omega\). Thus, 5 is a random variable, as
+is 3 or −21.6.
+\EndKnitrBlock{example}
+
+\BeginKnitrBlock{example}[Indicator Functions]
+\protect\hypertarget{exm:unnamed-chunk-47}{}{\label{exm:unnamed-chunk-47}
+\iffalse (Indicator Functions) \fi{} }If \(A\) is any event, then we can
+define the indicator function of \(A\), written \(I_A\), to be the
+random variable
+
+\[I_A(s)  = \begin{cases} 1 & s \in A \\ 0 & s \notin A   \end{cases} \]
+\EndKnitrBlock{example}
+
+Suppose \(X\) is a random variable. We know that different states \(s\)
+occur with different probabilities. It follows that \(X(s)\) also takes
+different values with different probabilities. These probabilities are
+called the \textbf{distribution} of \(X\); we consider them next.
+
+\section{Probability Distributions for Discrete Random
+Variables}\label{probability-distributions-for-discrete-random-variables}
+
+Because random variables are defined to be functions of the outcome
+\(s\), and because the outcome \(s\) is assumed to be random (i.e., to
+take on different values with different probabilities), it follows that
+the value of a random variable will itself be random (as the name
+implies).
+
+Specifically, if \(X\) is a random variable, then what is the
+probability that \(X\) will equal some particular value \(x\)? Well,
+\(X = x\) precisely when the outcome \(s\) is chosen such that
+\(X(s) = x\).
+
+\section{Expected Values of Discrete Random
+Variables}\label{expected-values-of-discrete-random-variables}
+
+\section{Moments and Moment Generating
+Functions}\label{moments-and-moment-generating-functions}
+
+\section{The Binomial Probability
+Distribution}\label{the-binomial-probability-distribution}
+
+\section{The Poisson Probability
+Distribution}\label{the-poisson-probability-distribution}
+
+\hypertarget{continuous-variables-and-probability-distributions}{\chapter{Continuous
+Variables and Probability
+Distributions}\label{continuous-variables-and-probability-distributions}}
+
+\section*{Introduction}\label{introduction-1}
+\addcontentsline{toc}{section}{Introduction}
+
 \appendix
 
 
@@ -1478,13 +1706,13 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \end{Shaded}
 
 \begin{verbatim}
-##          x1         x2
-## 1 0.6051126 0.09188132
-## 2 0.4990848 0.36588547
-## 3 0.8790005 0.55376276
-## 4 0.5335933 0.46295243
-## 5 0.3245898 0.13274605
-## 6 0.2432290 0.12794512
+##          x1          x2
+## 1 0.5127599 0.612738109
+## 2 0.3459298 0.323647954
+## 3 0.7570290 0.314525380
+## 4 0.4786220 0.192674862
+## 5 0.7784737 0.937460677
+## 6 0.7153958 0.002662687
 \end{verbatim}
 
 \begin{Shaded}
@@ -1661,13 +1889,13 @@ function:
 \end{Shaded}
 
 \begin{verbatim}
-##          [,1]       [,2]        [,3]
-## [1,] 5.343873  0.9892018  -3.1376097
-## [2,] 6.025159  7.9792247  -9.0490769
-## [3,] 7.412069  7.1234388  -0.1376387
-## [4,] 4.878006  8.1844405 -12.4196699
-## [5,] 5.362921  7.5240432  -3.1643408
-## [6,] 4.802038 11.1000747   4.0711384
+##          [,1]      [,2]        [,3]
+## [1,] 6.501354  9.391008   0.8019759
+## [2,] 5.669139 12.538573   6.6700574
+## [3,] 5.124730 16.689741 -13.5806848
+## [4,] 3.605038  2.801159   2.4445215
+## [5,] 3.917473 10.409456  12.3951970
+## [6,] 4.820273 13.797180  -7.9666234
 \end{verbatim}
 
 The following diagram (from
