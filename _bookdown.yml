@@ -3,5 +3,5 @@ language:
   ui:
     chapter_name: "Chapter "
 rmd_files:
-  html: ["index.Rmd", "01-intro.Rmd", "02-probability.Rmd", "05-Rtutorial.Rmd", "06-references.Rmd"]
-  latex: ["index.Rmd", "01-intro.Rmd", "02-probability.Rmd", "05-Rtutorial.Rmd", "06-references.Rmd"]
+  html: ["index.Rmd", "01-intro.Rmd", "02-probability.Rmd","03-discrete.Rmd","04-continuous.Rmd", "05-Rtutorial.Rmd", "06-references.Rmd"]
+  latex: ["index.Rmd", "01-intro.Rmd", "02-probability.Rmd","03-discrete.Rmd","04-continuous.Rmd", "05-Rtutorial.Rmd", "06-references.Rmd"]
