@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-09-19">
+<meta name="date" content="2017-10-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -125,6 +125,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#introduction-to-r"><i class="fa fa-check"></i>Introduction to R</a></li>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#background-reading"><i class="fa fa-check"></i>Background Reading</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="slides.html"><a href="slides.html"><i class="fa fa-check"></i>Slides</a></li>
+<li class="chapter" data-level="" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i>Assignments</a></li>
+<li class="chapter" data-level="" data-path="quiz.html"><a href="quiz.html"><i class="fa fa-check"></i>Quiz</a></li>
 <li class="part"><span><b>I Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Overview and Descriptive Statistics</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#populations-and-samples"><i class="fa fa-check"></i><b>1.1</b> Populations and Samples</a><ul>
@@ -246,13 +249,13 @@ x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##           x1        x2
-## 1 0.62448608 0.2691239
-## 2 0.22118725 0.3726419
-## 3 0.02841099 0.9063829
-## 4 0.19461948 0.7356637
-## 5 0.65862263 0.1532220
-## 6 0.69820742 0.9659926</code></pre>
+<pre><code>##          x1         x2
+## 1 0.6951755 0.02007821
+## 2 0.2580627 0.21655225
+## 3 0.5441994 0.73366912
+## 4 0.6424024 0.30094953
+## 5 0.6992138 0.56974593
+## 6 0.4016317 0.22695867</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -341,12 +344,12 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
 <pre><code>##          [,1]      [,2]       [,3]
-## [1,] 4.301902 13.540206  -8.775104
-## [2,] 5.458597 10.863247   4.740910
-## [3,] 5.752544  7.859484  -6.789515
-## [4,] 3.429779 15.924731 -10.120672
-## [5,] 5.268718  9.902122   1.356848
-## [6,] 6.490492  6.452203   6.279114</code></pre>
+## [1,] 5.174814  6.266322  -7.766572
+## [2,] 6.473498  3.495216  11.194570
+## [3,] 5.804450 11.895673 -16.301999
+## [4,] 4.594086  8.229773 -26.876006
+## [5,] 3.832315 16.313848  -4.798944
+## [6,] 4.930204 13.034593  -5.433057</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
