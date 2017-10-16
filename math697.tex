@@ -341,12 +341,6 @@ Final Exam & 50\%\\
 \tightlist
 \item
   1.1 Populations and Samples
-\item
-  1.2 Pictorial and Tabular Methods in Descriptive Statistics
-\item
-  1.3 Measures of Location
-\item
-  1.4 Measures of Variability
 \end{itemize}
 
 \subsection*{Probability (Weeks 1-4)}\label{probability-weeks-1-4}
@@ -383,7 +377,9 @@ Probability Distributions (Weeks 1-4)}
 \item
   3.4 Moments and Moment Generating Functions
 \item
-  3.5 The Binomial Probability Distribution
+  3.5 The Bernoulli/Binomial Probability Distribution
+\item
+  3.6 The Geometric/Negative Binomial Probability Distribution
 \item
   3.7 The Poisson Probability Distribution
 \end{itemize}
@@ -398,13 +394,19 @@ Probability Distributions (Weeks 5-8)}
 \tightlist
 \item
   4.1 Probability Density Functions and Cumulative Distribution
-  Functions
+  Functions\\
 \item
-  4.2 Expected Values and Moment Generating Functions
+  4.2 Expected Values and Moment Generating Functions\\
 \item
-  4.3 The Normal Distribution
+  4.3 The Uniform Distribution\\
 \item
-  4.7 Transformations of a Random Variable
+  4.4 The Exponential Distribution\\
+\item
+  4.5 The Gamma Distribution\\
+\item
+  4.6 The Normal Distribution\\
+\item
+  4.7 One-Dimensional Change of Variable (Discrete and Continuous)
 \end{itemize}
 
 \subsection*{Joint Probability Distributions (Weeks
@@ -421,76 +423,85 @@ Probability Distributions (Weeks 5-8)}
 \item
   5.3 Conditional Distributions
 \item
-  5.4 Transformations of Random Variables
+  5.4 Multidimensional Change of Variable (Discrete and Continuous)
 \end{itemize}
 
-\subsection*{Statistics and Sampling Distributions (Weeks
-5-8)}\label{statistics-and-sampling-distributions-weeks-5-8}
-\addcontentsline{toc}{subsection}{Statistics and Sampling Distributions
+\subsection*{Sampling Distributions and Limits (Weeks
+5-8)}\label{sampling-distributions-and-limits-weeks-5-8}
+\addcontentsline{toc}{subsection}{Sampling Distributions and Limits
 (Weeks 5-8)}
 
 \begin{itemize}
 \tightlist
 \item
-  6.1 Statistics and Their Distributions
+  6.1 Sampling Distributions
 \item
-  6.2 The Distribution of the Sample Mean
+  6.2 Convergence in Probability, Weak Law of Large Numbers
 \item
-  6.3 The Mean, Variance, and MGF for Several Variables
+  6.3 Convergence with Probability 1, Strong Law of Large Numbers\\
 \item
-  6.4 Distributions Based on a Normal Random Sample
+  6.4 Convergence in Distribution, Central Limit Theorem
 \end{itemize}
 
-\subsection*{Point Estimation (Weeks
-9-12)}\label{point-estimation-weeks-9-12}
-\addcontentsline{toc}{subsection}{Point Estimation (Weeks 9-12)}
+\subsection*{Statistical Inference (Weeks
+9-12)}\label{statistical-inference-weeks-9-12}
+\addcontentsline{toc}{subsection}{Statistical Inference (Weeks 9-12)}
 
 \begin{itemize}
 \tightlist
 \item
-  7.1 General Concepts and Criteria
+  7.1 Inference Using a Probability Model\\
 \item
-  7.2 Methods of Point Estimation
+  7.2 Statistical Models\\
+\item
+  7.3 Data Collection (Finite Populations, Simple Random Sampling,
+  Histograms)\\
+\item
+  7.4 Basic Inferences (Descriptive, Plots, Types of Inferences)
 \end{itemize}
 
-\subsection*{Statistical Intervals Based on a Single Sample (Weeks
-9-12)}\label{statistical-intervals-based-on-a-single-sample-weeks-9-12}
-\addcontentsline{toc}{subsection}{Statistical Intervals Based on a
-Single Sample (Weeks 9-12)}
+\subsection*{Likelihood Inference (Weeks
+9-12)}\label{likelihood-inference-weeks-9-12}
+\addcontentsline{toc}{subsection}{Likelihood Inference (Weeks 9-12)}
 
 \begin{itemize}
 \tightlist
 \item
-  8.1 Basic Properties of Confidence Intervals
+  8.1 The Likelihood Function, Sufficient Statistics\\
 \item
-  8.2 Large-Sample Confidence Intervals for a Population Mean and
-  Proportion
+  8.2 Maximum Likelihood Estimation\\
 \item
-  8.3 Intervals Based on a Normal Population Distribution
+  8.3 Inferences Based on the MLE (Standard Errors, Bias, Consistency,
+  Confidence Intervals, Hypotheses and Test Procedures, P-values,
+  Inferences for the Variance)\\
 \item
-  8.4 Confidence Intervals for the Variance and Standard Deviation of a
-  Normal Population
-\item
-  8.5 Bootstrap Confidence Intervals
+  8.4 Distribution-Free Methods (Method of Moments, Bootstrapping)
 \end{itemize}
 
-\subsection*{Tests of Hypotheses Based on a Single Sample (Weeks
-9-12)}\label{tests-of-hypotheses-based-on-a-single-sample-weeks-9-12}
-\addcontentsline{toc}{subsection}{Tests of Hypotheses Based on a Single
-Sample (Weeks 9-12)}
+\subsection*{Regression and Correlation (Weeks
+9-12)}\label{regression-and-correlation-weeks-9-12}
+\addcontentsline{toc}{subsection}{Regression and Correlation (Weeks
+9-12)}
 
 \begin{itemize}
 \tightlist
 \item
-  9.1 Hypotheses and Test Procedures
+  9.1 The Simple Linear and Logistic Regression Models\\
 \item
-  9.2 Tests About a Population Mean
+  9.2 Estimating Model Parameters\\
 \item
-  9.3 Tests Concerning a Population Proportion
+  9.3 Inferences About the Regression Coefficient\\
 \item
-  9.4 P-Values
+  9.4 Inferences Concerning Prediction of Future \(Y\) Values\\
 \item
-  9.5 Some Comments on Selecting a Test Procedure
+  9.5 Correlation\\
+\item
+  9.6 Model Checking (\(\chi^2\) Goodness of Fit Test,
+  Cross-Validation)\\
+\item
+  9.7 Multiple Regression Analysis\\
+\item
+  9.8 Regression with Matrices
 \end{itemize}
 
 \chapter*{Prerequisites}\label{prerequisites}
@@ -1751,13 +1762,13 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \end{Shaded}
 
 \begin{verbatim}
-##           x1        x2
-## 1 0.91084722 0.4924092
-## 2 0.13177201 0.8090487
-## 3 0.66593222 0.7298332
-## 4 0.36951690 0.5364694
-## 5 0.93635808 0.7376488
-## 6 0.04473409 0.4075671
+##          x1         x2
+## 1 0.8155175 0.51800752
+## 2 0.2322701 0.98242829
+## 3 0.6181735 0.08077822
+## 4 0.6124860 0.70930730
+## 5 0.6568615 0.06318310
+## 6 0.7079971 0.11003270
 \end{verbatim}
 
 \begin{Shaded}
@@ -1934,13 +1945,13 @@ function:
 \end{Shaded}
 
 \begin{verbatim}
-##          [,1]       [,2]        [,3]
-## [1,] 5.249268 17.2258513   2.2293097
-## [2,] 5.584369  5.9825521 -13.9421487
-## [3,] 4.248865 13.9839129   4.8470980
-## [4,] 5.035104 11.5985428   2.7856980
-## [5,] 5.552769 -0.2442473  -0.2946185
-## [6,] 5.053378  6.6256392  -0.6804467
+##          [,1]      [,2]        [,3]
+## [1,] 4.584122 11.448825 -14.7176778
+## [2,] 3.472091  5.562094   0.9271128
+## [3,] 4.360669  4.365015 -13.6755498
+## [4,] 6.196891  6.563408  17.1622086
+## [5,] 6.536903 10.130647   0.1421975
+## [6,] 3.467992 11.596815 -17.3546219
 \end{verbatim}
 
 The following diagram (from
