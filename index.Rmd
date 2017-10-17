@@ -165,6 +165,7 @@ knitr::write_bib(c(
 2. [Discrete Random Variables and Probability Distributions (part II)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week4.pdf)
 3. [Continuous Random Variables and Probability Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week5.pdf)
 4. [Normal Distribution and Expectations of Continuos Random Variables](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week6.pdf)
+5. [Transformations of a Random Variable and Discrete Joint Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week7.pdf)
 
 # Assignments {-}
 
