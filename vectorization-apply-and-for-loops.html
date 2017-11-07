@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-10-31">
+<meta name="date" content="2017-11-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -249,13 +249,13 @@ x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##           x1        x2
-## 1 0.66458386 0.1225554
-## 2 0.89105576 0.2098527
-## 3 0.03817883 0.1181463
-## 4 0.61009482 0.3756508
-## 5 0.49319395 0.9000797
-## 6 0.86303079 0.7097653</code></pre>
+<pre><code>##          x1        x2
+## 1 0.9845041 0.5568543
+## 2 0.7840942 0.9099898
+## 3 0.4446820 0.5074166
+## 4 0.2301538 0.2292701
+## 5 0.7116407 0.3489181
+## 6 0.2960526 0.4690731</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -343,13 +343,13 @@ sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</
 randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
-<pre><code>##          [,1]       [,2]       [,3]
-## [1,] 4.982992  0.1935132  -4.191196
-## [2,] 4.450530  5.0303003  -6.573199
-## [3,] 4.944207  6.3553765  -2.912212
-## [4,] 4.812703 10.9373837 -10.729592
-## [5,] 5.738333  4.4278626   7.140814
-## [6,] 4.924772  5.7162533   4.932121</code></pre>
+<pre><code>##          [,1]      [,2]       [,3]
+## [1,] 6.364954 16.123707   7.375466
+## [2,] 5.147038  7.075989 -17.834063
+## [3,] 3.864771 10.244786  -1.479028
+## [4,] 4.756872 13.541511  -9.923130
+## [5,] 4.686923  7.947884   2.354231
+## [6,] 5.423030 13.105977 -22.208732</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
