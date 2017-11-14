@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-11-07">
+<meta name="date" content="2017-11-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -250,12 +250,12 @@ x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
 <pre><code>##          x1        x2
-## 1 0.5107605 0.8609960
-## 2 0.7289552 0.6913416
-## 3 0.3846018 0.8039181
-## 4 0.1190842 0.9119471
-## 5 0.7742663 0.7407616
-## 6 0.8312074 0.2960524</code></pre>
+## 1 0.8829327 0.2458788
+## 2 0.1350774 0.1422948
+## 3 0.0983973 0.3482362
+## 4 0.3539866 0.8394828
+## 5 0.7534378 0.1795136
+## 6 0.9721788 0.3319590</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -343,13 +343,13 @@ sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</
 randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
-<pre><code>##          [,1]     [,2]       [,3]
-## [1,] 4.394907 10.27079  -5.156510
-## [2,] 5.228019 10.42740 -10.638765
-## [3,] 5.446559 17.51879  -7.726830
-## [4,] 4.821111  5.76715  12.435190
-## [5,] 4.246130 13.20833  21.292350
-## [6,] 6.000348 12.32293   3.305808</code></pre>
+<pre><code>##          [,1]      [,2]       [,3]
+## [1,] 4.884800  8.291392  -5.268826
+## [2,] 5.928481 12.046479  -8.118748
+## [3,] 6.683438 11.715493 -24.698366
+## [4,] 5.489511 14.346342   2.330270
+## [5,] 4.133341  7.036179  -7.819243
+## [6,] 5.783410 14.166997 -11.765780</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
@@ -384,7 +384,7 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-rmarkdown">
-<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, Rob Hyndman, and Ruben Arslan. 2017. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, and Winston Chang. 2017. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
 </div>
 <div class="footnotes">
