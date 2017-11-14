@@ -168,7 +168,8 @@ knitr::write_bib(c(
 5. [Transformations of a Random Variable and Discrete Joint Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week7.pdf)
 6. [Joint, Marginal, Conditional Continuous Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week8.pdf)
 7. [Multidimensional Change of Variables, Conditional Expectation, Variance, Hierarchical Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week9.pdf)
-8. [Sampling Distributions and Limits](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week10.pdf)
+8. [Sampling Distributions and Limits, Convergence in Probability](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week10.pdf)
+9. [Convergence in Distribution and Central Limit Theorem](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week11.pdf)
 
 # Assignments {-}
 
@@ -180,6 +181,8 @@ knitr::write_bib(c(
 # Quiz {-}
 
 1. [Quiz 1 (October 3, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-1-F2017.pdf)
+2. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-2-F2017.pdf)
+
 
 
 
