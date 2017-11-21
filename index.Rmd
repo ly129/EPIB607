@@ -184,5 +184,10 @@ knitr::write_bib(c(
 2. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-2-F2017.pdf)
 
 
+# R Code {-}
 
+## Central Limit Theorem in Action
+
+1. [clt-master.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-master.Rmd)   
+2. [clt-template.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-template.Rmd) 
 

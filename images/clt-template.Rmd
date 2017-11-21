@@ -1,0 +1,35 @@
+
+## CLT in Action for n = {{i}}  
+
+CLT in action for n = {{i}} (note: we need some text here in order for the sections to work properly and show up in the table of contents)
+
+```{r n-{{i}}, fig.cap = 'CLT in Action with n = {{i}}'}
+n={{i}}
+
+# simulate distributions
+walk <- rnorm(n, 4,1); 
+bus <- runif(n, 4, 16); 
+ride <- rpois(n, 8); 
+climb <- rgamma(n, shape = 6, scale = 0.5); 
+fall <- rexp(n, rate = 4);
+
+# theoretical means and variances for each of the distributions
+################### Copy your code here #######################
+
+# create data.frame and calculate total transit time
+################### Copy your code here #######################
+
+# theoretical mean and variance of total transit time
+################### Copy your code here #######################
+
+par(mfrow=c(2,3))
+hist(walk, main="Normal(mean=4,sd=1)", freq=FALSE)
+hist(bus, main="Uniform(a=4,b=16)", freq=FALSE)
+hist(ride, main="Poisson(lambda=8)", freq=FALSE)
+hist(climb, main="Gamma(shape=6, scale=0.5)", freq=FALSE)
+hist(fall, main="Exponential(rate=4)", freq=FALSE)
+hist(DT$sum, xlab='Total time', main=paste("Distribution of Sum, n = ",n), freq=FALSE)
+curve(dnorm(x,mean=mean.sum,sd=sqrt(var.sum)),0,50,add=TRUE,lwd=2,col="red")
+```
+
+<br> <br>  
