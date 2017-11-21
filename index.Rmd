@@ -191,5 +191,4 @@ knitr::write_bib(c(
 1. [clt-master.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-master.Rmd)   
 2. [clt-template.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-template.Rmd) 
 
-<script src="https://gist.github.com/sahirbhatnagar/a97c63d85dc3223657202321242ef831.js"></script>
 
