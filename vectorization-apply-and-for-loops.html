@@ -252,13 +252,13 @@ x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##          x1        x2
-## 1 0.7956095 0.9543510
-## 2 0.4134190 0.5813040
-## 3 0.6160604 0.6052669
-## 4 0.6675863 0.7158470
-## 5 0.7752990 0.4677175
-## 6 0.1239614 0.3076088</code></pre>
+<pre><code>##          x1         x2
+## 1 0.9370808 0.45913974
+## 2 0.1143642 0.29569370
+## 3 0.2438278 0.52416718
+## 4 0.3282673 0.08102961
+## 5 0.3240287 0.31025686
+## 6 0.6955324 0.22627868</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -347,12 +347,12 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
 <pre><code>##          [,1]      [,2]       [,3]
-## [1,] 4.010023  7.565251 -13.930084
-## [2,] 4.513390  9.366640 -21.960323
-## [3,] 5.707706 15.017413   3.976375
-## [4,] 4.492834 18.246200  -9.240344
-## [5,] 6.442137  9.105702 -15.040823
-## [6,] 4.163255 14.847293   8.837193</code></pre>
+## [1,] 6.609520 18.917865 -11.649796
+## [2,] 5.698153  9.456222   3.975642
+## [3,] 6.508983  9.162177 -14.974714
+## [4,] 6.182751  2.185014   6.645801
+## [5,] 7.363484 13.247956  -4.920534
+## [6,] 3.270485 14.695020 -12.930141</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
