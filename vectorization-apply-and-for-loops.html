@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Rai Bhatnagar">
 
 
-<meta name="date" content="2017-11-21">
+<meta name="date" content="2017-11-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -130,6 +130,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="quiz.html"><a href="quiz.html"><i class="fa fa-check"></i>Quiz</a></li>
 <li class="chapter" data-level="" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i>R Code</a><ul>
 <li class="chapter" data-level="0.1" data-path="r-code.html"><a href="r-code.html#central-limit-theorem-in-action"><i class="fa fa-check"></i><b>0.1</b> Central Limit Theorem in Action</a></li>
+<li class="chapter" data-level="0.2" data-path="r-code.html"><a href="r-code.html#impc-dataset"><i class="fa fa-check"></i><b>0.2</b> IMPC Dataset</a></li>
 </ul></li>
 <li class="part"><span><b>I Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Overview and Descriptive Statistics</a><ul>
@@ -252,13 +253,13 @@ x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
 <span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##          x1        x2
-## 1 0.6212955 0.8001330
-## 2 0.1260489 0.7382517
-## 3 0.9750337 0.2751968
-## 4 0.4530219 0.5002826
-## 5 0.5095692 0.8534439
-## 6 0.9564011 0.1151819</code></pre>
+<pre><code>##           x1        x2
+## 1 0.96612717 0.2291511
+## 2 0.31218177 0.6427829
+## 3 0.04427212 0.8122926
+## 4 0.53849190 0.7324695
+## 5 0.44311497 0.7543477
+## 6 0.38445882 0.3186931</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
@@ -346,13 +347,13 @@ sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</
 randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
 <span class="kw">head</span>(randomNormals)</code></pre></div>
-<pre><code>##          [,1]      [,2]      [,3]
-## [1,] 3.467291  6.905857 -7.448459
-## [2,] 4.017902  9.846146  0.177143
-## [3,] 6.227007  4.916773  3.185153
-## [4,] 4.375789 11.724572  4.837760
-## [5,] 4.227160 13.782713 -5.992435
-## [6,] 5.696476  8.887889  1.340140</code></pre>
+<pre><code>##          [,1]      [,2]        [,3]
+## [1,] 3.326523 10.445518   0.4658245
+## [2,] 5.460135  6.919935  -4.5076766
+## [3,] 4.559437 12.547078 -11.9266432
+## [4,] 4.299862 19.197032   0.6491654
+## [5,] 3.828259 10.837887   0.4507984
+## [6,] 5.417049 10.572587  -2.0366147</code></pre>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
