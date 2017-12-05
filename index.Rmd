@@ -186,6 +186,7 @@ knitr::write_bib(c(
 
 1. [Quiz 1 (October 3, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-1-F2017.pdf)
 2. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-2-F2017.pdf)
+3. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-3-F2017.pdf)
 
 
 # R Code {-}
