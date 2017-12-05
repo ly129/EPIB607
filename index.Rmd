@@ -199,3 +199,13 @@ knitr::write_bib(c(
 
 1. [impc_data.txt](https://github.com/sahirbhatnagar/MATH697/blob/master/images/impc_data.txt) 
 
+
+# Distribution Tables {-}
+
+## Standard Normal
+
+1. [Standard Normal Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/Standard_Normal_Table.pdf)   
+
+## t-Distribution
+
+1. [t-Distribution Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/t_Table.pdf)   
