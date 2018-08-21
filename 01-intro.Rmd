@@ -36,7 +36,8 @@ graduate, the age at which the individual graduated, and so on. A variable is an
 knitr::kable(data.frame(type = c("univariate", "bivariate","multivariate"), 
                         description = c("consists of observations on a single variable",
                                         "observations are made on each of two variables",
-                                        "more than two variables")), col.names = c("data type","description"))
+                                        "more than two variables")), col.names = c("data type","description"),
+             booktabs = TRUE)
 ```
 
 

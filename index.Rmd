@@ -1,16 +1,24 @@
 --- 
-title: "MATH 697"
+title: "EPIB 607"
 author: "Sahir Rai Bhatnagar"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+#knit: bookdown::render_book
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: sahirbhatnagar/MATH697
-description: "Course material for MATH 697"
+github-repo: sahirbhatnagar/EPIB607
+description: "Course material for EPIB 607"
+url: 'https\://sahirbhatnagar.com/'
 ---
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+require(knitr)
+```
+
+
 
 # Syllabus {-}
 
@@ -36,7 +44,8 @@ The main learning outcomes of this course are to get a broad idea about some fre
 
 ```{r, results='asis', echo=FALSE}
 knitr::kable(data.frame(c("Assignments","Quizzes","Final Exam"),
-                        c("10%","40%","50%")), col.names = c("",""))
+                        c("10%","40%","50%")), col.names = c("",""),
+             booktabs = TRUE)
 ```
 
 ## Target Syllabus {-}
@@ -110,7 +119,6 @@ knitr::kable(data.frame(c("Assignments","Quizzes","Final Exam"),
 - 9.6 Model Checking ($\chi^2$ Goodness of Fit Test, Cross-Validation)  
 - 9.7 Multiple Regression Analysis  
 - 9.8 Regression with Matrices  
-
 
 
 # Prerequisites {-}

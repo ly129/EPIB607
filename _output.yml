@@ -3,15 +3,18 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">MATH 697</a></li>
+        <li><a href="./">EPIB 607</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/sahirbhatnagar/MATH697/edit/master/%s
-    download: ["pdf", "epub"]
+        <li><a href="https://sahirbhatnagar.com" target="blank">Built with bookdown</a></li>
+    edit:
+      link: https://github.com/sahirbhatnagar/EPIB607/edit/master/%s
+    download: ["pdf"]
 bookdown::pdf_book:
+#  base_format: tint::tintBook
+#tint::tintBook:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::epub_book: default
+#bookdown::epub_book: default
