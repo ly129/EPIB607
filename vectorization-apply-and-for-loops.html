@@ -5,27 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MATH 697</title>
-  <meta name="description" content="Course material for MATH 697">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <title>EPIB 607</title>
+  <meta name="description" content="Course material for EPIB 607 at McGill University">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="MATH 697" />
+  <meta property="og:title" content="EPIB 607" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://sahirbhatnagar.com/EPIB607" />
   
-  
-  <meta property="og:description" content="Course material for MATH 697" />
-  <meta name="github-repo" content="sahirbhatnagar/MATH697" />
+  <meta property="og:description" content="Course material for EPIB 607 at McGill University" />
+  <meta name="github-repo" content="sahirbhatnagar/EPIB607" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MATH 697" />
+  <meta name="twitter:title" content="EPIB 607" />
   
-  <meta name="twitter:description" content="Course material for MATH 697" />
+  <meta name="twitter:description" content="Course material for EPIB 607 at McGill University" />
   
 
-<meta name="author" content="Sahir Rai Bhatnagar">
+<meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2017-12-05">
+<meta name="date" content="2018-08-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -100,10 +100,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">MATH 697</a></li>
+<li><a href="./">EPIB 607</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Syllabus</a><ul>
+<li class="part"><span><b>I Preface</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-information"><i class="fa fa-check"></i>General Information</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i>Course Description</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
@@ -136,7 +138,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="0.3" data-path="distribution-tables.html"><a href="distribution-tables.html#standard-normal"><i class="fa fa-check"></i><b>0.3</b> Standard Normal</a></li>
 <li class="chapter" data-level="0.4" data-path="distribution-tables.html"><a href="distribution-tables.html#t-distribution"><i class="fa fa-check"></i><b>0.4</b> t-Distribution</a></li>
 </ul></li>
-<li class="part"><span><b>I Part I</b></span></li>
+<li class="part"><span><b>II Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Overview and Descriptive Statistics</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#populations-and-samples"><i class="fa fa-check"></i><b>1.1</b> Populations and Samples</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#variable"><i class="fa fa-check"></i><b>1.1.1</b> Variable</a></li>
@@ -192,7 +194,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://sahirbhatnagar.com" target="blank">Built with bookdown</a></li>
 
 </ul>
 
@@ -203,7 +205,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 697</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EPIB 607</a>
           </h1>
         </div>
 
@@ -221,21 +223,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} =
 \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}
 \]</span>   The corresponding <code>R</code> code is given by:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
-b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
-a <span class="op">+</span><span class="st"> </span>b</code></pre></div>
-<pre><code>## [1] 2 4 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+a<span class="op">+</span>b
+<span class="co">#&gt; [1] 2 4 6</span></code></pre></div>
 <p>Many of the <code>base</code> functions in <code>R</code> are already vectorized. Here are some common examples:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># generate a sequence of numbers from 1 to 10</span>
-(a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</code></pre></div>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sum the numbers from 1 to 10</span>
-<span class="kw">sum</span>(a)</code></pre></div>
-<pre><code>## [1] 55</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculate sums of each column</span>
-<span class="kw">colSums</span>(iris[, <span class="op">-</span><span class="dv">5</span>])</code></pre></div>
-<pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
-##        876.5        458.6        563.7        179.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="co"># generate a sequence of numbers from 1 to 10</span>
+(a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)
+<span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span>
+
+<span class="co"># sum the numbers from 1 to 10</span>
+<span class="kw">sum</span>(a)
+<span class="co">#&gt; [1] 55</span>
+
+<span class="co"># calculate sums of each column</span>
+<span class="kw">colSums</span>(iris[, <span class="op">-</span><span class="dv">5</span>])
+<span class="co">#&gt; Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span>
+<span class="co">#&gt;        876.5        458.6        563.7        179.9</span></code></pre></div>
 <blockquote>
 <p><strong>Exercise</strong>: What happens when you sum two vectors of different lengths?</p>
 </blockquote>
@@ -251,86 +256,95 @@ a <span class="op">+</span><span class="st"> </span>b</code></pre></div>
 </ul>
 <div id="loops-vs.apply" class="section level3">
 <h3><span class="header-section-number">A.2.1</span> Loops vs. Apply</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Getting the row means of two columns Generate data</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="co"># Getting the row means of two columns</span>
+<span class="co"># Generate data</span>
 N &lt;-<span class="st"> </span><span class="dv">10000</span>
 x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
-<span class="kw">head</span>(d)</code></pre></div>
-<pre><code>##          x1        x2
-## 1 0.6963021 0.6224192
-## 2 0.9291457 0.1666414
-## 3 0.4176137 0.9303038
-## 4 0.6085086 0.5384334
-## 5 0.6321354 0.1483398
-## 6 0.8257475 0.6633143</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop: create a vector to store the results in</span>
+<span class="kw">head</span>(d)
+<span class="co">#&gt;        x1     x2</span>
+<span class="co">#&gt; 1 0.57632 0.9615</span>
+<span class="co">#&gt; 2 0.56474 0.1950</span>
+<span class="co">#&gt; 3 0.07399 0.3001</span>
+<span class="co">#&gt; 4 0.45387 0.3823</span>
+<span class="co">#&gt; 5 0.37328 0.1197</span>
+<span class="co">#&gt; 6 0.33132 0.9891</span>
+
+<span class="co"># Loop:</span>
+<span class="co"># create a vector to store the results in </span>
 rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
 
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(N)) {
-    rowMeanFor[[i]] &lt;-<span class="st"> </span><span class="kw">mean</span>(<span class="kw">c</span>(d[i, <span class="dv">1</span>], d[i, <span class="dv">2</span>]))
+        rowMeanFor[[i]] &lt;-<span class="st"> </span><span class="kw">mean</span>(<span class="kw">c</span>(d[i, <span class="dv">1</span>], d[i, <span class="dv">2</span>]))
 }
 
 <span class="co"># Apply:</span>
 rowMeanApply &lt;-<span class="st"> </span><span class="kw">apply</span>(d, <span class="dv">1</span>, mean)
 
 <span class="co"># are the results equal</span>
-<span class="kw">all.equal</span>(rowMeanFor, rowMeanApply)</code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
+<span class="kw">all.equal</span>(rowMeanFor,rowMeanApply)
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div id="descriptive-statistics-using-apply" class="section level3">
 <h3><span class="header-section-number">A.2.2</span> Descriptive Statistics using <code>*apply</code></h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(women)
 <span class="co"># data structure</span>
-<span class="kw">str</span>(women)</code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    15 obs. of  2 variables:
-##  $ height: num  58 59 60 61 62 63 64 65 66 67 ...
-##  $ weight: num  115 117 120 123 126 129 132 135 139 142 ...</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculate the mean for each column</span>
-<span class="kw">apply</span>(women, <span class="dv">2</span>, mean)</code></pre></div>
-<pre><code>##   height   weight 
-##  65.0000 136.7333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># apply &#39;fivenum&#39; function to each column</span>
-<span class="kw">vapply</span>(women, fivenum, <span class="kw">c</span>(<span class="dt">Min. =</span> <span class="dv">0</span>, <span class="st">`</span><span class="dt">1st Qu.</span><span class="st">`</span> =<span class="st"> </span><span class="dv">0</span>, <span class="dt">Median =</span> <span class="dv">0</span>, <span class="st">`</span><span class="dt">3rd Qu.</span><span class="st">`</span> =<span class="st"> </span><span class="dv">0</span>, 
-    <span class="dt">Max. =</span> <span class="dv">0</span>))</code></pre></div>
-<pre><code>##         height weight
-## Min.      58.0  115.0
-## 1st Qu.   61.5  124.5
-## Median    65.0  135.0
-## 3rd Qu.   68.5  148.0
-## Max.      72.0  164.0</code></pre>
+<span class="kw">str</span>(women)
+<span class="co">#&gt; &#39;data.frame&#39;:    15 obs. of  2 variables:</span>
+<span class="co">#&gt;  $ height: num  58 59 60 61 62 63 64 65 66 67 ...</span>
+<span class="co">#&gt;  $ weight: num  115 117 120 123 126 129 132 135 139 142 ...</span>
+
+<span class="co"># calculate the mean for each column</span>
+<span class="kw">apply</span>(women, <span class="dv">2</span>, mean)
+<span class="co">#&gt; height weight </span>
+<span class="co">#&gt;   65.0  136.7</span>
+
+<span class="co"># apply &#39;fivenum&#39; function to each column</span>
+<span class="kw">vapply</span>(women, fivenum, <span class="kw">c</span>(<span class="st">&quot;Min.&quot;</span> =<span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;1st Qu.&quot;</span> =<span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;Median&quot;</span> =<span class="st"> </span><span class="dv">0</span>, 
+                         <span class="st">&quot;3rd Qu.&quot;</span> =<span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;Max.&quot;</span> =<span class="st"> </span><span class="dv">0</span>))
+<span class="co">#&gt;         height weight</span>
+<span class="co">#&gt; Min.      58.0  115.0</span>
+<span class="co">#&gt; 1st Qu.   61.5  124.5</span>
+<span class="co">#&gt; Median    65.0  135.0</span>
+<span class="co">#&gt; 3rd Qu.   68.5  148.0</span>
+<span class="co">#&gt; Max.      72.0  164.0</span></code></pre></div>
 </div>
 <div id="creating-new-columns-using-sapply" class="section level3">
 <h3><span class="header-section-number">A.2.3</span> Creating new columns using <code>sapply</code></h3>
 <p>You can apply a <em>user defined function</em> to columns or the entire data frame:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># the ouput of sapply is a vector the &#39;s&#39; in sapply stands for &#39;simplified&#39;</span>
-<span class="co"># apply</span>
-mtcars<span class="op">$</span>gear2 &lt;-<span class="st"> </span><span class="kw">sapply</span>(mtcars<span class="op">$</span>gear, <span class="cf">function</span>(i) <span class="cf">if</span> (i <span class="op">==</span><span class="st"> </span><span class="dv">4</span>) <span class="st">&quot;alot&quot;</span> <span class="cf">else</span> <span class="st">&quot;some&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># the ouput of sapply is a vector</span>
+<span class="co"># the &#39;s&#39; in sapply stands for &#39;simplified&#39; apply</span>
+mtcars<span class="op">$</span>gear2 &lt;-<span class="st"> </span><span class="kw">sapply</span>(mtcars<span class="op">$</span>gear, 
+                       <span class="cf">function</span>(i) <span class="cf">if</span> (i<span class="op">==</span><span class="dv">4</span>) <span class="st">&quot;alot&quot;</span> <span class="cf">else</span> <span class="st">&quot;some&quot;</span>)
 
-<span class="kw">head</span>(mtcars)[, <span class="kw">c</span>(<span class="st">&quot;gear&quot;</span>, <span class="st">&quot;gear2&quot;</span>)]</code></pre></div>
-<pre><code>##                   gear gear2
-## Mazda RX4            4  alot
-## Mazda RX4 Wag        4  alot
-## Datsun 710           4  alot
-## Hornet 4 Drive       3  some
-## Hornet Sportabout    3  some
-## Valiant              3  some</code></pre>
+<span class="kw">head</span>(mtcars)[,<span class="kw">c</span>(<span class="st">&quot;gear&quot;</span>,<span class="st">&quot;gear2&quot;</span>)]
+<span class="co">#&gt;                   gear gear2</span>
+<span class="co">#&gt; Mazda RX4            4  alot</span>
+<span class="co">#&gt; Mazda RX4 Wag        4  alot</span>
+<span class="co">#&gt; Datsun 710           4  alot</span>
+<span class="co">#&gt; Hornet 4 Drive       3  some</span>
+<span class="co">#&gt; Hornet Sportabout    3  some</span>
+<span class="co">#&gt; Valiant              3  some</span></code></pre></div>
 </div>
 <div id="applying-functions-to-subsets-using-tapply" class="section level3">
 <h3><span class="header-section-number">A.2.4</span> Applying functions to subsets using <code>tapply</code></h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fisher&#39;s famous dataset</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="co"># Fisher&#39;s famous dataset </span>
 <span class="kw">data</span>(iris)
-<span class="kw">str</span>(iris)</code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
-##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
-##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
-##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
-##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
-##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean sepal length by species</span>
-<span class="kw">tapply</span>(iris<span class="op">$</span>Sepal.Length, iris<span class="op">$</span>Species, mean)</code></pre></div>
-<pre><code>##     setosa versicolor  virginica 
-##      5.006      5.936      6.588</code></pre>
+<span class="kw">str</span>(iris)
+<span class="co">#&gt; &#39;data.frame&#39;:    150 obs. of  5 variables:</span>
+<span class="co">#&gt;  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...</span>
+<span class="co">#&gt;  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...</span>
+<span class="co">#&gt;  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...</span>
+<span class="co">#&gt;  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...</span>
+<span class="co">#&gt;  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</span>
+
+<span class="co"># mean sepal length by species </span>
+<span class="kw">tapply</span>(iris<span class="op">$</span>Sepal.Length, iris<span class="op">$</span>Species, mean)
+<span class="co">#&gt;     setosa versicolor  virginica </span>
+<span class="co">#&gt;      5.006      5.936      6.588</span></code></pre></div>
 </div>
 <div id="nested-for-loops-using-mapply" class="section level3">
 <h3><span class="header-section-number">A.2.5</span> Nested for loops using <code>mapply</code></h3>
@@ -344,20 +358,20 @@ mtcars<span class="op">$</span>gear2 &lt;-<span class="st"> </span><span class="
 v2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">5</span>)
 v3 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="op">-</span><span class="dv">3</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</code></pre></div>
 <p>This isn’t too bad for three vectors. But what if you want to generate many more combinations of means and sds ? Furthermore, how can you keep track of the parameters you used? Now lets consider the <code>mapply</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">means &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="op">-</span><span class="dv">3</span>)
-sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">means &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">10</span>,<span class="op">-</span><span class="dv">3</span>) ; sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">10</span>) 
 
 <span class="co"># MoreArgs is a list of arguments that dont change</span>
-randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
+randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, 
+                        <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
-<span class="kw">head</span>(randomNormals)</code></pre></div>
-<pre><code>##          [,1]       [,2]       [,3]
-## [1,] 3.015161  7.3642211 -11.013833
-## [2,] 4.837859  0.7064764  -2.012587
-## [3,] 5.133835  9.6525705  -2.991841
-## [4,] 4.821264 11.8294120  -9.484682
-## [5,] 5.022975  6.2274738  -2.612622
-## [6,] 3.931013  7.8036424 -18.101926</code></pre>
+<span class="kw">head</span>(randomNormals)
+<span class="co">#&gt;       [,1]   [,2]    [,3]</span>
+<span class="co">#&gt; [1,] 3.836  8.771   5.144</span>
+<span class="co">#&gt; [2,] 4.525  9.376  -2.280</span>
+<span class="co">#&gt; [3,] 4.072 13.144   2.940</span>
+<span class="co">#&gt; [4,] 4.737 18.210 -13.118</span>
+<span class="co">#&gt; [5,] 5.690 22.951  -7.008</span>
+<span class="co">#&gt; [6,] 4.826  7.615 -15.323</span></code></pre></div>
 <p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
 <div class="figure">
 <img src="images/mapply.png" />
@@ -369,17 +383,20 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 <li>The parameters are also saved in <code>R</code> objects so that they can be easily manipulated and/or recovered</li>
 </ol>
 <p>Consider a more complex scenario where you want to consider many possible combinations of means and sds. We take advantage of the <code>expand.grid</code> function to create a <code>data.frame</code> of simulation parameters:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">simParams &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">means =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">sds =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">simParams &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">means =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,
+                         <span class="dt">sds =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)
 
-randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> simParams<span class="op">$</span>means, <span class="dt">sd =</span> simParams<span class="op">$</span>sds, <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
+randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> simParams<span class="op">$</span>means, 
+                        <span class="dt">sd =</span> simParams<span class="op">$</span>sds, 
+                        <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
 
-<span class="kw">dim</span>(randomNormals)</code></pre></div>
-<pre><code>## [1] 100 100</code></pre>
+<span class="kw">dim</span>(randomNormals)
+<span class="co">#&gt; [1] 100 100</span></code></pre></div>
 </div>
 </div>
 <div id="creating-dynamic-documents-with-mapply" class="section level2">
 <h2><span class="header-section-number">A.3</span> Creating dynamic documents with <code>mapply</code></h2>
-<p><code>mapply</code> together with the <code>rmarkdown</code> package <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown">2017</a>)</span> can be very useful to create dynamic documents for exploratory analysis. We illustrate this using the Motor Trend Car Road Tests data which comes pre-loaded in <code>R</code>.</p>
+<p><code>mapply</code> together with the <code>rmarkdown</code> package <span class="citation">[@R-rmarkdown]</span> can be very useful to create dynamic documents for exploratory analysis. We illustrate this using the Motor Trend Car Road Tests data which comes pre-loaded in <code>R</code>.</p>
 <blockquote>
 <p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
 </blockquote>
@@ -387,12 +404,6 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 <script src="https://gist.github.com/sahirbhatnagar/d2264c64b0213308dfaa537af1bfd9a7.js"></script>
 <p>Copy the code below in a file called <code>boxplotTemplate</code> :</p>
 <script src="https://gist.github.com/sahirbhatnagar/4db246dd767eabb204eead836b29cd44.js"></script>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-R-rmarkdown">
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, and Winston Chang. 2017. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
 </div>
 <div class="footnotes">
@@ -425,10 +436,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -436,10 +448,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sahirbhatnagar/MATH697/edit/master/05-Rtutorial.Rmd",
+"link": "https://github.com/sahirbhatnagar/EPIB607/edit/master/05-Rtutorial.Rmd",
 "text": "Edit"
 },
-"download": ["math697.pdf", "math697.epub"],
+"download": ["epib607.pdf"],
 "toc": {
 "collapse": "subsection"
 }
@@ -452,9 +464,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
