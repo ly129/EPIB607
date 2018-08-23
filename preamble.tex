@@ -2,6 +2,69 @@
 \usepackage{longtable}
 \usepackage[bf,singlelinecheck=off]{caption}
 
+\let\originaltabular\tabular
+\let\endoriginaltabular\endtabular
+\renewenvironment{tabular}[1]{%
+  \begingroup%
+  \centering%
+  \originaltabular{#1}}%
+  {\endoriginaltabular\endgroup}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \makeatletter
+  \@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
+  \makeatother
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \makeatletter
+  \@ifpackageloaded{soul}{
+     \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+     \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+   }{}
+  \makeatother
+\fi
+
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+\usepackage{units}
+
+% multiplecol
+\usepackage{multicol}
+
+% strikeout
+\usepackage[normalem]{ulem}
+
+% morefloats
+\usepackage{morefloats}
+
+% tightlist macro required by pandoc >= 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+%% -- tint overrides
+%% fonts, using roboto (condensed) as default
+\usepackage[sfdefault,condensed]{roboto}
+%% also nice: \usepackage[default]{lato}
+
+%% colored links, setting 'borrowed' from RJournal.sty with 'Thanks, Achim!'
+\RequirePackage{color}
+\definecolor{link}{rgb}{0.1,0.1,0.8} %% blue with some grey
+\hypersetup{
+  colorlinks,%
+  citecolor=link,%
+  filecolor=link,%
+  linkcolor=link,%
+  urlcolor=link
+}
+
+
 %\usepackage{fontspec}
 %\setmainfont[UprightFeatures={SmallCapsFont=AlegreyaSC-Regular}]{Alegreya}
 
@@ -98,6 +161,9 @@
 }
 \makeatother
 
+
+
+
 %\usepackage[pagebackref=false,bookmarks]{hyperref}
 \hypersetup{
 	unicode=false,          
@@ -105,7 +171,7 @@
 	pdfmenubar=true,        
 	pdffitwindow=false,     % window fit to page when opened
 	pdfstartview={FitH},    % fits the width of the page to the window
-	pdftitle={Manuscript 1},    % title
+	pdftitle={EPIB 607 Notes},    % title
 	pdfauthor={Sahir Rai Bhatnagar},     % author
 	pdfsubject={Subject},   % subject of the document
 	pdfcreator={Sahir Rai Bhatnagar},   % creator of the document

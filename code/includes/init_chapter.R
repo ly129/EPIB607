@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
   fig.asp = 0.618       
 )
 
+library(magrittr)
 ## knitr options from: https://yihui.name/knitr/options/
 ## Can't display inline because of knitr giving: %InLiNe_IdEnTiFiEr%
 # cache: Store all executed code and results to speed up build time

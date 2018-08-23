@@ -10,7 +10,7 @@ bookdown::gitbook:
       link: https://github.com/sahirbhatnagar/EPIB607/edit/master/%s
     download: ["pdf"]
 bookdown::pdf_book:
-#  base_format: tint::tintBook
+#  base_format: bookdown::pdf_document2
 #tint::tintBook:
   includes:
     in_header: preamble.tex
