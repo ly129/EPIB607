@@ -80,12 +80,12 @@ is_online = curl::has_internet()
 
 # Welcome {-}
 
-Welcome to the notes for EPIB 607: Inferential Statistics at McGill University. 
+Welcome to the course notes for EPIB 607: Inferential Statistics at McGill University. 
 
 
 ## Development {-}
 
-This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at [sahirbhatnagar.com/MATH697](https://sahirbhatnagar.com/MATH697) and kept up-to-date thanks to [Travis](https://travis-ci.org/sahirbhatnagar/MATH697). The entire source code 
+This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at [sahirbhatnagar.com/MATH697](https://sahirbhatnagar.com/MATH697) and kept up-to-date thanks to [Travis](https://travis-ci.org/sahirbhatnagar/MATH697). The entire source code is available at 
 
 <!--
 # won't work with pdf
