@@ -107,12 +107,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-these-notes"><i class="fa fa-check"></i>About these notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i>How to use these notes</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-these-notes-assume"><i class="fa fa-check"></i>What these notes assume</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#code"><i class="fa fa-check"></i>Code</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#r-code-conventions"><i class="fa fa-check"></i>R Code Conventions</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#rendering-mathematical-formulae"><i class="fa fa-check"></i>Rendering Mathematical Formulae</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-information"><i class="fa fa-check"></i>General Information</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i>Course Description</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
@@ -227,12 +229,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
-<p>Welcome to the course notes for EPIB 607: Inferential Statistics at McGill University.</p>
+<p>Welcome to the course notes for <a href="https://www.mcgill.ca/study/2018-2019/courses/epib-607">EPIB 607: Inferential Statistics</a> at McGill University.</p>
 <div id="objectives" class="section level2 unnumbered">
 <h2>Objectives</h2>
 <p>The aim of this course is to provide students with basic principles of statistical inference so that they can:</p>
 <ol style="list-style-type: decimal">
-<li>Understand the statistical methods section in scientific paper.<br />
+<li>Understand the statistical methods section in a scientific paper.<br />
 </li>
 <li>Apply statistical methods in their own research.<br />
 </li>
@@ -242,30 +244,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="audience" class="section level2 unnumbered">
 <h2>Audience</h2>
 <p>The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven’t had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and reading papers.</p>
-<p><span class="citation">(Bhatnagar et al. <a href="#ref-bhatnagar2016dalite">2016</a>)</span></p>
+</div>
+<div id="about-these-notes" class="section level2 unnumbered">
+<h2>About these notes</h2>
+<p>These notes are a collection of useful links, videos, online resources and papers. The instructors have found that no single book sufficiently teaches all the topics covered in this course. Instead, we direct the readers to what we think is a good learning resource for a given topic (following the <strong>Flipped Classroom</strong> strategy, see below). We also provide our own commentary and notes when we think its useful.</p>
 </div>
 <div id="teaching-strategy" class="section level2 unnumbered">
 <h2>Teaching strategy</h2>
+<p>This course will follow the <strong>Flipped Classroom</strong> model. Here, students are expected to have engaged with the material before coming to class (based on very precise pre-class instructions). The students will then be expected to answer a series of questions using the <a href="https://mydalite.org/en/live/signup/form/NTc4">DALITE</a> online platform <span class="citation">(Bhatnagar et al. <a href="#ref-bhatnagar2016dalite">2016</a>)</span>.</p>
+<p>This allows the instructor to delegate the delivery of basic content and definitions to textbooks and videos, and enforces the idea that students cannot be simply passive recipients of information. This approach then allows the professor to focus valuable class time on nurturing efficient discussions surrounding the ideas within the content, guiding interactive exploration of typical misconceptions, and promoting collaborative problem solving with peers. The following video gives a quick overview of the flipped classroom model.</p>
+<p><br></p>
 <center>
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=qdKzSq_t8k8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/qdKzSq_t8k8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
 </center>
 </div>
-<div id="how-to-use-these-notes" class="section level2 unnumbered">
-<h2>How to use these notes</h2>
+<div id="a-focus-on-computation" class="section level2 unnumbered">
+<h2>A focus on computation</h2>
+<p>The classic statistics textbooks were written during a time when computers were still in their infancy. As such, even the newer editions heavily rely on <em>by-hand</em> computations such as looking up tables for tail probabilities. We take a modern approach and use the computer whenever possible to solve problems.</p>
 </div>
-<div id="what-these-notes-assume" class="section level2 unnumbered">
-<h2>What these notes assume</h2>
+<div id="r-code-conventions" class="section level2 unnumbered">
+<h2>R Code Conventions</h2>
+<p>We use <a href="https://cran.r-project.org/"><code>R</code></a> code throughout these notes. When <code>R</code> code is displayed<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> it will be typeset using a <code>monospace</code> font with syntax highlighting enabled to ensure the differentiation of functions, variables, and so on. For example, the following adds 1 to 1</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a =<span class="st"> </span>1L <span class="op">+</span><span class="st"> </span>1L
+a</code></pre></div>
+<p>Each code segment may contain actual output from <code>R</code>. Such output will appear in grey font prefixed by <code>#&gt;</code>. For example, the output of the above code segment would look like so:</p>
+<pre><code>#&gt; [1] 2</code></pre>
 </div>
-<div id="code" class="section level2 unnumbered">
-<h2>Code</h2>
+<div id="rendering-mathematical-formulae" class="section level2 unnumbered">
+<h2>Rendering Mathematical Formulae</h2>
+<p>Throughout these notes, there will be mathematical symbols used to express the material. Depending on the version of the book, there are two different rendering engines.</p>
+<ul>
+<li>For the online version, the text uses <a href="https://www.mathjax.org/">MathJax</a> to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly.<br />
+</li>
+<li>For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>:</li>
+</ul>
+<p><span class="math display">\[ a^2 + b^2 = c^2 \]</span></p>
 </div>
 <div id="development" class="section level2 unnumbered">
 <h2>Development</h2>
-<p>This book is built with <a href="https://github.com/rstudio/bookdown"><strong>bookdown</strong></a> and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at <a href="https://sahirbhatnagar.com/MATH697">sahirbhatnagar.com/MATH697</a> and kept up-to-date thanks to <a href="https://travis-ci.org/sahirbhatnagar/MATH697">Travis</a>. The entire source code is available at</p>
+<p>This book is built with <a href="https://github.com/rstudio/bookdown"><strong>bookdown</strong></a> and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at <a href="https://sahirbhatnagar.com/EPIB607">sahirbhatnagar.com/EPIB607</a> and kept up-to-date thanks to <a href="https://travis-ci.org/sahirbhatnagar/EPIB607">Travis</a>. The entire source code is available at <a href="https://github.com/sahirbhatnagar/EPIB607" class="uri">https://github.com/sahirbhatnagar/EPIB607</a>.</p>
+<p>If you notice any errors, we would be grateful if you would let us know by filing an issue <a href="https://github.com/sahirbhatnagar/EPIB607/issues">here</a> or making a pull request by clicking the edit button in the top-left corner of the text:</p>
+<div class="figure">
+<img src="images/edit_button.png" />
+
+</div>
 </div>
 <div id="acknowledgements" class="section level2 unnumbered">
 <h2>Acknowledgements</h2>
+</div>
+<div id="license" class="section level2 unnumbered">
+<h2>License</h2>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
 <!--
 # won't work with pdf
 [![Build Status](https://travis-ci.org/sahirbhatnagar/MATH697.svg?branch=master)](https://travis-ci.org/sahirbhatnagar/MATH697)
@@ -275,9 +305,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="general-information" class="section level2 unnumbered">
 <h2>General Information</h2>
 <ul>
-<li>Instructor(s): Sahir Bhatnagar and Dr. Alexandra M. Schmidt</li>
-<li>Email: <a href="mailto:sahir.bhatnagar@mail.mcgill.ca">sahir.bhatnagar@mail.mcgill.ca</a>,</li>
-<li>Website: <a href="http://sahirbhatnagar.com/MATH697/" class="uri">http://sahirbhatnagar.com/MATH697/</a></li>
+<li>Instructor(s): Sahir Bhatnagar</li>
+<li>Email: <a href="mailto:sahir.bhatnagar@mcgill.ca">sahir.bhatnagar@mcgill.ca</a>,</li>
+<li>Website: <a href="http://sahirbhatnagar.com/EPIB607/" class="uri">http://sahirbhatnagar.com/EPIB607/</a></li>
 <li>Lectures: Tuesdays 9am - 12pm</li>
 <li>Office: TBD</li>
 <li>Office Hours: By appointment only</li>
@@ -426,6 +456,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="ref-bhatnagar2016dalite">
 <p>Bhatnagar, Sameer, Nathaniel Lasry, Michel Desmarais, and Elizabeth Charles. 2016. “DALITE: Asynchronous Peer Instruction for Moocs.” In <em>European Conference on Technology Enhanced Learning</em>, 505–8. Springer.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Reproduced with permission from <a href="http://www.math.mcgill.ca/dstephens/" class="uri">http://www.math.mcgill.ca/dstephens/</a><a href="index.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>Reproduced with permission from <a href="http://www.math.mcgill.ca/dstephens/" class="uri">http://www.math.mcgill.ca/dstephens/</a><a href="index.html#fnref2">↩</a></p></li>
+</ol>
 </div>
             </section>
 

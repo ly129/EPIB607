@@ -80,13 +80,13 @@ is_online = curl::has_internet()
 
 # Welcome {-}
 
-Welcome to the course notes for EPIB 607: Inferential Statistics at McGill University. 
+Welcome to the course notes for [EPIB 607: Inferential Statistics](https://www.mcgill.ca/study/2018-2019/courses/epib-607) at McGill University. 
 
 ## Objectives {-}
 
 The aim of this course is to provide students with basic principles of statistical inference so that they can:  
 
-1. Understand the statistical methods section in scientific paper.  
+1. Understand the statistical methods section in a scientific paper.  
 2. Apply statistical methods in their own research.  
 3. Use the methods learned in this course as a foundation for more advanced biostatistics courses.  
 
@@ -94,32 +94,78 @@ The aim of this course is to provide students with basic principles of statistic
 
 The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven't had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and reading papers. 
 
-[@bhatnagar2016dalite]
+
+## About these notes {-}
+
+These notes are a collection of useful links, videos, online resources and papers. The instructors have found that no single book sufficiently teaches all the topics covered in this course. Instead, we direct the readers to what we think is a good learning resource for a given topic (following the **Flipped Classroom** strategy, see below). We also provide our own commentary and notes when we think its useful.  
 
 
 ## Teaching strategy {-}
 
+This course will follow the **Flipped Classroom** model. Here, students are expected to have engaged with the material before coming to class (based on very precise pre-class instructions). The students will then be expected to answer a series of questions using the [DALITE](https://mydalite.org/en/live/signup/form/NTc4) online platform [@bhatnagar2016dalite].  
+
+This allows the instructor to delegate the delivery of basic content and definitions to textbooks and videos, and enforces the idea that students cannot be simply passive recipients of information. This approach then allows the professor to focus valuable class time on nurturing efficient discussions surrounding the ideas within the content, guiding interactive
+exploration of typical misconceptions, and promoting collaborative problem solving with peers. The following video gives a quick overview of the flipped classroom model.
+
+<br>  
+
 <center>
-<iframe width="800" height="450" src="https://www.youtube.com/watch?v=qdKzSq_t8k8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/qdKzSq_t8k8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </center>
 
-## How to use these notes {-}
 
 
-## What these notes assume {-}
+## A focus on computation {-}
+
+The classic statistics textbooks were written during a time when computers were still in their infancy. As such, even the newer editions heavily rely on _by-hand_ computations such as looking up tables for tail probabilities. We take a modern approach and use the computer whenever possible to solve problems.  
 
 
+## R Code Conventions {-}
 
-## Code {-}
+We use [`R`](https://cran.r-project.org/) code throughout these notes. When `R` code is displayed[^1] it will be typeset using a `monospace` font with syntax highlighting enabled to ensure the differentiation of functions, variables, and so on. For example, the following adds 1 to 1
+
+[^1]: https://raw.githubusercontent.com/coatless/spm/master/index.Rmd
+
+```{r show-code-style, eval = FALSE}
+a = 1L + 1L
+a
+```
+
+Each code segment may contain actual output from `R`. Such output will appear in grey font prefixed by `#>`. For example, the output of the above code segment would look like so:
+
+```{r show-sample-output, echo = FALSE, eval = TRUE}
+1L + 1L
+```
+
+
+##  Rendering Mathematical Formulae {-}
+
+Throughout these notes, there will be mathematical symbols used to express the material. Depending on the version of the book, there are two different rendering engines.  
+
+- For the online version, the text uses [MathJax](https://www.mathjax.org/) to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly.  
+- For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as[^1]:
+
+\[ a^2 + b^2 = c^2 \]
 
 
 ## Development {-}
 
-This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at [sahirbhatnagar.com/MATH697](https://sahirbhatnagar.com/MATH697) and kept up-to-date thanks to [Travis](https://travis-ci.org/sahirbhatnagar/MATH697). The entire source code is available at 
+This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at [sahirbhatnagar.com/EPIB607](https://sahirbhatnagar.com/EPIB607) and kept up-to-date thanks to [Travis](https://travis-ci.org/sahirbhatnagar/EPIB607). The entire source code is available at [https://github.com/sahirbhatnagar/EPIB607](https://github.com/sahirbhatnagar/EPIB607).  
+
+If you notice any errors, we would be grateful if you would let us know by filing an issue [here](https://github.com/sahirbhatnagar/EPIB607/issues)
+or making a pull request by clicking the edit button in the top-left corner of the text:
+
+![](images/edit_button.png)
 
 
 
 ## Acknowledgements {-}
+
+
+
+## License {-}
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 
 
 
@@ -132,11 +178,11 @@ This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and 
 
 The version of the book you are reading now was built on `r Sys.Date()` and was built `r if(is_on_travis) "on [Travis](https://travis-ci.org/sahirbhatnagar/MATH697)" else "locally"`.
 
-## General Information {-}
+# General Information {-}
 
-- Instructor(s): Sahir Bhatnagar and Dr. Alexandra M. Schmidt
-- Email: [sahir.bhatnagar@mail.mcgill.ca](mailto:sahir.bhatnagar@mail.mcgill.ca), 
-- Website: [http://sahirbhatnagar.com/MATH697/](http://sahirbhatnagar.com/MATH697/)
+- Instructor(s): Sahir Bhatnagar 
+- Email: [sahir.bhatnagar@mcgill.ca](mailto:sahir.bhatnagar@mcgill.ca), 
+- Website: [http://sahirbhatnagar.com/EPIB607/](http://sahirbhatnagar.com/EPIB607/)
 - Lectures: Tuesdays 9am - 12pm
 - Office: TBD
 - Office Hours: By appointment only

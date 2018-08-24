@@ -107,12 +107,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-these-notes"><i class="fa fa-check"></i>About these notes</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-these-notes"><i class="fa fa-check"></i>How to use these notes</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-these-notes-assume"><i class="fa fa-check"></i>What these notes assume</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#code"><i class="fa fa-check"></i>Code</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#r-code-conventions"><i class="fa fa-check"></i>R Code Conventions</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#rendering-mathematical-formulae"><i class="fa fa-check"></i>Rendering Mathematical Formulae</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-information"><i class="fa fa-check"></i>General Information</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i>Course Description</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
@@ -225,7 +227,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This section will cover the basics of vectorizations, the <code>*apply</code> family of functions and <code>for</code> loops.</p>
 <div id="vectorization" class="section level2">
 <h2><span class="header-section-number">A.1</span> Vectorization</h2>
-<p>Almost everything in <code>R</code> is a vector. A scalar is really a vector of length 1 and a <code>data.frame</code> is a collection of vectors. An nice feature of  is its vectorized capabilities. Vectorization indicates that a function operates on a whole vector of values at the same time and not just on a single value<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>. If you have have ever taken a basic linear algebra course, this concept will be familiar to you.   Take for example two vectors:  <span class="math display">\[
+<p>Almost everything in <code>R</code> is a vector. A scalar is really a vector of length 1 and a <code>data.frame</code> is a collection of vectors. An nice feature of  is its vectorized capabilities. Vectorization indicates that a function operates on a whole vector of values at the same time and not just on a single value<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>. If you have have ever taken a basic linear algebra course, this concept will be familiar to you.   Take for example two vectors:  <span class="math display">\[
 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + 
 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} =
 \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}
@@ -421,8 +423,8 @@ randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p><a href="http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html" class="uri">http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html</a><a href="vectorization-apply-and-for-loops.html#fnref4">↩</a></p></li>
+<ol start="6">
+<li id="fn6"><p><a href="http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html" class="uri">http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html</a><a href="vectorization-apply-and-for-loops.html#fnref6">↩</a></p></li>
 </ol>
 </div>
             </section>
