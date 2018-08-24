@@ -116,15 +116,16 @@
 }
 
 \setlength{\droptitle}{-2em}
+
   \title{MATH 697}
-  \pretitle{\vspace{\droptitle}\centering\huge}
+    \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-  \author{Sahir Rai Bhatnagar}
-  \preauthor{\centering\large\emph}
+    \author{Sahir Rai Bhatnagar}
+    \preauthor{\centering\large\emph}
   \postauthor{\par}
-  \predate{\centering\large\emph}
+      \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2017-12-05}
+    \date{2018-08-21}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -254,10 +255,11 @@
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}{Lemma}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
 \newtheorem{corollary}{Corollary}[chapter]
 \newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
@@ -546,8 +548,7 @@ following command in \texttt{R}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"pacman"}\NormalTok{, }\StringTok{"knitr"}\NormalTok{, }\StringTok{"data.table"}\NormalTok{, }\StringTok{"rmarkdown"}\NormalTok{, }\StringTok{"tidyverse"}\NormalTok{, }
-    \StringTok{"boot"}\NormalTok{, }\StringTok{"Hmisc"}\NormalTok{))}
+\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"pacman"}\NormalTok{,}\StringTok{"knitr"}\NormalTok{,}\StringTok{"data.table"}\NormalTok{, }\StringTok{"rmarkdown"}\NormalTok{, }\StringTok{"tidyverse"}\NormalTok{, }\StringTok{"boot"}\NormalTok{, }\StringTok{"Hmisc"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1754,9 +1755,9 @@ by:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
-\NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
-\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{b}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{a}\OperatorTok{+}\NormalTok{b}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1792,7 +1793,7 @@ vectorized. Here are some common examples:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# calculate sums of each column}
-\KeywordTok{colSums}\NormalTok{(iris[, }\OperatorTok{-}\DecValTok{5}\NormalTok{])}
+\KeywordTok{colSums}\NormalTok{(iris[, }\DecValTok{-5}\NormalTok{])}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1833,7 +1834,8 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Getting the row means of two columns Generate data}
+\CommentTok{# Getting the row means of two columns}
+\CommentTok{# Generate data}
 \NormalTok{N <-}\StringTok{ }\DecValTok{10000}
 \NormalTok{x1 <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(N)}
 \NormalTok{x2 <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(N)}
@@ -1844,28 +1846,29 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 
 \begin{verbatim}
 ##          x1        x2
-## 1 0.3117801 0.9706867
-## 2 0.5106238 0.8749324
-## 3 0.5114609 0.6692152
-## 4 0.8680951 0.9451941
-## 5 0.7327739 0.6673175
-## 6 0.8279021 0.9467060
+## 1 0.4549244 0.2922863
+## 2 0.1273745 0.2603800
+## 3 0.8651805 0.8753591
+## 4 0.4393122 0.4947043
+## 5 0.3133482 0.9460239
+## 6 0.6874365 0.9662952
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Loop: create a vector to store the results in}
+\CommentTok{# Loop:}
+\CommentTok{# create a vector to store the results in }
 \NormalTok{rowMeanFor <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"double"}\NormalTok{, N)}
 
 \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq_len}\NormalTok{(N)) \{}
-\NormalTok{    rowMeanFor[[i]] <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{c}\NormalTok{(d[i, }\DecValTok{1}\NormalTok{], d[i, }\DecValTok{2}\NormalTok{]))}
+\NormalTok{        rowMeanFor[[i]] <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{c}\NormalTok{(d[i, }\DecValTok{1}\NormalTok{], d[i, }\DecValTok{2}\NormalTok{]))}
 \NormalTok{\}}
 
 \CommentTok{# Apply:}
 \NormalTok{rowMeanApply <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(d, }\DecValTok{1}\NormalTok{, mean)}
 
 \CommentTok{# are the results equal}
-\KeywordTok{all.equal}\NormalTok{(rowMeanFor, rowMeanApply)}
+\KeywordTok{all.equal}\NormalTok{(rowMeanFor,rowMeanApply)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1905,8 +1908,8 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# apply 'fivenum' function to each column}
-\KeywordTok{vapply}\NormalTok{(women, fivenum, }\KeywordTok{c}\NormalTok{(}\DataTypeTok{Min. =} \DecValTok{0}\NormalTok{, }\StringTok{`}\DataTypeTok{1st Qu.}\StringTok{`}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\DataTypeTok{Median =} \DecValTok{0}\NormalTok{, }\StringTok{`}\DataTypeTok{3rd Qu.}\StringTok{`}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }
-    \DataTypeTok{Max. =} \DecValTok{0}\NormalTok{))}
+\KeywordTok{vapply}\NormalTok{(women, fivenum, }\KeywordTok{c}\NormalTok{(}\StringTok{"Min."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\StringTok{"1st Qu."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\StringTok{"Median"}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }
+                         \StringTok{"3rd Qu."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\StringTok{"Max."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1927,11 +1930,12 @@ data frame:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# the ouput of sapply is a vector the 's' in sapply stands for 'simplified'}
-\CommentTok{# apply}
-\NormalTok{mtcars}\OperatorTok{$}\NormalTok{gear2 <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{gear, }\ControlFlowTok{function}\NormalTok{(i) }\ControlFlowTok{if}\NormalTok{ (i }\OperatorTok{==}\StringTok{ }\DecValTok{4}\NormalTok{) }\StringTok{"alot"} \ControlFlowTok{else} \StringTok{"some"}\NormalTok{)}
+\CommentTok{# the ouput of sapply is a vector}
+\CommentTok{# the 's' in sapply stands for 'simplified' apply}
+\NormalTok{mtcars}\OperatorTok{$}\NormalTok{gear2 <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{gear, }
+                       \ControlFlowTok{function}\NormalTok{(i) }\ControlFlowTok{if}\NormalTok{ (i}\OperatorTok{==}\DecValTok{4}\NormalTok{) }\StringTok{"alot"} \ControlFlowTok{else} \StringTok{"some"}\NormalTok{)}
 
-\KeywordTok{head}\NormalTok{(mtcars)[, }\KeywordTok{c}\NormalTok{(}\StringTok{"gear"}\NormalTok{, }\StringTok{"gear2"}\NormalTok{)]}
+\KeywordTok{head}\NormalTok{(mtcars)[,}\KeywordTok{c}\NormalTok{(}\StringTok{"gear"}\NormalTok{,}\StringTok{"gear2"}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1950,7 +1954,7 @@ data frame:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Fisher's famous dataset}
+\CommentTok{# Fisher's famous dataset }
 \KeywordTok{data}\NormalTok{(iris)}
 \KeywordTok{str}\NormalTok{(iris)}
 \end{Highlighting}
@@ -1967,7 +1971,7 @@ data frame:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# mean sepal length by species}
+\CommentTok{# mean sepal length by species }
 \KeywordTok{tapply}\NormalTok{(iris}\OperatorTok{$}\NormalTok{Sepal.Length, iris}\OperatorTok{$}\NormalTok{Species, mean)}
 \end{Highlighting}
 \end{Shaded}
@@ -2004,7 +2008,7 @@ you want, and then manually change the arguments for \texttt{mean} and
 \begin{Highlighting}[]
 \NormalTok{v1 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{5}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{)}
 \NormalTok{v2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{10}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{5}\NormalTok{)}
-\NormalTok{v3 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \OperatorTok{-}\DecValTok{3}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{10}\NormalTok{)}
+\NormalTok{v3 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{-3}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{10}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2015,11 +2019,11 @@ function:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{means <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\OperatorTok{-}\DecValTok{3}\NormalTok{)}
-\NormalTok{sds <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\NormalTok{means <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{,}\OperatorTok{-}\DecValTok{3}\NormalTok{) ; sds <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{) }
 
 \CommentTok{# MoreArgs is a list of arguments that dont change}
-\NormalTok{randomNormals <-}\StringTok{ }\KeywordTok{mapply}\NormalTok{(rnorm, }\DataTypeTok{mean =}\NormalTok{ means, }\DataTypeTok{sd =}\NormalTok{ sds, }\DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
+\NormalTok{randomNormals <-}\StringTok{ }\KeywordTok{mapply}\NormalTok{(rnorm, }\DataTypeTok{mean =}\NormalTok{ means, }\DataTypeTok{sd =}\NormalTok{ sds, }
+                        \DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
 
 \KeywordTok{head}\NormalTok{(randomNormals)}
 \end{Highlighting}
@@ -2027,12 +2031,12 @@ function:
 
 \begin{verbatim}
 ##          [,1]      [,2]       [,3]
-## [1,] 4.988511  8.994050  -2.951141
-## [2,] 5.034946  7.327616   1.453712
-## [3,] 3.897590 15.767066  14.194277
-## [4,] 3.932997  8.036469   3.295487
-## [5,] 5.236731  8.024636  -9.706671
-## [6,] 4.761270  2.035162 -10.918790
+## [1,] 3.193260 13.239468  -7.676170
+## [2,] 6.036973 12.867582  20.230631
+## [3,] 6.826792 10.303156 -19.206643
+## [4,] 5.739919 10.819652   2.149800
+## [5,] 3.399993  9.118985  -9.534577
+## [6,] 5.533081 12.588146  -1.758319
 \end{verbatim}
 
 The following diagram (from
@@ -2065,9 +2069,12 @@ simulation parameters:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{simParams <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{means =} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{, }\DataTypeTok{sds =} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}
+\NormalTok{simParams <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{means =} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{,}
+                         \DataTypeTok{sds =} \DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}
 
-\NormalTok{randomNormals <-}\StringTok{ }\KeywordTok{mapply}\NormalTok{(rnorm, }\DataTypeTok{mean =}\NormalTok{ simParams}\OperatorTok{$}\NormalTok{means, }\DataTypeTok{sd =}\NormalTok{ simParams}\OperatorTok{$}\NormalTok{sds, }\DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
+\NormalTok{randomNormals <-}\StringTok{ }\KeywordTok{mapply}\NormalTok{(rnorm, }\DataTypeTok{mean =}\NormalTok{ simParams}\OperatorTok{$}\NormalTok{means, }
+                        \DataTypeTok{sd =}\NormalTok{ simParams}\OperatorTok{$}\NormalTok{sds, }
+                        \DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
 
 \KeywordTok{dim}\NormalTok{(randomNormals)}
 \end{Highlighting}
