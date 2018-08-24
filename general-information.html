@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="general-information.html">
-<link rel="next" href="slides.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="prerequisites.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -223,34 +223,152 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="prerequisites" class="section level1 unnumbered">
-<h1>Prerequisites</h1>
-<div id="install-r-and-rstudio" class="section level2 unnumbered">
-<h2>Install R and RStudio</h2>
-<p>All examples in this book are run in an <a href="https://cran.r-project.org/">R</a> environment. You also need a recent version of <a href="https://www.rstudio.com/products/rstudio/download/preview/">RStudio</a>, which is a software application that facilitates how you interact with <code>R</code>. It is developed by data enthusiasts who consider statistics to be more than just simulations, formulas and proofs. RStudio emphasizes the following:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Version control</strong>: <a href="http://stackoverflow.com/questions/1408450/why-should-i-use-version-control">Why I should use version control</a> especially for the <a href="http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst">solo data analyst</a>.</p></li>
-<li><p><strong>Reproducible research</strong>: seamless integration with <a href="http://rmarkdown.rstudio.com/">RMarkdown</a> for creating <a href="http://yihui.name/knitr/">dynamic documents</a> and presentations</p></li>
-<li><p><strong>Creating R Packages</strong>: seamless integration with the <a href="https://github.com/hadley/devtools">devtools</a> package for creating software that implements your statistical method or analysis.</p></li>
-</ol>
+<div id="general-information" class="section level1 unnumbered">
+<h1>General Information</h1>
+<ul>
+<li>Instructor(s): Sahir Bhatnagar</li>
+<li>Email: <a href="mailto:sahir.bhatnagar@mcgill.ca">sahir.bhatnagar@mcgill.ca</a>,</li>
+<li>Website: <a href="http://sahirbhatnagar.com/EPIB607/" class="uri">http://sahirbhatnagar.com/EPIB607/</a></li>
+<li>Lectures: Tuesdays 9am - 12pm</li>
+<li>Office: TBD</li>
+<li>Office Hours: By appointment only</li>
+<li>Prerequisite(s): Calculus and Algebra</li>
+<li>Texts: <em>Modern Mathematical Statistics with Applications</em>, 2nd Edition by Jay L. Devore and Kenneth N. Berk</li>
+</ul>
+<div id="course-description" class="section level2 unnumbered">
+<h2>Course Description</h2>
+<p>The main learning outcomes of this course are to get a broad idea about some frequently used probability models and to learn basic results and techniques in probability theory and statistical inference. Most of the materials for the course will be drawn from the first seven chapters of the textbook. The book does not, however, contain all the materials we intend to cover in this course. Some extra notes will therefore be given on those topics not in the text book. We will also introduce computational methods in statistics with the statistical software program <code>R</code>.</p>
 </div>
-<div id="r-packages" class="section level2 unnumbered">
-<h2>R Packages</h2>
-<p>The following packages will be called upon at some point, so please install them before getting started with the tutorials. Enter the following command in <code>R</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;pacman&quot;</span>,<span class="st">&quot;knitr&quot;</span>,<span class="st">&quot;data.table&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;boot&quot;</span>, <span class="st">&quot;Hmisc&quot;</span>))</code></pre></div>
+<div id="grade-distribution" class="section level2 unnumbered">
+<h2>Grade Distribution</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">Assignments</td>
+<td align="left">10%</td>
+</tr>
+<tr class="even">
+<td align="left">Quizzes</td>
+<td align="left">40%</td>
+</tr>
+<tr class="odd">
+<td align="left">Final Exam</td>
+<td align="left">50%</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="introduction-to-r" class="section level2 unnumbered">
-<h2>Introduction to R</h2>
-<p>Try out the interactive tutorial: <a href="http://swirlstats.com/" class="uri">http://swirlstats.com/</a></p>
+<div id="target-syllabus" class="section level2 unnumbered">
+<h2>Target Syllabus</h2>
+<div id="overview-and-descriptive-statistics-weeks-1-4" class="section level3 unnumbered">
+<h3>Overview and Descriptive Statistics (Weeks 1-4)</h3>
+<ul>
+<li>1.1 Populations and Samples</li>
+</ul>
 </div>
-<div id="background-reading" class="section level2 unnumbered">
-<h2>Background Reading</h2>
-<p>The greatest thing about <code>R</code> is that there are so many people out there willing to help you. <code>R</code> users are constantly writing tutorials and creating packages to make your analysis tasks easier. Here is a very targeted list that I suggest reading prior to starting the tutorials</p>
-<ol style="list-style-type: decimal">
-<li><a href="http://r4ds.had.co.nz/functions.html">Writing Functions</a></li>
-<li><a href="http://r4ds.had.co.nz/iteration.html"><code>for</code> loops</a></li>
-<li><a href="https://kbroman.wordpress.com/2013/04/02/apply-vs-for/"><code>apply</code> vs. <code>for</code></a></li>
-</ol>
+<div id="probability-weeks-1-4" class="section level3 unnumbered">
+<h3>Probability (Weeks 1-4)</h3>
+<ul>
+<li>2.1 Sample Spaces and Events</li>
+<li>2.2 Axioms, Interpretations, and Properties of Probability</li>
+<li>2.3 Counting Techniques</li>
+<li>2.4 Conditional Probability</li>
+<li>2.5 Independence</li>
+</ul>
+</div>
+<div id="discrete-random-variables-and-probability-distributions-weeks-1-4" class="section level3 unnumbered">
+<h3>Discrete Random Variables and Probability Distributions (Weeks 1-4)</h3>
+<ul>
+<li>3.1 Random Variables</li>
+<li>3.2 Probability Distributions for Discrete Random Variables</li>
+<li>3.3 Expected Values of Discrete Random Variables</li>
+<li>3.4 Moments and Moment Generating Functions</li>
+<li>3.5 The Bernoulli/Binomial Probability Distribution</li>
+<li>3.6 The Geometric/Negative Binomial Probability Distribution</li>
+<li>3.7 The Poisson Probability Distribution</li>
+</ul>
+</div>
+<div id="continuous-random-variables-and-probability-distributions-weeks-5-8" class="section level3 unnumbered">
+<h3>Continuous Random Variables and Probability Distributions (Weeks 5-8)</h3>
+<ul>
+<li>4.1 Probability Density Functions and Cumulative Distribution Functions<br />
+</li>
+<li>4.2 Expected Values and Moment Generating Functions<br />
+</li>
+<li>4.3 The Uniform Distribution<br />
+</li>
+<li>4.4 The Exponential Distribution<br />
+</li>
+<li>4.5 The Gamma Distribution<br />
+</li>
+<li>4.6 The Normal Distribution<br />
+</li>
+<li>4.7 One-Dimensional Change of Variable (Discrete and Continuous)</li>
+</ul>
+</div>
+<div id="joint-probability-distributions-weeks-5-8" class="section level3 unnumbered">
+<h3>Joint Probability Distributions (Weeks 5-8)</h3>
+<ul>
+<li>5.1 Jointly Distributed Random Variables</li>
+<li>5.2 Expected Values, Covariance, and Correlation</li>
+<li>5.3 Conditional Distributions</li>
+<li>5.4 Multidimensional Change of Variable (Discrete and Continuous)</li>
+</ul>
+</div>
+<div id="sampling-distributions-and-limits-weeks-5-8" class="section level3 unnumbered">
+<h3>Sampling Distributions and Limits (Weeks 5-8)</h3>
+<ul>
+<li>6.1 Sampling Distributions</li>
+<li>6.2 Convergence in Probability, Weak Law of Large Numbers</li>
+<li>6.3 Convergence with Probability 1, Strong Law of Large Numbers<br />
+</li>
+<li>6.4 Convergence in Distribution, Central Limit Theorem</li>
+</ul>
+</div>
+<div id="statistical-inference-weeks-9-12" class="section level3 unnumbered">
+<h3>Statistical Inference (Weeks 9-12)</h3>
+<ul>
+<li>7.1 Inference Using a Probability Model<br />
+</li>
+<li>7.2 Statistical Models<br />
+</li>
+<li>7.3 Data Collection (Finite Populations, Simple Random Sampling, Histograms)<br />
+</li>
+<li>7.4 Basic Inferences (Descriptive, Plots, Types of Inferences)</li>
+</ul>
+</div>
+<div id="likelihood-inference-weeks-9-12" class="section level3 unnumbered">
+<h3>Likelihood Inference (Weeks 9-12)</h3>
+<ul>
+<li>8.1 The Likelihood Function, Sufficient Statistics<br />
+</li>
+<li>8.2 Maximum Likelihood Estimation<br />
+</li>
+<li>8.3 Inferences Based on the MLE (Standard Errors, Bias, Consistency, Confidence Intervals, Hypotheses and Test Procedures, P-values, Inferences for the Variance)<br />
+</li>
+<li>8.4 Distribution-Free Methods (Method of Moments, Bootstrapping)</li>
+</ul>
+</div>
+<div id="regression-and-correlation-weeks-9-12" class="section level3 unnumbered">
+<h3>Regression and Correlation (Weeks 9-12)</h3>
+<ul>
+<li>9.1 The Simple Linear and Logistic Regression Models<br />
+</li>
+<li>9.2 Estimating Model Parameters<br />
+</li>
+<li>9.3 Inferences About the Regression Coefficient<br />
+</li>
+<li>9.4 Inferences Concerning Prediction of Future <span class="math inline">\(Y\)</span> Values<br />
+</li>
+<li>9.5 Correlation<br />
+</li>
+<li>9.6 Model Checking (<span class="math inline">\(\chi^2\)</span> Goodness of Fit Test, Cross-Validation)<br />
+</li>
+<li>9.7 Multiple Regression Analysis<br />
+</li>
+<li>9.8 Regression with Matrices</li>
+</ul>
+</div>
 </div>
 </div>
             </section>
@@ -258,8 +376,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="general-information.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="slides.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prerequisites.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
