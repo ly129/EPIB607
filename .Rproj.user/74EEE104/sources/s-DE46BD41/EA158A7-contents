@@ -1,0 +1,291 @@
+--- 
+title: "EPIB 607"
+author: "Sahir Bhatnagar and James Hanley"
+date: "`r Sys.Date()`"
+knit: bookdown::render_book
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+#bibliography: [bib/book.bib, bib/packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: "sahirbhatnagar/EPIB607"
+description: "Course material for EPIB 607 at McGill University"
+url: 'https\://sahirbhatnagar.com/EPIB607'
+---
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+require(knitr)
+# Current version information: Date here should match the date in the YAML above.
+# Remove .9000 tag and set date to release date when releasing
+version <- "0.0.0.9000"
+date <- format(Sys.time(), '%B %d, %Y')
+
+# Latest release information:
+latest_release_version <- "0.0.0.1"
+latest_release_date <- "August 22, 2018"
+
+# Set output options
+options(width = 80, digits = 7, bookdown.clean_book = TRUE)
+knitr::opts_chunk$set(
+  tidy = FALSE, 
+  out.width='\\textwidth', 
+  fig.align = "center", 
+  comment = NA
+)
+
+# CRAN packages needed
+needed_CRAN_pkgs <- c(
+  # Data packages:
+  # "nycflights13", "ggplot2movies", "fivethirtyeight", "gapminder", "ISLR",
+  
+  # Explicitly used packages:
+  "tidyverse", "rmarkdown", "knitr", 
+  "plotly", "janitor", "skimr",
+  # "infer", "moderndive",
+  
+  # Internally used packages:
+   "webshot"#, "tufte", "mvtnorm", "remotes", "devtools", "dygraphs", "gridExtra" 
+  )
+
+pacman::p_load(char = needed_CRAN_pkgs)
+
+# GitHub packages needed
+if (!"patchwork" %in% installed.packages()){
+  # patchwork as of 2018/7/20 needs dev version of ggplot2:
+  devtools::install_github("tidyverse/ggplot2")
+  devtools::install_github("thomasp85/patchwork")
+}
+
+# Check that phantomjs is installed to create screenshots of apps
+if(is.null(webshot:::find_phantom()))
+  webshot::install_phantomjs()
+
+# Automatically create a bib database for R packages
+knitr::write_bib(
+  c(.packages(), "bookdown", "knitr", "rmarkdown"
+  ),
+  "bib/packages.bib"
+  )
+
+# Add all knitr::purl()'ed chapter R scripts here
+
+
+is_on_travis = identical(Sys.getenv("TRAVIS"), "true")
+is_online = curl::has_internet()
+
+```
+
+# (PART) Preface {-}
+
+# Welcome {-}
+
+Welcome to the course notes for EPIB 607: Inferential Statistics at McGill University. 
+
+
+## Development {-}
+
+This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at [sahirbhatnagar.com/MATH697](https://sahirbhatnagar.com/MATH697) and kept up-to-date thanks to [Travis](https://travis-ci.org/sahirbhatnagar/MATH697). The entire source code is available at 
+
+<!--
+# won't work with pdf
+[![Build Status](https://travis-ci.org/sahirbhatnagar/MATH697.svg?branch=master)](https://travis-ci.org/sahirbhatnagar/MATH697)
+-->
+
+The version of the book you are reading now was built on `r Sys.Date()` and was built `r if(is_on_travis) "on [Travis](https://travis-ci.org/sahirbhatnagar/MATH697)" else "locally"`.
+
+## General Information {-}
+
+- Instructor(s): Sahir Bhatnagar and Dr. Alexandra M. Schmidt
+- Email: [sahir.bhatnagar@mail.mcgill.ca](mailto:sahir.bhatnagar@mail.mcgill.ca), 
+- Website: [http://sahirbhatnagar.com/MATH697/](http://sahirbhatnagar.com/MATH697/)
+- Lectures: Tuesdays 9am - 12pm
+- Office: TBD
+- Office Hours: By appointment only
+- Prerequisite(s): Calculus and Algebra
+- Texts: _Modern Mathematical Statistics with Applications_, 2nd Edition by Jay L. Devore and Kenneth N. Berk
+
+## Course Description {-}
+
+The main learning outcomes of this course are to get a broad idea about some frequently used probability models and to learn basic results and techniques in probability theory and statistical inference. Most of the materials for the course will be drawn from the first seven chapters of the textbook. The book does not, however, contain all the materials we intend to cover in this course. Some extra notes will therefore be given on those topics not in the text book. We will also introduce computational methods in statistics with the statistical software program `R`.
+
+
+
+## Grade Distribution  {-}
+
+```{r, results='asis', echo=FALSE}
+knitr::kable(data.frame(c("Assignments","Quizzes","Final Exam"),
+                        c("10%","40%","50%")), col.names = c("",""),
+             booktabs = TRUE)
+```
+
+## Target Syllabus {-}
+
+### Overview and Descriptive Statistics (Weeks 1-4)  {-}
+- 1.1 Populations and Samples 
+
+
+### Probability (Weeks 1-4)  {-}
+- 2.1 Sample Spaces and Events
+- 2.2 Axioms, Interpretations, and Properties of Probability
+- 2.3 Counting Techniques 
+- 2.4 Conditional Probability 
+- 2.5 Independence
+
+### Discrete Random Variables and Probability Distributions (Weeks 1-4)  {-}
+  
+- 3.1 Random Variables 
+- 3.2 Probability Distributions for Discrete Random Variables 
+- 3.3 Expected Values of Discrete Random Variables 
+- 3.4 Moments and Moment Generating Functions 
+- 3.5 The Bernoulli/Binomial Probability Distribution 
+- 3.6 The Geometric/Negative Binomial Probability Distribution
+- 3.7 The Poisson Probability Distribution 
+
+### Continuous Random Variables and Probability Distributions (Weeks 5-8) {-}
+
+- 4.1 Probability Density Functions and Cumulative Distribution Functions  
+- 4.2 Expected Values and Moment Generating Functions  
+- 4.3 The Uniform Distribution  
+- 4.4 The Exponential Distribution  
+- 4.5 The Gamma Distribution  
+- 4.6 The Normal Distribution  
+- 4.7  One-Dimensional Change of Variable (Discrete and Continuous)  
+
+
+### Joint Probability Distributions (Weeks 5-8) {-}
+
+- 5.1 Jointly Distributed Random Variables 
+- 5.2 Expected Values, Covariance, and Correlation 
+- 5.3 Conditional Distributions 
+- 5.4 Multidimensional Change of Variable (Discrete and Continuous)  
+
+### Sampling Distributions and Limits (Weeks 5-8) {-}
+
+- 6.1 Sampling Distributions
+- 6.2 Convergence in Probability, Weak Law of Large Numbers
+- 6.3 Convergence with Probability 1, Strong Law of Large Numbers   
+- 6.4 Convergence in Distribution, Central Limit Theorem  
+
+### Statistical Inference (Weeks 9-12) {-}
+
+- 7.1 Inference Using a Probability Model  
+- 7.2 Statistical Models   
+- 7.3 Data Collection (Finite Populations, Simple Random Sampling, Histograms)  
+- 7.4 Basic Inferences (Descriptive, Plots, Types of Inferences)  
+
+### Likelihood Inference (Weeks 9-12) {-}
+- 8.1 The Likelihood Function, Sufficient Statistics  
+- 8.2 Maximum Likelihood Estimation  
+- 8.3 Inferences Based on the MLE (Standard Errors, Bias, Consistency, Confidence Intervals, Hypotheses and Test Procedures, P-values, Inferences for the Variance)  
+- 8.4 Distribution-Free Methods (Method of Moments, Bootstrapping)  
+
+### Regression and Correlation (Weeks 9-12) {-}
+
+- 9.1 The Simple Linear and Logistic Regression Models  
+- 9.2 Estimating Model Parameters   
+- 9.3 Inferences About the Regression Coefficient   
+- 9.4 Inferences Concerning Prediction of Future $Y$ Values  
+- 9.5 Correlation  
+- 9.6 Model Checking ($\chi^2$ Goodness of Fit Test, Cross-Validation)  
+- 9.7 Multiple Regression Analysis  
+- 9.8 Regression with Matrices  
+
+
+# Prerequisites {-}
+
+## Install R and RStudio  {-}
+
+All examples in this book are run in an [R](https://cran.r-project.org/) environment. You also need a recent version of [RStudio](https://www.rstudio.com/products/rstudio/download/preview/), which is a software application that facilitates how you interact with `R`. It is developed by data enthusiasts who consider statistics to be more than just simulations, formulas and proofs. RStudio emphasizes the following: 
+
+1. **Version control**:  [Why I should use version control](http://stackoverflow.com/questions/1408450/why-should-i-use-version-control) especially for the [solo data analyst](http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst).
+
+2. **Reproducible research**: seamless integration with [RMarkdown](http://rmarkdown.rstudio.com/) for creating [dynamic documents](http://yihui.name/knitr/) and presentations
+
+3. **Creating R Packages**: seamless integration with the [devtools](https://github.com/hadley/devtools) package for creating software that implements your statistical method or analysis. 
+
+
+
+## R Packages  {-}
+
+The following packages will be called upon at some point, so please install them before getting started with the tutorials. Enter the following command in `R`:
+
+```{r eval=FALSE, echo=TRUE}
+install.packages(c("pacman","knitr","data.table", "rmarkdown", "tidyverse", "boot", "Hmisc"))
+```
+
+
+## Introduction to R {-}
+
+Try out the interactive tutorial: [http://swirlstats.com/](http://swirlstats.com/)
+
+
+## Background Reading  {-}
+
+The greatest thing about `R` is that there are so many people out there willing to help you. `R` users are constantly writing tutorials and creating packages to make your analysis tasks easier. Here is a very targeted list that I suggest reading prior to starting the tutorials
+
+1. [Writing Functions](http://r4ds.had.co.nz/functions.html) 
+2. [`for` loops](http://r4ds.had.co.nz/iteration.html)
+3. [`apply` vs. `for`](https://kbroman.wordpress.com/2013/04/02/apply-vs-for/)
+
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'tidyverse', 'data.table', 'Hmisc', 'boot'), 
+  'packages.bib')
+```
+
+
+# Slides {-}
+
+1. [Discrete Random Variables and Probability Distributions (part I)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week3.pdf)
+2. [Discrete Random Variables and Probability Distributions (part II)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week4.pdf)
+3. [Continuous Random Variables and Probability Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week5.pdf)
+4. [Normal Distribution and Expectations of Continuos Random Variables](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week6.pdf)
+5. [Transformations of a Random Variable and Discrete Joint Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week7.pdf)
+6. [Joint, Marginal, Conditional Continuous Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week8.pdf)
+7. [Multidimensional Change of Variables, Conditional Expectation, Variance, Hierarchical Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week9.pdf)
+8. [Sampling Distributions and Limits, Convergence in Probability](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week10.pdf)
+9. [Convergence in Distribution and Central Limit Theorem](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week11.pdf)
+10. [Maximum Likelihood Estimation](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week12.pdf)
+11. [A Primer on Linear Regression](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week13.pdf)
+
+
+
+# Assignments {-}
+
+1. [A1 (due September 26, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-1-F2017.pdf)
+2. [A2 (due October 12, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-2-F2017.pdf)
+3. [A3 (due October 26, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-3-F2017.pdf)
+4. [A4 (due November 9, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-4-F2017.pdf)
+
+# Quiz {-}
+
+1. [Quiz 1 (October 3, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-1-F2017.pdf)
+2. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-2-F2017.pdf)
+3. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-3-F2017.pdf)
+
+
+# R Code {-}
+
+## Central Limit Theorem in Action
+
+1. [clt-master.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-master.Rmd)   
+2. [clt-template.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-template.Rmd) 
+
+## IMPC Dataset
+
+1. [impc_data.txt](https://github.com/sahirbhatnagar/MATH697/blob/master/images/impc_data.txt) 
+
+
+# Distribution Tables {-}
+
+## Standard Normal
+
+1. [Standard Normal Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/Standard_Normal_Table.pdf)   
+
+## t-Distribution
+
+1. [t-Distribution Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/t_Table.pdf)   

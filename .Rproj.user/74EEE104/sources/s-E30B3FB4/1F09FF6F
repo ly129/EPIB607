@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1535134380734.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1693737496",
+    "id" : "1F09FF6F",
+    "lastKnownWriteTime" : 1534859205,
+    "last_content_update" : 1534859205,
+    "path" : "~/git_repositories/epib607/_build.sh",
+    "project_path" : "_build.sh",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "sh"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1535048071899.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1169308757",
+    "id" : "4A5B7B82",
+    "lastKnownWriteTime" : 1535047720,
+    "last_content_update" : 1535047720,
+    "path" : "~/git_repositories/epib607/docs/scripts/03-discrete.R",
+    "project_path" : "docs/scripts/03-discrete.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

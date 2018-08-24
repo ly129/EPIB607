@@ -1,0 +1,2288 @@
+
+
+
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  61%
+label: unnamed-chunk-37 (with options) 
+List of 2
+ $ name  : chr "Urns"
+ $ engine: chr "example"
+
+  |                                                                         |........................................                         |  62%
+  ordinary text without R code
+
+
+label: unnamed-chunk-38 (with options) 
+List of 2
+ $ name  : chr "Large Bridges"
+ $ engine: chr "example"
+
+  |                                                                         |.........................................                        |  63%
+  ordinary text without R code
+
+  |                                                                         |.........................................                        |  64%
+label: indep (with options) 
+List of 2
+ $ name  : chr "Indepent Events"
+ $ engine: chr "definition"
+
+  |                                                                         |..........................................                       |  64%
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  65%
+label: unnamed-chunk-39 (with options) 
+List of 2
+ $ name  : chr "Toss a fair coin 10 times"
+ $ engine: chr "example"
+
+  |                                                                         |...........................................                      |  66%
+  ordinary text without R code
+
+
+label: unnamed-chunk-40 (with options) 
+List of 2
+ $ name  : chr "Unbalance Die Revisited"
+ $ engine: chr "example"
+
+  |                                                                         |...........................................                      |  67%
+  ordinary text without R code
+
+  |                                                                         |............................................                     |  68%
+label: unnamed-chunk-41 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+
+  ordinary text without R code
+
+  |                                                                         |.............................................                    |  69%
+label: unnamed-chunk-42 (with options) 
+List of 2
+ $ name  : chr "Rainy days"
+ $ engine: chr "example"
+
+  |                                                                         |.............................................                    |  70%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  70%
+label: unnamed-chunk-43 (with options) 
+List of 2
+ $ name  : chr "Footbal Match"
+ $ engine: chr "example"
+
+  |                                                                         |..............................................                   |  71%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  72%
+label: unnamed-chunk-44 (with options) 
+List of 2
+ $ type  : chr "rmdnote"
+ $ engine: chr "block2"
+
+  |                                                                         |...............................................                  |  72%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  73%
+label: unnamed-chunk-45 (with options) 
+List of 2
+ $ name  : chr "Operating Temperature"
+ $ engine: chr "example"
+
+  |                                                                         |................................................                 |  74%
+  ordinary text without R code
+
+
+label: rv (with options) 
+List of 2
+ $ name  : chr "Random Variable"
+ $ engine: chr "definition"
+
+  |                                                                         |.................................................                |  75%
+  ordinary text without R code
+
+
+label: unnamed-chunk-46 (with options) 
+List of 2
+ $ type  : chr "rmdnote"
+ $ engine: chr "block2"
+
+  |                                                                         |..................................................               |  76%
+  ordinary text without R code
+
+  |                                                                         |..................................................               |  77%
+label: unnamed-chunk-47 (with options) 
+List of 2
+ $ name  : chr "Coin Toss"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |...................................................              |  78%
+label: simple (with options) 
+List of 2
+ $ name  : chr "A Very Simple Random Variable"
+ $ engine: chr "example"
+
+  |                                                                         |...................................................              |  79%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  79%
+label: unnamed-chunk-48 (with options) 
+List of 2
+ $ name  : chr "A Very Simple Random Variable 2"
+ $ engine: chr "example"
+
+  |                                                                         |....................................................             |  80%
+  ordinary text without R code
+
+  |                                                                         |.....................................................            |  81%
+label: unnamed-chunk-49 (with options) 
+List of 2
+ $ name  : chr "A Very Simple Random Variable 3"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |.....................................................            |  82%
+label: unnamed-chunk-50 (with options) 
+List of 2
+ $ name  : chr "Constants as Random Variables"
+ $ engine: chr "example"
+
+  |                                                                         |......................................................           |  83%
+  ordinary text without R code
+
+
+label: unnamed-chunk-51 (with options) 
+List of 2
+ $ name  : chr "Indicator Functions"
+ $ engine: chr "example"
+
+  |                                                                         |.......................................................          |  84%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  85%
+label: unnamed-chunk-52 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |........................................................         |  85%
+  ordinary text without R code
+
+  |                                                                         |........................................................         |  86%
+label: unnamed-chunk-53 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |........................................................         |  87%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  87%
+label: unnamed-chunk-54
+  |                                                                         |.........................................................        |  88%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: unnamed-chunk-55
+
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  90%
+label: unnamed-chunk-56
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+
+label: unnamed-chunk-57
+  |                                                                         |............................................................     |  92%
+  ordinary text without R code
+
+  |                                                                         |............................................................     |  93%
+label: unnamed-chunk-58
+  |                                                                         |.............................................................    |  93%
+  ordinary text without R code
+
+  |                                                                         |.............................................................    |  94%
+label: unnamed-chunk-59
+  |                                                                         |..............................................................   |  95%
+  ordinary text without R code
+
+
+label: unnamed-chunk-60
+  |                                                                         |..............................................................   |  96%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  97%
+label: unnamed-chunk-61
+
+  ordinary text without R code
+
+  |                                                                         |................................................................ |  98%
+label: unnamed-chunk-62
+  |                                                                         |................................................................ |  99%
+  ordinary text without R code
+
+  |                                                                         |.................................................................|  99%
+label: unnamed-chunk-63 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |.................................................................| 100%
+   inline R code fragments
+
+
+output file: epib607.knit.md
+
+/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/Rtmpr1QhaQ/rmarkdown-str46b8301f0771.html --mathjax --filter /usr/bin/pandoc-citeproc 
+pandoc-citeproc: reference evans2004probability not found
+pandoc-citeproc: reference devore2011modern not found
+
+Output created: _book/index.html
+[1] "/home/sahir/git_repositories/epib607/_book/index.html"
+# cp -fvr images _book/
+make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
+Rscript -e 'browseURL("_book/index.html")'
+Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
+
+
+processing file: epib607.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
+   inline R code fragments
+
+  |                                                                         |.                                                                |   1%
+label: unnamed-chunk-1 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |.                                                                |   2%
+  ordinary text without R code
+
+  |                                                                         |..                                                               |   3%
+label: setup (with options) 
+List of 3
+ $ echo   : logi FALSE
+ $ message: logi FALSE
+ $ warning: logi FALSE
+
+
+   inline R code fragments
+
+  |                                                                         |...                                                              |   4%
+label: unnamed-chunk-2 (with options) 
+List of 2
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+
+  |                                                                         |...                                                              |   5%
+  ordinary text without R code
+
+
+label: unnamed-chunk-3 (with options) 
+List of 2
+ $ eval: logi FALSE
+ $ echo: logi TRUE
+
+  |                                                                         |....                                                             |   6%
+  ordinary text without R code
+
+  |                                                                         |....                                                             |   7%
+label: unnamed-chunk-4 (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                         |.....                                                            |   7%
+  ordinary text without R code
+
+  |                                                                         |.....                                                            |   8%
+label: unnamed-chunk-5 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |......                                                           |   9%
+  ordinary text without R code
+
+
+label: no-stats (with options) 
+List of 2
+ $ type  : chr "rmdimportant"
+ $ engine: chr "block2"
+
+  |                                                                         |......                                                           |  10%
+  ordinary text without R code
+
+  |                                                                         |.......                                                          |  11%
+label: unnamed-chunk-6 (with options) 
+List of 2
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+
+
+  ordinary text without R code
+
+  |                                                                         |........                                                         |  12%
+label: unnamed-chunk-7 (with options) 
+List of 2
+ $ type  : chr "rmdimportant"
+ $ engine: chr "block2"
+
+  |                                                                         |........                                                         |  13%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  13%
+label: unnamed-chunk-8 (with options) 
+List of 2
+ $ name  : chr "Use of manual lap belts in cars equipped with automatic shoulder belt systems"
+ $ engine: chr "example"
+
+  |                                                                         |.........                                                        |  14%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  15%
+label: unnamed-chunk-9 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |..........                                                       |  15%
+  ordinary text without R code
+
+  |                                                                         |..........                                                       |  16%
+label: unnamed-chunk-10 (with options) 
+List of 2
+ $ name  : chr "Two nucleotide sequences"
+ $ engine: chr "example"
+
+  |                                                                         |...........                                                      |  17%
+  ordinary text without R code
+
+
+label: unnamed-chunk-11 (with options) 
+List of 2
+ $ name  : chr "Sample Space"
+ $ engine: chr "definition"
+
+  |                                                                         |............                                                     |  18%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  19%
+label: unnamed-chunk-12 (with options) 
+List of 2
+ $ name  : chr "Coin tossing"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |.............                                                    |  20%
+label: unnamed-chunk-13 (with options) 
+List of 2
+ $ name  : chr "Dice"
+ $ engine: chr "example"
+
+  |                                                                         |.............                                                    |  21%
+  ordinary text without R code
+
+  |                                                                         |..............                                                   |  21%
+label: unnamed-chunk-14 (with options) 
+List of 2
+ $ name  : chr "Proportions"
+ $ engine: chr "example"
+
+  |                                                                         |..............                                                   |  22%
+  ordinary text without R code
+
+  |                                                                         |...............                                                  |  23%
+label: unnamed-chunk-15 (with options) 
+List of 2
+ $ name  : chr "Time measurement"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |...............                                                  |  24%
+label: unnamed-chunk-16 (with options) 
+List of 2
+ $ name  : chr "Temperature measurement"
+ $ engine: chr "example"
+
+  |                                                                         |................                                                 |  25%
+  ordinary text without R code
+
+
+label: unnamed-chunk-17 (with options) 
+List of 2
+ $ name  : chr "Biological Sequence Analysis"
+ $ engine: chr "example"
+
+  |                                                                         |.................                                                |  26%
+  ordinary text without R code
+
+
+label: unnamed-chunk-18 (with options) 
+List of 2
+ $ name  : chr "Event"
+ $ engine: chr "definition"
+
+  |                                                                         |..................                                               |  27%
+  ordinary text without R code
+
+  |                                                                         |..................                                               |  28%
+label: unnamed-chunk-19 (with options) 
+List of 2
+ $ type  : chr "rmdnote"
+ $ engine: chr "block2"
+
+  |                                                                         |...................                                              |  28%
+  ordinary text without R code
+
+  |                                                                         |...................                                              |  29%
+label: unnamed-chunk-20 (with options) 
+List of 2
+ $ name  : chr "Axioms (basic properties) of Probability"
+ $ engine: chr "definition"
+
+  |                                                                         |...................                                              |  30%
+  ordinary text without R code
+
+  |                                                                         |....................                                             |  30%
+label: unnamed-chunk-21 (with options) 
+List of 1
+ $ engine: chr "proposition"
+
+  |                                                                         |....................                                             |  31%
+  ordinary text without R code
+
+  |                                                                         |.....................                                            |  32%
+label: unnamed-chunk-22 (with options) 
+List of 1
+ $ engine: chr "proposition"
+
+
+  ordinary text without R code
+
+  |                                                                         |......................                                           |  33%
+label: unnamed-chunk-23 (with options) 
+List of 1
+ $ engine: chr "proposition"
+
+  |                                                                         |......................                                           |  34%
+  ordinary text without R code
+
+
+label: unnamed-chunk-24 (with options) 
+List of 1
+ $ engine: chr "proposition"
+
+  |                                                                         |.......................                                          |  35%
+  ordinary text without R code
+
+  |                                                                         |.......................                                          |  36%
+label: unnamed-chunk-25 (with options) 
+List of 2
+ $ name  : chr "Product rule for ordered pairs"
+ $ engine: chr "proposition"
+
+  |                                                                         |........................                                         |  36%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  37%
+label: unnamed-chunk-26 (with options) 
+List of 2
+ $ name  : chr "Permutation"
+ $ engine: chr "definition"
+
+  |                                                                         |.........................                                        |  38%
+  ordinary text without R code
+
+
+label: unnamed-chunk-27 (with options) 
+List of 2
+ $ name  : chr "Combination"
+ $ engine: chr "definition"
+
+  |                                                                         |.........................                                        |  39%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: flipcoins (with options) 
+List of 2
+ $ name  : chr "Flipping Coins"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |...........................                                      |  41%
+label: assembly (with options) 
+List of 2
+ $ name  : chr "Assembly Lines"
+ $ engine: chr "example"
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |............................                                     |  42%
+label: condprob (with options) 
+List of 2
+ $ name  : chr "Conditional Probability"
+ $ engine: chr "definition"
+
+  |                                                                         |............................                                     |  43%
+  ordinary text without R code
+
+  |                                                                         |............................                                     |  44%
+label: unnamed-chunk-28 (with options) 
+List of 2
+ $ name  : chr "Balanced die"
+ $ engine: chr "example"
+
+  |                                                                         |.............................                                    |  44%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  45%
+label: unnamed-chunk-29 (with options) 
+List of 2
+ $ name  : chr "Two Balanced Dice v1"
+ $ engine: chr "example"
+
+  |                                                                         |..............................                                   |  46%
+  ordinary text without R code
+
+
+label: unnamed-chunk-30 (with options) 
+List of 2
+ $ name  : chr "Two Balanced Dice v2"
+ $ engine: chr "example"
+
+  |                                                                         |...............................                                  |  47%
+  ordinary text without R code
+
+  |                                                                         |...............................                                  |  48%
+label: unbalanced (with options) 
+List of 2
+ $ name  : chr "Unbalanced Die"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  49%
+label: unnamed-chunk-31 (with options) 
+List of 2
+ $ name  : chr "Two Balanced Coins"
+ $ engine: chr "example"
+
+  |                                                                         |................................                                 |  50%
+  ordinary text without R code
+
+  |                                                                         |.................................                                |  50%
+label: unnamed-chunk-32 (with options) 
+List of 2
+ $ name  : chr "Two Cards"
+ $ engine: chr "example"
+
+  |                                                                         |.................................                                |  51%
+  ordinary text without R code
+
+  |                                                                         |..................................                               |  52%
+label: unnamed-chunk-33 (with options) 
+List of 2
+ $ name  : chr "Numbers in a Hat"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |..................................                               |  53%
+label: unnamed-chunk-34 (with options) 
+List of 2
+ $ name  : chr "One Card"
+ $ engine: chr "example"
+
+  |                                                                         |...................................                              |  54%
+  ordinary text without R code
+
+
+label: multformula (with options) 
+List of 2
+ $ name  : chr "Multiplicative Rule"
+ $ engine: chr "definition"
+
+  |                                                                         |....................................                             |  55%
+  ordinary text without R code
+
+  |                                                                         |....................................                             |  56%
+label: unnamed-chunk-35 (with options) 
+List of 2
+ $ name  : chr "Fish in a Tank"
+ $ engine: chr "example"
+
+  |                                                                         |.....................................                            |  56%
+  ordinary text without R code
+
+  |                                                                         |.....................................                            |  57%
+label: totprob (with options) 
+List of 2
+ $ name  : chr "Law of Total Probability"
+ $ engine: chr "theorem"
+
+  |                                                                         |.....................................                            |  58%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  58%
+label: unnamed-chunk-36 (with options) 
+List of 2
+ $ name  : chr "Long Hair"
+ $ engine: chr "example"
+
+  |                                                                         |......................................                           |  59%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: bayesdef (with options) 
+List of 2
+ $ name  : chr "Bayes' Rule"
+ $ engine: chr "theorem"
+
+
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  61%
+label: unnamed-chunk-37 (with options) 
+List of 2
+ $ name  : chr "Urns"
+ $ engine: chr "example"
+
+  |                                                                         |........................................                         |  62%
+  ordinary text without R code
+
+
+label: unnamed-chunk-38 (with options) 
+List of 2
+ $ name  : chr "Large Bridges"
+ $ engine: chr "example"
+
+  |                                                                         |.........................................                        |  63%
+  ordinary text without R code
+
+  |                                                                         |.........................................                        |  64%
+label: indep (with options) 
+List of 2
+ $ name  : chr "Indepent Events"
+ $ engine: chr "definition"
+
+  |                                                                         |..........................................                       |  64%
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  65%
+label: unnamed-chunk-39 (with options) 
+List of 2
+ $ name  : chr "Toss a fair coin 10 times"
+ $ engine: chr "example"
+
+  |                                                                         |...........................................                      |  66%
+  ordinary text without R code
+
+
+label: unnamed-chunk-40 (with options) 
+List of 2
+ $ name  : chr "Unbalance Die Revisited"
+ $ engine: chr "example"
+
+  |                                                                         |...........................................                      |  67%
+  ordinary text without R code
+
+  |                                                                         |............................................                     |  68%
+label: unnamed-chunk-41 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+
+  ordinary text without R code
+
+  |                                                                         |.............................................                    |  69%
+label: unnamed-chunk-42 (with options) 
+List of 2
+ $ name  : chr "Rainy days"
+ $ engine: chr "example"
+
+  |                                                                         |.............................................                    |  70%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  70%
+label: unnamed-chunk-43 (with options) 
+List of 2
+ $ name  : chr "Footbal Match"
+ $ engine: chr "example"
+
+  |                                                                         |..............................................                   |  71%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  72%
+label: unnamed-chunk-44 (with options) 
+List of 2
+ $ type  : chr "rmdnote"
+ $ engine: chr "block2"
+
+  |                                                                         |...............................................                  |  72%
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  73%
+label: unnamed-chunk-45 (with options) 
+List of 2
+ $ name  : chr "Operating Temperature"
+ $ engine: chr "example"
+
+  |                                                                         |................................................                 |  74%
+  ordinary text without R code
+
+
+label: rv (with options) 
+List of 2
+ $ name  : chr "Random Variable"
+ $ engine: chr "definition"
+
+  |                                                                         |.................................................                |  75%
+  ordinary text without R code
+
+
+label: unnamed-chunk-46 (with options) 
+List of 2
+ $ type  : chr "rmdnote"
+ $ engine: chr "block2"
+
+  |                                                                         |..................................................               |  76%
+  ordinary text without R code
+
+  |                                                                         |..................................................               |  77%
+label: unnamed-chunk-47 (with options) 
+List of 2
+ $ name  : chr "Coin Toss"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |...................................................              |  78%
+label: simple (with options) 
+List of 2
+ $ name  : chr "A Very Simple Random Variable"
+ $ engine: chr "example"
+
+  |                                                                         |...................................................              |  79%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  79%
+label: unnamed-chunk-48 (with options) 
+List of 2
+ $ name  : chr "A Very Simple Random Variable 2"
+ $ engine: chr "example"
+
+  |                                                                         |....................................................             |  80%
+  ordinary text without R code
+
+  |                                                                         |.....................................................            |  81%
+label: unnamed-chunk-49 (with options) 
+List of 2
+ $ name  : chr "A Very Simple Random Variable 3"
+ $ engine: chr "example"
+
+
+  ordinary text without R code
+
+  |                                                                         |.....................................................            |  82%
+label: unnamed-chunk-50 (with options) 
+List of 2
+ $ name  : chr "Constants as Random Variables"
+ $ engine: chr "example"
+
+  |                                                                         |......................................................           |  83%
+  ordinary text without R code
+
+
+label: unnamed-chunk-51 (with options) 
+List of 2
+ $ name  : chr "Indicator Functions"
+ $ engine: chr "example"
+
+  |                                                                         |.......................................................          |  84%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  85%
+label: unnamed-chunk-52 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |........................................................         |  85%
+  ordinary text without R code
+
+  |                                                                         |........................................................         |  86%
+label: unnamed-chunk-53 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |........................................................         |  87%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  87%
+label: unnamed-chunk-54
+  |                                                                         |.........................................................        |  88%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: unnamed-chunk-55
+
+  ordinary text without R code
+
+  |                                                                         |...........................................................      |  90%
+label: unnamed-chunk-56
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+
+label: unnamed-chunk-57
+  |                                                                         |............................................................     |  92%
+  ordinary text without R code
+
+  |                                                                         |............................................................     |  93%
+label: unnamed-chunk-58
+  |                                                                         |.............................................................    |  93%
+  ordinary text without R code
+
+  |                                                                         |.............................................................    |  94%
+label: unnamed-chunk-59
+  |                                                                         |..............................................................   |  95%
+  ordinary text without R code
+
+
+label: unnamed-chunk-60
+  |                                                                         |..............................................................   |  96%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  97%
+label: unnamed-chunk-61
+
+  ordinary text without R code
+
+  |                                                                         |................................................................ |  98%
+label: unnamed-chunk-62
+  |                                                                         |................................................................ |  99%
+  ordinary text without R code
+
+  |                                                                         |.................................................................|  99%
+label: unnamed-chunk-63 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |.................................................................| 100%
+   inline R code fragments
+
+
+output file: epib607.knit.md
+
+/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.tex --table-of-contents --toc-depth 2 --template /home/sahir/Rlibs/R3.4.4/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable 'compact-title:yes' --variable tables=yes --standalone 
+
+Output created: _book/epib607.pdf
+[1] "/home/sahir/git_repositories/epib607/_book/epib607.pdf"
+Rscript -e "browseURL('_book/epib607.pdf')"
+if [ ! -d "docs/scripts" ]; then  mkdir docs/scripts; fi
+R CMD BATCH /home/sahir/git_repositories/epib607/purl.R
+rm purl.Rout
+git checkout master
+M	Makefile
+M	index.Rmd
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+git add -fA
+git commit --allow-empty -m ""
+Aborting commit due to empty commit message.
+Makefile:33: recipe for target 'git' failed
+make: *** [git] Error 1
+]0;/home/sahir/git_repositories/epib607> (B[m echo 9490B9B8 && /usr/bin/env && echo 3DF3559
+9490B9B8
+R_PDFVIEWER=/usr/bin/xdg-open
+CLUTTER_IM_MODULE=xim
+R_RD4PDF=times,inconsolata,hyper
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
+RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
+LESSCLOSE=/usr/bin/lesspipe %s %s
+XDG_MENU_PREFIX=gnome-
+R_SHARE_DIR=/usr/share/R/share
+LANG=en_US.UTF-8
+HISTCONTROL=ignoreboth
+DISPLAY=:0
+RS_PPM_FD_READ=15
+TAR=/bin/tar
+GNOME_SHELL_SESSION_MODE=ubuntu
+EDITOR=vi
+R_BROWSER=xdg-open
+GTK2_MODULES=overlay-scrollbar
+R_DOC_DIR=/usr/share/R/doc
+R_SESSION_TMPDIR=/tmp/RtmpLhv2Rs
+LN_S=ln -s
+USERNAME=sahir
+RSTUDIO_SESSION_ID=E30B3FB4
+R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
+XDG_VTNR=2
+GIO_LAUNCHED_DESKTOP_FILE_PID=31242
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+RS_PPM_FD_WRITE=23
+MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+S_COLORS=auto
+XDG_SESSION_ID=2
+R_INCLUDE_DIR=/usr/share/R/include
+USER=sahir
+PAGER=/usr/bin/pager
+DESKTOP_SESSION=ubuntu
+RBENV_SHELL=bash
+QT4_IM_MODULE=ibus
+TEXTDOMAINDIR=/usr/share/locale/
+RS_SHARED_SECRET=16816927778469308861804289383
+DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+QT_QPA_PLATFORMTHEME=appmenu-qt5
+R_LIBS=/home/sahir/Rlibs/R3.4.4/
+PWD=/home/sahir/git_repositories/epib607
+HOME=/home/sahir
+TEXTDOMAIN=im-config
+SED=/bin/sed
+SSH_AGENT_PID=2693
+RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
+R_PAPERSIZE=letter
+QT_ACCESSIBILITY=1
+XDG_SESSION_TYPE=x11
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
+R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
+RSTUDIO=1
+R_ZIPCMD=/usr/bin/zip
+R_PAPERSIZE_USER=letter
+XDG_SESSION_DESKTOP=ubuntu
+CLICOLOR_FORCE=1
+R_HOME=/usr/lib/R
+GJS_DEBUG_OUTPUT=stderr
+R_BZIPCMD=/bin/bzip2
+GTK_MODULES=gail:atk-bridge
+RSTUDIO_USER_IDENTITY=sahir
+RS_LOCAL_PEER=/tmp/42931-rsession
+RSTUDIO_SESSION_PORT=42931
+RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
+WINDOWPATH=2
+TERM=xterm-256color
+SHELL=/bin/bash
+R_PRINTCMD=/usr/bin/lpr
+R_GZIPCMD=/bin/gzip -n
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+IM_CONFIG_PHASE=2
+RSTUDIO_TERM=D6730B8C
+LS_OPTIONS=--color=auto
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
+RSTUDIO_WINUTILS=bin/winutils
+XDG_SEAT=seat0
+SHLVL=4
+PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
+R_PLATFORM=x86_64-pc-linux-gnu
+R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/u^C
+]0;/home/sahir/git_repositories/epib607> (B[mmake foo="checking make" git
+git checkout master
+A	.RData
+A	.Rproj.user/74EEE104/build_options
+A	.Rproj.user/74EEE104/console06/D6730B8C
+A	.Rproj.user/74EEE104/console06/D6730B8C.env
+A	.Rproj.user/74EEE104/console06/INDEX001
+A	.Rproj.user/74EEE104/pcs/debug-breakpoints.pper
+A	.Rproj.user/74EEE104/pcs/files-pane.pper
+A	.Rproj.user/74EEE104/pcs/source-pane.pper
+A	.Rproj.user/74EEE104/pcs/windowlayoutstate.pper
+A	.Rproj.user/74EEE104/pcs/workbench-pane.pper
+A	.Rproj.user/74EEE104/persistent-state
+A	.Rproj.user/74EEE104/rmd-outputs
+A	.Rproj.user/74EEE104/saved_source_markers
+A	.Rproj.user/74EEE104/sources/prop/1630D015
+A	.Rproj.user/74EEE104/sources/prop/1B96FC10
+A	.Rproj.user/74EEE104/sources/prop/2BDDBB56
+A	.Rproj.user/74EEE104/sources/prop/343F24AC
+A	.Rproj.user/74EEE104/sources/prop/37C55682
+A	.Rproj.user/74EEE104/sources/prop/3EDC945
+A	.Rproj.user/74EEE104/sources/prop/477B666A
+A	.Rproj.user/74EEE104/sources/prop/4C98116C
+A	.Rproj.user/74EEE104/sources/prop/59F63E9
+A	.Rproj.user/74EEE104/sources/prop/73947D68
+A	.Rproj.user/74EEE104/sources/prop/7B041772
+A	.Rproj.user/74EEE104/sources/prop/7F741912
+A	.Rproj.user/74EEE104/sources/prop/82DFCF32
+A	.Rproj.user/74EEE104/sources/prop/87E86887
+A	.Rproj.user/74EEE104/sources/prop/A00D556C
+A	.Rproj.user/74EEE104/sources/prop/A109C54A
+A	.Rproj.user/74EEE104/sources/prop/B32A0A8B
+A	.Rproj.user/74EEE104/sources/prop/B6844055
+A	.Rproj.user/74EEE104/sources/prop/BE5CC87E
+A	.Rproj.user/74EEE104/sources/prop/C2034E57
+A	.Rproj.user/74EEE104/sources/prop/C37829B
+A	.Rproj.user/74EEE104/sources/prop/C9FE7AB9
+A	.Rproj.user/74EEE104/sources/prop/E0DC0977
+A	.Rproj.user/74EEE104/sources/prop/E4DCF8C
+A	.Rproj.user/74EEE104/sources/prop/E859016D
+A	.Rproj.user/74EEE104/sources/prop/EAEB49ED
+A	.Rproj.user/74EEE104/sources/prop/EBA10D41
+A	.Rproj.user/74EEE104/sources/prop/F5106E31
+A	.Rproj.user/74EEE104/sources/prop/F8DEE383
+A	.Rproj.user/74EEE104/sources/prop/INDEX
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/1F3A5B03-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/3008E0FD-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/3A5BD67D-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/42D925E8
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/42D925E8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4A5B7B82
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4A5B7B82-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4FF5D253
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4FF5D253-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/52D47958
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/52D47958-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/5F70F408
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/5F70F408-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/6B5E0DE1-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/6C611E27
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/6C611E27-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/752D2AB8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/77C0AC9E
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/77C0AC9E-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/8319FA9C
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/8319FA9C-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/87ACF501-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/92C2ECF3-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/95503BF8
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/95503BF8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/A69D3D1B-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/ADA9572F
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/ADA9572F-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BA7206DB
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BA7206DB-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BD4060B8
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BD4060B8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/C61D105D
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/C61D105D-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/CD26FE53-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/E296B846
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/E296B846-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/EA158A7
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/EA158A7-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/EA806CA4-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/F06ECF85-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/F198D854
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/F198D854-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/lock_file
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/1A6BF47C
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/1A6BF47C-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/39AEDDF0-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/7DE5202C
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/7DE5202C-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/99D8D5AD
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/99D8D5AD-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/B634456
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/B634456-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/BE1FC0BA-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/lock_file
+A	.Rproj.user/shared/notebooks/D68F7906-01-intro/1/74EEE1041A40EF70/chunks.json
+A	.Rproj.user/shared/notebooks/D68F7906-01-intro/1/74EEE104B58B5A1E/chunks.json
+A	.Rproj.user/shared/notebooks/D68F7906-01-intro/1/s/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE1041086CFA1/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE1041A40EF70/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE104B58B5A1E/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE104DAB8EF46/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE104E30B3FB4/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/s/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/s/csetup_chunk/000002.csv
+A	.Rproj.user/shared/notebooks/patch-chunk-names
+A	.Rproj.user/shared/notebooks/paths
+M	Makefile
+A	_book/appendix-b.html
+A	_book/assignments.html
+A	_book/continuous-variables-and-probability-distributions.html
+A	_book/discrete-random-variables-and-probability-distributions.html
+A	_book/distribution-tables.html
+A	_book/epib607.epub
+A	_book/epib607.pdf
+A	_book/epib607.tex
+A	_book/images/caution.png
+A	_book/images/important.png
+A	_book/images/mapply.png
+A	_book/images/note.png
+A	_book/images/probstat.png
+A	_book/images/rv.png
+A	_book/images/tip.png
+A	_book/images/totalprob.png
+A	_book/images/venn.png
+A	_book/images/warning.png
+A	_book/index.html
+A	_book/intro.html
+A	_book/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
+A	_book/libs/gitbook-2.6.7/css/plugin-bookdown.css
+A	_book/libs/gitbook-2.6.7/css/plugin-fontsettings.css
+A	_book/libs/gitbook-2.6.7/css/plugin-highlight.css
+A	_book/libs/gitbook-2.6.7/css/plugin-search.css
+A	_book/libs/gitbook-2.6.7/css/style.css
+A	_book/libs/gitbook-2.6.7/js/app.min.js
+A	_book/libs/gitbook-2.6.7/js/jquery.highlight.js
+A	_book/libs/gitbook-2.6.7/js/lunr.js
+A	_book/libs/gitbook-2.6.7/js/plugin-bookdown.js
+A	_book/libs/gitbook-2.6.7/js/plugin-fontsettings.js
+A	_book/libs/gitbook-2.6.7/js/plugin-search.js
+A	_book/libs/gitbook-2.6.7/js/plugin-sharing.js
+A	_book/libs/jquery-2.2.3/jquery.min.js
+A	_book/libs/kePrint-0.0.1/kePrint.js
+A	_book/math697.epub
+A	_book/math697.pdf
+A	_book/math697.tex
+A	_book/methods.html
+A	_book/prerequisites.html
+A	_book/probability.html
+A	_book/quiz.html
+A	_book/r-code.html
+A	_book/references.html
+A	_book/search_index.json
+A	_book/slides.html
+A	_book/style.css
+A	_book/vectorization-apply-and-for-loops.html
+A	_bookdown_files/epib607_cache/html/__packages
+A	_bookdown_files/epib607_cache/html/assembly_e22146e06525c35957f6965d99b9f949.RData
+A	_bookdown_files/epib607_cache/html/assembly_e22146e06525c35957f6965d99b9f949.rdb
+A	_bookdown_files/epib607_cache/html/assembly_e22146e06525c35957f6965d99b9f949.rdx
+A	_bookdown_files/epib607_cache/html/bayesdef_a4a9d07190799a13e017f1a56b27add9.RData
+A	_bookdown_files/epib607_cache/html/bayesdef_a4a9d07190799a13e017f1a56b27add9.rdb
+A	_bookdown_files/epib607_cache/html/bayesdef_a4a9d07190799a13e017f1a56b27add9.rdx
+A	_bookdown_files/epib607_cache/html/condprob_b88a1e833fd42da7a2155df67f886fe4.RData
+A	_bookdown_files/epib607_cache/html/condprob_b88a1e833fd42da7a2155df67f886fe4.rdb
+A	_bookdown_files/epib607_cache/html/condprob_b88a1e833fd42da7a2155df67f886fe4.rdx
+A	_bookdown_files/epib607_cache/html/flipcoins_407778c6a75aae461bda03bdd175c679.RData
+A	_bookdown_files/epib607_cache/html/flipcoins_407778c6a75aae461bda03bdd175c679.rdb
+A	_bookdown_files/epib607_cache/html/flipcoins_407778c6a75aae461bda03bdd175c679.rdx
+A	_bookdown_files/epib607_cache/html/indep_26eb9d39eb711ce6133658d3ea009f61.RData
+A	_bookdown_files/epib607_cache/html/indep_26eb9d39eb711ce6133658d3ea009f61.rdb
+A	_bookdown_files/epib607_cache/html/indep_26eb9d39eb711ce6133658d3ea009f61.rdx
+A	_bookdown_files/epib607_cache/html/multformula_cf2782347cd292760b496964690d306e.RData
+A	_bookdown_files/epib607_cache/html/multformula_cf2782347cd292760b496964690d306e.rdb
+A	_bookdown_files/epib607_cache/html/multformula_cf2782347cd292760b496964690d306e.rdx
+A	_bookdown_files/epib607_cache/html/no-stats_21bfda39228cb93cc0b4bd4a144a37dc.RData
+A	_bookdown_files/epib607_cache/html/no-stats_21bfda39228cb93cc0b4bd4a144a37dc.rdb
+A	_bookdown_files/epib607_cache/html/no-stats_21bfda39228cb93cc0b4bd4a144a37dc.rdx
+A	_bookdown_files/epib607_cache/html/note-text2_ebdcf8ea3a1514cf58ae5c60b948d8f9.RData
+A	_bookdown_files/epib607_cache/html/note-text2_ebdcf8ea3a1514cf58ae5c60b948d8f9.rdb
+A	_bookdown_files/epib607_cache/html/note-text2_ebdcf8ea3a1514cf58ae5c60b948d8f9.rdx
+A	_bookdown_files/epib607_cache/html/note-text_53affaa6cc9c071a582e2aea436365a1.RData
+A	_bookdown_files/epib607_cache/html/note-text_53affaa6cc9c071a582e2aea436365a1.rdb
+A	_bookdown_files/epib607_cache/html/note-text_53affaa6cc9c071a582e2aea436365a1.rdx
+A	_bookdown_files/epib607_cache/html/pyth_7e4bdb9042a444a56546e4e54f1935cd.RData
+A	_bookdown_files/epib607_cache/html/pyth_7e4bdb9042a444a56546e4e54f1935cd.rdb
+A	_bookdown_files/epib607_cache/html/pyth_7e4bdb9042a444a56546e4e54f1935cd.rdx
+A	_bookdown_files/epib607_cache/html/rv_40a5f627ee2044d25062e6eba14c091c.RData
+A	_bookdown_files/epib607_cache/html/rv_40a5f627ee2044d25062e6eba14c091c.rdb
+A	_bookdown_files/epib607_cache/html/rv_40a5f627ee2044d25062e6eba14c091c.rdx
+A	_bookdown_files/epib607_cache/html/setup_2861f1c35a5a59ca45b39815a4723ab5.RData
+A	_bookdown_files/epib607_cache/html/setup_2861f1c35a5a59ca45b39815a4723ab5.rdb
+A	_bookdown_files/epib607_cache/html/setup_2861f1c35a5a59ca45b39815a4723ab5.rdx
+A	_bookdown_files/epib607_cache/html/simple_c00e6e3b8e6874da9b373f8058e33fc4.RData
+A	_bookdown_files/epib607_cache/html/simple_c00e6e3b8e6874da9b373f8058e33fc4.rdb
+A	_bookdown_files/epib607_cache/html/simple_c00e6e3b8e6874da9b373f8058e33fc4.rdx
+A	_bookdown_files/epib607_cache/html/totprob_fbc0152f3c27751193e5919d679b5147.RData
+A	_bookdown_files/epib607_cache/html/totprob_fbc0152f3c27751193e5919d679b5147.rdb
+A	_bookdown_files/epib607_cache/html/totprob_fbc0152f3c27751193e5919d679b5147.rdx
+A	_bookdown_files/epib607_cache/html/unbalanced_a2e5a378ed7732df0b95d64d70c17640.RData
+A	_bookdown_files/epib607_cache/html/unbalanced_a2e5a378ed7732df0b95d64d70c17640.rdb
+A	_bookdown_files/epib607_cache/html/unbalanced_a2e5a378ed7732df0b95d64d70c17640.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-10_a267e474a051874909c4a36de536bf15.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-10_a267e474a051874909c4a36de536bf15.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-10_a267e474a051874909c4a36de536bf15.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-11_134f07b1cacc7c967a0f1ce5a4df0185.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-11_134f07b1cacc7c967a0f1ce5a4df0185.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-11_134f07b1cacc7c967a0f1ce5a4df0185.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-12_3490eccf0a6069c464d2a92df141249a.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-12_3490eccf0a6069c464d2a92df141249a.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-12_3490eccf0a6069c464d2a92df141249a.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-13_bc8c608515ae54c8a5a305fe03556e34.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-13_bc8c608515ae54c8a5a305fe03556e34.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-13_bc8c608515ae54c8a5a305fe03556e34.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-14_dde7891f2ad3d80f4c840eb3338eee2e.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-14_dde7891f2ad3d80f4c840eb3338eee2e.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-14_dde7891f2ad3d80f4c840eb3338eee2e.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-15_dabd1293d720c3ccaea4251f37086a66.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-15_dabd1293d720c3ccaea4251f37086a66.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-15_dabd1293d720c3ccaea4251f37086a66.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-16_6a21ea47e3aa666398042aa8ab177a3b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-16_6a21ea47e3aa666398042aa8ab177a3b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-16_6a21ea47e3aa666398042aa8ab177a3b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-17_ea5f6c5df259a95a1c35df3e44117853.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-17_ea5f6c5df259a95a1c35df3e44117853.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-17_ea5f6c5df259a95a1c35df3e44117853.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-18_ada6a2a065c24da7e8e66f000cb36565.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-18_ada6a2a065c24da7e8e66f000cb36565.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-18_ada6a2a065c24da7e8e66f000cb36565.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-19_c38295f4b13b811f3889fdcacfd2798c.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-19_c38295f4b13b811f3889fdcacfd2798c.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-19_c38295f4b13b811f3889fdcacfd2798c.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-20_426acb52983b5e0110ebd8fb8dbfd5a5.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-20_426acb52983b5e0110ebd8fb8dbfd5a5.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-20_426acb52983b5e0110ebd8fb8dbfd5a5.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-21_5c654b18c20071a06f8b3adb10567155.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-21_5c654b18c20071a06f8b3adb10567155.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-21_5c654b18c20071a06f8b3adb10567155.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-22_56ef2dba8c8a6d4694a1097d1c729fd1.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-22_56ef2dba8c8a6d4694a1097d1c729fd1.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-22_56ef2dba8c8a6d4694a1097d1c729fd1.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-23_4ec3f37f397e7517ae9d4ec47a98ec85.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-23_4ec3f37f397e7517ae9d4ec47a98ec85.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-23_4ec3f37f397e7517ae9d4ec47a98ec85.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-24_5cb6ee2aa170b2a669a10019f1b90607.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-24_5cb6ee2aa170b2a669a10019f1b90607.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-24_5cb6ee2aa170b2a669a10019f1b90607.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-25_eac9a18088a938bd4baaead5945167e7.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-25_eac9a18088a938bd4baaead5945167e7.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-25_eac9a18088a938bd4baaead5945167e7.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-26_072723fe646bb4d9c130a3312b8786e5.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-26_072723fe646bb4d9c130a3312b8786e5.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-26_072723fe646bb4d9c130a3312b8786e5.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-27_79db4c98623bff6fb35d01325ec7f940.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-27_79db4c98623bff6fb35d01325ec7f940.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-27_79db4c98623bff6fb35d01325ec7f940.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-28_9a1fd7412e31a3060a8564c6e6a2a8e3.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-28_9a1fd7412e31a3060a8564c6e6a2a8e3.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-28_9a1fd7412e31a3060a8564c6e6a2a8e3.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-29_67ff5d3823b571514e80dd5e190d21ba.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-29_67ff5d3823b571514e80dd5e190d21ba.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-29_67ff5d3823b571514e80dd5e190d21ba.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-30_65de7e7a5d124f9dde9a41045b3363b2.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-30_65de7e7a5d124f9dde9a41045b3363b2.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-30_65de7e7a5d124f9dde9a41045b3363b2.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-31_d676670ca1b8b8ddd648a12494d74628.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-31_d676670ca1b8b8ddd648a12494d74628.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-31_d676670ca1b8b8ddd648a12494d74628.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-32_0021a48e2979c35193176d85d261ffc4.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-32_0021a48e2979c35193176d85d261ffc4.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-32_0021a48e2979c35193176d85d261ffc4.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-33_f2806343196b6a2d465ff445cf499ead.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-33_f2806343196b6a2d465ff445cf499ead.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-33_f2806343196b6a2d465ff445cf499ead.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-34_ba2b4818c7124c9fa070c432cae7fb93.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-34_ba2b4818c7124c9fa070c432cae7fb93.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-34_ba2b4818c7124c9fa070c432cae7fb93.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-35_9ce137380ae76e61d461ce553faf8e2b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-35_9ce137380ae76e61d461ce553faf8e2b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-35_9ce137380ae76e61d461ce553faf8e2b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-36_dd192578e6280b1138e336e2c9a814b0.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-36_dd192578e6280b1138e336e2c9a814b0.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-36_dd192578e6280b1138e336e2c9a814b0.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-37_c36fc10b16390ba795c7c9c0947babe4.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-37_c36fc10b16390ba795c7c9c0947babe4.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-37_c36fc10b16390ba795c7c9c0947babe4.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-38_964383f042c8bc8c8c63d0da3bc97e2b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-38_964383f042c8bc8c8c63d0da3bc97e2b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-38_964383f042c8bc8c8c63d0da3bc97e2b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-39_3e96bc6572cb49a451965cd83ac6040f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-39_3e96bc6572cb49a451965cd83ac6040f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-39_3e96bc6572cb49a451965cd83ac6040f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-3_340150257b0c85c0ced002144d4c900f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-3_340150257b0c85c0ced002144d4c900f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-3_340150257b0c85c0ced002144d4c900f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-40_cd4fc6dac5c6ea3a01771723d8d43b26.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-40_cd4fc6dac5c6ea3a01771723d8d43b26.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-40_cd4fc6dac5c6ea3a01771723d8d43b26.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-41_972200e3ae5f1991110be2ffce478acf.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-41_972200e3ae5f1991110be2ffce478acf.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-41_972200e3ae5f1991110be2ffce478acf.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-42_1ef4c39e54341f47172795d079f5aa5b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-42_1ef4c39e54341f47172795d079f5aa5b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-42_1ef4c39e54341f47172795d079f5aa5b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-43_05e8ee9d78097600513b8be2a0c6d93b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-43_05e8ee9d78097600513b8be2a0c6d93b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-43_05e8ee9d78097600513b8be2a0c6d93b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-44_106e1b3e92f16bd2fc4ff439e5c7044a.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-44_106e1b3e92f16bd2fc4ff439e5c7044a.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-44_106e1b3e92f16bd2fc4ff439e5c7044a.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-45_9e0388b19a98a206e2ac19b9983262cc.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-45_9e0388b19a98a206e2ac19b9983262cc.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-45_9e0388b19a98a206e2ac19b9983262cc.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-46_6d9d638712481b60269dda174666c53f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-46_6d9d638712481b60269dda174666c53f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-46_6d9d638712481b60269dda174666c53f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-47_d1e47a71677353d60bf942fd9133fced.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-47_d1e47a71677353d60bf942fd9133fced.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-47_d1e47a71677353d60bf942fd9133fced.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-48_3c28c3bb5e149617ed3b4f63fec93081.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-48_3c28c3bb5e149617ed3b4f63fec93081.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-48_3c28c3bb5e149617ed3b4f63fec93081.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-49_6e3646935e604f1094963883126631c7.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-49_6e3646935e604f1094963883126631c7.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-49_6e3646935e604f1094963883126631c7.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-4_64e85b84476fac67d306c2e51bc613cb.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-4_64e85b84476fac67d306c2e51bc613cb.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-4_64e85b84476fac67d306c2e51bc613cb.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-50_f0a41f5f146d09aec037b2b1ad1b72a3.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-50_f0a41f5f146d09aec037b2b1ad1b72a3.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-50_f0a41f5f146d09aec037b2b1ad1b72a3.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-51_afcb28fc866077007be1fbbc9d7a98c1.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-51_afcb28fc866077007be1fbbc9d7a98c1.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-51_afcb28fc866077007be1fbbc9d7a98c1.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-52_3c522dedfa0af2313a218916f9ec6b6f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-52_3c522dedfa0af2313a218916f9ec6b6f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-52_3c522dedfa0af2313a218916f9ec6b6f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-53_a1199b4cb776310a45603f2003b79ee5.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-53_a1199b4cb776310a45603f2003b79ee5.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-53_a1199b4cb776310a45603f2003b79ee5.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-54_b81f37a06eb7a529165c275fe94c135b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-54_b81f37a06eb7a529165c275fe94c135b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-54_b81f37a06eb7a529165c275fe94c135b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-55_65168042011f801983a1cfe51ebfb951.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-55_65168042011f801983a1cfe51ebfb951.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-55_65168042011f801983a1cfe51ebfb951.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-56_452cd297c2b008ef41fd091189721ed8.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-56_452cd297c2b008ef41fd091189721ed8.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-56_452cd297c2b008ef41fd091189721ed8.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-57_14c200e538bbbb5f7e9d19fa1e858c65.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-57_14c200e538bbbb5f7e9d19fa1e858c65.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-57_14c200e538bbbb5f7e9d19fa1e858c65.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-58_21d18800103cbfa86389bd42d3cddd76.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-58_21d18800103cbfa86389bd42d3cddd76.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-58_21d18800103cbfa86389bd42d3cddd76.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-59_2e9ca84bbe729d93dd00bf882012f941.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-59_2e9ca84bbe729d93dd00bf882012f941.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-59_2e9ca84bbe729d93dd00bf882012f941.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-5_3269fae66cca854d9201a66565241c4a.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-5_3269fae66cca854d9201a66565241c4a.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-5_3269fae66cca854d9201a66565241c4a.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-60_c3670cfa0bc596a5425cb46bad5beb13.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-60_c3670cfa0bc596a5425cb46bad5beb13.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-60_c3670cfa0bc596a5425cb46bad5beb13.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-61_bc5dd0c98ab840436fa19c92038e40ea.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-61_bc5dd0c98ab840436fa19c92038e40ea.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-61_bc5dd0c98ab840436fa19c92038e40ea.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-62_b69d71609763758acbd48aeeb6c3de97.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-62_b69d71609763758acbd48aeeb6c3de97.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-62_b69d71609763758acbd48aeeb6c3de97.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-63_96bff3d8c0c7fd71a75279ac3e819d58.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-63_96bff3d8c0c7fd71a75279ac3e819d58.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-63_96bff3d8c0c7fd71a75279ac3e819d58.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-64_190fedeca6a5dd0a64fae32fd8f36b8c.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-64_190fedeca6a5dd0a64fae32fd8f36b8c.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-64_190fedeca6a5dd0a64fae32fd8f36b8c.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-65_8234f8ef5a722e2361a8d6f14a96120d.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-65_8234f8ef5a722e2361a8d6f14a96120d.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-65_8234f8ef5a722e2361a8d6f14a96120d.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-6_0b8fc5310af408388a93076afda02298.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-6_0b8fc5310af408388a93076afda02298.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-6_0b8fc5310af408388a93076afda02298.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-7_f073a69b7dcfd244b8cab26e48809a6b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-7_f073a69b7dcfd244b8cab26e48809a6b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-7_f073a69b7dcfd244b8cab26e48809a6b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-8_289784d944918bd9421f9a5e1f2d37c3.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-8_289784d944918bd9421f9a5e1f2d37c3.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-8_289784d944918bd9421f9a5e1f2d37c3.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-9_230151c496a68f7a3d3c88966b9957fc.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-9_230151c496a68f7a3d3c88966b9957fc.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-9_230151c496a68f7a3d3c88966b9957fc.rdx
+A	_bookdown_files/epib607_cache/latex/__packages
+A	_bookdown_files/epib607_cache/latex/assembly_0d48aaa112f30e0dd44f524a8074e74a.RData
+A	_bookdown_files/epib607_cache/latex/assembly_0d48aaa112f30e0dd44f524a8074e74a.rdb
+A	_bookdown_files/epib607_cache/latex/assembly_0d48aaa112f30e0dd44f524a8074e74a.rdx
+A	_bookdown_files/epib607_cache/latex/bayesdef_8bb860da50afce5a92008a18f7e9b267.RData
+A	_bookdown_files/epib607_cache/latex/bayesdef_8bb860da50afce5a92008a18f7e9b267.rdb
+A	_bookdown_files/epib607_cache/latex/bayesdef_8bb860da50afce5a92008a18f7e9b267.rdx
+A	_bookdown_files/epib607_cache/latex/condprob_fe3e3c5bb8a68f4dd90f1ff43dc313d9.RData
+A	_bookdown_files/epib607_cache/latex/condprob_fe3e3c5bb8a68f4dd90f1ff43dc313d9.rdb
+A	_bookdown_files/epib607_cache/latex/condprob_fe3e3c5bb8a68f4dd90f1ff43dc313d9.rdx
+A	_bookdown_files/epib607_cache/latex/flipcoins_0c34a7feeda96135f89d753ab91e6a91.RData
+A	_bookdown_files/epib607_cache/latex/flipcoins_0c34a7feeda96135f89d753ab91e6a91.rdb
+A	_bookdown_files/epib607_cache/latex/flipcoins_0c34a7feeda96135f89d753ab91e6a91.rdx
+A	_bookdown_files/epib607_cache/latex/indep_3f6e7b2d45e5a56d499e3f39cc490753.RData
+A	_bookdown_files/epib607_cache/latex/indep_3f6e7b2d45e5a56d499e3f39cc490753.rdb
+A	_bookdown_files/epib607_cache/latex/indep_3f6e7b2d45e5a56d499e3f39cc490753.rdx
+A	_bookdown_files/epib607_cache/latex/multformula_36ca81b692cd3faf7c557506ae59523d.RData
+A	_bookdown_files/epib607_cache/latex/multformula_36ca81b692cd3faf7c557506ae59523d.rdb
+A	_bookdown_files/epib607_cache/latex/multformula_36ca81b692cd3faf7c557506ae59523d.rdx
+A	_bookdown_files/epib607_cache/latex/no-stats_876cd9c848122af229df720d18d458ab.RData
+A	_bookdown_files/epib607_cache/latex/no-stats_876cd9c848122af229df720d18d458ab.rdb
+A	_bookdown_files/epib607_cache/latex/no-stats_876cd9c848122af229df720d18d458ab.rdx
+A	_bookdown_files/epib607_cache/latex/note-text2_bbae696ea6431693ed09de731ff143b8.RData
+A	_bookdown_files/epib607_cache/latex/note-text2_bbae696ea6431693ed09de731ff143b8.rdb
+A	_bookdown_files/epib607_cache/latex/note-text2_bbae696ea6431693ed09de731ff143b8.rdx
+A	_bookdown_files/epib607_cache/latex/note-text_fedf8eec736d4ce00f476db43990ef41.RData
+A	_bookdown_files/epib607_cache/latex/note-text_fedf8eec736d4ce00f476db43990ef41.rdb
+A	_bookdown_files/epib607_cache/latex/note-text_fedf8eec736d4ce00f476db43990ef41.rdx
+A	_bookdown_files/epib607_cache/latex/pyth_c0c26d898f562d1f3ea3dbfeb0bb5140.RData
+A	_bookdown_files/epib607_cache/latex/pyth_c0c26d898f562d1f3ea3dbfeb0bb5140.rdb
+A	_bookdown_files/epib607_cache/latex/pyth_c0c26d898f562d1f3ea3dbfeb0bb5140.rdx
+A	_bookdown_files/epib607_cache/latex/rv_0444496edc7dcd85b518f6b12fc3258a.RData
+A	_bookdown_files/epib607_cache/latex/rv_0444496edc7dcd85b518f6b12fc3258a.rdb
+A	_bookdown_files/epib607_cache/latex/rv_0444496edc7dcd85b518f6b12fc3258a.rdx
+A	_bookdown_files/epib607_cache/latex/setup_be2023632412e9888dc941f443163e78.RData
+A	_bookdown_files/epib607_cache/latex/setup_be2023632412e9888dc941f443163e78.rdb
+A	_bookdown_files/epib607_cache/latex/setup_be2023632412e9888dc941f443163e78.rdx
+A	_bookdown_files/epib607_cache/latex/simple_e30efef21a68a46c4388674bfa6b07df.RData
+A	_bookdown_files/epib607_cache/latex/simple_e30efef21a68a46c4388674bfa6b07df.rdb
+A	_bookdown_files/epib607_cache/latex/simple_e30efef21a68a46c4388674bfa6b07df.rdx
+A	_bookdown_files/epib607_cache/latex/totprob_54379bb7d2a7cc28a672d248bcafc14b.RData
+A	_bookdown_files/epib607_cache/latex/totprob_54379bb7d2a7cc28a672d248bcafc14b.rdb
+A	_bookdown_files/epib607_cache/latex/totprob_54379bb7d2a7cc28a672d248bcafc14b.rdx
+A	_bookdown_files/epib607_cache/latex/unbalanced_a7df74a93d2c0000a8c66b68b5a40262.RData
+A	_bookdown_files/epib607_cache/latex/unbalanced_a7df74a93d2c0000a8c66b68b5a40262.rdb
+A	_bookdown_files/epib607_cache/latex/unbalanced_a7df74a93d2c0000a8c66b68b5a40262.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-10_079725b180dd0461d5601a70a015194e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-10_079725b180dd0461d5601a70a015194e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-10_079725b180dd0461d5601a70a015194e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-11_c862c52c77da0d477d77a21d97aa4aad.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-11_c862c52c77da0d477d77a21d97aa4aad.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-11_c862c52c77da0d477d77a21d97aa4aad.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-12_ac8cae155e5662b7ef805cee33904b37.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-12_ac8cae155e5662b7ef805cee33904b37.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-12_ac8cae155e5662b7ef805cee33904b37.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-13_4e5c159a183537efc838ee0ce27f7ada.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-13_4e5c159a183537efc838ee0ce27f7ada.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-13_4e5c159a183537efc838ee0ce27f7ada.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-14_d25ff825e869f4dc6974924f8d1a5b61.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-14_d25ff825e869f4dc6974924f8d1a5b61.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-14_d25ff825e869f4dc6974924f8d1a5b61.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-15_5faf39462e2017471c148ba723ed33e3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-15_5faf39462e2017471c148ba723ed33e3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-15_5faf39462e2017471c148ba723ed33e3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-16_6f5675a6fff1c9b2a83018147160e0f2.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-16_6f5675a6fff1c9b2a83018147160e0f2.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-16_6f5675a6fff1c9b2a83018147160e0f2.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-17_429707246e913dddea1fc465c004c634.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-17_429707246e913dddea1fc465c004c634.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-17_429707246e913dddea1fc465c004c634.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-18_2199d2828150595bfddc52ab94b505d7.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-18_2199d2828150595bfddc52ab94b505d7.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-18_2199d2828150595bfddc52ab94b505d7.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-19_46431a97211bfd6783dd09c249cba7e6.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-19_46431a97211bfd6783dd09c249cba7e6.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-19_46431a97211bfd6783dd09c249cba7e6.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-20_60f06df0bbc1f04406991a8d7a4d6c46.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-20_60f06df0bbc1f04406991a8d7a4d6c46.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-20_60f06df0bbc1f04406991a8d7a4d6c46.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-21_bac7ca55030f4266e674650f43cdbcdb.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-21_bac7ca55030f4266e674650f43cdbcdb.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-21_bac7ca55030f4266e674650f43cdbcdb.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-22_f527473e5841c53a8e080328d86f2b6f.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-22_f527473e5841c53a8e080328d86f2b6f.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-22_f527473e5841c53a8e080328d86f2b6f.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-23_0a0a6c04ec6b413e8dd8321a67d0d404.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-23_0a0a6c04ec6b413e8dd8321a67d0d404.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-23_0a0a6c04ec6b413e8dd8321a67d0d404.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-24_7ccfd1caf6ea9f2546be8458b44b6350.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-24_7ccfd1caf6ea9f2546be8458b44b6350.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-24_7ccfd1caf6ea9f2546be8458b44b6350.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-25_528ef7a4cd3447c473b138a6888cd5a4.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-25_528ef7a4cd3447c473b138a6888cd5a4.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-25_528ef7a4cd3447c473b138a6888cd5a4.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-26_87270dd9911d1b88bd8b882cd51f3868.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-26_87270dd9911d1b88bd8b882cd51f3868.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-26_87270dd9911d1b88bd8b882cd51f3868.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-27_8e98d5c946e4ef4ea2b6b481ded405b3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-27_8e98d5c946e4ef4ea2b6b481ded405b3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-27_8e98d5c946e4ef4ea2b6b481ded405b3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-28_34564864ad9be64cee41da71f627733e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-28_34564864ad9be64cee41da71f627733e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-28_34564864ad9be64cee41da71f627733e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-29_3c3377e11d175e0728e266133c9f3252.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-29_3c3377e11d175e0728e266133c9f3252.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-29_3c3377e11d175e0728e266133c9f3252.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-30_8a03d3f0a5884360265d1704721c91f3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-30_8a03d3f0a5884360265d1704721c91f3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-30_8a03d3f0a5884360265d1704721c91f3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-31_46742c4cdf0ee0335996b139d2ea3944.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-31_46742c4cdf0ee0335996b139d2ea3944.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-31_46742c4cdf0ee0335996b139d2ea3944.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-32_c017f3331b7715b30ea3d94534b7d2f2.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-32_c017f3331b7715b30ea3d94534b7d2f2.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-32_c017f3331b7715b30ea3d94534b7d2f2.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-33_7cb369df44ef9a76156acb78ea59dd4e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-33_7cb369df44ef9a76156acb78ea59dd4e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-33_7cb369df44ef9a76156acb78ea59dd4e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-34_8115365d6fc08246bd8ef3049b47e498.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-34_8115365d6fc08246bd8ef3049b47e498.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-34_8115365d6fc08246bd8ef3049b47e498.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-35_db7f82ea4dc18f716c9ddd3246a3cbbb.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-35_db7f82ea4dc18f716c9ddd3246a3cbbb.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-35_db7f82ea4dc18f716c9ddd3246a3cbbb.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-36_de2f6d62ca580f4dce488830b43b13d0.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-36_de2f6d62ca580f4dce488830b43b13d0.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-36_de2f6d62ca580f4dce488830b43b13d0.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-37_1520ad0c243dafd823054f3866059ee4.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-37_1520ad0c243dafd823054f3866059ee4.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-37_1520ad0c243dafd823054f3866059ee4.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-38_41efdd08d67f7b4195155d00960a197f.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-38_41efdd08d67f7b4195155d00960a197f.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-38_41efdd08d67f7b4195155d00960a197f.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-39_4d7dbc6f2e3fa5f4aedcd2ef2b0d6a01.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-39_4d7dbc6f2e3fa5f4aedcd2ef2b0d6a01.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-39_4d7dbc6f2e3fa5f4aedcd2ef2b0d6a01.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-3_869d299ecc0ce35c2be013e8a93d277c.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-3_869d299ecc0ce35c2be013e8a93d277c.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-3_869d299ecc0ce35c2be013e8a93d277c.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-40_1f52d2ddcba9eb3c5b3fec4c2653caf8.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-40_1f52d2ddcba9eb3c5b3fec4c2653caf8.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-40_1f52d2ddcba9eb3c5b3fec4c2653caf8.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-41_b8ece1dfef9f01ef2b543721e5d61efe.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-41_b8ece1dfef9f01ef2b543721e5d61efe.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-41_b8ece1dfef9f01ef2b543721e5d61efe.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-42_e0417eb20137a5d3f65e647faef0914d.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-42_e0417eb20137a5d3f65e647faef0914d.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-42_e0417eb20137a5d3f65e647faef0914d.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-43_6215976c54b524bd38ea8dbf72f9c653.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-43_6215976c54b524bd38ea8dbf72f9c653.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-43_6215976c54b524bd38ea8dbf72f9c653.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-44_cb84355750d3980aecef3788d966b031.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-44_cb84355750d3980aecef3788d966b031.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-44_cb84355750d3980aecef3788d966b031.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-45_8da899dc7d3055eecc387802df13f791.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-45_8da899dc7d3055eecc387802df13f791.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-45_8da899dc7d3055eecc387802df13f791.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-46_507eafa172805e9bf458484927cfd5ea.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-46_507eafa172805e9bf458484927cfd5ea.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-46_507eafa172805e9bf458484927cfd5ea.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-47_16251b48a0dc53a494c44df778ece03e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-47_16251b48a0dc53a494c44df778ece03e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-47_16251b48a0dc53a494c44df778ece03e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-48_330b846e34c897a02fdcf6b8139e8583.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-48_330b846e34c897a02fdcf6b8139e8583.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-48_330b846e34c897a02fdcf6b8139e8583.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-49_a2afe8d65a09dedd1ff331ea74b65cf6.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-49_a2afe8d65a09dedd1ff331ea74b65cf6.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-49_a2afe8d65a09dedd1ff331ea74b65cf6.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-4_ce15b124e1f06f2a758ed38421a1796d.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-4_ce15b124e1f06f2a758ed38421a1796d.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-4_ce15b124e1f06f2a758ed38421a1796d.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-50_92a827a658f7af168d8cfab78b96093e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-50_92a827a658f7af168d8cfab78b96093e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-50_92a827a658f7af168d8cfab78b96093e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-51_06c5927cd11068050bcc29d7e6c116ea.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-51_06c5927cd11068050bcc29d7e6c116ea.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-51_06c5927cd11068050bcc29d7e6c116ea.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-53_dedb3bc85f2a0c0ccce7290151498ec3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-53_dedb3bc85f2a0c0ccce7290151498ec3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-53_dedb3bc85f2a0c0ccce7290151498ec3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-54_804de53f065cdf9756d9d6ccec3e35e5.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-54_804de53f065cdf9756d9d6ccec3e35e5.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-54_804de53f065cdf9756d9d6ccec3e35e5.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-55_2f7a91332c77fc9783040e4f59aa2d23.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-55_2f7a91332c77fc9783040e4f59aa2d23.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-55_2f7a91332c77fc9783040e4f59aa2d23.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-56_37a1316bd76d319dcd6291ed8afbd8c7.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-56_37a1316bd76d319dcd6291ed8afbd8c7.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-56_37a1316bd76d319dcd6291ed8afbd8c7.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-57_e4f8a8ad5d681db1e9972100a8c16121.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-57_e4f8a8ad5d681db1e9972100a8c16121.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-57_e4f8a8ad5d681db1e9972100a8c16121.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-58_7d4e000169086c30fe2fff40a8febad1.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-58_7d4e000169086c30fe2fff40a8febad1.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-58_7d4e000169086c30fe2fff40a8febad1.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-59_fed827c15110ad35681a165d4b5b9cea.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-59_fed827c15110ad35681a165d4b5b9cea.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-59_fed827c15110ad35681a165d4b5b9cea.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-5_6b2db82463d055ff326089b75b3c729e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-5_6b2db82463d055ff326089b75b3c729e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-5_6b2db82463d055ff326089b75b3c729e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-60_b71f9d2ec77df6ef8d367518b3ada954.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-60_b71f9d2ec77df6ef8d367518b3ada954.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-60_b71f9d2ec77df6ef8d367518b3ada954.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-61_b7bbf1a92392ff6dc74da417ec32c97e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-61_b7bbf1a92392ff6dc74da417ec32c97e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-61_b7bbf1a92392ff6dc74da417ec32c97e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-62_376645ea31085f77ce02d82f08fb7711.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-62_376645ea31085f77ce02d82f08fb7711.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-62_376645ea31085f77ce02d82f08fb7711.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-63_53205f7e576321712e9edf781b59d3c7.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-63_53205f7e576321712e9edf781b59d3c7.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-63_53205f7e576321712e9edf781b59d3c7.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-64_9113b7d7c5e90dc97c3903b776bac25d.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-64_9113b7d7c5e90dc97c3903b776bac25d.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-64_9113b7d7c5e90dc97c3903b776bac25d.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-65_15872e73fdd17eccc671b591f7ca756a.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-65_15872e73fdd17eccc671b591f7ca756a.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-65_15872e73fdd17eccc671b591f7ca756a.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-6_c22b6b54b26f06dce0c4fc2a91779d53.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-6_c22b6b54b26f06dce0c4fc2a91779d53.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-6_c22b6b54b26f06dce0c4fc2a91779d53.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-7_4d274f5461b2230badca1bb317cccb74.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-7_4d274f5461b2230badca1bb317cccb74.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-7_4d274f5461b2230badca1bb317cccb74.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-8_d1bee94c82e89ed96a9aae75fd68b7e3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-8_d1bee94c82e89ed96a9aae75fd68b7e3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-8_d1bee94c82e89ed96a9aae75fd68b7e3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-9_96525726017f14e9fbbacb0cec9b4fb8.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-9_96525726017f14e9fbbacb0cec9b4fb8.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-9_96525726017f14e9fbbacb0cec9b4fb8.rdx
+A	bib/book.bib
+M	index.Rmd
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+git add -fA
+git commit --allow-empty -m checking make
+error: pathspec 'make' did not match any file(s) known to git.
+Makefile:33: recipe for target 'git' failed
+make: *** [git] Error 1
+]0;/home/sahir/git_repositories/epib607> (B[mmake foo="checking make" git[C[C[Kmake foo="checking make" git[1P git[C' git[1P[1@'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+git checkout master
+A	.RData
+A	.Rproj.user/74EEE104/build_options
+A	.Rproj.user/74EEE104/console06/D6730B8C
+A	.Rproj.user/74EEE104/console06/D6730B8C.env
+A	.Rproj.user/74EEE104/console06/INDEX001
+A	.Rproj.user/74EEE104/pcs/debug-breakpoints.pper
+A	.Rproj.user/74EEE104/pcs/files-pane.pper
+A	.Rproj.user/74EEE104/pcs/source-pane.pper
+A	.Rproj.user/74EEE104/pcs/windowlayoutstate.pper
+A	.Rproj.user/74EEE104/pcs/workbench-pane.pper
+A	.Rproj.user/74EEE104/persistent-state
+A	.Rproj.user/74EEE104/rmd-outputs
+A	.Rproj.user/74EEE104/saved_source_markers
+A	.Rproj.user/74EEE104/sources/prop/1630D015
+A	.Rproj.user/74EEE104/sources/prop/1B96FC10
+A	.Rproj.user/74EEE104/sources/prop/2BDDBB56
+A	.Rproj.user/74EEE104/sources/prop/343F24AC
+A	.Rproj.user/74EEE104/sources/prop/37C55682
+A	.Rproj.user/74EEE104/sources/prop/3EDC945
+A	.Rproj.user/74EEE104/sources/prop/477B666A
+A	.Rproj.user/74EEE104/sources/prop/4C98116C
+A	.Rproj.user/74EEE104/sources/prop/59F63E9
+A	.Rproj.user/74EEE104/sources/prop/73947D68
+A	.Rproj.user/74EEE104/sources/prop/7B041772
+A	.Rproj.user/74EEE104/sources/prop/7F741912
+A	.Rproj.user/74EEE104/sources/prop/82DFCF32
+A	.Rproj.user/74EEE104/sources/prop/87E86887
+A	.Rproj.user/74EEE104/sources/prop/A00D556C
+A	.Rproj.user/74EEE104/sources/prop/A109C54A
+A	.Rproj.user/74EEE104/sources/prop/B32A0A8B
+A	.Rproj.user/74EEE104/sources/prop/B6844055
+A	.Rproj.user/74EEE104/sources/prop/BE5CC87E
+A	.Rproj.user/74EEE104/sources/prop/C2034E57
+A	.Rproj.user/74EEE104/sources/prop/C37829B
+A	.Rproj.user/74EEE104/sources/prop/C9FE7AB9
+A	.Rproj.user/74EEE104/sources/prop/E0DC0977
+A	.Rproj.user/74EEE104/sources/prop/E4DCF8C
+A	.Rproj.user/74EEE104/sources/prop/E859016D
+A	.Rproj.user/74EEE104/sources/prop/EAEB49ED
+A	.Rproj.user/74EEE104/sources/prop/EBA10D41
+A	.Rproj.user/74EEE104/sources/prop/F5106E31
+A	.Rproj.user/74EEE104/sources/prop/F8DEE383
+A	.Rproj.user/74EEE104/sources/prop/INDEX
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/1F3A5B03-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/3008E0FD-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/3A5BD67D-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/42D925E8
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/42D925E8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4A5B7B82
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4A5B7B82-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4FF5D253
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/4FF5D253-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/52D47958
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/52D47958-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/5F70F408
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/5F70F408-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/6B5E0DE1-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/6C611E27
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/6C611E27-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/752D2AB8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/77C0AC9E
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/77C0AC9E-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/8319FA9C
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/8319FA9C-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/87ACF501-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/92C2ECF3-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/95503BF8
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/95503BF8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/A69D3D1B-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/ADA9572F
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/ADA9572F-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BA7206DB
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BA7206DB-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BD4060B8
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/BD4060B8-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/C61D105D
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/C61D105D-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/CD26FE53-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/E296B846
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/E296B846-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/EA158A7
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/EA158A7-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/EA806CA4-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/F06ECF85-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/F198D854
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/F198D854-contents
+A	.Rproj.user/74EEE104/sources/s-DE46BD41/lock_file
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/1A6BF47C
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/1A6BF47C-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/39AEDDF0-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/7DE5202C
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/7DE5202C-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/99D8D5AD
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/99D8D5AD-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/B634456
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/B634456-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/BE1FC0BA-contents
+A	.Rproj.user/74EEE104/sources/s-E30B3FB4/lock_file
+A	.Rproj.user/shared/notebooks/D68F7906-01-intro/1/74EEE1041A40EF70/chunks.json
+A	.Rproj.user/shared/notebooks/D68F7906-01-intro/1/74EEE104B58B5A1E/chunks.json
+A	.Rproj.user/shared/notebooks/D68F7906-01-intro/1/s/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE1041086CFA1/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE1041A40EF70/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE104B58B5A1E/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE104DAB8EF46/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/74EEE104E30B3FB4/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/s/chunks.json
+A	.Rproj.user/shared/notebooks/EE5E00A0-index/1/s/csetup_chunk/000002.csv
+A	.Rproj.user/shared/notebooks/patch-chunk-names
+A	.Rproj.user/shared/notebooks/paths
+M	Makefile
+A	_book/appendix-b.html
+A	_book/assignments.html
+A	_book/continuous-variables-and-probability-distributions.html
+A	_book/discrete-random-variables-and-probability-distributions.html
+A	_book/distribution-tables.html
+A	_book/epib607.epub
+A	_book/epib607.pdf
+A	_book/epib607.tex
+A	_book/images/caution.png
+A	_book/images/important.png
+A	_book/images/mapply.png
+A	_book/images/note.png
+A	_book/images/probstat.png
+A	_book/images/rv.png
+A	_book/images/tip.png
+A	_book/images/totalprob.png
+A	_book/images/venn.png
+A	_book/images/warning.png
+A	_book/index.html
+A	_book/intro.html
+A	_book/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
+A	_book/libs/gitbook-2.6.7/css/plugin-bookdown.css
+A	_book/libs/gitbook-2.6.7/css/plugin-fontsettings.css
+A	_book/libs/gitbook-2.6.7/css/plugin-highlight.css
+A	_book/libs/gitbook-2.6.7/css/plugin-search.css
+A	_book/libs/gitbook-2.6.7/css/style.css
+A	_book/libs/gitbook-2.6.7/js/app.min.js
+A	_book/libs/gitbook-2.6.7/js/jquery.highlight.js
+A	_book/libs/gitbook-2.6.7/js/lunr.js
+A	_book/libs/gitbook-2.6.7/js/plugin-bookdown.js
+A	_book/libs/gitbook-2.6.7/js/plugin-fontsettings.js
+A	_book/libs/gitbook-2.6.7/js/plugin-search.js
+A	_book/libs/gitbook-2.6.7/js/plugin-sharing.js
+A	_book/libs/jquery-2.2.3/jquery.min.js
+A	_book/libs/kePrint-0.0.1/kePrint.js
+A	_book/math697.epub
+A	_book/math697.pdf
+A	_book/math697.tex
+A	_book/methods.html
+A	_book/prerequisites.html
+A	_book/probability.html
+A	_book/quiz.html
+A	_book/r-code.html
+A	_book/references.html
+A	_book/search_index.json
+A	_book/slides.html
+A	_book/style.css
+A	_book/vectorization-apply-and-for-loops.html
+A	_bookdown_files/epib607_cache/html/__packages
+A	_bookdown_files/epib607_cache/html/assembly_e22146e06525c35957f6965d99b9f949.RData
+A	_bookdown_files/epib607_cache/html/assembly_e22146e06525c35957f6965d99b9f949.rdb
+A	_bookdown_files/epib607_cache/html/assembly_e22146e06525c35957f6965d99b9f949.rdx
+A	_bookdown_files/epib607_cache/html/bayesdef_a4a9d07190799a13e017f1a56b27add9.RData
+A	_bookdown_files/epib607_cache/html/bayesdef_a4a9d07190799a13e017f1a56b27add9.rdb
+A	_bookdown_files/epib607_cache/html/bayesdef_a4a9d07190799a13e017f1a56b27add9.rdx
+A	_bookdown_files/epib607_cache/html/condprob_b88a1e833fd42da7a2155df67f886fe4.RData
+A	_bookdown_files/epib607_cache/html/condprob_b88a1e833fd42da7a2155df67f886fe4.rdb
+A	_bookdown_files/epib607_cache/html/condprob_b88a1e833fd42da7a2155df67f886fe4.rdx
+A	_bookdown_files/epib607_cache/html/flipcoins_407778c6a75aae461bda03bdd175c679.RData
+A	_bookdown_files/epib607_cache/html/flipcoins_407778c6a75aae461bda03bdd175c679.rdb
+A	_bookdown_files/epib607_cache/html/flipcoins_407778c6a75aae461bda03bdd175c679.rdx
+A	_bookdown_files/epib607_cache/html/indep_26eb9d39eb711ce6133658d3ea009f61.RData
+A	_bookdown_files/epib607_cache/html/indep_26eb9d39eb711ce6133658d3ea009f61.rdb
+A	_bookdown_files/epib607_cache/html/indep_26eb9d39eb711ce6133658d3ea009f61.rdx
+A	_bookdown_files/epib607_cache/html/multformula_cf2782347cd292760b496964690d306e.RData
+A	_bookdown_files/epib607_cache/html/multformula_cf2782347cd292760b496964690d306e.rdb
+A	_bookdown_files/epib607_cache/html/multformula_cf2782347cd292760b496964690d306e.rdx
+A	_bookdown_files/epib607_cache/html/no-stats_21bfda39228cb93cc0b4bd4a144a37dc.RData
+A	_bookdown_files/epib607_cache/html/no-stats_21bfda39228cb93cc0b4bd4a144a37dc.rdb
+A	_bookdown_files/epib607_cache/html/no-stats_21bfda39228cb93cc0b4bd4a144a37dc.rdx
+A	_bookdown_files/epib607_cache/html/note-text2_ebdcf8ea3a1514cf58ae5c60b948d8f9.RData
+A	_bookdown_files/epib607_cache/html/note-text2_ebdcf8ea3a1514cf58ae5c60b948d8f9.rdb
+A	_bookdown_files/epib607_cache/html/note-text2_ebdcf8ea3a1514cf58ae5c60b948d8f9.rdx
+A	_bookdown_files/epib607_cache/html/note-text_53affaa6cc9c071a582e2aea436365a1.RData
+A	_bookdown_files/epib607_cache/html/note-text_53affaa6cc9c071a582e2aea436365a1.rdb
+A	_bookdown_files/epib607_cache/html/note-text_53affaa6cc9c071a582e2aea436365a1.rdx
+A	_bookdown_files/epib607_cache/html/pyth_7e4bdb9042a444a56546e4e54f1935cd.RData
+A	_bookdown_files/epib607_cache/html/pyth_7e4bdb9042a444a56546e4e54f1935cd.rdb
+A	_bookdown_files/epib607_cache/html/pyth_7e4bdb9042a444a56546e4e54f1935cd.rdx
+A	_bookdown_files/epib607_cache/html/rv_40a5f627ee2044d25062e6eba14c091c.RData
+A	_bookdown_files/epib607_cache/html/rv_40a5f627ee2044d25062e6eba14c091c.rdb
+A	_bookdown_files/epib607_cache/html/rv_40a5f627ee2044d25062e6eba14c091c.rdx
+A	_bookdown_files/epib607_cache/html/setup_2861f1c35a5a59ca45b39815a4723ab5.RData
+A	_bookdown_files/epib607_cache/html/setup_2861f1c35a5a59ca45b39815a4723ab5.rdb
+A	_bookdown_files/epib607_cache/html/setup_2861f1c35a5a59ca45b39815a4723ab5.rdx
+A	_bookdown_files/epib607_cache/html/simple_c00e6e3b8e6874da9b373f8058e33fc4.RData
+A	_bookdown_files/epib607_cache/html/simple_c00e6e3b8e6874da9b373f8058e33fc4.rdb
+A	_bookdown_files/epib607_cache/html/simple_c00e6e3b8e6874da9b373f8058e33fc4.rdx
+A	_bookdown_files/epib607_cache/html/totprob_fbc0152f3c27751193e5919d679b5147.RData
+A	_bookdown_files/epib607_cache/html/totprob_fbc0152f3c27751193e5919d679b5147.rdb
+A	_bookdown_files/epib607_cache/html/totprob_fbc0152f3c27751193e5919d679b5147.rdx
+A	_bookdown_files/epib607_cache/html/unbalanced_a2e5a378ed7732df0b95d64d70c17640.RData
+A	_bookdown_files/epib607_cache/html/unbalanced_a2e5a378ed7732df0b95d64d70c17640.rdb
+A	_bookdown_files/epib607_cache/html/unbalanced_a2e5a378ed7732df0b95d64d70c17640.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-10_a267e474a051874909c4a36de536bf15.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-10_a267e474a051874909c4a36de536bf15.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-10_a267e474a051874909c4a36de536bf15.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-11_134f07b1cacc7c967a0f1ce5a4df0185.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-11_134f07b1cacc7c967a0f1ce5a4df0185.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-11_134f07b1cacc7c967a0f1ce5a4df0185.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-12_3490eccf0a6069c464d2a92df141249a.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-12_3490eccf0a6069c464d2a92df141249a.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-12_3490eccf0a6069c464d2a92df141249a.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-13_bc8c608515ae54c8a5a305fe03556e34.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-13_bc8c608515ae54c8a5a305fe03556e34.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-13_bc8c608515ae54c8a5a305fe03556e34.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-14_dde7891f2ad3d80f4c840eb3338eee2e.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-14_dde7891f2ad3d80f4c840eb3338eee2e.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-14_dde7891f2ad3d80f4c840eb3338eee2e.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-15_dabd1293d720c3ccaea4251f37086a66.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-15_dabd1293d720c3ccaea4251f37086a66.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-15_dabd1293d720c3ccaea4251f37086a66.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-16_6a21ea47e3aa666398042aa8ab177a3b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-16_6a21ea47e3aa666398042aa8ab177a3b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-16_6a21ea47e3aa666398042aa8ab177a3b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-17_ea5f6c5df259a95a1c35df3e44117853.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-17_ea5f6c5df259a95a1c35df3e44117853.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-17_ea5f6c5df259a95a1c35df3e44117853.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-18_ada6a2a065c24da7e8e66f000cb36565.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-18_ada6a2a065c24da7e8e66f000cb36565.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-18_ada6a2a065c24da7e8e66f000cb36565.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-19_c38295f4b13b811f3889fdcacfd2798c.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-19_c38295f4b13b811f3889fdcacfd2798c.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-19_c38295f4b13b811f3889fdcacfd2798c.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-20_426acb52983b5e0110ebd8fb8dbfd5a5.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-20_426acb52983b5e0110ebd8fb8dbfd5a5.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-20_426acb52983b5e0110ebd8fb8dbfd5a5.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-21_5c654b18c20071a06f8b3adb10567155.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-21_5c654b18c20071a06f8b3adb10567155.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-21_5c654b18c20071a06f8b3adb10567155.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-22_56ef2dba8c8a6d4694a1097d1c729fd1.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-22_56ef2dba8c8a6d4694a1097d1c729fd1.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-22_56ef2dba8c8a6d4694a1097d1c729fd1.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-23_4ec3f37f397e7517ae9d4ec47a98ec85.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-23_4ec3f37f397e7517ae9d4ec47a98ec85.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-23_4ec3f37f397e7517ae9d4ec47a98ec85.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-24_5cb6ee2aa170b2a669a10019f1b90607.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-24_5cb6ee2aa170b2a669a10019f1b90607.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-24_5cb6ee2aa170b2a669a10019f1b90607.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-25_eac9a18088a938bd4baaead5945167e7.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-25_eac9a18088a938bd4baaead5945167e7.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-25_eac9a18088a938bd4baaead5945167e7.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-26_072723fe646bb4d9c130a3312b8786e5.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-26_072723fe646bb4d9c130a3312b8786e5.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-26_072723fe646bb4d9c130a3312b8786e5.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-27_79db4c98623bff6fb35d01325ec7f940.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-27_79db4c98623bff6fb35d01325ec7f940.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-27_79db4c98623bff6fb35d01325ec7f940.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-28_9a1fd7412e31a3060a8564c6e6a2a8e3.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-28_9a1fd7412e31a3060a8564c6e6a2a8e3.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-28_9a1fd7412e31a3060a8564c6e6a2a8e3.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-29_67ff5d3823b571514e80dd5e190d21ba.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-29_67ff5d3823b571514e80dd5e190d21ba.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-29_67ff5d3823b571514e80dd5e190d21ba.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-30_65de7e7a5d124f9dde9a41045b3363b2.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-30_65de7e7a5d124f9dde9a41045b3363b2.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-30_65de7e7a5d124f9dde9a41045b3363b2.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-31_d676670ca1b8b8ddd648a12494d74628.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-31_d676670ca1b8b8ddd648a12494d74628.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-31_d676670ca1b8b8ddd648a12494d74628.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-32_0021a48e2979c35193176d85d261ffc4.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-32_0021a48e2979c35193176d85d261ffc4.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-32_0021a48e2979c35193176d85d261ffc4.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-33_f2806343196b6a2d465ff445cf499ead.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-33_f2806343196b6a2d465ff445cf499ead.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-33_f2806343196b6a2d465ff445cf499ead.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-34_ba2b4818c7124c9fa070c432cae7fb93.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-34_ba2b4818c7124c9fa070c432cae7fb93.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-34_ba2b4818c7124c9fa070c432cae7fb93.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-35_9ce137380ae76e61d461ce553faf8e2b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-35_9ce137380ae76e61d461ce553faf8e2b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-35_9ce137380ae76e61d461ce553faf8e2b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-36_dd192578e6280b1138e336e2c9a814b0.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-36_dd192578e6280b1138e336e2c9a814b0.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-36_dd192578e6280b1138e336e2c9a814b0.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-37_c36fc10b16390ba795c7c9c0947babe4.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-37_c36fc10b16390ba795c7c9c0947babe4.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-37_c36fc10b16390ba795c7c9c0947babe4.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-38_964383f042c8bc8c8c63d0da3bc97e2b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-38_964383f042c8bc8c8c63d0da3bc97e2b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-38_964383f042c8bc8c8c63d0da3bc97e2b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-39_3e96bc6572cb49a451965cd83ac6040f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-39_3e96bc6572cb49a451965cd83ac6040f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-39_3e96bc6572cb49a451965cd83ac6040f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-3_340150257b0c85c0ced002144d4c900f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-3_340150257b0c85c0ced002144d4c900f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-3_340150257b0c85c0ced002144d4c900f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-40_cd4fc6dac5c6ea3a01771723d8d43b26.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-40_cd4fc6dac5c6ea3a01771723d8d43b26.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-40_cd4fc6dac5c6ea3a01771723d8d43b26.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-41_972200e3ae5f1991110be2ffce478acf.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-41_972200e3ae5f1991110be2ffce478acf.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-41_972200e3ae5f1991110be2ffce478acf.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-42_1ef4c39e54341f47172795d079f5aa5b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-42_1ef4c39e54341f47172795d079f5aa5b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-42_1ef4c39e54341f47172795d079f5aa5b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-43_05e8ee9d78097600513b8be2a0c6d93b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-43_05e8ee9d78097600513b8be2a0c6d93b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-43_05e8ee9d78097600513b8be2a0c6d93b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-44_106e1b3e92f16bd2fc4ff439e5c7044a.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-44_106e1b3e92f16bd2fc4ff439e5c7044a.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-44_106e1b3e92f16bd2fc4ff439e5c7044a.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-45_9e0388b19a98a206e2ac19b9983262cc.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-45_9e0388b19a98a206e2ac19b9983262cc.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-45_9e0388b19a98a206e2ac19b9983262cc.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-46_6d9d638712481b60269dda174666c53f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-46_6d9d638712481b60269dda174666c53f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-46_6d9d638712481b60269dda174666c53f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-47_d1e47a71677353d60bf942fd9133fced.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-47_d1e47a71677353d60bf942fd9133fced.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-47_d1e47a71677353d60bf942fd9133fced.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-48_3c28c3bb5e149617ed3b4f63fec93081.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-48_3c28c3bb5e149617ed3b4f63fec93081.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-48_3c28c3bb5e149617ed3b4f63fec93081.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-49_6e3646935e604f1094963883126631c7.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-49_6e3646935e604f1094963883126631c7.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-49_6e3646935e604f1094963883126631c7.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-4_64e85b84476fac67d306c2e51bc613cb.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-4_64e85b84476fac67d306c2e51bc613cb.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-4_64e85b84476fac67d306c2e51bc613cb.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-50_f0a41f5f146d09aec037b2b1ad1b72a3.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-50_f0a41f5f146d09aec037b2b1ad1b72a3.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-50_f0a41f5f146d09aec037b2b1ad1b72a3.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-51_afcb28fc866077007be1fbbc9d7a98c1.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-51_afcb28fc866077007be1fbbc9d7a98c1.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-51_afcb28fc866077007be1fbbc9d7a98c1.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-52_3c522dedfa0af2313a218916f9ec6b6f.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-52_3c522dedfa0af2313a218916f9ec6b6f.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-52_3c522dedfa0af2313a218916f9ec6b6f.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-53_a1199b4cb776310a45603f2003b79ee5.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-53_a1199b4cb776310a45603f2003b79ee5.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-53_a1199b4cb776310a45603f2003b79ee5.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-54_b81f37a06eb7a529165c275fe94c135b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-54_b81f37a06eb7a529165c275fe94c135b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-54_b81f37a06eb7a529165c275fe94c135b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-55_65168042011f801983a1cfe51ebfb951.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-55_65168042011f801983a1cfe51ebfb951.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-55_65168042011f801983a1cfe51ebfb951.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-56_452cd297c2b008ef41fd091189721ed8.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-56_452cd297c2b008ef41fd091189721ed8.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-56_452cd297c2b008ef41fd091189721ed8.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-57_14c200e538bbbb5f7e9d19fa1e858c65.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-57_14c200e538bbbb5f7e9d19fa1e858c65.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-57_14c200e538bbbb5f7e9d19fa1e858c65.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-58_21d18800103cbfa86389bd42d3cddd76.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-58_21d18800103cbfa86389bd42d3cddd76.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-58_21d18800103cbfa86389bd42d3cddd76.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-59_2e9ca84bbe729d93dd00bf882012f941.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-59_2e9ca84bbe729d93dd00bf882012f941.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-59_2e9ca84bbe729d93dd00bf882012f941.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-5_3269fae66cca854d9201a66565241c4a.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-5_3269fae66cca854d9201a66565241c4a.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-5_3269fae66cca854d9201a66565241c4a.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-60_c3670cfa0bc596a5425cb46bad5beb13.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-60_c3670cfa0bc596a5425cb46bad5beb13.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-60_c3670cfa0bc596a5425cb46bad5beb13.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-61_bc5dd0c98ab840436fa19c92038e40ea.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-61_bc5dd0c98ab840436fa19c92038e40ea.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-61_bc5dd0c98ab840436fa19c92038e40ea.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-62_b69d71609763758acbd48aeeb6c3de97.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-62_b69d71609763758acbd48aeeb6c3de97.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-62_b69d71609763758acbd48aeeb6c3de97.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-63_96bff3d8c0c7fd71a75279ac3e819d58.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-63_96bff3d8c0c7fd71a75279ac3e819d58.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-63_96bff3d8c0c7fd71a75279ac3e819d58.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-64_190fedeca6a5dd0a64fae32fd8f36b8c.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-64_190fedeca6a5dd0a64fae32fd8f36b8c.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-64_190fedeca6a5dd0a64fae32fd8f36b8c.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-65_8234f8ef5a722e2361a8d6f14a96120d.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-65_8234f8ef5a722e2361a8d6f14a96120d.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-65_8234f8ef5a722e2361a8d6f14a96120d.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-6_0b8fc5310af408388a93076afda02298.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-6_0b8fc5310af408388a93076afda02298.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-6_0b8fc5310af408388a93076afda02298.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-7_f073a69b7dcfd244b8cab26e48809a6b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-7_f073a69b7dcfd244b8cab26e48809a6b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-7_f073a69b7dcfd244b8cab26e48809a6b.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-8_289784d944918bd9421f9a5e1f2d37c3.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-8_289784d944918bd9421f9a5e1f2d37c3.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-8_289784d944918bd9421f9a5e1f2d37c3.rdx
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-9_230151c496a68f7a3d3c88966b9957fc.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-9_230151c496a68f7a3d3c88966b9957fc.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-9_230151c496a68f7a3d3c88966b9957fc.rdx
+A	_bookdown_files/epib607_cache/latex/__packages
+A	_bookdown_files/epib607_cache/latex/assembly_0d48aaa112f30e0dd44f524a8074e74a.RData
+A	_bookdown_files/epib607_cache/latex/assembly_0d48aaa112f30e0dd44f524a8074e74a.rdb
+A	_bookdown_files/epib607_cache/latex/assembly_0d48aaa112f30e0dd44f524a8074e74a.rdx
+A	_bookdown_files/epib607_cache/latex/bayesdef_8bb860da50afce5a92008a18f7e9b267.RData
+A	_bookdown_files/epib607_cache/latex/bayesdef_8bb860da50afce5a92008a18f7e9b267.rdb
+A	_bookdown_files/epib607_cache/latex/bayesdef_8bb860da50afce5a92008a18f7e9b267.rdx
+A	_bookdown_files/epib607_cache/latex/condprob_fe3e3c5bb8a68f4dd90f1ff43dc313d9.RData
+A	_bookdown_files/epib607_cache/latex/condprob_fe3e3c5bb8a68f4dd90f1ff43dc313d9.rdb
+A	_bookdown_files/epib607_cache/latex/condprob_fe3e3c5bb8a68f4dd90f1ff43dc313d9.rdx
+A	_bookdown_files/epib607_cache/latex/flipcoins_0c34a7feeda96135f89d753ab91e6a91.RData
+A	_bookdown_files/epib607_cache/latex/flipcoins_0c34a7feeda96135f89d753ab91e6a91.rdb
+A	_bookdown_files/epib607_cache/latex/flipcoins_0c34a7feeda96135f89d753ab91e6a91.rdx
+A	_bookdown_files/epib607_cache/latex/indep_3f6e7b2d45e5a56d499e3f39cc490753.RData
+A	_bookdown_files/epib607_cache/latex/indep_3f6e7b2d45e5a56d499e3f39cc490753.rdb
+A	_bookdown_files/epib607_cache/latex/indep_3f6e7b2d45e5a56d499e3f39cc490753.rdx
+A	_bookdown_files/epib607_cache/latex/multformula_36ca81b692cd3faf7c557506ae59523d.RData
+A	_bookdown_files/epib607_cache/latex/multformula_36ca81b692cd3faf7c557506ae59523d.rdb
+A	_bookdown_files/epib607_cache/latex/multformula_36ca81b692cd3faf7c557506ae59523d.rdx
+A	_bookdown_files/epib607_cache/latex/no-stats_876cd9c848122af229df720d18d458ab.RData
+A	_bookdown_files/epib607_cache/latex/no-stats_876cd9c848122af229df720d18d458ab.rdb
+A	_bookdown_files/epib607_cache/latex/no-stats_876cd9c848122af229df720d18d458ab.rdx
+A	_bookdown_files/epib607_cache/latex/note-text2_bbae696ea6431693ed09de731ff143b8.RData
+A	_bookdown_files/epib607_cache/latex/note-text2_bbae696ea6431693ed09de731ff143b8.rdb
+A	_bookdown_files/epib607_cache/latex/note-text2_bbae696ea6431693ed09de731ff143b8.rdx
+A	_bookdown_files/epib607_cache/latex/note-text_fedf8eec736d4ce00f476db43990ef41.RData
+A	_bookdown_files/epib607_cache/latex/note-text_fedf8eec736d4ce00f476db43990ef41.rdb
+A	_bookdown_files/epib607_cache/latex/note-text_fedf8eec736d4ce00f476db43990ef41.rdx
+A	_bookdown_files/epib607_cache/latex/pyth_c0c26d898f562d1f3ea3dbfeb0bb5140.RData
+A	_bookdown_files/epib607_cache/latex/pyth_c0c26d898f562d1f3ea3dbfeb0bb5140.rdb
+A	_bookdown_files/epib607_cache/latex/pyth_c0c26d898f562d1f3ea3dbfeb0bb5140.rdx
+A	_bookdown_files/epib607_cache/latex/rv_0444496edc7dcd85b518f6b12fc3258a.RData
+A	_bookdown_files/epib607_cache/latex/rv_0444496edc7dcd85b518f6b12fc3258a.rdb
+A	_bookdown_files/epib607_cache/latex/rv_0444496edc7dcd85b518f6b12fc3258a.rdx
+A	_bookdown_files/epib607_cache/latex/setup_be2023632412e9888dc941f443163e78.RData
+A	_bookdown_files/epib607_cache/latex/setup_be2023632412e9888dc941f443163e78.rdb
+A	_bookdown_files/epib607_cache/latex/setup_be2023632412e9888dc941f443163e78.rdx
+A	_bookdown_files/epib607_cache/latex/simple_e30efef21a68a46c4388674bfa6b07df.RData
+A	_bookdown_files/epib607_cache/latex/simple_e30efef21a68a46c4388674bfa6b07df.rdb
+A	_bookdown_files/epib607_cache/latex/simple_e30efef21a68a46c4388674bfa6b07df.rdx
+A	_bookdown_files/epib607_cache/latex/totprob_54379bb7d2a7cc28a672d248bcafc14b.RData
+A	_bookdown_files/epib607_cache/latex/totprob_54379bb7d2a7cc28a672d248bcafc14b.rdb
+A	_bookdown_files/epib607_cache/latex/totprob_54379bb7d2a7cc28a672d248bcafc14b.rdx
+A	_bookdown_files/epib607_cache/latex/unbalanced_a7df74a93d2c0000a8c66b68b5a40262.RData
+A	_bookdown_files/epib607_cache/latex/unbalanced_a7df74a93d2c0000a8c66b68b5a40262.rdb
+A	_bookdown_files/epib607_cache/latex/unbalanced_a7df74a93d2c0000a8c66b68b5a40262.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-10_079725b180dd0461d5601a70a015194e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-10_079725b180dd0461d5601a70a015194e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-10_079725b180dd0461d5601a70a015194e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-11_c862c52c77da0d477d77a21d97aa4aad.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-11_c862c52c77da0d477d77a21d97aa4aad.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-11_c862c52c77da0d477d77a21d97aa4aad.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-12_ac8cae155e5662b7ef805cee33904b37.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-12_ac8cae155e5662b7ef805cee33904b37.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-12_ac8cae155e5662b7ef805cee33904b37.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-13_4e5c159a183537efc838ee0ce27f7ada.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-13_4e5c159a183537efc838ee0ce27f7ada.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-13_4e5c159a183537efc838ee0ce27f7ada.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-14_d25ff825e869f4dc6974924f8d1a5b61.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-14_d25ff825e869f4dc6974924f8d1a5b61.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-14_d25ff825e869f4dc6974924f8d1a5b61.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-15_5faf39462e2017471c148ba723ed33e3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-15_5faf39462e2017471c148ba723ed33e3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-15_5faf39462e2017471c148ba723ed33e3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-16_6f5675a6fff1c9b2a83018147160e0f2.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-16_6f5675a6fff1c9b2a83018147160e0f2.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-16_6f5675a6fff1c9b2a83018147160e0f2.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-17_429707246e913dddea1fc465c004c634.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-17_429707246e913dddea1fc465c004c634.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-17_429707246e913dddea1fc465c004c634.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-18_2199d2828150595bfddc52ab94b505d7.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-18_2199d2828150595bfddc52ab94b505d7.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-18_2199d2828150595bfddc52ab94b505d7.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-19_46431a97211bfd6783dd09c249cba7e6.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-19_46431a97211bfd6783dd09c249cba7e6.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-19_46431a97211bfd6783dd09c249cba7e6.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-20_60f06df0bbc1f04406991a8d7a4d6c46.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-20_60f06df0bbc1f04406991a8d7a4d6c46.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-20_60f06df0bbc1f04406991a8d7a4d6c46.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-21_bac7ca55030f4266e674650f43cdbcdb.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-21_bac7ca55030f4266e674650f43cdbcdb.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-21_bac7ca55030f4266e674650f43cdbcdb.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-22_f527473e5841c53a8e080328d86f2b6f.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-22_f527473e5841c53a8e080328d86f2b6f.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-22_f527473e5841c53a8e080328d86f2b6f.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-23_0a0a6c04ec6b413e8dd8321a67d0d404.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-23_0a0a6c04ec6b413e8dd8321a67d0d404.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-23_0a0a6c04ec6b413e8dd8321a67d0d404.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-24_7ccfd1caf6ea9f2546be8458b44b6350.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-24_7ccfd1caf6ea9f2546be8458b44b6350.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-24_7ccfd1caf6ea9f2546be8458b44b6350.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-25_528ef7a4cd3447c473b138a6888cd5a4.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-25_528ef7a4cd3447c473b138a6888cd5a4.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-25_528ef7a4cd3447c473b138a6888cd5a4.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-26_87270dd9911d1b88bd8b882cd51f3868.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-26_87270dd9911d1b88bd8b882cd51f3868.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-26_87270dd9911d1b88bd8b882cd51f3868.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-27_8e98d5c946e4ef4ea2b6b481ded405b3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-27_8e98d5c946e4ef4ea2b6b481ded405b3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-27_8e98d5c946e4ef4ea2b6b481ded405b3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-28_34564864ad9be64cee41da71f627733e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-28_34564864ad9be64cee41da71f627733e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-28_34564864ad9be64cee41da71f627733e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-29_3c3377e11d175e0728e266133c9f3252.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-29_3c3377e11d175e0728e266133c9f3252.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-29_3c3377e11d175e0728e266133c9f3252.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-30_8a03d3f0a5884360265d1704721c91f3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-30_8a03d3f0a5884360265d1704721c91f3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-30_8a03d3f0a5884360265d1704721c91f3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-31_46742c4cdf0ee0335996b139d2ea3944.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-31_46742c4cdf0ee0335996b139d2ea3944.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-31_46742c4cdf0ee0335996b139d2ea3944.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-32_c017f3331b7715b30ea3d94534b7d2f2.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-32_c017f3331b7715b30ea3d94534b7d2f2.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-32_c017f3331b7715b30ea3d94534b7d2f2.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-33_7cb369df44ef9a76156acb78ea59dd4e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-33_7cb369df44ef9a76156acb78ea59dd4e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-33_7cb369df44ef9a76156acb78ea59dd4e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-34_8115365d6fc08246bd8ef3049b47e498.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-34_8115365d6fc08246bd8ef3049b47e498.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-34_8115365d6fc08246bd8ef3049b47e498.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-35_db7f82ea4dc18f716c9ddd3246a3cbbb.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-35_db7f82ea4dc18f716c9ddd3246a3cbbb.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-35_db7f82ea4dc18f716c9ddd3246a3cbbb.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-36_de2f6d62ca580f4dce488830b43b13d0.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-36_de2f6d62ca580f4dce488830b43b13d0.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-36_de2f6d62ca580f4dce488830b43b13d0.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-37_1520ad0c243dafd823054f3866059ee4.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-37_1520ad0c243dafd823054f3866059ee4.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-37_1520ad0c243dafd823054f3866059ee4.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-38_41efdd08d67f7b4195155d00960a197f.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-38_41efdd08d67f7b4195155d00960a197f.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-38_41efdd08d67f7b4195155d00960a197f.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-39_4d7dbc6f2e3fa5f4aedcd2ef2b0d6a01.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-39_4d7dbc6f2e3fa5f4aedcd2ef2b0d6a01.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-39_4d7dbc6f2e3fa5f4aedcd2ef2b0d6a01.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-3_869d299ecc0ce35c2be013e8a93d277c.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-3_869d299ecc0ce35c2be013e8a93d277c.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-3_869d299ecc0ce35c2be013e8a93d277c.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-40_1f52d2ddcba9eb3c5b3fec4c2653caf8.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-40_1f52d2ddcba9eb3c5b3fec4c2653caf8.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-40_1f52d2ddcba9eb3c5b3fec4c2653caf8.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-41_b8ece1dfef9f01ef2b543721e5d61efe.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-41_b8ece1dfef9f01ef2b543721e5d61efe.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-41_b8ece1dfef9f01ef2b543721e5d61efe.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-42_e0417eb20137a5d3f65e647faef0914d.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-42_e0417eb20137a5d3f65e647faef0914d.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-42_e0417eb20137a5d3f65e647faef0914d.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-43_6215976c54b524bd38ea8dbf72f9c653.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-43_6215976c54b524bd38ea8dbf72f9c653.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-43_6215976c54b524bd38ea8dbf72f9c653.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-44_cb84355750d3980aecef3788d966b031.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-44_cb84355750d3980aecef3788d966b031.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-44_cb84355750d3980aecef3788d966b031.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-45_8da899dc7d3055eecc387802df13f791.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-45_8da899dc7d3055eecc387802df13f791.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-45_8da899dc7d3055eecc387802df13f791.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-46_507eafa172805e9bf458484927cfd5ea.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-46_507eafa172805e9bf458484927cfd5ea.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-46_507eafa172805e9bf458484927cfd5ea.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-47_16251b48a0dc53a494c44df778ece03e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-47_16251b48a0dc53a494c44df778ece03e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-47_16251b48a0dc53a494c44df778ece03e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-48_330b846e34c897a02fdcf6b8139e8583.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-48_330b846e34c897a02fdcf6b8139e8583.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-48_330b846e34c897a02fdcf6b8139e8583.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-49_a2afe8d65a09dedd1ff331ea74b65cf6.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-49_a2afe8d65a09dedd1ff331ea74b65cf6.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-49_a2afe8d65a09dedd1ff331ea74b65cf6.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-4_ce15b124e1f06f2a758ed38421a1796d.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-4_ce15b124e1f06f2a758ed38421a1796d.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-4_ce15b124e1f06f2a758ed38421a1796d.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-50_92a827a658f7af168d8cfab78b96093e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-50_92a827a658f7af168d8cfab78b96093e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-50_92a827a658f7af168d8cfab78b96093e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-51_06c5927cd11068050bcc29d7e6c116ea.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-51_06c5927cd11068050bcc29d7e6c116ea.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-51_06c5927cd11068050bcc29d7e6c116ea.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-53_dedb3bc85f2a0c0ccce7290151498ec3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-53_dedb3bc85f2a0c0ccce7290151498ec3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-53_dedb3bc85f2a0c0ccce7290151498ec3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-54_804de53f065cdf9756d9d6ccec3e35e5.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-54_804de53f065cdf9756d9d6ccec3e35e5.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-54_804de53f065cdf9756d9d6ccec3e35e5.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-55_2f7a91332c77fc9783040e4f59aa2d23.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-55_2f7a91332c77fc9783040e4f59aa2d23.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-55_2f7a91332c77fc9783040e4f59aa2d23.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-56_37a1316bd76d319dcd6291ed8afbd8c7.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-56_37a1316bd76d319dcd6291ed8afbd8c7.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-56_37a1316bd76d319dcd6291ed8afbd8c7.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-57_e4f8a8ad5d681db1e9972100a8c16121.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-57_e4f8a8ad5d681db1e9972100a8c16121.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-57_e4f8a8ad5d681db1e9972100a8c16121.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-58_7d4e000169086c30fe2fff40a8febad1.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-58_7d4e000169086c30fe2fff40a8febad1.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-58_7d4e000169086c30fe2fff40a8febad1.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-59_fed827c15110ad35681a165d4b5b9cea.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-59_fed827c15110ad35681a165d4b5b9cea.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-59_fed827c15110ad35681a165d4b5b9cea.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-5_6b2db82463d055ff326089b75b3c729e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-5_6b2db82463d055ff326089b75b3c729e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-5_6b2db82463d055ff326089b75b3c729e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-60_b71f9d2ec77df6ef8d367518b3ada954.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-60_b71f9d2ec77df6ef8d367518b3ada954.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-60_b71f9d2ec77df6ef8d367518b3ada954.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-61_b7bbf1a92392ff6dc74da417ec32c97e.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-61_b7bbf1a92392ff6dc74da417ec32c97e.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-61_b7bbf1a92392ff6dc74da417ec32c97e.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-62_376645ea31085f77ce02d82f08fb7711.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-62_376645ea31085f77ce02d82f08fb7711.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-62_376645ea31085f77ce02d82f08fb7711.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-63_53205f7e576321712e9edf781b59d3c7.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-63_53205f7e576321712e9edf781b59d3c7.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-63_53205f7e576321712e9edf781b59d3c7.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-64_9113b7d7c5e90dc97c3903b776bac25d.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-64_9113b7d7c5e90dc97c3903b776bac25d.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-64_9113b7d7c5e90dc97c3903b776bac25d.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-65_15872e73fdd17eccc671b591f7ca756a.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-65_15872e73fdd17eccc671b591f7ca756a.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-65_15872e73fdd17eccc671b591f7ca756a.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-6_c22b6b54b26f06dce0c4fc2a91779d53.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-6_c22b6b54b26f06dce0c4fc2a91779d53.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-6_c22b6b54b26f06dce0c4fc2a91779d53.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-7_4d274f5461b2230badca1bb317cccb74.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-7_4d274f5461b2230badca1bb317cccb74.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-7_4d274f5461b2230badca1bb317cccb74.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-8_d1bee94c82e89ed96a9aae75fd68b7e3.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-8_d1bee94c82e89ed96a9aae75fd68b7e3.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-8_d1bee94c82e89ed96a9aae75fd68b7e3.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-9_96525726017f14e9fbbacb0cec9b4fb8.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-9_96525726017f14e9fbbacb0cec9b4fb8.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-9_96525726017f14e9fbbacb0cec9b4fb8.rdx
+A	bib/book.bib
+M	index.Rmd
