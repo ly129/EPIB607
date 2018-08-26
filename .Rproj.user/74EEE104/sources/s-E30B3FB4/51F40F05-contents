@@ -92,7 +92,7 @@ The aim of this course is to provide students with basic principles of statistic
 
 ## Audience {-}
 
-The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven't had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and reading papers. 
+The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven't had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and understanding scientific papers. 
 
 
 ## About these notes {-}
@@ -102,10 +102,18 @@ These notes are a collection of useful links, videos, online resources and paper
 
 ## Teaching strategy {-}
 
-This course will follow the **Flipped Classroom** model. Here, students are expected to have engaged with the material before coming to class (based on very precise pre-class instructions). The students will then be expected to answer a series of questions using the [DALITE](https://mydalite.org/en/live/signup/form/NTc4) online platform [@bhatnagar2016dalite].  
+This course will follow the **Flipped Classroom** model. Here, students are expected to have engaged with the material before coming to class (based on very precise pre-class instructions). The students will then be expected to answer a series of conceptual multiple choice questions using the [DALITE](https://mydalite.org/en/live/signup/form/NTc4) online platform [@bhatnagar2016dalite].  
+
+<br>  
+
+<center>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/0tJVVy2ay7c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</center>
+
+<br>
 
 This allows the instructor to delegate the delivery of basic content and definitions to textbooks and videos, and enforces the idea that students cannot be simply passive recipients of information. This approach then allows the professor to focus valuable class time on nurturing efficient discussions surrounding the ideas within the content, guiding interactive
-exploration of typical misconceptions, and promoting collaborative problem solving with peers. The following video gives a quick overview of the flipped classroom model.
+exploration of typical misconceptions, and promoting collaborative problem solving with peers. 
 
 <br>  
 
@@ -117,7 +125,7 @@ exploration of typical misconceptions, and promoting collaborative problem solvi
 
 ## A focus on computation {-}
 
-The classic statistics textbooks were written during a time when computers were still in their infancy. As such, even the newer editions heavily rely on _by-hand_ computations such as looking up tables for tail probabilities. We take a modern approach and use the computer whenever possible to solve problems.  
+Classic introductory statistics textbooks were written during a time when computers were still in their infancy. As such, even the newer editions heavily rely on _by-hand_ computations such as looking up tables for tail probabilities. We take a modern approach and introduce computational methods in statistics with the statistical software program `R`.
 
 
 ## R Code Conventions {-}
@@ -142,15 +150,15 @@ Each code segment may contain actual output from `R`. Such output will appear in
 
 Throughout these notes, there will be mathematical symbols used to express the material. Depending on the version of the book, there are two different rendering engines.  
 
-- For the online version, the text uses [MathJax](https://www.mathjax.org/) to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly.  
-- For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as[^1]:
+- For the online version, the text uses [MathJax](https://www.mathjax.org/) to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly. You can also right-click to see the corresponding LaTeX code used to produce the equation.  
+- For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as:
 
 \[ a^2 + b^2 = c^2 \]
 
 
 ## Development {-}
 
-This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at [sahirbhatnagar.com/EPIB607](https://sahirbhatnagar.com/EPIB607) and kept up-to-date thanks to [Travis](https://travis-ci.org/sahirbhatnagar/EPIB607). The entire source code is available at [https://github.com/sahirbhatnagar/EPIB607](https://github.com/sahirbhatnagar/EPIB607).  
+This book is built with [**bookdown**](https://github.com/rstudio/bookdown) and is open source and freely available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at [sahirbhatnagar.com/EPIB607](https://sahirbhatnagar.com/EPIB607) and kept up-to-date thanks to [Travis](https://travis-ci.org/sahirbhatnagar/EPIB607). The entire source code is available at [https://github.com/sahirbhatnagar/EPIB607](https://github.com/sahirbhatnagar/EPIB607).  
 
 If you notice any errors, we would be grateful if you would let us know by filing an issue [here](https://github.com/sahirbhatnagar/EPIB607/issues)
 or making a pull request by clicking the edit button in the top-left corner of the text:
@@ -158,8 +166,32 @@ or making a pull request by clicking the edit button in the top-left corner of t
 ![](images/edit_button.png)
 
 
+The version of the book you are reading now was built on `r Sys.Date()` and was built `r if(is_on_travis) "on [Travis](https://travis-ci.org/sahirbhatnagar/MATH697)" else "locally"`.
 
+<!--
 ## Acknowledgements {-}
+
+There would be too many people to acknowledge in this section alone. We refer the reader to the references section. 
+
+-->
+
+---
+
+## About the authors {-}
+
+Sahir Bhatnagar           |  James Hanley
+:-------------------------:|:-------------------------:
+<img src="images/sahir.png" alt="Drawing" style="height: 200px;"/>  |  <img src="images/jim.png" alt="Drawing" style="height: 200px;"/>
+
+* Sahir R. Bhatnagar: Assistant Professor of Biostatistics - McGill University, Montreal, Canada.  
+    + Email: [sahir.bhatnagar@mcgill.ca](mailto:sahir.bhatnagar@mcgill.ca)
+    + Website: <https://sahirbhatnagar.com/>  
+    + Twitter: [syfi_24](https://twitter.com/syfi_24)  
+    + GitHub: <https://github.com/sahirbhatnagar>  
+* James A. Hanley: Professor of Biostatistics - McGill University, Montreal, Canada.  
+    + Email: [james.hanley@mcgill.ca](mailto:james.hanley@mcgill.ca)  
+    + Webpage: <http://www.medicine.mcgill.ca/epidemiology/hanley/>  
+
 
 
 
@@ -176,32 +208,35 @@ or making a pull request by clicking the edit button in the top-left corner of t
 [![Build Status](https://travis-ci.org/sahirbhatnagar/MATH697.svg?branch=master)](https://travis-ci.org/sahirbhatnagar/MATH697)
 -->
 
-The version of the book you are reading now was built on `r Sys.Date()` and was built `r if(is_on_travis) "on [Travis](https://travis-ci.org/sahirbhatnagar/MATH697)" else "locally"`.
 
-# General Information {-}
 
-- Instructor(s): Sahir Bhatnagar 
-- Email: [sahir.bhatnagar@mcgill.ca](mailto:sahir.bhatnagar@mcgill.ca), 
-- Website: [http://sahirbhatnagar.com/EPIB607/](http://sahirbhatnagar.com/EPIB607/)
-- Lectures: Tuesdays 9am - 12pm
-- Office: TBD
-- Office Hours: By appointment only
-- Prerequisite(s): Calculus and Algebra
-- Texts: _Modern Mathematical Statistics with Applications_, 2nd Edition by Jay L. Devore and Kenneth N. Berk
+# Course Information {-}
 
+- Instructor(s): [Sahir Bhatnagar](mailto:sahir.bhatnagar@mcgill.ca)  
+- Teaching Assistants: [Kody Crowell](mailto:kody.crowell1598@gmail.com), [Guanbo Wang](mailto:guanbo.wang@mail.mcgill.ca), [Himasara Marasinghe](mailto:dewdunee.marasinghe@mail.mcgill.ca)  
+- Website: [http://sahirbhatnagar.com/EPIB607/](http://sahirbhatnagar.com/EPIB607/)  
+- Lectures: Monday 11:30am - 1:30pm, Thursday 8:30am - 10:30am  
+- Location: McMed 1034  
+- Office Hours: TBD  
+- Prerequisite(s): Calculus and Algebra  
+- Texts: _The Practice of Statistics in the Life Sciences_, 3nd Edition by Baldi \& Moore.  
+
+
+<!--
 ## Course Description {-}
 
-The main learning outcomes of this course are to get a broad idea about some frequently used probability models and to learn basic results and techniques in probability theory and statistical inference. Most of the materials for the course will be drawn from the first seven chapters of the textbook. The book does not, however, contain all the materials we intend to cover in this course. Some extra notes will therefore be given on those topics not in the text book. We will also introduce computational methods in statistics with the statistical software program `R`.
-
+The main learning outcomes of this course are to get a broad idea about some frequently used probability models and to learn basic results and techniques in probability theory and statistical inference. Most of the materials for the course will be drawn from the first seven chapters of the textbook. The book does not, however, contain all the materials we intend to cover in this course. Some extra notes will therefore be given on those topics not in the text book. 
+-->
 
 
 ## Grade Distribution  {-}
 
 ```{r, results='asis', echo=FALSE}
-knitr::kable(data.frame(c("Assignments","Quizzes","Final Exam"),
-                        c("10%","40%","50%")), col.names = c("",""),
+knitr::kable(data.frame(c("Assignments","DALITE Quizzes","Midterm","Project","Final Exam"),
+                        c("30%","10%","20%","10%","30%")), col.names = c("",""),
              booktabs = TRUE)
 ```
+
 
 ## Target Syllabus {-}
 

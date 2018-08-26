@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-08-24">
+<meta name="date" content="2018-08-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 
-<link rel="next" href="prerequisites.html">
+<link rel="next" href="course-information.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -113,21 +113,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#r-code-conventions"><i class="fa fa-check"></i>R Code Conventions</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#rendering-mathematical-formulae"><i class="fa fa-check"></i>Rendering Mathematical Formulae</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i>About the authors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-information"><i class="fa fa-check"></i>General Information</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i>Course Description</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#target-syllabus"><i class="fa fa-check"></i>Target Syllabus</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#overview-and-descriptive-statistics-weeks-1-4"><i class="fa fa-check"></i>Overview and Descriptive Statistics (Weeks 1-4)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#probability-weeks-1-4"><i class="fa fa-check"></i>Probability (Weeks 1-4)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#discrete-random-variables-and-probability-distributions-weeks-1-4"><i class="fa fa-check"></i>Discrete Random Variables and Probability Distributions (Weeks 1-4)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#continuous-random-variables-and-probability-distributions-weeks-5-8"><i class="fa fa-check"></i>Continuous Random Variables and Probability Distributions (Weeks 5-8)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#joint-probability-distributions-weeks-5-8"><i class="fa fa-check"></i>Joint Probability Distributions (Weeks 5-8)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#sampling-distributions-and-limits-weeks-5-8"><i class="fa fa-check"></i>Sampling Distributions and Limits (Weeks 5-8)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#statistical-inference-weeks-9-12"><i class="fa fa-check"></i>Statistical Inference (Weeks 9-12)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#likelihood-inference-weeks-9-12"><i class="fa fa-check"></i>Likelihood Inference (Weeks 9-12)</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#regression-and-correlation-weeks-9-12"><i class="fa fa-check"></i>Regression and Correlation (Weeks 9-12)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html"><i class="fa fa-check"></i>Course Information</a><ul>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#target-syllabus"><i class="fa fa-check"></i>Target Syllabus</a><ul>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#overview-and-descriptive-statistics-weeks-1-4"><i class="fa fa-check"></i>Overview and Descriptive Statistics (Weeks 1-4)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#probability-weeks-1-4"><i class="fa fa-check"></i>Probability (Weeks 1-4)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#discrete-random-variables-and-probability-distributions-weeks-1-4"><i class="fa fa-check"></i>Discrete Random Variables and Probability Distributions (Weeks 1-4)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#continuous-random-variables-and-probability-distributions-weeks-5-8"><i class="fa fa-check"></i>Continuous Random Variables and Probability Distributions (Weeks 5-8)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#joint-probability-distributions-weeks-5-8"><i class="fa fa-check"></i>Joint Probability Distributions (Weeks 5-8)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#sampling-distributions-and-limits-weeks-5-8"><i class="fa fa-check"></i>Sampling Distributions and Limits (Weeks 5-8)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#statistical-inference-weeks-9-12"><i class="fa fa-check"></i>Statistical Inference (Weeks 9-12)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#likelihood-inference-weeks-9-12"><i class="fa fa-check"></i>Likelihood Inference (Weeks 9-12)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#regression-and-correlation-weeks-9-12"><i class="fa fa-check"></i>Regression and Correlation (Weeks 9-12)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a><ul>
@@ -225,7 +225,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">EPIB 607</h1>
 <p class="author"><em>Sahir Bhatnagar and James Hanley</em></p>
-<p class="date"><em>2018-08-24</em></p>
+<p class="date"><em>2018-08-26</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
@@ -243,7 +243,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="audience" class="section level2 unnumbered">
 <h2>Audience</h2>
-<p>The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven’t had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and reading papers.</p>
+<p>The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven’t had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and understanding scientific papers.</p>
 </div>
 <div id="about-these-notes" class="section level2 unnumbered">
 <h2>About these notes</h2>
@@ -251,8 +251,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="teaching-strategy" class="section level2 unnumbered">
 <h2>Teaching strategy</h2>
-<p>This course will follow the <strong>Flipped Classroom</strong> model. Here, students are expected to have engaged with the material before coming to class (based on very precise pre-class instructions). The students will then be expected to answer a series of questions using the <a href="https://mydalite.org/en/live/signup/form/NTc4">DALITE</a> online platform <span class="citation">(Bhatnagar et al. <a href="#ref-bhatnagar2016dalite">2016</a>)</span>.</p>
-<p>This allows the instructor to delegate the delivery of basic content and definitions to textbooks and videos, and enforces the idea that students cannot be simply passive recipients of information. This approach then allows the professor to focus valuable class time on nurturing efficient discussions surrounding the ideas within the content, guiding interactive exploration of typical misconceptions, and promoting collaborative problem solving with peers. The following video gives a quick overview of the flipped classroom model.</p>
+<p>This course will follow the <strong>Flipped Classroom</strong> model. Here, students are expected to have engaged with the material before coming to class (based on very precise pre-class instructions). The students will then be expected to answer a series of conceptual multiple choice questions using the <a href="https://mydalite.org/en/live/signup/form/NTc4">DALITE</a> online platform <span class="citation">(Bhatnagar et al. <a href="#ref-bhatnagar2016dalite">2016</a>)</span>.</p>
+<p><br></p>
+<center>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/0tJVVy2ay7c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</center>
+<p><br></p>
+<p>This allows the instructor to delegate the delivery of basic content and definitions to textbooks and videos, and enforces the idea that students cannot be simply passive recipients of information. This approach then allows the professor to focus valuable class time on nurturing efficient discussions surrounding the ideas within the content, guiding interactive exploration of typical misconceptions, and promoting collaborative problem solving with peers.</p>
 <p><br></p>
 <center>
 <iframe width="800" height="450" src="https://www.youtube.com/embed/qdKzSq_t8k8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -261,7 +267,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="a-focus-on-computation" class="section level2 unnumbered">
 <h2>A focus on computation</h2>
-<p>The classic statistics textbooks were written during a time when computers were still in their infancy. As such, even the newer editions heavily rely on <em>by-hand</em> computations such as looking up tables for tail probabilities. We take a modern approach and use the computer whenever possible to solve problems.</p>
+<p>Classic introductory statistics textbooks were written during a time when computers were still in their infancy. As such, even the newer editions heavily rely on <em>by-hand</em> computations such as looking up tables for tail probabilities. We take a modern approach and introduce computational methods in statistics with the statistical software program <code>R</code>.</p>
 </div>
 <div id="r-code-conventions" class="section level2 unnumbered">
 <h2>R Code Conventions</h2>
@@ -275,23 +281,63 @@ a</code></pre></div>
 <h2>Rendering Mathematical Formulae</h2>
 <p>Throughout these notes, there will be mathematical symbols used to express the material. Depending on the version of the book, there are two different rendering engines.</p>
 <ul>
-<li>For the online version, the text uses <a href="https://www.mathjax.org/">MathJax</a> to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly.<br />
+<li>For the online version, the text uses <a href="https://www.mathjax.org/">MathJax</a> to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly. You can also right-click to see the corresponding LaTeX code used to produce the equation.<br />
 </li>
-<li>For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>:</li>
+<li>For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as:</li>
 </ul>
 <p><span class="math display">\[ a^2 + b^2 = c^2 \]</span></p>
 </div>
 <div id="development" class="section level2 unnumbered">
 <h2>Development</h2>
-<p>This book is built with <a href="https://github.com/rstudio/bookdown"><strong>bookdown</strong></a> and is open source and publicly available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at <a href="https://sahirbhatnagar.com/EPIB607">sahirbhatnagar.com/EPIB607</a> and kept up-to-date thanks to <a href="https://travis-ci.org/sahirbhatnagar/EPIB607">Travis</a>. The entire source code is available at <a href="https://github.com/sahirbhatnagar/EPIB607" class="uri">https://github.com/sahirbhatnagar/EPIB607</a>.</p>
+<p>This book is built with <a href="https://github.com/rstudio/bookdown"><strong>bookdown</strong></a> and is open source and freely available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at <a href="https://sahirbhatnagar.com/EPIB607">sahirbhatnagar.com/EPIB607</a> and kept up-to-date thanks to <a href="https://travis-ci.org/sahirbhatnagar/EPIB607">Travis</a>. The entire source code is available at <a href="https://github.com/sahirbhatnagar/EPIB607" class="uri">https://github.com/sahirbhatnagar/EPIB607</a>.</p>
 <p>If you notice any errors, we would be grateful if you would let us know by filing an issue <a href="https://github.com/sahirbhatnagar/EPIB607/issues">here</a> or making a pull request by clicking the edit button in the top-left corner of the text:</p>
 <div class="figure">
 <img src="images/edit_button.png" />
 
 </div>
+<p>The version of the book you are reading now was built on 2018-08-26 and was built locally.</p>
+<!--
+## Acknowledgements {-}
+
+There would be too many people to acknowledge in this section alone. We refer the reader to the references section. 
+
+-->
+<hr />
 </div>
-<div id="acknowledgements" class="section level2 unnumbered">
-<h2>Acknowledgements</h2>
+<div id="about-the-authors" class="section level2 unnumbered">
+<h2>About the authors</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Sahir Bhatnagar</th>
+<th align="center">James Hanley</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/sahir.png" alt="Drawing" style="height: 200px;"/></td>
+<td align="center"><img src="images/jim.png" alt="Drawing" style="height: 200px;"/></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Sahir R. Bhatnagar: Assistant Professor of Biostatistics - McGill University, Montreal, Canada.
+<ul>
+<li>Email: <a href="mailto:sahir.bhatnagar@mcgill.ca">sahir.bhatnagar@mcgill.ca</a></li>
+<li>Website: <a href="https://sahirbhatnagar.com/" class="uri">https://sahirbhatnagar.com/</a><br />
+</li>
+<li>Twitter: <a href="https://twitter.com/syfi_24">syfi_24</a><br />
+</li>
+<li>GitHub: <a href="https://github.com/sahirbhatnagar" class="uri">https://github.com/sahirbhatnagar</a><br />
+</li>
+</ul></li>
+<li>James A. Hanley: Professor of Biostatistics - McGill University, Montreal, Canada.
+<ul>
+<li>Email: <a href="mailto:james.hanley@mcgill.ca">james.hanley@mcgill.ca</a><br />
+</li>
+<li>Webpage: <a href="http://www.medicine.mcgill.ca/epidemiology/hanley/" class="uri">http://www.medicine.mcgill.ca/epidemiology/hanley/</a></li>
+</ul></li>
+</ul>
 </div>
 <div id="license" class="section level2 unnumbered">
 <h2>License</h2>
@@ -300,155 +346,6 @@ a</code></pre></div>
 # won't work with pdf
 [![Build Status](https://travis-ci.org/sahirbhatnagar/MATH697.svg?branch=master)](https://travis-ci.org/sahirbhatnagar/MATH697)
 -->
-<p>The version of the book you are reading now was built on 2018-08-24 and was built locally.</p>
-</div>
-<div id="general-information" class="section level2 unnumbered">
-<h2>General Information</h2>
-<ul>
-<li>Instructor(s): Sahir Bhatnagar</li>
-<li>Email: <a href="mailto:sahir.bhatnagar@mcgill.ca">sahir.bhatnagar@mcgill.ca</a>,</li>
-<li>Website: <a href="http://sahirbhatnagar.com/EPIB607/" class="uri">http://sahirbhatnagar.com/EPIB607/</a></li>
-<li>Lectures: Tuesdays 9am - 12pm</li>
-<li>Office: TBD</li>
-<li>Office Hours: By appointment only</li>
-<li>Prerequisite(s): Calculus and Algebra</li>
-<li>Texts: <em>Modern Mathematical Statistics with Applications</em>, 2nd Edition by Jay L. Devore and Kenneth N. Berk</li>
-</ul>
-</div>
-<div id="course-description" class="section level2 unnumbered">
-<h2>Course Description</h2>
-<p>The main learning outcomes of this course are to get a broad idea about some frequently used probability models and to learn basic results and techniques in probability theory and statistical inference. Most of the materials for the course will be drawn from the first seven chapters of the textbook. The book does not, however, contain all the materials we intend to cover in this course. Some extra notes will therefore be given on those topics not in the text book. We will also introduce computational methods in statistics with the statistical software program <code>R</code>.</p>
-</div>
-<div id="grade-distribution" class="section level2 unnumbered">
-<h2>Grade Distribution</h2>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">Assignments</td>
-<td align="left">10%</td>
-</tr>
-<tr class="even">
-<td align="left">Quizzes</td>
-<td align="left">40%</td>
-</tr>
-<tr class="odd">
-<td align="left">Final Exam</td>
-<td align="left">50%</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="target-syllabus" class="section level2 unnumbered">
-<h2>Target Syllabus</h2>
-<div id="overview-and-descriptive-statistics-weeks-1-4" class="section level3 unnumbered">
-<h3>Overview and Descriptive Statistics (Weeks 1-4)</h3>
-<ul>
-<li>1.1 Populations and Samples</li>
-</ul>
-</div>
-<div id="probability-weeks-1-4" class="section level3 unnumbered">
-<h3>Probability (Weeks 1-4)</h3>
-<ul>
-<li>2.1 Sample Spaces and Events</li>
-<li>2.2 Axioms, Interpretations, and Properties of Probability</li>
-<li>2.3 Counting Techniques</li>
-<li>2.4 Conditional Probability</li>
-<li>2.5 Independence</li>
-</ul>
-</div>
-<div id="discrete-random-variables-and-probability-distributions-weeks-1-4" class="section level3 unnumbered">
-<h3>Discrete Random Variables and Probability Distributions (Weeks 1-4)</h3>
-<ul>
-<li>3.1 Random Variables</li>
-<li>3.2 Probability Distributions for Discrete Random Variables</li>
-<li>3.3 Expected Values of Discrete Random Variables</li>
-<li>3.4 Moments and Moment Generating Functions</li>
-<li>3.5 The Bernoulli/Binomial Probability Distribution</li>
-<li>3.6 The Geometric/Negative Binomial Probability Distribution</li>
-<li>3.7 The Poisson Probability Distribution</li>
-</ul>
-</div>
-<div id="continuous-random-variables-and-probability-distributions-weeks-5-8" class="section level3 unnumbered">
-<h3>Continuous Random Variables and Probability Distributions (Weeks 5-8)</h3>
-<ul>
-<li>4.1 Probability Density Functions and Cumulative Distribution Functions<br />
-</li>
-<li>4.2 Expected Values and Moment Generating Functions<br />
-</li>
-<li>4.3 The Uniform Distribution<br />
-</li>
-<li>4.4 The Exponential Distribution<br />
-</li>
-<li>4.5 The Gamma Distribution<br />
-</li>
-<li>4.6 The Normal Distribution<br />
-</li>
-<li>4.7 One-Dimensional Change of Variable (Discrete and Continuous)</li>
-</ul>
-</div>
-<div id="joint-probability-distributions-weeks-5-8" class="section level3 unnumbered">
-<h3>Joint Probability Distributions (Weeks 5-8)</h3>
-<ul>
-<li>5.1 Jointly Distributed Random Variables</li>
-<li>5.2 Expected Values, Covariance, and Correlation</li>
-<li>5.3 Conditional Distributions</li>
-<li>5.4 Multidimensional Change of Variable (Discrete and Continuous)</li>
-</ul>
-</div>
-<div id="sampling-distributions-and-limits-weeks-5-8" class="section level3 unnumbered">
-<h3>Sampling Distributions and Limits (Weeks 5-8)</h3>
-<ul>
-<li>6.1 Sampling Distributions</li>
-<li>6.2 Convergence in Probability, Weak Law of Large Numbers</li>
-<li>6.3 Convergence with Probability 1, Strong Law of Large Numbers<br />
-</li>
-<li>6.4 Convergence in Distribution, Central Limit Theorem</li>
-</ul>
-</div>
-<div id="statistical-inference-weeks-9-12" class="section level3 unnumbered">
-<h3>Statistical Inference (Weeks 9-12)</h3>
-<ul>
-<li>7.1 Inference Using a Probability Model<br />
-</li>
-<li>7.2 Statistical Models<br />
-</li>
-<li>7.3 Data Collection (Finite Populations, Simple Random Sampling, Histograms)<br />
-</li>
-<li>7.4 Basic Inferences (Descriptive, Plots, Types of Inferences)</li>
-</ul>
-</div>
-<div id="likelihood-inference-weeks-9-12" class="section level3 unnumbered">
-<h3>Likelihood Inference (Weeks 9-12)</h3>
-<ul>
-<li>8.1 The Likelihood Function, Sufficient Statistics<br />
-</li>
-<li>8.2 Maximum Likelihood Estimation<br />
-</li>
-<li>8.3 Inferences Based on the MLE (Standard Errors, Bias, Consistency, Confidence Intervals, Hypotheses and Test Procedures, P-values, Inferences for the Variance)<br />
-</li>
-<li>8.4 Distribution-Free Methods (Method of Moments, Bootstrapping)</li>
-</ul>
-</div>
-<div id="regression-and-correlation-weeks-9-12" class="section level3 unnumbered">
-<h3>Regression and Correlation (Weeks 9-12)</h3>
-<ul>
-<li>9.1 The Simple Linear and Logistic Regression Models<br />
-</li>
-<li>9.2 Estimating Model Parameters<br />
-</li>
-<li>9.3 Inferences About the Regression Coefficient<br />
-</li>
-<li>9.4 Inferences Concerning Prediction of Future <span class="math inline">\(Y\)</span> Values<br />
-</li>
-<li>9.5 Correlation<br />
-</li>
-<li>9.6 Model Checking (<span class="math inline">\(\chi^2\)</span> Goodness of Fit Test, Cross-Validation)<br />
-</li>
-<li>9.7 Multiple Regression Analysis<br />
-</li>
-<li>9.8 Regression with Matrices</li>
-</ul>
-</div>
 </div>
 </div>
 <h3>References</h3>
@@ -461,7 +358,6 @@ a</code></pre></div>
 <hr />
 <ol start="1">
 <li id="fn1"><p>Reproduced with permission from <a href="http://www.math.mcgill.ca/dstephens/" class="uri">http://www.math.mcgill.ca/dstephens/</a><a href="index.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>Reproduced with permission from <a href="http://www.math.mcgill.ca/dstephens/" class="uri">http://www.math.mcgill.ca/dstephens/</a><a href="index.html#fnref2">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -470,7 +366,7 @@ a</code></pre></div>
         </div>
       </div>
 
-<a href="prerequisites.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="course-information.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
