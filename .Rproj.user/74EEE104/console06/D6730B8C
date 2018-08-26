@@ -11087,3 +11087,22 @@ fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/
 Makefile:33: recipe for target 'git' failed
 make: *** [git] Error 128
 ]0;/home/sahir/git_repositories/epib607> (B[mmake foo='working on syllabus' git
+git checkout master
+M	.Rproj.user/74EEE104/console06/D6730B8C
+Already on 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+git add -fA
+git commit --allow-empty -m "working on syllabus"
+[master 15229c3] working on syllabus
+ 1 file changed, 87 insertions(+)
+git push -f -q origin master
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': sahirbhatnagar
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://sahirbhatnagar@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/'
+Makefile:33: recipe for target 'git' failed
+make: *** [git] Error 128
+]0;/home/sahir/git_repositories/epib607> (B[mmake foo='working on syllabus' git
