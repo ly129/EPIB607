@@ -11131,3 +11131,11 @@ Already on 'master'
 Your branch is ahead of 'origin/master' by 3 commits.
   (use "git push" to publish your local commits)
 git add -fA
+git commit --allow-empty -m "working on syllabus"
+[master 3467676] working on syllabus
+ 1 file changed, 26 insertions(+), 1 deletion(-)
+git push -f -q origin master
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': sahirbhatnagar
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://sahirbhatnagar@github.com': 
