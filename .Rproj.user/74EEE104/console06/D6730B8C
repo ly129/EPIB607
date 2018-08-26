@@ -11000,3 +11000,90 @@ Aborting commit due to empty commit message.
 Makefile:33: recipe for target 'git' failed
 make: *** [git] Error 1
 ]0;/home/sahir/git_repositories/epib607> (B[m(reverse-i-search)`': m': make git[1@a[C[C[C[1@k[C[C[C[1@e[C[C[C[C[C[C[C[Cpdf[C[C[C[C[Cbuild[C[C[C[C[Cfoo='still working on intro almost done' git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24P> (B[m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@w[1@o[1@r[1@k[1@i[1@n[1@g[1@ [1@o[1@n[1@ [1@s[1@y[1@l[1@l[1@a[1@b[1@u[1@s
+git checkout master
+M	.Rproj.user/74EEE104/console06/D6730B8C
+M	.Rproj.user/74EEE104/console06/INDEX001
+M	.Rproj.user/74EEE104/sources/prop/EBA10D41
+M	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B
+M	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B-contents
+M	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05
+M	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05-contents
+M	_book/appendix-b.html
+M	_book/assignments.html
+M	_book/continuous-variables-and-probability-distributions.html
+A	_book/course-information.html
+M	_book/discrete-random-variables-and-probability-distributions.html
+M	_book/distribution-tables.html
+M	_book/epib607.pdf
+M	_book/epib607.tex
+A	_book/images/jim.png
+A	_book/images/sahir.png
+M	_book/index.html
+M	_book/intro.html
+M	_book/prerequisites.html
+M	_book/probability.html
+M	_book/quiz.html
+M	_book/r-code.html
+M	_book/references.html
+M	_book/search_index.json
+M	_book/slides.html
+M	_book/vectorization-apply-and-for-loops.html
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.RData
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdb
+A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdx
+D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.RData
+D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdb
+D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdx
+A	_bookdown_files/epib607_cache/latex/show-code-style_d06ef813d555a157793dcf36d130673f.RData
+A	_bookdown_files/epib607_cache/latex/show-code-style_d06ef813d555a157793dcf36d130673f.rdb
+A	_bookdown_files/epib607_cache/latex/show-code-style_d06ef813d555a157793dcf36d130673f.rdx
+A	_bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.RData
+A	_bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdb
+A	_bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdx
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.RData
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdb
+A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdx
+D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.RData
+D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdb
+D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdx
+D	epib607.knit.md
+D	epib607.utf8.md
+A	images/jim.png
+A	images/sahir.png
+M	index.Rmd
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+git add -fA
+git commit --allow-empty -m "working on syllabus"
+[master 5c54018] working on syllabus
+ 45 files changed, 5453 insertions(+), 3189 deletions(-)
+ create mode 100644 _book/course-information.html
+ create mode 100644 _book/images/jim.png
+ create mode 100644 _book/images/sahir.png
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.RData
+ rename _bookdown_files/epib607_cache/html/{unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdb => unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdb} (100%)
+ rename _bookdown_files/epib607_cache/html/{unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdx => unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdx} (100%)
+ delete mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.RData
+ rename _bookdown_files/epib607_cache/latex/{unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.RData => show-code-style_d06ef813d555a157793dcf36d130673f.RData} (90%)
+ rename _bookdown_files/epib607_cache/latex/{unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdb => show-code-style_d06ef813d555a157793dcf36d130673f.rdb} (100%)
+ rename _bookdown_files/epib607_cache/latex/{unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdx => show-code-style_d06ef813d555a157793dcf36d130673f.rdx} (100%)
+ create mode 100644 _bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.RData
+ create mode 100644 _bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdb
+ create mode 100644 _bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdx
+ create mode 100644 _bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.RData
+ create mode 100644 _bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdb
+ create mode 100644 _bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdx
+ delete mode 100644 epib607.knit.md
+ delete mode 100644 epib607.utf8.md
+ create mode 100644 images/jim.png
+ create mode 100644 images/sahir.png
+git push -f -q origin master
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': sahirbhatnagar
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://sahirbhatnagar@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/'
+Makefile:33: recipe for target 'git' failed
+make: *** [git] Error 128
+]0;/home/sahir/git_repositories/epib607> (B[mmake foo='working on syllabus' git
