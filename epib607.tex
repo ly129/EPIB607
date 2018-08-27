@@ -24,7 +24,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={EPIB 607},
+            pdftitle={EPIB 607: Inferential Statistics},
             pdfauthor={Sahir Bhatnagar and James Hanley},
             pdfborder={0 0 0},
             breaklinks=true}
@@ -117,7 +117,7 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{EPIB 607}
+  \title{EPIB 607: Inferential Statistics}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
     \author{Sahir Bhatnagar and James Hanley}
@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-26}
+    \date{2018-08-27}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -381,40 +381,15 @@ scientific papers.
 \addcontentsline{toc}{section}{About these notes}
 
 These notes are a collection of useful links, videos, online resources
-and papers. The instructors have found that no single book sufficiently
-teaches all the topics covered in this course. Instead, we direct the
-readers to what we think is a good learning resource for a given topic
-(following the \textbf{Flipped Classroom} strategy, see below). We also
-provide our own commentary and notes when we think its useful.
-
-\section*{Teaching strategy}\label{teaching-strategy}
-\addcontentsline{toc}{section}{Teaching strategy}
-
-This course will follow the \textbf{Flipped Classroom} model. Here,
-students are expected to have engaged with the material before coming to
-class (based on very precise pre-class instructions). The students will
-then be expected to answer a series of conceptual multiple choice
-questions using the
-\href{https://mydalite.org/en/live/signup/form/NTc4}{DALITE} online
-platform \citep{bhatnagar2016dalite}.
-
-This allows the instructor to delegate the delivery of basic content and
-definitions to textbooks and videos, and enforces the idea that students
-cannot be simply passive recipients of information. This approach then
-allows the professor to focus valuable class time on nurturing efficient
-discussions surrounding the ideas within the content, guiding
-interactive exploration of typical misconceptions, and promoting
-collaborative problem solving with peers.
-
-\section*{A focus on computation}\label{a-focus-on-computation}
-\addcontentsline{toc}{section}{A focus on computation}
-
-Classic introductory statistics textbooks were written during a time
-when computers were still in their infancy. As such, even the newer
-editions heavily rely on \emph{by-hand} computations such as looking up
-tables for tail probabilities. We take a modern approach and introduce
-computational methods in statistics with the statistical software
-program \texttt{R}.
+and papers for an introductory course in statistics. The instructors
+have found that no single book sufficiently teaches all the topics
+covered in this course. Part of this is due to advancements in computing
+which have far outpaced the publication of modern textbooks. Indeed, the
+computer has replaced many of the calculations that were traditionally
+taught to be done by hand. We direct the readers to what we think is a
+good learning resource for a given topic (following the \textbf{Flipped
+Classroom} strategy). We also provide our own commentary and notes when
+we think its useful.
 
 \section*{R Code Conventions}\label{r-code-conventions}
 \addcontentsline{toc}{section}{R Code Conventions}
@@ -494,7 +469,7 @@ text:
 \caption{}
 \end{figure}
 
-The version of the book you are reading now was built on 2018-08-26 and
+The version of the book you are reading now was built on 2018-08-27 and
 was built on
 \href{https://travis-ci.org/sahirbhatnagar/MATH697}{Travis}.
 
@@ -556,8 +531,7 @@ International License
 \begin{itemize}
 \tightlist
 \item
-  Instructor(s): \href{mailto:sahir.bhatnagar@mcgill.ca}{Sahir
-  Bhatnagar}\\
+  Instructor: \href{mailto:sahir.bhatnagar@mcgill.ca}{Sahir Bhatnagar}\\
 \item
   Teaching Assistants: \href{mailto:kody.crowell1598@gmail.com}{Kody
   Crowell}, \href{mailto:guanbo.wang@mail.mcgill.ca}{Guanbo Wang},
@@ -578,6 +552,35 @@ International License
   Edition by Baldi \& Moore.
 \end{itemize}
 
+\section*{Teaching strategy}\label{teaching-strategy}
+\addcontentsline{toc}{section}{Teaching strategy}
+
+This course will follow the \textbf{Flipped Classroom} model. Here,
+students are expected to have engaged with the material before coming to
+class (based on very precise pre-class instructions). The students will
+then be expected to answer a series of conceptual multiple choice
+questions using the
+\href{https://mydalite.org/en/live/signup/form/NTc4}{DALITE} online
+platform \citep{bhatnagar2016dalite}.
+
+This allows the instructor to delegate the delivery of basic content and
+definitions to textbooks and videos, and enforces the idea that students
+cannot be simply passive recipients of information. This approach then
+allows the professor to focus valuable class time on nurturing efficient
+discussions surrounding the ideas within the content, guiding
+interactive exploration of typical misconceptions, and promoting
+collaborative problem solving with peers.
+
+\section*{A focus on computation}\label{a-focus-on-computation}
+\addcontentsline{toc}{section}{A focus on computation}
+
+Classic introductory statistics textbooks were written during a time
+when computers were still in their infancy. As such, even the newer
+editions heavily rely on \emph{by-hand} computations such as looking up
+tables for tail probabilities. We take a modern approach and introduce
+computational methods in statistics with the statistical software
+program \texttt{R}.
+
 \section*{Grade Distribution}\label{grade-distribution}
 \addcontentsline{toc}{section}{Grade Distribution}
 
@@ -596,16 +599,17 @@ Final Exam & 30\%\\
 \section*{Target Syllabus}\label{target-syllabus}
 \addcontentsline{toc}{section}{Target Syllabus}
 
-\subsection*{Overview and Descriptive Statistics (Weeks
-1-4)}\label{overview-and-descriptive-statistics-weeks-1-4}
-\addcontentsline{toc}{subsection}{Overview and Descriptive Statistics
-(Weeks 1-4)}
+\subsection*{Descriptive Statistics}\label{descriptive-statistics}
+\addcontentsline{toc}{subsection}{Descriptive Statistics}
 
-\begin{itemize}
-\tightlist
-\item
-  1.1 Populations and Samples
-\end{itemize}
+\begin{tabular}{lllll}
+\toprule
+Topic & Video & Readings & Exercise & DALITE\\
+\midrule
+Histograms & [Video](https://www.learner.org/courses/againstallodds/unitpages/unit03.html) & [pages 1-6](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit03.pdf\#page=1) & [Wafer Thickness, pages 15-17](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit03.pdf\#page=15) & dalite\\
+Mean and Median & [Video](https://www.learner.org/courses/againstallodds/unitpages/unit04.html) & [pages 1-6](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit04.pdf\#page=1) & [pages 1-6](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit04.pdf\#page=1) & dalite\\
+\bottomrule
+\end{tabular}
 
 \subsection*{Probability (Weeks 1-4)}\label{probability-weeks-1-4}
 \addcontentsline{toc}{subsection}{Probability (Weeks 1-4)}
@@ -1073,7 +1077,7 @@ taking a sample from a given population. This is why we study
 probability before statistics.
 
 \BeginKnitrBlock{example}[Use of manual lap belts in cars equipped with automatic shoulder belt systems]
-\protect\hypertarget{exm:unnamed-chunk-8}{}{\label{exm:unnamed-chunk-8}
+\protect\hypertarget{exm:unnamed-chunk-9}{}{\label{exm:unnamed-chunk-9}
 \iffalse (Use of manual lap belts in cars equipped with automatic
 shoulder belt systems) \fi{} }\emph{Probability}: assume that 50\% of
 all drivers in a certain metropolitan area regularly use their lap belt
@@ -1144,7 +1148,7 @@ For example, consider two nucleotide sequences of the same length that
 we wish to assess for similarity:
 
 \BeginKnitrBlock{example}[Two nucleotide sequences]
-\protect\hypertarget{exm:unnamed-chunk-10}{}{\label{exm:unnamed-chunk-10}
+\protect\hypertarget{exm:unnamed-chunk-11}{}{\label{exm:unnamed-chunk-11}
 \iffalse (Two nucleotide sequences) \fi{} }
 
 \begin{equation*}
@@ -1223,44 +1227,44 @@ are sensible and mathematically clear.
 \subsection{Sample Spaces}\label{sample-spaces}
 
 \BeginKnitrBlock{definition}[Sample Space]
-\protect\hypertarget{def:unnamed-chunk-11}{}{\label{def:unnamed-chunk-11}
+\protect\hypertarget{def:unnamed-chunk-12}{}{\label{def:unnamed-chunk-12}
 \iffalse (Sample Space) \fi{} }The sample space \(\Omega\) is the set of
 possible outcomes of an experiment. Points \(\omega\) in \(\Omega\) are
 called sample outcomes, realizations, or elements.
 \EndKnitrBlock{definition}
 
 \BeginKnitrBlock{example}[Coin tossing]
-\protect\hypertarget{exm:unnamed-chunk-12}{}{\label{exm:unnamed-chunk-12}
+\protect\hypertarget{exm:unnamed-chunk-13}{}{\label{exm:unnamed-chunk-13}
 \iffalse (Coin tossing) \fi{}
 }\(\Omega = \left\lbrace H, T \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Dice]
-\protect\hypertarget{exm:unnamed-chunk-13}{}{\label{exm:unnamed-chunk-13}
+\protect\hypertarget{exm:unnamed-chunk-14}{}{\label{exm:unnamed-chunk-14}
 \iffalse (Dice) \fi{}
 }\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Proportions]
-\protect\hypertarget{exm:unnamed-chunk-14}{}{\label{exm:unnamed-chunk-14}
+\protect\hypertarget{exm:unnamed-chunk-15}{}{\label{exm:unnamed-chunk-15}
 \iffalse (Proportions) \fi{}
 }\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Time measurement]
-\protect\hypertarget{exm:unnamed-chunk-15}{}{\label{exm:unnamed-chunk-15}
+\protect\hypertarget{exm:unnamed-chunk-16}{}{\label{exm:unnamed-chunk-16}
 \iffalse (Time measurement) \fi{}
 }\(\Omega = \left\lbrace x : x > 0 \right\rbrace = {\mathbb{R}}^{+}\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Temperature measurement]
-\protect\hypertarget{exm:unnamed-chunk-16}{}{\label{exm:unnamed-chunk-16}
+\protect\hypertarget{exm:unnamed-chunk-17}{}{\label{exm:unnamed-chunk-17}
 \iffalse (Temperature measurement) \fi{}
 }\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Biological Sequence Analysis]
-\protect\hypertarget{exm:unnamed-chunk-17}{}{\label{exm:unnamed-chunk-17}
+\protect\hypertarget{exm:unnamed-chunk-18}{}{\label{exm:unnamed-chunk-18}
 \iffalse (Biological Sequence Analysis) \fi{} }The experiment may
 involve the observation of a nucleotide or protein sequence, so that the
 sample space \(\Omega\) may comprise all sequences (of bases/amino
@@ -1285,7 +1289,7 @@ if \(s\) \emph{is a member of the set} \(\Omega\).
 \subsection{Events}\label{events}
 
 \BeginKnitrBlock{definition}[Event]
-\protect\hypertarget{def:unnamed-chunk-18}{}{\label{def:unnamed-chunk-18}
+\protect\hypertarget{def:unnamed-chunk-19}{}{\label{def:unnamed-chunk-19}
 \iffalse (Event) \fi{} }An event \(E\) is a subset of the sample space
 \(\Omega\) (\(E \subseteq \Omega\)). Events are usually denoted by upper
 case letters near the beginning of the alphabet, like \(A, B, C\). An
@@ -1341,7 +1345,7 @@ collection of sample outcomes have no element in common.
 Probability}\label{axioms-interpretations-and-properties-of-probability}
 
 \BeginKnitrBlock{definition}[Axioms (basic properties) of Probability]
-\protect\hypertarget{def:unnamed-chunk-20}{}{\label{def:unnamed-chunk-20}
+\protect\hypertarget{def:unnamed-chunk-21}{}{\label{def:unnamed-chunk-21}
 \iffalse (Axioms (basic properties) of Probability) \fi{} }To ensure
 that the probability assignments will be consistent with our intuitive
 notions of probability, all assign- ments should satisfy the following
@@ -1361,26 +1365,26 @@ axioms (basic properties) of probability
 \EndKnitrBlock{definition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-21}{}{\label{prp:unnamed-chunk-21}
+\protect\hypertarget{prp:unnamed-chunk-22}{}{\label{prp:unnamed-chunk-22}
 }\(P(\varnothing) = 0\) where \(\varnothing\) is the null event. This in
 turn implies that the property contained in Axiom 3 is valid for a
 finite collection of events.
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-22}{}{\label{prp:unnamed-chunk-22}
+\protect\hypertarget{prp:unnamed-chunk-23}{}{\label{prp:unnamed-chunk-23}
 }For any event \(A\),\\
 \[ P(A) = 1 - P(A^c) \]
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-23}{}{\label{prp:unnamed-chunk-23}
+\protect\hypertarget{prp:unnamed-chunk-24}{}{\label{prp:unnamed-chunk-24}
 }For any event \(A\),\\
 \[ P(A) \leq 1 \]
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-24}{}{\label{prp:unnamed-chunk-24}
+\protect\hypertarget{prp:unnamed-chunk-25}{}{\label{prp:unnamed-chunk-25}
 }For any events \(A\) and \(B\),\\
 \[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
 \EndKnitrBlock{proposition}
@@ -1394,7 +1398,7 @@ of outcomes in a sample space and \(N(A)\) is the number of outcomes
 contained in an event \(A\), then \[ P(A) = \frac{N(A)}{N} \]
 
 \BeginKnitrBlock{proposition}[Product rule for ordered pairs]
-\protect\hypertarget{prp:unnamed-chunk-25}{}{\label{prp:unnamed-chunk-25}
+\protect\hypertarget{prp:unnamed-chunk-26}{}{\label{prp:unnamed-chunk-26}
 \iffalse (Product rule for ordered pairs) \fi{} }If the first element or
 object of an ordered pair can be selected in \(n_1\) ways, and for each
 of these \(n_1\) ways the second element of the pair can be selected in
@@ -1404,7 +1408,7 @@ of these \(n_1\) ways the second element of the pair can be selected in
 \subsection{Permutations}\label{permutations}
 
 \BeginKnitrBlock{definition}[Permutation]
-\protect\hypertarget{def:unnamed-chunk-26}{}{\label{def:unnamed-chunk-26}
+\protect\hypertarget{def:unnamed-chunk-27}{}{\label{def:unnamed-chunk-27}
 \iffalse (Permutation) \fi{} }Any ordered sequence of \(k\) objects
 taken from a set of \(n\) distinct objects is called a permutation of
 size \(k\) of the objects. The number of permutations of size \(k\) that
@@ -1416,7 +1420,7 @@ can be constructed from the \(n\) objects is denoted by \(P_k^n\):
 \subsection{Combinations}\label{combinations}
 
 \BeginKnitrBlock{definition}[Combination]
-\protect\hypertarget{def:unnamed-chunk-27}{}{\label{def:unnamed-chunk-27}
+\protect\hypertarget{def:unnamed-chunk-28}{}{\label{def:unnamed-chunk-28}
 \iffalse (Combination) \fi{} }Given a set of \(n\) distinct objects, any
 unordered subset of size \(k\) of the objects is called a combination.
 The number of combinations \(n\) of size \(k\) that can be formed from
@@ -1528,20 +1532,20 @@ Therefore
 \[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P({H H T, H T H})}{P({H H T, H T H, T H H})} = \frac{2/8}{3/8} = \frac{2}{3}\]
 
 \BeginKnitrBlock{example}[Balanced die]
-\protect\hypertarget{exm:unnamed-chunk-28}{}{\label{exm:unnamed-chunk-28}
+\protect\hypertarget{exm:unnamed-chunk-29}{}{\label{exm:unnamed-chunk-29}
 \iffalse (Balanced die) \fi{} }Suppose a balanced die is tossed in the
 next room. We are told that a number less than 4 was observed. What is
 the probability the number was either 1 or 2?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Dice v1]
-\protect\hypertarget{exm:unnamed-chunk-29}{}{\label{exm:unnamed-chunk-29}
+\protect\hypertarget{exm:unnamed-chunk-30}{}{\label{exm:unnamed-chunk-30}
 \iffalse (Two Balanced Dice v1) \fi{} }Toss two balanced dice. Let \(A\)
 = \{sum of 5\} and \(B\) = \{first die is \(\leq\) 2\}. Find \(P(A|B)\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Dice v2]
-\protect\hypertarget{exm:unnamed-chunk-30}{}{\label{exm:unnamed-chunk-30}
+\protect\hypertarget{exm:unnamed-chunk-31}{}{\label{exm:unnamed-chunk-31}
 \iffalse (Two Balanced Dice v2) \fi{} }Two balanced dice are tossed.
 What is the probability that the first die gives a number less than
 three, given that the sum is odd?
@@ -1555,14 +1559,14 @@ three, given that the sum is odd?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Coins]
-\protect\hypertarget{exm:unnamed-chunk-31}{}{\label{exm:unnamed-chunk-31}
+\protect\hypertarget{exm:unnamed-chunk-32}{}{\label{exm:unnamed-chunk-32}
 \iffalse (Two Balanced Coins) \fi{} }Two balanced coins were tossed, and
 it is known that at least one was a head. What is the probability that
 both were heads?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Cards]
-\protect\hypertarget{exm:unnamed-chunk-32}{}{\label{exm:unnamed-chunk-32}
+\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33}
 \iffalse (Two Cards) \fi{} }Two cards are drawn without replacement from
 a standard deck. Find the probability that
 
@@ -1579,7 +1583,7 @@ a standard deck. Find the probability that
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Numbers in a Hat]
-\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33}
+\protect\hypertarget{exm:unnamed-chunk-34}{}{\label{exm:unnamed-chunk-34}
 \iffalse (Numbers in a Hat) \fi{} }The numbers 1 to 5 are written on
 five slips of paper and placed in a hat. Two slips are drawn at random
 without replacement. What is the probability that the first number is 3,
@@ -1587,7 +1591,7 @@ given a sum of seven?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[One Card]
-\protect\hypertarget{exm:unnamed-chunk-34}{}{\label{exm:unnamed-chunk-34}
+\protect\hypertarget{exm:unnamed-chunk-35}{}{\label{exm:unnamed-chunk-35}
 \iffalse (One Card) \fi{} }A card is selected at random (i.e.~every card
 has the same probability of being chosen) from a deck of 52. What is the
 probability it is a red card or a face card?
@@ -1610,7 +1614,7 @@ we are given the probability of \(B\) and the conditional probability of
 \(A\) given \(B\), and vice versa.
 
 \BeginKnitrBlock{example}[Fish in a Tank]
-\protect\hypertarget{exm:unnamed-chunk-35}{}{\label{exm:unnamed-chunk-35}
+\protect\hypertarget{exm:unnamed-chunk-36}{}{\label{exm:unnamed-chunk-36}
 \iffalse (Fish in a Tank) \fi{} }A tank has three red fish and two blue
 fish. Two fish are chosen at random and without replacement. What is the
 probability of getting
@@ -1659,7 +1663,7 @@ Thus we have
 \[P(B) =\sum_{i=1}^{k} P(A_i \cap B) = \sum_{i=1}^{k} P(B|A_i) P(A_i) \]
 
 \BeginKnitrBlock{example}[Long Hair]
-\protect\hypertarget{exm:unnamed-chunk-36}{}{\label{exm:unnamed-chunk-36}
+\protect\hypertarget{exm:unnamed-chunk-37}{}{\label{exm:unnamed-chunk-37}
 \iffalse (Long Hair) \fi{} }Suppose a class contains 60\% girls and 40\%
 boys. Suppose that 30\% of the girls have long hair, and 20\% of the
 boys have long hair. A student is chosen uniformly at random from the
@@ -1684,7 +1688,7 @@ The transition from the second to the third expression in Theorem
 numerator and the law of total probability in the denominator.
 
 \BeginKnitrBlock{example}[Urns]
-\protect\hypertarget{exm:unnamed-chunk-37}{}{\label{exm:unnamed-chunk-37}
+\protect\hypertarget{exm:unnamed-chunk-38}{}{\label{exm:unnamed-chunk-38}
 \iffalse (Urns) \fi{} }Suppose urn \#1 has 3 red and 2 blue balls, and
 urn \#2 has 4 red and 7 blue balls. Suppose one of the two urns is
 selected with probability \(1/2\) each, and then one of the balls within
@@ -1705,7 +1709,7 @@ that urn is picked uniformly at random.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Large Bridges]
-\protect\hypertarget{exm:unnamed-chunk-38}{}{\label{exm:unnamed-chunk-38}
+\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39}
 \iffalse (Large Bridges) \fi{} }There are three Canadian firms which
 build large bridges, firm 1, firm 2, and firm 3. 20\% of Canadian large
 bridges have been built by firm 1, 30\% by firm 2, and the rest by firm
@@ -1745,14 +1749,14 @@ and \(B\) are independent if neither one has any impact on the
 probability of the other.
 
 \BeginKnitrBlock{example}[Toss a fair coin 10 times]
-\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39}
+\protect\hypertarget{exm:unnamed-chunk-40}{}{\label{exm:unnamed-chunk-40}
 \iffalse (Toss a fair coin 10 times) \fi{} }Toss a fair coin 10 times.
 Let \(A = {\textrm{at least one head}}\). Let \(T_j\) be the event that
 tails occurs on the \(j^{th}\) toss. Find \(P(A)\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Unbalance Die Revisited]
-\protect\hypertarget{exm:unnamed-chunk-40}{}{\label{exm:unnamed-chunk-40}
+\protect\hypertarget{exm:unnamed-chunk-41}{}{\label{exm:unnamed-chunk-41}
 \iffalse (Unbalance Die Revisited) \fi{} }In Example
 \ref{exm:unbalanced}, if \(A\) is the event that the die was 5, and
 \(B\) is the event that the coin was tails, then calculate
@@ -1788,7 +1792,7 @@ associated sample space separately - the nature of sample space
 \(\Omega\) is typically different for different experiments.
 
 \BeginKnitrBlock{example}[Rainy days]
-\protect\hypertarget{exm:unnamed-chunk-42}{}{\label{exm:unnamed-chunk-42}
+\protect\hypertarget{exm:unnamed-chunk-43}{}{\label{exm:unnamed-chunk-43}
 \iffalse (Rainy days) \fi{} }Count the number of days in February which
 have zero precipitation.
 
@@ -1799,7 +1803,7 @@ Let \(E_{i}\) = \(i\) days have zero precipitation.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Footbal Match]
-\protect\hypertarget{exm:unnamed-chunk-43}{}{\label{exm:unnamed-chunk-43}
+\protect\hypertarget{exm:unnamed-chunk-44}{}{\label{exm:unnamed-chunk-44}
 \iffalse (Footbal Match) \fi{} }Count the number of goals in a football
 match.
 
@@ -1816,7 +1820,7 @@ In both of these examples, we need a formula to specify each
 \EndKnitrBlock{rmdnote}
 
 \BeginKnitrBlock{example}[Operating Temperature]
-\protect\hypertarget{exm:unnamed-chunk-45}{}{\label{exm:unnamed-chunk-45}
+\protect\hypertarget{exm:unnamed-chunk-46}{}{\label{exm:unnamed-chunk-46}
 \iffalse (Operating Temperature) \fi{} }Measure the operating
 temperature of an experimental process.
 
@@ -1893,7 +1897,7 @@ the corresponding random variable. The notation \(X(s) = x\) means that
 \EndKnitrBlock{rmdnote}
 
 \BeginKnitrBlock{example}[Coin Toss]
-\protect\hypertarget{exm:unnamed-chunk-47}{}{\label{exm:unnamed-chunk-47}
+\protect\hypertarget{exm:unnamed-chunk-48}{}{\label{exm:unnamed-chunk-48}
 \iffalse (Coin Toss) \fi{} }Suppose a coin is tossed three times. Let
 \(X\) be the number of heads observed. The sample space is
 
@@ -1915,7 +1919,7 @@ random variables any way we like, as long as they are functions from the
 sample space to \(\mathbb{R}\).
 
 \BeginKnitrBlock{example}[A Very Simple Random Variable 2]
-\protect\hypertarget{exm:unnamed-chunk-48}{}{\label{exm:unnamed-chunk-48}
+\protect\hypertarget{exm:unnamed-chunk-49}{}{\label{exm:unnamed-chunk-49}
 \iffalse (A Very Simple Random Variable 2) \fi{} }For the case
 \(\Omega = \left\lbrace \textrm{rain, snow, clear} \right\rbrace\), we
 might define a second random variable \(Y\) by saying that \(Y = 0\) if
@@ -1924,7 +1928,7 @@ is \(Y(rain) = 0\), \(Y(snow) = 1/2\), and \(Y(rain) = 7/8\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[A Very Simple Random Variable 3]
-\protect\hypertarget{exm:unnamed-chunk-49}{}{\label{exm:unnamed-chunk-49}
+\protect\hypertarget{exm:unnamed-chunk-50}{}{\label{exm:unnamed-chunk-50}
 \iffalse (A Very Simple Random Variable 3) \fi{} }If the sample space
 corresponds to flipping three different coins, then we could let \(X\)
 be the total number of heads showing, let \(Y\) be the total number of
@@ -1933,7 +1937,7 @@ tails showing, let \(Z = 0\) if there is exactly one head, and otherwise
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Constants as Random Variables]
-\protect\hypertarget{exm:unnamed-chunk-50}{}{\label{exm:unnamed-chunk-50}
+\protect\hypertarget{exm:unnamed-chunk-51}{}{\label{exm:unnamed-chunk-51}
 \iffalse (Constants as Random Variables) \fi{} }As a special case, every
 constant value \(c\) is also a random variable, by saying that
 \(c(s) = c\) for all \(s \in \Omega\). Thus, 5 is a random variable, as
@@ -1941,7 +1945,7 @@ is 3 or −21.6.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Indicator Functions]
-\protect\hypertarget{exm:unnamed-chunk-51}{}{\label{exm:unnamed-chunk-51}
+\protect\hypertarget{exm:unnamed-chunk-52}{}{\label{exm:unnamed-chunk-52}
 \iffalse (Indicator Functions) \fi{} }If \(A\) is any event, then we can
 define the indicator function of \(A\), written \(I_A\), to be the
 random variable
