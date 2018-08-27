@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>EPIB 607</title>
+  <title>EPIB 607: Inferential Statistics</title>
   <meta name="description" content="Course material for EPIB 607 at McGill University">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="EPIB 607" />
+  <meta property="og:title" content="EPIB 607: Inferential Statistics" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://sahirbhatnagar.com/EPIB607" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="sahirbhatnagar/EPIB607" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="EPIB 607" />
+  <meta name="twitter:title" content="EPIB 607: Inferential Statistics" />
   
   <meta name="twitter:description" content="Course material for EPIB 607 at McGill University" />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-08-26">
+<meta name="date" content="2018-08-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -108,8 +108,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#audience"><i class="fa fa-check"></i>Audience</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-these-notes"><i class="fa fa-check"></i>About these notes</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#r-code-conventions"><i class="fa fa-check"></i>R Code Conventions</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#rendering-mathematical-formulae"><i class="fa fa-check"></i>Rendering Mathematical Formulae</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
@@ -117,9 +115,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html"><i class="fa fa-check"></i>Course Information</a><ul>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#target-syllabus"><i class="fa fa-check"></i>Target Syllabus</a><ul>
-<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#overview-and-descriptive-statistics-weeks-1-4"><i class="fa fa-check"></i>Overview and Descriptive Statistics (Weeks 1-4)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#probability-weeks-1-4"><i class="fa fa-check"></i>Probability (Weeks 1-4)</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#discrete-random-variables-and-probability-distributions-weeks-1-4"><i class="fa fa-check"></i>Discrete Random Variables and Probability Distributions (Weeks 1-4)</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#continuous-random-variables-and-probability-distributions-weeks-5-8"><i class="fa fa-check"></i>Continuous Random Variables and Probability Distributions (Weeks 5-8)</a></li>
@@ -214,7 +214,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EPIB 607</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EPIB 607: Inferential Statistics</a>
           </h1>
         </div>
 
@@ -244,7 +244,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>For example, consider two nucleotide sequences of the same length that we wish to assess for similarity:</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.1  (Two nucleotide sequences)  </strong></span>
+<span id="exm:unnamed-chunk-11" class="example"><strong>Example 2.1  (Two nucleotide sequences)  </strong></span>
 <span class="math display">\[\begin{equation*}
 \begin{array}{ll}
 \text{{Sequence 1}}{\qquad } &amp; ATAGTAGATACGCACCGAGGA \\
@@ -285,37 +285,37 @@ ATAGTA
 <h3><span class="header-section-number">2.1.1</span> Sample Spaces</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-11" class="definition"><strong>Definition 2.1  (Sample Space)  </strong></span>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible outcomes of an experiment. Points <span class="math inline">\(\omega\)</span> in <span class="math inline">\(\Omega\)</span> are called sample outcomes, realizations, or elements.
+<span id="def:unnamed-chunk-12" class="definition"><strong>Definition 2.1  (Sample Space)  </strong></span>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible outcomes of an experiment. Points <span class="math inline">\(\omega\)</span> in <span class="math inline">\(\Omega\)</span> are called sample outcomes, realizations, or elements.
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-12" class="example"><strong>Example 2.2  (Coin tossing)  </strong></span><span class="math inline">\(\Omega = \left\lbrace H, T \right\rbrace\)</span>
+<span id="exm:unnamed-chunk-13" class="example"><strong>Example 2.2  (Coin tossing)  </strong></span><span class="math inline">\(\Omega = \left\lbrace H, T \right\rbrace\)</span>
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-13" class="example"><strong>Example 2.3  (Dice)  </strong></span><span class="math inline">\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)</span>
+<span id="exm:unnamed-chunk-14" class="example"><strong>Example 2.3  (Dice)  </strong></span><span class="math inline">\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)</span>
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-14" class="example"><strong>Example 2.4  (Proportions)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)</span>
+<span id="exm:unnamed-chunk-15" class="example"><strong>Example 2.4  (Proportions)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)</span>
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-15" class="example"><strong>Example 2.5  (Time measurement)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : x &gt; 0 \right\rbrace = {\mathbb{R}}^{+}\)</span>
+<span id="exm:unnamed-chunk-16" class="example"><strong>Example 2.5  (Time measurement)  </strong></span><span class="math inline">\(\Omega = \left\lbrace x : x &gt; 0 \right\rbrace = {\mathbb{R}}^{+}\)</span>
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-16" class="example"><strong>Example 2.6  (Temperature measurement)  </strong></span><span class="math inline">\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)</span>
+<span id="exm:unnamed-chunk-17" class="example"><strong>Example 2.6  (Temperature measurement)  </strong></span><span class="math inline">\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)</span>
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-17" class="example"><strong>Example 2.7  (Biological Sequence Analysis)  </strong></span>The experiment may involve the observation of a nucleotide or protein sequence, so that the sample space <span class="math inline">\(\Omega\)</span> may comprise all sequences (of bases/amino acids) up to a given length, and a sample outcome would be a particular observed sequence.
+<span id="exm:unnamed-chunk-18" class="example"><strong>Example 2.7  (Biological Sequence Analysis)  </strong></span>The experiment may involve the observation of a nucleotide or protein sequence, so that the sample space <span class="math inline">\(\Omega\)</span> may comprise all sequences (of bases/amino acids) up to a given length, and a sample outcome would be a particular observed sequence.
 </div>
 
 <p>There are two basic types of experiment: - Counting - Measurement</p>
@@ -330,7 +330,7 @@ s\in \Omega
 <h3><span class="header-section-number">2.1.2</span> Events</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-18" class="definition"><strong>Definition 2.2  (Event)  </strong></span>An event <span class="math inline">\(E\)</span> is a subset of the sample space <span class="math inline">\(\Omega\)</span> (<span class="math inline">\(E \subseteq \Omega\)</span>). Events are usually denoted by upper case letters near the beginning of the alphabet, like <span class="math inline">\(A, B, C\)</span>. An event which consists of only one outcome is called a simple (or elementary event); otherwise it is a compound event.
+<span id="def:unnamed-chunk-19" class="definition"><strong>Definition 2.2  (Event)  </strong></span>An event <span class="math inline">\(E\)</span> is a subset of the sample space <span class="math inline">\(\Omega\)</span> (<span class="math inline">\(E \subseteq \Omega\)</span>). Events are usually denoted by upper case letters near the beginning of the alphabet, like <span class="math inline">\(A, B, C\)</span>. An event which consists of only one outcome is called a simple (or elementary event); otherwise it is a compound event.
 </div>
 
 
@@ -363,7 +363,7 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 <h2><span class="header-section-number">2.2</span> Axioms, Interpretations, and Properties of Probability</h2>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-20" class="definition"><strong>Definition 2.3  (Axioms (basic properties) of Probability)  </strong></span>To ensure that the probability assignments will be consistent with our intuitive notions of probability, all assign- ments should satisfy the following axioms (basic properties) of probability</p>
+<p><span id="def:unnamed-chunk-21" class="definition"><strong>Definition 2.3  (Axioms (basic properties) of Probability)  </strong></span>To ensure that the probability assignments will be consistent with our intuitive notions of probability, all assign- ments should satisfy the following axioms (basic properties) of probability</p>
 <ul>
 <li><strong>AXIOM 1:</strong> For any event <span class="math inline">\(A\)</span>, <span class="math display">\[ P(A) \geq 0 \]</span></li>
 <li><strong>AXIOM 2:</strong> <span class="math display">\[ P(\Omega) = 1 \]</span></li>
@@ -373,24 +373,24 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-21" class="proposition"><strong>Proposition 2.1  </strong></span><span class="math inline">\(P(\varnothing) = 0\)</span> where <span class="math inline">\(\varnothing\)</span> is the null event. This in turn implies that the property contained in Axiom 3 is valid for a finite collection of events.
+<span id="prp:unnamed-chunk-22" class="proposition"><strong>Proposition 2.1  </strong></span><span class="math inline">\(P(\varnothing) = 0\)</span> where <span class="math inline">\(\varnothing\)</span> is the null event. This in turn implies that the property contained in Axiom 3 is valid for a finite collection of events.
 </div>
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-22" class="proposition"><strong>Proposition 2.2  </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
+<span id="prp:unnamed-chunk-23" class="proposition"><strong>Proposition 2.2  </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
 <span class="math display">\[ P(A) = 1 - P(A^c) \]</span>
 </div>
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-23" class="proposition"><strong>Proposition 2.3  </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
+<span id="prp:unnamed-chunk-24" class="proposition"><strong>Proposition 2.3  </strong></span>For any event <span class="math inline">\(A\)</span>,<br />
 <span class="math display">\[ P(A) \leq 1 \]</span>
 </div>
 
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-24" class="proposition"><strong>Proposition 2.4  </strong></span>For any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,<br />
+<span id="prp:unnamed-chunk-25" class="proposition"><strong>Proposition 2.4  </strong></span>For any events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,<br />
 <span class="math display">\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]</span>
 </div>
 
@@ -400,14 +400,14 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 <p>When the various outcomes of an experiment are equally likely (the same probability is assigned to each simple event), the task of computing probabilities reduces to counting. In particular, if <span class="math inline">\(N\)</span> is the number of outcomes in a sample space and <span class="math inline">\(N(A)\)</span> is the number of outcomes contained in an event <span class="math inline">\(A\)</span>, then <span class="math display">\[ P(A) = \frac{N(A)}{N} \]</span></p>
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-25" class="proposition"><strong>Proposition 2.5  (Product rule for ordered pairs)  </strong></span>If the first element or object of an ordered pair can be selected in <span class="math inline">\(n_1\)</span> ways, and for each of these <span class="math inline">\(n_1\)</span> ways the second element of the pair can be selected in <span class="math inline">\(n_2\)</span> ways, then the number of pairs is <span class="math inline">\(n_1 \cdot n_2\)</span>.
+<span id="prp:unnamed-chunk-26" class="proposition"><strong>Proposition 2.5  (Product rule for ordered pairs)  </strong></span>If the first element or object of an ordered pair can be selected in <span class="math inline">\(n_1\)</span> ways, and for each of these <span class="math inline">\(n_1\)</span> ways the second element of the pair can be selected in <span class="math inline">\(n_2\)</span> ways, then the number of pairs is <span class="math inline">\(n_1 \cdot n_2\)</span>.
 </div>
 
 <div id="permutations" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Permutations</h3>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-26" class="definition"><strong>Definition 2.4  (Permutation)  </strong></span>Any ordered sequence of <span class="math inline">\(k\)</span> objects taken from a set of <span class="math inline">\(n\)</span> distinct objects is called a permutation of size <span class="math inline">\(k\)</span> of the objects. The number of permutations of size <span class="math inline">\(k\)</span> that can be constructed from the <span class="math inline">\(n\)</span> objects is denoted by <span class="math inline">\(P_k^n\)</span>:</p>
+<p><span id="def:unnamed-chunk-27" class="definition"><strong>Definition 2.4  (Permutation)  </strong></span>Any ordered sequence of <span class="math inline">\(k\)</span> objects taken from a set of <span class="math inline">\(n\)</span> distinct objects is called a permutation of size <span class="math inline">\(k\)</span> of the objects. The number of permutations of size <span class="math inline">\(k\)</span> that can be constructed from the <span class="math inline">\(n\)</span> objects is denoted by <span class="math inline">\(P_k^n\)</span>:</p>
 <span class="math display">\[ P_k^n = \frac{n!}{(n-k)!} \]</span>
 </div>
 
@@ -416,7 +416,7 @@ E=\left\{ x:0.6&lt;x\leq 2.3\right\}
 <h3><span class="header-section-number">2.3.2</span> Combinations</h3>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-27" class="definition"><strong>Definition 2.5  (Combination)  </strong></span>Given a set of <span class="math inline">\(n\)</span> distinct objects, any unordered subset of size <span class="math inline">\(k\)</span> of the objects is called a combination. The number of combinations <span class="math inline">\(n\)</span> of size <span class="math inline">\(k\)</span> that can be formed from <span class="math inline">\(n\)</span> distinct objects will be denoted by</p>
+<p><span id="def:unnamed-chunk-28" class="definition"><strong>Definition 2.5  (Combination)  </strong></span>Given a set of <span class="math inline">\(n\)</span> distinct objects, any unordered subset of size <span class="math inline">\(k\)</span> of the objects is called a combination. The number of combinations <span class="math inline">\(n\)</span> of size <span class="math inline">\(k\)</span> that can be formed from <span class="math inline">\(n\)</span> distinct objects will be denoted by</p>
 <span class="math display">\[ \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{P_k^n}{k!} \]</span>
 </div>
 
@@ -488,17 +488,17 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p><span class="math display">\[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P({H H T, H T H})}{P({H H T, H T H, T H H})} = \frac{2/8}{3/8} = \frac{2}{3}\]</span></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-28" class="example"><strong>Example 2.10  (Balanced die)  </strong></span>Suppose a balanced die is tossed in the next room. We are told that a number less than 4 was observed. What is the probability the number was either 1 or 2?</p>
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 2.10  (Balanced die)  </strong></span>Suppose a balanced die is tossed in the next room. We are told that a number less than 4 was observed. What is the probability the number was either 1 or 2?</p>
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-29" class="example"><strong>Example 2.11  (Two Balanced Dice v1)  </strong></span>Toss two balanced dice. Let <span class="math inline">\(A\)</span> = {sum of 5} and <span class="math inline">\(B\)</span> = {first die is <span class="math inline">\(\leq\)</span> 2}. Find <span class="math inline">\(P(A|B)\)</span></p>
+<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 2.11  (Two Balanced Dice v1)  </strong></span>Toss two balanced dice. Let <span class="math inline">\(A\)</span> = {sum of 5} and <span class="math inline">\(B\)</span> = {first die is <span class="math inline">\(\leq\)</span> 2}. Find <span class="math inline">\(P(A|B)\)</span></p>
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-30" class="example"><strong>Example 2.12  (Two Balanced Dice v2)  </strong></span>Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?</p>
+<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 2.12  (Two Balanced Dice v2)  </strong></span>Two balanced dice are tossed. What is the probability that the first die gives a number less than three, given that the sum is odd?</p>
 </div>
 
 
@@ -508,12 +508,12 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-31" class="example"><strong>Example 2.14  (Two Balanced Coins)  </strong></span>Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?</p>
+<p><span id="exm:unnamed-chunk-32" class="example"><strong>Example 2.14  (Two Balanced Coins)  </strong></span>Two balanced coins were tossed, and it is known that at least one was a head. What is the probability that both were heads?</p>
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-32" class="example"><strong>Example 2.15  (Two Cards)  </strong></span>Two cards are drawn without replacement from a standard deck. Find the probability that</p>
+<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 2.15  (Two Cards)  </strong></span>Two cards are drawn without replacement from a standard deck. Find the probability that</p>
 <ol style="list-style-type: decimal">
 <li>the second is an ace, given that the first is not an ace.<br />
 </li>
@@ -525,12 +525,12 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-33" class="example"><strong>Example 2.16  (Numbers in a Hat)  </strong></span>The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?</p>
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 2.16  (Numbers in a Hat)  </strong></span>The numbers 1 to 5 are written on five slips of paper and placed in a hat. Two slips are drawn at random without replacement. What is the probability that the first number is 3, given a sum of seven?</p>
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-34" class="example"><strong>Example 2.17  (One Card)  </strong></span>A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?</p>
+<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 2.17  (One Card)  </strong></span>A card is selected at random (i.e. every card has the same probability of being chosen) from a deck of 52. What is the probability it is a red card or a face card?</p>
 </div>
 
 <p>Definition <a href="probability.html#def:condprob">2.6</a> immediately leads to the <em>multiplication formula</em></p>
@@ -544,7 +544,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p>This allows us to compute the joint probability of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> when we are given the probability of <span class="math inline">\(B\)</span> and the conditional probability of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, and vice versa.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-35" class="example"><strong>Example 2.18  (Fish in a Tank)  </strong></span>A tank has three red fish and two blue fish. Two fish are chosen at random and without replacement. What is the probability of getting</p>
+<p><span id="exm:unnamed-chunk-36" class="example"><strong>Example 2.18  (Fish in a Tank)  </strong></span>A tank has three red fish and two blue fish. Two fish are chosen at random and without replacement. What is the probability of getting</p>
 <ol style="list-style-type: decimal">
 <li>red fish first and then a blue fish?<br />
 </li>
@@ -573,7 +573,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p><span class="math display">\[P(B) =\sum_{i=1}^{k} P(A_i \cap B) = \sum_{i=1}^{k} P(B|A_i) P(A_i) \]</span></p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-36" class="example"><strong>Example 2.19  (Long Hair)  </strong></span>Suppose a class contains 60% girls and 40% boys. Suppose that 30% of the girls have long hair, and 20% of the boys have long hair. A student is chosen uniformly at random from the class. What is the probability that the chosen student will have long hair?
+<span id="exm:unnamed-chunk-37" class="example"><strong>Example 2.19  (Long Hair)  </strong></span>Suppose a class contains 60% girls and 40% boys. Suppose that 30% of the girls have long hair, and 20% of the boys have long hair. A student is chosen uniformly at random from the class. What is the probability that the chosen student will have long hair?
 </div>
 
 </div>
@@ -588,7 +588,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p>The transition from the second to the third expression in Theorem <a href="probability.html#thm:bayesdef">2.2</a> rests on using the multiplication rule in the numerator and the law of total probability in the denominator.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-37" class="example"><strong>Example 2.20  (Urns)  </strong></span>Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls. Suppose one of the two urns is selected with probability <span class="math inline">\(1/2\)</span> each, and then one of the balls within that urn is picked uniformly at random.</p>
+<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 2.20  (Urns)  </strong></span>Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls. Suppose one of the two urns is selected with probability <span class="math inline">\(1/2\)</span> each, and then one of the balls within that urn is picked uniformly at random.</p>
 <ol style="list-style-type: decimal">
 <li>What is the probability that urn #2 is selected at the first stage (event A) and a blue ball is selected at the second stage (event B)?<br />
 </li>
@@ -600,7 +600,7 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-38" class="example"><strong>Example 2.21  (Large Bridges)  </strong></span>There are three Canadian firms which build large bridges, firm 1, firm 2, and firm 3. 20% of Canadian large bridges have been built by firm 1, 30% by firm 2, and the rest by firm 3. 5% of the bridges built by firm 1 have collapsed, while 10% of those by firm 2 have collapsed, and 30% by firm 3 have collapsed.</p>
+<p><span id="exm:unnamed-chunk-39" class="example"><strong>Example 2.21  (Large Bridges)  </strong></span>There are three Canadian firms which build large bridges, firm 1, firm 2, and firm 3. 20% of Canadian large bridges have been built by firm 1, 30% by firm 2, and the rest by firm 3. 5% of the bridges built by firm 1 have collapsed, while 10% of those by firm 2 have collapsed, and 30% by firm 3 have collapsed.</p>
 <ol style="list-style-type: decimal">
 <li>What is the probability that a bridge collapses?<br />
 </li>
@@ -622,12 +622,12 @@ Here the vertical bar | stands for <em>conditional on</em> or <em>given that</em
 <p>Now, because <span class="math inline">\(P(A | B) = P( A \cap B)/P(B)\)</span>, we see that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if and only if <span class="math inline">\(P(A | B) = P(A)\)</span> or <span class="math inline">\(P(B | A) = P(B)\)</span>, provided that <span class="math inline">\(P(A) &gt; 0\)</span> and <span class="math inline">\(P(B) &gt; 0\)</span>. Definition <a href="probability.html#def:indep">2.8</a> has the advantage that it remains valid even if <span class="math inline">\(P(B) = 0\)</span> or <span class="math inline">\(P(A) = 0\)</span>, respectively. Intuitively, events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent if neither one has any impact on the probability of the other.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-39" class="example"><strong>Example 2.22  (Toss a fair coin 10 times)  </strong></span>Toss a fair coin 10 times. Let <span class="math inline">\(A = {\textrm{at least one head}}\)</span>. Let <span class="math inline">\(T_j\)</span> be the event that tails occurs on the <span class="math inline">\(j^{th}\)</span> toss. Find <span class="math inline">\(P(A)\)</span></p>
+<p><span id="exm:unnamed-chunk-40" class="example"><strong>Example 2.22  (Toss a fair coin 10 times)  </strong></span>Toss a fair coin 10 times. Let <span class="math inline">\(A = {\textrm{at least one head}}\)</span>. Let <span class="math inline">\(T_j\)</span> be the event that tails occurs on the <span class="math inline">\(j^{th}\)</span> toss. Find <span class="math inline">\(P(A)\)</span></p>
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-40" class="example"><strong>Example 2.23  (Unbalance Die Revisited)  </strong></span>In Example <a href="probability.html#exm:unbalanced">2.13</a>, if <span class="math inline">\(A\)</span> is the event that the die was 5, and <span class="math inline">\(B\)</span> is the event that the coin was tails, then calculate <span class="math inline">\(P(A), P(B)\)</span> and <span class="math inline">\(P(A\cap B)\)</span></p>
+<p><span id="exm:unnamed-chunk-41" class="example"><strong>Example 2.23  (Unbalance Die Revisited)  </strong></span>In Example <a href="probability.html#exm:unbalanced">2.13</a>, if <span class="math inline">\(A\)</span> is the event that the die was 5, and <span class="math inline">\(B\)</span> is the event that the coin was tails, then calculate <span class="math inline">\(P(A), P(B)\)</span> and <span class="math inline">\(P(A\cap B)\)</span></p>
 </div>
 
 

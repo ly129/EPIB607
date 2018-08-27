@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>EPIB 607</title>
+  <title>EPIB 607: Inferential Statistics</title>
   <meta name="description" content="Course material for EPIB 607 at McGill University">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="EPIB 607" />
+  <meta property="og:title" content="EPIB 607: Inferential Statistics" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://sahirbhatnagar.com/EPIB607" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="sahirbhatnagar/EPIB607" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="EPIB 607" />
+  <meta name="twitter:title" content="EPIB 607: Inferential Statistics" />
   
   <meta name="twitter:description" content="Course material for EPIB 607 at McGill University" />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-08-26">
+<meta name="date" content="2018-08-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -108,8 +108,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#audience"><i class="fa fa-check"></i>Audience</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-these-notes"><i class="fa fa-check"></i>About these notes</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#r-code-conventions"><i class="fa fa-check"></i>R Code Conventions</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#rendering-mathematical-formulae"><i class="fa fa-check"></i>Rendering Mathematical Formulae</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
@@ -117,9 +115,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html"><i class="fa fa-check"></i>Course Information</a><ul>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#target-syllabus"><i class="fa fa-check"></i>Target Syllabus</a><ul>
-<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#overview-and-descriptive-statistics-weeks-1-4"><i class="fa fa-check"></i>Overview and Descriptive Statistics (Weeks 1-4)</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#probability-weeks-1-4"><i class="fa fa-check"></i>Probability (Weeks 1-4)</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#discrete-random-variables-and-probability-distributions-weeks-1-4"><i class="fa fa-check"></i>Discrete Random Variables and Probability Distributions (Weeks 1-4)</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#continuous-random-variables-and-probability-distributions-weeks-5-8"><i class="fa fa-check"></i>Continuous Random Variables and Probability Distributions (Weeks 5-8)</a></li>
@@ -214,7 +214,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EPIB 607</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EPIB 607: Inferential Statistics</a>
           </h1>
         </div>
 
@@ -239,7 +239,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-42" class="example"><strong>Example 3.1  (Rainy days)  </strong></span>Count the number of days in February which have zero precipitation.</p>
+<p><span id="exm:unnamed-chunk-43" class="example"><strong>Example 3.1  (Rainy days)  </strong></span>Count the number of days in February which have zero precipitation.</p>
 <p><span class="math display">\[ \Omega = \left\{ 0,1,2,\ldots,28\right\} \]</span></p>
 <p>Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)</span> days have zero precipitation. <span class="math inline">\(E_{0},\ldots,E_{28}\)</span> partition <span class="math inline">\(\Omega\)</span>.</p>
 </div>
@@ -247,7 +247,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><br><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-43" class="example"><strong>Example 3.2  (Footbal Match)  </strong></span>Count the number of goals in a football match.</p>
+<p><span id="exm:unnamed-chunk-44" class="example"><strong>Example 3.2  (Footbal Match)  </strong></span>Count the number of goals in a football match.</p>
 <p><span class="math display">\[ \Omega = \left\{ 0,1,2,3,\ldots \right\} \]</span></p>
 Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)</span> goals in the match. <span class="math inline">\(E_{0},E_{1},E_{2},\ldots\)</span> partition <span class="math inline">\(\Omega\)</span><br />
 
@@ -263,7 +263,7 @@ Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)
 <p><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 3.3  (Operating Temperature)  </strong></span>Measure the operating temperature of an experimental process.</p>
+<p><span id="exm:unnamed-chunk-46" class="example"><strong>Example 3.3  (Operating Temperature)  </strong></span>Measure the operating temperature of an experimental process.</p>
 <p><span class="math display">\[ \Omega = \left\{ x: x &gt; T_{min} \right\} \]</span></p>
 </div>
 
@@ -307,7 +307,7 @@ Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)
 <p><br><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-47" class="example"><strong>Example 3.4  (Coin Toss)  </strong></span>Suppose a coin is tossed three times. Let <span class="math inline">\(X\)</span> be the number of heads observed. The sample space is</p>
+<p><span id="exm:unnamed-chunk-48" class="example"><strong>Example 3.4  (Coin Toss)  </strong></span>Suppose a coin is tossed three times. Let <span class="math inline">\(X\)</span> be the number of heads observed. The sample space is</p>
 <p><span class="math display">\[ \Omega = \left\lbrace \underbrace{HHT}_{3},\underbrace{HHT}_{2},\underbrace{HTH}_{2},\underbrace{HTT}_{1}, \underbrace{THH}_{2}, \underbrace{THT}_{1}, \underbrace{TTH}_{1}, \underbrace{TTT}_{0} \right\rbrace   \]</span></p>
 That is, we have <span class="math inline">\(X(HHH) = 3\)</span>, <span class="math inline">\(X(HHT) = 2\)</span>, <span class="math inline">\(X(HTH) = 2\)</span>, and so on. Hence <span class="math inline">\(R_X = \left\lbrace 0,1,2,3 \right\rbrace\)</span>
 </div>
@@ -323,25 +323,25 @@ That is, we have <span class="math inline">\(X(HHH) = 3\)</span>, <span class="m
 <p><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-48" class="example"><strong>Example 3.6  (A Very Simple Random Variable 2)  </strong></span>For the case <span class="math inline">\(\Omega = \left\lbrace \textrm{rain, snow, clear} \right\rbrace\)</span>, we might define a second random variable <span class="math inline">\(Y\)</span> by saying that <span class="math inline">\(Y = 0\)</span> if it rains, <span class="math inline">\(Y = -1/2\)</span> if it snows, and <span class="math inline">\(Y = 7/8\)</span> if it is clear. That is <span class="math inline">\(Y(rain) = 0\)</span>, <span class="math inline">\(Y(snow) = 1/2\)</span>, and <span class="math inline">\(Y(rain) = 7/8\)</span>.</p>
+<p><span id="exm:unnamed-chunk-49" class="example"><strong>Example 3.6  (A Very Simple Random Variable 2)  </strong></span>For the case <span class="math inline">\(\Omega = \left\lbrace \textrm{rain, snow, clear} \right\rbrace\)</span>, we might define a second random variable <span class="math inline">\(Y\)</span> by saying that <span class="math inline">\(Y = 0\)</span> if it rains, <span class="math inline">\(Y = -1/2\)</span> if it snows, and <span class="math inline">\(Y = 7/8\)</span> if it is clear. That is <span class="math inline">\(Y(rain) = 0\)</span>, <span class="math inline">\(Y(snow) = 1/2\)</span>, and <span class="math inline">\(Y(rain) = 7/8\)</span>.</p>
 </div>
 
 <p><br><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-49" class="example"><strong>Example 3.7  (A Very Simple Random Variable 3)  </strong></span>If the sample space corresponds to flipping three different coins, then we could let <span class="math inline">\(X\)</span> be the total number of heads showing, let <span class="math inline">\(Y\)</span> be the total number of tails showing, let <span class="math inline">\(Z = 0\)</span> if there is exactly one head, and otherwise <span class="math inline">\(Z = 17\)</span>.</p>
+<p><span id="exm:unnamed-chunk-50" class="example"><strong>Example 3.7  (A Very Simple Random Variable 3)  </strong></span>If the sample space corresponds to flipping three different coins, then we could let <span class="math inline">\(X\)</span> be the total number of heads showing, let <span class="math inline">\(Y\)</span> be the total number of tails showing, let <span class="math inline">\(Z = 0\)</span> if there is exactly one head, and otherwise <span class="math inline">\(Z = 17\)</span>.</p>
 </div>
 
 <p><br><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-50" class="example"><strong>Example 3.8  (Constants as Random Variables)  </strong></span>As a special case, every constant value <span class="math inline">\(c\)</span> is also a random variable, by saying that <span class="math inline">\(c(s) = c\)</span> for all <span class="math inline">\(s \in \Omega\)</span>. Thus, 5 is a random variable, as is 3 or −21.6.</p>
+<p><span id="exm:unnamed-chunk-51" class="example"><strong>Example 3.8  (Constants as Random Variables)  </strong></span>As a special case, every constant value <span class="math inline">\(c\)</span> is also a random variable, by saying that <span class="math inline">\(c(s) = c\)</span> for all <span class="math inline">\(s \in \Omega\)</span>. Thus, 5 is a random variable, as is 3 or −21.6.</p>
 </div>
 
 <p><br><br></p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-51" class="example"><strong>Example 3.9  (Indicator Functions)  </strong></span>If <span class="math inline">\(A\)</span> is any event, then we can define the indicator function of <span class="math inline">\(A\)</span>, written <span class="math inline">\(I_A\)</span>, to be the random variable</p>
+<p><span id="exm:unnamed-chunk-52" class="example"><strong>Example 3.9  (Indicator Functions)  </strong></span>If <span class="math inline">\(A\)</span> is any event, then we can define the indicator function of <span class="math inline">\(A\)</span>, written <span class="math inline">\(I_A\)</span>, to be the random variable</p>
 <p><span class="math display">\[I_A(s)  = \begin{cases} 1 &amp; s \in A \\ 0 &amp; s \notin A   \end{cases} \]</span></p>
 </div>
 
