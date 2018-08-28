@@ -1,4230 +1,0 @@
-
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-55
-  |                                                                         |..........................................................       |  90%
-  ordinary text without R code
-
-  |                                                                         |...........................................................      |  90%
-label: unnamed-chunk-56
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-57
-
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-58
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-
-label: unnamed-chunk-59
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-
-label: unnamed-chunk-60
-  |                                                                         |..............................................................   |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-61
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-62
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-63 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................................| 100%
-   inline R code fragments
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpWFSQde/rmarkdown-str56c6471bdbd2.html --mathjax --filter /usr/bin/pandoc-citeproc 
-[pandoc warning] Duplicate note reference `1' "source" (line 441, column 1)
-pandoc-citeproc: reference evans2004probability not found
-pandoc-citeproc: reference devore2011modern not found
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m[K> (B[mmake pdf
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book")'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: unnamed-chunk-4 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |......                                                           |  10%
-  ordinary text without R code
-
-  |                                                                         |.......                                                          |  10%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: no-stats (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  13%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.........                                                        |  14%
-  ordinary text without R code
-
-
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |..........                                                       |  15%
-  ordinary text without R code
-
-
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ name  : chr "Use of manual lap belts in cars equipped with automatic shoulder belt systems"
- $ engine: chr "example"
-
-  |                                                                         |..........                                                       |  16%
-  ordinary text without R code
-
-  |                                                                         |...........                                                      |  17%
-label: unnamed-chunk-9 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ name  : chr "Two nucleotide sequences"
- $ engine: chr "example"
-
-  |                                                                         |............                                                     |  19%
-  ordinary text without R code
-
-  |                                                                         |.............                                                    |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ name  : chr "Sample Space"
- $ engine: chr "definition"
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |.............                                                    |  21%
-label: unnamed-chunk-12 (with options) 
-List of 2
- $ name  : chr "Coin tossing"
- $ engine: chr "example"
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ name  : chr "Dice"
- $ engine: chr "example"
-
-  |                                                                         |...............                                                  |  23%
-  ordinary text without R code
-
-
-label: unnamed-chunk-14 (with options) 
-List of 2
- $ name  : chr "Proportions"
- $ engine: chr "example"
-
-  |                                                                         |................                                                 |  24%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  25%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ name  : chr "Time measurement"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  26%
-label: unnamed-chunk-16 (with options) 
-List of 2
- $ name  : chr "Temperature measurement"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  27%
-label: unnamed-chunk-17 (with options) 
-List of 2
- $ name  : chr "Biological Sequence Analysis"
- $ engine: chr "example"
-
-  |                                                                         |..................                                               |  28%
-  ordinary text without R code
-
-
-label: unnamed-chunk-18 (with options) 
-List of 2
- $ name  : chr "Event"
- $ engine: chr "definition"
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |...................                                              |  30%
-label: unnamed-chunk-19 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |....................                                             |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ name  : chr "Axioms (basic properties) of Probability"
- $ engine: chr "definition"
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-
-label: unnamed-chunk-21 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |.....................                                            |  33%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-22 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  35%
-label: unnamed-chunk-23 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  36%
-label: unnamed-chunk-24 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  37%
-  ordinary text without R code
-
-
-label: unnamed-chunk-25 (with options) 
-List of 2
- $ name  : chr "Product rule for ordered pairs"
- $ engine: chr "proposition"
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |.........................                                        |  39%
-label: unnamed-chunk-26 (with options) 
-List of 2
- $ name  : chr "Permutation"
- $ engine: chr "definition"
-
-  |                                                                         |..........................                                       |  39%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-27 (with options) 
-List of 2
- $ name  : chr "Combination"
- $ engine: chr "definition"
-
-  |                                                                         |..........................                                       |  41%
-  ordinary text without R code
-
-  |                                                                         |...........................                                      |  41%
-label: flipcoins (with options) 
-List of 2
- $ name  : chr "Flipping Coins"
- $ engine: chr "example"
-
-  |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: assembly (with options) 
-List of 2
- $ name  : chr "Assembly Lines"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.............................                                    |  44%
-label: condprob (with options) 
-List of 2
- $ name  : chr "Conditional Probability"
- $ engine: chr "definition"
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-
-label: unnamed-chunk-28 (with options) 
-List of 2
- $ name  : chr "Balanced die"
- $ engine: chr "example"
-
-  |                                                                         |..............................                                   |  46%
-  ordinary text without R code
-
-
-label: unnamed-chunk-29 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v1"
- $ engine: chr "example"
-
-  |                                                                         |...............................                                  |  47%
-  ordinary text without R code
-
-  |                                                                         |...............................                                  |  48%
-label: unnamed-chunk-30 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v2"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  49%
-label: unbalanced (with options) 
-List of 2
- $ name  : chr "Unbalanced Die"
- $ engine: chr "example"
-
-  |                                                                         |................................                                 |  50%
-  ordinary text without R code
-
-  |                                                                         |.................................                                |  50%
-label: unnamed-chunk-31 (with options) 
-List of 2
- $ name  : chr "Two Balanced Coins"
- $ engine: chr "example"
-
-  |                                                                         |.................................                                |  51%
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  52%
-label: unnamed-chunk-32 (with options) 
-List of 2
- $ name  : chr "Two Cards"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  53%
-label: unnamed-chunk-33 (with options) 
-List of 2
- $ name  : chr "Numbers in a Hat"
- $ engine: chr "example"
-
-  |                                                                         |...................................                              |  54%
-  ordinary text without R code
-
-
-label: unnamed-chunk-34 (with options) 
-List of 2
- $ name  : chr "One Card"
- $ engine: chr "example"
-
-  |                                                                         |....................................                             |  55%
-  ordinary text without R code
-
-
-label: multformula (with options) 
-List of 2
- $ name  : chr "Multiplicative Rule"
- $ engine: chr "definition"
-
-  |                                                                         |....................................                             |  56%
-  ordinary text without R code
-
-  |                                                                         |.....................................                            |  57%
-label: unnamed-chunk-35 (with options) 
-List of 2
- $ name  : chr "Fish in a Tank"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: totprob (with options) 
-List of 2
- $ name  : chr "Law of Total Probability"
- $ engine: chr "theorem"
-
-  |                                                                         |......................................                           |  59%
-  ordinary text without R code
-
-  |                                                                         |.......................................                          |  59%
-label: unnamed-chunk-36 (with options) 
-List of 2
- $ name  : chr "Long Hair"
- $ engine: chr "example"
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |.......................................                          |  61%
-label: bayesdef (with options) 
-List of 2
- $ name  : chr "Bayes' Rule"
- $ engine: chr "theorem"
-
-  |                                                                         |........................................                         |  61%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-37 (with options) 
-List of 2
- $ name  : chr "Urns"
- $ engine: chr "example"
-
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-
-label: unnamed-chunk-38 (with options) 
-List of 2
- $ name  : chr "Large Bridges"
- $ engine: chr "example"
-
-  |                                                                         |..........................................                       |  64%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: indep (with options) 
-List of 2
- $ name  : chr "Indepent Events"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |...........................................                      |  66%
-label: unnamed-chunk-39 (with options) 
-List of 2
- $ name  : chr "Toss a fair coin 10 times"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  67%
-label: unnamed-chunk-40 (with options) 
-List of 2
- $ name  : chr "Unbalance Die Revisited"
- $ engine: chr "example"
-
-  |                                                                         |............................................                     |  68%
-  ordinary text without R code
-
-
-label: unnamed-chunk-41 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  70%
-label: unnamed-chunk-42 (with options) 
-List of 2
- $ name  : chr "Rainy days"
- $ engine: chr "example"
-
-  |                                                                         |..............................................                   |  70%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-43 (with options) 
-List of 2
- $ name  : chr "Footbal Match"
- $ engine: chr "example"
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-
-label: unnamed-chunk-44 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |...............................................                  |  73%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-45 (with options) 
-List of 2
- $ name  : chr "Operating Temperature"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  75%
-label: rv (with options) 
-List of 2
- $ name  : chr "Random Variable"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  76%
-label: unnamed-chunk-46 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |..................................................               |  77%
-  ordinary text without R code
-
-
-label: unnamed-chunk-47 (with options) 
-List of 2
- $ name  : chr "Coin Toss"
- $ engine: chr "example"
-
-  |                                                                         |...................................................              |  78%
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  79%
-label: simple (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable"
- $ engine: chr "example"
-
-  |                                                                         |....................................................             |  79%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-48 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 2"
- $ engine: chr "example"
-
-  |                                                                         |....................................................             |  81%
-  ordinary text without R code
-
-  |                                                                         |.....................................................            |  81%
-label: unnamed-chunk-49 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 3"
- $ engine: chr "example"
-
-  |                                                                         |.....................................................            |  82%
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-50 (with options) 
-List of 2
- $ name  : chr "Constants as Random Variables"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................................................          |  84%
-label: unnamed-chunk-51 (with options) 
-List of 2
- $ name  : chr "Indicator Functions"
- $ engine: chr "example"
-
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-
-label: unnamed-chunk-52 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........................................................         |  86%
-  ordinary text without R code
-
-
-label: unnamed-chunk-53 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.........................................................        |  87%
-  ordinary text without R code
-
-  |                                                                         |.........................................................        |  88%
-label: unnamed-chunk-54
-
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-55
-  |                                                                         |..........................................................       |  90%
-  ordinary text without R code
-
-  |                                                                         |...........................................................      |  90%
-label: unnamed-chunk-56
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-57
-
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-58
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-
-label: unnamed-chunk-59
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-
-label: unnamed-chunk-60
-  |                                                                         |..............................................................   |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-61
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-62
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-63 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................................| 100%
-   inline R code fragments
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.tex --table-of-contents --toc-depth 2 --template /home/sahir/Rlibs/R3.4.4/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable 'compact-title:yes' --variable tables=yes --standalone 
-[pandoc warning] Duplicate note reference `1' "source" (line 449, column 1)
-
-Output created: _book/epib607.pdf
-[1] "/home/sahir/git_repositories/epib607/_book/epib607.pdf"
-Rscript -e "browseURL('_book/epib607.pdf')"
-]0;/home/sahir/git_repositories/epib607> (B[m echo 9490B9B8 && /usr/bin/env && echo 3DF3559
-9490B9B8
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-RS_PPM_FD_READ=15
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/RtmpLhv2Rs
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=E30B3FB4
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=31242
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=23
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2693
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/42931-rsession
-RSTUDIO_SESSION_PORT=42931
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=D6730B8C
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=4
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/u^C
-]0;/home/sahir/git_repositories/epib607> (B[mmake git
-git checkout master
-M	.Rproj.user/74EEE104/console06/D6730B8C
-M	.Rproj.user/74EEE104/console06/INDEX001
-M	.Rproj.user/74EEE104/sources/prop/EBA10D41
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B-contents
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05-contents
-M	_book/appendix-b.html
-M	_book/assignments.html
-M	_book/continuous-variables-and-probability-distributions.html
-M	_book/discrete-random-variables-and-probability-distributions.html
-M	_book/distribution-tables.html
-M	_book/epib607.pdf
-M	_book/epib607.tex
-M	_book/index.html
-M	_book/intro.html
-M	_book/prerequisites.html
-M	_book/probability.html
-M	_book/quiz.html
-M	_book/r-code.html
-M	_book/references.html
-M	_book/search_index.json
-M	_book/slides.html
-M	_book/vectorization-apply-and-for-loops.html
-D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.RData
-D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdb
-D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdx
-D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.RData
-D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdb
-D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdx
-D	epib607.knit.md
-D	epib607.utf8.md
-M	index.Rmd
-Already on 'master'
-Your branch is up to date with 'origin/master'.
-git add -fA
-git commit --allow-empty -m ""
-Aborting commit due to empty commit message.
-Makefile:33: recipe for target 'git' failed
-make: *** [git] Error 1
-]0;/home/sahir/git_repositories/epib607> (B[m(reverse-i-search)`': m': make git[1@a[C[C[C[1@k[C[C[C[1@e[C[C[C[C[C[C[C[Cpdf[C[C[C[C[Cbuild[C[C[C[C[Cfoo='still working on intro almost done' git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24P> (B[m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@w[1@o[1@r[1@k[1@i[1@n[1@g[1@ [1@o[1@n[1@ [1@s[1@y[1@l[1@l[1@a[1@b[1@u[1@s
-git checkout master
-M	.Rproj.user/74EEE104/console06/D6730B8C
-M	.Rproj.user/74EEE104/console06/INDEX001
-M	.Rproj.user/74EEE104/sources/prop/EBA10D41
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/4D637D0B-contents
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05
-M	.Rproj.user/74EEE104/sources/s-E30B3FB4/51F40F05-contents
-M	_book/appendix-b.html
-M	_book/assignments.html
-M	_book/continuous-variables-and-probability-distributions.html
-A	_book/course-information.html
-M	_book/discrete-random-variables-and-probability-distributions.html
-M	_book/distribution-tables.html
-M	_book/epib607.pdf
-M	_book/epib607.tex
-A	_book/images/jim.png
-A	_book/images/sahir.png
-M	_book/index.html
-M	_book/intro.html
-M	_book/prerequisites.html
-M	_book/probability.html
-M	_book/quiz.html
-M	_book/r-code.html
-M	_book/references.html
-M	_book/search_index.json
-M	_book/slides.html
-M	_book/vectorization-apply-and-for-loops.html
-A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.RData
-A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdb
-A	_bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdx
-D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.RData
-D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdb
-D	_bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdx
-A	_bookdown_files/epib607_cache/latex/show-code-style_d06ef813d555a157793dcf36d130673f.RData
-A	_bookdown_files/epib607_cache/latex/show-code-style_d06ef813d555a157793dcf36d130673f.rdb
-A	_bookdown_files/epib607_cache/latex/show-code-style_d06ef813d555a157793dcf36d130673f.rdx
-A	_bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.RData
-A	_bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdb
-A	_bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdx
-A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.RData
-A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdb
-A	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdx
-D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.RData
-D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdb
-D	_bookdown_files/epib607_cache/latex/unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdx
-D	epib607.knit.md
-D	epib607.utf8.md
-A	images/jim.png
-A	images/sahir.png
-M	index.Rmd
-Already on 'master'
-Your branch is up to date with 'origin/master'.
-git add -fA
-git commit --allow-empty -m "working on syllabus"
-[master 5c54018] working on syllabus
- 45 files changed, 5453 insertions(+), 3189 deletions(-)
- create mode 100644 _book/course-information.html
- create mode 100644 _book/images/jim.png
- create mode 100644 _book/images/sahir.png
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.RData
- rename _bookdown_files/epib607_cache/html/{unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdb => unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdb} (100%)
- rename _bookdown_files/epib607_cache/html/{unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.rdx => unnamed-chunk-2_45a708e439230cc71496b28d9dc2d12b.rdx} (100%)
- delete mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_67d44b37cc647c4eaa775f447ee76553.RData
- rename _bookdown_files/epib607_cache/latex/{unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.RData => show-code-style_d06ef813d555a157793dcf36d130673f.RData} (90%)
- rename _bookdown_files/epib607_cache/latex/{unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdb => show-code-style_d06ef813d555a157793dcf36d130673f.rdb} (100%)
- rename _bookdown_files/epib607_cache/latex/{unnamed-chunk-2_e2bf3adec08e5be1dca22fbc083565f6.rdx => show-code-style_d06ef813d555a157793dcf36d130673f.rdx} (100%)
- create mode 100644 _bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.RData
- create mode 100644 _bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdb
- create mode 100644 _bookdown_files/epib607_cache/latex/show-sample-output_a2f91f134dc0f378454db15b5862ac40.rdx
- create mode 100644 _bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.RData
- create mode 100644 _bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdb
- create mode 100644 _bookdown_files/epib607_cache/latex/unnamed-chunk-2_5d6eb455879f7b748de8c03d5aababd6.rdx
- delete mode 100644 epib607.knit.md
- delete mode 100644 epib607.utf8.md
- create mode 100644 images/jim.png
- create mode 100644 images/sahir.png
-git push -f -q origin master
-fatal: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': sahirbhatnagar
-fatal: cannot run rpostback-askpass: No such file or directory
-Password for 'https://sahirbhatnagar@github.com': 
-remote: Invalid username or password.
-fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/'
-Makefile:33: recipe for target 'git' failed
-make: *** [git] Error 128
-]0;/home/sahir/git_repositories/epib607> (B[mmake foo='working on syllabus' git
-git checkout master
-M	.Rproj.user/74EEE104/console06/D6730B8C
-Already on 'master'
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-git add -fA
-git commit --allow-empty -m "working on syllabus"
-[master 15229c3] working on syllabus
- 1 file changed, 87 insertions(+)
-git push -f -q origin master
-fatal: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': sahirbhatnagar
-fatal: cannot run rpostback-askpass: No such file or directory
-Password for 'https://sahirbhatnagar@github.com': 
-remote: Invalid username or password.
-fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/'
-Makefile:33: recipe for target 'git' failed
-make: *** [git] Error 128
-]0;/home/sahir/git_repositories/epib607> (B[mmake foo='working on syllabus' git
-git checkout master
-M	.Rproj.user/74EEE104/console06/D6730B8C
-Already on 'master'
-Your branch is ahead of 'origin/master' by 2 commits.
-  (use "git push" to publish your local commits)
-git add -fA
-git commit --allow-empty -m "working on syllabus"
-[master fab72ee] working on syllabus
- 1 file changed, 19 insertions(+)
-git push -f -q origin master
-fatal: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': sahirbhatnagar
-fatal: cannot run rpostback-askpass: No such file or directory
-Password for 'https://sahirbhatnagar@github.com': 
-remote: Invalid username or password.
-fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/'
-Makefile:33: recipe for target 'git' failed
-make: *** [git] Error 128
-]0;/home/sahir/git_repositories/epib607> (B[mmake foo='working on syllabus' git
-git checkout master
-M	.Rproj.user/74EEE104/console06/D6730B8C
-Already on 'master'
-Your branch is ahead of 'origin/master' by 3 commits.
-  (use "git push" to publish your local commits)
-git add -fA
-git commit --allow-empty -m "working on syllabus"
-[master 3467676] working on syllabus
- 1 file changed, 26 insertions(+), 1 deletion(-)
-git push -f -q origin master
-fatal: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': sahirbhatnagar
-fatal: cannot run rpostback-askpass: No such file or directory
-[K> (B[mmake foo='working on syllabus' git[C[C[C[C[C[C[Cgit[Kpdfbuildfoo='still working on intro almost done' git[C[C[C[C[C[C[Cbuild[K
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = FALSE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   4%
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   5%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-Quitting from lines 274-277 (epib607.Rmd) 
-Error in dimnames(x) <- dn : 
-  length of 'dimnames' [2] not equal to array extent
-Calls: <Anonymous> ... withVisible -> eval -> eval -> <Anonymous> -> colnames<-
-
-Execution halted
-Makefile:8: recipe for target 'html' failed
-make[1]: *** [html] Error 1
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Makefile:15: recipe for target 'build' failed
-make: *** [build] Error 2
-]0;/home/sahir/git_repositories/epib607> (B[m[K> (B[m[K> (B[m[K> (B[m[K> (B[m[K> (B[m[K> (B[m[K> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = FALSE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   4%
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   5%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |......                                                           |  10%
-  ordinary text without R code
-
-  |                                                                         |.......                                                          |  10%
-label: unnamed-chunk-5 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........                                                         |  12%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  13%
-label: no-stats (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |.........                                                        |  13%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  14%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |..........                                                       |  15%
-  ordinary text without R code
-
-
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |..........                                                       |  16%
-  ordinary text without R code
-
-  |                                                                         |...........                                                      |  17%
-label: unnamed-chunk-9 (with options) 
-List of 2
- $ name  : chr "Use of manual lap belts in cars equipped with automatic shoulder belt systems"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ name  : chr "Two nucleotide sequences"
- $ engine: chr "example"
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-
-label: unnamed-chunk-12 (with options) 
-List of 2
- $ name  : chr "Sample Space"
- $ engine: chr "definition"
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ name  : chr "Coin tossing"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............                                                  |  23%
-label: unnamed-chunk-14 (with options) 
-List of 2
- $ name  : chr "Dice"
- $ engine: chr "example"
-
-  |                                                                         |...............                                                  |  24%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ name  : chr "Proportions"
- $ engine: chr "example"
-
-  |                                                                         |................                                                 |  25%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  25%
-label: unnamed-chunk-16 (with options) 
-List of 2
- $ name  : chr "Time measurement"
- $ engine: chr "example"
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-17 (with options) 
-List of 2
- $ name  : chr "Temperature measurement"
- $ engine: chr "example"
-
-  |                                                                         |..................                                               |  27%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-18 (with options) 
-List of 2
- $ name  : chr "Biological Sequence Analysis"
- $ engine: chr "example"
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-
-label: unnamed-chunk-19 (with options) 
-List of 2
- $ name  : chr "Event"
- $ engine: chr "definition"
-
-  |                                                                         |...................                                              |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-
-  ordinary text without R code
-
-  |                                                                         |.....................                                            |  32%
-label: unnamed-chunk-21 (with options) 
-List of 2
- $ name  : chr "Axioms (basic properties) of Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  33%
-label: unnamed-chunk-22 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |......................                                           |  34%
-  ordinary text without R code
-
-
-label: unnamed-chunk-23 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  36%
-label: unnamed-chunk-24 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  36%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-25 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  38%
-  ordinary text without R code
-
-  |                                                                         |.........................                                        |  38%
-label: unnamed-chunk-26 (with options) 
-List of 2
- $ name  : chr "Product rule for ordered pairs"
- $ engine: chr "proposition"
-
-  |                                                                         |.........................                                        |  39%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  39%
-label: unnamed-chunk-27 (with options) 
-List of 2
- $ name  : chr "Permutation"
- $ engine: chr "definition"
-
-  |                                                                         |..........................                                       |  40%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  41%
-label: unnamed-chunk-28 (with options) 
-List of 2
- $ name  : chr "Combination"
- $ engine: chr "definition"
-
-  |                                                                         |...........................                                      |  41%
-  ordinary text without R code
-
-  |                                                                         |...........................                                      |  42%
-label: flipcoins (with options) 
-List of 2
- $ name  : chr "Flipping Coins"
- $ engine: chr "example"
-
-  |                                                                         |............................                                     |  43%
-  ordinary text without R code
-
-
-label: assembly (with options) 
-List of 2
- $ name  : chr "Assembly Lines"
- $ engine: chr "example"
-
-  |                                                                         |.............................                                    |  44%
-  ordinary text without R code
-
-  |                                                                         |.............................                                    |  45%
-label: condprob (with options) 
-List of 2
- $ name  : chr "Conditional Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-29 (with options) 
-List of 2
- $ name  : chr "Balanced die"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-30 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v1"
- $ engine: chr "example"
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-
-label: unnamed-chunk-31 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v2"
- $ engine: chr "example"
-
-  |                                                                         |................................                                 |  49%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  50%
-label: unbalanced (with options) 
-List of 2
- $ name  : chr "Unbalanced Die"
- $ engine: chr "example"
-
-  |                                                                         |.................................                                |  50%
-  ordinary text without R code
-
-  |                                                                         |.................................                                |  51%
-label: unnamed-chunk-32 (with options) 
-List of 2
- $ name  : chr "Two Balanced Coins"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  52%
-  ordinary text without R code
-
-
-label: unnamed-chunk-33 (with options) 
-List of 2
- $ name  : chr "Two Cards"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  53%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  54%
-label: unnamed-chunk-34 (with options) 
-List of 2
- $ name  : chr "Numbers in a Hat"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-35 (with options) 
-List of 2
- $ name  : chr "One Card"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  56%
-label: multformula (with options) 
-List of 2
- $ name  : chr "Multiplicative Rule"
- $ engine: chr "definition"
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-
-label: unnamed-chunk-36 (with options) 
-List of 2
- $ name  : chr "Fish in a Tank"
- $ engine: chr "example"
-
-  |                                                                         |......................................                           |  58%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
-label: totprob (with options) 
-List of 2
- $ name  : chr "Law of Total Probability"
- $ engine: chr "theorem"
-
-  |                                                                         |.......................................                          |  59%
-  ordinary text without R code
-
-  |                                                                         |.......................................                          |  60%
-label: unnamed-chunk-37 (with options) 
-List of 2
- $ name  : chr "Long Hair"
- $ engine: chr "example"
-
-  |                                                                         |.......................................                          |  61%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  61%
-label: bayesdef (with options) 
-List of 2
- $ name  : chr "Bayes' Rule"
- $ engine: chr "theorem"
-
-  |                                                                         |........................................                         |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  62%
-label: unnamed-chunk-38 (with options) 
-List of 2
- $ name  : chr "Urns"
- $ engine: chr "example"
-
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  64%
-label: unnamed-chunk-39 (with options) 
-List of 2
- $ name  : chr "Large Bridges"
- $ engine: chr "example"
-
-  |                                                                         |..........................................                       |  64%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: indep (with options) 
-List of 2
- $ name  : chr "Indepent Events"
- $ engine: chr "definition"
-
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-
-label: unnamed-chunk-40 (with options) 
-List of 2
- $ name  : chr "Toss a fair coin 10 times"
- $ engine: chr "example"
-
-  |                                                                         |...........................................                      |  67%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-41 (with options) 
-List of 2
- $ name  : chr "Unbalance Die Revisited"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  69%
-label: unnamed-chunk-42 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  70%
-label: unnamed-chunk-43 (with options) 
-List of 2
- $ name  : chr "Rainy days"
- $ engine: chr "example"
-
-  |                                                                         |..............................................                   |  71%
-  ordinary text without R code
-
-
-label: unnamed-chunk-44 (with options) 
-List of 2
- $ name  : chr "Footbal Match"
- $ engine: chr "example"
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |...............................................                  |  73%
-label: unnamed-chunk-45 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |................................................                 |  73%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-46 (with options) 
-List of 2
- $ name  : chr "Operating Temperature"
- $ engine: chr "example"
-
-  |                                                                         |................................................                 |  75%
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  75%
-label: rv (with options) 
-List of 2
- $ name  : chr "Random Variable"
- $ engine: chr "definition"
-
-  |                                                                         |.................................................                |  76%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  76%
-label: unnamed-chunk-47 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |..................................................               |  77%
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-48 (with options) 
-List of 2
- $ name  : chr "Coin Toss"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  79%
-label: simple (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable"
- $ engine: chr "example"
-
-  |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-
-label: unnamed-chunk-49 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 2"
- $ engine: chr "example"
-
-  |                                                                         |.....................................................            |  81%
-  ordinary text without R code
-
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-50 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 3"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-51 (with options) 
-List of 2
- $ name  : chr "Constants as Random Variables"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................................................          |  84%
-label: unnamed-chunk-52 (with options) 
-List of 2
- $ name  : chr "Indicator Functions"
- $ engine: chr "example"
-
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-
-label: unnamed-chunk-53 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........................................................         |  86%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  87%
-label: unnamed-chunk-54 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.........................................................        |  87%
-  ordinary text without R code
-
-  |                                                                         |.........................................................        |  88%
-label: unnamed-chunk-55
-  |                                                                         |..........................................................       |  89%
-  ordinary text without R code
-
-
-label: unnamed-chunk-56
-  |                                                                         |..........................................................       |  90%
-  ordinary text without R code
-
-  |                                                                         |...........................................................      |  90%
-label: unnamed-chunk-57
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-58
-
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-59
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-
-label: unnamed-chunk-60
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  96%
-label: unnamed-chunk-61
-  |                                                                         |...............................................................  |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-62
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-63
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-64 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................................| 100%
-   inline R code fragments
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmprCflaj/rmarkdown-str174c547e3e5b.html --mathjax --filter /usr/bin/pandoc-citeproc 
-[pandoc warning] Duplicate note reference `1' "source" (line 452, column 1)
-pandoc-citeproc: reference evans2004probability not found
-pandoc-citeproc: reference devore2011modern not found
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m echo 1080E521 && /usr/bin/env && echo 3B0A03B6
-1080E521
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-RS_PPM_FD_READ=15
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/RtmpLhv2Rs
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=772A3309
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=31242
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=23
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2693
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/42931-rsession
-RSTUDIO_SESSION_PORT=42931
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=D6730B8C
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=5
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/^C
-]0;/home/sahir/git_repositories/epib607> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = FALSE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   4%
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   5%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |......                                                           |  10%
-  ordinary text without R code
-
-  |                                                                         |.......                                                          |  10%
-label: unnamed-chunk-5 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........                                                         |  12%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  13%
-label: no-stats (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |.........                                                        |  13%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  14%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |..........                                                       |  15%
-  ordinary text without R code
-
-
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |..........                                                       |  16%
-  ordinary text without R code
-
-  |                                                                         |...........                                                      |  17%
-label: unnamed-chunk-9 (with options) 
-List of 2
- $ name  : chr "Use of manual lap belts in cars equipped with automatic shoulder belt systems"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ name  : chr "Two nucleotide sequences"
- $ engine: chr "example"
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-
-label: unnamed-chunk-12 (with options) 
-List of 2
- $ name  : chr "Sample Space"
- $ engine: chr "definition"
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ name  : chr "Coin tossing"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............                                                  |  23%
-label: unnamed-chunk-14 (with options) 
-List of 2
- $ name  : chr "Dice"
- $ engine: chr "example"
-
-  |                                                                         |...............                                                  |  24%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ name  : chr "Proportions"
- $ engine: chr "example"
-
-  |                                                                         |................                                                 |  25%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  25%
-label: unnamed-chunk-16 (with options) 
-List of 2
- $ name  : chr "Time measurement"
- $ engine: chr "example"
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-17 (with options) 
-List of 2
- $ name  : chr "Temperature measurement"
- $ engine: chr "example"
-
-  |                                                                         |..................                                               |  27%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-18 (with options) 
-List of 2
- $ name  : chr "Biological Sequence Analysis"
- $ engine: chr "example"
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-
-label: unnamed-chunk-19 (with options) 
-List of 2
- $ name  : chr "Event"
- $ engine: chr "definition"
-
-  |                                                                         |...................                                              |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-
-  ordinary text without R code
-
-  |                                                                         |.....................                                            |  32%
-label: unnamed-chunk-21 (with options) 
-List of 2
- $ name  : chr "Axioms (basic properties) of Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  33%
-label: unnamed-chunk-22 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |......................                                           |  34%
-  ordinary text without R code
-
-
-label: unnamed-chunk-23 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  36%
-label: unnamed-chunk-24 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  36%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-25 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  38%
-  ordinary text without R code
-
-  |                                                                         |.........................                                        |  38%
-label: unnamed-chunk-26 (with options) 
-List of 2
- $ name  : chr "Product rule for ordered pairs"
- $ engine: chr "proposition"
-
-  |                                                                         |.........................                                        |  39%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  39%
-label: unnamed-chunk-27 (with options) 
-List of 2
- $ name  : chr "Permutation"
- $ engine: chr "definition"
-
-  |                                                                         |..........................                                       |  40%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  41%
-label: unnamed-chunk-28 (with options) 
-List of 2
- $ name  : chr "Combination"
- $ engine: chr "definition"
-
-  |                                                                         |...........................                                      |  41%
-  ordinary text without R code
-
-  |                                                                         |...........................                                      |  42%
-label: flipcoins (with options) 
-List of 2
- $ name  : chr "Flipping Coins"
- $ engine: chr "example"
-
-  |                                                                         |............................                                     |  43%
-  ordinary text without R code
-
-
-label: assembly (with options) 
-List of 2
- $ name  : chr "Assembly Lines"
- $ engine: chr "example"
-
-  |                                                                         |.............................                                    |  44%
-  ordinary text without R code
-
-  |                                                                         |.............................                                    |  45%
-label: condprob (with options) 
-List of 2
- $ name  : chr "Conditional Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-29 (with options) 
-List of 2
- $ name  : chr "Balanced die"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-30 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v1"
- $ engine: chr "example"
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-
-label: unnamed-chunk-31 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v2"
- $ engine: chr "example"
-
-  |                                                                         |................................                                 |  49%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  50%
-label: unbalanced (with options) 
-List of 2
- $ name  : chr "Unbalanced Die"
- $ engine: chr "example"
-
-  |                                                                         |.................................                                |  50%
-  ordinary text without R code
-
-  |                                                                         |.................................                                |  51%
-label: unnamed-chunk-32 (with options) 
-List of 2
- $ name  : chr "Two Balanced Coins"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  52%
-  ordinary text without R code
-
-
-label: unnamed-chunk-33 (with options) 
-List of 2
- $ name  : chr "Two Cards"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  53%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  54%
-label: unnamed-chunk-34 (with options) 
-List of 2
- $ name  : chr "Numbers in a Hat"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-35 (with options) 
-List of 2
- $ name  : chr "One Card"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  56%
-label: multformula (with options) 
-List of 2
- $ name  : chr "Multiplicative Rule"
- $ engine: chr "definition"
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-
-label: unnamed-chunk-36 (with options) 
-List of 2
- $ name  : chr "Fish in a Tank"
- $ engine: chr "example"
-
-  |                                                                         |......................................                           |  58%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
-label: totprob (with options) 
-List of 2
- $ name  : chr "Law of Total Probability"
- $ engine: chr "theorem"
-
-  |                                                                         |.......................................                          |  59%
-  ordinary text without R code
-
-  |                                                                         |.......................................                          |  60%
-label: unnamed-chunk-37 (with options) 
-List of 2
- $ name  : chr "Long Hair"
- $ engine: chr "example"
-
-  |                                                                         |.......................................                          |  61%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  61%
-label: bayesdef (with options) 
-List of 2
- $ name  : chr "Bayes' Rule"
- $ engine: chr "theorem"
-
-  |                                                                         |........................................                         |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  62%
-label: unnamed-chunk-38 (with options) 
-List of 2
- $ name  : chr "Urns"
- $ engine: chr "example"
-
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  64%
-label: unnamed-chunk-39 (with options) 
-List of 2
- $ name  : chr "Large Bridges"
- $ engine: chr "example"
-
-  |                                                                         |..........................................                       |  64%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: indep (with options) 
-List of 2
- $ name  : chr "Indepent Events"
- $ engine: chr "definition"
-
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-
-label: unnamed-chunk-40 (with options) 
-List of 2
- $ name  : chr "Toss a fair coin 10 times"
- $ engine: chr "example"
-
-  |                                                                         |...........................................                      |  67%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-41 (with options) 
-List of 2
- $ name  : chr "Unbalance Die Revisited"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  69%
-label: unnamed-chunk-42 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  70%
-label: unnamed-chunk-43 (with options) 
-List of 2
- $ name  : chr "Rainy days"
- $ engine: chr "example"
-
-  |                                                                         |..............................................                   |  71%
-  ordinary text without R code
-
-
-label: unnamed-chunk-44 (with options) 
-List of 2
- $ name  : chr "Footbal Match"
- $ engine: chr "example"
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |...............................................                  |  73%
-label: unnamed-chunk-45 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |................................................                 |  73%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-46 (with options) 
-List of 2
- $ name  : chr "Operating Temperature"
- $ engine: chr "example"
-
-  |                                                                         |................................................                 |  75%
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  75%
-label: rv (with options) 
-List of 2
- $ name  : chr "Random Variable"
- $ engine: chr "definition"
-
-  |                                                                         |.................................................                |  76%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  76%
-label: unnamed-chunk-47 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |..................................................               |  77%
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-48 (with options) 
-List of 2
- $ name  : chr "Coin Toss"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  79%
-label: simple (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable"
- $ engine: chr "example"
-
-  |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-
-label: unnamed-chunk-49 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 2"
- $ engine: chr "example"
-
-  |                                                                         |.....................................................            |  81%
-  ordinary text without R code
-
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-50 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 3"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-51 (with options) 
-List of 2
- $ name  : chr "Constants as Random Variables"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................................................          |  84%
-label: unnamed-chunk-52 (with options) 
-List of 2
- $ name  : chr "Indicator Functions"
- $ engine: chr "example"
-
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-
-label: unnamed-chunk-53 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........................................................         |  86%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  87%
-label: unnamed-chunk-54 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.........................................................        |  87%
-  ordinary text without R code
-
-  |                                                                         |.........................................................        |  88%
-label: unnamed-chunk-55
-  |                                                                         |..........................................................       |  89%
-  ordinary text without R code
-
-
-label: unnamed-chunk-56
-  |                                                                         |..........................................................       |  90%
-  ordinary text without R code
-
-  |                                                                         |...........................................................      |  90%
-label: unnamed-chunk-57
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-58
-
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-59
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-
-label: unnamed-chunk-60
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  96%
-label: unnamed-chunk-61
-  |                                                                         |...............................................................  |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-62
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-63
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-64 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................................| 100%
-   inline R code fragments
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpDuPbtJ/rmarkdown-str1a196744ef64.html --mathjax --filter /usr/bin/pandoc-citeproc 
-[pandoc warning] Duplicate note reference `1' "source" (line 452, column 1)
-pandoc-citeproc: reference evans2004probability not found
-pandoc-citeproc: reference devore2011modern not found
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m echo 1080E521 && /usr/bin/env && echo 3B0A03B6
-1080E521
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-RS_PPM_FD_READ=15
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/RtmpLhv2Rs
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=772A3309
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=31242
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=23
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2693
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/42931-rsession
-RSTUDIO_SESSION_PORT=42931
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=D6730B8C
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=5
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/^C
-]0;/home/sahir/git_repositories/epib607> (B[m[K> (B[m[K> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = FALSE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   4%
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   5%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |......                                                           |  10%
-  ordinary text without R code
-
-  |                                                                         |.......                                                          |  10%
-label: unnamed-chunk-5 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........                                                         |  12%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  13%
-label: no-stats (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |.........                                                        |  13%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  14%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |..........                                                       |  15%
-  ordinary text without R code
-
-
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |..........                                                       |  16%
-  ordinary text without R code
-
-  |                                                                         |...........                                                      |  17%
-label: unnamed-chunk-9 (with options) 
-List of 2
- $ name  : chr "Use of manual lap belts in cars equipped with automatic shoulder belt systems"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ name  : chr "Two nucleotide sequences"
- $ engine: chr "example"
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-
-label: unnamed-chunk-12 (with options) 
-List of 2
- $ name  : chr "Sample Space"
- $ engine: chr "definition"
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ name  : chr "Coin tossing"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............                                                  |  23%
-label: unnamed-chunk-14 (with options) 
-List of 2
- $ name  : chr "Dice"
- $ engine: chr "example"
-
-  |                                                                         |...............                                                  |  24%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ name  : chr "Proportions"
- $ engine: chr "example"
-
-  |                                                                         |................                                                 |  25%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  25%
-label: unnamed-chunk-16 (with options) 
-List of 2
- $ name  : chr "Time measurement"
- $ engine: chr "example"
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-17 (with options) 
-List of 2
- $ name  : chr "Temperature measurement"
- $ engine: chr "example"
-
-  |                                                                         |..................                                               |  27%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-18 (with options) 
-List of 2
- $ name  : chr "Biological Sequence Analysis"
- $ engine: chr "example"
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-
-label: unnamed-chunk-19 (with options) 
-List of 2
- $ name  : chr "Event"
- $ engine: chr "definition"
-
-  |                                                                         |...................                                              |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-
-  ordinary text without R code
-
-  |                                                                         |.....................                                            |  32%
-label: unnamed-chunk-21 (with options) 
-List of 2
- $ name  : chr "Axioms (basic properties) of Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  33%
-label: unnamed-chunk-22 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |......................                                           |  34%
-  ordinary text without R code
-
-
-label: unnamed-chunk-23 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  36%
-label: unnamed-chunk-24 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  36%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-25 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  38%
-  ordinary text without R code
-
-  |                                                                         |.........................                                        |  38%
-label: unnamed-chunk-26 (with options) 
-List of 2
- $ name  : chr "Product rule for ordered pairs"
- $ engine: chr "proposition"
-
-  |                                                                         |.........................                                        |  39%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  39%
-label: unnamed-chunk-27 (with options) 
-List of 2
- $ name  : chr "Permutation"
- $ engine: chr "definition"
-
-  |                                                                         |..........................                                       |  40%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  41%
-label: unnamed-chunk-28 (with options) 
-List of 2
- $ name  : chr "Combination"
- $ engine: chr "definition"
-
-  |                                                                         |...........................                                      |  41%
-  ordinary text without R code
-
-  |                                                                         |...........................                                      |  42%
-label: flipcoins (with options) 
-List of 2
- $ name  : chr "Flipping Coins"
- $ engine: chr "example"
-
-  |                                                                         |............................                                     |  43%
-  ordinary text without R code
-
-
-label: assembly (with options) 
-List of 2
- $ name  : chr "Assembly Lines"
- $ engine: chr "example"
-
-  |                                                                         |.............................                                    |  44%
-  ordinary text without R code
-
-  |                                                                         |.............................                                    |  45%
-label: condprob (with options) 
-List of 2
- $ name  : chr "Conditional Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-29 (with options) 
-List of 2
- $ name  : chr "Balanced die"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-30 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v1"
- $ engine: chr "example"
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-
-label: unnamed-chunk-31 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v2"
- $ engine: chr "example"
-
-  |                                                                         |................................                                 |  49%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  50%
-label: unbalanced (with options) 
-List of 2
- $ name  : chr "Unbalanced Die"
- $ engine: chr "example"
-
-  |                                                                         |.................................                                |  50%
-  ordinary text without R code
-
-  |                                                                         |.................................                                |  51%
-label: unnamed-chunk-32 (with options) 
-List of 2
- $ name  : chr "Two Balanced Coins"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  52%
-  ordinary text without R code
-
-
-label: unnamed-chunk-33 (with options) 
-List of 2
- $ name  : chr "Two Cards"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  53%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  54%
-label: unnamed-chunk-34 (with options) 
-List of 2
- $ name  : chr "Numbers in a Hat"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-35 (with options) 
-List of 2
- $ name  : chr "One Card"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  56%
-label: multformula (with options) 
-List of 2
- $ name  : chr "Multiplicative Rule"
- $ engine: chr "definition"
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-
-label: unnamed-chunk-36 (with options) 
-List of 2
- $ name  : chr "Fish in a Tank"
- $ engine: chr "example"
-
-  |                                                                         |......................................                           |  58%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
-label: totprob (with options) 
-List of 2
- $ name  : chr "Law of Total Probability"
- $ engine: chr "theorem"
-
-  |                                                                         |.......................................                          |  59%
-  ordinary text without R code
-
-  |                                                                         |.......................................                          |  60%
-label: unnamed-chunk-37 (with options) 
-List of 2
- $ name  : chr "Long Hair"
- $ engine: chr "example"
-
-  |                                                                         |.......................................                          |  61%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  61%
-label: bayesdef (with options) 
-List of 2
- $ name  : chr "Bayes' Rule"
- $ engine: chr "theorem"
-
-  |                                                                         |........................................                         |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  62%
-label: unnamed-chunk-38 (with options) 
-List of 2
- $ name  : chr "Urns"
- $ engine: chr "example"
-
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  64%
-label: unnamed-chunk-39 (with options) 
-List of 2
- $ name  : chr "Large Bridges"
- $ engine: chr "example"
-
-  |                                                                         |..........................................                       |  64%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: indep (with options) 
-List of 2
- $ name  : chr "Indepent Events"
- $ engine: chr "definition"
-
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-
-label: unnamed-chunk-40 (with options) 
-List of 2
- $ name  : chr "Toss a fair coin 10 times"
- $ engine: chr "example"
-
-  |                                                                         |...........................................                      |  67%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-41 (with options) 
-List of 2
- $ name  : chr "Unbalance Die Revisited"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  69%
-label: unnamed-chunk-42 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  70%
-label: unnamed-chunk-43 (with options) 
-List of 2
- $ name  : chr "Rainy days"
- $ engine: chr "example"
-
-  |                                                                         |..............................................                   |  71%
-  ordinary text without R code
-
-
-label: unnamed-chunk-44 (with options) 
-List of 2
- $ name  : chr "Footbal Match"
- $ engine: chr "example"
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |...............................................                  |  73%
-label: unnamed-chunk-45 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |................................................                 |  73%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-46 (with options) 
-List of 2
- $ name  : chr "Operating Temperature"
- $ engine: chr "example"
-
-  |                                                                         |................................................                 |  75%
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  75%
-label: rv (with options) 
-List of 2
- $ name  : chr "Random Variable"
- $ engine: chr "definition"
-
-  |                                                                         |.................................................                |  76%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  76%
-label: unnamed-chunk-47 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |..................................................               |  77%
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-48 (with options) 
-List of 2
- $ name  : chr "Coin Toss"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  79%
-label: simple (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable"
- $ engine: chr "example"
-
-  |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-
-label: unnamed-chunk-49 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 2"
- $ engine: chr "example"
-
-  |                                                                         |.....................................................            |  81%
-  ordinary text without R code
-
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-50 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 3"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-51 (with options) 
-List of 2
- $ name  : chr "Constants as Random Variables"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................................................          |  84%
-label: unnamed-chunk-52 (with options) 
-List of 2
- $ name  : chr "Indicator Functions"
- $ engine: chr "example"
-
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-
-label: unnamed-chunk-53 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........................................................         |  86%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  87%
-label: unnamed-chunk-54 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.........................................................        |  87%
-  ordinary text without R code
-
-  |                                                                         |.........................................................        |  88%
-label: unnamed-chunk-55
-  |                                                                         |..........................................................       |  89%
-  ordinary text without R code
-
-
-label: unnamed-chunk-56
-  |                                                                         |..........................................................       |  90%
-  ordinary text without R code
-
-  |                                                                         |...........................................................      |  90%
-label: unnamed-chunk-57
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-58
-
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-59
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-
-label: unnamed-chunk-60
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  96%
-label: unnamed-chunk-61
-  |                                                                         |...............................................................  |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-62
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-63
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-64 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................................| 100%
-   inline R code fragments
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpW7Hsq7/rmarkdown-str1c4113caf9b1.html --mathjax --filter /usr/bin/pandoc-citeproc 
-[pandoc warning] Duplicate note reference `1' "source" (line 452, column 1)
-pandoc-citeproc: reference evans2004probability not found
-pandoc-citeproc: reference devore2011modern not found
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m echo 1080E521 && /usr/bin/env && echo 3B0A03B6
-1080E521
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-RS_PPM_FD_READ=15
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/RtmpLhv2Rs
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=772A3309
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=31242
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=23
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2693
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/42931-rsession
-RSTUDIO_SESSION_PORT=42931
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=D6730B8C
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=5
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/^C
-]0;/home/sahir/git_repositories/epib607> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = FALSE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   4%
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   5%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-Quitting from lines 276-289 (epib607.Rmd) 
-Error in dimnames(x) <- dn : 
-  length of 'dimnames' [2] not equal to array extent
-Calls: <Anonymous> ... withVisible -> eval -> eval -> <Anonymous> -> colnames<-
-
-Execution halted
-Makefile:8: recipe for target 'html' failed
-make[1]: *** [html] Error 1
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Makefile:15: recipe for target 'build' failed
-make: *** [build] Error 2
-]0;/home/sahir/git_repositories/epib607> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = FALSE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   4%
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   5%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |......                                                           |  10%
-  ordinary text without R code
-
-  |                                                                         |.......                                                          |  10%
-label: unnamed-chunk-5 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........                                                         |  12%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  13%
-label: no-stats (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |.........                                                        |  13%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  14%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |..........                                                       |  15%
-  ordinary text without R code
-
-
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ type  : chr "rmdimportant"
- $ engine: chr "block2"
-
-  |                                                                         |..........                                                       |  16%
-  ordinary text without R code
-
-  |                                                                         |...........                                                      |  17%
-label: unnamed-chunk-9 (with options) 
-List of 2
- $ name  : chr "Use of manual lap belts in cars equipped with automatic shoulder belt systems"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ name  : chr "Two nucleotide sequences"
- $ engine: chr "example"
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-
-label: unnamed-chunk-12 (with options) 
-List of 2
- $ name  : chr "Sample Space"
- $ engine: chr "definition"
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ name  : chr "Coin tossing"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............                                                  |  23%
-label: unnamed-chunk-14 (with options) 
-List of 2
- $ name  : chr "Dice"
- $ engine: chr "example"
-
-  |                                                                         |...............                                                  |  24%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ name  : chr "Proportions"
- $ engine: chr "example"
-
-  |                                                                         |................                                                 |  25%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  25%
-label: unnamed-chunk-16 (with options) 
-List of 2
- $ name  : chr "Time measurement"
- $ engine: chr "example"
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-17 (with options) 
-List of 2
- $ name  : chr "Temperature measurement"
- $ engine: chr "example"
-
-  |                                                                         |..................                                               |  27%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-18 (with options) 
-List of 2
- $ name  : chr "Biological Sequence Analysis"
- $ engine: chr "example"
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-
-label: unnamed-chunk-19 (with options) 
-List of 2
- $ name  : chr "Event"
- $ engine: chr "definition"
-
-  |                                                                         |...................                                              |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-
-  ordinary text without R code
-
-  |                                                                         |.....................                                            |  32%
-label: unnamed-chunk-21 (with options) 
-List of 2
- $ name  : chr "Axioms (basic properties) of Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  33%
-label: unnamed-chunk-22 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |......................                                           |  34%
-  ordinary text without R code
-
-
-label: unnamed-chunk-23 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  36%
-label: unnamed-chunk-24 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  36%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-25 (with options) 
-List of 1
- $ engine: chr "proposition"
-
-  |                                                                         |........................                                         |  38%
-  ordinary text without R code
-
-  |                                                                         |.........................                                        |  38%
-label: unnamed-chunk-26 (with options) 
-List of 2
- $ name  : chr "Product rule for ordered pairs"
- $ engine: chr "proposition"
-
-  |                                                                         |.........................                                        |  39%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  39%
-label: unnamed-chunk-27 (with options) 
-List of 2
- $ name  : chr "Permutation"
- $ engine: chr "definition"
-
-  |                                                                         |..........................                                       |  40%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  41%
-label: unnamed-chunk-28 (with options) 
-List of 2
- $ name  : chr "Combination"
- $ engine: chr "definition"
-
-  |                                                                         |...........................                                      |  41%
-  ordinary text without R code
-
-  |                                                                         |...........................                                      |  42%
-label: flipcoins (with options) 
-List of 2
- $ name  : chr "Flipping Coins"
- $ engine: chr "example"
-
-  |                                                                         |............................                                     |  43%
-  ordinary text without R code
-
-
-label: assembly (with options) 
-List of 2
- $ name  : chr "Assembly Lines"
- $ engine: chr "example"
-
-  |                                                                         |.............................                                    |  44%
-  ordinary text without R code
-
-  |                                                                         |.............................                                    |  45%
-label: condprob (with options) 
-List of 2
- $ name  : chr "Conditional Probability"
- $ engine: chr "definition"
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-29 (with options) 
-List of 2
- $ name  : chr "Balanced die"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-30 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v1"
- $ engine: chr "example"
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-
-label: unnamed-chunk-31 (with options) 
-List of 2
- $ name  : chr "Two Balanced Dice v2"
- $ engine: chr "example"
-
-  |                                                                         |................................                                 |  49%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  50%
-label: unbalanced (with options) 
-List of 2
- $ name  : chr "Unbalanced Die"
- $ engine: chr "example"
-
-  |                                                                         |.................................                                |  50%
-  ordinary text without R code
-
-  |                                                                         |.................................                                |  51%
-label: unnamed-chunk-32 (with options) 
-List of 2
- $ name  : chr "Two Balanced Coins"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  52%
-  ordinary text without R code
-
-
-label: unnamed-chunk-33 (with options) 
-List of 2
- $ name  : chr "Two Cards"
- $ engine: chr "example"
-
-  |                                                                         |..................................                               |  53%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  54%
-label: unnamed-chunk-34 (with options) 
-List of 2
- $ name  : chr "Numbers in a Hat"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-35 (with options) 
-List of 2
- $ name  : chr "One Card"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  56%
-label: multformula (with options) 
-List of 2
- $ name  : chr "Multiplicative Rule"
- $ engine: chr "definition"
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-
-label: unnamed-chunk-36 (with options) 
-List of 2
- $ name  : chr "Fish in a Tank"
- $ engine: chr "example"
-
-  |                                                                         |......................................                           |  58%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
-label: totprob (with options) 
-List of 2
- $ name  : chr "Law of Total Probability"
- $ engine: chr "theorem"
-
-  |                                                                         |.......................................                          |  59%
-  ordinary text without R code
-
-  |                                                                         |.......................................                          |  60%
-label: unnamed-chunk-37 (with options) 
-List of 2
- $ name  : chr "Long Hair"
- $ engine: chr "example"
-
-  |                                                                         |.......................................                          |  61%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  61%
-label: bayesdef (with options) 
-List of 2
- $ name  : chr "Bayes' Rule"
- $ engine: chr "theorem"
-
-  |                                                                         |........................................                         |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  62%
-label: unnamed-chunk-38 (with options) 
-List of 2
- $ name  : chr "Urns"
- $ engine: chr "example"
-
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  64%
-label: unnamed-chunk-39 (with options) 
-List of 2
- $ name  : chr "Large Bridges"
- $ engine: chr "example"
-
-  |                                                                         |..........................................                       |  64%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: indep (with options) 
-List of 2
- $ name  : chr "Indepent Events"
- $ engine: chr "definition"
-
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-
-label: unnamed-chunk-40 (with options) 
-List of 2
- $ name  : chr "Toss a fair coin 10 times"
- $ engine: chr "example"
-
-  |                                                                         |...........................................                      |  67%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-41 (with options) 
-List of 2
- $ name  : chr "Unbalance Die Revisited"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  69%
-label: unnamed-chunk-42 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  70%
-label: unnamed-chunk-43 (with options) 
-List of 2
- $ name  : chr "Rainy days"
- $ engine: chr "example"
-
-  |                                                                         |..............................................                   |  71%
-  ordinary text without R code
-
-
-label: unnamed-chunk-44 (with options) 
-List of 2
- $ name  : chr "Footbal Match"
- $ engine: chr "example"
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |...............................................                  |  73%
-label: unnamed-chunk-45 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |................................................                 |  73%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-46 (with options) 
-List of 2
- $ name  : chr "Operating Temperature"
- $ engine: chr "example"
-
-  |                                                                         |................................................                 |  75%
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  75%
-label: rv (with options) 
-List of 2
- $ name  : chr "Random Variable"
- $ engine: chr "definition"
-
-  |                                                                         |.................................................                |  76%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  76%
-label: unnamed-chunk-47 (with options) 
-List of 2
- $ type  : chr "rmdnote"
- $ engine: chr "block2"
-
-  |                                                                         |..................................................               |  77%
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-48 (with options) 
-List of 2
- $ name  : chr "Coin Toss"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  79%
-label: simple (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable"
- $ engine: chr "example"
-
-  |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-
-label: unnamed-chunk-49 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 2"
- $ engine: chr "example"
-
-  |                                                                         |.....................................................            |  81%
-  ordinary text without R code
-
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-50 (with options) 
-List of 2
- $ name  : chr "A Very Simple Random Variable 3"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-51 (with options) 
-List of 2
- $ name  : chr "Constants as Random Variables"
- $ engine: chr "example"
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................................................          |  84%
-label: unnamed-chunk-52 (with options) 
-List of 2
- $ name  : chr "Indicator Functions"
- $ engine: chr "example"
-
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-
-label: unnamed-chunk-53 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |........................................................         |  86%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  87%
-label: unnamed-chunk-54 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.........................................................        |  87%
-  ordinary text without R code
-
-  |                                                                         |.........................................................        |  88%
-label: unnamed-chunk-55
-  |                                                                         |..........................................................       |  89%
-  ordinary text without R code
-
-
-label: unnamed-chunk-56
-  |                                                                         |..........................................................       |  90%
-  ordinary text without R code
-
-  |                                                                         |...........................................................      |  90%
-label: unnamed-chunk-57
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-58
-
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-59
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-
-label: unnamed-chunk-60
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  96%
-label: unnamed-chunk-61
-  |                                                                         |...............................................................  |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-62
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-63
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-64 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................................| 100%
-   inline R code fragments
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpwJ0uXM/rmarkdown-str20a46f5980dd.html --mathjax --filter /usr/bin/pandoc-citeproc 
-[pandoc warning] Duplicate note reference `1' "source" (line 452, column 1)
-pandoc-citeproc: reference evans2004probability not found
-pandoc-citeproc: reference devore2011modern not found
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m echo 1080E521 && /usr/bin/env && echo 3B0A03B6
-1080E521
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-RS_PPM_FD_READ=15
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/RtmpLhv2Rs
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=772A3309
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=31242
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=23
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2693
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/42931-rsession
-RSTUDIO_SESSION_PORT=42931
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=D6730B8C
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=5
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/^C
-]0;/home/sahir/git_repositories/epib607> (B[m

@@ -38,4 +38,4 @@ git:
 # Clean up on isle 7
 clean:
 	Rscript -e "bookdown::clean_book(TRUE)"
-	rm -rfv _bookdown_files *.log
+	rm -rfv _bookdown_files *.log .Rproj.user/ *.utf8.md
