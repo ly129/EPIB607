@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EPIB 607: Inferential Statistics</title>
+  <meta name="description" content="Course material for EPIB 607 at McGill University">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="EPIB 607: Inferential Statistics" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://sahirbhatnagar.com/EPIB607" />
+  
+  <meta property="og:description" content="Course material for EPIB 607 at McGill University" />
+  <meta name="github-repo" content="sahirbhatnagar/EPIB607" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="EPIB 607: Inferential Statistics" />
+  
+  <meta name="twitter:description" content="Course material for EPIB 607 at McGill University" />
+  
+
+<meta name="author" content="Sahir Bhatnagar and James Hanley">
+
+
+<meta name="date" content="2018-08-28">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="probability.html">
+<link rel="next" href="continuous-variables-and-probability-distributions.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EPIB 607</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>I Preface</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-these-notes"><i class="fa fa-check"></i>About these notes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#r-code-conventions"><i class="fa fa-check"></i>R Code Conventions</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#rendering-mathematical-formulae"><i class="fa fa-check"></i>Rendering Mathematical Formulae</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i>About the authors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html"><i class="fa fa-check"></i>Course Information</a><ul>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html"><i class="fa fa-check"></i>Target Syllabus</a><ul>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#sampling-distributions"><i class="fa fa-check"></i>Sampling Distributions</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a><ul>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#install-r-and-rstudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#r-packages"><i class="fa fa-check"></i>R Packages</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#introduction-to-r"><i class="fa fa-check"></i>Introduction to R</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#background-reading"><i class="fa fa-check"></i>Background Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="slides.html"><a href="slides.html"><i class="fa fa-check"></i>Slides</a></li>
+<li class="chapter" data-level="" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i>Assignments</a></li>
+<li class="chapter" data-level="" data-path="quiz.html"><a href="quiz.html"><i class="fa fa-check"></i>Quiz</a></li>
+<li class="chapter" data-level="" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i>R Code</a><ul>
+<li class="chapter" data-level="0.1" data-path="r-code.html"><a href="r-code.html#central-limit-theorem-in-action"><i class="fa fa-check"></i><b>0.1</b> Central Limit Theorem in Action</a></li>
+<li class="chapter" data-level="0.2" data-path="r-code.html"><a href="r-code.html#impc-dataset"><i class="fa fa-check"></i><b>0.2</b> IMPC Dataset</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="distribution-tables.html"><a href="distribution-tables.html"><i class="fa fa-check"></i>Distribution Tables</a><ul>
+<li class="chapter" data-level="0.3" data-path="distribution-tables.html"><a href="distribution-tables.html#standard-normal"><i class="fa fa-check"></i><b>0.3</b> Standard Normal</a></li>
+<li class="chapter" data-level="0.4" data-path="distribution-tables.html"><a href="distribution-tables.html#t-distribution"><i class="fa fa-check"></i><b>0.4</b> t-Distribution</a></li>
+</ul></li>
+<li class="part"><span><b>II Part I</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Overview and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#populations-and-samples"><i class="fa fa-check"></i><b>1.1</b> Populations and Samples</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#variable"><i class="fa fa-check"></i><b>1.1.1</b> Variable</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#branches-of-statistics"><i class="fa fa-check"></i><b>1.1.2</b> Branches of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#pictorial-and-tabular-methods-in-descriptive-statistics"><i class="fa fa-check"></i><b>1.2</b> Pictorial and Tabular Methods in Descriptive Statistics</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#measures-of-location"><i class="fa fa-check"></i><b>1.3</b> Measures of Location</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#measures-of-variability"><i class="fa fa-check"></i><b>1.4</b> Measures of Variability</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i><b>2</b> Probability</a><ul>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#introduction1"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#probability-a-measure-of-uncertainty2"><i class="fa fa-check"></i>Probability: A Measure of Uncertainty</a></li>
+</ul></li>
+<li class="chapter" data-level="2.1" data-path="probability.html"><a href="probability.html#sample-spaces-and-events"><i class="fa fa-check"></i><b>2.1</b> Sample Spaces and Events</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="probability.html"><a href="probability.html#sample-spaces"><i class="fa fa-check"></i><b>2.1.1</b> Sample Spaces</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probability.html"><a href="probability.html#events"><i class="fa fa-check"></i><b>2.1.2</b> Events</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="probability.html"><a href="probability.html#axioms-interpretations-and-properties-of-probability"><i class="fa fa-check"></i><b>2.2</b> Axioms, Interpretations, and Properties of Probability</a></li>
+<li class="chapter" data-level="2.3" data-path="probability.html"><a href="probability.html#counting-techniques"><i class="fa fa-check"></i><b>2.3</b> Counting Techniques</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="probability.html"><a href="probability.html#permutations"><i class="fa fa-check"></i><b>2.3.1</b> Permutations</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probability.html"><a href="probability.html#combinations"><i class="fa fa-check"></i><b>2.3.2</b> Combinations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probability.html"><a href="probability.html#conditional-probability"><i class="fa fa-check"></i><b>2.4</b> Conditional Probability</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="probability.html"><a href="probability.html#law-of-total-probability"><i class="fa fa-check"></i><b>2.4.1</b> Law of Total Probability</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probability.html"><a href="probability.html#bayes-rule"><i class="fa fa-check"></i><b>2.4.2</b> Bayes’ Rule</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probability.html"><a href="probability.html#independence"><i class="fa fa-check"></i><b>2.5</b> Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html"><i class="fa fa-check"></i><b>3</b> Discrete Random Variables and Probability Distributions</a><ul>
+<li class="chapter" data-level="" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="3.1" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#random-variables"><i class="fa fa-check"></i><b>3.1</b> Random Variables</a></li>
+<li class="chapter" data-level="3.2" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#probability-distributions-for-discrete-random-variables"><i class="fa fa-check"></i><b>3.2</b> Probability Distributions for Discrete Random Variables</a></li>
+<li class="chapter" data-level="3.3" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#expected-values-of-discrete-random-variables"><i class="fa fa-check"></i><b>3.3</b> Expected Values of Discrete Random Variables</a></li>
+<li class="chapter" data-level="3.4" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#moments-and-moment-generating-functions"><i class="fa fa-check"></i><b>3.4</b> Moments and Moment Generating Functions</a></li>
+<li class="chapter" data-level="3.5" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#the-binomial-probability-distribution"><i class="fa fa-check"></i><b>3.5</b> The Binomial Probability Distribution</a></li>
+<li class="chapter" data-level="3.6" data-path="discrete-random-variables-and-probability-distributions.html"><a href="discrete-random-variables-and-probability-distributions.html#the-poisson-probability-distribution"><i class="fa fa-check"></i><b>3.6</b> The Poisson Probability Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="continuous-variables-and-probability-distributions.html"><a href="continuous-variables-and-probability-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Variables and Probability Distributions</a><ul>
+<li class="chapter" data-level="" data-path="continuous-variables-and-probability-distributions.html"><a href="continuous-variables-and-probability-distributions.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+</ul></li>
+<li class="appendix"><span><b>R Tutorial</b></span></li>
+<li class="chapter" data-level="A" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html"><i class="fa fa-check"></i><b>A</b> Vectorization, *apply and for loops</a><ul>
+<li class="chapter" data-level="A.1" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#vectorization"><i class="fa fa-check"></i><b>A.1</b> Vectorization</a></li>
+<li class="chapter" data-level="A.2" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#family-of-apply-functions"><i class="fa fa-check"></i><b>A.2</b> Family of <code>*apply</code> functions</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#loops-vs.apply"><i class="fa fa-check"></i><b>A.2.1</b> Loops vs. Apply</a></li>
+<li class="chapter" data-level="A.2.2" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#descriptive-statistics-using-apply"><i class="fa fa-check"></i><b>A.2.2</b> Descriptive Statistics using <code>*apply</code></a></li>
+<li class="chapter" data-level="A.2.3" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#creating-new-columns-using-sapply"><i class="fa fa-check"></i><b>A.2.3</b> Creating new columns using <code>sapply</code></a></li>
+<li class="chapter" data-level="A.2.4" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#applying-functions-to-subsets-using-tapply"><i class="fa fa-check"></i><b>A.2.4</b> Applying functions to subsets using <code>tapply</code></a></li>
+<li class="chapter" data-level="A.2.5" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#nested-for-loops-using-mapply"><i class="fa fa-check"></i><b>A.2.5</b> Nested for loops using <code>mapply</code></a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#creating-dynamic-documents-with-mapply"><i class="fa fa-check"></i><b>A.3</b> Creating dynamic documents with <code>mapply</code></a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://sahirbhatnagar.com" target="blank">Built with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EPIB 607: Inferential Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="discrete-random-variables-and-probability-distributions" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Discrete Random Variables and Probability Distributions</h1>
+<div id="introduction" class="section level2 unnumbered">
+<h2>Introduction</h2>
+<p>In Chapter <a href="probability.html#probability">2</a>, we discussed the probability model as the central object of study in the theory of probability. This required defining a probability measure <span class="math inline">\(P\)</span> on a class of subsets of the sample space <span class="math inline">\(\Omega\)</span>. For example, for an experiment with possible sample outcomes denoted by the  <span class="math inline">\(\Omega\)</span>, an  <span class="math inline">\(E\)</span> was defined as any collection of sample outcomes, that is, any subset of the set <span class="math inline">\(\Omega\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{ccll}
+\text{EXPERIMENT} &amp; \longrightarrow \text{SAMPLE OUTCOMES} &amp; \longrightarrow
+\text{EVENTS} &amp; \longrightarrow \text{PROBABILITIES} \\
+&amp; \Omega=\left\{ s_{1},s_{2},...\right\} &amp; \longrightarrow E\subseteq S &amp;
+\longrightarrow P(E)
+\end{array}
+\]</span></p>
+<p>In this framework, it is necessary to consider each experiment with its associated sample space separately - the nature of sample space <span class="math inline">\(\Omega\)</span> is typically different for different experiments.</p>
+<p><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-45" class="example"><strong>Example 3.1  (Rainy days)  </strong></span>Count the number of days in February which have zero precipitation.</p>
+<p><span class="math display">\[ \Omega = \left\{ 0,1,2,\ldots,28\right\} \]</span></p>
+<p>Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)</span> days have zero precipitation. <span class="math inline">\(E_{0},\ldots,E_{28}\)</span> partition <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-46" class="example"><strong>Example 3.2  (Footbal Match)  </strong></span>Count the number of goals in a football match.</p>
+<p><span class="math display">\[ \Omega = \left\{ 0,1,2,3,\ldots \right\} \]</span></p>
+Let <span class="math inline">\(E_{i}\)</span> = <span class="math inline">\(i\)</span> goals in the match. <span class="math inline">\(E_{0},E_{1},E_{2},\ldots\)</span> partition <span class="math inline">\(\Omega\)</span><br />
+
+</div>
+
+<p><br></p>
+
+<div class="rmdnote">
+<p>In both of these examples, we need a formula to specify each</p>
+<p><span class="math display">\[ P(E_{i}) = p_{i} \]</span></p>
+</div>
+
+<p><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-48" class="example"><strong>Example 3.3  (Operating Temperature)  </strong></span>Measure the operating temperature of an experimental process.</p>
+<p><span class="math display">\[ \Omega = \left\{ x: x &gt; T_{min} \right\} \]</span></p>
+</div>
+
+<p>Here it is difficult to express</p>
+<p><span class="math display">\[ P(``\textrm{Measurement is }x&quot;) \]</span></p>
+<p>but possible to think about</p>
+<p><span class="math display">\[ P (``\textrm{Measurement is }\leq x&quot;)=F(x) \]</span></p>
+<p>and now we seek a formula for <span class="math inline">\(F(x)\)</span> which is a simpler way of presenting a particular probability assignment.</p>
+<p><br><br></p>
+<p>This chapter is concerned with the definitions of random variables, distribution functions <span class="math inline">\(F(x)\)</span>, probability/density functions <span class="math inline">\(f(x)\)</span>, and the development of the concepts necessary for carrying out calculations for a probability model using these entities <span class="citation">(<span class="citeproc-not-found" data-reference-id="evans2004probability"><strong>???</strong></span>)</span>.</p>
+<p>The concept of a random variable allows us to pass from the experimental outcomes themselves to a numerical function of the outcomes. There are two fundamentally different types of random variables <span class="citation">(<span class="citeproc-not-found" data-reference-id="devore2011modern"><strong>???</strong></span>)</span>:</p>
+<ol style="list-style-type: lower-roman">
+<li>discrete random variables<br />
+</li>
+<li>continuous random variables</li>
+</ol>
+<p>In this chapter, we examine the basic properties and discuss the most important examples of <strong>discrete</strong> variables. Chapter <a href="continuous-variables-and-probability-distributions.html#continuous-variables-and-probability-distributions">4</a> focuses on continuous random variables.</p>
+</div>
+<div id="random-variables" class="section level2">
+<h2><span class="header-section-number">3.1</span> Random Variables</h2>
+<p>A general notation useful for all such examples can be obtained by considering a sample space that is <strong>equivalent</strong> to <span class="math inline">\(\Omega\)</span> for a general experiment, but whose form is more familiar.</p>
+
+<div class="definition">
+<p><span id="def:rv" class="definition"><strong>Definition 3.1  (Random Variable)  </strong></span>A random variable <span class="math inline">\(X\)</span> on <span class="math inline">\(\Omega\)</span> is a function from the sample space <span class="math inline">\(\Omega\)</span> to the set <span class="math inline">\(\mathbb{R}\)</span> of all real numbers denoted by</p>
+<p><span class="math display">\[ X : \Omega \rightarrow \mathbb{R}  \]</span></p>
+<p>Let <span class="math inline">\(R_X\)</span> denote the range of <span class="math inline">\(X\)</span>.</p>
+</div>
+
+<p><br></p>
+<p><span class="math inline">\(X\)</span> is called a <em>discrete</em> random variable if <span class="math inline">\(R_X\)</span> is a countable set.</p>
+<div class="figure">
+<img src="images/rv.png" />
+
+</div>
+<p><br></p>
+
+<div class="rmdnote">
+<p>Random variables are customarily denoted by uppercase letters, such as <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, lowercase letters to represent some particular value of the corresponding random variable. The notation <span class="math inline">\(X(s) = x\)</span> means that <span class="math inline">\(x\)</span> is the value associated with the outcome <span class="math inline">\(s\)</span> by the rv <span class="math inline">\(X\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-50" class="example"><strong>Example 3.4  (Coin Toss)  </strong></span>Suppose a coin is tossed three times. Let <span class="math inline">\(X\)</span> be the number of heads observed. The sample space is</p>
+<p><span class="math display">\[ \Omega = \left\lbrace \underbrace{HHT}_{3},\underbrace{HHT}_{2},\underbrace{HTH}_{2},\underbrace{HTT}_{1}, \underbrace{THH}_{2}, \underbrace{THT}_{1}, \underbrace{TTH}_{1}, \underbrace{TTT}_{0} \right\rbrace   \]</span></p>
+That is, we have <span class="math inline">\(X(HHH) = 3\)</span>, <span class="math inline">\(X(HHT) = 2\)</span>, <span class="math inline">\(X(HTH) = 2\)</span>, and so on. Hence <span class="math inline">\(R_X = \left\lbrace 0,1,2,3 \right\rbrace\)</span>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<span id="exm:simple" class="example"><strong>Example 3.5  (A Very Simple Random Variable)  </strong></span>Let the random variable <span class="math inline">\(X: \left\lbrace \textrm{rain, snow, clear} \right\rbrace \rightarrow \mathbb{R}\)</span> by <span class="math inline">\(X(rain) = 3\)</span>, <span class="math inline">\(X(snow) = 6\)</span>, and <span class="math inline">\(X(clear) = -2.7\)</span>.
+</div>
+
+<p><br></p>
+<p>We now present several further examples. The point is, we can define random variables any way we like, as long as they are functions from the sample space to <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-51" class="example"><strong>Example 3.6  (A Very Simple Random Variable 2)  </strong></span>For the case <span class="math inline">\(\Omega = \left\lbrace \textrm{rain, snow, clear} \right\rbrace\)</span>, we might define a second random variable <span class="math inline">\(Y\)</span> by saying that <span class="math inline">\(Y = 0\)</span> if it rains, <span class="math inline">\(Y = -1/2\)</span> if it snows, and <span class="math inline">\(Y = 7/8\)</span> if it is clear. That is <span class="math inline">\(Y(rain) = 0\)</span>, <span class="math inline">\(Y(snow) = 1/2\)</span>, and <span class="math inline">\(Y(rain) = 7/8\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-52" class="example"><strong>Example 3.7  (A Very Simple Random Variable 3)  </strong></span>If the sample space corresponds to flipping three different coins, then we could let <span class="math inline">\(X\)</span> be the total number of heads showing, let <span class="math inline">\(Y\)</span> be the total number of tails showing, let <span class="math inline">\(Z = 0\)</span> if there is exactly one head, and otherwise <span class="math inline">\(Z = 17\)</span>.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-53" class="example"><strong>Example 3.8  (Constants as Random Variables)  </strong></span>As a special case, every constant value <span class="math inline">\(c\)</span> is also a random variable, by saying that <span class="math inline">\(c(s) = c\)</span> for all <span class="math inline">\(s \in \Omega\)</span>. Thus, 5 is a random variable, as is 3 or −21.6.</p>
+</div>
+
+<p><br><br></p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-54" class="example"><strong>Example 3.9  (Indicator Functions)  </strong></span>If <span class="math inline">\(A\)</span> is any event, then we can define the indicator function of <span class="math inline">\(A\)</span>, written <span class="math inline">\(I_A\)</span>, to be the random variable</p>
+<p><span class="math display">\[I_A(s)  = \begin{cases} 1 &amp; s \in A \\ 0 &amp; s \notin A   \end{cases} \]</span></p>
+</div>
+
+<p><br><br></p>
+<p>Suppose <span class="math inline">\(X\)</span> is a random variable. We know that different states <span class="math inline">\(s\)</span> occur with different probabilities. It follows that <span class="math inline">\(X(s)\)</span> also takes different values with different probabilities. These probabilities are called the <strong>distribution</strong> of <span class="math inline">\(X\)</span>; we consider them next.</p>
+</div>
+<div id="probability-distributions-for-discrete-random-variables" class="section level2">
+<h2><span class="header-section-number">3.2</span> Probability Distributions for Discrete Random Variables</h2>
+<p>Because random variables are defined to be functions of the outcome <span class="math inline">\(s\)</span>, and because the outcome <span class="math inline">\(s\)</span> is assumed to be random (i.e., to take on different values with different probabilities), it follows that the value of a random variable will itself be random (as the name implies).</p>
+<p>Specifically, if <span class="math inline">\(X\)</span> is a random variable, then what is the probability that <span class="math inline">\(X\)</span> will equal some particular value <span class="math inline">\(x\)</span>? Well, <span class="math inline">\(X = x\)</span> precisely when the outcome <span class="math inline">\(s\)</span> is chosen such that <span class="math inline">\(X(s) = x\)</span>.</p>
+</div>
+<div id="expected-values-of-discrete-random-variables" class="section level2">
+<h2><span class="header-section-number">3.3</span> Expected Values of Discrete Random Variables</h2>
+</div>
+<div id="moments-and-moment-generating-functions" class="section level2">
+<h2><span class="header-section-number">3.4</span> Moments and Moment Generating Functions</h2>
+</div>
+<div id="the-binomial-probability-distribution" class="section level2">
+<h2><span class="header-section-number">3.5</span> The Binomial Probability Distribution</h2>
+</div>
+<div id="the-poisson-probability-distribution" class="section level2">
+<h2><span class="header-section-number">3.6</span> The Poisson Probability Distribution</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="continuous-variables-and-probability-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sahirbhatnagar/EPIB607/edit/master/03-discrete.Rmd",
+"text": "Edit"
+},
+"download": ["epib607.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
