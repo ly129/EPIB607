@@ -240,6 +240,15 @@ knitr::kable(data.frame(c("Assignments","DALITE Quizzes","Midterm","Project","Fi
 # Target Syllabus {-}
 
 
+```{r}
+knitr::kable(as.data.frame(rbind(c("JH", "James Hanley notes"),
+                                 c("AAO", "Against all odds video series"),
+                                 c("B&M", "The practice of statistics in the life sciences by Baldi and Moore, 3rd edition"),
+                                 c("Freedman","Statistics by Freedman, Pisani, Purves, Adhikari"))),
+             col.names = c("Abbreviation","Description"),
+             booktabs = TRUE)
+```
+
 
 ## Descriptive Statistics  {-} 
 
@@ -250,6 +259,9 @@ knitr::kable(as.data.frame(rbind(
     "[pages 1-6](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit03.pdf#page=1)",
     "[Wafer Thickness pages 15-17](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit03.pdf#page=15)",
     "--"),
+  c("Density Plots",
+    "--",
+    ),
   c("Measures of Center",
     "[link1](https://www.learner.org/courses/againstallodds/unitpages/unit04.html)",
     "[pages 1-6](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit04.pdf#page=1)",
@@ -264,7 +276,10 @@ knitr::kable(as.data.frame(rbind(
     "[link1](https://www.learner.org/courses/againstallodds/unitpages/unit06.html)",
     "[pages 1-3](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit06.pdf#page=1)",
     "[Visualizing Standard Deviation pages 10-13](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit04.pdf#page=10)",
-    "--")
+    "--"),
+  c("Data Visualization",
+    "[Hans Rosling BBC](https://www.youtube.com/watch?v=jbkSRLYSojo)",
+    "[]")
 )),
 col.names = c("Topic","Video","Readings","Exercise","DALITE"),
 booktabs = TRUE)

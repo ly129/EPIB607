@@ -6,3 +6,4 @@ _book
 _bookdown_files
 rsconnect
 *.utf8.md
+.httr-oauth
