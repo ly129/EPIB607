@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-08-28}
+    \date{2018-09-01}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -469,7 +469,7 @@ text:
 \caption{}
 \end{figure}
 
-The version of the book you are reading now was built on 2018-08-28 and
+The version of the book you are reading now was built on 2018-09-01 and
 was built on
 \href{https://travis-ci.org/sahirbhatnagar/MATH697}{Travis}.
 
@@ -591,6 +591,28 @@ Final Exam & 30\%\\
 \chapter*{Target Syllabus}\label{target-syllabus}
 \addcontentsline{toc}{chapter}{Target Syllabus}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{rbind}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"JH"}\NormalTok{, }\StringTok{"James Hanley notes"}\NormalTok{),}
+                                 \KeywordTok{c}\NormalTok{(}\StringTok{"AAO"}\NormalTok{, }\StringTok{"Against all odds video series"}\NormalTok{),}
+                                 \KeywordTok{c}\NormalTok{(}\StringTok{"B&M"}\NormalTok{, }\StringTok{"The practice of statistics in the life sciences by Baldi and Moore, 3rd edition"}\NormalTok{),}
+                                 \KeywordTok{c}\NormalTok{(}\StringTok{"Freedman"}\NormalTok{,}\StringTok{"Statistics by Freedman, Pisani, Purves, Adhikari"}\NormalTok{))),}
+             \DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"Abbreviation"}\NormalTok{,}\StringTok{"Description"}\NormalTok{),}
+             \DataTypeTok{booktabs =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{ll}
+\toprule
+Abbreviation & Description\\
+\midrule
+JH & James Hanley notes\\
+AAO & Against all odds video series\\
+B\&M & The practice of statistics in the life sciences by Baldi and Moore, 3rd edition\\
+Freedman & Statistics by Freedman, Pisani, Purves, Adhikari\\
+\bottomrule
+\end{tabular}
+
 \section*{Descriptive Statistics}\label{descriptive-statistics}
 \addcontentsline{toc}{section}{Descriptive Statistics}
 
@@ -599,9 +621,11 @@ Final Exam & 30\%\\
 Topic & Video & Readings & Exercise & DALITE\\
 \midrule
 Histograms & [link1](https://www.learner.org/courses/againstallodds/unitpages/unit03.html) & [pages 1-6](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit03.pdf\#page=1) & [Wafer Thickness pages 15-17](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit03.pdf\#page=15) & --\\
+Density Plots & -- & [dataviz chapter 7](https://serialmentor.com/dataviz/histograms-density-plots.html) & -- & --\\
 Measures of Center & [link1](https://www.learner.org/courses/againstallodds/unitpages/unit04.html) & [pages 1-6](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit04.pdf\#page=1) & [Mean, Median and Distribution Shape pages 13-14](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit04.pdf\#page=13) & --\\
 Boxplots & [link1](https://www.learner.org/courses/againstallodds/unitpages/unit05.html) & [pages 1-5](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit05.pdf\#page=1) & -- & --\\
 Standard Deviation & [link1](https://www.learner.org/courses/againstallodds/unitpages/unit06.html) & [pages 1-3](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit06.pdf\#page=1) & [Visualizing Standard Deviation pages 10-13](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds\_StudentGuide\_Unit04.pdf\#page=10) & --\\
+Data Visualization & [Hans Rosling BBC](https://www.youtube.com/watch?v=jbkSRLYSojo) & -- & -- & --\\
 \bottomrule
 \end{tabular}
 
@@ -699,132 +723,6 @@ tutorials
 \item
   \href{https://kbroman.wordpress.com/2013/04/02/apply-vs-for/}{\texttt{apply}
   vs. \texttt{for}}
-\end{enumerate}
-
-\chapter*{Slides}\label{slides}
-\addcontentsline{toc}{chapter}{Slides}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week3.pdf}{Discrete
-  Random Variables and Probability Distributions (part I)}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week4.pdf}{Discrete
-  Random Variables and Probability Distributions (part II)}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week5.pdf}{Continuous
-  Random Variables and Probability Distributions}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week6.pdf}{Normal
-  Distribution and Expectations of Continuos Random Variables}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week7.pdf}{Transformations
-  of a Random Variable and Discrete Joint Distributions}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week8.pdf}{Joint,
-  Marginal, Conditional Continuous Distributions}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week9.pdf}{Multidimensional
-  Change of Variables, Conditional Expectation, Variance, Hierarchical
-  Distributions}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week10.pdf}{Sampling
-  Distributions and Limits, Convergence in Probability}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week11.pdf}{Convergence
-  in Distribution and Central Limit Theorem}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week12.pdf}{Maximum
-  Likelihood Estimation}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/week13.pdf}{A
-  Primer on Linear Regression}
-\end{enumerate}
-
-\chapter*{Assignments}\label{assignments}
-\addcontentsline{toc}{chapter}{Assignments}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-1-F2017.pdf}{A1
-  (due September 26, 2017)}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-2-F2017.pdf}{A2
-  (due October 12, 2017)}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-3-F2017.pdf}{A3
-  (due October 26, 2017)}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-4-F2017.pdf}{A4
-  (due November 9, 2017)}
-\end{enumerate}
-
-\chapter*{Quiz}\label{quiz}
-\addcontentsline{toc}{chapter}{Quiz}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-1-F2017.pdf}{Quiz
-  1 (October 3, 2017)}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-2-F2017.pdf}{Quiz
-  2 (November 7, 2017)}
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-3-F2017.pdf}{Quiz
-  2 (November 7, 2017)}
-\end{enumerate}
-
-\chapter*{R Code}\label{r-code}
-\addcontentsline{toc}{chapter}{R Code}
-
-\section{Central Limit Theorem in
-Action}\label{central-limit-theorem-in-action}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-master.Rmd}{clt-master.Rmd}\\
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-template.Rmd}{clt-template.Rmd}
-\end{enumerate}
-
-\section{IMPC Dataset}\label{impc-dataset}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/impc_data.txt}{impc\_data.txt}
-\end{enumerate}
-
-\chapter*{Distribution Tables}\label{distribution-tables}
-\addcontentsline{toc}{chapter}{Distribution Tables}
-
-\section{Standard Normal}\label{standard-normal}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/Standard_Normal_Table.pdf}{Standard
-  Normal Table}
-\end{enumerate}
-
-\section{t-Distribution}\label{t-distribution}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/MATH697/blob/master/images/t_Table.pdf}{t-Distribution
-  Table}
 \end{enumerate}
 
 \part{Part I}\label{part-part-i}
@@ -934,7 +832,7 @@ taking a sample from a given population. This is why we study
 probability before statistics.
 
 \BeginKnitrBlock{example}[Use of manual lap belts in cars equipped with automatic shoulder belt systems]
-\protect\hypertarget{exm:unnamed-chunk-11}{}{\label{exm:unnamed-chunk-11}
+\protect\hypertarget{exm:unnamed-chunk-12}{}{\label{exm:unnamed-chunk-12}
 \iffalse (Use of manual lap belts in cars equipped with automatic
 shoulder belt systems) \fi{} }\emph{Probability}: assume that 50\% of
 all drivers in a certain metropolitan area regularly use their lap belt
@@ -1005,7 +903,7 @@ For example, consider two nucleotide sequences of the same length that
 we wish to assess for similarity:
 
 \BeginKnitrBlock{example}[Two nucleotide sequences]
-\protect\hypertarget{exm:unnamed-chunk-13}{}{\label{exm:unnamed-chunk-13}
+\protect\hypertarget{exm:unnamed-chunk-14}{}{\label{exm:unnamed-chunk-14}
 \iffalse (Two nucleotide sequences) \fi{} }
 
 \begin{equation*}
@@ -1084,44 +982,44 @@ are sensible and mathematically clear.
 \subsection{Sample Spaces}\label{sample-spaces}
 
 \BeginKnitrBlock{definition}[Sample Space]
-\protect\hypertarget{def:unnamed-chunk-14}{}{\label{def:unnamed-chunk-14}
+\protect\hypertarget{def:unnamed-chunk-15}{}{\label{def:unnamed-chunk-15}
 \iffalse (Sample Space) \fi{} }The sample space \(\Omega\) is the set of
 possible outcomes of an experiment. Points \(\omega\) in \(\Omega\) are
 called sample outcomes, realizations, or elements.
 \EndKnitrBlock{definition}
 
 \BeginKnitrBlock{example}[Coin tossing]
-\protect\hypertarget{exm:unnamed-chunk-15}{}{\label{exm:unnamed-chunk-15}
+\protect\hypertarget{exm:unnamed-chunk-16}{}{\label{exm:unnamed-chunk-16}
 \iffalse (Coin tossing) \fi{}
 }\(\Omega = \left\lbrace H, T \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Dice]
-\protect\hypertarget{exm:unnamed-chunk-16}{}{\label{exm:unnamed-chunk-16}
+\protect\hypertarget{exm:unnamed-chunk-17}{}{\label{exm:unnamed-chunk-17}
 \iffalse (Dice) \fi{}
 }\(\Omega = \left\lbrace 1,2,3,4,5,6 \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Proportions]
-\protect\hypertarget{exm:unnamed-chunk-17}{}{\label{exm:unnamed-chunk-17}
+\protect\hypertarget{exm:unnamed-chunk-18}{}{\label{exm:unnamed-chunk-18}
 \iffalse (Proportions) \fi{}
 }\(\Omega = \left\lbrace x : 0 \leq x \leq 1 \right\rbrace\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Time measurement]
-\protect\hypertarget{exm:unnamed-chunk-18}{}{\label{exm:unnamed-chunk-18}
+\protect\hypertarget{exm:unnamed-chunk-19}{}{\label{exm:unnamed-chunk-19}
 \iffalse (Time measurement) \fi{}
 }\(\Omega = \left\lbrace x : x > 0 \right\rbrace = {\mathbb{R}}^{+}\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Temperature measurement]
-\protect\hypertarget{exm:unnamed-chunk-19}{}{\label{exm:unnamed-chunk-19}
+\protect\hypertarget{exm:unnamed-chunk-20}{}{\label{exm:unnamed-chunk-20}
 \iffalse (Temperature measurement) \fi{}
 }\(\Omega = \left\{ x:a\leq x\leq b\right\} \subseteq { \mathbb{R}}\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Biological Sequence Analysis]
-\protect\hypertarget{exm:unnamed-chunk-20}{}{\label{exm:unnamed-chunk-20}
+\protect\hypertarget{exm:unnamed-chunk-21}{}{\label{exm:unnamed-chunk-21}
 \iffalse (Biological Sequence Analysis) \fi{} }The experiment may
 involve the observation of a nucleotide or protein sequence, so that the
 sample space \(\Omega\) may comprise all sequences (of bases/amino
@@ -1146,7 +1044,7 @@ if \(s\) \emph{is a member of the set} \(\Omega\).
 \subsection{Events}\label{events}
 
 \BeginKnitrBlock{definition}[Event]
-\protect\hypertarget{def:unnamed-chunk-21}{}{\label{def:unnamed-chunk-21}
+\protect\hypertarget{def:unnamed-chunk-22}{}{\label{def:unnamed-chunk-22}
 \iffalse (Event) \fi{} }An event \(E\) is a subset of the sample space
 \(\Omega\) (\(E \subseteq \Omega\)). Events are usually denoted by upper
 case letters near the beginning of the alphabet, like \(A, B, C\). An
@@ -1202,7 +1100,7 @@ collection of sample outcomes have no element in common.
 Probability}\label{axioms-interpretations-and-properties-of-probability}
 
 \BeginKnitrBlock{definition}[Axioms (basic properties) of Probability]
-\protect\hypertarget{def:unnamed-chunk-23}{}{\label{def:unnamed-chunk-23}
+\protect\hypertarget{def:unnamed-chunk-24}{}{\label{def:unnamed-chunk-24}
 \iffalse (Axioms (basic properties) of Probability) \fi{} }To ensure
 that the probability assignments will be consistent with our intuitive
 notions of probability, all assign- ments should satisfy the following
@@ -1222,26 +1120,26 @@ axioms (basic properties) of probability
 \EndKnitrBlock{definition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-24}{}{\label{prp:unnamed-chunk-24}
+\protect\hypertarget{prp:unnamed-chunk-25}{}{\label{prp:unnamed-chunk-25}
 }\(P(\varnothing) = 0\) where \(\varnothing\) is the null event. This in
 turn implies that the property contained in Axiom 3 is valid for a
 finite collection of events.
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-25}{}{\label{prp:unnamed-chunk-25}
+\protect\hypertarget{prp:unnamed-chunk-26}{}{\label{prp:unnamed-chunk-26}
 }For any event \(A\),\\
 \[ P(A) = 1 - P(A^c) \]
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-26}{}{\label{prp:unnamed-chunk-26}
+\protect\hypertarget{prp:unnamed-chunk-27}{}{\label{prp:unnamed-chunk-27}
 }For any event \(A\),\\
 \[ P(A) \leq 1 \]
 \EndKnitrBlock{proposition}
 
 \BeginKnitrBlock{proposition}
-\protect\hypertarget{prp:unnamed-chunk-27}{}{\label{prp:unnamed-chunk-27}
+\protect\hypertarget{prp:unnamed-chunk-28}{}{\label{prp:unnamed-chunk-28}
 }For any events \(A\) and \(B\),\\
 \[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]
 \EndKnitrBlock{proposition}
@@ -1255,7 +1153,7 @@ of outcomes in a sample space and \(N(A)\) is the number of outcomes
 contained in an event \(A\), then \[ P(A) = \frac{N(A)}{N} \]
 
 \BeginKnitrBlock{proposition}[Product rule for ordered pairs]
-\protect\hypertarget{prp:unnamed-chunk-28}{}{\label{prp:unnamed-chunk-28}
+\protect\hypertarget{prp:unnamed-chunk-29}{}{\label{prp:unnamed-chunk-29}
 \iffalse (Product rule for ordered pairs) \fi{} }If the first element or
 object of an ordered pair can be selected in \(n_1\) ways, and for each
 of these \(n_1\) ways the second element of the pair can be selected in
@@ -1265,7 +1163,7 @@ of these \(n_1\) ways the second element of the pair can be selected in
 \subsection{Permutations}\label{permutations}
 
 \BeginKnitrBlock{definition}[Permutation]
-\protect\hypertarget{def:unnamed-chunk-29}{}{\label{def:unnamed-chunk-29}
+\protect\hypertarget{def:unnamed-chunk-30}{}{\label{def:unnamed-chunk-30}
 \iffalse (Permutation) \fi{} }Any ordered sequence of \(k\) objects
 taken from a set of \(n\) distinct objects is called a permutation of
 size \(k\) of the objects. The number of permutations of size \(k\) that
@@ -1277,7 +1175,7 @@ can be constructed from the \(n\) objects is denoted by \(P_k^n\):
 \subsection{Combinations}\label{combinations}
 
 \BeginKnitrBlock{definition}[Combination]
-\protect\hypertarget{def:unnamed-chunk-30}{}{\label{def:unnamed-chunk-30}
+\protect\hypertarget{def:unnamed-chunk-31}{}{\label{def:unnamed-chunk-31}
 \iffalse (Combination) \fi{} }Given a set of \(n\) distinct objects, any
 unordered subset of size \(k\) of the objects is called a combination.
 The number of combinations \(n\) of size \(k\) that can be formed from
@@ -1389,20 +1287,20 @@ Therefore
 \[ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P({H H T, H T H})}{P({H H T, H T H, T H H})} = \frac{2/8}{3/8} = \frac{2}{3}\]
 
 \BeginKnitrBlock{example}[Balanced die]
-\protect\hypertarget{exm:unnamed-chunk-31}{}{\label{exm:unnamed-chunk-31}
+\protect\hypertarget{exm:unnamed-chunk-32}{}{\label{exm:unnamed-chunk-32}
 \iffalse (Balanced die) \fi{} }Suppose a balanced die is tossed in the
 next room. We are told that a number less than 4 was observed. What is
 the probability the number was either 1 or 2?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Dice v1]
-\protect\hypertarget{exm:unnamed-chunk-32}{}{\label{exm:unnamed-chunk-32}
+\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33}
 \iffalse (Two Balanced Dice v1) \fi{} }Toss two balanced dice. Let \(A\)
 = \{sum of 5\} and \(B\) = \{first die is \(\leq\) 2\}. Find \(P(A|B)\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Dice v2]
-\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33}
+\protect\hypertarget{exm:unnamed-chunk-34}{}{\label{exm:unnamed-chunk-34}
 \iffalse (Two Balanced Dice v2) \fi{} }Two balanced dice are tossed.
 What is the probability that the first die gives a number less than
 three, given that the sum is odd?
@@ -1416,14 +1314,14 @@ three, given that the sum is odd?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Balanced Coins]
-\protect\hypertarget{exm:unnamed-chunk-34}{}{\label{exm:unnamed-chunk-34}
+\protect\hypertarget{exm:unnamed-chunk-35}{}{\label{exm:unnamed-chunk-35}
 \iffalse (Two Balanced Coins) \fi{} }Two balanced coins were tossed, and
 it is known that at least one was a head. What is the probability that
 both were heads?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Two Cards]
-\protect\hypertarget{exm:unnamed-chunk-35}{}{\label{exm:unnamed-chunk-35}
+\protect\hypertarget{exm:unnamed-chunk-36}{}{\label{exm:unnamed-chunk-36}
 \iffalse (Two Cards) \fi{} }Two cards are drawn without replacement from
 a standard deck. Find the probability that
 
@@ -1440,7 +1338,7 @@ a standard deck. Find the probability that
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Numbers in a Hat]
-\protect\hypertarget{exm:unnamed-chunk-36}{}{\label{exm:unnamed-chunk-36}
+\protect\hypertarget{exm:unnamed-chunk-37}{}{\label{exm:unnamed-chunk-37}
 \iffalse (Numbers in a Hat) \fi{} }The numbers 1 to 5 are written on
 five slips of paper and placed in a hat. Two slips are drawn at random
 without replacement. What is the probability that the first number is 3,
@@ -1448,7 +1346,7 @@ given a sum of seven?
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[One Card]
-\protect\hypertarget{exm:unnamed-chunk-37}{}{\label{exm:unnamed-chunk-37}
+\protect\hypertarget{exm:unnamed-chunk-38}{}{\label{exm:unnamed-chunk-38}
 \iffalse (One Card) \fi{} }A card is selected at random (i.e.~every card
 has the same probability of being chosen) from a deck of 52. What is the
 probability it is a red card or a face card?
@@ -1471,7 +1369,7 @@ we are given the probability of \(B\) and the conditional probability of
 \(A\) given \(B\), and vice versa.
 
 \BeginKnitrBlock{example}[Fish in a Tank]
-\protect\hypertarget{exm:unnamed-chunk-38}{}{\label{exm:unnamed-chunk-38}
+\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39}
 \iffalse (Fish in a Tank) \fi{} }A tank has three red fish and two blue
 fish. Two fish are chosen at random and without replacement. What is the
 probability of getting
@@ -1520,7 +1418,7 @@ Thus we have
 \[P(B) =\sum_{i=1}^{k} P(A_i \cap B) = \sum_{i=1}^{k} P(B|A_i) P(A_i) \]
 
 \BeginKnitrBlock{example}[Long Hair]
-\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39}
+\protect\hypertarget{exm:unnamed-chunk-40}{}{\label{exm:unnamed-chunk-40}
 \iffalse (Long Hair) \fi{} }Suppose a class contains 60\% girls and 40\%
 boys. Suppose that 30\% of the girls have long hair, and 20\% of the
 boys have long hair. A student is chosen uniformly at random from the
@@ -1545,7 +1443,7 @@ The transition from the second to the third expression in Theorem
 numerator and the law of total probability in the denominator.
 
 \BeginKnitrBlock{example}[Urns]
-\protect\hypertarget{exm:unnamed-chunk-40}{}{\label{exm:unnamed-chunk-40}
+\protect\hypertarget{exm:unnamed-chunk-41}{}{\label{exm:unnamed-chunk-41}
 \iffalse (Urns) \fi{} }Suppose urn \#1 has 3 red and 2 blue balls, and
 urn \#2 has 4 red and 7 blue balls. Suppose one of the two urns is
 selected with probability \(1/2\) each, and then one of the balls within
@@ -1566,7 +1464,7 @@ that urn is picked uniformly at random.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Large Bridges]
-\protect\hypertarget{exm:unnamed-chunk-41}{}{\label{exm:unnamed-chunk-41}
+\protect\hypertarget{exm:unnamed-chunk-42}{}{\label{exm:unnamed-chunk-42}
 \iffalse (Large Bridges) \fi{} }There are three Canadian firms which
 build large bridges, firm 1, firm 2, and firm 3. 20\% of Canadian large
 bridges have been built by firm 1, 30\% by firm 2, and the rest by firm
@@ -1606,14 +1504,14 @@ and \(B\) are independent if neither one has any impact on the
 probability of the other.
 
 \BeginKnitrBlock{example}[Toss a fair coin 10 times]
-\protect\hypertarget{exm:unnamed-chunk-42}{}{\label{exm:unnamed-chunk-42}
+\protect\hypertarget{exm:unnamed-chunk-43}{}{\label{exm:unnamed-chunk-43}
 \iffalse (Toss a fair coin 10 times) \fi{} }Toss a fair coin 10 times.
 Let \(A = {\textrm{at least one head}}\). Let \(T_j\) be the event that
 tails occurs on the \(j^{th}\) toss. Find \(P(A)\)
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Unbalance Die Revisited]
-\protect\hypertarget{exm:unnamed-chunk-43}{}{\label{exm:unnamed-chunk-43}
+\protect\hypertarget{exm:unnamed-chunk-44}{}{\label{exm:unnamed-chunk-44}
 \iffalse (Unbalance Die Revisited) \fi{} }In Example
 \ref{exm:unbalanced}, if \(A\) is the event that the die was 5, and
 \(B\) is the event that the coin was tails, then calculate
@@ -1649,7 +1547,7 @@ associated sample space separately - the nature of sample space
 \(\Omega\) is typically different for different experiments.
 
 \BeginKnitrBlock{example}[Rainy days]
-\protect\hypertarget{exm:unnamed-chunk-45}{}{\label{exm:unnamed-chunk-45}
+\protect\hypertarget{exm:unnamed-chunk-46}{}{\label{exm:unnamed-chunk-46}
 \iffalse (Rainy days) \fi{} }Count the number of days in February which
 have zero precipitation.
 
@@ -1660,7 +1558,7 @@ Let \(E_{i}\) = \(i\) days have zero precipitation.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Footbal Match]
-\protect\hypertarget{exm:unnamed-chunk-46}{}{\label{exm:unnamed-chunk-46}
+\protect\hypertarget{exm:unnamed-chunk-47}{}{\label{exm:unnamed-chunk-47}
 \iffalse (Footbal Match) \fi{} }Count the number of goals in a football
 match.
 
@@ -1677,7 +1575,7 @@ In both of these examples, we need a formula to specify each
 \EndKnitrBlock{rmdnote}
 
 \BeginKnitrBlock{example}[Operating Temperature]
-\protect\hypertarget{exm:unnamed-chunk-48}{}{\label{exm:unnamed-chunk-48}
+\protect\hypertarget{exm:unnamed-chunk-49}{}{\label{exm:unnamed-chunk-49}
 \iffalse (Operating Temperature) \fi{} }Measure the operating
 temperature of an experimental process.
 
@@ -1754,7 +1652,7 @@ the corresponding random variable. The notation \(X(s) = x\) means that
 \EndKnitrBlock{rmdnote}
 
 \BeginKnitrBlock{example}[Coin Toss]
-\protect\hypertarget{exm:unnamed-chunk-50}{}{\label{exm:unnamed-chunk-50}
+\protect\hypertarget{exm:unnamed-chunk-51}{}{\label{exm:unnamed-chunk-51}
 \iffalse (Coin Toss) \fi{} }Suppose a coin is tossed three times. Let
 \(X\) be the number of heads observed. The sample space is
 
@@ -1776,7 +1674,7 @@ random variables any way we like, as long as they are functions from the
 sample space to \(\mathbb{R}\).
 
 \BeginKnitrBlock{example}[A Very Simple Random Variable 2]
-\protect\hypertarget{exm:unnamed-chunk-51}{}{\label{exm:unnamed-chunk-51}
+\protect\hypertarget{exm:unnamed-chunk-52}{}{\label{exm:unnamed-chunk-52}
 \iffalse (A Very Simple Random Variable 2) \fi{} }For the case
 \(\Omega = \left\lbrace \textrm{rain, snow, clear} \right\rbrace\), we
 might define a second random variable \(Y\) by saying that \(Y = 0\) if
@@ -1785,7 +1683,7 @@ is \(Y(rain) = 0\), \(Y(snow) = 1/2\), and \(Y(rain) = 7/8\).
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[A Very Simple Random Variable 3]
-\protect\hypertarget{exm:unnamed-chunk-52}{}{\label{exm:unnamed-chunk-52}
+\protect\hypertarget{exm:unnamed-chunk-53}{}{\label{exm:unnamed-chunk-53}
 \iffalse (A Very Simple Random Variable 3) \fi{} }If the sample space
 corresponds to flipping three different coins, then we could let \(X\)
 be the total number of heads showing, let \(Y\) be the total number of
@@ -1794,7 +1692,7 @@ tails showing, let \(Z = 0\) if there is exactly one head, and otherwise
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Constants as Random Variables]
-\protect\hypertarget{exm:unnamed-chunk-53}{}{\label{exm:unnamed-chunk-53}
+\protect\hypertarget{exm:unnamed-chunk-54}{}{\label{exm:unnamed-chunk-54}
 \iffalse (Constants as Random Variables) \fi{} }As a special case, every
 constant value \(c\) is also a random variable, by saying that
 \(c(s) = c\) for all \(s \in \Omega\). Thus, 5 is a random variable, as
@@ -1802,7 +1700,7 @@ is 3 or −21.6.
 \EndKnitrBlock{example}
 
 \BeginKnitrBlock{example}[Indicator Functions]
-\protect\hypertarget{exm:unnamed-chunk-54}{}{\label{exm:unnamed-chunk-54}
+\protect\hypertarget{exm:unnamed-chunk-55}{}{\label{exm:unnamed-chunk-55}
 \iffalse (Indicator Functions) \fi{} }If \(A\) is any event, then we can
 define the indicator function of \(A\), written \(I_A\), to be the
 random variable
@@ -1879,30 +1777,49 @@ by:
 \NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
 \NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
 \NormalTok{a}\OperatorTok{+}\NormalTok{b}
-\CommentTok{#> [1] 2 4 6}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 2 4 6
+\end{verbatim}
 
 Many of the \texttt{base} functions in \texttt{R} are already
 vectorized. Here are some common examples:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \CommentTok{# generate a sequence of numbers from 1 to 10}
 \NormalTok{(a <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)}
-\CommentTok{#>  [1]  1  2  3  4  5  6  7  8  9 10}
-
-\CommentTok{# sum the numbers from 1 to 10}
-\KeywordTok{sum}\NormalTok{(a)}
-\CommentTok{#> [1] 55}
-
-\CommentTok{# calculate sums of each column}
-\KeywordTok{colSums}\NormalTok{(iris[, }\OperatorTok{-}\DecValTok{5}\NormalTok{])}
-\CommentTok{#> Sepal.Length  Sepal.Width Petal.Length  Petal.Width }
-\CommentTok{#>        876.5        458.6        563.7        179.9}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# sum the numbers from 1 to 10}
+\KeywordTok{sum}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 55
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# calculate sums of each column}
+\KeywordTok{colSums}\NormalTok{(iris[, }\OperatorTok{-}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
+##        876.5        458.6        563.7        179.9
+\end{verbatim}
 
 \begin{quote}
 \textbf{Exercise}: What happens when you sum two vectors of different
@@ -1936,7 +1853,6 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \CommentTok{# Getting the row means of two columns}
 \CommentTok{# Generate data}
 \NormalTok{N <-}\StringTok{ }\DecValTok{10000}
@@ -1944,14 +1860,21 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \NormalTok{x2 <-}\StringTok{ }\KeywordTok{runif}\NormalTok{(N)}
 \NormalTok{d <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(x1, x2))}
 \KeywordTok{head}\NormalTok{(d)}
-\CommentTok{#>        x1     x2}
-\CommentTok{#> 1 0.57632 0.9615}
-\CommentTok{#> 2 0.56474 0.1950}
-\CommentTok{#> 3 0.07399 0.3001}
-\CommentTok{#> 4 0.45387 0.3823}
-\CommentTok{#> 5 0.37328 0.1197}
-\CommentTok{#> 6 0.33132 0.9891}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{verbatim}
+##        x1     x2
+## 1 0.57632 0.9615
+## 2 0.56474 0.1950
+## 3 0.07399 0.3001
+## 4 0.45387 0.3823
+## 5 0.37328 0.1197
+## 6 0.33132 0.9891
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{# Loop:}
 \CommentTok{# create a vector to store the results in }
 \NormalTok{rowMeanFor <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"double"}\NormalTok{, N)}
@@ -1965,9 +1888,12 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 
 \CommentTok{# are the results equal}
 \KeywordTok{all.equal}\NormalTok{(rowMeanFor,rowMeanApply)}
-\CommentTok{#> [1] TRUE}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
 
 \subsection{\texorpdfstring{Descriptive Statistics using
 \texttt{*apply}}{Descriptive Statistics using *apply}}\label{descriptive-statistics-using-apply}
@@ -1977,26 +1903,43 @@ functions}{Family of *apply functions}}\label{family-of-apply-functions}
 \KeywordTok{data}\NormalTok{(women)}
 \CommentTok{# data structure}
 \KeywordTok{str}\NormalTok{(women)}
-\CommentTok{#> 'data.frame':    15 obs. of  2 variables:}
-\CommentTok{#>  $ height: num  58 59 60 61 62 63 64 65 66 67 ...}
-\CommentTok{#>  $ weight: num  115 117 120 123 126 129 132 135 139 142 ...}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{verbatim}
+## 'data.frame':    15 obs. of  2 variables:
+##  $ height: num  58 59 60 61 62 63 64 65 66 67 ...
+##  $ weight: num  115 117 120 123 126 129 132 135 139 142 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{# calculate the mean for each column}
 \KeywordTok{apply}\NormalTok{(women, }\DecValTok{2}\NormalTok{, mean)}
-\CommentTok{#> height weight }
-\CommentTok{#>   65.0  136.7}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{verbatim}
+## height weight 
+##   65.0  136.7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{# apply 'fivenum' function to each column}
 \KeywordTok{vapply}\NormalTok{(women, fivenum, }\KeywordTok{c}\NormalTok{(}\StringTok{"Min."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\StringTok{"1st Qu."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\StringTok{"Median"}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }
                          \StringTok{"3rd Qu."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{, }\StringTok{"Max."}\NormalTok{ =}\StringTok{ }\DecValTok{0}\NormalTok{))}
-\CommentTok{#>         height weight}
-\CommentTok{#> Min.      58.0  115.0}
-\CommentTok{#> 1st Qu.   61.5  124.5}
-\CommentTok{#> Median    65.0  135.0}
-\CommentTok{#> 3rd Qu.   68.5  148.0}
-\CommentTok{#> Max.      72.0  164.0}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+##         height weight
+## Min.      58.0  115.0
+## 1st Qu.   61.5  124.5
+## Median    65.0  135.0
+## 3rd Qu.   68.5  148.0
+## Max.      72.0  164.0
+\end{verbatim}
 
 \subsection{\texorpdfstring{Creating new columns using
 \texttt{sapply}}{Creating new columns using sapply}}\label{creating-new-columns-using-sapply}
@@ -2012,38 +1955,50 @@ data frame:
                        \ControlFlowTok{function}\NormalTok{(i) }\ControlFlowTok{if}\NormalTok{ (i}\OperatorTok{==}\DecValTok{4}\NormalTok{) }\StringTok{"alot"} \ControlFlowTok{else} \StringTok{"some"}\NormalTok{)}
 
 \KeywordTok{head}\NormalTok{(mtcars)[,}\KeywordTok{c}\NormalTok{(}\StringTok{"gear"}\NormalTok{,}\StringTok{"gear2"}\NormalTok{)]}
-\CommentTok{#>                   gear gear2}
-\CommentTok{#> Mazda RX4            4  alot}
-\CommentTok{#> Mazda RX4 Wag        4  alot}
-\CommentTok{#> Datsun 710           4  alot}
-\CommentTok{#> Hornet 4 Drive       3  some}
-\CommentTok{#> Hornet Sportabout    3  some}
-\CommentTok{#> Valiant              3  some}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+##                   gear gear2
+## Mazda RX4            4  alot
+## Mazda RX4 Wag        4  alot
+## Datsun 710           4  alot
+## Hornet 4 Drive       3  some
+## Hornet Sportabout    3  some
+## Valiant              3  some
+\end{verbatim}
 
 \subsection{\texorpdfstring{Applying functions to subsets using
 \texttt{tapply}}{Applying functions to subsets using tapply}}\label{applying-functions-to-subsets-using-tapply}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \CommentTok{# Fisher's famous dataset }
 \KeywordTok{data}\NormalTok{(iris)}
 \KeywordTok{str}\NormalTok{(iris)}
-\CommentTok{#> 'data.frame':    150 obs. of  5 variables:}
-\CommentTok{#>  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...}
-\CommentTok{#>  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...}
-\CommentTok{#>  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...}
-\CommentTok{#>  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...}
-\CommentTok{#>  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...}
-
-\CommentTok{# mean sepal length by species }
-\KeywordTok{tapply}\NormalTok{(iris}\OperatorTok{$}\NormalTok{Sepal.Length, iris}\OperatorTok{$}\NormalTok{Species, mean)}
-\CommentTok{#>     setosa versicolor  virginica }
-\CommentTok{#>      5.006      5.936      6.588}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# mean sepal length by species }
+\KeywordTok{tapply}\NormalTok{(iris}\OperatorTok{$}\NormalTok{Sepal.Length, iris}\OperatorTok{$}\NormalTok{Species, mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     setosa versicolor  virginica 
+##      5.006      5.936      6.588
+\end{verbatim}
 
 \subsection{\texorpdfstring{Nested for loops using
 \texttt{mapply}}{Nested for loops using mapply}}\label{nested-for-loops-using-mapply}
@@ -2090,15 +2045,18 @@ function:
                         \DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
 
 \KeywordTok{head}\NormalTok{(randomNormals)}
-\CommentTok{#>       [,1]   [,2]    [,3]}
-\CommentTok{#> [1,] 3.836  8.771   5.144}
-\CommentTok{#> [2,] 4.525  9.376  -2.280}
-\CommentTok{#> [3,] 4.072 13.144   2.940}
-\CommentTok{#> [4,] 4.737 18.210 -13.118}
-\CommentTok{#> [5,] 5.690 22.951  -7.008}
-\CommentTok{#> [6,] 4.826  7.615 -15.323}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+##       [,1]   [,2]    [,3]
+## [1,] 3.836  8.771   5.144
+## [2,] 4.525  9.376  -2.280
+## [3,] 4.072 13.144   2.940
+## [4,] 4.737 18.210 -13.118
+## [5,] 5.690 22.951  -7.008
+## [6,] 4.826  7.615 -15.323
+\end{verbatim}
 
 The following diagram (from
 \href{http://r4ds.had.co.nz/iteration.html\#mapping-over-multiple-arguments}{r4ds})
@@ -2138,9 +2096,12 @@ simulation parameters:
                         \DataTypeTok{MoreArgs =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{n =} \DecValTok{100}\NormalTok{))}
 
 \KeywordTok{dim}\NormalTok{(randomNormals)}
-\CommentTok{#> [1] 100 100}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 100 100
+\end{verbatim}
 
 \section{\texorpdfstring{Creating dynamic documents with
 \texttt{mapply}}{Creating dynamic documents with mapply}}\label{creating-dynamic-documents-with-mapply}
