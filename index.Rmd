@@ -261,6 +261,9 @@ knitr::kable(as.data.frame(rbind(
     "--"),
   c("Density Plots",
     "--",
+    "[dataviz chapter 7](https://serialmentor.com/dataviz/histograms-density-plots.html)",
+    "--",
+    "--"
     ),
   c("Measures of Center",
     "[link1](https://www.learner.org/courses/againstallodds/unitpages/unit04.html)",
@@ -279,7 +282,9 @@ knitr::kable(as.data.frame(rbind(
     "--"),
   c("Data Visualization",
     "[Hans Rosling BBC](https://www.youtube.com/watch?v=jbkSRLYSojo)",
-    "[]")
+    "--",
+    "--",
+    "--")
 )),
 col.names = c("Topic","Video","Readings","Exercise","DALITE"),
 booktabs = TRUE)
@@ -443,9 +448,11 @@ The greatest thing about `R` is that there are so many people out there willing 
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'tidyverse', 'data.table', 'Hmisc', 'boot'), 
-  'packages.bib')
+  'bib/packages.bib')
 ```
 
+
+<!--
 
 # Slides {-}
 
@@ -497,4 +504,6 @@ knitr::write_bib(c(
 
 ## t-Distribution
 
-1. [t-Distribution Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/t_Table.pdf)   
+1. [t-Distribution Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/t_Table.pdf)  
+
+-->

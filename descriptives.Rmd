@@ -1,0 +1,76 @@
+# (PART) Part I {-} 
+
+# Icebreakers {#intro}
+
+## The Lady Tasting Tea
+
+This example is adapted from _Start Teaching with R_ [@startwithR] and [JH notes unit 8_B](http://www.medicine.mcgill.ca/epidemiology/hanley/med2/unit8b_epi_nov21.pdf).  
+
+There is a famous story about a lady who claimed that
+tea with milk tasted different depending on whether the
+milk was added to the tea or the tea added to the milk.
+The story is famous because of the setting in which she
+made this claim. She was attending a party in Cambridge,
+England, in the 1920s. Also in attendance were a number
+of university dons and their wives. The scientists in at-
+tendance scoffed at the woman and her claim. What, after
+all, could be the difference?
+All the scientists but one, that is. Rather than simply
+dismiss the woman’s claim, he proposed that they decide
+how one should test the claim. The tenor of the conversa-
+tion changed at this suggestion, and the scientists began
+to discuss how the claim should be tested. Within a few
+minutes cups of tea with milk had been prepared and
+presented to the woman for tasting.
+At this point, you may be wondering who the innova-
+tive scientist was and what the results of the experiment
+were. The scientist was R. A. Fisher, who first described
+
+
+![](images/teacups.jpg)
+
+```{r, message=FALSE}
+library(mosaic)
+rflip()
+```
+
+```{r}
+rflip(10)
+```
+
+
+```{r}
+mu = 500
+sigma = 100
+x = rnorm(500, mean=mu, sd=sigma)
+favstats(x)
+meanconfint = function (x, sigma, level = 0.95, ...) {
+  se = sigma / sqrt(length(x))
+  mu = mean(x)
+  z = qnorm(1 - (1 - level)/2)
+  out = c(mu, mu - z * se, mu + z * se)
+  names(out) = c("mean", "lower", "upper")
+  return(out)
+}
+meanconfint(x, sigma = sigma)
+randomx = do(50) * rnorm(500, mean=mu, sd=sigma)
+ci = data.frame(t(apply(randomx, 1, meanconfint, sigma=sigma, level=0.90)))
+head(ci, 3)
+
+xyplot(1:nrow(ci) ~ mean, data=ci, xlim=range(ci), xlab="SAT score", ylab="Index")
+ladd(panel.abline(v=500, col="lightgray", lty=2))
+ladd(with(ci, panel.arrows(x0 = lower, y0=1:nrow(ci), y1=1:nrow(ci), cex=0.5,
+                           x1=upper, code=3)))
+
+head(t(apply(randomx, 1, meanconfint, sigma=sigma, level=0.9)), 3)
+
+```
+
+
+```{r}
+T <- chisq(substance ~ shuffle(sex), data = HELPrct); T
+Substance.Null <- do(999) * chisq(substance ~ shuffle(sex), data = HELPrct)
+histogram( ~ X.squared, data = Substance.Null, v = T, width = 0.25)
+prop1( ~(X.squared >= T), data = Substance.Null)
+```
+

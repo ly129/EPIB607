@@ -7,8 +7,8 @@ options(digits = 4)
 # Setup knitr options
 knitr::opts_chunk$set(
   cache = TRUE,         
-  comment = "#>",      
-  collapse = TRUE,      
+  comment = "##",
+  collapse = FALSE,      
   fig.show = "hold",    
   fig.align = "center", 
   fig.width = 6,        
