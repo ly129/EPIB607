@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EPIB 607: Inferential Statistics</title>
+  <meta name="description" content="Course material for EPIB 607 at McGill University">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="EPIB 607: Inferential Statistics" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://sahirbhatnagar.com/EPIB607" />
+  
+  <meta property="og:description" content="Course material for EPIB 607 at McGill University" />
+  <meta name="github-repo" content="sahirbhatnagar/EPIB607" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="EPIB 607: Inferential Statistics" />
+  
+  <meta name="twitter:description" content="Course material for EPIB 607 at McGill University" />
+  
+
+<meta name="author" content="Sahir Bhatnagar and James Hanley">
+
+
+<meta name="date" content="2018-09-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="appendix-b.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EPIB 607</a></li>
+
+<li class="divider"></li>
+<li class="part"><span><b>I Preface</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#audience"><i class="fa fa-check"></i>Audience</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-these-notes"><i class="fa fa-check"></i>About these notes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#r-code-conventions"><i class="fa fa-check"></i>R Code Conventions</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#rendering-mathematical-formulae"><i class="fa fa-check"></i>Rendering Mathematical Formulae</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#development"><i class="fa fa-check"></i>Development</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i>About the authors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html"><i class="fa fa-check"></i>Course Information</a><ul>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html"><i class="fa fa-check"></i>Target Syllabus</a><ul>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#sampling-distributions"><i class="fa fa-check"></i>Sampling Distributions</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a><ul>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#install-r-and-rstudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#r-packages"><i class="fa fa-check"></i>R Packages</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#introduction-to-r"><i class="fa fa-check"></i>Introduction to R</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#background-reading"><i class="fa fa-check"></i>Background Reading</a></li>
+</ul></li>
+<li class="part"><span><b>II Part I</b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Icebreakers</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-lady-tasting-tea"><i class="fa fa-check"></i><b>1.1</b> The Lady Tasting Tea</a></li>
+</ul></li>
+<li class="appendix"><span><b>R Tutorial</b></span></li>
+<li class="chapter" data-level="A" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html"><i class="fa fa-check"></i><b>A</b> Vectorization, *apply and for loops</a><ul>
+<li class="chapter" data-level="A.1" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#vectorization"><i class="fa fa-check"></i><b>A.1</b> Vectorization</a></li>
+<li class="chapter" data-level="A.2" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#family-of-apply-functions"><i class="fa fa-check"></i><b>A.2</b> Family of <code>*apply</code> functions</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#loops-vs.apply"><i class="fa fa-check"></i><b>A.2.1</b> Loops vs. Apply</a></li>
+<li class="chapter" data-level="A.2.2" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#descriptive-statistics-using-apply"><i class="fa fa-check"></i><b>A.2.2</b> Descriptive Statistics using <code>*apply</code></a></li>
+<li class="chapter" data-level="A.2.3" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#creating-new-columns-using-sapply"><i class="fa fa-check"></i><b>A.2.3</b> Creating new columns using <code>sapply</code></a></li>
+<li class="chapter" data-level="A.2.4" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#applying-functions-to-subsets-using-tapply"><i class="fa fa-check"></i><b>A.2.4</b> Applying functions to subsets using <code>tapply</code></a></li>
+<li class="chapter" data-level="A.2.5" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#nested-for-loops-using-mapply"><i class="fa fa-check"></i><b>A.2.5</b> Nested for loops using <code>mapply</code></a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#creating-dynamic-documents-with-mapply"><i class="fa fa-check"></i><b>A.3</b> Creating dynamic documents with <code>mapply</code></a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
+<li class="divider"></li>
+<li><a href="https://sahirbhatnagar.com" target="blank">Built with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EPIB 607: Inferential Statistics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vectorization-apply-and-for-loops" class="section level1">
+<h1><span class="header-section-number">A</span> Vectorization, *apply and for loops</h1>
+<p>This section will cover the basics of vectorizations, the <code>*apply</code> family of functions and <code>for</code> loops.</p>
+<div id="vectorization" class="section level2">
+<h2><span class="header-section-number">A.1</span> Vectorization</h2>
+<p>Almost everything in <code>R</code> is a vector. A scalar is really a vector of length 1 and a <code>data.frame</code> is a collection of vectors. An nice feature of  is its vectorized capabilities. Vectorization indicates that a function operates on a whole vector of values at the same time and not just on a single value<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. If you have have ever taken a basic linear algebra course, this concept will be familiar to you.   Take for example two vectors:  <span class="math display">\[
+\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} + 
+\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} =
+\begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}
+\]</span>   The corresponding <code>R</code> code is given by:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+a<span class="op">+</span>b</code></pre></div>
+<pre><code>## [1] 2 4 6</code></pre>
+<p>Many of the <code>base</code> functions in <code>R</code> are already vectorized. Here are some common examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># generate a sequence of numbers from 1 to 10</span>
+(a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sum the numbers from 1 to 10</span>
+<span class="kw">sum</span>(a)</code></pre></div>
+<pre><code>## [1] 55</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculate sums of each column</span>
+<span class="kw">colSums</span>(iris[, <span class="dv">-5</span>])</code></pre></div>
+<pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
+##        876.5        458.6        563.7        179.9</code></pre>
+<blockquote>
+<p><strong>Exercise</strong>: What happens when you sum two vectors of different lengths?</p>
+</blockquote>
+</div>
+<div id="family-of-apply-functions" class="section level2">
+<h2><span class="header-section-number">A.2</span> Family of <code>*apply</code> functions</h2>
+<ul>
+<li><code>apply</code>, <code>lapply</code> and <code>sapply</code> are some of the most commonly used class of functions in <code>R</code></li>
+<li><code>*apply</code> functions are not necessarily faster than loops, but can be easier to read (and vice cersa)</li>
+<li><code>apply</code> is used when you need to perform an operation on every row or column of a matrix or data.frame</li>
+<li><code>lapply</code> and <code>sapply</code> differ in the format of the output. The former returns a list while the ladder returns a vector</li>
+<li>There are other <code>*apply</code> functions such as <code>tapply</code>, <code>vapply</code> and <code>mapply</code> with similar functionality and purpose</li>
+</ul>
+<div id="loops-vs.apply" class="section level3">
+<h3><span class="header-section-number">A.2.1</span> Loops vs. Apply</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Getting the row means of two columns</span>
+<span class="co"># Generate data</span>
+N &lt;-<span class="st"> </span><span class="dv">10000</span>
+x1 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
+x2 &lt;-<span class="st"> </span><span class="kw">runif</span>(N)
+d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(x1, x2))
+<span class="kw">head</span>(d)</code></pre></div>
+<pre><code>##        x1     x2
+## 1 0.57632 0.9615
+## 2 0.56474 0.1950
+## 3 0.07399 0.3001
+## 4 0.45387 0.3823
+## 5 0.37328 0.1197
+## 6 0.33132 0.9891</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Loop:</span>
+<span class="co"># create a vector to store the results in </span>
+rowMeanFor &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;double&quot;</span>, N)
+
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(N)) {
+        rowMeanFor[[i]] &lt;-<span class="st"> </span><span class="kw">mean</span>(<span class="kw">c</span>(d[i, <span class="dv">1</span>], d[i, <span class="dv">2</span>]))
+}
+
+<span class="co"># Apply:</span>
+rowMeanApply &lt;-<span class="st"> </span><span class="kw">apply</span>(d, <span class="dv">1</span>, mean)
+
+<span class="co"># are the results equal</span>
+<span class="kw">all.equal</span>(rowMeanFor,rowMeanApply)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="descriptive-statistics-using-apply" class="section level3">
+<h3><span class="header-section-number">A.2.2</span> Descriptive Statistics using <code>*apply</code></h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(women)
+<span class="co"># data structure</span>
+<span class="kw">str</span>(women)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    15 obs. of  2 variables:
+##  $ height: num  58 59 60 61 62 63 64 65 66 67 ...
+##  $ weight: num  115 117 120 123 126 129 132 135 139 142 ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculate the mean for each column</span>
+<span class="kw">apply</span>(women, <span class="dv">2</span>, mean)</code></pre></div>
+<pre><code>## height weight 
+##   65.0  136.7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># apply &#39;fivenum&#39; function to each column</span>
+<span class="kw">vapply</span>(women, fivenum, <span class="kw">c</span>(<span class="st">&quot;Min.&quot;</span> =<span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;1st Qu.&quot;</span> =<span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;Median&quot;</span> =<span class="st"> </span><span class="dv">0</span>, 
+                         <span class="st">&quot;3rd Qu.&quot;</span> =<span class="st"> </span><span class="dv">0</span>, <span class="st">&quot;Max.&quot;</span> =<span class="st"> </span><span class="dv">0</span>))</code></pre></div>
+<pre><code>##         height weight
+## Min.      58.0  115.0
+## 1st Qu.   61.5  124.5
+## Median    65.0  135.0
+## 3rd Qu.   68.5  148.0
+## Max.      72.0  164.0</code></pre>
+</div>
+<div id="creating-new-columns-using-sapply" class="section level3">
+<h3><span class="header-section-number">A.2.3</span> Creating new columns using <code>sapply</code></h3>
+<p>You can apply a <em>user defined function</em> to columns or the entire data frame:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># the ouput of sapply is a vector</span>
+<span class="co"># the &#39;s&#39; in sapply stands for &#39;simplified&#39; apply</span>
+mtcars<span class="op">$</span>gear2 &lt;-<span class="st"> </span><span class="kw">sapply</span>(mtcars<span class="op">$</span>gear, 
+                       <span class="cf">function</span>(i) <span class="cf">if</span> (i<span class="op">==</span><span class="dv">4</span>) <span class="st">&quot;alot&quot;</span> <span class="cf">else</span> <span class="st">&quot;some&quot;</span>)
+
+<span class="kw">head</span>(mtcars)[,<span class="kw">c</span>(<span class="st">&quot;gear&quot;</span>,<span class="st">&quot;gear2&quot;</span>)]</code></pre></div>
+<pre><code>##                   gear gear2
+## Mazda RX4            4  alot
+## Mazda RX4 Wag        4  alot
+## Datsun 710           4  alot
+## Hornet 4 Drive       3  some
+## Hornet Sportabout    3  some
+## Valiant              3  some</code></pre>
+</div>
+<div id="applying-functions-to-subsets-using-tapply" class="section level3">
+<h3><span class="header-section-number">A.2.4</span> Applying functions to subsets using <code>tapply</code></h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fisher&#39;s famous dataset </span>
+<span class="kw">data</span>(iris)
+<span class="kw">str</span>(iris)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean sepal length by species </span>
+<span class="kw">tapply</span>(iris<span class="op">$</span>Sepal.Length, iris<span class="op">$</span>Species, mean)</code></pre></div>
+<pre><code>##     setosa versicolor  virginica 
+##      5.006      5.936      6.588</code></pre>
+</div>
+<div id="nested-for-loops-using-mapply" class="section level3">
+<h3><span class="header-section-number">A.2.5</span> Nested for loops using <code>mapply</code></h3>
+<p><code>mapply</code> is my favorite <code>base</code> <code>R</code> function and here are some reasons why:</p>
+<ul>
+<li>Using <code>mapply</code> is equivalent to writing nested <code>for</code> loops except that it is 100% more human readable and less prone to errors</li>
+<li>It is an effective way of conducting simulations because it iterates of many arguments</li>
+</ul>
+<p>Let’s say you want to generate random samples from a normal distribution with varying means and standard deviations. Of course the brute force way would be to write out the command once, copy paste as many times as you want, and then manually change the arguments for <code>mean</code> and <code>sd</code> in the <code>rnorm</code> function as so:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">1</span>)
+v2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">10</span>, <span class="dt">sd =</span> <span class="dv">5</span>)
+v3 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="dv">-3</span>, <span class="dt">sd =</span> <span class="dv">10</span>)</code></pre></div>
+<p>This isn’t too bad for three vectors. But what if you want to generate many more combinations of means and sds ? Furthermore, how can you keep track of the parameters you used? Now lets consider the <code>mapply</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">means &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">10</span>,<span class="op">-</span><span class="dv">3</span>) ; sds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">10</span>) 
+
+<span class="co"># MoreArgs is a list of arguments that dont change</span>
+randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> means, <span class="dt">sd =</span> sds, 
+                        <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
+
+<span class="kw">head</span>(randomNormals)</code></pre></div>
+<pre><code>##       [,1]   [,2]    [,3]
+## [1,] 3.836  8.771   5.144
+## [2,] 4.525  9.376  -2.280
+## [3,] 4.072 13.144   2.940
+## [4,] 4.737 18.210 -13.118
+## [5,] 5.690 22.951  -7.008
+## [6,] 4.826  7.615 -15.323</code></pre>
+<p>The following diagram (from <a href="http://r4ds.had.co.nz/iteration.html#mapping-over-multiple-arguments">r4ds</a>) describes exactly what is going on in the above function call to <code>mapply</code>:</p>
+<div class="figure">
+<img src="images/mapply.png" />
+
+</div>
+<p>Advantages:</p>
+<ol style="list-style-type: decimal">
+<li>Result is automatically stored in a matrix</li>
+<li>The parameters are also saved in <code>R</code> objects so that they can be easily manipulated and/or recovered</li>
+</ol>
+<p>Consider a more complex scenario where you want to consider many possible combinations of means and sds. We take advantage of the <code>expand.grid</code> function to create a <code>data.frame</code> of simulation parameters:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">simParams &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">means =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,
+                         <span class="dt">sds =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)
+
+randomNormals &lt;-<span class="st"> </span><span class="kw">mapply</span>(rnorm, <span class="dt">mean =</span> simParams<span class="op">$</span>means, 
+                        <span class="dt">sd =</span> simParams<span class="op">$</span>sds, 
+                        <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">n =</span> <span class="dv">100</span>))
+
+<span class="kw">dim</span>(randomNormals)</code></pre></div>
+<pre><code>## [1] 100 100</code></pre>
+</div>
+</div>
+<div id="creating-dynamic-documents-with-mapply" class="section level2">
+<h2><span class="header-section-number">A.3</span> Creating dynamic documents with <code>mapply</code></h2>
+<p><code>mapply</code> together with the <code>rmarkdown</code> package <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown">2018</a>)</span> can be very useful to create dynamic documents for exploratory analysis. We illustrate this using the Motor Trend Car Road Tests data which comes pre-loaded in <code>R</code>.</p>
+<blockquote>
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
+</blockquote>
+<p>Copy the code below in a file called <code>mapplyRmarkdown.Rmd</code> :</p>
+<script src="https://gist.github.com/sahirbhatnagar/d2264c64b0213308dfaa537af1bfd9a7.js"></script>
+<p>Copy the code below in a file called <code>boxplotTemplate</code> :</p>
+<script src="https://gist.github.com/sahirbhatnagar/4db246dd767eabb204eead836b29cd44.js"></script>
+</div>
+</div>
+<h3><span class="header-section-number">B</span> Appendix B</h3>
+<div id="refs" class="references">
+<div id="ref-R-rmarkdown">
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, and Winston Chang. 2018. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p><a href="http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html" class="uri">http://www.dummies.com/how-to/content/how-to-vectorize-your-functions-in-r.html</a><a href="vectorization-apply-and-for-loops.html#fnref2">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sahirbhatnagar/EPIB607/edit/master/05-Rtutorial.Rmd",
+"text": "Edit"
+},
+"download": ["epib607.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

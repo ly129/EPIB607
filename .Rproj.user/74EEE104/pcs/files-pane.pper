@@ -1,0 +1,13 @@
+{
+    "path" : "~/git_repositories/epib607/images",
+    "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
+        {
+            "ascending" : false,
+            "columnIndex" : 2
+        }
+    ]
+}
