@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1535993199509.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "29223808",
+    "id" : "84950EA0",
+    "lastKnownWriteTime" : 1535993225,
+    "last_content_update" : 1535993225417,
+    "path" : "~/git_repositories/epib607/.travis.yml",
+    "project_path" : ".travis.yml",
+    "properties" : {
+        "cursorPosition" : "12,49",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}
