@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1535998275390.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1D573E5B",
+    "lastKnownWriteTime" : 1535998286,
+    "last_content_update" : 1535998286043,
+    "path" : "~/git_repositories/epib607/code/includes/init_chapter.R",
+    "project_path" : "code/includes/init_chapter.R",
+    "properties" : {
+        "cursorPosition" : "10,19",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
