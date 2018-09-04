@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-09-03">
+<meta name="date" content="2018-09-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -117,18 +117,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html"><i class="fa fa-check"></i>Course Information</a><ul>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#datacamp"><i class="fa fa-check"></i>DataCamp</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html"><i class="fa fa-check"></i>Target Syllabus</a><ul>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#sampling-distributions"><i class="fa fa-check"></i>Sampling Distributions</a></li>
-<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#tests-of-null-hypotheses"><i class="fa fa-check"></i>Tests of Null Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#one-sample-inference"><i class="fa fa-check"></i>One-sample Inference</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#two-sample-inference"><i class="fa fa-check"></i>Two-sample Inference</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#inference-for-counts"><i class="fa fa-check"></i>Inference for Counts</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#regression"><i class="fa fa-check"></i>Regression</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#nonparametric-statistics"><i class="fa fa-check"></i>Nonparametric Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a><ul>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#install-r-and-rstudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#r-packages"><i class="fa fa-check"></i>R Packages</a></li>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#introduction-to-r"><i class="fa fa-check"></i>Introduction to R</a></li>
-<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#background-reading"><i class="fa fa-check"></i>Background Reading</a></li>
 </ul></li>
 <li class="part"><span><b>II Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Icebreakers</a><ul>
@@ -171,30 +175,73 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1>Prerequisites</h1>
 <div id="install-r-and-rstudio" class="section level2 unnumbered">
 <h2>Install R and RStudio</h2>
-<p>All examples in this book are run in an <a href="https://cran.r-project.org/">R</a> environment. You also need a recent version of <a href="https://www.rstudio.com/products/rstudio/download/preview/">RStudio</a>, which is a software application that facilitates how you interact with <code>R</code>. It is developed by data enthusiasts who consider statistics to be more than just simulations, formulas and proofs. RStudio emphasizes the following:</p>
+<p>Complete the following DataCamp course:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Topic</th>
+<th align="left">DataCamp Courses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Working with the RStudio IDE (Part 1)</td>
+<td align="left"><a target="_blank" class="page-link" href="https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1"><img src="images/rstudio_ide.png" alt="Drawing" style="height: 150px;"/></a></td>
+</tr>
+</tbody>
+</table>
+<p>This short course will guide you through installing both <a href="https://cran.r-project.org/">R</a> and <a href="https://www.rstudio.com/products/rstudio/download/preview/">RStudio</a>. RStudio is a software application that facilitates how you interact with <code>R</code>. It is developed by data enthusiasts who consider statistics to be more than just simulations, formulas and proofs. RStudio emphasizes the following:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Version control</strong>: <a href="http://stackoverflow.com/questions/1408450/why-should-i-use-version-control">Why I should use version control</a> especially for the <a href="http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst">solo data analyst</a>.</p></li>
 <li><p><strong>Reproducible research</strong>: seamless integration with <a href="http://rmarkdown.rstudio.com/">RMarkdown</a> for creating <a href="http://yihui.name/knitr/">dynamic documents</a> and presentations</p></li>
 <li><p><strong>Creating R Packages</strong>: seamless integration with the <a href="https://github.com/hadley/devtools">devtools</a> package for creating software that implements your statistical method or analysis.</p></li>
 </ol>
 </div>
-<div id="r-packages" class="section level2 unnumbered">
-<h2>R Packages</h2>
-<p>The following packages will be called upon at some point, so please install them before getting started with the tutorials. Enter the following command in <code>R</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;pacman&quot;</span>,<span class="st">&quot;knitr&quot;</span>,<span class="st">&quot;data.table&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;boot&quot;</span>, <span class="st">&quot;Hmisc&quot;</span>))</code></pre></div>
-</div>
 <div id="introduction-to-r" class="section level2 unnumbered">
 <h2>Introduction to R</h2>
-<p>Try out the interactive tutorial: <a href="http://swirlstats.com/" class="uri">http://swirlstats.com/</a></p>
-</div>
-<div id="background-reading" class="section level2 unnumbered">
-<h2>Background Reading</h2>
-<p>The greatest thing about <code>R</code> is that there are so many people out there willing to help you. <code>R</code> users are constantly writing tutorials and creating packages to make your analysis tasks easier. Here is a very targeted list that I suggest reading prior to starting the tutorials</p>
-<ol style="list-style-type: decimal">
-<li><a href="http://r4ds.had.co.nz/functions.html">Writing Functions</a></li>
-<li><a href="http://r4ds.had.co.nz/iteration.html"><code>for</code> loops</a></li>
-<li><a href="https://kbroman.wordpress.com/2013/04/02/apply-vs-for/"><code>apply</code> vs. <code>for</code></a></li>
-</ol>
+<p>Complete the following DataCamp course:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Topic</th>
+<th align="left">DataCamp Courses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Introduction to R</td>
+<td align="left"><a target="_blank" class="page-link" href="https://www.datacamp.com/courses/free-introduction-to-r"><img src="images/intro_r.png" alt="Drawing" style="height: 150px;"/></a></td>
+</tr>
+</tbody>
+</table>
+<p>In this course you will get a hands-on introduction to the basic commands in R. With the knowledge gained in this course, you will be ready to perform a data analysis.</p>
+<!--
+## R Packages  {-}
+
+The following packages will be called upon at some point, so please install them before getting started with the tutorials. Enter the following command in `R`:
+
+
+```r
+install.packages(c("pacman","knitr","data.table", "rmarkdown", "tidyverse", "boot", "Hmisc"))
+```
+
+
+## Introduction to R {-}
+
+Try out the interactive tutorial: [http://swirlstats.com/](http://swirlstats.com/)
+
+
+
+
+## Background Reading  {-}
+
+The greatest thing about `R` is that there are so many people out there willing to help you. `R` users are constantly writing tutorials and creating packages to make your analysis tasks easier. Here is a very targeted list that I suggest reading prior to starting the tutorials
+
+1. [Writing Functions](http://r4ds.had.co.nz/functions.html) 
+2. [`for` loops](http://r4ds.had.co.nz/iteration.html)
+3. [`apply` vs. `for`](https://kbroman.wordpress.com/2013/04/02/apply-vs-for/)
+
+-->
 <!--
 
 # Slides {-}

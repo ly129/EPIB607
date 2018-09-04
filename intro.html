@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-09-03">
+<meta name="date" content="2018-09-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -117,18 +117,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html"><i class="fa fa-check"></i>Course Information</a><ul>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#teaching-strategy"><i class="fa fa-check"></i>Teaching strategy</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#a-focus-on-computation"><i class="fa fa-check"></i>A focus on computation</a></li>
+<li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#datacamp"><i class="fa fa-check"></i>DataCamp</a></li>
 <li class="chapter" data-level="" data-path="course-information.html"><a href="course-information.html#grade-distribution"><i class="fa fa-check"></i>Grade Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html"><i class="fa fa-check"></i>Target Syllabus</a><ul>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#sampling-distributions"><i class="fa fa-check"></i>Sampling Distributions</a></li>
-<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#tests-of-null-hypotheses"><i class="fa fa-check"></i>Tests of Null Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#one-sample-inference"><i class="fa fa-check"></i>One-sample Inference</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#two-sample-inference"><i class="fa fa-check"></i>Two-sample Inference</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#inference-for-counts"><i class="fa fa-check"></i>Inference for Counts</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#regression"><i class="fa fa-check"></i>Regression</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#nonparametric-statistics"><i class="fa fa-check"></i>Nonparametric Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a><ul>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#install-r-and-rstudio"><i class="fa fa-check"></i>Install R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#r-packages"><i class="fa fa-check"></i>R Packages</a></li>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#introduction-to-r"><i class="fa fa-check"></i>Introduction to R</a></li>
-<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#background-reading"><i class="fa fa-check"></i>Background Reading</a></li>
 </ul></li>
 <li class="part"><span><b>II Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Icebreakers</a><ul>
@@ -178,27 +182,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mosaic)
-<span class="kw">rflip</span>()</code></pre></div>
-<pre><code>## 
-## Flipping 1 coin [ Prob(Heads) = 0.5 ] ...
-## 
-## H
-## 
-## Number of Heads: 1 [Proportion Heads: 1]</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rflip</span>(<span class="dv">10</span>)</code></pre></div>
-<pre><code>## 
-## Flipping 10 coins [ Prob(Heads) = 0.5 ] ...
-## 
-## H T T T T H T T T H
-## 
-## Number of Heads: 3 [Proportion Heads: 0.3]</code></pre>
+<span class="kw">rflip</span>()
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Flipping 1 coin [ Prob(Heads) = 0.5 ] ...</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; H</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Number of Heads: 1 [Proportion Heads: 1]</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rflip</span>(<span class="dv">10</span>)
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Flipping 10 coins [ Prob(Heads) = 0.5 ] ...</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; H T T T T H T T T H</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Number of Heads: 3 [Proportion Heads: 0.3]</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu =<span class="st"> </span><span class="dv">500</span>
 sigma =<span class="st"> </span><span class="dv">100</span>
 x =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</span>, <span class="dt">mean=</span>mu, <span class="dt">sd=</span>sigma)
-<span class="kw">favstats</span>(x)</code></pre></div>
-<pre><code>##  min    Q1 median    Q3   max  mean    sd   n missing
-##  117 431.4  497.4 563.1 811.6 500.2 99.16 500       0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meanconfint =<span class="st"> </span><span class="cf">function</span> (x, sigma, <span class="dt">level =</span> <span class="fl">0.95</span>, ...) {
+<span class="kw">favstats</span>(x)
+<span class="co">#&gt;  min    Q1 median    Q3   max  mean    sd   n missing</span>
+<span class="co">#&gt;  117 431.4  497.4 563.1 811.6 500.2 99.16 500       0</span>
+meanconfint =<span class="st"> </span><span class="cf">function</span> (x, sigma, <span class="dt">level =</span> <span class="fl">0.95</span>, ...) {
   se =<span class="st"> </span>sigma <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">length</span>(x))
   mu =<span class="st"> </span><span class="kw">mean</span>(x)
   z =<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>level)<span class="op">/</span><span class="dv">2</span>)
@@ -206,36 +210,37 @@ x =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</
   <span class="kw">names</span>(out) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;lower&quot;</span>, <span class="st">&quot;upper&quot;</span>)
   <span class="kw">return</span>(out)
 }
-<span class="kw">meanconfint</span>(x, <span class="dt">sigma =</span> sigma)</code></pre></div>
-<pre><code>##  mean lower upper 
-## 500.2 491.4 509.0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">randomx =<span class="st"> </span><span class="kw">do</span>(<span class="dv">50</span>) <span class="op">*</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</span>, <span class="dt">mean=</span>mu, <span class="dt">sd=</span>sigma)
+<span class="kw">meanconfint</span>(x, <span class="dt">sigma =</span> sigma)
+<span class="co">#&gt;  mean lower upper </span>
+<span class="co">#&gt; 500.2 491.4 509.0</span>
+randomx =<span class="st"> </span><span class="kw">do</span>(<span class="dv">50</span>) <span class="op">*</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</span>, <span class="dt">mean=</span>mu, <span class="dt">sd=</span>sigma)
 ci =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">t</span>(<span class="kw">apply</span>(randomx, <span class="dv">1</span>, meanconfint, <span class="dt">sigma=</span>sigma, <span class="dt">level=</span><span class="fl">0.90</span>)))
-<span class="kw">head</span>(ci, <span class="dv">3</span>)</code></pre></div>
-<pre><code>##    mean lower upper
-## 1 493.1 485.7 500.5
-## 2 492.8 485.5 500.2
-## 3 502.4 495.1 509.8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xyplot</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(ci) <span class="op">~</span><span class="st"> </span>mean, <span class="dt">data=</span>ci, <span class="dt">xlim=</span><span class="kw">range</span>(ci), <span class="dt">xlab=</span><span class="st">&quot;SAT score&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Index&quot;</span>)
+<span class="kw">head</span>(ci, <span class="dv">3</span>)
+<span class="co">#&gt;    mean lower upper</span>
+<span class="co">#&gt; 1 493.1 485.7 500.5</span>
+<span class="co">#&gt; 2 492.8 485.5 500.2</span>
+<span class="co">#&gt; 3 502.4 495.1 509.8</span>
+
+<span class="kw">xyplot</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(ci) <span class="op">~</span><span class="st"> </span>mean, <span class="dt">data=</span>ci, <span class="dt">xlim=</span><span class="kw">range</span>(ci), <span class="dt">xlab=</span><span class="st">&quot;SAT score&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Index&quot;</span>)
 <span class="kw">ladd</span>(<span class="kw">panel.abline</span>(<span class="dt">v=</span><span class="dv">500</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>, <span class="dt">lty=</span><span class="dv">2</span>))
 <span class="kw">ladd</span>(<span class="kw">with</span>(ci, <span class="kw">panel.arrows</span>(<span class="dt">x0 =</span> lower, <span class="dt">y0=</span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(ci), <span class="dt">y1=</span><span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(ci), <span class="dt">cex=</span><span class="fl">0.5</span>,
                            <span class="dt">x1=</span>upper, <span class="dt">code=</span><span class="dv">3</span>)))
 
-<span class="kw">head</span>(<span class="kw">t</span>(<span class="kw">apply</span>(randomx, <span class="dv">1</span>, meanconfint, <span class="dt">sigma=</span>sigma, <span class="dt">level=</span><span class="fl">0.9</span>)), <span class="dv">3</span>)</code></pre></div>
-<pre><code>##       mean lower upper
-## [1,] 493.1 485.7 500.5
-## [2,] 492.8 485.5 500.2
-## [3,] 502.4 495.1 509.8</code></pre>
-<p><img src="epib607_files/figure-html/unnamed-chunk-12-1.png" width="\textwidth" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-12-2.png" width="\textwidth" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-12-3.png" width="\textwidth" style="display: block; margin: auto;" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">T &lt;-<span class="st"> </span><span class="kw">chisq</span>(substance <span class="op">~</span><span class="st"> </span><span class="kw">shuffle</span>(sex), <span class="dt">data =</span> HELPrct); T</code></pre></div>
-<pre><code>## X.squared 
-##   0.07796</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Substance.Null &lt;-<span class="st"> </span><span class="kw">do</span>(<span class="dv">999</span>) <span class="op">*</span><span class="st"> </span><span class="kw">chisq</span>(substance <span class="op">~</span><span class="st"> </span><span class="kw">shuffle</span>(sex), <span class="dt">data =</span> HELPrct)
+<span class="kw">head</span>(<span class="kw">t</span>(<span class="kw">apply</span>(randomx, <span class="dv">1</span>, meanconfint, <span class="dt">sigma=</span>sigma, <span class="dt">level=</span><span class="fl">0.9</span>)), <span class="dv">3</span>)
+<span class="co">#&gt;       mean lower upper</span>
+<span class="co">#&gt; [1,] 493.1 485.7 500.5</span>
+<span class="co">#&gt; [2,] 492.8 485.5 500.2</span>
+<span class="co">#&gt; [3,] 502.4 495.1 509.8</span></code></pre></div>
+<p><img src="epib607_files/figure-html/unnamed-chunk-17-1.png" width="\textwidth" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-17-2.png" width="\textwidth" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-17-3.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">T &lt;-<span class="st"> </span><span class="kw">chisq</span>(substance <span class="op">~</span><span class="st"> </span><span class="kw">shuffle</span>(sex), <span class="dt">data =</span> HELPrct); T
+<span class="co">#&gt; X.squared </span>
+<span class="co">#&gt;   0.07796</span>
+Substance.Null &lt;-<span class="st"> </span><span class="kw">do</span>(<span class="dv">999</span>) <span class="op">*</span><span class="st"> </span><span class="kw">chisq</span>(substance <span class="op">~</span><span class="st"> </span><span class="kw">shuffle</span>(sex), <span class="dt">data =</span> HELPrct)
 <span class="kw">histogram</span>( <span class="op">~</span><span class="st"> </span>X.squared, <span class="dt">data =</span> Substance.Null, <span class="dt">v =</span> T, <span class="dt">width =</span> <span class="fl">0.25</span>)
-<span class="kw">prop1</span>( <span class="op">~</span>(X.squared <span class="op">&gt;=</span><span class="st"> </span>T), <span class="dt">data =</span> Substance.Null)</code></pre></div>
-<pre><code>## prop_TRUE 
-##     0.956</code></pre>
-<p><img src="epib607_files/figure-html/unnamed-chunk-13-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<span class="kw">prop1</span>( <span class="op">~</span>(X.squared <span class="op">&gt;=</span><span class="st"> </span>T), <span class="dt">data =</span> Substance.Null)
+<span class="co">#&gt; prop_TRUE </span>
+<span class="co">#&gt;     0.956</span></code></pre></div>
+<p><img src="epib607_files/figure-html/unnamed-chunk-18-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
