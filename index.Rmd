@@ -90,13 +90,14 @@ Welcome to the course notes for [EPIB 607: Inferential Statistics](https://www.m
 
 The aim of this course is to provide students with basic principles of statistical inference so that they can:  
 
-1. Understand the statistical methods section in a scientific paper.  
-2. Apply statistical methods in their own research.  
-3. Use the methods learned in this course as a foundation for more advanced biostatistics courses.  
+1. Visualize/Analyze/Interpret data using statistical methods **with a computer**.
+2. Understand the statistical results in a scientific paper.  
+3. Apply statistical methods in their own research.  
+4. Use the methods learned in this course as a foundation for more advanced biostatistics courses.  
 
 ## Audience 
 
-The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven't had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and understanding scientific papers. 
+The principal audience is researchers in the natural and social sciences who haven't had an introductory course in statistics (or did have one a long time ago). This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and understanding scientific papers. 
 
 
 ## About these notes 

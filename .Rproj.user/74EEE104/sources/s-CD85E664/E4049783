@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1517276881",
+    "hash" : "0",
     "id" : "E4049783",
-    "lastKnownWriteTime" : 1536156923,
-    "last_content_update" : 1536156923277,
+    "lastKnownWriteTime" : 1536175924,
+    "last_content_update" : 1536175924034,
     "path" : "~/git_repositories/epib607/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "655,14",
-        "scrollLine" : "658"
+        "cursorPosition" : "95,1",
+        "scrollLine" : "87"
     },
     "relative_order" : 1,
     "source_on_save" : false,

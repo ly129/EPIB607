@@ -2055,3 +2055,172 @@ Output created: _book/index.html
 make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
 Rscript -e 'browseURL("_book/index.html")'
 ]0;/home/sahir/git_repositories/epib607> (B[m(reverse-i-search)`': m': make build[1@a[C[C[C[1@k[C[C[C[1@e[C[C[C[1@ [C[C[Cf': make foo="added A1" git[1@o[C[C[C[1@o[C[C[C[28P> (B[m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ [1@t[1@o[1@ [1@b[1@o[1P[1P[1@m[1@a[1@i[1@n[1@ [1@s[1@i[1@t[1@e[1@ [1@a[1@n[1@d[1@ [1@n[1@u[1@m[1@b[1@e[1@r[1@e[1@d[1@ [1@s[1@e[1@c[1@t[1@i[1@o[1@n[1@s[C[C[C[C[C
+git checkout master
+M	.Rproj.user/74EEE104/console06/BF2D9EEF
+M	.Rproj.user/74EEE104/console06/BF2D9EEF.env
+M	index.Rmd
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+git add -fA
+git commit --allow-empty -m "added A1 to main site and numbered sections"
+[master 35eeb30] added A1 to main site and numbered sections
+ 156 files changed, 7805 insertions(+), 51 deletions(-)
+ create mode 100644 .Rproj.user/74EEE104/console06/INDEX001
+ create mode 100644 .Rproj.user/74EEE104/pcs/files-pane.pper
+ create mode 100644 .Rproj.user/74EEE104/pcs/source-pane.pper
+ create mode 100644 .Rproj.user/74EEE104/pcs/windowlayoutstate.pper
+ create mode 100644 .Rproj.user/74EEE104/pcs/workbench-pane.pper
+ create mode 100644 .Rproj.user/74EEE104/rmd-outputs
+ create mode 100644 .Rproj.user/74EEE104/saved_source_markers
+ create mode 100644 .Rproj.user/74EEE104/sources/prop/FB28D484
+ create mode 100644 .Rproj.user/74EEE104/sources/prop/INDEX
+ create mode 100644 .Rproj.user/74EEE104/sources/s-CD85E664/E4049783
+ create mode 100644 .Rproj.user/74EEE104/sources/s-CD85E664/E4049783-contents
+ create mode 100644 .Rproj.user/74EEE104/sources/s-CD85E664/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/87FFC46A-index/1/74EEE104CD85E664/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/87FFC46A-index/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 _book/appendix-b.html
+ create mode 100644 _book/assignments.html
+ create mode 100644 _book/course-information.html
+ create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-18-1.png
+ create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-18-2.png
+ create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-18-3.png
+ create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-19-1.png
+ create mode 100644 _book/images/caution.png
+ create mode 100644 _book/images/datacamp.png
+ create mode 100644 _book/images/edit_button.png
+ create mode 100644 _book/images/important.png
+ create mode 100644 _book/images/intro_r.png
+ create mode 100644 _book/images/jim.png
+ create mode 100644 _book/images/mapply.png
+ create mode 100644 _book/images/note.png
+ create mode 100644 _book/images/rmarkdown_r.png
+ create mode 100644 _book/images/rstudio_ide.png
+ create mode 100644 _book/images/rstudio_ide_2.png
+ create mode 100644 _book/images/sahir.png
+ create mode 100644 _book/images/teacups.jpg
+ create mode 100644 _book/images/tip.png
+ create mode 100644 _book/images/warning.png
+ create mode 100644 _book/index.html
+ create mode 100644 _book/intro.html
+ create mode 100644 _book/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-bookdown.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-fontsettings.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-highlight.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-search.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/style.css
+ create mode 100644 _book/libs/gitbook-2.6.7/js/app.min.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/jquery.highlight.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/lunr.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-bookdown.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-fontsettings.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-search.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-sharing.js
+ create mode 100644 _book/libs/jquery-2.2.3/jquery.min.js
+ create mode 100644 _book/prerequisites.html
+ create mode 100644 _book/schedule.html
+ create mode 100644 _book/search_index.json
+ create mode 100644 _book/slides.html
+ create mode 100644 _book/style.css
+ create mode 100644 _book/target-syllabus.html
+ create mode 100644 _book/vectorization-apply-and-for-loops.html
+ create mode 100644 _bookdown_files/epib607_cache/html/__packages
+ create mode 100644 _bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.rdx
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-9_093b4e8294c6e7ff282cdd23309022ce.RData
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-9_093b4e8294c6e7ff282cdd23309022ce.rdb
+ create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-9_093b4e8294c6e7ff282cdd23309022ce.rdx
+ create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-18-1.png
+ create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-18-2.png
+ create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-18-3.png
+ create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-19-1.png
+git push -f -q origin master
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': sahirbhatnagar
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://sahirbhatnagar@github.com': 
+]0;/home/sahir/git_repositories/epib607> (B[mmake foo="fixed typo" git
