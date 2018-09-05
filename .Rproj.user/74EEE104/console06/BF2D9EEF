@@ -1,2248 +1,0 @@
-rm -rfv _bookdown_files *.log .Rproj.user/ *.utf8.md
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.rdx'
-removed '_bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-9_23bf2e90d53633b3178856abbeca34d7.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-20_fc85382a7c86f89449cf9a5dcfdbc161.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.RData'
-removed '_bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.rdb'
-removed '_bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-15_2c65a53359ec1a63e8231254fcbd9871.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-20_fc85382a7c86f89449cf9a5dcfdbc161.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.rdb'
-removed '_bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-9_23bf2e90d53633b3178856abbeca34d7.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.RData'
-removed '_bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.RData'
-removed '_bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.RData'
-removed '_bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.rdx'
-removed '_bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.rdx'
-removed '_bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-9_23bf2e90d53633b3178856abbeca34d7.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.rdx'
-removed '_bookdown_files/epib607_cache/html/__packages'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-20_fc85382a7c86f89449cf9a5dcfdbc161.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-15_2c65a53359ec1a63e8231254fcbd9871.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-15_2c65a53359ec1a63e8231254fcbd9871.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.RData'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.rdb'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.rdx'
-removed '_bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.rdx'
-removed directory '_bookdown_files/epib607_cache/html'
-removed directory '_bookdown_files/epib607_cache'
-removed '_bookdown_files/epib607_files/figure-html/unnamed-chunk-17-2.png'
-removed '_bookdown_files/epib607_files/figure-html/unnamed-chunk-18-2.png'
-removed '_bookdown_files/epib607_files/figure-html/unnamed-chunk-17-1.png'
-removed '_bookdown_files/epib607_files/figure-html/unnamed-chunk-18-1.png'
-removed '_bookdown_files/epib607_files/figure-html/unnamed-chunk-18-3.png'
-removed '_bookdown_files/epib607_files/figure-html/unnamed-chunk-17-3.png'
-removed '_bookdown_files/epib607_files/figure-html/unnamed-chunk-19-1.png'
-removed directory '_bookdown_files/epib607_files/figure-html'
-removed directory '_bookdown_files/epib607_files'
-removed directory '_bookdown_files'
-removed directory '.Rproj.user/74EEE104/explorer-cache'
-removed directory '.Rproj.user/74EEE104/presentation'
-removed '.Rproj.user/74EEE104/console06/BF2D9EEF.env'
-removed '.Rproj.user/74EEE104/console06/INDEX001'
-removed '.Rproj.user/74EEE104/console06/BF2D9EEF'
-removed directory '.Rproj.user/74EEE104/console06'
-removed '.Rproj.user/74EEE104/sources/prop/1B9FD072'
-removed '.Rproj.user/74EEE104/sources/prop/F2A6B886'
-removed '.Rproj.user/74EEE104/sources/prop/52CFC103'
-removed '.Rproj.user/74EEE104/sources/prop/679EC9BE'
-removed '.Rproj.user/74EEE104/sources/prop/INDEX'
-removed '.Rproj.user/74EEE104/sources/prop/CE4CFA40'
-removed '.Rproj.user/74EEE104/sources/prop/48D6E45D'
-removed '.Rproj.user/74EEE104/sources/prop/F74A96B1'
-removed directory '.Rproj.user/74EEE104/sources/prop'
-removed directory '.Rproj.user/74EEE104/sources/per/u'
-removed directory '.Rproj.user/74EEE104/sources/per/t'
-removed directory '.Rproj.user/74EEE104/sources/per'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/lock_file'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/18A6CBFD-contents'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/D293241C-contents'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/3A7F8F5C-contents'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/28E58B89-contents'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/E2E842F3-contents'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/18A6CBFD'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/1AEF5045-contents'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/D293241C'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/308DA633-contents'
-removed '.Rproj.user/74EEE104/sources/s-476A8A20/7400687C-contents'
-removed directory '.Rproj.user/74EEE104/sources/s-476A8A20'
-removed directory '.Rproj.user/74EEE104/sources'
-removed directory '.Rproj.user/74EEE104/viewer-cache'
-removed directory '.Rproj.user/74EEE104/profiles-cache'
-removed '.Rproj.user/74EEE104/pcs/files-pane.pper'
-removed '.Rproj.user/74EEE104/pcs/windowlayoutstate.pper'
-removed '.Rproj.user/74EEE104/pcs/workbench-pane.pper'
-removed '.Rproj.user/74EEE104/pcs/source-pane.pper'
-removed directory '.Rproj.user/74EEE104/pcs'
-removed '.Rproj.user/74EEE104/rmd-outputs'
-removed directory '.Rproj.user/74EEE104/ctx'
-removed directory '.Rproj.user/74EEE104/unsaved-notebooks/1AEF5045'
-removed directory '.Rproj.user/74EEE104/unsaved-notebooks'
-removed '.Rproj.user/74EEE104/saved_source_markers'
-removed directory '.Rproj.user/74EEE104'
-removed '.Rproj.user/shared/notebooks/4CC99E61-index/1/74EEE104476A8A20/chunks.json'
-removed directory '.Rproj.user/shared/notebooks/4CC99E61-index/1/74EEE104476A8A20'
-removed '.Rproj.user/shared/notebooks/4CC99E61-index/1/74EEE10470C53552/chunks.json'
-removed directory '.Rproj.user/shared/notebooks/4CC99E61-index/1/74EEE10470C53552'
-removed '.Rproj.user/shared/notebooks/4CC99E61-index/1/s/chunks.json'
-removed directory '.Rproj.user/shared/notebooks/4CC99E61-index/1/s'
-removed directory '.Rproj.user/shared/notebooks/4CC99E61-index/1'
-removed directory '.Rproj.user/shared/notebooks/4CC99E61-index'
-removed '.Rproj.user/shared/notebooks/93C1C273-a1-setup/1/s/chunks.json'
-removed directory '.Rproj.user/shared/notebooks/93C1C273-a1-setup/1/s'
-removed directory '.Rproj.user/shared/notebooks/93C1C273-a1-setup/1'
-removed directory '.Rproj.user/shared/notebooks/93C1C273-a1-setup'
-removed '.Rproj.user/shared/notebooks/paths'
-removed '.Rproj.user/shared/notebooks/879C09BE-a1-setup/1/74EEE104476A8A20/chunks.json'
-removed directory '.Rproj.user/shared/notebooks/879C09BE-a1-setup/1/74EEE104476A8A20'
-removed '.Rproj.user/shared/notebooks/879C09BE-a1-setup/1/s/chunks.json'
-removed directory '.Rproj.user/shared/notebooks/879C09BE-a1-setup/1/s'
-removed directory '.Rproj.user/shared/notebooks/879C09BE-a1-setup/1'
-removed directory '.Rproj.user/shared/notebooks/879C09BE-a1-setup'
-removed '.Rproj.user/shared/notebooks/patch-chunk-names'
-removed directory '.Rproj.user/shared/notebooks'
-removed directory '.Rproj.user/shared'
-removed directory '.Rproj.user/'
-]0;/home/sahir/git_repositories/epib607> (B[mgit status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	[32mmodified:   .Rhistory[m
-	[32mnew file:   assignments/a1/a1-setup.Rmd[m
-	[32mnew file:   assignments/a1/a1-setup.pdf[m
-	[32mnew file:   assignments/a1/a1-setup.tex[m
-	[32mnew file:   assignments/a1/a1-setup_cache/latex/__packages[m
-	[32mnew file:   assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.RData[m
-	[32mnew file:   assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.rdb[m
-	[32mnew file:   assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.rdx[m
-	[32mnew file:   assignments/a1/a1-setup_files/figure-latex/figex-1.pdf[m
-	[32mnew file:   assignments/a1/densities.pdf[m
-	[32mnew file:   assignments/a1/jss.bst[m
-	[32mnew file:   assignments/a1/pinp.bib[m
-	[32mnew file:   assignments/a1/pinp.cls[m
-	[32mmodified:   bib/packages.bib[m
-	[32mmodified:   index.Rmd[m
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   bib/packages.bib[m
-	[31mmodified:   index.Rmd[m
-
-]0;/home/sahir/git_repositories/epib607> (B[mgit [K[K[K[Kmake foo="added a[KA1" git
-git checkout master
-M	.Rhistory
-A	assignments/a1/a1-setup.Rmd
-A	assignments/a1/a1-setup.pdf
-A	assignments/a1/a1-setup.tex
-A	assignments/a1/a1-setup_cache/latex/__packages
-A	assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.RData
-A	assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.rdb
-A	assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.rdx
-A	assignments/a1/a1-setup_files/figure-latex/figex-1.pdf
-A	assignments/a1/densities.pdf
-A	assignments/a1/jss.bst
-A	assignments/a1/pinp.bib
-A	assignments/a1/pinp.cls
-M	bib/packages.bib
-M	index.Rmd
-Already on 'master'
-Your branch is up to date with 'origin/master'.
-git add -fA
-git commit --allow-empty -m "added A1"
-[master 91ff642] added A1
- 16 files changed, 3196 insertions(+), 2 deletions(-)
- create mode 100644 .Rproj.user/74EEE104/console06/BF2D9EEF
- create mode 100644 .Rproj.user/74EEE104/console06/BF2D9EEF.env
- create mode 100644 assignments/a1/a1-setup.Rmd
- create mode 100644 assignments/a1/a1-setup.pdf
- create mode 100644 assignments/a1/a1-setup.tex
- create mode 100644 assignments/a1/a1-setup_cache/latex/__packages
- create mode 100644 assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.RData
- create mode 100644 assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.rdb
- create mode 100644 assignments/a1/a1-setup_cache/latex/figex_117725529e94b61de8e9c6b2fa87db0a.rdx
- create mode 100644 assignments/a1/a1-setup_files/figure-latex/figex-1.pdf
- create mode 100644 assignments/a1/densities.pdf
- create mode 100644 assignments/a1/jss.bst
- create mode 100644 assignments/a1/pinp.bib
- create mode 100644 assignments/a1/pinp.cls
-git push -f -q origin master
-fatal: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': sahirbhatnagar
-fatal: cannot run rpostback-askpass: No such file or directory
-Password for 'https://sahirbhatnagar@github.com': 
-[K> (B[mmake[K[K[K[Kmake[K[K[K[Kmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
-   inline R code fragments
-
-  |                                                                         |..                                                               |   3%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-  |                                                                         |....                                                             |   6%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-Loading required package: knitr
-  |                                                                         |.....                                                            |   8%
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |.........                                                        |  14%
-   inline R code fragments
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...............                                                  |  23%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  25%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  49%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |.................................                                |  51%
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  52%
-label: unnamed-chunk-14 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |...................................                              |  54%
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-16 (with options) 
-List of 1
- $ message: logi FALSE
-
-Loading required package: lattice
-Loading required package: ggformula
-Loading required package: ggstance
-
-Attaching package: 'ggstance'
-
-The following objects are masked from 'package:ggplot2':
-
-    geom_errorbarh, GeomErrorbarh
-
-
-New to ggformula?  Try the tutorials: 
-	learnr::run_tutorial("introduction", package = "ggformula")
-	learnr::run_tutorial("refining", package = "ggformula")
-Loading required package: mosaicData
-Loading required package: Matrix
-
-Attaching package: 'Matrix'
-
-The following object is masked from 'package:tidyr':
-
-    expand
-
-
-The 'mosaic' package masks several functions from core packages in order to add 
-additional features.  The original behavior of these functions should not be affected by this.
-
-Note: If you use the Matrix package, be sure to load it BEFORE loading mosaic.
-
-Attaching package: 'mosaic'
-
-The following object is masked from 'package:Matrix':
-
-    mean
-
-The following object is masked from 'package:skimr':
-
-    n_missing
-
-The following object is masked from 'package:plotly':
-
-    do
-
-The following objects are masked from 'package:dplyr':
-
-    count, do, tally
-
-The following object is masked from 'package:purrr':
-
-    cross
-
-The following object is masked from 'package:ggplot2':
-
-    stat
-
-The following objects are masked from 'package:stats':
-
-    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,
-    quantile, sd, t.test, var
-
-The following objects are masked from 'package:base':
-
-    max, mean, min, prod, range, sample, sum
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-17
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: unnamed-chunk-18
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-19
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-21
-  |                                                                         |.................................................                |  75%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-22
-  |                                                                         |...................................................              |  78%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-23
-  |                                                                         |.....................................................            |  82%
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-24
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-25
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-26
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-27
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  95%
-label: unnamed-chunk-28
-  |                                                                         |...............................................................  |  97%
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-29
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpVumKYN/rmarkdown-str2257270ad565.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-Warning messages:
-1: In citation(pkg, auto = if (pkg == "base") NULL else TRUE) :
-  no date field in DESCRIPTION file of package 'ggplot2'
-2: In citation(pkg, auto = if (pkg == "base") NULL else TRUE) :
-  could not determine year for 'ggplot2' from package DESCRIPTION file
-3: In citation(pkg, auto = if (pkg == "base") NULL else TRUE) :
-  no date field in DESCRIPTION file of package 'bookdown'
-4: In citation(pkg, auto = if (pkg == "base") NULL else TRUE) :
-  could not determine year for 'bookdown' from package DESCRIPTION file
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m echo 569C7D6C && /usr/bin/env && echo 2792F75C
-569C7D6C
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-OLDPWD=/home/sahir/git_repositories/epib607/assignments
-RS_PPM_FD_READ=12
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/RtmpBR61K3
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=CD85E664
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=706
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=13
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2780
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/31186-rsession
-RSTUDIO_SESSION_PORT=31186
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=BF2D9EEF
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=3
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=^C
-]0;/home/sahir/git_repositories/epib607> (B[mls
-01-intro.R          04-continuous.Rmd  [0m[01;34mbib[0m              [01;34mcode[0m              epib607.Rproj  mosaic.R      style.css
-01-intro.Rmd        05-Rtutorial.Rmd   [01;34m_book[0m            [01;32m_deploy.sh[0m        [01;34mimages[0m         _output.yml   toc.css
-02-probability.Rmd  06-references.Rmd  [01;34m_bookdown_files[0m  DESCRIPTION       index.Rmd      preamble.tex
-03-discrete.Rmd     Alegreya.sty       _bookdown.yml    descriptives.Rmd  LICENSE        purl.R
-03-method.Rmd       [01;34massignments[0m        _build.sh        [01;34mdocs[0m              Makefile       README.md
-]0;/home/sahir/git_repositories/epib607> (B[mmake foo="removed inference for counts in sul[K[Kyllabus"[C[Cls[Kmake buildfoo="added A1" git[C[C[C[C[C[C[Cbuild[K
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
-   inline R code fragments
-
-  |                                                                         |..                                                               |   3%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-  |                                                                         |....                                                             |   6%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-  |                                                                         |.....                                                            |   8%
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |.........                                                        |  14%
-   inline R code fragments
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...............                                                  |  23%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  25%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  49%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |.................................                                |  51%
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  52%
-label: unnamed-chunk-14 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |...................................                              |  54%
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-16 (with options) 
-List of 1
- $ message: logi FALSE
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-17
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: unnamed-chunk-18
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-19
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-21
-  |                                                                         |.................................................                |  75%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-22
-  |                                                                         |...................................................              |  78%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-23
-  |                                                                         |.....................................................            |  82%
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-24
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-25
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-26
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-27
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  95%
-label: unnamed-chunk-28
-  |                                                                         |...............................................................  |  97%
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-29
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpSoeL3v/rmarkdown-str250f55d5b678.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m echo 569C7D6C && /usr/bin/env && echo 2792F75C
-569C7D6C
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-OLDPWD=/home/sahir/git_repositories/epib607/assignments
-RS_PPM_FD_READ=12
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/RtmpBR61K3
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=CD85E664
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=706
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=13
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2780
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/31186-rsession
-RSTUDIO_SESSION_PORT=31186
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=BF2D9EEF
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=3
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=^C
-]0;/home/sahir/git_repositories/epib607> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
-   inline R code fragments
-
-  |                                                                         |..                                                               |   3%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-  |                                                                         |....                                                             |   6%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-  |                                                                         |.....                                                            |   8%
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |.........                                                        |  14%
-   inline R code fragments
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...............                                                  |  23%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  25%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  49%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |.................................                                |  51%
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  52%
-label: unnamed-chunk-14 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |...................................                              |  54%
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-16 (with options) 
-List of 1
- $ message: logi FALSE
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-17
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: unnamed-chunk-18
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-19
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-21
-  |                                                                         |.................................................                |  75%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-22
-  |                                                                         |...................................................              |  78%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-23
-  |                                                                         |.....................................................            |  82%
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-24
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-25
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-26
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-27
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  95%
-label: unnamed-chunk-28
-  |                                                                         |...............................................................  |  97%
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-29
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/Rtmp6HXI5u/rmarkdown-str282679b87c2f.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
-   inline R code fragments
-
-  |                                                                         |..                                                               |   3%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-  |                                                                         |....                                                             |   6%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-  |                                                                         |.....                                                            |   8%
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |.........                                                        |  14%
-   inline R code fragments
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...............                                                  |  23%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  25%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  49%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |.................................                                |  51%
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  52%
-label: unnamed-chunk-14 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |...................................                              |  54%
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-16 (with options) 
-List of 1
- $ message: logi FALSE
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-17
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: unnamed-chunk-18
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-19
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-21
-  |                                                                         |.................................................                |  75%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-22
-  |                                                                         |...................................................              |  78%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-23
-  |                                                                         |.....................................................            |  82%
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-24
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-25
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-26
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-27
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  95%
-label: unnamed-chunk-28
-  |                                                                         |...............................................................  |  97%
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-29
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpULO43Q/rmarkdown-str293a419016db.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
-   inline R code fragments
-
-  |                                                                         |..                                                               |   3%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-  |                                                                         |....                                                             |   6%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-  |                                                                         |.....                                                            |   8%
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |.........                                                        |  14%
-   inline R code fragments
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...............                                                  |  23%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  25%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  49%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |.................................                                |  51%
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  52%
-label: unnamed-chunk-14 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |...................................                              |  54%
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-16 (with options) 
-List of 1
- $ message: logi FALSE
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-17
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: unnamed-chunk-18
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-19
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-21
-  |                                                                         |.................................................                |  75%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-22
-  |                                                                         |...................................................              |  78%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-23
-  |                                                                         |.....................................................            |  82%
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-24
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-25
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-26
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-27
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  95%
-label: unnamed-chunk-28
-  |                                                                         |...............................................................  |  97%
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-29
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/Rtmpmo9UnS/rmarkdown-str2a2b579da1c.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[mmake build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
-   inline R code fragments
-
-  |                                                                         |..                                                               |   3%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-  |                                                                         |....                                                             |   6%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-  |                                                                         |.....                                                            |   8%
-  ordinary text without R code
-
-  |                                                                         |......                                                           |   9%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......                                                          |  11%
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |.........                                                        |  14%
-   inline R code fragments
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  18%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |.............                                                    |  20%
-  ordinary text without R code
-
-  |                                                                         |..............                                                   |  22%
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...............                                                  |  23%
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  25%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.................                                                |  26%
-  ordinary text without R code
-
-  |                                                                         |..................                                               |  28%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......................                                          |  35%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  37%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |..........................                                       |  40%
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |...........................                                      |  42%
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  49%
-label: unnamed-chunk-13 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |.................................                                |  51%
-  ordinary text without R code
-
-  |                                                                         |..................................                               |  52%
-label: unnamed-chunk-14 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |...................................                              |  54%
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-15 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-16 (with options) 
-List of 1
- $ message: logi FALSE
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-17
-  |                                                                         |.........................................                        |  63%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  65%
-label: unnamed-chunk-18
-  |                                                                         |...........................................                      |  66%
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  68%
-label: unnamed-chunk-19
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-20 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-21
-  |                                                                         |.................................................                |  75%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-22
-  |                                                                         |...................................................              |  78%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  80%
-label: unnamed-chunk-23
-  |                                                                         |.....................................................            |  82%
-  ordinary text without R code
-
-  |                                                                         |......................................................           |  83%
-label: unnamed-chunk-24
-  |                                                                         |.......................................................          |  85%
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-25
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-26
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  92%
-label: unnamed-chunk-27
-  |                                                                         |.............................................................    |  94%
-  ordinary text without R code
-
-  |                                                                         |..............................................................   |  95%
-label: unnamed-chunk-28
-  |                                                                         |...............................................................  |  97%
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-29
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpZc2e9Y/rmarkdown-str2b645c86e44d.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m(reverse-i-search)`': m': make build[1@a[C[C[C[1@k[C[C[C[1@e[C[C[C[1@ [C[C[Cf': make foo="added A1" git[1@o[C[C[C[1@o[C[C[C[28P> (B[m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@ [1@t[1@o[1@ [1@b[1@o[1P[1P[1@m[1@a[1@i[1@n[1@ [1@s[1@i[1@t[1@e[1@ [1@a[1@n[1@d[1@ [1@n[1@u[1@m[1@b[1@e[1@r[1@e[1@d[1@ [1@s[1@e[1@c[1@t[1@i[1@o[1@n[1@s[C[C[C[C[C
-git checkout master
-M	.Rproj.user/74EEE104/console06/BF2D9EEF
-M	.Rproj.user/74EEE104/console06/BF2D9EEF.env
-M	index.Rmd
-Already on 'master'
-Your branch is up to date with 'origin/master'.
-git add -fA
-git commit --allow-empty -m "added A1 to main site and numbered sections"
-[master 35eeb30] added A1 to main site and numbered sections
- 156 files changed, 7805 insertions(+), 51 deletions(-)
- create mode 100644 .Rproj.user/74EEE104/console06/INDEX001
- create mode 100644 .Rproj.user/74EEE104/pcs/files-pane.pper
- create mode 100644 .Rproj.user/74EEE104/pcs/source-pane.pper
- create mode 100644 .Rproj.user/74EEE104/pcs/windowlayoutstate.pper
- create mode 100644 .Rproj.user/74EEE104/pcs/workbench-pane.pper
- create mode 100644 .Rproj.user/74EEE104/rmd-outputs
- create mode 100644 .Rproj.user/74EEE104/saved_source_markers
- create mode 100644 .Rproj.user/74EEE104/sources/prop/FB28D484
- create mode 100644 .Rproj.user/74EEE104/sources/prop/INDEX
- create mode 100644 .Rproj.user/74EEE104/sources/s-CD85E664/E4049783
- create mode 100644 .Rproj.user/74EEE104/sources/s-CD85E664/E4049783-contents
- create mode 100644 .Rproj.user/74EEE104/sources/s-CD85E664/lock_file
- create mode 100644 .Rproj.user/shared/notebooks/87FFC46A-index/1/74EEE104CD85E664/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/87FFC46A-index/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
- create mode 100644 .Rproj.user/shared/notebooks/paths
- create mode 100644 _book/appendix-b.html
- create mode 100644 _book/assignments.html
- create mode 100644 _book/course-information.html
- create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-18-1.png
- create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-18-2.png
- create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-18-3.png
- create mode 100644 _book/epib607_files/figure-html/unnamed-chunk-19-1.png
- create mode 100644 _book/images/caution.png
- create mode 100644 _book/images/datacamp.png
- create mode 100644 _book/images/edit_button.png
- create mode 100644 _book/images/important.png
- create mode 100644 _book/images/intro_r.png
- create mode 100644 _book/images/jim.png
- create mode 100644 _book/images/mapply.png
- create mode 100644 _book/images/note.png
- create mode 100644 _book/images/rmarkdown_r.png
- create mode 100644 _book/images/rstudio_ide.png
- create mode 100644 _book/images/rstudio_ide_2.png
- create mode 100644 _book/images/sahir.png
- create mode 100644 _book/images/teacups.jpg
- create mode 100644 _book/images/tip.png
- create mode 100644 _book/images/warning.png
- create mode 100644 _book/index.html
- create mode 100644 _book/intro.html
- create mode 100644 _book/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-bookdown.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-fontsettings.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-highlight.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-search.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/style.css
- create mode 100644 _book/libs/gitbook-2.6.7/js/app.min.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/jquery.highlight.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/lunr.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-bookdown.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-fontsettings.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-search.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-sharing.js
- create mode 100644 _book/libs/jquery-2.2.3/jquery.min.js
- create mode 100644 _book/prerequisites.html
- create mode 100644 _book/schedule.html
- create mode 100644 _book/search_index.json
- create mode 100644 _book/slides.html
- create mode 100644 _book/style.css
- create mode 100644 _book/target-syllabus.html
- create mode 100644 _book/vectorization-apply-and-for-loops.html
- create mode 100644 _bookdown_files/epib607_cache/html/__packages
- create mode 100644 _bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.RData
- create mode 100644 _bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/setup_e95b1041e74947bc2de60314a621c251.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.RData
- create mode 100644 _bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/show-code-style_3efaf98df78897edc9ba7d69c9263284.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.RData
- create mode 100644 _bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/show-sample-output_812c94eb89b9a9b84988549dea9cdaf6.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-10_7d0901443479f831609ba2d020c87608.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-11_51ef9edacef87d50a24c08b004a10704.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-12_8c2cb64d759ff650aad87361954ca685.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-13_758dd1404d9b6a3e3289b9293f49a6c9.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-14_774f12e7f2362de83f8e08ecebb809f7.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-16_e80f3fc39f1dc409486c8947ddb908bd.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-17_c0d73111ece12a5cb084156394413f9a.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-18_1917df260e5eed8d2a1a139a91f5d4e4.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-19_250b409ef1ce5d7ce075ecf13546d6f1.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-21_81c71772276994c05f4cd3dae00febdc.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-22_6f48406a72cf37781e3d5cb1cc6b29dc.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-23_f14ade056fadef20f22200e07d761664.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-24_61993837d647648041d55148924159ca.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-25_d39a0517279b979f58362bc975810609.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-26_27f700657aba9e2a16088dd0f1a984b0.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-27_17d5102db0e1add12d32b374f1d519f2.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-28_d091ad8226ab587fbca71d3dff6dee7d.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-29_f13a982fdd6fabc741b21dbb8fb9233d.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-2_f0db165d6badc230da95a7ae78a396e1.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-3_a23fcbd423b0f8254b9a13a89a18a67a.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-4_a0f18faeb8f125e4e9cc5770f0c6344d.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-5_d842976440305a0176861f9a8e71837a.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-6_fceb0674c8eda0ab426b7e7e31acda71.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-7_46f70d9e4d1254dbd7447c92d7e63675.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-8_5e2eaaad1b1001deb861553bde44afb3.rdx
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-9_093b4e8294c6e7ff282cdd23309022ce.RData
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-9_093b4e8294c6e7ff282cdd23309022ce.rdb
- create mode 100644 _bookdown_files/epib607_cache/html/unnamed-chunk-9_093b4e8294c6e7ff282cdd23309022ce.rdx
- create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-18-1.png
- create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-18-2.png
- create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-18-3.png
- create mode 100644 _bookdown_files/epib607_files/figure-html/unnamed-chunk-19-1.png
-git push -f -q origin master
-fatal: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': sahirbhatnagar
-fatal: cannot run rpostback-askpass: No such file or directory
-Password for 'https://sahirbhatnagar@github.com': 
-]0;/home/sahir/git_repositories/epib607> (B[mmake foo="fixed typo" git
-git checkout master
-M	.Rproj.user/74EEE104/console06/BF2D9EEF
-M	.Rproj.user/74EEE104/sources/prop/FB28D484
-M	.Rproj.user/74EEE104/sources/s-CD85E664/E4049783
-M	.Rproj.user/74EEE104/sources/s-CD85E664/E4049783-contents
-M	index.Rmd
-Already on 'master'
-Your branch is up to date with 'origin/master'.
-git add -fA
-git commit --allow-empty -m "fixed typo"
-[master c5a2d09] fixed typo
- 5 files changed, 187 insertions(+), 16 deletions(-)
-git push -f -q origin master
-fatal: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': sahirbhatnagar
-fatal: cannot run rpostback-askpass: No such file or directory
-Password for 'https://sahirbhatnagar@github.com': 
-remote: Invalid username or password.
-fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/'
-Makefile:38: recipe for target 'git' failed
-make: *** [git] Error 128
-]0;/home/sahir/git_repositories/epib607> (B[mmake foo="fixed typo" git

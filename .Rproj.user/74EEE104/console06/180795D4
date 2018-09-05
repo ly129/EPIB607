@@ -1,0 +1,14 @@
+]0;/home/sahir/git_repositories/epib607> (B[mgit status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mdeleted:    .Rproj.user/74EEE104/console06/BF2D9EEF[m
+	[31mdeleted:    .Rproj.user/74EEE104/console06/BF2D9EEF.env[m
+	[31mmodified:   .Rproj.user/74EEE104/console06/INDEX001[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/home/sahir/git_repositories/epib607> (B[m
