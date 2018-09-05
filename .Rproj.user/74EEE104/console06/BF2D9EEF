@@ -2224,3 +2224,25 @@ Username for 'https://github.com': sahirbhatnagar
 fatal: cannot run rpostback-askpass: No such file or directory
 Password for 'https://sahirbhatnagar@github.com': 
 ]0;/home/sahir/git_repositories/epib607> (B[mmake foo="fixed typo" git
+git checkout master
+M	.Rproj.user/74EEE104/console06/BF2D9EEF
+M	.Rproj.user/74EEE104/sources/prop/FB28D484
+M	.Rproj.user/74EEE104/sources/s-CD85E664/E4049783
+M	.Rproj.user/74EEE104/sources/s-CD85E664/E4049783-contents
+M	index.Rmd
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+git add -fA
+git commit --allow-empty -m "fixed typo"
+[master c5a2d09] fixed typo
+ 5 files changed, 187 insertions(+), 16 deletions(-)
+git push -f -q origin master
+fatal: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': sahirbhatnagar
+fatal: cannot run rpostback-askpass: No such file or directory
+Password for 'https://sahirbhatnagar@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/sahirbhatnagar/EPIB607.git/'
+Makefile:38: recipe for target 'git' failed
+make: *** [git] Error 128
+]0;/home/sahir/git_repositories/epib607> (B[mmake foo="fixed typo" git
