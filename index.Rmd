@@ -348,7 +348,7 @@ knitr::kable(as.data.frame(rbind(
 ```
 
 
-## Tests of Null Hypotheses {-}
+## Introduction to Inference {-}
 
 
 ```{r, results='asis', echo=FALSE}
@@ -404,7 +404,7 @@ knitr::kable(as.data.frame(rbind(
     "[[AAO unit 27, pages 1-11]](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit27.pdf) [[B&M chapter 18]](https://www.dropbox.com/s/pix61mnrt7j4c7t/Ch18Comparing2Means.pdf?dl=0)",
     "--",
     "--"),
-    c("Proportions",
+    c("Proportions, Fisher's Exact",
     "--",
     "[[B&M chapter 20]](https://www.dropbox.com/s/t7xvtaxu5g846r5/Ch20Comparing2Proportions.pdf?dl=0)",
     "--",
@@ -572,6 +572,30 @@ Complete the following DataCamp courses:
 | <em>Introduction to R</em> <br> In this course you will get a hands-on introduction to the basic commands in R. With the knowledge gained in this course, you will be ready to perform a data analysis.| <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/free-introduction-to-r"><img src="images/intro_r.png" alt="Drawing" style="height: 150px;"/></a> 
 | <em>Reporting with R Markdown</em> <br> You will learn how to create reproducible reports using R and Markdown. All assignments for this course must be submitted in this format. | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/reporting-with-r-markdown"><img src="images/rmarkdown_r.png" alt="Drawing" style="height: 150px;"/></a> 
 | <em>Version Control with RStudio IDE (Chapter 2 only)</em> <br> You will learn how to use RStudio to version control your code. All assignments for this course must be submitted to a GitHub repository. | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2"><img src="images/rstudio_ide_2.png" alt="Drawing" style="height: 150px;"/></a> 
+
+
+
+# Schedule {-}
+
+
+
+```{r, results='asis', echo=FALSE, eval=FALSE}
+knitr::kable(as.data.frame(rbind(
+    c("Thurs. Sept 6", "[[Live Poll]](http://etc.ch/tfZA)"),
+    c(" ", "[[JH notes]](http://www.medicine.mcgill.ca/epidemiology/hanley/c607/ch14/jh_ch_14.pdf)")
+  )),
+  col.names = c("Date","Video","Readings","Exercise","DALITE"),
+  booktabs = TRUE)
+```
+
+
+
+
+
+
+
+
+
 
 
 <!--

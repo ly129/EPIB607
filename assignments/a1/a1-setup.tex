@@ -1,0 +1,169 @@
+\documentclass[letterpaper,9pt,twocolumn,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{Assignment 1 - Setting up the computing environment. Due September 20,
+2018.}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Author and Author}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  R |  RStudio |  Git |  GitHub |  R Markdown |  DataCamp  }  
+
+\begin{abstract}
+Computing is an essential part of modern statistics. However, before
+doing any data analysis, we must first install the necessary tools. In
+this assignment you will first signup for a free DataCamp account and
+login to your McGill GitHub account. Then you will complete a series of
+DataCamp courses that will guide you through installing R, RStudio and
+Git. After installation, you will learn how to use the RStudio IDE,
+create projects and run some basic commands. You will then be introduced
+to R Markdown which is a tool for creating reproducible reports. All
+future assignments for this course must be in R Markdown format and
+submitted to a private online GitHub repository.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{Assignment 1 due Sepetember 20, 2018 by 5pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section*{Marking}\label{marking}
+\addcontentsline{toc}{section}{Marking}
+
+Your progress and completion of these courses will be availble to us
+automatically through the DataCamp website. \textbf{You do not need to
+hand anything in for this Assignment}. You will receive full credits for
+this assignment once we have seen that all tasks have been completed.
+
+\section{Sign up for DataCamp and
+GitHub}\label{sign-up-for-datacamp-and-github}
+
+\textbf{Please try to complete this step before class on Thursday
+September 6}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sign up for a free DataCamp account at
+  \href{https://www.datacamp.com/groups/shared_links/4c7d78a632b557dfdd6618b3e8fac09495571fec}{this
+  link}. Note: you are required to sign up with a
+  \texttt{@mail.mcgill.ca} or \texttt{@mcgill.ca} email address.\\
+\item
+  Sign in to \url{https://github.mcgill.ca/} using your McGill email
+  address and corresponding password.
+\end{enumerate}
+
+\section{Install Git}\label{install-git}
+
+You need to first install the \href{https://git-scm.com/}{git} version
+control system on your system. Follow Chapter 1: Installing Git
+\href{https://plot.ly/r/github-getting-started-for-data-scientists/\#chapter-1-installing-git}{at
+this link} for step-by-step installation instructions with screenshots.
+
+\section{Install R and RStudio}\label{install-r-and-rstudio}
+
+This short course will guide you through installing both
+\href{https://cran.r-project.org/}{R} and
+\href{https://www.rstudio.com/products/rstudio/download/preview/}{RStudio}.
+RStudio is a software application that facilitates how you interact with
+\texttt{R}. Click on the link the in the figure caption join the course.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/rstudio_ide.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1}{Working with the RStudio IDE (Part 1)}}\label{fig}
+\end{figure}
+
+\section{Introduction to R}\label{introduction-to-r}
+
+In this course you will get a hands-on introduction to the basic
+commands in R. With the knowledge gained in this course, you will be
+ready to perform a data analysis. Click on the link the in the figure
+caption join the course.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/intro_r.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/free-introduction-to-r}{Introduction to R}}\label{fig}
+\end{figure}
+
+\section{R Markdown}\label{r-markdown}
+
+You will learn how to create reproducible reports using R and Markdown.
+All assignments for this course must be submitted in this format. Click
+on the link the in the figure caption join the course.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/rmarkdown_r.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/reporting-with-r-markdown}{Reporting with R Markdown}}\label{fig}
+\end{figure}
+
+\section{GitHub using RStudio}\label{github-using-rstudio}
+
+You will learn how to use RStudio to version control your code. All
+assignments for this course must be submitted to a GitHub repository.
+Click on the link the in the figure caption join the course (Chapter 2
+only).
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/rstudio_ide_2.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2}{Version Control with RStudio IDE (Chapter 2 only)}}\label{fig}
+\end{figure}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+
