@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-09-04">
+<meta name="date" content="2018-09-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="target-syllabus.html">
-<link rel="next" href="intro.html">
+<link rel="next" href="schedule.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -123,7 +123,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html"><i class="fa fa-check"></i>Target Syllabus</a><ul>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#descriptive-statistics"><i class="fa fa-check"></i>Descriptive Statistics</a></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#sampling-distributions"><i class="fa fa-check"></i>Sampling Distributions</a></li>
-<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#tests-of-null-hypotheses"><i class="fa fa-check"></i>Tests of Null Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#introduction-to-inference"><i class="fa fa-check"></i>Introduction to Inference</a></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#one-sample-inference"><i class="fa fa-check"></i>One-sample Inference</a></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#two-sample-inference"><i class="fa fa-check"></i>Two-sample Inference</a></li>
 <li class="chapter" data-level="" data-path="target-syllabus.html"><a href="target-syllabus.html#inference-for-counts"><i class="fa fa-check"></i>Inference for Counts</a></li>
@@ -134,6 +134,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#git"><i class="fa fa-check"></i>Git</a></li>
 <li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html#r-and-rstudio"><i class="fa fa-check"></i>R and RStudio</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="schedule.html"><a href="schedule.html"><i class="fa fa-check"></i>Schedule</a></li>
 <li class="part"><span><b>II Part I</b></span></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Icebreakers</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-lady-tasting-tea"><i class="fa fa-check"></i><b>1.1</b> The Lady Tasting Tea</a></li>
@@ -211,110 +212,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<!--
-This short course will guide you through installing both [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/preview/). RStudio is a software application that facilitates how you interact with `R`. It is developed by data enthusiasts who consider statistics to be more than just simulations, formulas and proofs. RStudio emphasizes the following: 
-
-1. **Version control**:  [Why I should use version control](http://stackoverflow.com/questions/1408450/why-should-i-use-version-control) especially for the [solo data analyst](http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst).
-
-2. **Reproducible research**: seamless integration with [RMarkdown](http://rmarkdown.rstudio.com/) for creating [dynamic documents](http://yihui.name/knitr/) and presentations
-
-3. **Creating R Packages**: seamless integration with the [devtools](https://github.com/hadley/devtools) package for creating software that implements your statistical method or analysis. 
--->
-<!--
-## R Packages  {-}
-
-The following packages will be called upon at some point, so please install them before getting started with the tutorials. Enter the following command in `R`:
-
-
-```r
-install.packages(c("pacman","knitr","data.table", "rmarkdown", "tidyverse", "boot", "Hmisc"))
-```
-
-
-## Introduction to R {-}
-
-Try out the interactive tutorial: [http://swirlstats.com/](http://swirlstats.com/)
-
-
-
-
-## Background Reading  {-}
-
-The greatest thing about `R` is that there are so many people out there willing to help you. `R` users are constantly writing tutorials and creating packages to make your analysis tasks easier. Here is a very targeted list that I suggest reading prior to starting the tutorials
-
-1. [Writing Functions](http://r4ds.had.co.nz/functions.html) 
-2. [`for` loops](http://r4ds.had.co.nz/iteration.html)
-3. [`apply` vs. `for`](https://kbroman.wordpress.com/2013/04/02/apply-vs-for/)
-
--->
-<!--
-
-# Slides {-}
-
-1. [Discrete Random Variables and Probability Distributions (part I)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week3.pdf)
-2. [Discrete Random Variables and Probability Distributions (part II)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week4.pdf)
-3. [Continuous Random Variables and Probability Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week5.pdf)
-4. [Normal Distribution and Expectations of Continuos Random Variables](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week6.pdf)
-5. [Transformations of a Random Variable and Discrete Joint Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week7.pdf)
-6. [Joint, Marginal, Conditional Continuous Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week8.pdf)
-7. [Multidimensional Change of Variables, Conditional Expectation, Variance, Hierarchical Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week9.pdf)
-8. [Sampling Distributions and Limits, Convergence in Probability](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week10.pdf)
-9. [Convergence in Distribution and Central Limit Theorem](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week11.pdf)
-10. [Maximum Likelihood Estimation](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week12.pdf)
-11. [A Primer on Linear Regression](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week13.pdf)
-
-
-
-# Assignments {-}
-
-1. [A1 (due September 26, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-1-F2017.pdf)
-2. [A2 (due October 12, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-2-F2017.pdf)
-3. [A3 (due October 26, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-3-F2017.pdf)
-4. [A4 (due November 9, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-4-F2017.pdf)
-
-# Quiz {-}
-
-1. [Quiz 1 (October 3, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-1-F2017.pdf)
-2. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-2-F2017.pdf)
-3. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-3-F2017.pdf)
-
-
-# R Code {-}
-
-## Central Limit Theorem in Action
-
-1. [clt-master.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-master.Rmd)   
-2. [clt-template.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-template.Rmd) 
-
-## IMPC Dataset
-
-1. [impc_data.txt](https://github.com/sahirbhatnagar/MATH697/blob/master/images/impc_data.txt) 
-
-
-# Distribution Tables {-}
-
-## Standard Normal
-
-1. [Standard Normal Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/Standard_Normal_Table.pdf)   
-
-## t-Distribution
-
-1. [t-Distribution Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/t_Table.pdf)  
-
--->
-
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
 <a href="target-syllabus.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="schedule.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

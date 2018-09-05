@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="course-information.html">
+<link rel="prev" href="prerequisites.html">
+<link rel="next" href="intro.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -172,132 +172,111 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">EPIB 607: Inferential Statistics</h1>
-<h4 class="author"><em>Sahir Bhatnagar and James Hanley</em></h4>
-<h4 class="date"><em>2018-09-05</em></h4>
-</div>
-<div id="welcome" class="section level1 unnumbered">
-<h1>Welcome</h1>
-<p>Welcome to the course notes for <a href="https://www.mcgill.ca/study/2018-2019/courses/epib-607">EPIB 607: Inferential Statistics</a> at McGill University.</p>
-<div id="objectives" class="section level2 unnumbered">
-<h2>Objectives</h2>
-<p>The aim of this course is to provide students with basic principles of statistical inference so that they can:</p>
-<ol style="list-style-type: decimal">
-<li>Understand the statistical methods section in a scientific paper.<br />
-</li>
-<li>Apply statistical methods in their own research.<br />
-</li>
-<li>Use the methods learned in this course as a foundation for more advanced biostatistics courses.</li>
-</ol>
-</div>
-<div id="audience" class="section level2 unnumbered">
-<h2>Audience</h2>
-<p>The principle audience is researchers in the natural and social sciences who have a basic understanding of differentiable and integral calculus, but haven’t had an introductory course in statistics. This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and understanding scientific papers.</p>
-</div>
-<div id="about-these-notes" class="section level2 unnumbered">
-<h2>About these notes</h2>
-<p>These notes are a collection of useful links, videos, online resources and papers for an introductory course in statistics. The instructors have found that no single book sufficiently teaches all the topics covered in this course. Part of this is due to advancements in computing which have far outpaced the publication of modern textbooks. Indeed, the computer has replaced many of the calculations that were traditionally taught to be done by hand. We direct the readers to what we think is a good learning resource for a given topic (following the <strong>Flipped Classroom</strong> strategy). We also provide our own commentary and notes when we think its useful.</p>
+<div id="schedule" class="section level1 unnumbered">
+<h1>Schedule</h1>
 <!--
-| Chapter | Topic | DataCamp Courses   
-| :-------------------------|:-------------------------|:-------------------------
-| 2 | Basic R programming concepts | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/free-introduction-to-r"><img src="images/datacamp_intro_to_R.png" alt="Drawing" style="height: 150px;"/></a> <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/intermediate-r"><img src="images/datacamp_intermediate_R.png" alt="Drawing" style="height: 150px;"/></a>
-| 3 & 5 | Introductory data visualization and wrangling | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/introduction-to-the-tidyverse"><img src="images/datacamp_intro_to_tidyverse.png" alt="Drawing" style="height: 150px;"/></a>
-| 4 & 5 | Data "tidying" and intermediate data wrangling | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/working-with-data-in-the-tidyverse"><img src="images/datacamp_working_with_data.png" alt="Drawing" style="height: 150px;"/></a>
-| 6 & 7 | Data modelling, basic regression, and multiple regression | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/modeling-with-data-in-the-tidyverse"><img src="images/datacamp_intro_to_modeling.png" alt="Drawing" style="height: 150px;"/></a>
-| 9 & 10 | Statistical inference: confidence intervals and hypothesis testing | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/inference-for-numerical-data"><img src="images/datacamp_inference_for_numerical_data.png" alt="Drawing" style="height: 150px;"/></a> <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/inference-for-categorical-data"><img src="images/datacamp_inference_for_categorical_data.png" alt="Drawing" style="height: 150px;"/></a>
-| 11 | Inference for regression | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/inference-for-linear-regression"><img src="images/datacamp_inference_for_regression.png" alt="Drawing" style="height: 150px;"/></a> 
+This short course will guide you through installing both [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/preview/). RStudio is a software application that facilitates how you interact with `R`. It is developed by data enthusiasts who consider statistics to be more than just simulations, formulas and proofs. RStudio emphasizes the following: 
+
+1. **Version control**:  [Why I should use version control](http://stackoverflow.com/questions/1408450/why-should-i-use-version-control) especially for the [solo data analyst](http://stackoverflow.com/questions/2712421/r-and-version-control-for-the-solo-data-analyst).
+
+2. **Reproducible research**: seamless integration with [RMarkdown](http://rmarkdown.rstudio.com/) for creating [dynamic documents](http://yihui.name/knitr/) and presentations
+
+3. **Creating R Packages**: seamless integration with the [devtools](https://github.com/hadley/devtools) package for creating software that implements your statistical method or analysis. 
 -->
-</div>
-<div id="r-code-conventions" class="section level2 unnumbered">
-<h2>R Code Conventions</h2>
-<p>We use <a href="https://cran.r-project.org/"><code>R</code></a> code throughout these notes. When <code>R</code> code is displayed<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> it will be typeset using a <code>monospace</code> font with syntax highlighting enabled to ensure the differentiation of functions, variables, and so on. For example, the following adds 1 to 1</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a =<span class="st"> </span>1L <span class="op">+</span><span class="st"> </span>1L
-a</code></pre></div>
-<p>Each code segment may contain actual output from <code>R</code>. Such output will appear in grey font prefixed by <code>#&gt;</code>. For example, the output of the above code segment would look like so:</p>
-<pre><code>[1] 2</code></pre>
-</div>
-<div id="rendering-mathematical-formulae" class="section level2 unnumbered">
-<h2>Rendering Mathematical Formulae</h2>
-<p>Throughout these notes, there will be mathematical symbols used to express the material. Depending on the version of the book, there are two different rendering engines.</p>
-<ul>
-<li>For the online version, the text uses <a href="https://www.mathjax.org/">MathJax</a> to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly. You can also right-click to see the corresponding LaTeX code used to produce the equation.<br />
-</li>
-<li>For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as:</li>
-</ul>
-<p><span class="math display">\[ a^2 + b^2 = c^2 \]</span></p>
-</div>
-<div id="development" class="section level2 unnumbered">
-<h2>Development</h2>
-<p>This book is built with <a href="https://github.com/rstudio/bookdown"><strong>bookdown</strong></a> and is open source and freely available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at <a href="https://sahirbhatnagar.com/EPIB607">sahirbhatnagar.com/EPIB607</a> and kept up-to-date thanks to <a href="https://travis-ci.org/sahirbhatnagar/EPIB607">Travis</a>. The entire source code is available at <a href="https://github.com/sahirbhatnagar/EPIB607" class="uri">https://github.com/sahirbhatnagar/EPIB607</a>.</p>
-<p>If you notice any errors, we would be grateful if you would let us know by filing an issue <a href="https://github.com/sahirbhatnagar/EPIB607/issues">here</a> or making a pull request by clicking the edit button in the top-left corner of the text:</p>
-<div class="figure">
-<img src="images/edit_button.png" />
-
-</div>
-<p>The version of the book you are reading now was built on 2018-09-05 and was built on <a href="https://travis-ci.org/sahirbhatnagar/MATH697">Travis</a>.</p>
 <!--
-## Acknowledgements {-}
+## R Packages  {-}
 
-There would be too many people to acknowledge in this section alone. We refer the reader to the references section. 
+The following packages will be called upon at some point, so please install them before getting started with the tutorials. Enter the following command in `R`:
+
+
+```r
+install.packages(c("pacman","knitr","data.table", "rmarkdown", "tidyverse", "boot", "Hmisc"))
+```
+
+
+## Introduction to R {-}
+
+Try out the interactive tutorial: [http://swirlstats.com/](http://swirlstats.com/)
+
+
+
+
+## Background Reading  {-}
+
+The greatest thing about `R` is that there are so many people out there willing to help you. `R` users are constantly writing tutorials and creating packages to make your analysis tasks easier. Here is a very targeted list that I suggest reading prior to starting the tutorials
+
+1. [Writing Functions](http://r4ds.had.co.nz/functions.html) 
+2. [`for` loops](http://r4ds.had.co.nz/iteration.html)
+3. [`apply` vs. `for`](https://kbroman.wordpress.com/2013/04/02/apply-vs-for/)
 
 -->
-<p><br></p>
-</div>
-<div id="about-the-authors" class="section level2 unnumbered">
-<h2>About the authors</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Sahir Bhatnagar</th>
-<th align="center">James Hanley</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><img src="images/sahir.png" alt="Drawing" style="height: 200px;"/></td>
-<td align="center"><img src="images/jim.png" alt="Drawing" style="height: 200px;"/></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Sahir R. Bhatnagar: Assistant Professor of Biostatistics - McGill University, Montreal, Canada.
-<ul>
-<li>Website: <a href="https://sahirbhatnagar.com/" class="uri">https://sahirbhatnagar.com/</a><br />
-</li>
-<li>Twitter: <a href="https://twitter.com/syfi_24">syfi_24</a><br />
-</li>
-<li>GitHub: <a href="https://github.com/sahirbhatnagar" class="uri">https://github.com/sahirbhatnagar</a><br />
-</li>
-</ul></li>
-<li>James A. Hanley: Professor of Biostatistics - McGill University, Montreal, Canada.
-<ul>
-<li>Webpage: <a href="http://www.medicine.mcgill.ca/epidemiology/hanley/" class="uri">http://www.medicine.mcgill.ca/epidemiology/hanley/</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="license" class="section level2 unnumbered">
-<h2>License</h2>
-<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
 <!--
-# won't work with pdf
-[![Build Status](https://travis-ci.org/sahirbhatnagar/MATH697.svg?branch=master)](https://travis-ci.org/sahirbhatnagar/MATH697)
+
+# Slides {-}
+
+1. [Discrete Random Variables and Probability Distributions (part I)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week3.pdf)
+2. [Discrete Random Variables and Probability Distributions (part II)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week4.pdf)
+3. [Continuous Random Variables and Probability Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week5.pdf)
+4. [Normal Distribution and Expectations of Continuos Random Variables](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week6.pdf)
+5. [Transformations of a Random Variable and Discrete Joint Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week7.pdf)
+6. [Joint, Marginal, Conditional Continuous Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week8.pdf)
+7. [Multidimensional Change of Variables, Conditional Expectation, Variance, Hierarchical Distributions](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week9.pdf)
+8. [Sampling Distributions and Limits, Convergence in Probability](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week10.pdf)
+9. [Convergence in Distribution and Central Limit Theorem](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week11.pdf)
+10. [Maximum Likelihood Estimation](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week12.pdf)
+11. [A Primer on Linear Regression](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week13.pdf)
+
+
+
+# Assignments {-}
+
+1. [A1 (due September 26, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-1-F2017.pdf)
+2. [A2 (due October 12, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-2-F2017.pdf)
+3. [A3 (due October 26, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-3-F2017.pdf)
+4. [A4 (due November 9, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/HW-4-F2017.pdf)
+
+# Quiz {-}
+
+1. [Quiz 1 (October 3, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-1-F2017.pdf)
+2. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-2-F2017.pdf)
+3. [Quiz 2 (November 7, 2017)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/quiz-3-F2017.pdf)
+
+
+# R Code {-}
+
+## Central Limit Theorem in Action
+
+1. [clt-master.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-master.Rmd)   
+2. [clt-template.Rmd](https://github.com/sahirbhatnagar/MATH697/blob/master/images/clt-template.Rmd) 
+
+## IMPC Dataset
+
+1. [impc_data.txt](https://github.com/sahirbhatnagar/MATH697/blob/master/images/impc_data.txt) 
+
+
+# Distribution Tables {-}
+
+## Standard Normal
+
+1. [Standard Normal Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/Standard_Normal_Table.pdf)   
+
+## t-Distribution
+
+1. [t-Distribution Table](https://github.com/sahirbhatnagar/MATH697/blob/master/images/t_Table.pdf)  
+
 -->
+
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><a href="https://raw.githubusercontent.com/coatless/spm/master/index.Rmd" class="uri">https://raw.githubusercontent.com/coatless/spm/master/index.Rmd</a><a href="index.html#fnref1">↩</a></p></li>
-</ol>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="course-information.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="prerequisites.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
