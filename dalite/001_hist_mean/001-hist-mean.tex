@@ -1,0 +1,199 @@
+\documentclass[letterpaper,9pt,twocolumn,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{DALITE Q1 - Histograms, Medians and Means. Due September 12, 2018.}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Histogram |  Density Plot |  Mean |  Median |  Mode  }  
+
+\begin{abstract}
+This DALITE quiz will cover the basic concepts of histograms, means and
+medians.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{DALITE Q1 due Sepetember 12, 2018 by 5pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section*{Marking}\label{marking}
+\addcontentsline{toc}{section}{Marking}
+
+Completion of this DALITE exercise will be availble to us automatically
+through the DALITE website. Therefore \textbf{you do not need to hand
+anything in}. Marks will be based on the number of correct answers. For
+each question you will receive 0.5 marks for getting the correct answer
+on the first attempt and an additional 0.5 marks if you stick with the
+right answer or switch to the correct answer after seeing someone else's
+rationale.
+
+\section{Sign up for DALITE}\label{sign-up-for-dalite}
+
+\textbf{This step only needs to be completed once for the whole
+semester}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  You can join the EPIB607 group by accessing the unique link:
+  \url{https://mydalite.org/en/live/signup/form/NTc4}
+\item
+  Upon accessing the link, you will be prompted to enter an e-mail
+  address. I recommend using the same e-mail address as your DataCamp
+  account.
+\item
+  You never need to remember a username or password to access the DALITE
+  platform; access to your assignments is managed through tokens sent to
+  your e-mail address. You will be sent a new link everytime a new
+  exercise has been posted.
+\end{enumerate}
+
+\section{Histograms}\label{histograms}
+
+\subsection{Learning Objectives}\label{learning-objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Understand that the distribution of a variable consists of what values
+  the variable takes and how often.
+\item
+  Understand that class intervals should be of equal width; choose
+  appropriate class widths to effectively reveal informative patterns in
+  the data.
+\item
+  Understand that the vertical axis of the histogram may be scaled for
+  frequency, proportion, or percentage. The choice of vertical scaling
+  for any data set does not affect the important features revealed by a
+  histogram.
+\item
+  Be able to describe a graphical display of data by first describing
+  the overall pattern and then deviations from that pattern. Describe
+  the shape of the overall pattern and identify any gaps in data and
+  potential outliers.
+\item
+  Recognize rough symmetry and clear skewness in the overall pattern of
+  a distribution
+\end{enumerate}
+
+\subsection{Videos}\label{videos}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www.learner.org/courses/againstallodds/unitpages/unit03.html}{Against
+  All Odds Unit 3}
+\end{enumerate}
+
+\vspace*{0.25cm}
+
+\subsection{Required Readings}\label{required-readings}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit03.pdf\#page=1}{Against
+  All Odds Unit 3, pages 1-6}
+\item
+  \href{https://serialmentor.com/dataviz/histograms-density-plots.html}{Visualizing
+  distributions: Histograms and density plots}
+\end{enumerate}
+
+\section{Mean and Median}\label{mean-and-median}
+
+\subsection{Learning Objectives}\label{learning-objectives-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Understand that graphical descriptions of data are more meaningful
+  when supplemented with numerical measures of center.
+\item
+  Know that the median (midpoint or typical value) and mean (arithmetic
+  average) are common measures of center (or location) for a
+  distribution.
+\item
+  Understand the formulas used to calculate the median, mean, and mode.
+\item
+  Know that the mean and median should be close in symmetric
+  distributions and that the mean is pulled toward the long tail of a
+  skewed distribution. Know that the mean is a nonresistant measure of
+  center because it is strongly influenced by extreme observations and
+  that the median is a resistant measure of center.
+\item
+  Be able to choose an appropriate measure of center in practice.
+\end{enumerate}
+
+\subsection{Videos}\label{videos-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www.learner.org/courses/againstallodds/unitpages/unit04.html}{Against
+  All Odds Unit 4}
+\end{enumerate}
+
+\subsection{Required Readings}\label{required-readings-1}
+
+\begin{enumerate}
+\item \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit04.pdf#page=1}{Against All Odds Unit 4, pages 1-6}
+\end{enumerate}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+

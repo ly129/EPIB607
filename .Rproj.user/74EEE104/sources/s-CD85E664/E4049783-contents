@@ -254,8 +254,8 @@ You will be asked to complete some of the courses in DataCamp for background rea
 ## Grade Distribution  
 
 ```{r, results='asis', echo=FALSE}
-knitr::kable(data.frame(c("Assignments","DALITE Quizzes","Midterm","Project","Final Exam"),
-                        c("30%","10%","20%","10%","30%")), col.names = c("",""),
+knitr::kable(data.frame(c("Assignments","DALITE","Midterm","Project","Final Exam"),
+                        c("40%","15%","15%","10%","20%")), col.names = c("",""),
              booktabs = TRUE)
 ```
 
@@ -308,7 +308,7 @@ knitr::kable(as.data.frame(rbind(
     "--"),
   c("Data Visualization",
     "[Hans Rosling BBC](https://www.youtube.com/watch?v=jbkSRLYSojo)",
-    "--",
+    "[JH notes on Descriptives](https://www.dropbox.com/s/lomkigwypksudcn/DescriptiveStatistics.pdf?dl=0)",
     "--",
     "--")
 )),
@@ -581,12 +581,18 @@ Complete the following DataCamp courses:
 
 
 
-```{r, results='asis', echo=FALSE, eval=FALSE}
+```{r, results='asis', echo=FALSE, eval=TRUE}
 knitr::kable(as.data.frame(rbind(
-    c("Thurs. Sept 6", "[[Live Poll]](http://etc.ch/tfZA)"),
-    c(" ", "[[JH notes]](http://www.medicine.mcgill.ca/epidemiology/hanley/c607/ch14/jh_ch_14.pdf)")
+    c("Thurs. Sept 6", "[1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)"),
+    c(" ", "[2. Course Website](https://sahirbhatnagar.com/EPIB607/)"),
+    c(" ", "[3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html#teaching-strategy)"),
+    c(" ", "[4. Video: What is Statistics?](https://www.learner.org/courses/againstallodds/unitpages/unit01.html)"),
+    c(" ", "[5. Introduction to DALITE](https://mydalite.org/en/live/signup/form/NTc4)"),
+    c(" ", "[6. Review of A1 and DALITE Q1](https://sahirbhatnagar.com/EPIB607/assignments.html)"),
+    c(" ", "[7. Live Poll](http://etc.ch/tfZA)"),
+    c(" ", "[8. Terms and Concepts group exercise](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)")
   )),
-  col.names = c("Date","Video","Readings","Exercise","DALITE"),
+  col.names = c("Date","Agenda"),
   booktabs = TRUE)
 ```
 
@@ -651,12 +657,35 @@ knitr::write_bib(c(
 
 # Slides 
 
-1. [Discrete Random Variables and Probability Distributions (part I)](https://github.com/sahirbhatnagar/MATH697/blob/master/images/week3.pdf)
+1. [Introduction to EPIB 607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)
 
 
 # Assignments 
 
 1. [A1 (due September 20, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)
+
+# DALITE
+
+1. [Q1 (due September 12, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf)
+
+
+# Terms and Concepts
+
+In groups of approximately 10, pick an article from the list below and fill out this [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Bq10eh3q8aUHuy4VWwBHVud-KAhnm31owKzc0Ie3J24/edit?usp=sharing) 
+
+The first sheet contains an example based on this article: [The efficacy of calorie labelling formats on pre-packaged foods: An experimental study among adolescents and young adults in Canada](https://www.dropbox.com/s/hg5wk5ea2bg5t5o/CalorieLabellingPackagesFoods.pdf?dl=1)
+
+---
+
+1. [Blood Lead Levels of Children in Flint, Michigan: 2006-2016](https://www.dropbox.com/s/m8up4gyzyj5ll4z/BloodLeadLevelsFlint20062016.pdf?dl=1)
+2. [Brief Standing Desk Intervention to Reduce Sedentary Behavior at a Physical Activity Conference in 2016](https://www.dropbox.com/s/xzlyb8ugbp32maz/BriefStandingDeskIntervention.pdf?dl=1)
+4. [Lunch is ready ... but not healthy: An analysis of lunches served in childcare centres in two Canadian provinces](https://www.dropbox.com/s/6hi90dr47wqczph/ContentOfChilCareCentreLunches.pdf?dl=1)
+5. [Fluoride exposure and reported learning disability diagnosis among Canadian children: Implications for community water fluoridation](https://www.dropbox.com/s/i2gegxdqyzdzhe9/FluorideLearningDisability.pdf?dl=1)
+6. [Folate Nutrition Status in Mothers of the Boston Birth Cohort, Sample of a US Urban Low-Income Population](https://www.dropbox.com/s/oudh0hxb51ypekk/FolateStatusMothersBostonBirthCohort.pdf?dl=1)
+7. [State Indoor Tanning Laws and Prevalence of Indoor Tanning Among US High School Students, 2009–2015](https://www.dropbox.com/s/3p2y7pwltda6age/IndoorTanningUSHighSchoolStudents.pdf?dl=1)
+8. [Outdoor time, physical activity and sedentary time among young children: The 2012–2013 Canadian Health Measures Survey](https://www.dropbox.com/s/6lvyh0c7go0ix2i/OutdoorTimePhySActivityKids.pdf?dl=1)
+9. [Physicochemical properties and phenolic content of honey from different floral origins and from rural versus urban landscapes](https://www.dropbox.com/s/vz13rhygidw131d/PropertiesDifferenHoneys.pdf?dl=1)
+10. [A family-centered lifestyle intervention for obese six- to eight-year-old children: Results from a one-year randomized controlled trial conducted in Montreal, Canada](https://www.dropbox.com/s/lmvrcgs80uqncf3/RCTlifestyleInterventionObeseKids.pdf?dl=1)
 
 <!--
 # Quiz {-}
