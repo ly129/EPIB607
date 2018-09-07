@@ -14,6 +14,7 @@ install:
 - Rscript -e "pacman::p_load(bookdown)"
 - Rscript -e "pacman::p_load(formatR)"
 - Rscript -e "pacman::p_load(tidyverse)"
+- Rscript -e "pacman::p_load(kableExtra)"
 before_script:
 - chmod +x ./_build.sh
 - chmod +x ./_deploy.sh

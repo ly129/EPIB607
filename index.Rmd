@@ -45,7 +45,7 @@ needed_CRAN_pkgs <- c(
   
   # Explicitly used packages:
   "tidyverse", "rmarkdown", "knitr", 
-  "plotly", "janitor", "skimr",
+  "plotly", "janitor", "skimr","kableExtra",
   # "infer", "moderndive",
   
   # Internally used packages:
@@ -582,21 +582,39 @@ Complete the following DataCamp courses:
 
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
-knitr::kable(as.data.frame(rbind(
-    c("Thurs. Sept 6", "[1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)"),
-    c(" ", "[2. Course Website](https://sahirbhatnagar.com/EPIB607/)"),
-    c(" ", "[3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html#teaching-strategy)"),
-    c(" ", "[4. Video: What is Statistics?](https://www.learner.org/courses/againstallodds/unitpages/unit01.html)"),
-    c(" ", "[5. Introduction to DALITE](https://mydalite.org/en/live/signup/form/NTc4)"),
-    c(" ", "[6. Review of A1 and DALITE Q1](https://sahirbhatnagar.com/EPIB607/assignments.html)"),
-    c(" ", "[7. Live Poll](http://etc.ch/tfZA)"),
-    c(" ", "[8. Terms and Concepts group exercise](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)")
-  )),
-  col.names = c("Date","Agenda"),
-  booktabs = TRUE)
+df <- as.data.frame(rbind(
+c("[1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)"),
+    c( "[2. Course Website](https://sahirbhatnagar.com/EPIB607/)"),
+    c( "[3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html#teaching-strategy)"),
+    c( "[4. Video: What is Statistics?](https://www.learner.org/courses/againstallodds/unitpages/unit01.html)"),
+    c( "[5. Introduction to DALITE](https://mydalite.org/en/live/signup/form/NTc4)"),
+    c( "[6. Review of A1 and DALITE Q1](https://sahirbhatnagar.com/EPIB607/assignments.html)"),
+    c( "[7. Live Poll](http://etc.ch/tfZA)"),
+    c( "[8. Terms and Concepts group exercise](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)"),
+c( " "),
+c( "[1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212&source=article&c=12&cid=2#tab:homeTab:crumb:8:artId:1212:src:article)"),
+c( "[2. Terms and Concepts Review](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)"),
+c( "[3. Live Poll Review](http://etc.ch/tfZA)"),
+c( "[4. R Markdown Presentation](https://prezi.com/dvmgx17e_was/reproducible/?utm_campaign=share&utm_medium=copy)")
+  ))
+
+
+pacman::p_load(kableExtra)
+
+df %>% kable(col.names = c("Agenda")) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) %>%
+  group_rows("Thursday September 6", 1, 8) %>%
+  group_rows("Monday September 10", 10, 13)
+# knitr::kable(,
+#   col.names = c("Date","Agenda"),
+#   booktabs = TRUE)
+
+# kable(mtcars[1:10, 1:6], caption = "Group Rows") %>%
+#   kable_styling("striped", full_width = F) %>%
+#   group_rows("Group 1", 4, 7) %>%
+#   group_rows("Group 2", 8, 10)
+
 ```
-
-
 
 
 
@@ -662,7 +680,29 @@ knitr::write_bib(c(
 
 # Assignments 
 
-1. [A1 (due September 20, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+# a markdown link in the first row first column will cause an error for compiling
+# pdf
+knitr::kable(as.data.frame(rbind(
+  c("1","[Setting up the computing environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 20, 2018"),
+  c("2","[Histograms, Means, Medians, Boxplots, Standard Deviation](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 21, 2018"),
+  c("3","[Sampling Distributions and Central Limit Theorem](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 28, 2018"),
+  c("4","[The Bootstrap](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","October 5, 2018"),
+  c("5","[Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","October 12, 2018"),
+  c("6","[Tests of Significance and p-values](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","October 19, 2018"),
+  c("7","[One-Sample Inference](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 2, 2018"),
+  c("8","[Two-Sample Inference](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 9, 2018"),
+  c("9","[Regression](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 16, 2018"),
+  c("10","[Nonparametric Statistics](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 23, 2018")
+  )),
+  col.names = c("Assignment","Topic","Due"),
+  booktabs = TRUE)
+```
+
+
+
+
 
 # DALITE
 
