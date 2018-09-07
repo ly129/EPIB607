@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-09-06}
+    \date{2018-09-07}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -317,6 +317,20 @@
 
 %\frontmatter % turns off chapter numbering and uses roman numerals for page numbers;
 % https://tex.stackexchange.com/questions/20538/what-is-the-right-order-when-using-frontmatter-tableofcontents-mainmatter
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -462,7 +476,7 @@ text:
 \caption{}
 \end{figure}
 
-The version of the book you are reading now was built on 2018-09-06 and
+The version of the book you are reading now was built on 2018-09-07 and
 was built on
 \href{https://travis-ci.org/sahirbhatnagar/MATH697}{Travis}.
 
@@ -758,21 +772,44 @@ course must be submitted to a GitHub repository.\strut
 
 \chapter{Schedule}\label{schedule}
 
-\begin{tabular}{ll}
-\toprule
-Date & Agenda\\
-\midrule
-Thurs. Sept 6 & [1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ\_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)\\
- & [2. Course Website](https://sahirbhatnagar.com/EPIB607/)\\
- & [3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html\#teaching-strategy)\\
- & [4. Video: What is Statistics?](https://www.learner.org/courses/againstallodds/unitpages/unit01.html)\\
- & [5. Introduction to DALITE](https://mydalite.org/en/live/signup/form/NTc4)\\
-\addlinespace
- & [6. Review of A1 and DALITE Q1](https://sahirbhatnagar.com/EPIB607/assignments.html)\\
- & [7. Live Poll](http://etc.ch/tfZA)\\
- & [8. Terms and Concepts group exercise](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)\\
-\bottomrule
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Agenda\\
+\hline
+\multicolumn{1}{l}{\textbf{Thursday September 6}}\\
+\hline
+\hspace{1em}[1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ\_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)\\
+\hline
+\hspace{1em}[2. Course Website](https://sahirbhatnagar.com/EPIB607/)\\
+\hline
+\hspace{1em}[3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html\#teaching-strategy)\\
+\hline
+\hspace{1em}[4. Video: What is Statistics?](https://www.learner.org/courses/againstallodds/unitpages/unit01.html)\\
+\hline
+\hspace{1em}[5. Introduction to DALITE](https://mydalite.org/en/live/signup/form/NTc4)\\
+\hline
+\hspace{1em}[6. Review of A1 and DALITE Q1](https://sahirbhatnagar.com/EPIB607/assignments.html)\\
+\hline
+\hspace{1em}[7. Live Poll](http://etc.ch/tfZA)\\
+\hline
+\hspace{1em}[8. Terms and Concepts group exercise](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)\\
+\hline
+\\
+\hline
+\multicolumn{1}{l}{\textbf{Monday September 10}}\\
+\hline
+\hspace{1em}[1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212\&source=article\&c=12\&cid=2\#tab:homeTab:crumb:8:artId:1212:src:article)\\
+\hline
+\hspace{1em}[2. Terms and Concepts Review](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)\\
+\hline
+\hspace{1em}[3. Live Poll Review](http://etc.ch/tfZA)\\
+\hline
+\hspace{1em}[4. R Markdown Presentation](https://prezi.com/dvmgx17e\_was/reproducible/?utm\_campaign=share\&utm\_medium=copy)\\
+\hline
 \end{tabular}
+\end{table}
 
 \chapter{Slides}\label{slides}
 
@@ -786,13 +823,23 @@ Thurs. Sept 6 & [1. Introduction to EPIB607](https://docs.google.com/presentatio
 
 \chapter{Assignments}\label{assignments}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf}{A1
-  (due September 20, 2018)}
-\end{enumerate}
+\begin{tabular}{lll}
+\toprule
+Assignment & Topic & Due\\
+\midrule
+1 & [Setting up the computing environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & September 20, 2018\\
+2 & [Histograms, Means, Medians, Boxplots, Standard Deviation](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & September 21, 2018\\
+3 & [Sampling Distributions and Central Limit Theorem](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & September 28, 2018\\
+4 & [The Bootstrap](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & October 5, 2018\\
+5 & [Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & October 12, 2018\\
+\addlinespace
+6 & [Tests of Significance and p-values](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & October 19, 2018\\
+7 & [One-Sample Inference](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & November 2, 2018\\
+8 & [Two-Sample Inference](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & November 9, 2018\\
+9 & [Regression](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & November 16, 2018\\
+10 & [Nonparametric Statistics](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & November 23, 2018\\
+\bottomrule
+\end{tabular}
 
 \chapter{DALITE}\label{dalite}
 
@@ -957,7 +1004,7 @@ scientist was R. A. Fisher, who first described
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-18-1} \includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-18-2} \includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-18-3} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-19-1} \includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-19-2} \includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-19-3} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -972,7 +1019,7 @@ scientist was R. A. Fisher, who first described
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-19-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
 \appendix
 
