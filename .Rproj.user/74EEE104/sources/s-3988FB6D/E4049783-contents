@@ -579,11 +579,12 @@ Complete the following DataCamp courses:
 
 # Schedule 
 
-## Thursday September 6
+## Week 1
+
+### Thursday September 6
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 6 -----------------------------
   c("[1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)"),
   c( "[2. Course Website](https://sahirbhatnagar.com/EPIB607/)"),
   c( "[3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html#teaching-strategy)"),
@@ -600,12 +601,15 @@ df %>% kable(col.names = NULL) %>%
   
 ```
 
+<br>
 
-## Monday September 10
+## Week 2
+
+
+### Monday September 10
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 10 -----------------
   c( "[1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212&source=article&c=12&cid=2#tab:homeTab:crumb:8:artId:1212:src:article)"),
   c( "[2. Terms and Concepts Review](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)"),
   # c( "[3. Live Poll Review](http://etc.ch/tfZA)"),
@@ -619,11 +623,10 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
-## Wednesday September 12
+### Wednesday September 12
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 12 -----------------
 c("[1. DALITE Q1 due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf)")
 ))
 
@@ -633,11 +636,10 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
-## Thursday September 13
+### Thursday September 13
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 13 -----------------
 c("1. Boxplots, Means, Medians, Mode")
 ))
 
@@ -647,11 +649,15 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
-## Monday September 17
+<br>
+
+## Week 3
+
+
+### Monday September 17
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 17 -----------------
 c("1. Sampling Distributions")
 ))
 
@@ -660,11 +666,10 @@ df %>% kable(col.names = NULL) %>%
   
 ```
 
-## Thursday September 20
+### Thursday September 20
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 20 -----------------
 c("[1. Assignment 1 due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)"),
 c("2. Sampling Distributions")
 ))
@@ -675,12 +680,11 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
-## Friday September 21
+### Friday September 21
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 21 -----------------
-c("[1. Assignment 2 due by 11:59pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)")
+c("Assignment 2 due by 11:59pm")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -689,12 +693,17 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
+<br>
 
-## Monday September 24
+
+
+## Week 4
+
+
+### Monday September 24
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 24 -----------------
 c("1. Central Limit Theorem")
 ))
 
@@ -705,11 +714,10 @@ df %>% kable(col.names = NULL) %>%
 
 
 
-## Thursday September 27
+### Thursday September 27
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 27 -----------------
 c("1. The Bootstrap")
 ))
 
@@ -719,12 +727,11 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
-## Friday September 28
+### Friday September 28
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  # September 21 -----------------
-c("[1. Assignment 3 due by 11:59pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)")
+c("Assignment 3 due by 11:59pm")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -733,12 +740,18 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
-## Monday October 1
+<br>
+
+
+## Week 5
+
+
+### Monday October 1
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
 
-  c("1. Tests of Significance and p-values")
+  c(" ")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -746,6 +759,406 @@ df %>% kable(col.names = NULL) %>%
   
 ```
 
+### Thursday October 4
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday October 5
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("Assignment 4 due by 11:59pm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+<br>
+
+
+## Week 6
+
+
+### Monday October 8
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c("Thanksgiving. No class.")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday October 11
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday October 12
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("Assignment 5 due by 11:59pm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+<br>
+
+
+
+
+## Week 7
+
+
+### Monday October 15
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday October 18
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday October 19
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("Assignment 6 due by 11:59pm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+## Week 8
+
+
+### Monday October 22
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday October 25
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+
+## Week 9
+
+
+### Monday October 29
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c("Midterm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday November 1
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday November 2
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("Assignment 7 due by 11:59pm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+
+## Week 10
+
+
+### Monday November 5
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday November 8
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday November 9
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("Assignment 8 due by 11:59pm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+
+## Week 11
+
+
+### Monday November 12
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday November 15
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday November 16
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("Assignment 9 due by 11:59pm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+
+
+## Week 12
+
+
+### Monday November 19
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday November 22
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday November 23
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("Assignment 10 due by 11:59pm")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+## Week 13
+
+
+### Monday November 26
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Thursday November 29
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+## Week 14
+
+
+### Monday December 3
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c(" ")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+### Tuesday December 4
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c("Final Exam (Tentative).")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Friday December 7
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+
+  c("Group project due by 11:59pm.")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
 
 
 <!--
@@ -810,15 +1223,15 @@ knitr::write_bib(c(
 # pdf
 knitr::kable(as.data.frame(rbind(
   c("1","[Setting up the computing environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 20, 2018"),
-  c("2","[Histograms, Means, Medians, Boxplots, Standard Deviation](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 21, 2018"),
-  c("3","[Sampling Distributions and Central Limit Theorem](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 28, 2018"),
-  c("4","[The Bootstrap](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","October 5, 2018"),
-  c("5","[Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","October 12, 2018"),
-  c("6","[Tests of Significance and p-values](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","October 19, 2018"),
-  c("7","[One-Sample Inference](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 2, 2018"),
-  c("8","[Two-Sample Inference](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 9, 2018"),
-  c("9","[Regression](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 16, 2018"),
-  c("10","[Nonparametric Statistics](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","November 23, 2018")
+  c("2","Histograms, Means, Medians, Boxplots, Standard Deviation","September 21, 2018"),
+  c("3","Sampling Distributions and Central Limit Theorem","September 28, 2018"),
+  c("4","The Bootstrap","October 5, 2018"),
+  c("5","Confidence Intervals","October 12, 2018"),
+  c("6","Tests of Significance and p-values","October 19, 2018"),
+  c("7","One-Sample Inference","November 2, 2018"),
+  c("8","Two-Sample Inference","November 9, 2018"),
+  c("9","Regression","November 16, 2018"),
+  c("10","Nonparametric Statistics","November 23, 2018")
   )),
   col.names = c("Assignment","Topic","Due"),
   booktabs = TRUE)
