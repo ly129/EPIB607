@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>EPIB 607: Inferential Statistics</title>
   <meta name="description" content="Course material for EPIB 607 at McGill University">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="EPIB 607: Inferential Statistics" />
   <meta property="og:type" content="book" />
@@ -303,7 +303,7 @@ ci =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw"
 <span class="co">#&gt; [1,] 493.1 485.7 500.5</span>
 <span class="co">#&gt; [2,] 492.8 485.5 500.2</span>
 <span class="co">#&gt; [3,] 502.4 495.1 509.8</span></code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-56-1.png" width="\textwidth" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-56-2.png" width="\textwidth" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-56-3.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-56-1.png" width="576" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-56-2.png" width="576" style="display: block; margin: auto;" /><img src="epib607_files/figure-html/unnamed-chunk-56-3.png" width="576" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">T &lt;-<span class="st"> </span><span class="kw">chisq</span>(substance <span class="op">~</span><span class="st"> </span><span class="kw">shuffle</span>(sex), <span class="dt">data =</span> HELPrct); T
 <span class="co">#&gt; X.squared </span>
 <span class="co">#&gt;   0.07796</span>
@@ -312,7 +312,7 @@ Substance.Null &lt;-<span class="st"> </span><span class="kw">do</span>(<span cl
 <span class="kw">prop1</span>( <span class="op">~</span>(X.squared <span class="op">&gt;=</span><span class="st"> </span>T), <span class="dt">data =</span> Substance.Null)
 <span class="co">#&gt; prop_TRUE </span>
 <span class="co">#&gt;     0.956</span></code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-57-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-57-1.png" width="576" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="course-information.html">
+<link rel="prev" href="terms-and-concepts.html">
+<link rel="next" href="vectorization-apply-and-for-loops.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -272,133 +272,240 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">EPIB 607: Inferential Statistics</h1>
-<h4 class="author"><em>Sahir Bhatnagar and James Hanley</em></h4>
-<h4 class="date"><em>2018-09-10</em></h4>
-</div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>Welcome to the course notes for <a href="https://www.mcgill.ca/study/2018-2019/courses/epib-607">EPIB 607: Inferential Statistics</a> at McGill University.</p>
-<div id="objectives" class="section level2">
-<h2><span class="header-section-number">1.1</span> Objectives</h2>
-<p>The aim of this course is to provide students with basic principles of statistical inference so that they can:</p>
+<div id="data-graphics" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Data Graphics</h1>
+<p>Data graphics can be understood in terms of five basic elements <span class="citation">(Baumer, Kaplan, and Horton <a href="#ref-baumer2017mdsr">2017</a>)</span>:</p>
 <ol style="list-style-type: decimal">
-<li>Visualize/Analyze/Interpret data using statistical methods <strong>with a computer</strong>.</li>
-<li>Understand the statistical results in a scientific paper.<br />
-</li>
-<li>Apply statistical methods in their own research.<br />
-</li>
-<li>Use the methods learned in this course as a foundation for more advanced biostatistics courses.</li>
+<li>visual cues</li>
+<li>coordinate system</li>
+<li>scale</li>
+<li>context</li>
+<li>facets and layers</li>
+</ol>
+<div id="visual-cues" class="section level2">
+<h2><span class="header-section-number">10.1</span> Visual Cues</h2>
+<p>Visual cues are graphical elements that draw the eye to what you want your audience to focus upon. They are the fundamental building blocks of data graphics, and the choice of which visual cues to use to represent which quantities is the central question for the data graphic composer. Nathan Yau identifies nine distinct visual cues, for which we also list whether that cue is used to encode a numerical or categorical quantity:</p>
+<ol style="list-style-type: decimal">
+<li>Position (numerical): where in relation to other things?</li>
+<li>Length (numerical): how big (in one dimension)?</li>
+<li>Angle (numerical): how wide? parallel to something else?</li>
+<li>Direction (numerical) at what slope? In a time series, going up or down?</li>
+<li>Shape (categorical) belonging to which group?</li>
+<li>Area (numerical) how big (in two dimensions)?</li>
+<li>Volume (numerical) how big (in three dimensions)?</li>
+<li>Shade (either) to what extent? how severely?</li>
+<li>Color (either) to what extent? how severely? Beware of red/green color blindness</li>
 </ol>
 </div>
-<div id="audience" class="section level2">
-<h2><span class="header-section-number">1.2</span> Audience</h2>
-<p>The principal audience is researchers in the natural and social sciences who haven’t had an introductory course in statistics (or did have one a long time ago). This audience accepts that statistics has penetrated the life sciences pervasively and is required knowledge for both doing research and understanding scientific papers.</p>
+<div id="coordinate-systems" class="section level2">
+<h2><span class="header-section-number">10.2</span> Coordinate systems</h2>
+<p>How are the data points organized? While any number of coordinate systems are possible, three are most common.</p>
+<div id="cartesian" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> Cartesian</h3>
+<p>This is the familiar (<span class="math inline">\(x, y\)</span>)-rectangular coordinate system with two perpendicular axes.</p>
 </div>
-<div id="about-these-notes" class="section level2">
-<h2><span class="header-section-number">1.3</span> About these notes</h2>
-<p>These notes are a collection of useful links, videos, online resources and papers for an introductory course in statistics. The instructors have found that no single book sufficiently teaches all the topics covered in this course. Part of this is due to advancements in computing which have far outpaced the publication of modern textbooks. Indeed, the computer has replaced many of the calculations that were traditionally taught to be done by hand. We direct the readers to what we think is a good learning resource for a given topic (following the <strong>Flipped Classroom</strong> strategy). We also provide our own commentary and notes when we think its useful.</p>
-<!--
-| Chapter | Topic | DataCamp Courses   
-| :-------------------------|:-------------------------|:-------------------------
-| 2 | Basic R programming concepts | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/free-introduction-to-r"><img src="images/datacamp_intro_to_R.png" alt="Drawing" style="height: 150px;"/></a> <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/intermediate-r"><img src="images/datacamp_intermediate_R.png" alt="Drawing" style="height: 150px;"/></a>
-| 3 & 5 | Introductory data visualization and wrangling | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/introduction-to-the-tidyverse"><img src="images/datacamp_intro_to_tidyverse.png" alt="Drawing" style="height: 150px;"/></a>
-| 4 & 5 | Data "tidying" and intermediate data wrangling | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/working-with-data-in-the-tidyverse"><img src="images/datacamp_working_with_data.png" alt="Drawing" style="height: 150px;"/></a>
-| 6 & 7 | Data modelling, basic regression, and multiple regression | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/modeling-with-data-in-the-tidyverse"><img src="images/datacamp_intro_to_modeling.png" alt="Drawing" style="height: 150px;"/></a>
-| 9 & 10 | Statistical inference: confidence intervals and hypothesis testing | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/inference-for-numerical-data"><img src="images/datacamp_inference_for_numerical_data.png" alt="Drawing" style="height: 150px;"/></a> <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/inference-for-categorical-data"><img src="images/datacamp_inference_for_categorical_data.png" alt="Drawing" style="height: 150px;"/></a>
-| 11 | Inference for regression | <a target="_blank" class="page-link" href="https://www.datacamp.com/courses/inference-for-linear-regression"><img src="images/datacamp_inference_for_regression.png" alt="Drawing" style="height: 150px;"/></a> 
--->
+<div id="polar" class="section level3">
+<h3><span class="header-section-number">10.2.2</span> Polar</h3>
+<p>The radial analog of the Cartesian system with points identified by their radius <span class="math inline">\(\rho\)</span> and angle <span class="math inline">\(\theta\)</span>.</p>
 </div>
-<div id="r-code-conventions" class="section level2">
-<h2><span class="header-section-number">1.4</span> R Code Conventions</h2>
-<p>We use <a href="https://cran.r-project.org/"><code>R</code></a> code throughout these notes. When <code>R</code> code is displayed<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> it will be typeset using a <code>monospace</code> font with syntax highlighting enabled to ensure the differentiation of functions, variables, and so on. For example, the following adds 1 to 1</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a =<span class="st"> </span>1L <span class="op">+</span><span class="st"> </span>1L
-a</code></pre></div>
-<p>Each code segment may contain actual output from <code>R</code>. Such output will appear in grey font prefixed by <code>#&gt;</code>. For example, the output of the above code segment would look like so:</p>
-<pre><code>[1] 2</code></pre>
-</div>
-<div id="rendering-mathematical-formulae" class="section level2">
-<h2><span class="header-section-number">1.5</span> Rendering Mathematical Formulae</h2>
-<p>Throughout these notes, there will be mathematical symbols used to express the material. Depending on the version of the book, there are two different rendering engines.</p>
-<ul>
-<li>For the online version, the text uses <a href="https://www.mathjax.org/">MathJax</a> to render mathematical notation for the web. In the event the formulae does not load for a specific chapter, first try to refresh the page. 9 times out of 10 the issue is related to the software library not loading quickly. You can also right-click to see the corresponding LaTeX code used to produce the equation.<br />
-</li>
-<li>For the pdf version, the text is built using the recommended AMS LaTeX symbolic packages. As a result, there should be no issue displaying equations. An example of a mathematical rendering capabilities would be given as:</li>
-</ul>
-<p><span class="math display">\[ a^2 + b^2 = c^2 \]</span></p>
-</div>
-<div id="development" class="section level2">
-<h2><span class="header-section-number">1.6</span> Development</h2>
-<p>This book is built with <a href="https://github.com/rstudio/bookdown"><strong>bookdown</strong></a> and is open source and freely available. This approach encourages contributions, ensures reproducibility and provides access to the material worldwide. The online version of the book is hosted at <a href="https://sahirbhatnagar.com/EPIB607">sahirbhatnagar.com/EPIB607</a> and kept up-to-date thanks to <a href="https://travis-ci.org/sahirbhatnagar/EPIB607">Travis</a>. The entire source code is available at <a href="https://github.com/sahirbhatnagar/EPIB607" class="uri">https://github.com/sahirbhatnagar/EPIB607</a>.</p>
-<p>If you notice any errors, we would be grateful if you would let us know by filing an issue <a href="https://github.com/sahirbhatnagar/EPIB607/issues">here</a> or making a pull request by clicking the edit button in the top-left corner of the text:</p>
-<div class="figure">
-<img src="images/edit_button.png" />
-
-</div>
-<p>The version of the book you are reading now was built on 2018-09-10 and was built on <a href="https://travis-ci.org/sahirbhatnagar/MATH697">Travis</a>.</p>
-<!--
-## Acknowledgements {-}
-
-There would be too many people to acknowledge in this section alone. We refer the reader to the references section. 
-
--->
-<p><br></p>
-</div>
-<div id="about-the-authors" class="section level2">
-<h2><span class="header-section-number">1.7</span> About the authors</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Sahir Bhatnagar</th>
-<th align="center">James Hanley</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><img src="images/sahir.png" alt="Drawing" style="height: 200px;"/></td>
-<td align="center"><img src="images/jim.png" alt="Drawing" style="height: 200px;"/></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Sahir R. Bhatnagar: Assistant Professor of Biostatistics - McGill University, Montreal, Canada.
-<ul>
-<li>Website: <a href="https://sahirbhatnagar.com/" class="uri">https://sahirbhatnagar.com/</a><br />
-</li>
-<li>Twitter: <a href="https://twitter.com/syfi_24">syfi_24</a><br />
-</li>
-<li>GitHub: <a href="https://github.com/sahirbhatnagar" class="uri">https://github.com/sahirbhatnagar</a><br />
-</li>
-</ul></li>
-<li>James A. Hanley: Professor of Biostatistics - McGill University, Montreal, Canada.
-<ul>
-<li>Webpage: <a href="http://www.medicine.mcgill.ca/epidemiology/hanley/" class="uri">http://www.medicine.mcgill.ca/epidemiology/hanley/</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="license" class="section level2">
-<h2><span class="header-section-number">1.8</span> License</h2>
-<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></p>
-<!--
-# won't work with pdf
-[![Build Status](https://travis-ci.org/sahirbhatnagar/MATH697.svg?branch=master)](https://travis-ci.org/sahirbhatnagar/MATH697)
--->
+<div id="geographic" class="section level3">
+<h3><span class="header-section-number">10.2.3</span> Geographic</h3>
+<p>This is the increasingly important system in which we have locations on the curved surface of the Earth, but we are trying to represent these locations in a flat two-dimensional plane.</p>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><a href="https://raw.githubusercontent.com/coatless/spm/master/index.Rmd" class="uri">https://raw.githubusercontent.com/coatless/spm/master/index.Rmd</a><a href="index.html#fnref1">↩</a></p></li>
+<div id="scale" class="section level2">
+<h2><span class="header-section-number">10.3</span> Scale</h2>
+<p>Scales translate values into visual cues. The choice of scale is often crucial. The central question is how does distance in the data graphic translate into meaningful differences in quantity? Each coordinate axis can have its own scale, for which we have three different choices:</p>
+<div id="numeric" class="section level3">
+<h3><span class="header-section-number">10.3.1</span> Numeric</h3>
+<p>A numeric quantity is most commonly set on a linear, logarithmic, or percent- age scale. Note that a logarithmic scale does not have the property that, say, a one-centimeter difference in position corresponds to an equal difference in quantity anywhere on the scale.</p>
+</div>
+<div id="categorical" class="section level3">
+<h3><span class="header-section-number">10.3.2</span> Categorical</h3>
+<p>A categorical variable may have no ordering (e.g., Democrat, Republican, or Independent), or it may be ordinal (e.g., never, former, or current smoker).</p>
+</div>
+<div id="time" class="section level3">
+<h3><span class="header-section-number">10.3.3</span> Time</h3>
+<p>Time is a numeric quantity that has some special properties. First, because of the calendar, it can be demarcated by a series of different units (e.g., year, month, day, etc.). Second, it can be considered periodically (or cyclically) as a “wrap-around” scale. Time is also so commonly used and misused that it warrants careful consider- ation.</p>
+</div>
+</div>
+<div id="context" class="section level2">
+<h2><span class="header-section-number">10.4</span> Context</h2>
+<p>The purpose of data graphics is to help the viewer make meaningful comparisons, but a bad data graphic can do just the opposite: It can instead focus the viewer’s attention on meaningless artifacts, or ignore crucial pieces of relevant but external knowledge. Context can be added to data graphics in the form of titles or subtitles that explain what is being shown, axis labels that make it clear how units and scale are depicted, or reference points or lines that contribute relevant external information. While one should avoid cluttering up a data graphic with excessive annotations, it is necessary to provide proper context.</p>
+</div>
+<div id="facets-and-layers" class="section level2">
+<h2><span class="header-section-number">10.5</span> Facets and layers</h2>
+<p>One of the fundamental challenges of creating data graphics is condensing multivariate information into a two-dimensional image. While three-dimensional images are occasionally useful, they are often more confusing than anything else. Instead, here are three common ways of incorporating more variables into a two-dimensional data graphic.</p>
+<div id="facets" class="section level3">
+<h3><span class="header-section-number">10.5.1</span> Facets</h3>
+<p>A single data graphic can be composed of several small multiples of the same basic plot, with one (discrete) variable changing in each of the small sub-images.</p>
+</div>
+<div id="layers" class="section level3">
+<h3><span class="header-section-number">10.5.2</span> Layers</h3>
+<p>It is sometimes appropriate to draw a new layer on top of an existing data graphic. This new layer can provide context or comparison, but there is a limit to how many layers humans can reliably parse.</p>
+</div>
+<div id="animation" class="section level3">
+<h3><span class="header-section-number">10.5.3</span> Animation</h3>
+<p>If time is the additional variable, then an animation can sometimes effectively convey changes in that variable. Of course, this doesn’t work on the printed page, and makes it impossible for the user to see all the data at once.</p>
+</div>
+</div>
+<div id="color" class="section level2">
+<h2><span class="header-section-number">10.6</span> Color</h2>
+<p>Approximately 8 percent of the population—most of whom are men—have some form of color blindness. Most commonly, this renders them incapable of seeing colors accurately, most notably of distinguishing between red and green. Compounding the problem, many of these people do not know that they are color-blind. Thus, for professional graphics it is worth thinking carefully about which colors to use. The NFL famously failed to account for this in a 2015 game in which the Buffalo Bills wore all-red jerseys and the New York Jets wore all-green, leaving colorblind fans unable to distinguish one team from the other!</p>
+<p>Thankfully, we have been freed from the burden of having to create such intelligent palettes by the research of Cynthia Brewer, creator of the <a href="http://colorbrewer2.org/learnmore/schemes_full.html">ColorBrewer website</a> (and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">R package</a>). Brewer has created colorblind-safe palettes in a variety of hues for three different types of numeric data in a single variable:</p>
+<div id="sequential" class="section level3">
+<h3><span class="header-section-number">10.6.1</span> Sequential</h3>
+<p>The ordering of the data has only one direction. Positive integers are sequential because they can only go up: they can’t go past 0. (Thus, if 0 is encoded as white, then any darker shade of gray indicates a larger number.)</p>
+</div>
+<div id="diverging" class="section level3">
+<h3><span class="header-section-number">10.6.2</span> Diverging</h3>
+<p>The ordering of the data has two directions. In an election forecast, we com- monly see states colored based on how they are expected to vote for the president. Since red is associated with Republicans and blue with Democrats, states that are solidly red or blue are on opposite ends of the scale. But “swing states” that could go either way may appear purple, white, or some other neutral color that is “between” red and blue.</p>
+</div>
+<div id="qualitative" class="section level3">
+<h3><span class="header-section-number">10.6.3</span> Qualitative</h3>
+<p>There is no ordering of the data, and we simply need color to differentiate different categories.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(RColorBrewer)
+RColorBrewer<span class="op">::</span><span class="kw">display.brewer.all</span>()</code></pre></div>
+<p><img src="epib607_files/figure-html/unnamed-chunk-54-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Also see the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis R package</a>.</p>
+</div>
+</div>
+<div id="examples" class="section level2">
+<h2><span class="header-section-number">10.7</span> Examples</h2>
+<div id="sat-scores" class="section level3">
+<h3><span class="header-section-number">10.7.1</span> SAT Scores</h3>
+<p>The bar graph below displays the average score on the math portion of the 2010 SAT (with possible scores ranging from 200 to 800) among states for whom at least two-thirds of the students took the SAT.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mdsr)
+pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
+<span class="kw">gf_colh</span>(state <span class="op">~</span><span class="st"> </span>math, <span class="dt">data =</span> <span class="kw">subset</span>(SAT_<span class="dv">2010</span>, sat_pct <span class="op">&gt;</span><span class="st"> </span><span class="dv">66</span>)) </code></pre></div>
+<p><img src="epib607_files/figure-html/unnamed-chunk-55-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>This plot uses the visual cue of position to represent the math SAT score on the vertical axis with a linear scale. The categorical variable of state is arrayed on the horizontal axis. Although the states are ordered alphabetically, it would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title.</p>
+</div>
+<div id="swimming-records" class="section level3">
+<h3><span class="header-section-number">10.7.2</span> Swimming records</h3>
+<p>Next, we consider a time series that shows the progression of the world record times in the 100-meter freestyle swimming event for men and women. The Figure below displays the times as a function of the year in which the new record was set. At some level this is simply a scatterplot that uses position on both the vertical and horizontal axes to indicate swimming time and chronological time, respectively, in a Cartesian plane. The numeric scale on the vertical axis is linear, in units of seconds, while the scale on the horizontal axis is also linear, measured in years. But there is more going on here. Color is being used as a visual cue to distinguish the categorical variable sex. Furthermore, since the points are connected by lines, direction is being used to indicate the progression of the record times. (In this case, the records can only get faster, so the direction is always down.) One might even argue that angle is being used to compare the descent of the world records across time and/or gender. In fact, in this case shape is also being used to distinguish sex.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mosaicData)
+<span class="kw">gf_point</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">shape =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">size =</span> <span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">gf_line</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex)</code></pre></div>
+<p><img src="epib607_files/figure-html/unnamed-chunk-56-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+</div>
+<div id="help-study" class="section level3">
+<h3><span class="header-section-number">10.7.3</span> HELP study</h3>
+<p>The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gf_boxplot</span>(avg_drinks <span class="op">~</span><span class="st"> </span>racegrp <span class="op">|</span><span class="st"> </span>sex, <span class="dt">data =</span> HELPrct)</code></pre></div>
+<p><img src="epib607_files/figure-html/unnamed-chunk-57-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="exercises" class="section level2">
+<h2><span class="header-section-number">10.8</span> Exercises</h2>
+<div id="exercise-1" class="section level3">
+<h3><span class="header-section-number">10.8.1</span> Exercise 1</h3>
+<p>For this exercise, refer to the article assigned to your team in the <a href="https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html">Terms and Concepts</a> exercise. If you article did not contain a graphic, please find a similar article that does contain one.</p>
+<ol style="list-style-type: decimal">
+<li>Identify the visual cues, coordinate system, and scale(s).</li>
+<li>How many variables are depicted in the graphic? Explicitly link each variable to a visual cue that you listed above.</li>
+<li>Critique this data graphic using the taxonomy described in this chapter.</li>
 </ol>
+<!--
+# Icebreakers {#intro}
+
+## The Lady Tasting Tea
+
+This example is adapted from _Start Teaching with R_ [@startwithR] and [JH notes unit 8_B](http://www.medicine.mcgill.ca/epidemiology/hanley/med2/unit8b_epi_nov21.pdf).  
+
+There is a famous story about a lady who claimed that
+tea with milk tasted different depending on whether the
+milk was added to the tea or the tea added to the milk.
+The story is famous because of the setting in which she
+made this claim. She was attending a party in Cambridge,
+England, in the 1920s. Also in attendance were a number
+of university dons and their wives. The scientists in at-
+tendance scoffed at the woman and her claim. What, after
+all, could be the difference?
+All the scientists but one, that is. Rather than simply
+dismiss the woman’s claim, he proposed that they decide
+how one should test the claim. The tenor of the conversa-
+tion changed at this suggestion, and the scientists began
+to discuss how the claim should be tested. Within a few
+minutes cups of tea with milk had been prepared and
+presented to the woman for tasting.
+At this point, you may be wondering who the innova-
+tive scientist was and what the results of the experiment
+were. The scientist was R. A. Fisher, who first described
+
+
+![](images/teacups.jpg)
+
+
+```r
+library(mosaic)
+rflip()
+```
+
+
+```r
+rflip(10)
+```
+
+
+
+```r
+mu = 500
+sigma = 100
+x = rnorm(500, mean=mu, sd=sigma)
+favstats(x)
+meanconfint = function (x, sigma, level = 0.95, ...) {
+  se = sigma / sqrt(length(x))
+  mu = mean(x)
+  z = qnorm(1 - (1 - level)/2)
+  out = c(mu, mu - z * se, mu + z * se)
+  names(out) = c("mean", "lower", "upper")
+  return(out)
+}
+meanconfint(x, sigma = sigma)
+randomx = do(50) * rnorm(500, mean=mu, sd=sigma)
+ci = data.frame(t(apply(randomx, 1, meanconfint, sigma=sigma, level=0.90)))
+head(ci, 3)
+
+xyplot(1:nrow(ci) ~ mean, data=ci, xlim=range(ci), xlab="SAT score", ylab="Index")
+ladd(panel.abline(v=500, col="lightgray", lty=2))
+ladd(with(ci, panel.arrows(x0 = lower, y0=1:nrow(ci), y1=1:nrow(ci), cex=0.5,
+                           x1=upper, code=3)))
+
+head(t(apply(randomx, 1, meanconfint, sigma=sigma, level=0.9)), 3)
+
+```
+
+
+
+```r
+T <- chisq(substance ~ shuffle(sex), data = HELPrct); T
+Substance.Null <- do(999) * chisq(substance ~ shuffle(sex), data = HELPrct)
+histogram( ~ X.squared, data = Substance.Null, v = T, width = 0.25)
+prop1( ~(X.squared >= T), data = Substance.Null)
+```
+
+-->
+
+</div>
+</div>
+</div>
+
+
+
+<h3><span class="header-section-number">B</span> Appendix B</h3>
+<div id="refs" class="references">
+<div id="ref-baumer2017mdsr">
+<p>Baumer, Benjamin S., Daniel T. Kaplan, and Nicholas J. Horton. 2017. <em>Modern Data Science with R</em>. Chapman; Hall/CRC Press: Boca Raton. <a href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487" class="uri">https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487</a>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="course-information.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="terms-and-concepts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vectorization-apply-and-for-loops.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -428,7 +535,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sahirbhatnagar/EPIB607/edit/master/index.Rmd",
+"link": "https://github.com/sahirbhatnagar/EPIB607/edit/master/descriptives.Rmd",
 "text": "Edit"
 },
 "download": ["epib607.pdf"],
