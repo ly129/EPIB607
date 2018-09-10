@@ -148,11 +148,18 @@ gf_boxplot(avg_drinks ~ racegrp | sex, data = HELPrct)
 
 ### Exercise 1
 
-For this exercise, refer to the article assigned to your team in the [Terms and Concepts](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html) exercise. If you article did not contain a graphic, please find a similar article that does contain one.
+For this exercise, refer to the article assigned to your team in the [Terms and Concepts](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html) exercise. 
 
-1. Identify the visual cues, coordinate system, and scale(s).
-2. How many variables are depicted in the graphic? Explicitly link each variable to a visual cue that you listed above.
+1. Identify the aesthetics and scale(s). If your article did not contain a graphic, pick a Table in your paper and think about what graphic could have been used instead. See [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/directory-of-visualizations.html) and [Top 50 ggplot2 Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#1.%20Correlation) for examples of graphics. 
+2. How many variables are depicted in the graphic? Explicitly link each variable to an aesthetic that you listed above.
 3. Critique this data graphic using the taxonomy described in this chapter.
+
+
+### Exercise 2
+
+Vox published a list of [Charts that explain food in America](http://www.vox.com/a/explain-food-america). There are 40 maps, charts, and graphs that show where our food and drink comes from and how we eat it.
+
+Pick your best and least favorite graphic. One representative from each group will present in 1 minute or less their rationale for the groups choices. 
 
 
 

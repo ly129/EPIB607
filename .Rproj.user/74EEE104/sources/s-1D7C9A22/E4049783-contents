@@ -613,7 +613,8 @@ df <- as.data.frame(rbind(
   c( "[1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212&source=article&c=12&cid=2#tab:homeTab:crumb:8:artId:1212:src:article)"),
   #c( "[2. Terms and Concepts Review](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)"),
   # c( "[3. Live Poll Review](http://etc.ch/tfZA)"),
-  c("[2. Data graphics](https://sahirbhatnagar.com/EPIB607/data-graphics.html)"),
+  c(" [2.1 Data graphics Slides](https://docs.google.com/presentation/d/1wXgcTzcRKl_leGRfNZjWWPkjwJSTlZSXBCl-fFuLEaE/edit?usp=sharing)"),
+  c("[2.2 Data graphics exercise](https://sahirbhatnagar.com/EPIB607/data-graphics.html)"),
   c("[3. Introduction to the `mosaic` package](https://cran.r-project.org/package=mosaic) "),
   c("[4. R Markdown Presentation](https://prezi.com/dvmgx17e_was/reproducible/?utm_campaign=share&utm_medium=copy)")
   
