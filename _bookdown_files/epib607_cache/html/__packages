@@ -22,3 +22,5 @@ mosaicData
 Matrix
 mosaic
 kableExtra
+RColorBrewer
+mdsr

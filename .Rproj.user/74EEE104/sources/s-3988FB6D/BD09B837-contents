@@ -1,0 +1,15 @@
+book_filename: "epib607"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files:
+  html: [
+    "index.Rmd", 
+    "descriptives.Rmd",
+    "05-Rtutorial.Rmd"]
+  latex: [
+    "index.Rmd", 
+    "descriptives.Rmd", 
+    "05-Rtutorial.Rmd"]
+before_chapter_script: "code/includes/init_chapter.R"

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536557407042.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FD0C583B",
+    "lastKnownWriteTime" : 1536557460,
+    "last_content_update" : 1536557460429,
+    "path" : "~/git_repositories/epib607/bib/book.bib",
+    "project_path" : "bib/book.bib",
+    "properties" : {
+        "cursorPosition" : "27,20",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}

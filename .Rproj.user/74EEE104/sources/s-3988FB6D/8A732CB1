@@ -7,12 +7,12 @@
     "folds" : "",
     "hash" : "0",
     "id" : "8A732CB1",
-    "lastKnownWriteTime" : 1536353413,
-    "last_content_update" : 1536353413457,
+    "lastKnownWriteTime" : 1536560612,
+    "last_content_update" : 1536560612628,
     "path" : "~/git_repositories/epib607/.travis.yml",
     "project_path" : ".travis.yml",
     "properties" : {
-        "cursorPosition" : "16,40",
+        "cursorPosition" : "12,79",
         "scrollLine" : "0"
     },
     "relative_order" : 4,

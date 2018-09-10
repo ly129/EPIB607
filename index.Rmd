@@ -44,7 +44,7 @@ needed_CRAN_pkgs <- c(
   # "nycflights13", "ggplot2movies", "fivethirtyeight", "gapminder", "ISLR",
   
   # Explicitly used packages:
-  "tidyverse", "rmarkdown", "knitr", 
+  "tidyverse", "rmarkdown", "knitr", "mosaic", "mosaicData", "RColorBrewer",
   "plotly", "janitor", "skimr","kableExtra",
   # "infer", "moderndive",
   
@@ -611,10 +611,12 @@ df %>% kable(col.names = NULL) %>%
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
   c( "[1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212&source=article&c=12&cid=2#tab:homeTab:crumb:8:artId:1212:src:article)"),
-  c( "[2. Terms and Concepts Review](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)"),
+  #c( "[2. Terms and Concepts Review](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)"),
   # c( "[3. Live Poll Review](http://etc.ch/tfZA)"),
-  c( "[3. R Markdown Presentation](https://prezi.com/dvmgx17e_was/reproducible/?utm_campaign=share&utm_medium=copy)"),
-  c(" [4. Introduction to the `mosaic` package](https://cran.r-project.org/package=mosaic)")
+  c("[2. Data graphics](https://sahirbhatnagar.com/EPIB607/data-graphics.html)"),
+  c("[3. Introduction to the `mosaic` package](https://cran.r-project.org/package=mosaic) "),
+  c("[4. R Markdown Presentation](https://prezi.com/dvmgx17e_was/reproducible/?utm_campaign=share&utm_medium=copy)")
+  
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -623,11 +625,12 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
+
 ### Wednesday September 12
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("[1. DALITE Q1 due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf)")
+c("[1. DALITE Q1 - Histograms, Medians and Means due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf)")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -640,7 +643,7 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("1. Boxplots, Means, Medians, Mode")
+c("1. Histograms, Medians and Means")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -658,7 +661,9 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("1. Sampling Distributions")
+c("1. Boxplots and Standard Deviation"),
+c("2. Parameters and Statistics"),
+c("3. Sampling Distributions and Central Limit Theorem")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -670,8 +675,9 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("[1. Assignment 1 due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)"),
-c("2. Sampling Distributions")
+c("[Assignment 1 - Setting up the computing
+environment due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)"),
+c("1. Bootstrap")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -684,7 +690,7 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("Assignment 2 due by 11:59pm")
+c("Assignment 2 - Histograms, Medians, Means, Boxplots and Standard Deviation due by 11:59pm")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -704,7 +710,7 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("1. Central Limit Theorem")
+c("")
 ))
 
 df %>% kable(col.names = NULL) %>% 
