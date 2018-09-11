@@ -5,7 +5,7 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "164846946",
     "id" : "F7D859EA",
     "lastKnownWriteTime" : 1536624788,
     "last_content_update" : 1536624788063,
@@ -13,10 +13,10 @@
     "project_path" : "descriptives.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "53,2",
+        "cursorPosition" : "238,151",
         "scrollLine" : "0"
     },
-    "relative_order" : 6,
+    "relative_order" : 7,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

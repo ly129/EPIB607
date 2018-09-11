@@ -43,7 +43,9 @@ The first step in understanding data is to hear what the data say, to
 we help them speak by organizing, displaying, and summarizing. In this
 assignment you will explore how to visualize your data and summarize it
 using summary statistics. All graphs and calculations are to be
-completed in an R Markdown document using the provided template. Please
+completed in an R Markdown document using the provided template. You are
+free to choose any function from any package to complete the assignment.
+Concise answers will be rewarded. Be brief and to the point. Please
 submit both the compiled HTML report and the source file (.Rmd) to
 myCourses by September 21, 2018, 11:59pm. Both HTML and .Rmd files
 should be saved as `IDnumber\_LastName\_FirstName\_EPIB607\_A2'.
@@ -150,11 +152,16 @@ column gives the frequency of the number of people for a given age and
   Create a suitable visulaization of this data and then comment on any
   patterns you see and give reasons for these patterns. Your choice
   should leverage all the information provided in the data and be
-  influeced by the message that you are trying to convey.
+  influeced by the message that you are trying to convey. Be sure to
+  include an informative title and figure caption.
 \item
   Calculate the mean age, the standard deviation (SD), and the
   quartiles: \(Q_{25}, Q_{50} (median), Q_{75}\) separately for males
   and females.
+\item
+  The orignial census cards have been scanned are available online.
+  \href{http://www.census.nationalarchives.ie/reels/nai000230598/}{This
+  one in particular} is quite famous. Why?
 \end{enumerate}
 
 \section{Number of Authors}\label{number-of-authors}
@@ -211,7 +218,7 @@ death rates by cancer site and gender at this
   The data used to make the figures has also been provided on the ACS
   website in Excel spreasheets:
   \href{https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/age-adjusted-cancer-death-rates-males-1930-2014.xlsx}{{[}males{]}},
-  \href{https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/age-adjusted-cancer-death-rates-females-1930-2014.xlsx}{{[}females{]}}).
+  \href{https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/age-adjusted-cancer-death-rates-females-1930-2014.xlsx}{{[}females{]}}.
   Once you have downloaded the spreadsheets, the following code can be
   used to combine both datasets:
 \end{enumerate}
@@ -252,28 +259,70 @@ first:
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(tidyr)}
 \NormalTok{cancer_rates_melt <-}\StringTok{ }\NormalTok{tidyr}\OperatorTok{::}\KeywordTok{gather}\NormalTok{(cancer_rates, }\DataTypeTok{key =} \StringTok{"Site"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"Rate"}\NormalTok{, }\OperatorTok{-}\NormalTok{Year, }\OperatorTok{-}\NormalTok{Gender)}
-\KeywordTok{head}\NormalTok{(cancer_rates_melt)}
+\KeywordTok{head}\NormalTok{(cancer_rates_melt, }\DataTypeTok{n =} \DecValTok{10}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{ShadedResult}
 \begin{verbatim}
-#  # A tibble: 6 x 4
-#     Year Gender Site     Rate
-#    <dbl> <chr>  <chr>   <dbl>
-#  1  1930 Female Stomach  35.2
-#  2  1931 Female Stomach  33.8
-#  3  1932 Female Stomach  33.7
-#  4  1933 Female Stomach  32.5
-#  5  1934 Female Stomach  31.6
-#  6  1935 Female Stomach  31.4
+#  # A tibble: 10 x 4
+#      Year Gender Site     Rate
+#     <dbl> <chr>  <chr>   <dbl>
+#   1  1930 Female Stomach  35.2
+#   2  1931 Female Stomach  33.8
+#   3  1932 Female Stomach  33.7
+#   4  1933 Female Stomach  32.5
+#   5  1934 Female Stomach  31.6
+#   6  1935 Female Stomach  31.4
+#   7  1936 Female Stomach  30.9
+#   8  1937 Female Stomach  29.2
+#   9  1938 Female Stomach  28.9
+#  10  1939 Female Stomach  26.9
 \end{verbatim}
 \end{ShadedResult}
 
 Plot the data using a graph of your choice with the goal of comparing
 males vs.~females. (you might consider using the function
 \texttt{gf\_line} from the \texttt{ggformula} package). Briefly comment
-on your comparison.
+on your comparison. Be sure to include an informative title and figure
+caption.
+
+\section{Does breast-feeding weaken
+bones?}\label{does-breast-feeding-weaken-bones}
+
+Breast-feeding mothers secrete calcium into their milk. Some of the
+calcium may come from their bones, so mothers may lose bone mineral
+content. Researchers compared 47 breast-feeding women with 22 women of
+similar age who were neither pregnant nor lactating. They measured the
+percent change in the mineral content of the women's spines over three
+months. The data can be read into R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{boneloss <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(boneloss)}
+\end{Highlighting}
+\end{Shaded}
+
+A negative value of \texttt{mineral\_loss} indicates a loss in mineral
+content. Do the data show distinctly greater bone mineral loss among the
+breast-feeding women? Use descriptive statistics, plots and/or tables to
+justify your conclusion.
+
+\section{Food in America}\label{food-in-america}
+
+Vox published a list of
+\href{http://www.vox.com/a/explain-food-america}{Charts that explain
+food in America}. There are 40 maps, charts, and graphs that show where
+our food and drink comes from and how we eat it.
+
+Pick your best and least favorite graphic, and briefly explain why using
+the taxonomy we learned in
+\href{https://docs.google.com/presentation/d/1wXgcTzcRKl_leGRfNZjWWPkjwJSTlZSXBCl-fFuLEaE/edit?usp=sharing}{class}
+and provide a link to the figure. For example, this link:
+\href{https://www.vox.com/a/explain-food-america\#list-21}{Figure 18}
+was created using the following code:
+\texttt{{[}Figure\ 18{]}(https://www.vox.com/a/explain-food-america\#list-21)}
 
 %\showmatmethods
 

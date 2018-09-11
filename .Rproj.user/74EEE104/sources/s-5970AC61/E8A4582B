@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536698300327.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E8A4582B",
+    "lastKnownWriteTime" : 1536700415,
+    "last_content_update" : 1536700415182,
+    "path" : "~/git_repositories/epib607/assignments/a2/a2_template.Rmd",
+    "project_path" : "assignments/a2/a2_template.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "34,0",
+        "scrollLine" : "23",
+        "tempName" : "Untitled4"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
