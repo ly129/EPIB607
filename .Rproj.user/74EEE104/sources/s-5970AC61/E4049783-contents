@@ -1230,19 +1230,22 @@ knitr::write_bib(c(
 # a markdown link in the first row first column will cause an error for compiling
 # pdf
 knitr::kable(as.data.frame(rbind(
-  c("1","[Setting up the computing environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 20, 2018"),
-  c("2","Histograms, Means, Medians, Boxplots, Standard Deviation","September 21, 2018"),
-  c(" ", "[[1911 Census of Ireland]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv)",""),
-  c("3","Sampling Distributions and Central Limit Theorem","September 28, 2018"),
-  c("4","The Bootstrap","October 5, 2018"),
-  c("5","Confidence Intervals","October 12, 2018"),
-  c("6","Tests of Significance and p-values","October 19, 2018"),
-  c("7","One-Sample Inference","November 2, 2018"),
-  c("8","Two-Sample Inference","November 9, 2018"),
-  c("9","Regression","November 16, 2018"),
-  c("10","Nonparametric Statistics","November 23, 2018")
+  c("1","[Setting up the computing environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","--","--","September 20, 2018"),
+  c("2","[Histograms, Means, Medians, Boxplots, Standard Deviation](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a2/a2-hist-mean-median.pdf)",
+    "[a2_template.Rmd](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a2/a2_template.Rmd)","[[1. 1911 Census of Dublin, Ireland]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv) 
+    [[2. Bone mineral loss]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv) 
+    [[3. Cancer rate 1930-2014, Males]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age-adjusted-cancer-death-rates-males-1930-2014.xlsx) 
+    [[4. Cancer rate 1930-2014, Females]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age-adjusted-cancer-death-rates-females-1930-2014.xlsx) ","September 21, 2018"),
+  c("3","Sampling Distributions and Central Limit Theorem","","","September 28, 2018"),
+  c("4","The Bootstrap","","","October 5, 2018"),
+  c("5","Confidence Intervals","","","October 12, 2018"),
+  c("6","Tests of Significance and p-values","","","October 19, 2018"),
+  c("7","One-Sample Inference","","","November 2, 2018"),
+  c("8","Two-Sample Inference","","","November 9, 2018"),
+  c("9","Regression","","","November 16, 2018"),
+  c("10","Nonparametric Statistics","","","November 23, 2018")
   )),
-  col.names = c("Assignment","Topic","Due"),
+  col.names = c("Assignment","Topic","Template","Data","Due"),
   booktabs = TRUE)
 ```
 

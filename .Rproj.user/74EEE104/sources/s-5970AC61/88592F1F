@@ -7,14 +7,14 @@
     "folds" : "",
     "hash" : "0",
     "id" : "88592F1F",
-    "lastKnownWriteTime" : 1536697529,
-    "last_content_update" : 1536697529037,
+    "lastKnownWriteTime" : 1536700630,
+    "last_content_update" : 1536700630239,
     "path" : "~/git_repositories/epib607/assignments/a2/a2-hist-mean-median.Rmd",
     "project_path" : "assignments/a2/a2-hist-mean-median.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "206,0",
-        "scrollLine" : "193"
+        "cursorPosition" : "63,92",
+        "scrollLine" : "49"
     },
     "relative_order" : 2,
     "source_on_save" : false,
