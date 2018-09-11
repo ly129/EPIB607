@@ -2,7 +2,7 @@
     "path" : "~/git_repositories/epib607/data",
     "sortOrder" : [
         {
-            "ascending" : true,
+            "ascending" : false,
             "columnIndex" : 4
         },
         {

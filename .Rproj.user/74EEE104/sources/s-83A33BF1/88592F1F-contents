@@ -13,7 +13,7 @@ address:
 lead_author_surname: Bhatnagar and Hanley
 doi: "https://sahirbhatnagar.com/EPIB607/"
 abstract: |
-  The first step in understanding data is to hear what the data say, to "let the data speak for themselves". Numbers speak clearly only when we help them speak by organizing, displaying, and summarizing. In this assignment you will explore how to visualize your data and summarize it using summary statistics. All graphs and calculations are to be completed in an R Markdown document using the provided template. Please submit both the compiled HTML report and the source file (.Rmd) to myCourses by September 21, 2018, 11:59pm. Both HTML and .Rmd files should be saved as 'IDnumber_LastName_FirstName_EPIB607_A2'. 
+  The first step in understanding data is to hear what the data say, to "let the data speak for themselves". Numbers speak clearly only when we help them speak by organizing, displaying, and summarizing. In this assignment you will explore how to visualize your data and summarize it using summary statistics. All graphs and calculations are to be completed in an R Markdown document using the provided template. You are free to choose any function from any package to complete the assignment. Please submit both the compiled HTML report and the source file (.Rmd) to myCourses by September 21, 2018, 11:59pm. Both HTML and .Rmd files should be saved as 'IDnumber_LastName_FirstName_EPIB607_A2'. 
 # Optional: Acknowledgements
 #acknowledgements: |
 #  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
@@ -32,7 +32,7 @@ keywords:
 papersize: letter
 fontsize: 9pt
 # Optional: Force one-column layout, default is two-column
-#one_column: true
+one_column: true
 # Optional: Enables lineno mode, but only if one_column mode is also true
 #lineno: true
 # Optional: Enable one-sided layout, default is two-sided
@@ -64,40 +64,46 @@ editor_options:
 The `.Rmd` template for Assignment 2 is available [here](sahirbhatnagar.com)
 
 
-# The `mosaic` package (optional)
+# The `mosaic` package (optional) {-}
 
 The `mosaic` package provides a consistent and user-friendly interface for descriptive statistics, plots and inference. You may find it useful to complete an interactive tutorial on its plotting functions. (note: this is optional and will not be counted for any marks). First install the following packages:
 
 ```{r, eval=FALSE}
-install.packages(c("learnr","mosaic"), 
-                 dependencies = TRUE)
+install.packages(c("learnr","mosaic"), dependencies = TRUE)
 ```
 
 Then, from RStudio, run the following command which will open a new page in your web broswer:
 
 ```{r, eval=FALSE}
-learnr::run_tutorial("introduction", 
-                     package = "ggformula")
+learnr::run_tutorial("introduction", package = "ggformula")
 ```
 
-A more advanced tutorial on customizing your plots is available also:
+An advanced tutorial on customizing plots is available also:
 
 ```{r, eval=FALSE}
-learnr::run_tutorial("refining", 
-                     package = "ggformula")
+learnr::run_tutorial("refining", package = "ggformula")
 ```
 
 
 
 # Age-structures of Populations, then and now
 
-The 1911 census of Ireland was taken on April 2nd 1911 and were released to the public in 1961. Follow [this link](http://www.census.nationalarchives.ie/help/about19011911census.html) for further details on the census. James Hanley (JH) has scrapped the data and has provided you with a [three column .csv file]() which you can read into `R` using the following command:
+The 1911 census of Ireland was taken on April 2nd 1911 and was released to the public in 1961. Follow [this link](http://www.census.nationalarchives.ie/help/about19011911census.html) for further details on the census. James Hanley (JH) has scrapped the data for Dublin, collected the age-frequency distribtion by gender and provided you with a [three column .csv file](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv) which looks like this:
+
+```{r, echo=TRUE}
+cens <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv")
+head(cens)
+```
+
+The `Age` column represents the age in 1911. The `Freq` column gives the frequency of the number of people for a given age and `Gender`.
+
+  a) What was the ealiest year of birth for (i) males and (ii) females ?
+  b) Create a suitable visulaization of this data and then comment on any patterns you see and give reasons for these patterns. Your choice should leverage all the information provided in the data and be influeced by the message that you are trying to convey. Be sure to include an informative title and figure caption. 
+  c) Calculate the mean age, the standard deviation (SD), and the quartiles: $Q_{25}, Q_{50} (median), Q_{75}$ separately for males and females.  
+  d) The orignial census cards have been scanned are available online. [This one in particular](http://www.census.nationalarchives.ie/reels/nai000230598/) is quite famous. Why?
 
 
-1. Sign up for a free DataCamp account at [this link](https://www.datacamp.com/groups/shared_links/4c7d78a632b557dfdd6618b3e8fac09495571fec). Note: you are required to sign up with a `@mail.mcgill.ca` or `@mcgill.ca` email address.  
-2. Sign in to [https://github.mcgill.ca/](https://github.mcgill.ca/) using your McGill email address and corresponding password.  
-
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 dat <- read.table("~/git_repositories/epib607/data/age_sex_frequencies_ireland.txt", header = TRUE)
 library(dplyr)
 dat <- dat %>% mutate(Male = case_when(Male == 1 ~ "Male", Male == 0 ~ "Female"))
@@ -112,59 +118,88 @@ draft("mypaper.Rmd", template="pdf", package="pinp", edit=TRUE)
 
 
 
-# Install Git
 
-You need to first install the [git](https://git-scm.com/) version control system on your system. Follow Chapter 1: Installing Git [at this link](https://plot.ly/r/github-getting-started-for-data-scientists/#chapter-1-installing-git) for step-by-step installation instructions with screenshots. 
+# Number of Authors
 
+Fletcher et al. (1979, NEJM 301:180-183) studied the characteristics of 612 randomly selected articles published in the NEJM, JAMA, and the Lancet since 1946. Two characteristics examined were the number of authors per article and the number of students studied in each article:
 
-
-
-# Install R and RStudio
-
-This short course will guide you through installing both [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/preview/). RStudio is a software application that facilitates how you interact with `R`. Click on the link the in the figure caption join the course.
-
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=1in, height=1in]{../../images/rstudio_ide.png} 
-  \end{center}
-  \caption{\href{https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1}{Working with the RStudio IDE (Part 1)}}\label{fig}
-\end{figure}
+```{r, echo=FALSE, eval=TRUE}
+knitr::kable(as.data.frame(rbind(c("1946", "151","2.0 (1.4)","25"),
+                                 c("1956", "149","2.3 (1.6)","36"),
+                                 c("1966", "157","2.8 (1.2)","16"),
+                                 c("1976", "155","4.9 (7.3)","30"))),
+             col.names = c("Year","No. articles studied", "No. Authors Mean (SD)","No. subjects Median"),
+             booktabs = TRUE)
+```
 
 
-# Introduction to R
-
-In this course you will get a hands-on introduction to the basic commands in R. With the knowledge gained in this course, you will be ready to perform a data analysis. Click on the link the in the figure caption join the course.  
-
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=1in, height=1in]{../../images/intro_r.png} 
-  \end{center}
-  \caption{\href{https://www.datacamp.com/courses/free-introduction-to-r}{Introduction to R}}\label{fig}
-\end{figure}
+  a) Why report median number of subjects (instead of average)?
+  b) In 1976, can the standard deviation of 7.3 really be larger than the mean of 4.9? Explain. 
+  c) In light of (a) and (b), how would you present the data in this table?
 
 
-# R Markdown
+# Cancer Deaths in the US
 
-You will learn how to create reproducible reports using R and Markdown. All assignments for this course must be submitted in this format. Click on the link the in the figure caption join the course.  
+The American Cancer Society (ACS) recently published age-adjusted cancer death rates by cancer site and gender at this [link](https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures/cancer-facts-figures-2017.html).
 
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=1in, height=1in]{../../images/rmarkdown_r.png} 
-  \end{center}
-  \caption{\href{https://www.datacamp.com/courses/reporting-with-r-markdown}{Reporting with R Markdown}}\label{fig}
-\end{figure}
+  a) In the figure [Trends in Age-adjusted Cancer Death Rates by Site, Males, US, 1930-2014 (PDF)](https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/trends-in-age-adjusted-cancer-death-rates-by-site-males-us-1930-2014.pdf) list the scales being used and the variable that has been mapped onto them. 
+  b) Briefly comment on what you like about the figure, and what could have been improved (e.g. aesthetics, labels, use of color) 
+  c) The data used to make the figures has also been provided on the ACS website in Excel spreasheets: [[males]](https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/age-adjusted-cancer-death-rates-males-1930-2014.xlsx), [[females]](https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/age-adjusted-cancer-death-rates-females-1930-2014.xlsx)). Once you have downloaded the spreadsheets, the following code can be used to combine both datasets:
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+males <- readxl::read_xlsx("~/Downloads/age-adjusted-cancer-death-rates-males-1930-2014.xlsx", 
+                           skip = 1, n_max = 85) %>% mutate(Gender = "Male")  
+females <- readxl::read_xlsx("~/Downloads/age-adjusted-cancer-death-rates-females-1930-2014.xlsx", 
+                             skip = 1, n_max = 85) %>% mutate(Gender = "Female")
+cancer_rates <- dplyr::bind_rows(list(females,males))
+head(cancer_rates)
+```
+
+In order to make the data ready for plotting, we need to _melt_ it first:
+
+```{r}
+library(tidyr)
+cancer_rates_melt <- tidyr::gather(cancer_rates, key = "Site", value = "Rate", -Year, -Gender)
+head(cancer_rates_melt, n = 10)
+```
+
+Plot the data using a graph of your choice with the goal of comparing males vs. females. (you might consider using the function `gf_line` from the `ggformula` package). Briefly comment on your comparison. Be sure to include an informative title and figure caption.  
+
+```{r, echo=FALSE, eval=FALSE}
+gf_line(Rate ~ Year | Gender, data = cancer_rates_melt, color = ~ Site)
+
+gf_boxplot(Rate ~ Site | Gender, data = cancer_rates_melt)
+
+```
 
 
-# GitHub using RStudio
 
-You will learn how to use RStudio to version control your code. All assignments for this course must be submitted to a GitHub repository. Click on the link the in the figure caption join the course (Chapter 2 only).
+# Does breast-feeding weaken bones?
 
-\begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=1in, height=1in]{../../images/rstudio_ide_2.png} 
-  \end{center}
-  \caption{\href{https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2}{Version Control with RStudio IDE (Chapter 2 only)}}\label{fig}
-\end{figure}
+Breast-feeding mothers secrete calcium into their milk. Some of the calcium may come from their bones, so mothers may lose bone mineral content. Researchers compared 47 breast-feeding women with 22 women of similar age who were neither pregnant nor lactating. They measured the percent change in the mineral content of the women's spines over three months. The data can be read into R:
+
+```{r, echo=TRUE, eval=FALSE}
+boneloss <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv")
+head(boneloss)
+```
+
+
+```{r, eval=FALSE, echo=FALSE}
+dat <- read.table("~/git_repositories/epib607/data/boneloss.txt", header = FALSE)
+library(dplyr)
+dat <- dat %>% mutate(V1 = case_when(V1 == 1 ~ "Other", V1 == 2 ~ "Breast-feeding"))
+colnames(dat) <- c("type", "mineral_loss")
+write.csv(dat, file = "data/boneloss.csv", quote = FALSE, row.names = FALSE)
+
+gf_boxplot(mineral_loss ~ type , data = dat, fill =~ type)
+library(rmarkdown)
+draft("mypaper.Rmd", template="pdf", package="pinp", edit=TRUE)
+
+```
+
+
+
 
 
 

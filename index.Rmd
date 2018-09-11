@@ -1232,6 +1232,7 @@ knitr::write_bib(c(
 knitr::kable(as.data.frame(rbind(
   c("1","[Setting up the computing environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)","September 20, 2018"),
   c("2","Histograms, Means, Medians, Boxplots, Standard Deviation","September 21, 2018"),
+  c(" ", "[[1911 Census of Ireland]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv)",""),
   c("3","Sampling Distributions and Central Limit Theorem","September 28, 2018"),
   c("4","The Bootstrap","October 5, 2018"),
   c("5","Confidence Intervals","October 12, 2018"),
