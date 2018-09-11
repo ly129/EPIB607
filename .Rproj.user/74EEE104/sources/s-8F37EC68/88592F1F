@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536338374580.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2604013014",
+    "id" : "88592F1F",
+    "lastKnownWriteTime" : 1536685712,
+    "last_content_update" : 1536685712963,
+    "path" : "~/git_repositories/epib607/assignments/a2/a2-hist-mean-median.Rmd",
+    "project_path" : "assignments/a2/a2-hist-mean-median.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "94,0",
+        "scrollLine" : "88"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

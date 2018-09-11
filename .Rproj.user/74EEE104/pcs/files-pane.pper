@@ -1,8 +1,8 @@
 {
-    "path" : "~/git_repositories/epib607/code/includes",
+    "path" : "~/git_repositories/epib607/data",
     "sortOrder" : [
         {
-            "ascending" : false,
+            "ascending" : true,
             "columnIndex" : 4
         },
         {

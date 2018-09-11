@@ -1,0 +1,215 @@
+\documentclass[letterpaper,9pt,twocolumn,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{Assignment 2 - Histograms, Medians, Means, Boxplots and Standard
+Deviation. Due September 21, 11:59pm 2018}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Histograms |  Means |  Medians |  Boxplots |  Standard Deviation |  Summary statistics |  mosaic package  }  
+
+\begin{abstract}
+The first step in understanding data is to hear what the data say, to
+``let the data speak for themselves''. Numbers speak clearly only when
+we help them speak by organizing, displaying, and summarizing. In this
+assignment you will explore how to visualize your data and summarize it
+using summary statistics. All graphs and calculations are to be
+completed in an R Markdown document using the provided template. Please
+submit both the compiled HTML report and the source file (.Rmd) to
+myCourses by September 21, 2018, 11:59pm. Both HTML and .Rmd files
+should be saved as `IDnumber\_LastName\_FirstName\_EPIB607\_A2'.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{Assignment 2 due Sepetember 21, 2018 by 11:59pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section*{Template}\label{template}
+\addcontentsline{toc}{section}{Template}
+
+The \texttt{.Rmd} template for Assignment 2 is available
+\href{sahirbhatnagar.com}{here}
+
+\section{\texorpdfstring{The \texttt{mosaic} package
+(optional)}{The mosaic package (optional)}}\label{the-mosaic-package-optional}
+
+The \texttt{mosaic} package provides a consistent and user-friendly
+interface for descriptive statistics, plots and inference. You may find
+it useful to complete an interactive tutorial on its plotting functions.
+(note: this is optional and will not be counted for any marks). First
+install the following packages:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"learnr"}\NormalTok{,}\StringTok{"mosaic"}\NormalTok{), }
+                 \DataTypeTok{dependencies =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Then, from RStudio, run the following command which will open a new page
+in your web broswer:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{learnr}\OperatorTok{::}\KeywordTok{run_tutorial}\NormalTok{(}\StringTok{"introduction"}\NormalTok{, }
+                     \DataTypeTok{package =} \StringTok{"ggformula"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+A more advanced tutorial on customizing your plots is available also:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{learnr}\OperatorTok{::}\KeywordTok{run_tutorial}\NormalTok{(}\StringTok{"refining"}\NormalTok{, }
+                     \DataTypeTok{package =} \StringTok{"ggformula"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Age-structures of Populations, then and
+now}\label{age-structures-of-populations-then-and-now}
+
+\textbf{Please try to complete this step before class on Thursday
+September 6}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sign up for a free DataCamp account at
+  \href{https://www.datacamp.com/groups/shared_links/4c7d78a632b557dfdd6618b3e8fac09495571fec}{this
+  link}. Note: you are required to sign up with a
+  \texttt{@mail.mcgill.ca} or \texttt{@mcgill.ca} email address.\\
+\item
+  Sign in to \url{https://github.mcgill.ca/} using your McGill email
+  address and corresponding password.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat <-}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"~/git_repositories/epib607/data/age_sex_frequencies_ireland.txt"}\NormalTok{, }\DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+\NormalTok{dat <-}\StringTok{ }\NormalTok{dat }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Male =} \KeywordTok{case_when}\NormalTok{(Male }\OperatorTok{==}\StringTok{ }\DecValTok{1} \OperatorTok{~}\StringTok{ "Male"}\NormalTok{, Male }\OperatorTok{==}\StringTok{ }\DecValTok{0} \OperatorTok{~}\StringTok{ "Female"}\NormalTok{))}
+\KeywordTok{colnames}\NormalTok{(dat) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Gender"}\NormalTok{, }\StringTok{"Age"}\NormalTok{, }\StringTok{"Freq"}\NormalTok{)}
+\KeywordTok{write.csv}\NormalTok{(dat, }\DataTypeTok{file =} \StringTok{"data/age_sex_frequencies_ireland.csv"}\NormalTok{, }\DataTypeTok{quote =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{row.names =} \OtherTok{FALSE}\NormalTok{)}
+
+
+\KeywordTok{library}\NormalTok{(rmarkdown)}
+\KeywordTok{draft}\NormalTok{(}\StringTok{"mypaper.Rmd"}\NormalTok{, }\DataTypeTok{template=}\StringTok{"pdf"}\NormalTok{, }\DataTypeTok{package=}\StringTok{"pinp"}\NormalTok{, }\DataTypeTok{edit=}\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Install Git}\label{install-git}
+
+You need to first install the \href{https://git-scm.com/}{git} version
+control system on your system. Follow Chapter 1: Installing Git
+\href{https://plot.ly/r/github-getting-started-for-data-scientists/\#chapter-1-installing-git}{at
+this link} for step-by-step installation instructions with screenshots.
+
+\section{Install R and RStudio}\label{install-r-and-rstudio}
+
+This short course will guide you through installing both
+\href{https://cran.r-project.org/}{R} and
+\href{https://www.rstudio.com/products/rstudio/download/preview/}{RStudio}.
+RStudio is a software application that facilitates how you interact with
+\texttt{R}. Click on the link the in the figure caption join the course.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/rstudio_ide.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1}{Working with the RStudio IDE (Part 1)}}\label{fig}
+\end{figure}
+
+\section{Introduction to R}\label{introduction-to-r}
+
+In this course you will get a hands-on introduction to the basic
+commands in R. With the knowledge gained in this course, you will be
+ready to perform a data analysis. Click on the link the in the figure
+caption join the course.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/intro_r.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/free-introduction-to-r}{Introduction to R}}\label{fig}
+\end{figure}
+
+\section{R Markdown}\label{r-markdown}
+
+You will learn how to create reproducible reports using R and Markdown.
+All assignments for this course must be submitted in this format. Click
+on the link the in the figure caption join the course.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/rmarkdown_r.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/reporting-with-r-markdown}{Reporting with R Markdown}}\label{fig}
+\end{figure}
+
+\section{GitHub using RStudio}\label{github-using-rstudio}
+
+You will learn how to use RStudio to version control your code. All
+assignments for this course must be submitted to a GitHub repository.
+Click on the link the in the figure caption join the course (Chapter 2
+only).
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=1in, height=1in]{../../images/rstudio_ide_2.png} 
+  \end{center}
+  \caption{\href{https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2}{Version Control with RStudio IDE (Chapter 2 only)}}\label{fig}
+\end{figure}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+

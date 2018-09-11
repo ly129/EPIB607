@@ -24,3 +24,9 @@ mosaic
 kableExtra
 RColorBrewer
 mdsr
+cowplot
+colorspace
+colorblindr
+dviz.supp
+patchwork
+lubridate

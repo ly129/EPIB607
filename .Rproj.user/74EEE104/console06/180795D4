@@ -1,208 +1,5 @@
 
-
-  |                                                                         |........                                                         |  12%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |........                                                         |  13%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  13%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.........                                                        |  14%
-  ordinary text without R code
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..........                                                       |  16%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |............                                                     |  18%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............                                                    |  19%
-  ordinary text without R code
-
-  |                                                                         |.............                                                    |  20%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-
-label: unnamed-chunk-13 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............                                                   |  22%
-  ordinary text without R code
-
-  |                                                                         |...............                                                  |  23%
-label: unnamed-chunk-14 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-15 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |................                                                 |  25%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  26%
-label: unnamed-chunk-16 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-17 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..................                                               |  28%
-  ordinary text without R code
-
-
-label: unnamed-chunk-18 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |...................                                              |  30%
-label: unnamed-chunk-19 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |....................                                             |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-
-label: unnamed-chunk-21 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................                                            |  33%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-22 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  35%
-label: unnamed-chunk-23 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.......................                                          |  36%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  36%
-label: unnamed-chunk-24 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |........................                                         |  37%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  38%
-label: unnamed-chunk-25 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
   |                                                                         |.........................                                        |  39%
-label: unnamed-chunk-26 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..........................                                       |  40%
   ordinary text without R code
 
 
@@ -212,1477 +9,290 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
+  |                                                                         |..........................                                       |  40%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  41%
+label: unnamed-chunk-28 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
   |                                                                         |...........................                                      |  41%
   ordinary text without R code
 
-^C  |...................................................              |  78%
+  |                                                                         |...........................                                      |  42%
+label: unnamed-chunk-29 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
 
+  |                                                                         |............................                                     |  42%
+  ordinary text without R code
+
+  |                                                                         |............................                                     |  43%
+label: unnamed-chunk-30 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |............................                                     |  44%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: unnamed-chunk-31 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.............................                                    |  45%
+  ordinary text without R code
+
+  |                                                                         |..............................                                   |  46%
+label: unnamed-chunk-32 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+
+  ordinary text without R code
+
+  |                                                                         |...............................                                  |  47%
+label: unnamed-chunk-33 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |...............................                                  |  48%
+  ordinary text without R code
+
+
+label: unnamed-chunk-34 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |................................                                 |  49%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  50%
+label: unnamed-chunk-35 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.................................                                |  50%
+  ordinary text without R code
+
+  |                                                                         |.................................                                |  51%
+label: unnamed-chunk-36 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |..................................                               |  52%
+  ordinary text without R code
+
+
+label: unnamed-chunk-37 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |..................................                               |  53%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  54%
+label: unnamed-chunk-38 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+
+  ordinary text without R code
+
+  |                                                                         |....................................                             |  55%
+label: unnamed-chunk-39 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |....................................                             |  56%
+  ordinary text without R code
+
+  |                                                                         |.....................................                            |  56%
+label: unnamed-chunk-40 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.....................................                            |  57%
+  ordinary text without R code
+
+  |                                                                         |.....................................                            |  58%
+label: unnamed-chunk-41 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |......................................                           |  58%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  59%
+label: unnamed-chunk-42 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.......................................                          |  59%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: unnamed-chunk-43 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |........................................                         |  61%
+  ordinary text without R code
+
+
+label: unnamed-chunk-44 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |........................................                         |  62%
+  ordinary text without R code
+
+  |                                                                         |.........................................                        |  63%
+label: unnamed-chunk-45 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  64%
+label: unnamed-chunk-46 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |..........................................                       |  65%
+  ordinary text without R code
+
+
+label: unnamed-chunk-47 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |...........................................                      |  66%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-48 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |............................................                     |  67%
+  ordinary text without R code
+
+  |                                                                         |............................................                     |  68%
+label: unnamed-chunk-49 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.............................................                    |  69%
+  ordinary text without R code
+
+
+label: unnamed-chunk-50 (with options) 
+List of 2
+ $ eval: logi FALSE
+ $ echo: logi TRUE
+
+  |                                                                         |.............................................                    |  70%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  71%
+label: unnamed-chunk-51 (with options) 
+List of 1
+ $ include: logi FALSE
+
+
+  ordinary text without R code
+
+  |                                                                         |...............................................                  |  72%
+label: unnamed-chunk-52 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |...............................................                  |  73%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  73%
+label: unnamed-chunk-53 (with options) 
+List of 2
+ $ include: logi FALSE
+ $ cache  : logi FALSE
+
+  |                                                                         |................................................                 |  74%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  75%
+label: unnamed-chunk-54 (with options) 
+List of 1
+ $ fig.cap: chr "(ref:common-aesthetics)"
+
+  |                                                                         |.................................................                |  75%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  76%
+label: common-aesthetics (with options) 
+List of 3
+ $ fig.width: num 6
+ $ fig.asp  : num 0.45
+ $ fig.cap  : chr "(ref:common-aesthetics)"
+
+Quitting from lines 1413-1474 (epib607.Rmd) 
+Error in loadNamespace(name) : there is no package called 'labeling'
+Calls: <Anonymous> ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
 
 Execution halted
 Makefile:8: recipe for target 'html' failed
 make[1]: *** [html] Error 1
+make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
 Makefile:15: recipe for target 'build' failed
-make: *** [build] Interrupt
-
-]0;/home/sahir/git_repositories/epib607> (B[mmake build echo EC03ED2E && /usr/bin/env && echo C2EEE820
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-  |                                                                         |....                                                             |   7%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |......                                                           |   9%
-  ordinary text without R code
-
-
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......                                                          |  10%
-  ordinary text without R code
-
-  |                                                                         |.......                                                          |  11%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |........                                                         |  13%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  13%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.........                                                        |  14%
-  ordinary text without R code
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..........                                                       |  16%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |............                                                     |  18%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............                                                    |  19%
-  ordinary text without R code
-
-  |                                                                         |.............                                                    |  20%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-
-label: unnamed-chunk-13 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............                                                   |  22%
-  ordinary text without R code
-
-  |                                                                         |...............                                                  |  23%
-label: unnamed-chunk-14 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-15 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |................                                                 |  25%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  26%
-label: unnamed-chunk-16 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-17 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..................                                               |  28%
-  ordinary text without R code
-
-
-label: unnamed-chunk-18 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |...................                                              |  30%
-label: unnamed-chunk-19 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |....................                                             |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-
-label: unnamed-chunk-21 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................                                            |  33%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-22 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  35%
-label: unnamed-chunk-23 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.......................                                          |  36%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  36%
-label: unnamed-chunk-24 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |........................                                         |  37%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  38%
-label: unnamed-chunk-25 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |.........................                                        |  39%
-label: unnamed-chunk-26 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..........................                                       |  40%
-  ordinary text without R code
-
-
-label: unnamed-chunk-27 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |...........................                                      |  41%
-  ordinary text without R code
-
-  |                                                                         |...........................                                      |  42%
-label: unnamed-chunk-28 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-29 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |............................                                     |  44%
-  ordinary text without R code
-
-  |                                                                         |.............................                                    |  44%
-label: unnamed-chunk-30 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-31 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-32 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-
-label: unnamed-chunk-33 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |................................                                 |  49%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  50%
-label: unnamed-chunk-34 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.................................                                |  50%
-  ordinary text without R code
-
-  |                                                                         |.................................                                |  51%
-label: unnamed-chunk-35 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..................................                               |  52%
-  ordinary text without R code
-
-
-label: unnamed-chunk-36 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..................................                               |  53%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  54%
-label: unnamed-chunk-37 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-38 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |....................................                             |  56%
-  ordinary text without R code
-
-  |                                                                         |.....................................                            |  56%
-label: unnamed-chunk-39 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-40 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
-label: unnamed-chunk-41 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-
-label: unnamed-chunk-42 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |........................................                         |  61%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-43 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.........................................                        |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  63%
-label: unnamed-chunk-44 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.........................................                        |  64%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  64%
-label: unnamed-chunk-45 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..........................................                       |  65%
-  ordinary text without R code
-
-  |                                                                         |...........................................                      |  66%
-label: unnamed-chunk-46 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  67%
-label: unnamed-chunk-47 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |............................................                     |  68%
-  ordinary text without R code
-
-
-label: unnamed-chunk-48 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  70%
-label: unnamed-chunk-49 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............................................                   |  70%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-50 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-
-label: unnamed-chunk-51 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |................................................                 |  73%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-52 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  75%
-label: unnamed-chunk-53 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................                |  76%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-54 (with options) 
-List of 1
- $ fig.asp: num 1
-
-
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-55 (with options) 
-List of 2
- $ fig.asp  : num 1
- $ fig.width: num 8
-
-  |                                                                         |...................................................              |  79%
-  ordinary text without R code
-
-
-label: unnamed-chunk-56 (with options) 
-List of 2
- $ fig.width: num 8
- $ fig.asp  : num 1
-
-  |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  81%
-label: unnamed-chunk-57 (with options) 
-List of 2
- $ fig.asp  : num 1
- $ fig.width: num 8
-
-  |                                                                         |.....................................................            |  81%
-  ordinary text without R code
-
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-58 (with options) 
-List of 2
- $ message: logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |......................................................           |  83%
-  ordinary text without R code
-
-
-label: unnamed-chunk-59 (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......................................................          |  84%
-  ordinary text without R code
-
-  |                                                                         |.......................................................          |  85%
-label: unnamed-chunk-60 (with options) 
-List of 1
- $ eval: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-61 (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |........................................................         |  87%
-  ordinary text without R code
-
-  |                                                                         |.........................................................        |  87%
-label: unnamed-chunk-62 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-63
-
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  90%
-label: unnamed-chunk-64
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-
-label: unnamed-chunk-65
-  |                                                                         |............................................................     |  92%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-66
-  |                                                                         |.............................................................    |  93%
-  ordinary text without R code
-
-  |                                                                         |.............................................................    |  94%
-label: unnamed-chunk-67
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-
-label: unnamed-chunk-68
-  |                                                                         |..............................................................   |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-69
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-70
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-71
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpacZul4/rmarkdown-str3a771ff50981.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
-make: *** No rule to make target 'echo'.  Stop.
-]0;/home/sahir/git_repositories/epib607> (B[m echo EC03ED2E && /usr/bin/env && echo C2EEE820
-EC03ED2E
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-RS_PPM_FD_READ=12
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/Rtmp4K41ng
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=3988FB6D
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=8424
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=13
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2780
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/15381-rsession
-RSTUDIO_SESSION_PORT=15381
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=180795D4
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=5
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/usr/lib/R/library
-GDMSESSION=ubuntu
-GNOME_DESKTOP_SESSION_ID=this-is-deprecated
-^C
-make build
-make html
-make[1]: Entering directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
-
-
-processing file: epib607.Rmd
-  |                                                                         |                                                                 |   0%  |                                                                         |                                                                 |   1%
-   inline R code fragments
-
-  |                                                                         |.                                                                |   1%
-label: unnamed-chunk-1 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.                                                                |   2%
-  ordinary text without R code
-
-  |                                                                         |..                                                               |   3%
-label: setup (with options) 
-List of 3
- $ echo   : logi FALSE
- $ message: logi FALSE
- $ warning: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |...                                                              |   4%
-label: show-code-style (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |...                                                              |   5%
-  ordinary text without R code
-
-
-label: show-sample-output (with options) 
-List of 2
- $ echo: logi FALSE
- $ eval: logi TRUE
-
-  |                                                                         |....                                                             |   6%
-   inline R code fragments
-
-  |                                                                         |....                                                             |   7%
-label: unnamed-chunk-2 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.....                                                            |   7%
-  ordinary text without R code
-
-  |                                                                         |.....                                                            |   8%
-label: unnamed-chunk-3 (with options) 
-List of 1
- $ echo: logi FALSE
-
-  |                                                                         |......                                                           |   9%
-  ordinary text without R code
-
-
-label: unnamed-chunk-4 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.......                                                          |  10%
-  ordinary text without R code
-
-  |                                                                         |.......                                                          |  11%
-label: unnamed-chunk-5 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |........                                                         |  12%
-label: unnamed-chunk-6 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |........                                                         |  13%
-  ordinary text without R code
-
-  |                                                                         |.........                                                        |  13%
-label: unnamed-chunk-7 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.........                                                        |  14%
-  ordinary text without R code
-
-  |                                                                         |..........                                                       |  15%
-label: unnamed-chunk-8 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |..........                                                       |  16%
-label: unnamed-chunk-9 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |...........                                                      |  17%
-  ordinary text without R code
-
-
-label: unnamed-chunk-10 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |............                                                     |  18%
-  ordinary text without R code
-
-  |                                                                         |............                                                     |  19%
-label: unnamed-chunk-11 (with options) 
-List of 2
- $ results: chr "asis"
- $ echo   : logi FALSE
-
-  |                                                                         |.............                                                    |  19%
-  ordinary text without R code
-
-  |                                                                         |.............                                                    |  20%
-label: unnamed-chunk-12 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............                                                   |  21%
-  ordinary text without R code
-
-
-label: unnamed-chunk-13 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............                                                   |  22%
-  ordinary text without R code
-
-  |                                                                         |...............                                                  |  23%
-label: unnamed-chunk-14 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |................                                                 |  24%
-label: unnamed-chunk-15 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |................                                                 |  25%
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  26%
-label: unnamed-chunk-16 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.................                                                |  27%
-label: unnamed-chunk-17 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..................                                               |  28%
-  ordinary text without R code
-
-
-label: unnamed-chunk-18 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |...................                                              |  30%
-label: unnamed-chunk-19 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |....................                                             |  30%
-  ordinary text without R code
-
-  |                                                                         |....................                                             |  31%
-label: unnamed-chunk-20 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................                                            |  32%
-  ordinary text without R code
-
-
-label: unnamed-chunk-21 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................                                            |  33%
-  ordinary text without R code
-
-  |                                                                         |......................                                           |  34%
-label: unnamed-chunk-22 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.......................                                          |  35%
-label: unnamed-chunk-23 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.......................                                          |  36%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  36%
-label: unnamed-chunk-24 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |........................                                         |  37%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  38%
-label: unnamed-chunk-25 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.........................                                        |  38%
-  ordinary text without R code
-
-  |                                                                         |.........................                                        |  39%
-label: unnamed-chunk-26 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..........................                                       |  40%
-  ordinary text without R code
-
-
-label: unnamed-chunk-27 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |...........................                                      |  41%
-  ordinary text without R code
-
-  |                                                                         |...........................                                      |  42%
-label: unnamed-chunk-28 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |............................                                     |  43%
-label: unnamed-chunk-29 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |............................                                     |  44%
-  ordinary text without R code
-
-  |                                                                         |.............................                                    |  44%
-label: unnamed-chunk-30 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.............................                                    |  45%
-  ordinary text without R code
-
-  |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-31 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-32 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |...............................                                  |  48%
-  ordinary text without R code
-
-
-label: unnamed-chunk-33 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |................................                                 |  49%
-  ordinary text without R code
-
-  |                                                                         |................................                                 |  50%
-label: unnamed-chunk-34 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.................................                                |  50%
-  ordinary text without R code
-
-  |                                                                         |.................................                                |  51%
-label: unnamed-chunk-35 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..................................                               |  52%
-  ordinary text without R code
-
-
-label: unnamed-chunk-36 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..................................                               |  53%
-  ordinary text without R code
-
-  |                                                                         |...................................                              |  54%
-label: unnamed-chunk-37 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |....................................                             |  55%
-label: unnamed-chunk-38 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |....................................                             |  56%
-  ordinary text without R code
-
-  |                                                                         |.....................................                            |  56%
-label: unnamed-chunk-39 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.....................................                            |  57%
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-40 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
-label: unnamed-chunk-41 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.......................................                          |  60%
-  ordinary text without R code
-
-
-label: unnamed-chunk-42 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |........................................                         |  61%
-  ordinary text without R code
-
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-43 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.........................................                        |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  63%
-label: unnamed-chunk-44 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.........................................                        |  64%
-  ordinary text without R code
-
-  |                                                                         |..........................................                       |  64%
-label: unnamed-chunk-45 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..........................................                       |  65%
-  ordinary text without R code
-
-  |                                                                         |...........................................                      |  66%
-label: unnamed-chunk-46 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  67%
-label: unnamed-chunk-47 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |............................................                     |  68%
-  ordinary text without R code
-
-
-label: unnamed-chunk-48 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |.............................................                    |  69%
-  ordinary text without R code
-
-  |                                                                         |.............................................                    |  70%
-label: unnamed-chunk-49 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-  |                                                                         |..............................................                   |  70%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
-label: unnamed-chunk-50 (with options) 
-List of 2
- $ eval: logi FALSE
- $ echo: logi TRUE
-
-  |                                                                         |...............................................                  |  72%
-  ordinary text without R code
-
-
-label: unnamed-chunk-51 (with options) 
-List of 1
- $ include: logi FALSE
-
-  |                                                                         |................................................                 |  73%
-  ordinary text without R code
-
-  |                                                                         |................................................                 |  74%
-label: unnamed-chunk-52 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |.................................................                |  75%
-label: unnamed-chunk-53 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.................................................                |  76%
-  ordinary text without R code
-
-  |                                                                         |..................................................               |  77%
-label: unnamed-chunk-54 (with options) 
-List of 1
- $ fig.asp: num 1
-
-
-  ordinary text without R code
-
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-55 (with options) 
-List of 2
- $ fig.asp  : num 1
- $ fig.width: num 8
-
-  |                                                                         |...................................................              |  79%
-  ordinary text without R code
-
-
-label: unnamed-chunk-56 (with options) 
-List of 2
- $ fig.width: num 8
- $ fig.asp  : num 1
-
-  |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  81%
-label: unnamed-chunk-57 (with options) 
-List of 2
- $ fig.asp  : num 1
- $ fig.width: num 8
-
-  |                                                                         |.....................................................            |  81%
-  ordinary text without R code
-
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-58 (with options) 
-List of 2
- $ message: logi FALSE
- $ eval   : logi FALSE
-
-  |                                                                         |......................................................           |  83%
-  ordinary text without R code
-
-
-label: unnamed-chunk-59 (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |.......................................................          |  84%
-  ordinary text without R code
-
-  |                                                                         |.......................................................          |  85%
-label: unnamed-chunk-60 (with options) 
-List of 1
- $ eval: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
-label: unnamed-chunk-61 (with options) 
-List of 1
- $ eval: logi FALSE
-
-  |                                                                         |........................................................         |  87%
-  ordinary text without R code
-
-  |                                                                         |.........................................................        |  87%
-label: unnamed-chunk-62 (with options) 
-List of 2
- $ include: logi FALSE
- $ cache  : logi FALSE
-
-  |                                                                         |.........................................................        |  88%
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-63
-
-  ordinary text without R code
-
-  |                                                                         |..........................................................       |  90%
-label: unnamed-chunk-64
-  |                                                                         |...........................................................      |  91%
-  ordinary text without R code
-
-
-label: unnamed-chunk-65
-  |                                                                         |............................................................     |  92%
-  ordinary text without R code
-
-  |                                                                         |............................................................     |  93%
-label: unnamed-chunk-66
-  |                                                                         |.............................................................    |  93%
-  ordinary text without R code
-
-  |                                                                         |.............................................................    |  94%
-label: unnamed-chunk-67
-  |                                                                         |..............................................................   |  95%
-  ordinary text without R code
-
-
-label: unnamed-chunk-68
-  |                                                                         |..............................................................   |  96%
-  ordinary text without R code
-
-  |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-69
-
-  ordinary text without R code
-
-  |                                                                         |................................................................ |  98%
-label: unnamed-chunk-70
-  |                                                                         |................................................................ |  99%
-  ordinary text without R code
-
-  |                                                                         |.................................................................|  99%
-label: unnamed-chunk-71
-  |                                                                         |.................................................................| 100%
-  ordinary text without R code
-
-
-output file: epib607.knit.md
-
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpjDYwcl/rmarkdown-str27187e5933e7.html --mathjax --filter /usr/bin/pandoc-citeproc 
-
-Output created: _book/index.html
-[1] "/home/sahir/git_repositories/epib607/_book/index.html"
-# cp -fvr images _book/
-make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
-Rscript -e 'browseURL("_book/index.html")'
+make: *** [build] Error 2
 ]0;/home/sahir/git_repositories/epib607> (B[mmake build
 make html
 make[1]: Entering directory '/home/sahir/git_repositories/epib607'
@@ -1743,25 +353,25 @@ label: unnamed-chunk-3 (with options)
 List of 1
  $ echo: logi FALSE
 
-  |                                                                         |......                                                           |   9%
+  |                                                                         |......                                                           |   8%
   ordinary text without R code
 
-
+  |                                                                         |......                                                           |   9%
 label: unnamed-chunk-4 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |.......                                                          |  10%
+  |                                                                         |......                                                           |  10%
   ordinary text without R code
 
-  |                                                                         |.......                                                          |  11%
+  |                                                                         |.......                                                          |  10%
 label: unnamed-chunk-5 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-
+  |                                                                         |.......                                                          |  11%
   ordinary text without R code
 
   |                                                                         |........                                                         |  12%
@@ -1770,10 +380,10 @@ List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |........                                                         |  13%
+
   ordinary text without R code
 
-  |                                                                         |.........                                                        |  13%
+  |                                                                         |........                                                         |  13%
 label: unnamed-chunk-7 (with options) 
 List of 2
  $ results: chr "asis"
@@ -1782,13 +392,13 @@ List of 2
   |                                                                         |.........                                                        |  14%
   ordinary text without R code
 
-  |                                                                         |..........                                                       |  15%
+
 label: unnamed-chunk-8 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-
+  |                                                                         |..........                                                       |  15%
   ordinary text without R code
 
   |                                                                         |..........                                                       |  16%
@@ -1798,25 +408,25 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi FALSE
 
-  |                                                                         |...........                                                      |  17%
+  |                                                                         |...........                                                      |  16%
   ordinary text without R code
 
-
+  |                                                                         |...........                                                      |  17%
 label: unnamed-chunk-10 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |............                                                     |  18%
+  |                                                                         |...........                                                      |  18%
   ordinary text without R code
 
-  |                                                                         |............                                                     |  19%
+  |                                                                         |............                                                     |  18%
 label: unnamed-chunk-11 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |.............                                                    |  19%
+  |                                                                         |............                                                     |  19%
   ordinary text without R code
 
   |                                                                         |.............                                                    |  20%
@@ -1826,10 +436,10 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |..............                                                   |  21%
+
   ordinary text without R code
 
-
+  |                                                                         |..............                                                   |  21%
 label: unnamed-chunk-13 (with options) 
 List of 3
  $ results: chr "asis"
@@ -1839,38 +449,48 @@ List of 3
   |                                                                         |..............                                                   |  22%
   ordinary text without R code
 
-  |                                                                         |...............                                                  |  23%
+
 label: unnamed-chunk-14 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |...............                                                  |  23%
   ordinary text without R code
 
-  |                                                                         |................                                                 |  24%
+  |                                                                         |...............                                                  |  24%
 label: unnamed-chunk-15 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |................                                                 |  25%
+  |                                                                         |................                                                 |  24%
   ordinary text without R code
 
-  |                                                                         |.................                                                |  26%
+  |                                                                         |................                                                 |  25%
 label: unnamed-chunk-16 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |.................                                                |  25%
   ordinary text without R code
 
-  |                                                                         |.................                                                |  27%
+  |                                                                         |.................                                                |  26%
 label: unnamed-chunk-17 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.................                                                |  27%
+  ordinary text without R code
+
+  |                                                                         |..................                                               |  27%
+label: unnamed-chunk-18 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -1879,34 +499,24 @@ List of 3
   |                                                                         |..................                                               |  28%
   ordinary text without R code
 
-
-label: unnamed-chunk-18 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
   |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |...................                                              |  30%
 label: unnamed-chunk-19 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |....................                                             |  30%
+
   ordinary text without R code
 
-  |                                                                         |....................                                             |  31%
+  |                                                                         |....................                                             |  30%
 label: unnamed-chunk-20 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.....................                                            |  32%
+  |                                                                         |....................                                             |  31%
   ordinary text without R code
 
 
@@ -1916,21 +526,31 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.....................                                            |  33%
+  |                                                                         |.....................                                            |  32%
   ordinary text without R code
 
-  |                                                                         |......................                                           |  34%
+  |                                                                         |.....................                                            |  33%
 label: unnamed-chunk-22 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |......................                                           |  33%
   ordinary text without R code
 
-  |                                                                         |.......................                                          |  35%
+  |                                                                         |......................                                           |  34%
 label: unnamed-chunk-23 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.......................                                          |  35%
+  ordinary text without R code
+
+
+label: unnamed-chunk-24 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -1939,34 +559,24 @@ List of 3
   |                                                                         |.......................                                          |  36%
   ordinary text without R code
 
-  |                                                                         |........................                                         |  36%
-label: unnamed-chunk-24 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
   |                                                                         |........................                                         |  37%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  38%
 label: unnamed-chunk-25 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.........................                                        |  38%
+
   ordinary text without R code
 
-  |                                                                         |.........................                                        |  39%
+  |                                                                         |.........................                                        |  38%
 label: unnamed-chunk-26 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |..........................                                       |  40%
+  |                                                                         |.........................                                        |  39%
   ordinary text without R code
 
 
@@ -1976,21 +586,31 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |...........................                                      |  41%
+  |                                                                         |..........................                                       |  40%
   ordinary text without R code
 
-  |                                                                         |...........................                                      |  42%
+  |                                                                         |..........................                                       |  41%
 label: unnamed-chunk-28 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
+  |                                                                         |...........................                                      |  41%
+  ordinary text without R code
 
+  |                                                                         |...........................                                      |  42%
+label: unnamed-chunk-29 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |............................                                     |  42%
   ordinary text without R code
 
   |                                                                         |............................                                     |  43%
-label: unnamed-chunk-29 (with options) 
+label: unnamed-chunk-30 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2000,7 +620,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |.............................                                    |  44%
-label: unnamed-chunk-30 (with options) 
+label: unnamed-chunk-31 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2010,7 +630,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-31 (with options) 
+label: unnamed-chunk-32 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2020,7 +640,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-32 (with options) 
+label: unnamed-chunk-33 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2030,7 +650,7 @@ List of 3
   ordinary text without R code
 
 
-label: unnamed-chunk-33 (with options) 
+label: unnamed-chunk-34 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2040,7 +660,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |................................                                 |  50%
-label: unnamed-chunk-34 (with options) 
+label: unnamed-chunk-35 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2050,7 +670,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |.................................                                |  51%
-label: unnamed-chunk-35 (with options) 
+label: unnamed-chunk-36 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2060,7 +680,7 @@ List of 3
   ordinary text without R code
 
 
-label: unnamed-chunk-36 (with options) 
+label: unnamed-chunk-37 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2070,7 +690,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |...................................                              |  54%
-label: unnamed-chunk-37 (with options) 
+label: unnamed-chunk-38 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2080,7 +700,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |....................................                             |  55%
-label: unnamed-chunk-38 (with options) 
+label: unnamed-chunk-39 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2090,7 +710,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |.....................................                            |  56%
-label: unnamed-chunk-39 (with options) 
+label: unnamed-chunk-40 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2099,28 +719,28 @@ List of 3
   |                                                                         |.....................................                            |  57%
   ordinary text without R code
 
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-40 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
+  |                                                                         |.....................................                            |  58%
 label: unnamed-chunk-41 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.......................................                          |  60%
+  |                                                                         |......................................                           |  58%
   ordinary text without R code
 
-
+  |                                                                         |......................................                           |  59%
 label: unnamed-chunk-42 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.......................................                          |  59%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: unnamed-chunk-43 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2129,28 +749,28 @@ List of 3
   |                                                                         |........................................                         |  61%
   ordinary text without R code
 
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-43 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
 
-  |                                                                         |.........................................                        |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  63%
 label: unnamed-chunk-44 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.........................................                        |  64%
+  |                                                                         |........................................                         |  62%
+  ordinary text without R code
+
+  |                                                                         |.........................................                        |  63%
+label: unnamed-chunk-45 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+
   ordinary text without R code
 
   |                                                                         |..........................................                       |  64%
-label: unnamed-chunk-45 (with options) 
+label: unnamed-chunk-46 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2159,28 +779,28 @@ List of 3
   |                                                                         |..........................................                       |  65%
   ordinary text without R code
 
-  |                                                                         |...........................................                      |  66%
-label: unnamed-chunk-46 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
 
-
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  67%
 label: unnamed-chunk-47 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |............................................                     |  68%
+  |                                                                         |...........................................                      |  66%
   ordinary text without R code
 
-
+  |                                                                         |...........................................                      |  67%
 label: unnamed-chunk-48 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |............................................                     |  67%
+  ordinary text without R code
+
+  |                                                                         |............................................                     |  68%
+label: unnamed-chunk-49 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2189,62 +809,70 @@ List of 3
   |                                                                         |.............................................                    |  69%
   ordinary text without R code
 
-  |                                                                         |.............................................                    |  70%
-label: unnamed-chunk-49 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
 
-  |                                                                         |..............................................                   |  70%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
 label: unnamed-chunk-50 (with options) 
 List of 2
  $ eval: logi FALSE
  $ echo: logi TRUE
 
-  |                                                                         |...............................................                  |  72%
+  |                                                                         |.............................................                    |  70%
   ordinary text without R code
 
-
+  |                                                                         |..............................................                   |  71%
 label: unnamed-chunk-51 (with options) 
 List of 1
  $ include: logi FALSE
 
-  |                                                                         |................................................                 |  73%
+
   ordinary text without R code
 
-  |                                                                         |................................................                 |  74%
+  |                                                                         |...............................................                  |  72%
 label: unnamed-chunk-52 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |...............................................                  |  73%
   ordinary text without R code
 
-  |                                                                         |.................................................                |  75%
+  |                                                                         |................................................                 |  73%
 label: unnamed-chunk-53 (with options) 
 List of 2
  $ include: logi FALSE
  $ cache  : logi FALSE
 
+  |                                                                         |................................................                 |  74%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  75%
+label: unnamed-chunk-54 (with options) 
+List of 1
+ $ fig.cap: chr "(ref:common-aesthetics)"
+
+  |                                                                         |.................................................                |  75%
+  ordinary text without R code
+
   |                                                                         |.................................................                |  76%
+label: common-aesthetics (with options) 
+List of 3
+ $ fig.width: num 6
+ $ fig.asp  : num 0.45
+ $ fig.cap  : chr "(ref:common-aesthetics)"
+
+  |                                                                         |..................................................               |  76%
   ordinary text without R code
 
   |                                                                         |..................................................               |  77%
-label: unnamed-chunk-54 (with options) 
+label: unnamed-chunk-55 (with options) 
 List of 1
  $ fig.asp: num 1
 
-
+  |                                                                         |...................................................              |  78%
   ordinary text without R code
 
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-55 (with options) 
+
+label: unnamed-chunk-56 (with options) 
 List of 2
  $ fig.asp  : num 1
  $ fig.width: num 8
@@ -2252,26 +880,26 @@ List of 2
   |                                                                         |...................................................              |  79%
   ordinary text without R code
 
-
-label: unnamed-chunk-56 (with options) 
-List of 2
- $ fig.width: num 8
- $ fig.asp  : num 1
-
   |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  81%
 label: unnamed-chunk-57 (with options) 
 List of 2
+ $ fig.width: num 8
+ $ fig.asp  : num 1
+
+
+  ordinary text without R code
+
+  |                                                                         |.....................................................            |  81%
+label: unnamed-chunk-58 (with options) 
+List of 2
  $ fig.asp  : num 1
  $ fig.width: num 8
 
-  |                                                                         |.....................................................            |  81%
+  |                                                                         |.....................................................            |  82%
   ordinary text without R code
 
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-58 (with options) 
+  |                                                                         |......................................................           |  82%
+label: unnamed-chunk-59 (with options) 
 List of 2
  $ message: logi FALSE
  $ eval   : logi FALSE
@@ -2279,8 +907,8 @@ List of 2
   |                                                                         |......................................................           |  83%
   ordinary text without R code
 
-
-label: unnamed-chunk-59 (with options) 
+  |                                                                         |......................................................           |  84%
+label: unnamed-chunk-60 (with options) 
 List of 1
  $ eval: logi FALSE
 
@@ -2288,173 +916,95 @@ List of 1
   ordinary text without R code
 
   |                                                                         |.......................................................          |  85%
-label: unnamed-chunk-60 (with options) 
-List of 1
- $ eval: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
 label: unnamed-chunk-61 (with options) 
 List of 1
  $ eval: logi FALSE
 
-  |                                                                         |........................................................         |  87%
+  |                                                                         |........................................................         |  86%
   ordinary text without R code
 
-  |                                                                         |.........................................................        |  87%
+
 label: unnamed-chunk-62 (with options) 
+List of 1
+ $ eval: logi FALSE
+
+  |                                                                         |.........................................................        |  87%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  88%
+label: unnamed-chunk-63 (with options) 
 List of 2
  $ include: logi FALSE
  $ cache  : logi FALSE
 
-  |                                                                         |.........................................................        |  88%
+
   ordinary text without R code
 
   |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-63
-
+label: unnamed-chunk-64
+  |                                                                         |..........................................................       |  90%
   ordinary text without R code
 
-  |                                                                         |..........................................................       |  90%
-label: unnamed-chunk-64
+  |                                                                         |...........................................................      |  90%
+label: unnamed-chunk-65
   |                                                                         |...........................................................      |  91%
   ordinary text without R code
 
-
-label: unnamed-chunk-65
+  |                                                                         |...........................................................      |  92%
+label: unnamed-chunk-66
   |                                                                         |............................................................     |  92%
   ordinary text without R code
 
   |                                                                         |............................................................     |  93%
-label: unnamed-chunk-66
+label: unnamed-chunk-67
   |                                                                         |.............................................................    |  93%
   ordinary text without R code
 
   |                                                                         |.............................................................    |  94%
-label: unnamed-chunk-67
+label: unnamed-chunk-68
   |                                                                         |..............................................................   |  95%
   ordinary text without R code
 
 
-label: unnamed-chunk-68
+label: unnamed-chunk-69
   |                                                                         |..............................................................   |  96%
   ordinary text without R code
 
   |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-69
+label: unnamed-chunk-70
 
   ordinary text without R code
 
   |                                                                         |................................................................ |  98%
-label: unnamed-chunk-70
+label: unnamed-chunk-71
   |                                                                         |................................................................ |  99%
   ordinary text without R code
 
   |                                                                         |.................................................................|  99%
-label: unnamed-chunk-71
+label: unnamed-chunk-72
   |                                                                         |.................................................................| 100%
   ordinary text without R code
 
 
 output file: epib607.knit.md
 
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/Rtmp5UoNBc/rmarkdown-str28423d0ff8f2.html --mathjax --filter /usr/bin/pandoc-citeproc 
+/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.5.1/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/RtmpSpAydI/rmarkdown-str31f35250e556.html --mathjax --filter /usr/bin/pandoc-citeproc 
 
 Output created: _book/index.html
 [1] "/home/sahir/git_repositories/epib607/_book/index.html"
 # cp -fvr images _book/
 make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
 Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m echo 6D0100A5 && /usr/bin/env && echo E84DE8D8
-6D0100A5
-R_PDFVIEWER=/usr/bin/xdg-open
-CLUTTER_IM_MODULE=xim
-R_RD4PDF=times,inconsolata,hyper
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-LD_LIBRARY_PATH=/usr/lib/R/lib::/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/default-java/jre/lib/amd64/server
-RS_RPOSTBACK_PATH=/usr/lib/rstudio/bin/rpostback
-LESSCLOSE=/usr/bin/lesspipe %s %s
-XDG_MENU_PREFIX=gnome-
-R_SHARE_DIR=/usr/share/R/share
-LANG=en_US.UTF-8
-HISTCONTROL=ignoreboth
-DISPLAY=:0
-RS_PPM_FD_READ=12
-TAR=/bin/tar
-GNOME_SHELL_SESSION_MODE=ubuntu
-EDITOR=vi
-R_BROWSER=xdg-open
-GTK2_MODULES=overlay-scrollbar
-R_DOC_DIR=/usr/share/R/doc
-R_SESSION_TMPDIR=/tmp/Rtmp4K41ng
-LN_S=ln -s
-USERNAME=sahir
-RSTUDIO_SESSION_ID=1D7C9A22
-R_LIBS_USER=~/R/x86_64-pc-linux-gnu-library/3.4
-XDG_VTNR=2
-GIO_LAUNCHED_DESKTOP_FILE_PID=8424
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-RS_PPM_FD_WRITE=13
-MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
-S_COLORS=auto
-XDG_SESSION_ID=2
-R_INCLUDE_DIR=/usr/share/R/include
-USER=sahir
-PAGER=/usr/bin/pager
-DESKTOP_SESSION=ubuntu
-RBENV_SHELL=bash
-QT4_IM_MODULE=ibus
-TEXTDOMAINDIR=/usr/share/locale/
-RS_SHARED_SECRET=16816927778469308861804289383
-DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
-QT_QPA_PLATFORMTHEME=appmenu-qt5
-R_LIBS=/home/sahir/Rlibs/R3.4.4/
-PWD=/home/sahir/git_repositories/epib607
-HOME=/home/sahir
-TEXTDOMAIN=im-config
-SED=/bin/sed
-SSH_AGENT_PID=2780
-RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc
-R_PAPERSIZE=letter
-QT_ACCESSIBILITY=1
-XDG_SESSION_TYPE=x11
-XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
-R_SYSTEM_ABI=linux,gcc,gxx,gfortran,?
-RSTUDIO=1
-R_ZIPCMD=/usr/bin/zip
-R_PAPERSIZE_USER=letter
-XDG_SESSION_DESKTOP=ubuntu
-CLICOLOR_FORCE=1
-R_HOME=/usr/lib/R
-GJS_DEBUG_OUTPUT=stderr
-R_BZIPCMD=/bin/bzip2
-GTK_MODULES=gail:atk-bridge
-RSTUDIO_USER_IDENTITY=sahir
-RS_LOCAL_PEER=/tmp/15381-rsession
-RSTUDIO_SESSION_PORT=15381
-RMARKDOWN_MATHJAX_PATH=/usr/lib/rstudio/resources/mathjax-26
-WINDOWPATH=2
-TERM=xterm-256color
-SHELL=/bin/bash
-R_PRINTCMD=/usr/bin/lpr
-R_GZIPCMD=/bin/gzip -n
-QT_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
-IM_CONFIG_PHASE=2
-RSTUDIO_TERM=180795D4
-LS_OPTIONS=--color=auto
-XDG_CURRENT_DESKTOP=ubuntu:GNOME
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/rstudio.desktop
-RSTUDIO_WINUTILS=bin/winutils
-XDG_SEAT=seat0
-SHLVL=6
-PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
-R_PLATFORM=x86_64-pc-linux-gnu
-R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/u^C
-]0;/home/sahir/git_repositories/epib607> (B[m[K> (B[mmake build
+]0;/home/sahir/git_repositories/epib607> (B[mmake build[K[K[K[K[Kpurl
+if [ ! -d "docs/scripts" ]; then  mkdir docs/scripts; fi
+R CMD BATCH /home/sahir/git_repositories/epib607/purl.R
+rm purl.Rout
+[K> (B[mhtop
+[23;0;0t[?1l>]0;/home/sahir/git_repositories/epib607> (B[mhtop[C[Cmake purlbuild[1Ppurl
+if [ ! -d "docs/scripts" ]; then  mkdir docs/scripts; fi
+R CMD BATCH /home/sahir/git_repositories/epib607/purl.R
+rm purl.Rout
+]0;/home/sahir/git_repositories/epib607> (B[mmake purl[C[C[5Phtop[C[Cmake purlbuild
 make html
 make[1]: Entering directory '/home/sahir/git_repositories/epib607'
 Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", clean = TRUE)'
@@ -2514,25 +1064,25 @@ label: unnamed-chunk-3 (with options)
 List of 1
  $ echo: logi FALSE
 
-  |                                                                         |......                                                           |   9%
+  |                                                                         |......                                                           |   8%
   ordinary text without R code
 
-
+  |                                                                         |......                                                           |   9%
 label: unnamed-chunk-4 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |.......                                                          |  10%
+  |                                                                         |......                                                           |  10%
   ordinary text without R code
 
-  |                                                                         |.......                                                          |  11%
+  |                                                                         |.......                                                          |  10%
 label: unnamed-chunk-5 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-
+  |                                                                         |.......                                                          |  11%
   ordinary text without R code
 
   |                                                                         |........                                                         |  12%
@@ -2541,10 +1091,10 @@ List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |........                                                         |  13%
+
   ordinary text without R code
 
-  |                                                                         |.........                                                        |  13%
+  |                                                                         |........                                                         |  13%
 label: unnamed-chunk-7 (with options) 
 List of 2
  $ results: chr "asis"
@@ -2553,13 +1103,13 @@ List of 2
   |                                                                         |.........                                                        |  14%
   ordinary text without R code
 
-  |                                                                         |..........                                                       |  15%
+
 label: unnamed-chunk-8 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-
+  |                                                                         |..........                                                       |  15%
   ordinary text without R code
 
   |                                                                         |..........                                                       |  16%
@@ -2569,25 +1119,25 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi FALSE
 
-  |                                                                         |...........                                                      |  17%
+  |                                                                         |...........                                                      |  16%
   ordinary text without R code
 
-
+  |                                                                         |...........                                                      |  17%
 label: unnamed-chunk-10 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |............                                                     |  18%
+  |                                                                         |...........                                                      |  18%
   ordinary text without R code
 
-  |                                                                         |............                                                     |  19%
+  |                                                                         |............                                                     |  18%
 label: unnamed-chunk-11 (with options) 
 List of 2
  $ results: chr "asis"
  $ echo   : logi FALSE
 
-  |                                                                         |.............                                                    |  19%
+  |                                                                         |............                                                     |  19%
   ordinary text without R code
 
   |                                                                         |.............                                                    |  20%
@@ -2597,10 +1147,10 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |..............                                                   |  21%
+
   ordinary text without R code
 
-
+  |                                                                         |..............                                                   |  21%
 label: unnamed-chunk-13 (with options) 
 List of 3
  $ results: chr "asis"
@@ -2610,38 +1160,48 @@ List of 3
   |                                                                         |..............                                                   |  22%
   ordinary text without R code
 
-  |                                                                         |...............                                                  |  23%
+
 label: unnamed-chunk-14 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |...............                                                  |  23%
   ordinary text without R code
 
-  |                                                                         |................                                                 |  24%
+  |                                                                         |...............                                                  |  24%
 label: unnamed-chunk-15 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |................                                                 |  25%
+  |                                                                         |................                                                 |  24%
   ordinary text without R code
 
-  |                                                                         |.................                                                |  26%
+  |                                                                         |................                                                 |  25%
 label: unnamed-chunk-16 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |.................                                                |  25%
   ordinary text without R code
 
-  |                                                                         |.................                                                |  27%
+  |                                                                         |.................                                                |  26%
 label: unnamed-chunk-17 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.................                                                |  27%
+  ordinary text without R code
+
+  |                                                                         |..................                                               |  27%
+label: unnamed-chunk-18 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2650,34 +1210,24 @@ List of 3
   |                                                                         |..................                                               |  28%
   ordinary text without R code
 
-
-label: unnamed-chunk-18 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
   |                                                                         |...................                                              |  29%
-  ordinary text without R code
-
-  |                                                                         |...................                                              |  30%
 label: unnamed-chunk-19 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |....................                                             |  30%
+
   ordinary text without R code
 
-  |                                                                         |....................                                             |  31%
+  |                                                                         |....................                                             |  30%
 label: unnamed-chunk-20 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.....................                                            |  32%
+  |                                                                         |....................                                             |  31%
   ordinary text without R code
 
 
@@ -2687,21 +1237,31 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.....................                                            |  33%
+  |                                                                         |.....................                                            |  32%
   ordinary text without R code
 
-  |                                                                         |......................                                           |  34%
+  |                                                                         |.....................                                            |  33%
 label: unnamed-chunk-22 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |......................                                           |  33%
   ordinary text without R code
 
-  |                                                                         |.......................                                          |  35%
+  |                                                                         |......................                                           |  34%
 label: unnamed-chunk-23 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.......................                                          |  35%
+  ordinary text without R code
+
+
+label: unnamed-chunk-24 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2710,34 +1270,24 @@ List of 3
   |                                                                         |.......................                                          |  36%
   ordinary text without R code
 
-  |                                                                         |........................                                         |  36%
-label: unnamed-chunk-24 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
   |                                                                         |........................                                         |  37%
-  ordinary text without R code
-
-  |                                                                         |........................                                         |  38%
 label: unnamed-chunk-25 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.........................                                        |  38%
+
   ordinary text without R code
 
-  |                                                                         |.........................                                        |  39%
+  |                                                                         |.........................                                        |  38%
 label: unnamed-chunk-26 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |..........................                                       |  40%
+  |                                                                         |.........................                                        |  39%
   ordinary text without R code
 
 
@@ -2747,21 +1297,31 @@ List of 3
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |...........................                                      |  41%
+  |                                                                         |..........................                                       |  40%
   ordinary text without R code
 
-  |                                                                         |...........................                                      |  42%
+  |                                                                         |..........................                                       |  41%
 label: unnamed-chunk-28 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
+  |                                                                         |...........................                                      |  41%
+  ordinary text without R code
 
+  |                                                                         |...........................                                      |  42%
+label: unnamed-chunk-29 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |............................                                     |  42%
   ordinary text without R code
 
   |                                                                         |............................                                     |  43%
-label: unnamed-chunk-29 (with options) 
+label: unnamed-chunk-30 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2771,7 +1331,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |.............................                                    |  44%
-label: unnamed-chunk-30 (with options) 
+label: unnamed-chunk-31 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2781,7 +1341,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |..............................                                   |  46%
-label: unnamed-chunk-31 (with options) 
+label: unnamed-chunk-32 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2791,7 +1351,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |...............................                                  |  47%
-label: unnamed-chunk-32 (with options) 
+label: unnamed-chunk-33 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2801,7 +1361,7 @@ List of 3
   ordinary text without R code
 
 
-label: unnamed-chunk-33 (with options) 
+label: unnamed-chunk-34 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2811,7 +1371,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |................................                                 |  50%
-label: unnamed-chunk-34 (with options) 
+label: unnamed-chunk-35 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2821,7 +1381,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |.................................                                |  51%
-label: unnamed-chunk-35 (with options) 
+label: unnamed-chunk-36 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2831,7 +1391,7 @@ List of 3
   ordinary text without R code
 
 
-label: unnamed-chunk-36 (with options) 
+label: unnamed-chunk-37 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2841,7 +1401,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |...................................                              |  54%
-label: unnamed-chunk-37 (with options) 
+label: unnamed-chunk-38 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2851,7 +1411,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |....................................                             |  55%
-label: unnamed-chunk-38 (with options) 
+label: unnamed-chunk-39 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2861,7 +1421,7 @@ List of 3
   ordinary text without R code
 
   |                                                                         |.....................................                            |  56%
-label: unnamed-chunk-39 (with options) 
+label: unnamed-chunk-40 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2870,28 +1430,28 @@ List of 3
   |                                                                         |.....................................                            |  57%
   ordinary text without R code
 
-  |                                                                         |......................................                           |  58%
-label: unnamed-chunk-40 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
-
-
-  ordinary text without R code
-
-  |                                                                         |......................................                           |  59%
+  |                                                                         |.....................................                            |  58%
 label: unnamed-chunk-41 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.......................................                          |  60%
+  |                                                                         |......................................                           |  58%
   ordinary text without R code
 
-
+  |                                                                         |......................................                           |  59%
 label: unnamed-chunk-42 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |.......................................                          |  59%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: unnamed-chunk-43 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2900,28 +1460,28 @@ List of 3
   |                                                                         |........................................                         |  61%
   ordinary text without R code
 
-  |                                                                         |........................................                         |  62%
-label: unnamed-chunk-43 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
 
-  |                                                                         |.........................................                        |  62%
-  ordinary text without R code
-
-  |                                                                         |.........................................                        |  63%
 label: unnamed-chunk-44 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |.........................................                        |  64%
+  |                                                                         |........................................                         |  62%
+  ordinary text without R code
+
+  |                                                                         |.........................................                        |  63%
+label: unnamed-chunk-45 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+
   ordinary text without R code
 
   |                                                                         |..........................................                       |  64%
-label: unnamed-chunk-45 (with options) 
+label: unnamed-chunk-46 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2930,28 +1490,28 @@ List of 3
   |                                                                         |..........................................                       |  65%
   ordinary text without R code
 
-  |                                                                         |...........................................                      |  66%
-label: unnamed-chunk-46 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
 
-
-  ordinary text without R code
-
-  |                                                                         |............................................                     |  67%
 label: unnamed-chunk-47 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-  |                                                                         |............................................                     |  68%
+  |                                                                         |...........................................                      |  66%
   ordinary text without R code
 
-
+  |                                                                         |...........................................                      |  67%
 label: unnamed-chunk-48 (with options) 
+List of 3
+ $ results: chr "asis"
+ $ echo   : logi FALSE
+ $ eval   : logi TRUE
+
+  |                                                                         |............................................                     |  67%
+  ordinary text without R code
+
+  |                                                                         |............................................                     |  68%
+label: unnamed-chunk-49 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
@@ -2960,62 +1520,70 @@ List of 3
   |                                                                         |.............................................                    |  69%
   ordinary text without R code
 
-  |                                                                         |.............................................                    |  70%
-label: unnamed-chunk-49 (with options) 
-List of 3
- $ results: chr "asis"
- $ echo   : logi FALSE
- $ eval   : logi TRUE
 
-  |                                                                         |..............................................                   |  70%
-  ordinary text without R code
-
-  |                                                                         |..............................................                   |  71%
 label: unnamed-chunk-50 (with options) 
 List of 2
  $ eval: logi FALSE
  $ echo: logi TRUE
 
-  |                                                                         |...............................................                  |  72%
+  |                                                                         |.............................................                    |  70%
   ordinary text without R code
 
-
+  |                                                                         |..............................................                   |  71%
 label: unnamed-chunk-51 (with options) 
 List of 1
  $ include: logi FALSE
 
-  |                                                                         |................................................                 |  73%
+
   ordinary text without R code
 
-  |                                                                         |................................................                 |  74%
+  |                                                                         |...............................................                  |  72%
 label: unnamed-chunk-52 (with options) 
 List of 3
  $ results: chr "asis"
  $ echo   : logi FALSE
  $ eval   : logi TRUE
 
-
+  |                                                                         |...............................................                  |  73%
   ordinary text without R code
 
-  |                                                                         |.................................................                |  75%
+  |                                                                         |................................................                 |  73%
 label: unnamed-chunk-53 (with options) 
 List of 2
  $ include: logi FALSE
  $ cache  : logi FALSE
 
+  |                                                                         |................................................                 |  74%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  75%
+label: unnamed-chunk-54 (with options) 
+List of 1
+ $ fig.cap: chr "(ref:common-aesthetics)"
+
+  |                                                                         |.................................................                |  75%
+  ordinary text without R code
+
   |                                                                         |.................................................                |  76%
+label: common-aesthetics (with options) 
+List of 3
+ $ fig.width: num 6
+ $ fig.asp  : num 0.45
+ $ fig.cap  : chr "(ref:common-aesthetics)"
+
+  |                                                                         |..................................................               |  76%
   ordinary text without R code
 
   |                                                                         |..................................................               |  77%
-label: unnamed-chunk-54 (with options) 
+label: unnamed-chunk-55 (with options) 
 List of 1
  $ fig.asp: num 1
 
-
+  |                                                                         |...................................................              |  78%
   ordinary text without R code
 
-  |                                                                         |...................................................              |  78%
-label: unnamed-chunk-55 (with options) 
+
+label: unnamed-chunk-56 (with options) 
 List of 2
  $ fig.asp  : num 1
  $ fig.width: num 8
@@ -3023,26 +1591,26 @@ List of 2
   |                                                                         |...................................................              |  79%
   ordinary text without R code
 
-
-label: unnamed-chunk-56 (with options) 
-List of 2
- $ fig.width: num 8
- $ fig.asp  : num 1
-
   |                                                                         |....................................................             |  80%
-  ordinary text without R code
-
-  |                                                                         |....................................................             |  81%
 label: unnamed-chunk-57 (with options) 
 List of 2
+ $ fig.width: num 8
+ $ fig.asp  : num 1
+
+
+  ordinary text without R code
+
+  |                                                                         |.....................................................            |  81%
+label: unnamed-chunk-58 (with options) 
+List of 2
  $ fig.asp  : num 1
  $ fig.width: num 8
 
-  |                                                                         |.....................................................            |  81%
+  |                                                                         |.....................................................            |  82%
   ordinary text without R code
 
-  |                                                                         |.....................................................            |  82%
-label: unnamed-chunk-58 (with options) 
+  |                                                                         |......................................................           |  82%
+label: unnamed-chunk-59 (with options) 
 List of 2
  $ message: logi FALSE
  $ eval   : logi FALSE
@@ -3050,8 +1618,8 @@ List of 2
   |                                                                         |......................................................           |  83%
   ordinary text without R code
 
-
-label: unnamed-chunk-59 (with options) 
+  |                                                                         |......................................................           |  84%
+label: unnamed-chunk-60 (with options) 
 List of 1
  $ eval: logi FALSE
 
@@ -3059,79 +1627,79 @@ List of 1
   ordinary text without R code
 
   |                                                                         |.......................................................          |  85%
-label: unnamed-chunk-60 (with options) 
-List of 1
- $ eval: logi FALSE
-
-
-  ordinary text without R code
-
-  |                                                                         |........................................................         |  86%
 label: unnamed-chunk-61 (with options) 
 List of 1
  $ eval: logi FALSE
 
-  |                                                                         |........................................................         |  87%
+  |                                                                         |........................................................         |  86%
   ordinary text without R code
 
-  |                                                                         |.........................................................        |  87%
+
 label: unnamed-chunk-62 (with options) 
+List of 1
+ $ eval: logi FALSE
+
+  |                                                                         |.........................................................        |  87%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  88%
+label: unnamed-chunk-63 (with options) 
 List of 2
  $ include: logi FALSE
  $ cache  : logi FALSE
 
-  |                                                                         |.........................................................        |  88%
+
   ordinary text without R code
 
   |                                                                         |..........................................................       |  89%
-label: unnamed-chunk-63
-
+label: unnamed-chunk-64
+  |                                                                         |..........................................................       |  90%
   ordinary text without R code
 
-  |                                                                         |..........................................................       |  90%
-label: unnamed-chunk-64
+  |                                                                         |...........................................................      |  90%
+label: unnamed-chunk-65
   |                                                                         |...........................................................      |  91%
   ordinary text without R code
 
-
-label: unnamed-chunk-65
+  |                                                                         |...........................................................      |  92%
+label: unnamed-chunk-66
   |                                                                         |............................................................     |  92%
   ordinary text without R code
 
   |                                                                         |............................................................     |  93%
-label: unnamed-chunk-66
+label: unnamed-chunk-67
   |                                                                         |.............................................................    |  93%
   ordinary text without R code
 
   |                                                                         |.............................................................    |  94%
-label: unnamed-chunk-67
+label: unnamed-chunk-68
   |                                                                         |..............................................................   |  95%
   ordinary text without R code
 
 
-label: unnamed-chunk-68
+label: unnamed-chunk-69
   |                                                                         |..............................................................   |  96%
   ordinary text without R code
 
   |                                                                         |...............................................................  |  97%
-label: unnamed-chunk-69
+label: unnamed-chunk-70
 
   ordinary text without R code
 
   |                                                                         |................................................................ |  98%
-label: unnamed-chunk-70
+label: unnamed-chunk-71
   |                                                                         |................................................................ |  99%
   ordinary text without R code
 
   |                                                                         |.................................................................|  99%
-label: unnamed-chunk-71
+label: unnamed-chunk-72
   |                                                                         |.................................................................| 100%
   ordinary text without R code
 
 
 output file: epib607.knit.md
 
-/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.4.4/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/Rtmp4X7TBy/rmarkdown-str2a00505f86ab.html --mathjax --filter /usr/bin/pandoc-citeproc 
+/usr/bin/pandoc +RTS -K512m -RTS epib607.utf8.md --to html4 --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output epib607.html --smart --email-obfuscation none --standalone --section-divs --table-of-contents --toc-depth 3 --template /home/sahir/Rlibs/R3.5.1/bookdown/templates/gitbook.html --highlight-style pygments --number-sections --css style.css --include-in-header /tmp/Rtmp9zP6iV/rmarkdown-str38f27f1c9fa0.html --mathjax --filter /usr/bin/pandoc-citeproc 
 
 Output created: _book/index.html
 [1] "/home/sahir/git_repositories/epib607/_book/index.html"
