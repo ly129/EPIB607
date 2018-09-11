@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-09-10">
+<meta name="date" content="2018-09-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -208,7 +208,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9" data-path="terms-and-concepts.html"><a href="terms-and-concepts.html"><i class="fa fa-check"></i><b>9</b> Terms and Concepts</a></li>
 <li class="part"><span><b>II Part I</b></span></li>
 <li class="chapter" data-level="10" data-path="data-graphics.html"><a href="data-graphics.html"><i class="fa fa-check"></i><b>10</b> Data Graphics</a><ul>
-<li class="chapter" data-level="10.1" data-path="data-graphics.html"><a href="data-graphics.html#visual-cues"><i class="fa fa-check"></i><b>10.1</b> Visual Cues</a></li>
+<li class="chapter" data-level="10.1" data-path="data-graphics.html"><a href="data-graphics.html#aesthetics-or-visual-cues"><i class="fa fa-check"></i><b>10.1</b> Aesthetics or Visual cues</a></li>
 <li class="chapter" data-level="10.2" data-path="data-graphics.html"><a href="data-graphics.html#coordinate-systems"><i class="fa fa-check"></i><b>10.2</b> Coordinate systems</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="data-graphics.html"><a href="data-graphics.html#cartesian"><i class="fa fa-check"></i><b>10.2.1</b> Cartesian</a></li>
 <li class="chapter" data-level="10.2.2" data-path="data-graphics.html"><a href="data-graphics.html#polar"><i class="fa fa-check"></i><b>10.2.2</b> Polar</a></li>
@@ -277,15 +277,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 10</span> Data Graphics</h1>
 <p>Data graphics can be understood in terms of five basic elements <span class="citation">(Baumer, Kaplan, and Horton <a href="#ref-baumer2017mdsr">2017</a>)</span>:</p>
 <ol style="list-style-type: decimal">
-<li>visual cues</li>
-<li>coordinate system</li>
-<li>scale</li>
-<li>context</li>
-<li>facets and layers</li>
+<li>Aesthetics or visual cues</li>
+<li>Coordinate system</li>
+<li>Scales</li>
+<li>Context</li>
+<li>Facets and layers</li>
 </ol>
-<div id="visual-cues" class="section level2">
-<h2><span class="header-section-number">10.1</span> Visual Cues</h2>
-<p>Visual cues are graphical elements that draw the eye to what you want your audience to focus upon. They are the fundamental building blocks of data graphics, and the choice of which visual cues to use to represent which quantities is the central question for the data graphic composer. Nathan Yau identifies nine distinct visual cues, for which we also list whether that cue is used to encode a numerical or categorical quantity:</p>
+<div id="aesthetics-or-visual-cues" class="section level2">
+<h2><span class="header-section-number">10.1</span> Aesthetics or Visual cues</h2>
+<p>Aesthetics or visual cues are graphical elements that draw the eye to what you want your audience to focus upon. They are the fundamental building blocks of data graphics, and the choice of which visual cues to use to represent which quantities is the central question for the data graphic composer. Nathan Yau identifies nine distinct visual cues, for which we also list whether that cue is used to encode a numerical or categorical quantity:</p>
 <ol style="list-style-type: decimal">
 <li>Position (numerical): where in relation to other things?</li>
 <li>Length (numerical): how big (in one dimension)?</li>
@@ -297,6 +297,106 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Shade (either) to what extent? how severely?</li>
 <li>Color (either) to what extent? how severely? Beware of red/green color blindness</li>
 </ol>
+
+<div class="figure">
+<img src="images/cues.jpg" />
+
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;images/cues.jpg&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-54"></span>
+<img src="images/cues.jpg" alt="Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)." width="672" />
+<p class="caption">
+Figure 10.1: Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type).
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># run setup script</span>
+<span class="co"># source(&quot;_common.R&quot;)</span>
+<span class="kw">options</span>(<span class="dt">dplyr.print_min =</span> <span class="dv">6</span>, <span class="dt">dplyr.print_max =</span> <span class="dv">6</span>)
+<span class="co"># pacman::p_load_gh(&#39;clauswilke/dviz.supp&#39;,auth_token = NULL)</span>
+<span class="co"># devtools::install_github(&#39;clauswilke/dviz.supp&#39;,auth_token = NULL)</span>
+<span class="co"># install.packages(&quot;labeling&quot;)</span>
+<span class="kw">library</span>(dviz.supp)
+<span class="co">#&gt; Loading required package: cowplot</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; *******************************************************</span>
+<span class="co">#&gt; Note: cowplot does not change the default ggplot2 theme</span>
+<span class="co">#&gt; anymore. To recover the previous behavior, execute:</span>
+<span class="co">#&gt;   theme_set(theme_cowplot())</span>
+<span class="co">#&gt; *******************************************************</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: &#39;cowplot&#39;</span>
+<span class="co">#&gt; The following object is masked from &#39;package:mosaic&#39;:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     theme_map</span>
+<span class="co">#&gt; Loading required package: colorspace</span>
+<span class="co">#&gt; Loading required package: colorblindr</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: &#39;dviz.supp&#39;</span>
+<span class="co">#&gt; The following object is masked from &#39;package:cowplot&#39;:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     plot_grid</span>
+pacman<span class="op">::</span><span class="kw">p_load</span>(forcats)
+pacman<span class="op">::</span><span class="kw">p_load</span>(patchwork)
+pacman<span class="op">::</span><span class="kw">p_load</span>(lubridate)
+
+aes_pos &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>),
+                                 <span class="dt">xend =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>),
+                                 <span class="dt">y =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">0</span>),
+                                 <span class="dt">yend =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>)),
+                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">xend =</span> xend, <span class="dt">yend =</span> yend),
+                <span class="dt">arrow =</span> <span class="kw">arrow</span>(<span class="dt">length =</span> grid<span class="op">::</span><span class="kw">unit</span>(<span class="dv">12</span>, <span class="st">&quot;pt&quot;</span>)), <span class="dt">size =</span> <span class="fl">.75</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">draw_text</span>(<span class="st">&quot;y&quot;</span>, <span class="fl">.5</span>, <span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">vjust =</span> <span class="dv">1</span>, <span class="dt">hjust =</span> <span class="fl">2.5</span>, <span class="dt">family =</span> dviz_font_family) <span class="op">+</span>
+<span class="st">  </span><span class="kw">draw_text</span>(<span class="st">&quot;x&quot;</span>, <span class="dv">1</span>, <span class="fl">.5</span>, <span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">vjust =</span> <span class="dv">2</span>, <span class="dt">hjust =</span> <span class="dv">1</span>, <span class="dt">family =</span> dviz_font_family) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">2</span>, <span class="fl">1.2</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">2</span>, <span class="fl">1.2</span>))
+<span class="co">#&gt; Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span>
+
+aes_color &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_tile</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="fl">0.15</span> <span class="op">+</span><span class="st"> </span><span class="fl">.2333</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)),
+            <span class="kw">aes</span>(x, <span class="dt">y =</span> <span class="fl">.5</span>, <span class="dt">fill =</span> <span class="kw">factor</span>(x)), <span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">height =</span> <span class="fl">.6</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_fill_OkabeIto</span>(<span class="dt">guide =</span> <span class="st">&quot;none&quot;</span>)
+
+aes_shape &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> (.<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">4</span>),
+             <span class="kw">aes</span>(x, <span class="dt">y =</span> <span class="fl">.5</span>, <span class="dt">shape =</span> <span class="kw">factor</span>(x)), <span class="dt">size =</span> <span class="dv">8</span>, <span class="dt">fill =</span> <span class="st">&quot;grey80&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_shape_manual</span>(<span class="dt">values =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">24</span>)
+
+aes_size &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> (.<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">4</span>),
+             <span class="kw">aes</span>(x, <span class="dt">y =</span> <span class="fl">.5</span>, <span class="dt">size =</span> <span class="kw">factor</span>(x)), <span class="dt">shape =</span> <span class="dv">21</span>, <span class="dt">fill =</span> <span class="st">&quot;grey80&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_size_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">11</span>))
+
+aes_lwd &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="fl">0.05</span>, <span class="dv">4</span>),
+                                 <span class="dt">xend =</span> <span class="kw">rep</span>(<span class="fl">0.95</span>, <span class="dv">4</span>),
+                                 <span class="dt">y =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
+                                 <span class="dt">yend =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
+                                 <span class="dt">size =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">1</span>),
+               <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">xend =</span> xend, <span class="dt">yend =</span> yend, <span class="dt">size =</span> size)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_size_identity</span>()
+
+aes_ltp &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="fl">0.05</span>, <span class="dv">4</span>),
+                                 <span class="dt">xend =</span> <span class="kw">rep</span>(<span class="fl">0.95</span>, <span class="dv">4</span>),
+                                 <span class="dt">y =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
+                                 <span class="dt">yend =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
+                                 <span class="dt">linetype =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">1</span>),
+               <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">xend =</span> xend, <span class="dt">yend =</span> yend, <span class="dt">linetype =</span> linetype), <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_linetype_identity</span>()
+
+
+<span class="kw">plot_grid</span>(aes_pos, aes_shape, aes_size,
+          aes_color, aes_lwd, aes_ltp,
+          <span class="dt">ncol =</span> <span class="dv">3</span>,
+          <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;position&quot;</span>, <span class="st">&quot;shape&quot;</span>, <span class="st">&quot;size&quot;</span>, <span class="st">&quot;color&quot;</span>, <span class="st">&quot;line width&quot;</span>, <span class="st">&quot;line type&quot;</span>),
+          <span class="dt">label_x =</span> <span class="fl">0.05</span>, <span class="dt">label_y =</span> <span class="fl">0.95</span>, <span class="dt">hjust =</span> <span class="dv">0</span>, <span class="dt">vjust =</span> <span class="dv">1</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:common-aesthetics"></span>
+<img src="epib607_files/figure-html/common-aesthetics-1.png" alt="Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)." width="576" />
+<p class="caption">
+Figure 10.2: Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type).
+</p>
+</div>
 </div>
 <div id="coordinate-systems" class="section level2">
 <h2><span class="header-section-number">10.2</span> Coordinate systems</h2>
@@ -367,7 +467,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>There is no ordering of the data, and we simply need color to differentiate different categories.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(RColorBrewer)
 RColorBrewer<span class="op">::</span><span class="kw">display.brewer.all</span>()</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-54-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-55-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Also see the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis R package</a>.</p>
 </div>
 </div>
@@ -379,7 +479,7 @@ RColorBrewer<span class="op">::</span><span class="kw">display.brewer.all</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mdsr)
 pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
 <span class="kw">gf_colh</span>(state <span class="op">~</span><span class="st"> </span>math, <span class="dt">data =</span> <span class="kw">subset</span>(SAT_<span class="dv">2010</span>, sat_pct <span class="op">&gt;</span><span class="st"> </span><span class="dv">66</span>)) </code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-55-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-56-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>This plot uses the visual cue of position to represent the math SAT score on the vertical axis with a linear scale. The categorical variable of state is arrayed on the horizontal axis. Although the states are ordered alphabetically, it would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title.</p>
 </div>
 <div id="swimming-records" class="section level3">
@@ -388,13 +488,13 @@ pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mosaicData)
 <span class="kw">gf_point</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">shape =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">size =</span> <span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">gf_line</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex)</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-56-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-57-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="help-study" class="section level3">
 <h3><span class="header-section-number">10.7.3</span> HELP study</h3>
 <p>The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gf_boxplot</span>(avg_drinks <span class="op">~</span><span class="st"> </span>racegrp <span class="op">|</span><span class="st"> </span>sex, <span class="dt">data =</span> HELPrct)</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-57-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-58-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="exercises" class="section level2">
