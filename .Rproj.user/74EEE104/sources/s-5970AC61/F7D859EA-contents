@@ -31,16 +31,14 @@ Aesthetics or visual cues are graphical elements that draw the eye to what you w
 9. Color (either) to what extent? how severely? Beware of red/green color blindness 
 
 
-(ref:common-aesthetics) Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type).
+(ref:common-aesthetics) Commonly used aesthetics in data visualization. source: [http://flowingdata.com/data-points/DataPoints-Ch3.pdf](http://flowingdata.com/data-points/DataPoints-Ch3.pdf)
 
-![](images/cues.jpg)
-
-```{r, fig.cap='(ref:common-aesthetics)'}
+```{r, fig.cap='(ref:common-aesthetics)', echo=FALSE}
 knitr::include_graphics(path = "images/cues.jpg")
 ```
 
 
-
+<!--: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)-->
 
 
 ```{r common-aesthetics, fig.width = 6, fig.asp = 0.45, fig.cap = '(ref:common-aesthetics)', eval=FALSE, echo=FALSE}

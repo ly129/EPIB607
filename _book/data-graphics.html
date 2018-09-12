@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-09-11">
+<meta name="date" content="2018-09-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -298,105 +298,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Color (either) to what extent? how severely? Beware of red/green color blindness</li>
 </ol>
 
-<div class="figure">
-<img src="images/cues.jpg" />
-
-</div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="dt">path =</span> <span class="st">&quot;images/cues.jpg&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-54"></span>
-<img src="images/cues.jpg" alt="Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)." width="672" />
+<img src="images/cues.jpg" alt="Commonly used aesthetics in data visualization. source: http://flowingdata.com/data-points/DataPoints-Ch3.pdf" width="672" />
 <p class="caption">
-Figure 10.1: Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type).
+Figure 10.1: Commonly used aesthetics in data visualization. source: <a href="http://flowingdata.com/data-points/DataPoints-Ch3.pdf" class="uri">http://flowingdata.com/data-points/DataPoints-Ch3.pdf</a>
 </p>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># run setup script</span>
-<span class="co"># source(&quot;_common.R&quot;)</span>
-<span class="kw">options</span>(<span class="dt">dplyr.print_min =</span> <span class="dv">6</span>, <span class="dt">dplyr.print_max =</span> <span class="dv">6</span>)
-<span class="co"># pacman::p_load_gh(&#39;clauswilke/dviz.supp&#39;,auth_token = NULL)</span>
-<span class="co"># devtools::install_github(&#39;clauswilke/dviz.supp&#39;,auth_token = NULL)</span>
-<span class="co"># install.packages(&quot;labeling&quot;)</span>
-<span class="kw">library</span>(dviz.supp)
-<span class="co">#&gt; Loading required package: cowplot</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; *******************************************************</span>
-<span class="co">#&gt; Note: cowplot does not change the default ggplot2 theme</span>
-<span class="co">#&gt; anymore. To recover the previous behavior, execute:</span>
-<span class="co">#&gt;   theme_set(theme_cowplot())</span>
-<span class="co">#&gt; *******************************************************</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: &#39;cowplot&#39;</span>
-<span class="co">#&gt; The following object is masked from &#39;package:mosaic&#39;:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     theme_map</span>
-<span class="co">#&gt; Loading required package: colorspace</span>
-<span class="co">#&gt; Loading required package: colorblindr</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: &#39;dviz.supp&#39;</span>
-<span class="co">#&gt; The following object is masked from &#39;package:cowplot&#39;:</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     plot_grid</span>
-pacman<span class="op">::</span><span class="kw">p_load</span>(forcats)
-pacman<span class="op">::</span><span class="kw">p_load</span>(patchwork)
-pacman<span class="op">::</span><span class="kw">p_load</span>(lubridate)
-
-aes_pos &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>),
-                                 <span class="dt">xend =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>),
-                                 <span class="dt">y =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">0</span>),
-                                 <span class="dt">yend =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>)),
-                <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">xend =</span> xend, <span class="dt">yend =</span> yend),
-                <span class="dt">arrow =</span> <span class="kw">arrow</span>(<span class="dt">length =</span> grid<span class="op">::</span><span class="kw">unit</span>(<span class="dv">12</span>, <span class="st">&quot;pt&quot;</span>)), <span class="dt">size =</span> <span class="fl">.75</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">draw_text</span>(<span class="st">&quot;y&quot;</span>, <span class="fl">.5</span>, <span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">vjust =</span> <span class="dv">1</span>, <span class="dt">hjust =</span> <span class="fl">2.5</span>, <span class="dt">family =</span> dviz_font_family) <span class="op">+</span>
-<span class="st">  </span><span class="kw">draw_text</span>(<span class="st">&quot;x&quot;</span>, <span class="dv">1</span>, <span class="fl">.5</span>, <span class="dt">size =</span> <span class="dv">12</span>, <span class="dt">vjust =</span> <span class="dv">2</span>, <span class="dt">hjust =</span> <span class="dv">1</span>, <span class="dt">family =</span> dviz_font_family) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">2</span>, <span class="fl">1.2</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">2</span>, <span class="fl">1.2</span>))
-<span class="co">#&gt; Coordinate system already present. Adding new coordinate system, which will replace the existing one.</span>
-
-aes_color &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_tile</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="fl">0.15</span> <span class="op">+</span><span class="st"> </span><span class="fl">.2333</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)),
-            <span class="kw">aes</span>(x, <span class="dt">y =</span> <span class="fl">.5</span>, <span class="dt">fill =</span> <span class="kw">factor</span>(x)), <span class="dt">width =</span> <span class="fl">.2</span>, <span class="dt">height =</span> <span class="fl">.6</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_fill_OkabeIto</span>(<span class="dt">guide =</span> <span class="st">&quot;none&quot;</span>)
-
-aes_shape &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> (.<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">4</span>),
-             <span class="kw">aes</span>(x, <span class="dt">y =</span> <span class="fl">.5</span>, <span class="dt">shape =</span> <span class="kw">factor</span>(x)), <span class="dt">size =</span> <span class="dv">8</span>, <span class="dt">fill =</span> <span class="st">&quot;grey80&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_shape_manual</span>(<span class="dt">values =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">24</span>)
-
-aes_size &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> (.<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">4</span>),
-             <span class="kw">aes</span>(x, <span class="dt">y =</span> <span class="fl">.5</span>, <span class="dt">size =</span> <span class="kw">factor</span>(x)), <span class="dt">shape =</span> <span class="dv">21</span>, <span class="dt">fill =</span> <span class="st">&quot;grey80&quot;</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_size_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">11</span>))
-
-aes_lwd &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="fl">0.05</span>, <span class="dv">4</span>),
-                                 <span class="dt">xend =</span> <span class="kw">rep</span>(<span class="fl">0.95</span>, <span class="dv">4</span>),
-                                 <span class="dt">y =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
-                                 <span class="dt">yend =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
-                                 <span class="dt">size =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">1</span>),
-               <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">xend =</span> xend, <span class="dt">yend =</span> yend, <span class="dt">size =</span> size)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_size_identity</span>()
-
-aes_ltp &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="fl">0.05</span>, <span class="dv">4</span>),
-                                 <span class="dt">xend =</span> <span class="kw">rep</span>(<span class="fl">0.95</span>, <span class="dv">4</span>),
-                                 <span class="dt">y =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
-                                 <span class="dt">yend =</span> (<span class="fl">1.5</span> <span class="op">+</span><span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)<span class="op">/</span><span class="dv">6</span>,
-                                 <span class="dt">linetype =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">1</span>),
-               <span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">xend =</span> xend, <span class="dt">yend =</span> yend, <span class="dt">linetype =</span> linetype), <span class="dt">size =</span> <span class="dv">1</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_linetype_identity</span>()
-
-
-<span class="kw">plot_grid</span>(aes_pos, aes_shape, aes_size,
-          aes_color, aes_lwd, aes_ltp,
-          <span class="dt">ncol =</span> <span class="dv">3</span>,
-          <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;position&quot;</span>, <span class="st">&quot;shape&quot;</span>, <span class="st">&quot;size&quot;</span>, <span class="st">&quot;color&quot;</span>, <span class="st">&quot;line width&quot;</span>, <span class="st">&quot;line type&quot;</span>),
-          <span class="dt">label_x =</span> <span class="fl">0.05</span>, <span class="dt">label_y =</span> <span class="fl">0.95</span>, <span class="dt">hjust =</span> <span class="dv">0</span>, <span class="dt">vjust =</span> <span class="dv">1</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:common-aesthetics"></span>
-<img src="epib607_files/figure-html/common-aesthetics-1.png" alt="Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)." width="576" />
-<p class="caption">
-Figure 10.2: Commonly used aesthetics in data visualization: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type).
-</p>
-</div>
+<!--: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)-->
 </div>
 <div id="coordinate-systems" class="section level2">
 <h2><span class="header-section-number">10.2</span> Coordinate systems</h2>

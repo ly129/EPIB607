@@ -199,14 +199,16 @@ Sahir Bhatnagar           |  James Hanley
 # Course Information 
 
 - Instructor: [Sahir Bhatnagar](mailto:sahir.bhatnagar@mcgill.ca)  
-- Teaching Assistants: [Kody Crowell](mailto:kody.crowell1598@gmail.com), [Guanbo Wang](mailto:guanbo.wang@mail.mcgill.ca), [Himasara Marasinghe](mailto:dewdunee.marasinghe@mail.mcgill.ca)  
+- Teaching Assistants:  
+    - [Kody Crowell](mailto:kody.crowell@mail.mcgill.ca), `kody.crowell@mail.mcgill.ca`, Mondays 2-3pm (Ab - Gi)
+    - [Himasara Marasinghe](mailto:dewdunee.marasinghe@mail.mcgill.ca), `dewdunee.marasinghe@mail.mcgill.ca`, Thursdays 1-2pm (Ha - Pa)
+    - [Guanbo Wang](mailto:guanbo.wang@mail.mcgill.ca), `guanbo.wang@mail.mcgill.ca`, Wednesdays 11:30am-12:30pm (Pl - Za)
 - Website: [http://sahirbhatnagar.com/EPIB607/](http://sahirbhatnagar.com/EPIB607/)  
 - Lectures: Monday 11:30am - 1:30pm, Thursday 8:30am - 10:30am  
 - Location: McMed 1034  
 - Office Hours: TBD  
 - Prerequisite(s): Calculus and Algebra  
 - Texts: _The Practice of Statistics in the Life Sciences_, 3nd Edition by Baldi \& Moore.  
-
 
 <!--
 ## Course Description {-}
