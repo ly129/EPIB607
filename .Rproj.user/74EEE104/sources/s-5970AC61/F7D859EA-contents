@@ -43,7 +43,7 @@ knitr::include_graphics(path = "images/cues.jpg")
 
 
 
-```{r common-aesthetics, fig.width = 6, fig.asp = 0.45, fig.cap = '(ref:common-aesthetics)'}
+```{r common-aesthetics, fig.width = 6, fig.asp = 0.45, fig.cap = '(ref:common-aesthetics)', eval=FALSE, echo=FALSE}
 # run setup script
 # source("_common.R")
 options(dplyr.print_min = 6, dplyr.print_max = 6)
