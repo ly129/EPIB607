@@ -31,11 +31,18 @@ Aesthetics or visual cues are graphical elements that draw the eye to what you w
 9. Color (either) to what extent? how severely? Beware of red/green color blindness 
 
 
-(ref:common-aesthetics) Commonly used aesthetics in data visualization. source: [http://flowingdata.com/data-points/DataPoints-Ch3.pdf](http://flowingdata.com/data-points/DataPoints-Ch3.pdf)
+(ref:common-aesthetics) Commonly used aesthetics in data visualization. top: Chapter 3 @Yau, bottom: Chapter 2 @wilke
 
 ```{r, fig.cap='(ref:common-aesthetics)', echo=FALSE}
-knitr::include_graphics(path = "images/cues.jpg")
+knitr::include_graphics(path = c("images/cues.jpg","images/scales.jpg"))
+# knitr::include_graphics(path = "images/scales.jpg")
 ```
+
+
+
+
+
+
 
 
 <!--: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)-->
@@ -106,6 +113,9 @@ plot_grid(aes_pos, aes_shape, aes_size,
 ```
 
 
+
+
+
 ## Coordinate systems 
 
 How are the data points organized? While any number of coordinate systems are possible, three are most common.
@@ -121,31 +131,49 @@ The radial analog of the Cartesian system with points identified by their radius
 This is the increasingly important system in which we have locations on the curved surface of the Earth, but we are trying to represent these locations in a flat two-dimensional plane. 
 
 
+(ref:coordinate) Commonly used coordinate systems. Chapter 3 @Yau.
+
+```{r, fig.cap='(ref:coordinate)', echo=FALSE}
+knitr::include_graphics(path = "images/geography.jpg")
+# knitr::include_graphics(path = "images/scales.jpg")
+```
+
+
+
 ## Scale 
 
-Scales translate values into visual cues. The choice of scale is often crucial. The central question is how does distance in the data graphic translate into meaningful differences in quantity? Each coordinate axis can have its own scale, for which we have three different choices: 
+Scales link data values to aesthetics [@wilke]. To map data values onto aesthetics, we need to specify which data values correspond to which specific aesthetics values. For example, if our graphic has an x axis, then we need to specify which data values fall onto particular positions along this axis. Similarly, we may need to specify which data values are represented by particular shapes or colors. This mapping between data values and aesthetics values is created via scales. A scale defines a unique mapping between data and aesthetics. Importantly, a scale must be one-to-one, such that for each specific data value there is exactly one aesthetics value and vice versa. If a scale isn’t one-to-one, then the data visualization becomes ambiguous.
 
-### Numeric 
-A numeric quantity is most commonly set on a linear, logarithmic, or percent- age scale. Note that a logarithmic scale does not have the property that, say, a one-centimeter difference in position corresponds to an equal difference in quantity anywhere on the scale. 
 
-### Categorical 
-A categorical variable may have no ordering (e.g., Democrat, Republican, or Independent), or it may be ordinal (e.g., never, former, or current smoker). 
+(ref:scales2) Scales link data values to aesthetics. Here, the numbers 1 through 4 have been mapped onto a position scale, a shape scale, and a color scale. For each scale, each number corresponds to a unique position, shape, or color and vice versa [@wilke].
 
-### Time 
-Time is a numeric quantity that has some special properties. First, because of the calendar, it can be demarcated by a series of different units (e.g., year, month, day, etc.). Second, it can be considered periodically (or cyclically) as a "wrap-around" scale. Time is also so commonly used and misused that it warrants careful consider- ation.
+```{r, fig.cap='(ref:scales2)', echo=FALSE}
+knitr::include_graphics(path = "images/scales2.jpg")
+# knitr::include_graphics(path = "images/scales.jpg")
+```
+
 
 
 
 ## Context
 
-The purpose of data graphics is to help the viewer make meaningful comparisons, but a bad data graphic can do just the opposite: It can instead focus the viewer's attention on meaningless artifacts, or ignore crucial pieces of relevant but external knowledge. Context can be added to data graphics in the form of titles or subtitles that explain what is being shown, axis labels that make it clear how units and scale are depicted, or reference points or lines that contribute relevant external information. While one should avoid cluttering up a data graphic with excessive annotations, it is necessary to provide proper context.
+The purpose of data graphics is to help the viewer make meaningful comparisons, but a bad data graphic can do just the opposite: It can instead focus the viewer's attention on meaningless artifacts, or ignore crucial pieces of relevant but external knowledge. Context can be added to data graphics in the form of titles or subtitles that explain what is being shown, axis labels that make it clear how units and scale are depicted, or reference points or lines that contribute relevant external information. While one should avoid cluttering up a data graphic with excessive annotations, it is necessary to provide proper context [@baumer2017mdsr].
 
 ## Facets and layers
 
 One of the fundamental challenges of creating data graphics is condensing multivariate information into a two-dimensional image. While three-dimensional images are occasionally useful, they are often more confusing than anything else. Instead, here are three common ways of incorporating more variables into a two-dimensional data graphic.
 
 ### Facets
-A single data graphic can be composed of several small multiples of the same basic plot, with one (discrete) variable changing in each of the small sub-images. 
+A single data graphic can be composed of several small multiples of the same basic plot, with one (discrete) variable changing in each of the small sub-images. An example of facets is shown in Figure \@ref(fig:HELP)
+
+(ref:HELP) The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care.
+
+```{r HELP, fig.asp=1, fig.width=8, fig.cap='(ref:HELP)'}
+pacman::p_load(mosaic)
+gf_boxplot(avg_drinks ~ racegrp | sex, data = HELPrct)
+```
+
+
 
 ### Layers 
 It is sometimes appropriate to draw a new layer on top of an existing data graphic. This new layer can provide context or comparison, but there is a limit to how many layers humans can reliably parse. 
@@ -156,7 +184,7 @@ If time is the additional variable, then an animation can sometimes effectively 
 
 ## Color
 
-Approximately 8 percent of the population—most of whom are men—have some form of color blindness. Most commonly, this renders them incapable of seeing colors accurately, most notably of distinguishing between red and green. Compounding the problem, many of these people do not know that they are color-blind. Thus, for professional graphics it is worth thinking carefully about which colors to use. The NFL famously failed to account for this in a 2015 game in which the Buffalo Bills wore all-red jerseys and the New York Jets wore all-green, leaving colorblind fans unable to distinguish one team from the other!
+Approximately 8 percent of the population—most of whom are men—have some form of color blindness. Most commonly, this renders them incapable of seeing colors accurately, most notably of distinguishing between red and green. Compounding the problem, many of these people do not know that they are color-blind. Thus, for professional graphics it is worth thinking carefully about which colors to use. 
 
 Thankfully, we have been freed from the burden of having to create such intelligent palettes by the research of Cynthia Brewer, creator of the [ColorBrewer website](http://colorbrewer2.org/learnmore/schemes_full.html) (and [R package](https://cran.r-project.org/web/packages/RColorBrewer/index.html)). Brewer has created colorblind-safe palettes in a variety of hues for three different types of numeric data in a single variable: 
 
@@ -177,7 +205,9 @@ RColorBrewer::display.brewer.all()
 ```
 
 
-Also see the [viridis R package](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html).
+Also see the [viridis R package](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) and [the Color Scales chapter](https://serialmentor.com/dataviz/color-basics.html) [@wilke]. 
+
+
 
 
 
@@ -194,7 +224,7 @@ gf_colh(state ~ math, data = subset(SAT_2010, sat_pct > 66))
 ```
 
 
-This plot uses the visual cue of position to represent the math SAT score on the vertical axis with a linear scale. The categorical variable of state is arrayed on the horizontal axis. Although the states are ordered alphabetically, it would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title. 
+This plot uses the visual cue of position to represent the math SAT score on the vertical axis with. The categorical variable of state is arrayed on the horizontal axis. It would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title. 
 
 
 ### Swimming records
@@ -208,14 +238,6 @@ gf_point(time ~ year , data = SwimRecords, color = ~ sex, shape = ~ sex, size = 
   gf_line(time ~ year , data = SwimRecords, color = ~ sex)
 ```
 
-
-### HELP study
-
-The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care.
-
-```{r, fig.asp=1, fig.width=8}
-gf_boxplot(avg_drinks ~ racegrp | sex, data = HELPrct)
-```
 
 
 

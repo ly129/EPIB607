@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536760406230.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "189E5EF0",
+    "lastKnownWriteTime" : 1536760780,
+    "last_content_update" : 1536760780149,
+    "path" : "~/git_repositories/epib607/_output.yml",
+    "project_path" : "_output.yml",
+    "properties" : {
+        "cursorPosition" : "9,39",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 17,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

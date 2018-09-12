@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1767919992",
+    "hash" : "3756456893",
     "id" : "BD09B837",
-    "lastKnownWriteTime" : 1536035155,
-    "last_content_update" : 1536035155,
+    "lastKnownWriteTime" : 1536764838,
+    "last_content_update" : 1536764838699,
     "path" : "~/git_repositories/epib607/_bookdown.yml",
     "project_path" : "_bookdown.yml",
     "properties" : {
+        "cursorPosition" : "15,21",
+        "scrollLine" : "0"
     },
     "relative_order" : 10,
     "source_on_save" : false,

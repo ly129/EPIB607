@@ -214,11 +214,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="10.2.2" data-path="data-graphics.html"><a href="data-graphics.html#polar"><i class="fa fa-check"></i><b>10.2.2</b> Polar</a></li>
 <li class="chapter" data-level="10.2.3" data-path="data-graphics.html"><a href="data-graphics.html#geographic"><i class="fa fa-check"></i><b>10.2.3</b> Geographic</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="data-graphics.html"><a href="data-graphics.html#scale"><i class="fa fa-check"></i><b>10.3</b> Scale</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="data-graphics.html"><a href="data-graphics.html#numeric"><i class="fa fa-check"></i><b>10.3.1</b> Numeric</a></li>
-<li class="chapter" data-level="10.3.2" data-path="data-graphics.html"><a href="data-graphics.html#categorical"><i class="fa fa-check"></i><b>10.3.2</b> Categorical</a></li>
-<li class="chapter" data-level="10.3.3" data-path="data-graphics.html"><a href="data-graphics.html#time"><i class="fa fa-check"></i><b>10.3.3</b> Time</a></li>
-</ul></li>
+<li class="chapter" data-level="10.3" data-path="data-graphics.html"><a href="data-graphics.html#scale"><i class="fa fa-check"></i><b>10.3</b> Scale</a></li>
 <li class="chapter" data-level="10.4" data-path="data-graphics.html"><a href="data-graphics.html#context"><i class="fa fa-check"></i><b>10.4</b> Context</a></li>
 <li class="chapter" data-level="10.5" data-path="data-graphics.html"><a href="data-graphics.html#facets-and-layers"><i class="fa fa-check"></i><b>10.5</b> Facets and layers</a><ul>
 <li class="chapter" data-level="10.5.1" data-path="data-graphics.html"><a href="data-graphics.html#facets"><i class="fa fa-check"></i><b>10.5.1</b> Facets</a></li>
@@ -233,7 +229,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="10.7" data-path="data-graphics.html"><a href="data-graphics.html#examples"><i class="fa fa-check"></i><b>10.7</b> Examples</a><ul>
 <li class="chapter" data-level="10.7.1" data-path="data-graphics.html"><a href="data-graphics.html#sat-scores"><i class="fa fa-check"></i><b>10.7.1</b> SAT Scores</a></li>
 <li class="chapter" data-level="10.7.2" data-path="data-graphics.html"><a href="data-graphics.html#swimming-records"><i class="fa fa-check"></i><b>10.7.2</b> Swimming records</a></li>
-<li class="chapter" data-level="10.7.3" data-path="data-graphics.html"><a href="data-graphics.html#help-study"><i class="fa fa-check"></i><b>10.7.3</b> HELP study</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="data-graphics.html"><a href="data-graphics.html#exercises"><i class="fa fa-check"></i><b>10.8</b> Exercises</a><ul>
 <li class="chapter" data-level="10.8.1" data-path="data-graphics.html"><a href="data-graphics.html#exercise-1"><i class="fa fa-check"></i><b>10.8.1</b> Exercise 1</a></li>
@@ -252,9 +247,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="A.3" data-path="vectorization-apply-and-for-loops.html"><a href="vectorization-apply-and-for-loops.html#creating-dynamic-documents-with-mapply"><i class="fa fa-check"></i><b>A.3</b> Creating dynamic documents with <code>mapply</code></a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
-<li><a href="https://sahirbhatnagar.com" target="blank">Built with bookdown</a></li>
+<li><a href="https://bookdown.org/yihui/bookdown/" target="blank">Built with bookdown</a></li>
 
 </ul>
 
@@ -299,9 +294,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-54"></span>
-<img src="images/cues.jpg" alt="Commonly used aesthetics in data visualization. source: http://flowingdata.com/data-points/DataPoints-Ch3.pdf" width="672" />
+<img src="images/cues.jpg" alt="Commonly used aesthetics in data visualization. top: Chapter 3 Yau (2013), bottom: Chapter 2 Wilke (2018)" width="672" /><img src="images/scales.jpg" alt="Commonly used aesthetics in data visualization. top: Chapter 3 Yau (2013), bottom: Chapter 2 Wilke (2018)" width="574" />
 <p class="caption">
-Figure 10.1: Commonly used aesthetics in data visualization. source: <a href="http://flowingdata.com/data-points/DataPoints-Ch3.pdf" class="uri">http://flowingdata.com/data-points/DataPoints-Ch3.pdf</a>
+Figure 10.1: Commonly used aesthetics in data visualization. top: Chapter 3 <span class="citation">Yau (<a href="#ref-Yau">2013</a>)</span>, bottom: Chapter 2 <span class="citation">Wilke (<a href="#ref-wilke">2018</a>)</span>
 </p>
 </div>
 <!--: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)-->
@@ -320,34 +315,45 @@ Figure 10.1: Commonly used aesthetics in data visualization. source: <a href="ht
 <div id="geographic" class="section level3">
 <h3><span class="header-section-number">10.2.3</span> Geographic</h3>
 <p>This is the increasingly important system in which we have locations on the curved surface of the Earth, but we are trying to represent these locations in a flat two-dimensional plane.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-55"></span>
+<img src="images/geography.jpg" alt="Commonly used coordinate systems. Chapter 3 Yau (2013)." width="509" />
+<p class="caption">
+Figure 10.2: Commonly used coordinate systems. Chapter 3 <span class="citation">Yau (<a href="#ref-Yau">2013</a>)</span>.
+</p>
+</div>
 </div>
 </div>
 <div id="scale" class="section level2">
 <h2><span class="header-section-number">10.3</span> Scale</h2>
-<p>Scales translate values into visual cues. The choice of scale is often crucial. The central question is how does distance in the data graphic translate into meaningful differences in quantity? Each coordinate axis can have its own scale, for which we have three different choices:</p>
-<div id="numeric" class="section level3">
-<h3><span class="header-section-number">10.3.1</span> Numeric</h3>
-<p>A numeric quantity is most commonly set on a linear, logarithmic, or percent- age scale. Note that a logarithmic scale does not have the property that, say, a one-centimeter difference in position corresponds to an equal difference in quantity anywhere on the scale.</p>
-</div>
-<div id="categorical" class="section level3">
-<h3><span class="header-section-number">10.3.2</span> Categorical</h3>
-<p>A categorical variable may have no ordering (e.g., Democrat, Republican, or Independent), or it may be ordinal (e.g., never, former, or current smoker).</p>
-</div>
-<div id="time" class="section level3">
-<h3><span class="header-section-number">10.3.3</span> Time</h3>
-<p>Time is a numeric quantity that has some special properties. First, because of the calendar, it can be demarcated by a series of different units (e.g., year, month, day, etc.). Second, it can be considered periodically (or cyclically) as a “wrap-around” scale. Time is also so commonly used and misused that it warrants careful consider- ation.</p>
+<p>Scales link data values to aesthetics <span class="citation">(Wilke <a href="#ref-wilke">2018</a>)</span>. To map data values onto aesthetics, we need to specify which data values correspond to which specific aesthetics values. For example, if our graphic has an x axis, then we need to specify which data values fall onto particular positions along this axis. Similarly, we may need to specify which data values are represented by particular shapes or colors. This mapping between data values and aesthetics values is created via scales. A scale defines a unique mapping between data and aesthetics. Importantly, a scale must be one-to-one, such that for each specific data value there is exactly one aesthetics value and vice versa. If a scale isn’t one-to-one, then the data visualization becomes ambiguous.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-56"></span>
+<img src="images/scales2.jpg" alt="Scales link data values to aesthetics. Here, the numbers 1 through 4 have been mapped onto a position scale, a shape scale, and a color scale. For each scale, each number corresponds to a unique position, shape, or color and vice versa (Wilke 2018)." width="515" />
+<p class="caption">
+Figure 10.3: Scales link data values to aesthetics. Here, the numbers 1 through 4 have been mapped onto a position scale, a shape scale, and a color scale. For each scale, each number corresponds to a unique position, shape, or color and vice versa <span class="citation">(Wilke <a href="#ref-wilke">2018</a>)</span>.
+</p>
 </div>
 </div>
 <div id="context" class="section level2">
 <h2><span class="header-section-number">10.4</span> Context</h2>
-<p>The purpose of data graphics is to help the viewer make meaningful comparisons, but a bad data graphic can do just the opposite: It can instead focus the viewer’s attention on meaningless artifacts, or ignore crucial pieces of relevant but external knowledge. Context can be added to data graphics in the form of titles or subtitles that explain what is being shown, axis labels that make it clear how units and scale are depicted, or reference points or lines that contribute relevant external information. While one should avoid cluttering up a data graphic with excessive annotations, it is necessary to provide proper context.</p>
+<p>The purpose of data graphics is to help the viewer make meaningful comparisons, but a bad data graphic can do just the opposite: It can instead focus the viewer’s attention on meaningless artifacts, or ignore crucial pieces of relevant but external knowledge. Context can be added to data graphics in the form of titles or subtitles that explain what is being shown, axis labels that make it clear how units and scale are depicted, or reference points or lines that contribute relevant external information. While one should avoid cluttering up a data graphic with excessive annotations, it is necessary to provide proper context <span class="citation">(Baumer, Kaplan, and Horton <a href="#ref-baumer2017mdsr">2017</a>)</span>.</p>
 </div>
 <div id="facets-and-layers" class="section level2">
 <h2><span class="header-section-number">10.5</span> Facets and layers</h2>
 <p>One of the fundamental challenges of creating data graphics is condensing multivariate information into a two-dimensional image. While three-dimensional images are occasionally useful, they are often more confusing than anything else. Instead, here are three common ways of incorporating more variables into a two-dimensional data graphic.</p>
 <div id="facets" class="section level3">
 <h3><span class="header-section-number">10.5.1</span> Facets</h3>
-<p>A single data graphic can be composed of several small multiples of the same basic plot, with one (discrete) variable changing in each of the small sub-images.</p>
+<p>A single data graphic can be composed of several small multiples of the same basic plot, with one (discrete) variable changing in each of the small sub-images. An example of facets is shown in Figure <a href="data-graphics.html#fig:HELP">10.4</a></p>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
+<span class="kw">gf_boxplot</span>(avg_drinks <span class="op">~</span><span class="st"> </span>racegrp <span class="op">|</span><span class="st"> </span>sex, <span class="dt">data =</span> HELPrct)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:HELP"></span>
+<img src="epib607_files/figure-html/HELP-1.png" alt="The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care." width="768" />
+<p class="caption">
+Figure 10.4: The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care.
+</p>
+</div>
 </div>
 <div id="layers" class="section level3">
 <h3><span class="header-section-number">10.5.2</span> Layers</h3>
@@ -360,7 +366,7 @@ Figure 10.1: Commonly used aesthetics in data visualization. source: <a href="ht
 </div>
 <div id="color" class="section level2">
 <h2><span class="header-section-number">10.6</span> Color</h2>
-<p>Approximately 8 percent of the population—most of whom are men—have some form of color blindness. Most commonly, this renders them incapable of seeing colors accurately, most notably of distinguishing between red and green. Compounding the problem, many of these people do not know that they are color-blind. Thus, for professional graphics it is worth thinking carefully about which colors to use. The NFL famously failed to account for this in a 2015 game in which the Buffalo Bills wore all-red jerseys and the New York Jets wore all-green, leaving colorblind fans unable to distinguish one team from the other!</p>
+<p>Approximately 8 percent of the population—most of whom are men—have some form of color blindness. Most commonly, this renders them incapable of seeing colors accurately, most notably of distinguishing between red and green. Compounding the problem, many of these people do not know that they are color-blind. Thus, for professional graphics it is worth thinking carefully about which colors to use.</p>
 <p>Thankfully, we have been freed from the burden of having to create such intelligent palettes by the research of Cynthia Brewer, creator of the <a href="http://colorbrewer2.org/learnmore/schemes_full.html">ColorBrewer website</a> (and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">R package</a>). Brewer has created colorblind-safe palettes in a variety of hues for three different types of numeric data in a single variable:</p>
 <div id="sequential" class="section level3">
 <h3><span class="header-section-number">10.6.1</span> Sequential</h3>
@@ -375,8 +381,8 @@ Figure 10.1: Commonly used aesthetics in data visualization. source: <a href="ht
 <p>There is no ordering of the data, and we simply need color to differentiate different categories.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(RColorBrewer)
 RColorBrewer<span class="op">::</span><span class="kw">display.brewer.all</span>()</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-55-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>Also see the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis R package</a>.</p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-57-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Also see the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis R package</a> and <a href="https://serialmentor.com/dataviz/color-basics.html">the Color Scales chapter</a> <span class="citation">(Wilke <a href="#ref-wilke">2018</a>)</span>.</p>
 </div>
 </div>
 <div id="examples" class="section level2">
@@ -387,8 +393,8 @@ RColorBrewer<span class="op">::</span><span class="kw">display.brewer.all</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mdsr)
 pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
 <span class="kw">gf_colh</span>(state <span class="op">~</span><span class="st"> </span>math, <span class="dt">data =</span> <span class="kw">subset</span>(SAT_<span class="dv">2010</span>, sat_pct <span class="op">&gt;</span><span class="st"> </span><span class="dv">66</span>)) </code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-56-1.png" width="768" style="display: block; margin: auto;" /></p>
-<p>This plot uses the visual cue of position to represent the math SAT score on the vertical axis with a linear scale. The categorical variable of state is arrayed on the horizontal axis. Although the states are ordered alphabetically, it would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title.</p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-58-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>This plot uses the visual cue of position to represent the math SAT score on the vertical axis with. The categorical variable of state is arrayed on the horizontal axis. It would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title.</p>
 </div>
 <div id="swimming-records" class="section level3">
 <h3><span class="header-section-number">10.7.2</span> Swimming records</h3>
@@ -396,13 +402,7 @@ pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mosaicData)
 <span class="kw">gf_point</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">shape =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">size =</span> <span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">gf_line</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex)</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-57-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div id="help-study" class="section level3">
-<h3><span class="header-section-number">10.7.3</span> HELP study</h3>
-<p>The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gf_boxplot</span>(avg_drinks <span class="op">~</span><span class="st"> </span>racegrp <span class="op">|</span><span class="st"> </span>sex, <span class="dt">data =</span> HELPrct)</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-58-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="epib607_files/figure-html/unnamed-chunk-59-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="exercises" class="section level2">
@@ -507,10 +507,16 @@ prop1( ~(X.squared >= T), data = Substance.Null)
 
 
 
-<h3><span class="header-section-number">B</span> Appendix B</h3>
+<h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-baumer2017mdsr">
 <p>Baumer, Benjamin S., Daniel T. Kaplan, and Nicholas J. Horton. 2017. <em>Modern Data Science with R</em>. Chapman; Hall/CRC Press: Boca Raton. <a href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487" class="uri">https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487</a>.</p>
+</div>
+<div id="ref-Yau">
+<p>Yau, Nathan. 2013. <em>Data Points: Visualization That Means Something</em>. 1st ed. Wiley Publishing.</p>
+</div>
+<div id="ref-wilke">
+<p>Wilke, Claus O. 2018. <em>Fundamentals of Data Visualization</em>. <a href="https://serialmentor.com/dataviz/" class="uri">https://serialmentor.com/dataviz/</a>.</p>
 </div>
 </div>
             </section>
@@ -534,14 +540,14 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": true,
-"twitter": true,
+"facebook": false,
+"twitter": false,
 "google": false,
 "linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": {}
 },
 "fontsettings": {
 "theme": "white",
@@ -554,7 +560,8 @@ gitbook.start({
 },
 "download": ["epib607.pdf"],
 "toc": {
-"collapse": "subsection"
+"collapse": "section",
+"scroll_highlight": true
 }
 });
 });

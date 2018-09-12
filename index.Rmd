@@ -209,6 +209,8 @@ Sahir Bhatnagar           |  James Hanley
 - Office Hours: TBD  
 - Prerequisite(s): Calculus and Algebra  
 - Texts: _The Practice of Statistics in the Life Sciences_, 3nd Edition by Baldi \& Moore.  
+- Midterm: October 29, 2018
+- Final: December 4, 2018
 
 <!--
 ## Course Description {-}
@@ -1223,6 +1225,7 @@ knitr::write_bib(c(
 # Slides 
 
 1. [Introduction to EPIB 607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)
+2. [Data Graphics](https://docs.google.com/presentation/d/1wXgcTzcRKl_leGRfNZjWWPkjwJSTlZSXBCl-fFuLEaE/edit?usp=sharing)
 
 
 # Assignments 
