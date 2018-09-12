@@ -10,6 +10,7 @@ r_github_packages:
 - rstudio/bookdown
 install:
 - Rscript -e "if (!require('pacman')) install.packages('pacman')"
+- Rscript -e "install.packages('colorspace', repos = 'http://R-Forge.R-project.org')"
 - Rscript -e "pacman::p_load(data.table, mosaic, mdsr, mosaicData, RColorBrewer)"
 - Rscript -e "pacman::p_load(bookdown)"
 - Rscript -e "pacman::p_load(formatR)"

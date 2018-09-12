@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2446938246",
+    "hash" : "0",
     "id" : "8A732CB1",
-    "lastKnownWriteTime" : 1536560612,
-    "last_content_update" : 1536560612628,
+    "lastKnownWriteTime" : 1536719536,
+    "last_content_update" : 1536719536775,
     "path" : "~/git_repositories/epib607/.travis.yml",
     "project_path" : ".travis.yml",
     "properties" : {
-        "cursorPosition" : "12,79",
+        "cursorPosition" : "12,85",
         "scrollLine" : "0"
     },
     "relative_order" : 5,
