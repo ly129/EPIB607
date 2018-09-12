@@ -557,7 +557,11 @@ International License
   Prerequisite(s): Calculus and Algebra\\
 \item
   Texts: \emph{The Practice of Statistics in the Life Sciences}, 3nd
-  Edition by Baldi \& Moore.
+  Edition by Baldi \& Moore.\\
+\item
+  Midterm: October 29, 2018
+\item
+  Final: December 4, 2018
 \end{itemize}
 
 \section{Teaching strategy}\label{teaching-strategy}
@@ -1267,6 +1271,9 @@ Group project due by 11:59pm.\\
 \item
   \href{https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing}{Introduction
   to EPIB 607}
+\item
+  \href{https://docs.google.com/presentation/d/1wXgcTzcRKl_leGRfNZjWWPkjwJSTlZSXBCl-fFuLEaE/edit?usp=sharing}{Data
+  Graphics}
 \end{enumerate}
 
 \chapter{Assignments}\label{assignments}
@@ -1419,12 +1426,12 @@ categorical quantity:
 
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth]{images/cues} 
+{\centering \includegraphics[width=\textwidth]{images/cues} \includegraphics[width=\textwidth]{images/scales} 
 
 }
 
 \caption{Commonly used aesthetics in data visualization.
-source: \url{http://flowingdata.com/data-points/DataPoints-Ch3.pdf}}\label{fig:unnamed-chunk-54}
+top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-54}
 \end{figure}
 
 \section{Coordinate systems}\label{coordinate-systems}
@@ -1448,33 +1455,49 @@ This is the increasingly important system in which we have locations on
 the curved surface of the Earth, but we are trying to represent these
 locations in a flat two-dimensional plane.
 
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{images/geography} 
+
+}
+
+\caption{Commonly used coordinate systems. Chapter 3
+\citet{Yau}.}\label{fig:unnamed-chunk-55}
+\end{figure}
+
 \section{Scale}\label{scale}
 
-Scales translate values into visual cues. The choice of scale is often
-crucial. The central question is how does distance in the data graphic
-translate into meaningful differences in quantity? Each coordinate axis
-can have its own scale, for which we have three different choices:
+Scales link data values to aesthetics \citep{wilke}. To map data values
+onto aesthetics, we need to specify which data values correspond to
+which specific aesthetics values. For example, if our graphic has an x
+axis, then we need to specify which data values fall onto particular
+positions along this axis. Similarly, we may need to specify which data
+values are represented by particular shapes or colors. This mapping
+between data values and aesthetics values is created via scales. A scale
+defines a unique mapping between data and aesthetics. Importantly, a
+scale must be one-to-one, such that for each specific data value there
+is exactly one aesthetics value and vice versa. If a scale isn't
+one-to-one, then the data visualization becomes ambiguous.
 
-\subsection{Numeric}\label{numeric}
 
-A numeric quantity is most commonly set on a linear, logarithmic, or
-percent- age scale. Note that a logarithmic scale does not have the
-property that, say, a one-centimeter difference in position corresponds
-to an equal difference in quantity anywhere on the scale.
 
-\subsection{Categorical}\label{categorical}
 
-A categorical variable may have no ordering (e.g., Democrat, Republican,
-or Independent), or it may be ordinal (e.g., never, former, or current
-smoker).
 
-\subsection{Time}\label{time}
 
-Time is a numeric quantity that has some special properties. First,
-because of the calendar, it can be demarcated by a series of different
-units (e.g., year, month, day, etc.). Second, it can be considered
-periodically (or cyclically) as a ``wrap-around'' scale. Time is also so
-commonly used and misused that it warrants careful consider- ation.
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{images/scales2} 
+
+}
+
+\caption{Scales link data values to aesthetics. Here, the numbers 1
+through 4 have been mapped onto a position scale, a shape scale, and a
+color scale. For each scale, each number corresponds to a unique
+position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-56}
+\end{figure}
 
 \section{Context}\label{context}
 
@@ -1486,7 +1509,8 @@ to data graphics in the form of titles or subtitles that explain what is
 being shown, axis labels that make it clear how units and scale are
 depicted, or reference points or lines that contribute relevant external
 information. While one should avoid cluttering up a data graphic with
-excessive annotations, it is necessary to provide proper context.
+excessive annotations, it is necessary to provide proper context
+\citep{baumer2017mdsr}.
 
 \section{Facets and layers}\label{facets-and-layers}
 
@@ -1500,7 +1524,33 @@ incorporating more variables into a two-dimensional data graphic.
 
 A single data graphic can be composed of several small multiples of the
 same basic plot, with one (discrete) variable changing in each of the
-small sub-images.
+small sub-images. An example of facets is shown in Figure \ref{fig:HELP}
+
+
+
+
+
+
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(mosaic)}
+\KeywordTok{gf_boxplot}\NormalTok{(avg_drinks }\OperatorTok{~}\StringTok{ }\NormalTok{racegrp }\OperatorTok{|}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ HELPrct)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{epib607_files/figure-latex/HELP-1} 
+
+}
+
+\caption{The HELP study was a clinical trial for adult inpatients
+recruited from a detoxification unit. Patients with no primary care
+physician were randomized to receive a multidisciplinary assessment and
+a brief motivational intervention or usual care, with the goal of
+linking them to primary medical care.}\label{fig:HELP}
+\end{figure}
 
 \subsection{Layers}\label{layers}
 
@@ -1522,10 +1572,7 @@ some form of color blindness. Most commonly, this renders them incapable
 of seeing colors accurately, most notably of distinguishing between red
 and green. Compounding the problem, many of these people do not know
 that they are color-blind. Thus, for professional graphics it is worth
-thinking carefully about which colors to use. The NFL famously failed to
-account for this in a 2015 game in which the Buffalo Bills wore all-red
-jerseys and the New York Jets wore all-green, leaving colorblind fans
-unable to distinguish one team from the other!
+thinking carefully about which colors to use.
 
 Thankfully, we have been freed from the burden of having to create such
 intelligent palettes by the research of Cynthia Brewer, creator of the
@@ -1564,11 +1611,13 @@ differentiate different categories.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-55-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-57-1} \end{center}
 
 Also see the
 \href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
-R package}.
+R package} and
+\href{https://serialmentor.com/dataviz/color-basics.html}{the Color
+Scales chapter} \citep{wilke}.
 
 \section{Examples}\label{examples}
 
@@ -1586,14 +1635,13 @@ for whom at least two-thirds of the students took the SAT.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-56-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-58-1} \end{center}
 
 This plot uses the visual cue of position to represent the math SAT
-score on the vertical axis with a linear scale. The categorical variable
-of state is arrayed on the horizontal axis. Although the states are
-ordered alphabetically, it would not be appropriate to consider the
-state variable to be ordinal, since the ordering is not meaningful in
-the context of math SAT scores. The coordinate system is Cartesian,
+score on the vertical axis with. The categorical variable of state is
+arrayed on the horizontal axis. It would not be appropriate to consider
+the state variable to be ordinal, since the ordering is not meaningful
+in the context of math SAT scores. The coordinate system is Cartesian,
 although as noted previously, the horizontal coordinate is meaningless.
 Context is provided by the axis labels and title.
 
@@ -1624,23 +1672,7 @@ being used to distinguish sex.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-57-1} \end{center}
-
-\subsection{HELP study}\label{help-study}
-
-The HELP study was a clinical trial for adult inpatients recruited from
-a detoxification unit. Patients with no primary care physician were
-randomized to receive a multidisciplinary assessment and a brief
-motivational intervention or usual care, with the goal of linking them
-to primary medical care.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{gf_boxplot}\NormalTok{(avg_drinks }\OperatorTok{~}\StringTok{ }\NormalTok{racegrp }\OperatorTok{|}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ HELPrct)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-58-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-59-1} \end{center}
 
 \section{Exercises}\label{exercises}
 
@@ -1991,8 +2023,6 @@ performance for 32 automobiles (1973--74 models).
 Copy the code below in a file called \texttt{mapplyRmarkdown.Rmd} :
 
 Copy the code below in a file called \texttt{boxplotTemplate} :
-
-\chapter{Appendix B}\label{appendix-b}
 
 \bibliography{bib/book.bib,bib/packages.bib}
 
