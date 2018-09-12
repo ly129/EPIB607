@@ -47,7 +47,7 @@ knitr::include_graphics(path = "images/cues.jpg")
 # run setup script
 # source("_common.R")
 options(dplyr.print_min = 6, dplyr.print_max = 6)
-# pacman::p_load_gh('clauswilke/dviz.supp',auth_token = NULL)
+pacman::p_load_gh('clauswilke/dviz.supp')
 # devtools::install_github('clauswilke/dviz.supp',auth_token = NULL)
 # install.packages("labeling")
 library(dviz.supp)
