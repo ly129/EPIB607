@@ -1261,7 +1261,7 @@ knitr::kable(as.data.frame(rbind(
 # DALITE
 
 
-1. [Q1 (due September 12, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf) --  [solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf)
+1. [Q1 (due September 12, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf) <!--   [solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf)-->
 
 
 # Terms and Concepts
