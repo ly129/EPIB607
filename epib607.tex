@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-09-07}
+    \date{2018-09-12}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -317,7 +317,35 @@
 
 %\frontmatter % turns off chapter numbering and uses roman numerals for page numbers;
 % https://tex.stackexchange.com/questions/20538/what-is-the-right-order-when-using-frontmatter-tableofcontents-mainmatter
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -394,7 +422,7 @@ will appear in grey font prefixed by \texttt{\#\textgreater{}}. For
 example, the output of the above code segment would look like so:
 
 \begin{verbatim}
-#> [1] 2
+[1] 2
 \end{verbatim}
 
 \section{Rendering Mathematical
@@ -448,8 +476,9 @@ text:
 \caption{}
 \end{figure}
 
-The version of the book you are reading now was built on 2018-09-07 and
-was built locally.
+The version of the book you are reading now was built on 2018-09-12 and
+was built on
+\href{https://travis-ci.org/sahirbhatnagar/MATH697}{Travis}.
 
 \section{About the authors}\label{about-the-authors}
 
@@ -743,27 +772,480 @@ course must be submitted to a GitHub repository.\strut
 
 \chapter{Schedule}\label{schedule}
 
-\begin{tabular}{ll}
-\toprule
-Date & Agenda\\
-\midrule
-Thurs. Sept 6 & [1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ\_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)\\
- & [2. Course Website](https://sahirbhatnagar.com/EPIB607/)\\
- & [3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html\#teaching-strategy)\\
- & [4. Video: What is Statistics?](https://www.learner.org/courses/againstallodds/unitpages/unit01.html)\\
- & [5. Introduction to DALITE](https://mydalite.org/en/live/signup/form/NTc4)\\
-\addlinespace
- & [6. Review of A1 and DALITE Q1](https://sahirbhatnagar.com/EPIB607/assignments.html)\\
- & [7. Live Poll](http://etc.ch/tfZA)\\
- & [8. Terms and Concepts group exercise](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)\\
----- & ----\\
-Mon. Sept 10 & [1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212\&source=article\&c=12\&cid=2\#tab:homeTab:crumb:8:artId:1212:src:article)\\
-\addlinespace
- & [2. Terms and Concepts Review](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)\\
- & [3. Live Poll Review](http://etc.ch/tfZA)\\
- & [4. R Markdown Presentation](https://prezi.com/dvmgx17e\_was/reproducible/?utm\_campaign=share\&utm\_medium=copy)\\
-\bottomrule
+\section{Week 1}\label{week-1}
+
+\subsection{Thursday September 6}\label{thursday-september-6}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+[1. Introduction to EPIB607](https://docs.google.com/presentation/d/15c0YIS2KJXFzTKgFfQ\_xDjTAcvPyQb8JhSLGvsEHJ6o/edit?usp=sharing)\\
+\hline
+[2. Course Website](https://sahirbhatnagar.com/EPIB607/)\\
+\hline
+[3. Teaching Philosophy](https://sahirbhatnagar.com/EPIB607/course-information.html\#teaching-strategy)\\
+\hline
+[4. Video: What is Statistics?](https://www.learner.org/courses/againstallodds/unitpages/unit01.html)\\
+\hline
+[5. Introduction to DALITE](https://mydalite.org/en/live/signup/form/NTc4)\\
+\hline
+[6. Review of A1 and DALITE Q1](https://sahirbhatnagar.com/EPIB607/assignments.html)\\
+\hline
+[7. Live Poll](http://etc.ch/tfZA)\\
+\hline
+[8. Terms and Concepts group exercise](https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html)\\
+\hline
 \end{tabular}
+\end{table}
+
+\section{Week 2}\label{week-2}
+
+\subsection{Monday September 10}\label{monday-september-10}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+[1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212\&source=article\&c=12\&cid=2\#tab:homeTab:crumb:8:artId:1212:src:article)\\
+\hline
+[2.1 Data graphics Slides](https://docs.google.com/presentation/d/1wXgcTzcRKl\_leGRfNZjWWPkjwJSTlZSXBCl-fFuLEaE/edit?usp=sharing)\\
+\hline
+[2.2 Data graphics exercise](https://sahirbhatnagar.com/EPIB607/data-graphics.html)\\
+\hline
+[3. Introduction to the `mosaic` package](https://cran.r-project.org/package=mosaic)\\
+\hline
+[4. R Markdown Presentation](https://prezi.com/dvmgx17e\_was/reproducible/?utm\_campaign=share\&utm\_medium=copy)\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Wednesday September 12}\label{wednesday-september-12}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+[1. DALITE Q1 - Histograms, Medians and Means due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001\_hist\_mean/001-hist-mean.pdf)\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday September 13}\label{thursday-september-13}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+1. Histograms, Medians and Means\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 3}\label{week-3}
+
+\subsection{Monday September 17}\label{monday-september-17}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+1. Boxplots and Standard Deviation\\
+\hline
+2. Parameters and Statistics\\
+\hline
+3. Sampling Distributions and Central Limit Theorem\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday September 20}\label{thursday-september-20}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+[Assignment 1 - Setting up the computing
+environment due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf)\\
+\hline
+1. Bootstrap\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday September 21}\label{friday-september-21}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 2 - Histograms, Medians, Means, Boxplots and Standard Deviation due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 4}\label{week-4}
+
+\subsection{Monday September 24}\label{monday-september-24}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday September 27}\label{thursday-september-27}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+1. The Bootstrap\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday September 28}\label{friday-september-28}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 3 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 5}\label{week-5}
+
+\subsection{Monday October 1}\label{monday-october-1}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday October 4}\label{thursday-october-4}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday October 5}\label{friday-october-5}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 4 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 6}\label{week-6}
+
+\subsection{Monday October 8}\label{monday-october-8}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Thanksgiving. No class.\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday October 11}\label{thursday-october-11}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday October 12}\label{friday-october-12}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 5 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 7}\label{week-7}
+
+\subsection{Monday October 15}\label{monday-october-15}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday October 18}\label{thursday-october-18}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday October 19}\label{friday-october-19}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 6 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 8}\label{week-8}
+
+\subsection{Monday October 22}\label{monday-october-22}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday October 25}\label{thursday-october-25}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 9}\label{week-9}
+
+\subsection{Monday October 29}\label{monday-october-29}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Midterm\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday November 1}\label{thursday-november-1}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday November 2}\label{friday-november-2}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 7 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 10}\label{week-10}
+
+\subsection{Monday November 5}\label{monday-november-5}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday November 8}\label{thursday-november-8}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday November 9}\label{friday-november-9}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 8 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 11}\label{week-11}
+
+\subsection{Monday November 12}\label{monday-november-12}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday November 15}\label{thursday-november-15}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday November 16}\label{friday-november-16}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 9 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 12}\label{week-12}
+
+\subsection{Monday November 19}\label{monday-november-19}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday November 22}\label{thursday-november-22}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday November 23}\label{friday-november-23}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 10 due by 11:59pm\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 13}\label{week-13}
+
+\subsection{Monday November 26}\label{monday-november-26}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Thursday November 29}\label{thursday-november-29}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Week 14}\label{week-14}
+
+\subsection{Monday December 3}\label{monday-december-3}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Tuesday December 4}\label{tuesday-december-4}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Final Exam (Tentative).\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday December 7}\label{friday-december-7}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Group project due by 11:59pm.\\
+\hline
+\end{tabular}
+\end{table}
 
 \chapter{Slides}\label{slides}
 
@@ -777,12 +1259,24 @@ Mon. Sept 10 & [1. McGill VPN](http://kb.mcgill.ca/kb/?ArticleId=1212\&source=ar
 
 \chapter{Assignments}\label{assignments}
 
-\begin{tabular}{lll}
+\begin{tabular}{lllll}
 \toprule
-Assignment \# & Topic & Due\\
+Assignment & Topic & Template & Data & Due\\
 \midrule
-1 & [Setting up the computing
-environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & September 20, 2018\\
+1 & [Setting up the computing environment](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a1/a1-setup.pdf) & -- & -- & September 20, 2018\\
+2 & [Histograms, Means, Medians, Boxplots, Standard Deviation](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a2/a2-hist-mean-median.pdf) & [a2\_template.Rmd](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a2/a2\_template.Rmd) & [[1. 1911 Census of Dublin, Ireland]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age\_sex\_frequencies\_ireland.csv) 
+    [[2. Bone mineral loss]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv) 
+    [[3. Cancer rate 1930-2014, Males]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age-adjusted-cancer-death-rates-males-1930-2014.xlsx) 
+    [[4. Cancer rate 1930-2014, Females]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age-adjusted-cancer-death-rates-females-1930-2014.xlsx) & September 21, 2018\\
+3 & Sampling Distributions and Central Limit Theorem &  &  & September 28, 2018\\
+4 & The Bootstrap &  &  & October 5, 2018\\
+5 & Confidence Intervals &  &  & October 12, 2018\\
+\addlinespace
+6 & Tests of Significance and p-values &  &  & October 19, 2018\\
+7 & One-Sample Inference &  &  & November 2, 2018\\
+8 & Two-Sample Inference &  &  & November 9, 2018\\
+9 & Regression &  &  & November 16, 2018\\
+10 & Nonparametric Statistics &  &  & November 23, 2018\\
 \bottomrule
 \end{tabular}
 
@@ -853,118 +1347,344 @@ experimental study among adolescents and young adults in Canada}
 
 \part{Part I}\label{part-part-i}
 
-\chapter{Icebreakers}\label{intro}
+\chapter{Data Graphics}\label{data-graphics}
 
-\section{The Lady Tasting Tea}\label{the-lady-tasting-tea}
+Data graphics can be understood in terms of five basic elements
+\citep{baumer2017mdsr}:
 
-This example is adapted from \emph{Start Teaching with R}
-\citep{startwithR} and
-\href{http://www.medicine.mcgill.ca/epidemiology/hanley/med2/unit8b_epi_nov21.pdf}{JH
-notes unit 8\_B}.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Aesthetics or visual cues
+\item
+  Coordinate system
+\item
+  Scales
+\item
+  Context
+\item
+  Facets and layers
+\end{enumerate}
 
-There is a famous story about a lady who claimed that tea with milk
-tasted different depending on whether the milk was added to the tea or
-the tea added to the milk. The story is famous because of the setting in
-which she made this claim. She was attending a party in Cambridge,
-England, in the 1920s. Also in attendance were a number of university
-dons and their wives. The scientists in at- tendance scoffed at the
-woman and her claim. What, after all, could be the difference? All the
-scientists but one, that is. Rather than simply dismiss the woman's
-claim, he proposed that they decide how one should test the claim. The
-tenor of the conversa- tion changed at this suggestion, and the
-scientists began to discuss how the claim should be tested. Within a few
-minutes cups of tea with milk had been prepared and presented to the
-woman for tasting. At this point, you may be wondering who the innova-
-tive scientist was and what the results of the experiment were. The
-scientist was R. A. Fisher, who first described
+\section{Aesthetics or Visual cues}\label{aesthetics-or-visual-cues}
+
+Aesthetics or visual cues are graphical elements that draw the eye to
+what you want your audience to focus upon. They are the fundamental
+building blocks of data graphics, and the choice of which visual cues to
+use to represent which quantities is the central question for the data
+graphic composer. Nathan Yau identifies nine distinct visual cues, for
+which we also list whether that cue is used to encode a numerical or
+categorical quantity:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Position (numerical): where in relation to other things?
+\item
+  Length (numerical): how big (in one dimension)?
+\item
+  Angle (numerical): how wide? parallel to something else?
+\item
+  Direction (numerical) at what slope? In a time series, going up or
+  down?
+\item
+  Shape (categorical) belonging to which group?
+\item
+  Area (numerical) how big (in two dimensions)?
+\item
+  Volume (numerical) how big (in three dimensions)?
+\item
+  Shade (either) to what extent? how severely?
+\item
+  Color (either) to what extent? how severely? Beware of red/green color
+  blindness
+\end{enumerate}
+
+
+
+
+
+
 
 \begin{figure}
 \centering
-\includegraphics{images/teacups.jpg}
+\includegraphics{images/cues.jpg}
 \caption{}
 \end{figure}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(mosaic)}
-\KeywordTok{rflip}\NormalTok{()}
-\CommentTok{#> }
-\CommentTok{#> Flipping 1 coin [ Prob(Heads) = 0.5 ] ...}
-\CommentTok{#> }
-\CommentTok{#> H}
-\CommentTok{#> }
-\CommentTok{#> Number of Heads: 1 [Proportion Heads: 1]}
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\DataTypeTok{path =} \StringTok{"images/cues.jpg"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{images/cues} 
+
+}
+
+\caption{Commonly used aesthetics in data visualization:
+position, shape, size, color, line width, line type. Some of these
+aesthetics can represent both continuous and discrete data (position,
+size, line width, color) while others can only represent discrete data
+(shape, line type).}\label{fig:unnamed-chunk-54}
+\end{figure}
+
+\section{Coordinate systems}\label{coordinate-systems}
+
+How are the data points organized? While any number of coordinate
+systems are possible, three are most common.
+
+\subsection{Cartesian}\label{cartesian}
+
+This is the familiar (\(x, y\))-rectangular coordinate system with two
+perpendicular axes.
+
+\subsection{Polar}\label{polar}
+
+The radial analog of the Cartesian system with points identified by
+their radius \(\rho\) and angle \(\theta\).
+
+\subsection{Geographic}\label{geographic}
+
+This is the increasingly important system in which we have locations on
+the curved surface of the Earth, but we are trying to represent these
+locations in a flat two-dimensional plane.
+
+\section{Scale}\label{scale}
+
+Scales translate values into visual cues. The choice of scale is often
+crucial. The central question is how does distance in the data graphic
+translate into meaningful differences in quantity? Each coordinate axis
+can have its own scale, for which we have three different choices:
+
+\subsection{Numeric}\label{numeric}
+
+A numeric quantity is most commonly set on a linear, logarithmic, or
+percent- age scale. Note that a logarithmic scale does not have the
+property that, say, a one-centimeter difference in position corresponds
+to an equal difference in quantity anywhere on the scale.
+
+\subsection{Categorical}\label{categorical}
+
+A categorical variable may have no ordering (e.g., Democrat, Republican,
+or Independent), or it may be ordinal (e.g., never, former, or current
+smoker).
+
+\subsection{Time}\label{time}
+
+Time is a numeric quantity that has some special properties. First,
+because of the calendar, it can be demarcated by a series of different
+units (e.g., year, month, day, etc.). Second, it can be considered
+periodically (or cyclically) as a ``wrap-around'' scale. Time is also so
+commonly used and misused that it warrants careful consider- ation.
+
+\section{Context}\label{context}
+
+The purpose of data graphics is to help the viewer make meaningful
+comparisons, but a bad data graphic can do just the opposite: It can
+instead focus the viewer's attention on meaningless artifacts, or ignore
+crucial pieces of relevant but external knowledge. Context can be added
+to data graphics in the form of titles or subtitles that explain what is
+being shown, axis labels that make it clear how units and scale are
+depicted, or reference points or lines that contribute relevant external
+information. While one should avoid cluttering up a data graphic with
+excessive annotations, it is necessary to provide proper context.
+
+\section{Facets and layers}\label{facets-and-layers}
+
+One of the fundamental challenges of creating data graphics is
+condensing multivariate information into a two-dimensional image. While
+three-dimensional images are occasionally useful, they are often more
+confusing than anything else. Instead, here are three common ways of
+incorporating more variables into a two-dimensional data graphic.
+
+\subsection{Facets}\label{facets}
+
+A single data graphic can be composed of several small multiples of the
+same basic plot, with one (discrete) variable changing in each of the
+small sub-images.
+
+\subsection{Layers}\label{layers}
+
+It is sometimes appropriate to draw a new layer on top of an existing
+data graphic. This new layer can provide context or comparison, but
+there is a limit to how many layers humans can reliably parse.
+
+\subsection{Animation}\label{animation}
+
+If time is the additional variable, then an animation can sometimes
+effectively convey changes in that variable. Of course, this doesn't
+work on the printed page, and makes it impossible for the user to see
+all the data at once.
+
+\section{Color}\label{color}
+
+Approximately 8 percent of the population---most of whom are men---have
+some form of color blindness. Most commonly, this renders them incapable
+of seeing colors accurately, most notably of distinguishing between red
+and green. Compounding the problem, many of these people do not know
+that they are color-blind. Thus, for professional graphics it is worth
+thinking carefully about which colors to use. The NFL famously failed to
+account for this in a 2015 game in which the Buffalo Bills wore all-red
+jerseys and the New York Jets wore all-green, leaving colorblind fans
+unable to distinguish one team from the other!
+
+Thankfully, we have been freed from the burden of having to create such
+intelligent palettes by the research of Cynthia Brewer, creator of the
+\href{http://colorbrewer2.org/learnmore/schemes_full.html}{ColorBrewer
+website} (and
+\href{https://cran.r-project.org/web/packages/RColorBrewer/index.html}{R
+package}). Brewer has created colorblind-safe palettes in a variety of
+hues for three different types of numeric data in a single variable:
+
+\subsection{Sequential}\label{sequential}
+
+The ordering of the data has only one direction. Positive integers are
+sequential because they can only go up: they can't go past 0. (Thus, if
+0 is encoded as white, then any darker shade of gray indicates a larger
+number.)
+
+\subsection{Diverging}\label{diverging}
+
+The ordering of the data has two directions. In an election forecast, we
+com- monly see states colored based on how they are expected to vote for
+the president. Since red is associated with Republicans and blue with
+Democrats, states that are solidly red or blue are on opposite ends of
+the scale. But ``swing states'' that could go either way may appear
+purple, white, or some other neutral color that is ``between'' red and
+blue.
+
+\subsection{Qualitative}\label{qualitative}
+
+There is no ordering of the data, and we simply need color to
+differentiate different categories.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{rflip}\NormalTok{(}\DecValTok{10}\NormalTok{)}
-\CommentTok{#> }
-\CommentTok{#> Flipping 10 coins [ Prob(Heads) = 0.5 ] ...}
-\CommentTok{#> }
-\CommentTok{#> H T T T T H T T T H}
-\CommentTok{#> }
-\CommentTok{#> Number of Heads: 3 [Proportion Heads: 0.3]}
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(RColorBrewer)}
+\NormalTok{RColorBrewer}\OperatorTok{::}\KeywordTok{display.brewer.all}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-55-1} \end{center}
+
+Also see the
+\href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
+R package}.
+
+\section{Examples}\label{examples}
+
+\subsection{SAT Scores}\label{sat-scores}
+
+The bar graph below displays the average score on the math portion of
+the 2010 SAT (with possible scores ranging from 200 to 800) among states
+for whom at least two-thirds of the students took the SAT.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mu =}\StringTok{ }\DecValTok{500}
-\NormalTok{sigma =}\StringTok{ }\DecValTok{100}
-\NormalTok{x =}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{500}\NormalTok{, }\DataTypeTok{mean=}\NormalTok{mu, }\DataTypeTok{sd=}\NormalTok{sigma)}
-\KeywordTok{favstats}\NormalTok{(x)}
-\CommentTok{#>  min    Q1 median    Q3   max  mean    sd   n missing}
-\CommentTok{#>  117 431.4  497.4 563.1 811.6 500.2 99.16 500       0}
-\NormalTok{meanconfint =}\StringTok{ }\ControlFlowTok{function}\NormalTok{ (x, sigma, }\DataTypeTok{level =} \FloatTok{0.95}\NormalTok{, ...) \{}
-\NormalTok{  se =}\StringTok{ }\NormalTok{sigma }\OperatorTok{/}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(}\KeywordTok{length}\NormalTok{(x))}
-\NormalTok{  mu =}\StringTok{ }\KeywordTok{mean}\NormalTok{(x)}
-\NormalTok{  z =}\StringTok{ }\KeywordTok{qnorm}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{level)}\OperatorTok{/}\DecValTok{2}\NormalTok{)}
-\NormalTok{  out =}\StringTok{ }\KeywordTok{c}\NormalTok{(mu, mu }\OperatorTok{-}\StringTok{ }\NormalTok{z }\OperatorTok{*}\StringTok{ }\NormalTok{se, mu }\OperatorTok{+}\StringTok{ }\NormalTok{z }\OperatorTok{*}\StringTok{ }\NormalTok{se)}
-  \KeywordTok{names}\NormalTok{(out) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"mean"}\NormalTok{, }\StringTok{"lower"}\NormalTok{, }\StringTok{"upper"}\NormalTok{)}
-  \KeywordTok{return}\NormalTok{(out)}
-\NormalTok{\}}
-\KeywordTok{meanconfint}\NormalTok{(x, }\DataTypeTok{sigma =}\NormalTok{ sigma)}
-\CommentTok{#>  mean lower upper }
-\CommentTok{#> 500.2 491.4 509.0}
-\NormalTok{randomx =}\StringTok{ }\KeywordTok{do}\NormalTok{(}\DecValTok{50}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{500}\NormalTok{, }\DataTypeTok{mean=}\NormalTok{mu, }\DataTypeTok{sd=}\NormalTok{sigma)}
-\NormalTok{ci =}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\KeywordTok{t}\NormalTok{(}\KeywordTok{apply}\NormalTok{(randomx, }\DecValTok{1}\NormalTok{, meanconfint, }\DataTypeTok{sigma=}\NormalTok{sigma, }\DataTypeTok{level=}\FloatTok{0.90}\NormalTok{)))}
-\KeywordTok{head}\NormalTok{(ci, }\DecValTok{3}\NormalTok{)}
-\CommentTok{#>    mean lower upper}
-\CommentTok{#> 1 493.1 485.7 500.5}
-\CommentTok{#> 2 492.8 485.5 500.2}
-\CommentTok{#> 3 502.4 495.1 509.8}
-
-\KeywordTok{xyplot}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(ci) }\OperatorTok{~}\StringTok{ }\NormalTok{mean, }\DataTypeTok{data=}\NormalTok{ci, }\DataTypeTok{xlim=}\KeywordTok{range}\NormalTok{(ci), }\DataTypeTok{xlab=}\StringTok{"SAT score"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Index"}\NormalTok{)}
-\KeywordTok{ladd}\NormalTok{(}\KeywordTok{panel.abline}\NormalTok{(}\DataTypeTok{v=}\DecValTok{500}\NormalTok{, }\DataTypeTok{col=}\StringTok{"lightgray"}\NormalTok{, }\DataTypeTok{lty=}\DecValTok{2}\NormalTok{))}
-\KeywordTok{ladd}\NormalTok{(}\KeywordTok{with}\NormalTok{(ci, }\KeywordTok{panel.arrows}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ lower, }\DataTypeTok{y0=}\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(ci), }\DataTypeTok{y1=}\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(ci), }\DataTypeTok{cex=}\FloatTok{0.5}\NormalTok{,}
-                           \DataTypeTok{x1=}\NormalTok{upper, }\DataTypeTok{code=}\DecValTok{3}\NormalTok{)))}
-
-\KeywordTok{head}\NormalTok{(}\KeywordTok{t}\NormalTok{(}\KeywordTok{apply}\NormalTok{(randomx, }\DecValTok{1}\NormalTok{, meanconfint, }\DataTypeTok{sigma=}\NormalTok{sigma, }\DataTypeTok{level=}\FloatTok{0.9}\NormalTok{)), }\DecValTok{3}\NormalTok{)}
-\CommentTok{#>       mean lower upper}
-\CommentTok{#> [1,] 493.1 485.7 500.5}
-\CommentTok{#> [2,] 492.8 485.5 500.2}
-\CommentTok{#> [3,] 502.4 495.1 509.8}
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(mdsr)}
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(mosaic)}
+\KeywordTok{gf_colh}\NormalTok{(state }\OperatorTok{~}\StringTok{ }\NormalTok{math, }\DataTypeTok{data =} \KeywordTok{subset}\NormalTok{(SAT_}\DecValTok{2010}\NormalTok{, sat_pct }\OperatorTok{>}\StringTok{ }\DecValTok{66}\NormalTok{)) }
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{epib607_files/figure-latex/unnamed-chunk-19-1} \includegraphics{epib607_files/figure-latex/unnamed-chunk-19-2} \includegraphics{epib607_files/figure-latex/unnamed-chunk-19-3} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-56-1} \end{center}
+
+This plot uses the visual cue of position to represent the math SAT
+score on the vertical axis with a linear scale. The categorical variable
+of state is arrayed on the horizontal axis. Although the states are
+ordered alphabetically, it would not be appropriate to consider the
+state variable to be ordinal, since the ordering is not meaningful in
+the context of math SAT scores. The coordinate system is Cartesian,
+although as noted previously, the horizontal coordinate is meaningless.
+Context is provided by the axis labels and title.
+
+\subsection{Swimming records}\label{swimming-records}
+
+Next, we consider a time series that shows the progression of the world
+record times in the 100-meter freestyle swimming event for men and
+women. The Figure below displays the times as a function of the year in
+which the new record was set. At some level this is simply a scatterplot
+that uses position on both the vertical and horizontal axes to indicate
+swimming time and chronological time, respectively, in a Cartesian
+plane. The numeric scale on the vertical axis is linear, in units of
+seconds, while the scale on the horizontal axis is also linear, measured
+in years. But there is more going on here. Color is being used as a
+visual cue to distinguish the categorical variable sex. Furthermore,
+since the points are connected by lines, direction is being used to
+indicate the progression of the record times. (In this case, the records
+can only get faster, so the direction is always down.) One might even
+argue that angle is being used to compare the descent of the world
+records across time and/or gender. In fact, in this case shape is also
+being used to distinguish sex.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{T <-}\StringTok{ }\KeywordTok{chisq}\NormalTok{(substance }\OperatorTok{~}\StringTok{ }\KeywordTok{shuffle}\NormalTok{(sex), }\DataTypeTok{data =}\NormalTok{ HELPrct); T}
-\CommentTok{#> X.squared }
-\CommentTok{#>   0.07796}
-\NormalTok{Substance.Null <-}\StringTok{ }\KeywordTok{do}\NormalTok{(}\DecValTok{999}\NormalTok{) }\OperatorTok{*}\StringTok{ }\KeywordTok{chisq}\NormalTok{(substance }\OperatorTok{~}\StringTok{ }\KeywordTok{shuffle}\NormalTok{(sex), }\DataTypeTok{data =}\NormalTok{ HELPrct)}
-\KeywordTok{histogram}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{X.squared, }\DataTypeTok{data =}\NormalTok{ Substance.Null, }\DataTypeTok{v =}\NormalTok{ T, }\DataTypeTok{width =} \FloatTok{0.25}\NormalTok{)}
-\KeywordTok{prop1}\NormalTok{( }\OperatorTok{~}\NormalTok{(X.squared }\OperatorTok{>=}\StringTok{ }\NormalTok{T), }\DataTypeTok{data =}\NormalTok{ Substance.Null)}
-\CommentTok{#> prop_TRUE }
-\CommentTok{#>     0.956}
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(mosaicData)}
+\KeywordTok{gf_point}\NormalTok{(time }\OperatorTok{~}\StringTok{ }\NormalTok{year , }\DataTypeTok{data =}\NormalTok{ SwimRecords, }\DataTypeTok{color =} \OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{shape =} \OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{size =} \DecValTok{3}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{gf_line}\NormalTok{(time }\OperatorTok{~}\StringTok{ }\NormalTok{year , }\DataTypeTok{data =}\NormalTok{ SwimRecords, }\DataTypeTok{color =} \OperatorTok{~}\StringTok{ }\NormalTok{sex)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{epib607_files/figure-latex/unnamed-chunk-20-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-57-1} \end{center}
+
+\subsection{HELP study}\label{help-study}
+
+The HELP study was a clinical trial for adult inpatients recruited from
+a detoxification unit. Patients with no primary care physician were
+randomized to receive a multidisciplinary assessment and a brief
+motivational intervention or usual care, with the goal of linking them
+to primary medical care.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_boxplot}\NormalTok{(avg_drinks }\OperatorTok{~}\StringTok{ }\NormalTok{racegrp }\OperatorTok{|}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ HELPrct)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-58-1} \end{center}
+
+\section{Exercises}\label{exercises}
+
+\subsection{Exercise 1}\label{exercise-1}
+
+For this exercise, refer to the article assigned to your team in the
+\href{https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html}{Terms
+and Concepts} exercise.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Identify the aesthetics and scale(s). If your article did not contain
+  a graphic, pick a Table in your paper and think about what graphic
+  could have been used instead. See
+  \href{https://serialmentor.com/dataviz/directory-of-visualizations.html}{Fundamentals
+  of Data Visualization} and
+  \href{http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html\#1.\%20Correlation}{Top
+  50 ggplot2 Visualizations} for examples of graphics.
+\item
+  How many variables are depicted in the graphic? Explicitly link each
+  variable to an aesthetic that you listed above.
+\item
+  Critique this data graphic using the taxonomy described in this
+  chapter.
+\end{enumerate}
+
+\subsection{Exercise 2}\label{exercise-2}
+
+Vox published a list of
+\href{http://www.vox.com/a/explain-food-america}{Charts that explain
+food in America}. There are 40 maps, charts, and graphs that show where
+our food and drink comes from and how we eat it.
+
+Pick your best and least favorite graphic. One representative from each
+group will present in 1 minute or less their rationale for the groups
+choices.
 
 \appendix
 
@@ -1016,7 +1736,7 @@ vectorized. Here are some common examples:
 \CommentTok{#> [1] 55}
 
 \CommentTok{# calculate sums of each column}
-\KeywordTok{colSums}\NormalTok{(iris[, }\DecValTok{-5}\NormalTok{])}
+\KeywordTok{colSums}\NormalTok{(iris[, }\OperatorTok{-}\DecValTok{5}\NormalTok{])}
 \CommentTok{#> Sepal.Length  Sepal.Width Petal.Length  Petal.Width }
 \CommentTok{#>        876.5        458.6        563.7        179.9}
 \end{Highlighting}
@@ -1190,7 +1910,7 @@ you want, and then manually change the arguments for \texttt{mean} and
 \begin{Highlighting}[]
 \NormalTok{v1 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{5}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{)}
 \NormalTok{v2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{10}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{5}\NormalTok{)}
-\NormalTok{v3 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{-3}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{10}\NormalTok{)}
+\NormalTok{v3 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean =} \OperatorTok{-}\DecValTok{3}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{10}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
