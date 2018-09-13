@@ -645,17 +645,34 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c(c("[1. Data graphics exercise 2 presentation](https://sahirbhatnagar.com/EPIB607/data-graphics.html)"),
+c("[1. Data graphics exercise 2 presentation](http://www.vox.com/a/explain-food-america)"),
   c("[2. Hurricane Florence graphic](https://twitter.com/EricHolthaus/status/1040007537234530304)"),
   c("[3. Review DALITE Q1 Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf)"),
   c("[4. Introduction to the `mosaic` and `ggformula` package](https://cran.r-project.org/package=mosaic)"),
-  c("[5. R Markdown Presentation](https://prezi.com/dvmgx17e_was/reproducible/?utm_campaign=share&utm_medium=copy)"))
+  c("[5. R Markdown Presentation](https://prezi.com/dvmgx17e_was/reproducible/?utm_campaign=share&utm_medium=copy)")
 ))
 
 df %>% kable(col.names = NULL) %>% 
   kable_styling(bootstrap_options = c("striped", "hover"))
   
 ```
+
+<br>
+
+```{r, eval=FALSE, echo=TRUE}
+# the pacman package makes it easy to load and install packages
+install.packages("pacman")
+
+# pacman will install and load the library
+pacman::p_load(mosaic, learnr)
+
+# this will launch the intro tutorial in your web browser
+learnr::run_tutorial("introduction", package = "ggformula")
+
+# this will launch the refining tutorial in your web browser
+learnr::run_tutorial("refining", package = "ggformula")
+```
+
 
 
 <br>
@@ -1262,6 +1279,8 @@ knitr::kable(as.data.frame(rbind(
 
 
 1. [Q1 (due September 12, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf)  --  [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf)
+2. [Q2 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves.pdf)
+3. [Q3 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT.pdf)
 
 
 # Terms and Concepts

@@ -21,7 +21,7 @@ doi: "https://sahirbhatnagar.com/EPIB607/"
 
 # Abstract
 abstract: |
-  This DALITE quiz will cover more descriptives such as boxplots, standard deviation and normal density curves. 
+  This DALITE quiz will cover more descriptives such as boxplots, standard deviation, and introduce you to normal density curves. 
 
 # Optional: Acknowledgements
 #acknowledgements: |
@@ -79,21 +79,14 @@ output: pinp::pinp
 vignette: >
   %\VignetteIndexEntry{YourPackage-vignetteentry}
   %\VignetteKeywords{YourPackage, r, anotherkeyword}
-  %\VignettePackage{Due Sepetember 12, 2018}
+  %\VignettePackage{Due Sepetember 19, 2018}
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
 # Marking {-}
 
-Completion of this DALITE exercise will be availble to us automatically through the DALITE website. Therefore **you do not need to hand anything in**. Marks will be based on the number of correct answers. For each question you will receive 0.5 marks for getting the correct answer on the first attempt and an additional 0.5 marks if you stick with the right answer or switch to the correct answer after seeing someone else's rationale. 
+Completion of this DALITE exercise will be availble to us automatically through the DALITE website. Therefore **you do not need to hand anything in**. Marks will be based on the number of correct answers. For each question you will receive 0.5 marks for getting the correct answer on the first attempt and an additional 0.5 marks if you stick with the right answer or switch to the correct answer after seeing someone else's rationale. Recall that access to your assignments is managed through tokens sent to your e-mail address. You will be sent a new link everytime a new assignment has been posted.
 
-# Sign up for DALITE 
-
-**This step only needs to be completed once for the whole semester**:  
-
-1. You can join the EPIB607 group by accessing the unique link: [https://mydalite.org/en/live/signup/form/NTc4](https://mydalite.org/en/live/signup/form/NTc4)
-2. Upon accessing the link, you will be prompted to enter an e-mail address. I recommend using the same e-mail address as your DataCamp account. 
-3. You never need to remember a username or password to access the DALITE platform; access to your assignments is managed through tokens sent to your e-mail address. You will be sent a new link everytime a new assignment has been posted. 
 
 # Boxplots
 
@@ -112,12 +105,13 @@ useful for comparing several distributions.
 
 1. [Against All Odds Unit 5](https://www.learner.org/courses/againstallodds/unitpages/unit05.html)  
 
-\vspace*{0.25cm}
+<!--\vspace*{0.25cm}-->
 
 ## Required Readings
 
 1. [Against All Odds Unit 5, pages 1-5](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit03.pdf#page=1)
 
+\vspace*{0.25cm}
 
 # Standard Deviation
 
@@ -126,9 +120,9 @@ useful for comparing several distributions.
 1. Know that the sample standard deviation, $s$, is the measure of spread most commonly used when the mean, $\bar{x}$, is used as the measure of center.
 2. Know the formula for the standard deviation $s$ 
 3. Know the basic properties of the standard deviation:
-  a) $s \geq 0$, and only when all data values are identical can $s = 0$
-  b) $s$ increases as the spread about $x$ increases.
-  c) $s$, like $\bar{x}$, is strongly influenced by outliers.
+    a) $s \geq 0$, and only when all data values are identical can $s = 0$
+    b) $s$ increases as the spread about $x$ increases.
+    c) $s$, like $\bar{x}$, is strongly influenced by outliers.
 4. Know that the standard deviation is most useful for symmetric distributions and, in
 particular, for normal distributions.
 5. Know that adding the same constant $a$ to all the observations increases the value of $\bar{x}$ by $a$. However, adding the same constant $a$ to all the observations does not change the value
@@ -152,6 +146,30 @@ a factor of $k$.
 
 
 
+# Normal Curves
+
+## Learning Objectives
+
+1. Understand that the overall shape of a distribution of a large number of observations can be
+summarized by a smooth curve called a density curve.
+2. Know that an area under a density curve over an interval represents the proportion of data
+that falls in that interval.
+3. Recognize the characteristic bell-shapes of normal curves. Locate the mean and standard
+deviation on a normal density curve by eye.
+4. Understand how changing the mean and standard deviation affects a normal density curve.
+    - Know that changing the mean of a normal density curve shifts the curve along the horizontal axis without changing its shape.
+    - Know that increasing the standard deviation produces a flatter and wider bell-shaped curve and that decreasing the standard deviation produces a taller and narrower curve. 
+
+## Videos
+
+1. [Against All Odds Unit 7](https://www.learner.org/courses/againstallodds/unitpages/unit07.html)
+
+
+## Required Readings
+
+\begin{enumerate}
+\item \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit07.pdf#page=1}{Against All Odds Unit 7, pages 1-9}
+\end{enumerate}
 
 
 <!-- 
