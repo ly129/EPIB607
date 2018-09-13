@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536788126826.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "992CCCA9",
+    "lastKnownWriteTime" : 1536788934,
+    "last_content_update" : 1536788934642,
+    "path" : "~/Dropbox/consulting/garfinkle/boot_script.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "22,12",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 21,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

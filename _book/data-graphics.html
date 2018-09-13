@@ -214,7 +214,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="10.2.2" data-path="data-graphics.html"><a href="data-graphics.html#polar"><i class="fa fa-check"></i><b>10.2.2</b> Polar</a></li>
 <li class="chapter" data-level="10.2.3" data-path="data-graphics.html"><a href="data-graphics.html#geographic"><i class="fa fa-check"></i><b>10.2.3</b> Geographic</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="data-graphics.html"><a href="data-graphics.html#scale"><i class="fa fa-check"></i><b>10.3</b> Scale</a></li>
+<li class="chapter" data-level="10.3" data-path="data-graphics.html"><a href="data-graphics.html#scales"><i class="fa fa-check"></i><b>10.3</b> Scales</a></li>
 <li class="chapter" data-level="10.4" data-path="data-graphics.html"><a href="data-graphics.html#context"><i class="fa fa-check"></i><b>10.4</b> Context</a></li>
 <li class="chapter" data-level="10.5" data-path="data-graphics.html"><a href="data-graphics.html#facets-and-layers"><i class="fa fa-check"></i><b>10.5</b> Facets and layers</a><ul>
 <li class="chapter" data-level="10.5.1" data-path="data-graphics.html"><a href="data-graphics.html#facets"><i class="fa fa-check"></i><b>10.5.1</b> Facets</a></li>
@@ -227,8 +227,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="10.6.3" data-path="data-graphics.html"><a href="data-graphics.html#qualitative"><i class="fa fa-check"></i><b>10.6.3</b> Qualitative</a></li>
 </ul></li>
 <li class="chapter" data-level="10.7" data-path="data-graphics.html"><a href="data-graphics.html#examples"><i class="fa fa-check"></i><b>10.7</b> Examples</a><ul>
-<li class="chapter" data-level="10.7.1" data-path="data-graphics.html"><a href="data-graphics.html#sat-scores"><i class="fa fa-check"></i><b>10.7.1</b> SAT Scores</a></li>
-<li class="chapter" data-level="10.7.2" data-path="data-graphics.html"><a href="data-graphics.html#swimming-records"><i class="fa fa-check"></i><b>10.7.2</b> Swimming records</a></li>
+<li class="chapter" data-level="10.7.1" data-path="data-graphics.html"><a href="data-graphics.html#hurricane-florence"><i class="fa fa-check"></i><b>10.7.1</b> Hurricane Florence</a></li>
+<li class="chapter" data-level="10.7.2" data-path="data-graphics.html"><a href="data-graphics.html#sat-scores"><i class="fa fa-check"></i><b>10.7.2</b> SAT Scores</a></li>
+<li class="chapter" data-level="10.7.3" data-path="data-graphics.html"><a href="data-graphics.html#swimming-records"><i class="fa fa-check"></i><b>10.7.3</b> Swimming records</a></li>
 </ul></li>
 <li class="chapter" data-level="10.8" data-path="data-graphics.html"><a href="data-graphics.html#exercises"><i class="fa fa-check"></i><b>10.8</b> Exercises</a><ul>
 <li class="chapter" data-level="10.8.1" data-path="data-graphics.html"><a href="data-graphics.html#exercise-1"><i class="fa fa-check"></i><b>10.8.1</b> Exercise 1</a></li>
@@ -324,8 +325,8 @@ Figure 10.2: Commonly used coordinate systems. Chapter 3 <span class="citation">
 </div>
 </div>
 </div>
-<div id="scale" class="section level2">
-<h2><span class="header-section-number">10.3</span> Scale</h2>
+<div id="scales" class="section level2">
+<h2><span class="header-section-number">10.3</span> Scales</h2>
 <p>Scales link data values to aesthetics <span class="citation">(Wilke <a href="#ref-wilke">2018</a>)</span>. To map data values onto aesthetics, we need to specify which data values correspond to which specific aesthetics values. For example, if our graphic has an x axis, then we need to specify which data values fall onto particular positions along this axis. Similarly, we may need to specify which data values are represented by particular shapes or colors. This mapping between data values and aesthetics values is created via scales. A scale defines a unique mapping between data and aesthetics. Importantly, a scale must be one-to-one, such that for each specific data value there is exactly one aesthetics value and vice versa. If a scale isn’t one-to-one, then the data visualization becomes ambiguous.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-56"></span>
@@ -387,8 +388,32 @@ RColorBrewer<span class="op">::</span><span class="kw">display.brewer.all</span>
 </div>
 <div id="examples" class="section level2">
 <h2><span class="header-section-number">10.7</span> Examples</h2>
+<div id="hurricane-florence" class="section level3">
+<h3><span class="header-section-number">10.7.1</span> Hurricane Florence</h3>
+<p>For Hurricane Florence, <span class="citation">Reed et al. (<a href="#ref-ncar">2018</a>)</span> present the first advance forecasted attribution statements about the human influence on a tropical cyclone. In Figure <a href="data-graphics.html#fig:ncar">10.5</a> they present a side-by-side comparison of the rainfall based on two forecasts:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Standard Forecast</strong>: With observed initial atmospheric conditions and sea surface temperatures (SST) adapted from NOAA’s operational Global Forecast System model. This is the forecast of the actual Hurricane Florence.</li>
+<li><strong>Modified Forecast</strong>: With observed initial conditions modified to remove the estimated climate change signal from the temperature, moisture, and SST fields to represent a world without climate change. This is a counterfactual forecast of Hurricane Florence if it were to occur in a world without human induced global warming.</li>
+</ol>
+
+<div class="figure" style="text-align: center"><span id="fig:ncar"></span>
+<img src="images/ncar_florence.jpg" alt="Left: is the forecast of the actual Hurricane Florence. Right: counterfactual forecast of Hurricane Florence if it were to occur in a world without human induced global warming (Reed et al. 2018)." width="576" />
+<p class="caption">
+Figure 10.5: Left: is the forecast of the actual Hurricane Florence. Right: counterfactual forecast of Hurricane Florence if it were to occur in a world without human induced global warming <span class="citation">(Reed et al. <a href="#ref-ncar">2018</a>)</span>.
+</p>
+</div>
+<p>The image on the right (modified forecast) looks worse, but the situation described on the left (standard forecast) is actually worse. They should have instead used perceptually uniform sequential colormaps as shown in Figure <a href="data-graphics.html#fig:viridis">10.6</a></p>
+
+<div class="figure" style="text-align: center"><span id="fig:viridis"></span>
+<img src="images/viridis.png" alt="source: https://matplotlib.org/users/colormaps.html" width="350" />
+<p class="caption">
+Figure 10.6: source: <a href="https://matplotlib.org/users/colormaps.html" class="uri">https://matplotlib.org/users/colormaps.html</a>
+</p>
+</div>
+<p>These palettes are available in <code>R</code> through the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis R package</a>.</p>
+</div>
 <div id="sat-scores" class="section level3">
-<h3><span class="header-section-number">10.7.1</span> SAT Scores</h3>
+<h3><span class="header-section-number">10.7.2</span> SAT Scores</h3>
 <p>The bar graph below displays the average score on the math portion of the 2010 SAT (with possible scores ranging from 200 to 800) among states for whom at least two-thirds of the students took the SAT.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mdsr)
 pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
@@ -397,7 +422,7 @@ pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
 <p>This plot uses the visual cue of position to represent the math SAT score on the vertical axis with. The categorical variable of state is arrayed on the horizontal axis. It would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title.</p>
 </div>
 <div id="swimming-records" class="section level3">
-<h3><span class="header-section-number">10.7.2</span> Swimming records</h3>
+<h3><span class="header-section-number">10.7.3</span> Swimming records</h3>
 <p>Next, we consider a time series that shows the progression of the world record times in the 100-meter freestyle swimming event for men and women. The Figure below displays the times as a function of the year in which the new record was set. At some level this is simply a scatterplot that uses position on both the vertical and horizontal axes to indicate swimming time and chronological time, respectively, in a Cartesian plane. The numeric scale on the vertical axis is linear, in units of seconds, while the scale on the horizontal axis is also linear, measured in years. But there is more going on here. Color is being used as a visual cue to distinguish the categorical variable sex. Furthermore, since the points are connected by lines, direction is being used to indicate the progression of the record times. (In this case, the records can only get faster, so the direction is always down.) One might even argue that angle is being used to compare the descent of the world records across time and/or gender. In fact, in this case shape is also being used to distinguish sex.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mosaicData)
 <span class="kw">gf_point</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">shape =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">size =</span> <span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span>
@@ -517,6 +542,9 @@ prop1( ~(X.squared >= T), data = Substance.Null)
 </div>
 <div id="ref-wilke">
 <p>Wilke, Claus O. 2018. <em>Fundamentals of Data Visualization</em>. <a href="https://serialmentor.com/dataviz/" class="uri">https://serialmentor.com/dataviz/</a>.</p>
+</div>
+<div id="ref-ncar">
+<p>Reed, Kevin A., Alyssa M. Stansfield, Michael F. Wehner, Lawrence Berkeley, and Colin M. Zarzycki. 2018. “The Human Influence on Hurricane Florence.” <a href="https://you.stonybrook.edu/kareed/2018/09/12/estimating-the-potential-impact-of-climate-change-on-hurricane-florence/" class="uri">https://you.stonybrook.edu/kareed/2018/09/12/estimating-the-potential-impact-of-climate-change-on-hurricane-florence/</a>.</p>
 </div>
 </div>
             </section>

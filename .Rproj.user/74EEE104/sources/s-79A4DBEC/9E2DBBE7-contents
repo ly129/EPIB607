@@ -1,0 +1,495 @@
+rm(list=ls())
+source("bin/functions.R")
+source("bin/packages.R")
+source("bin/data.R")
+options(digits = 4, scipen = 2)
+## ---- summary-datadist ----
+label(df$preopsepsis) <- 'Preoperative Sepsis'
+label(df$fsteroid) <- 'Immunosuppressed'
+label(df$prcreat) <- 'Preoperative Creatinine (mg/dL)'
+label(df$prplate) <- 'Preoperative Platelets (x10^9/L)'
+label(df$numage) <- 'Age at operation (years)'
+
+label(df$preopsepsis) <- 'Preoperative Sepsis'
+label(df$fsteroid) <- 'Immunosuppressed'
+label(df$prcreatf) <- 'Preoperative Creatinine (mg/dL)'
+label(df$prplatef) <- 'Preoperative Platelets (x10^9/L)'
+label(df$numagef) <- 'Age at operation (years)'
+
+dd <- rms::datadist(df)
+options(datadist = 'dd')
+
+s <- summary(deathn ~ preopdialysis + preopventilat + 
+               preopsepsis + fsteroid + preopaki + 
+               prcreatf + prplatef + 
+               numagef + pralbumf + prwbcf, data = df)
+
+
+# 
+# fit <- rms::lrm(deathn ~ preopdialysis + preopventilat +
+#            preopsepsis + fsteroid + preopaki +
+#            prcreat + prwbc + prplate +
+#            numage + pralbum + numage *preopaki, data = df)
+# anova(fit)
+# 
+# fit <- glm(deathn ~ preopdialysis + preopventilat +
+#            preopsepsis + fsteroid + preopaki +
+#            prcreat + prwbc + prplate +
+#            numagef + pralbum + numagef * preopaki, data = df, family = "binomial")
+# summary(fit)
+# anova(fit)
+# 
+# plot(nomogram(fit, vnames = "labels"))
+
+## ---- complete-case-model ----
+# dd <- rms::datadist(df)
+# options(datadist = 'dd')
+df[complete.cases(df),] %>% dim
+df %>% dim
+
+options(prType='plain')
+f_cc_categorical_all <- rms::lrm(deathn ~ preopdialysis + preopventilat + 
+                                   preopsepsis + fsteroid + preopaki + 
+                                   prcreatf + prwbcf + prplatef + 
+                                   numagef + pralbumf , data = df)
+f_cc_categorical_all <- update(f_cc_categorical_all, x = TRUE, y = TRUE)
+anova(f_cc_categorical_all)
+# dd <- rms::datadist(df)
+# options(datadist = 'dd')
+# options(prType='plain')
+
+# Polynomial is better fit than bsplines
+f_cc_continuous_all_poly <- rms::lrm(deathn ~ preopdialysis + preopventilat + 
+                                  preopsepsis + fsteroid + preopaki + 
+                                  poly(prcreat,2) + poly(prwbc,2) + poly(prplate,2) + 
+                                  poly(numage,2)*preopaki + poly(pralbum,2)  , data = df[complete.cases(df),])
+
+f_cc_continuous_all_poly <- update(f_cc_continuous_all_poly, x = TRUE, y = TRUE)
+
+f_cc_continuous_all_bs <- rms::lrm(deathn ~ preopdialysis + preopventilat + 
+                                       preopsepsis + fsteroid + preopaki + 
+                                       bs(prcreat, 3) + bs(prwbc, 3) + bs(prplate, 3) + 
+                                       bs(numage, 3)*preopaki + bs(pralbum, 3)  , data = df[complete.cases(df),])
+
+f_cc_continuous_all_bs <- update(f_cc_continuous_all_bs, x = TRUE, y = TRUE)
+
+cbind(anova(f_cc_continuous_all_poly),
+anova(f_cc_continuous_all_bs))
+
+BIC(f_cc_categorical_all);AIC(f_cc_categorical_all)
+BIC(f_cc_continuous_all_poly);AIC(f_cc_continuous_all_poly)
+BIC(f_cc_continuous_all_bs);AIC(f_cc_continuous_all_bs)
+
+
+rms::validate(f_cc_continuous_all_poly,
+              B = 40, method = "crossvalidation",
+              bw = TRUE, rule = 'p', type = 'residual', sls = .2)
+
+rms::validate(f_cc_continuous_all_poly,
+              B = 40, method = ".632",
+              bw = TRUE, rule = 'p', type = 'residual', sls = .2)
+
+fastbw(f_cc_continuous_all_poly, rule = 'aic')
+plot(anova(f_cc_continuous_all_poly), sort = 'none', pl = T) %>% rank
+
+# 
+# rms::lrm(deathn ~ poly(prcreat,2) + poly(prplate,2) + 
+#            poly(numage,2), data = df[complete.cases(df),])
+
+# f_cc_categorical_all
+# anova(f_cc_categorical_all)
+# dev.off()
+# plot(anova(f_cc_categorical_all), sort = 'none', pl = T) %>% rank
+# 
+# fastbw(f_cc_categorical_all, rule = 'p')
+# 
+# f_cc_categorical_all <- update(f_cc_categorical_all, x = TRUE, y = TRUE)
+# v <- validate(f_cc_categorical_all, B = 200, bw = TRUE, rule = 'p', sls = 0.1, type = 'individual')
+# B <- 5000
+# 
+# ranks <- matrix(NA, nrow = B, ncol = 10)
+# rankvars <- function(fit) rank(plot(anova(fit), sort = 'none', pl = FALSE))
+# Rank <- rankvars(f_cc_categorical_all)
+# for(i in 1:B) {
+#   j <- sample(1:nrow(DT), nrow(DT), TRUE)
+#   bootfit <- update(f_cc_categorical_all, data = df, subset = j)
+#   ranks[i, ] <- rankvars(bootfit)
+# }
+# 
+# lim <- t(apply(ranks, 2, quantile, probs = c(0.025, 0.975)))
+# predictor <- factor(names(Rank), names(Rank))
+# w <- data.frame(predictor, Rank, lower = lim[,1], upper = lim[,2])
+# ggplot(w, aes(x = predictor, y = Rank)) + geom_point() + coord_flip() + 
+#   scale_y_continuous(breaks = 1:10) + geom_errorbar(aes(ymin = lim[,1], ymax = lim[,2], width = 0))
+
+# remove preopdialysis, preopaki, prwbc, pralbum 
+# f2 <- rms::lrm(death ~ preopventilat + preopsepsis + fsteroid +  
+#                  prcreatf + prplatef + 
+#                  numagef , data = DT)
+# f2
+# anova(f2)
+# 
+# # x = TRUE , y = TRUE adds raw data to fit object so can bootstrap
+# f2 <- update(f2, x = TRUE, y = TRUE)
+# rms::validate(f2, B = 200 )
+# 
+# f1 <- update(f1, x = TRUE, y = TRUE)
+# cal <- rms::calibrate(f1, B = 200)
+# plot(cal, subtitles = F)
+
+# dev.off()
+# p <- rms::Predict(f2, preopventilat = "Ventilated", preopsepsis = "Septic Shock",
+#                   fsteroid = "Steroid", prcreat=0, prplate, numage, fun = plogis)
+# ggplot(p)
+
+## ---- missing-data-patterns ----
+# str(DT)
+# levels(DT$preopsepsis)
+# impute missing data before categorizing the continuous variables
+na.patterns <- Hmisc::naclus(df[,c("death","numagef","preopsepsis","preopdialysis",
+                                   "preopaki","prwbcf","prcreatf","prplatef","pralbumf",
+                                   "preopventilat","fsteroid")])
+naplot(na.patterns, 'na per var')
+# plot(na.patterns)
+# mice::md.pattern(DT) # 451 with complete data out of 583
+# mice::mice(DT)
+
+# who.na <- rpart(is.na(prwbcf) ~ deathn + preopdialysis + preopventilat + preopsepsis + 
+#                   fsteroid + preopaki + prcreatf + prplatef + numagef + pralbumf,
+#                 data = DT)
+# 
+# plot(who.na, margin = 0.1); text(who.na)
+
+# dev.off()
+plot(summary(is.na(prwbcf) ~ deathn + preopdialysis + preopventilat + preopsepsis + 
+               fsteroid + preopaki + prcreatf + prplatef + numagef + pralbumf,
+             data = df), xlab = "% missing preop WBC count")
+
+plot(summary(is.na(pralbumf) ~ deathn + preopdialysis + preopventilat +
+               preopsepsis + fsteroid + preopaki + prcreatf + prplatef +
+               numagef + prwbcf,
+             data = df), xlab = "% missing preop Albumin")
+# plot(summary(is.na(prplate) ~ death + preopdialysis + preopventilat + 
+#                preopsepsis + fsteroid + preopaki + prcreat + pralbum + 
+#                numage + prwbc, 
+#              data = DT))
+
+m_wbc <- lrm(is.na(prwbcf) ~ deathn + preopdialysis + preopventilat + preopsepsis + 
+               fsteroid + preopaki + prcreatf + prplatef + numagef + pralbumf,
+             data = df)
+
+# print(m_wbc)
+# anova(m_wbc)
+
+m_album <- lrm(is.na(pralbumf) ~ deathn + preopdialysis + preopventilat +
+                 preopsepsis + fsteroid + preopaki + prcreatf + prplatef +
+                 numagef + prwbcf,
+               data = df)
+# anova(m_album)
+
+# Fortunately, after controlling for other variables nonsurviving patients are no more likely to have 
+# WBC missing. The important predictors of WBC count missingness are preop dialysis and preop creatinine
+
+
+## ---- imputation ----
+
+# See pdf page 327 for details. Since fraction of observations with missing wbc 
+# (which has the most missing data) is 102/583 = 17.5% we use max(5,100*17.5%) ~ 20
+set.seed(1234)
+mi <- Hmisc::aregImpute(~ preopdialysis + preopventilat + 
+                          preopsepsis + fsteroid + preopaki + 
+                          prcreatf + prwbcf + prplatef + 
+                          numagef + pralbumf + deathn + prwbc,
+                        data = df, n.impute = 20)
+
+# mi
+# par(mfrow=c(2,2))
+# plot(mi)
+
+# the first 10 imputations for the first 10 patients having missing wbc
+# a$imputed$prwbc[1:10,1:10]
+
+# a$imputed$prwbc
+
+set.seed(1234)
+mi.cont <- Hmisc::aregImpute(~ preopdialysis + preopventilat + 
+                               preopsepsis + fsteroid + preopaki + 
+                               prcreat + prwbc + prplate + 
+                               numage + pralbum + deathn,
+                             data = df, n.impute = 20)
+
+## ---- mi-model ----
+# dd <- rms::datadist(df)
+# options(datadist = 'dd')
+# attach(df)
+
+
+f_mi_categorical_all <- fit.mult.impute(deathn ~ preopdialysis + preopventilat + 
+                                          preopsepsis + fsteroid + preopaki + 
+                                          prcreatf + prwbcf + prplatef + 
+                                          numagef * preopaki + pralbumf, lrm, mi, 
+                                        data = df)
+f_mi_categorical_all <- update(f_mi_categorical_all, x = TRUE, y = TRUE)
+
+
+f_mi_continuous_all1 <- fit.mult.impute(deathn ~ preopdialysis + preopventilat + 
+                                          preopsepsis + fsteroid + 
+                                          poly(prcreat,2) + poly(prwbc,2) + poly(prplate,2) + 
+                                          poly(numage,2) * preopaki + poly(pralbum,2), lrm, mi.cont, 
+                                        data = df)
+
+f_mi_continuous_all1 <- fit.mult.impute(deathn ~ preopdialysis + preopventilat + 
+                                          preopsepsis + fsteroid + 
+                                          poly(prcreat,2) + poly(prwbc,2) + poly(prplate,2) + 
+                                          poly(numage,2) * preopaki + poly(pralbum,2), lrm, mi.cont, 
+                                        data = df)
+f_mi_continuous_all1 <- update(f_mi_continuous_all1, x = TRUE, y = TRUE)
+f_mi_continuous_all2 <- fit.mult.impute(deathn ~ preopdialysis + preopventilat + 
+                                          preopsepsis + fsteroid + 
+                                          prcreat + prwbc + prplate + 
+                                          poly(numage, 2) * preopaki + pralbum, lrm, mi.cont, 
+                                        data = df)
+f_mi_continuous_all2 <- update(f_mi_continuous_all2, x = TRUE, y = TRUE)
+anova(f_mi_continuous_all)
+
+BIC(f_mi_continuous_all1)
+BIC(f_mi_continuous_all2)
+v_mi_categorical_all <- rms::validate(f_mi_categorical_all,
+                                      B = 200,
+                                      bw = TRUE, rule = 'p',
+                                      sls = 0.1,
+                                      type = 'res')
+# 
+rms::validate(f_mi_continuous_all2,
+              method = 'crossvalidation',
+              bw = TRUE, rule = 'p', type = 'individual')#, sls = 0.1, type = 'individual')
+# Factors retained
+# preopsepsis fsteroid    prcreatf    prplatef    numagef
+
+f_mi_categorical_red <- fit.mult.impute(deathn ~ preopsepsis +  
+                                          prplatef + 
+                                          numagef, lrm, mi, 
+                                        data = df)
+f_mi_categorical_red <- update(f_mi_categorical_red, x = TRUE, y = TRUE)
+# f_mi_categorical_red
+# anova(f_mi_categorical_red)
+# summary(f_mi_categorical_red)
+# v_mi_continuous_all <- rms::validate(f_mi_continuous_all, 
+#                                       #B = 200, 
+#                                      method = 'crossvalidation',
+#                                       bw = TRUE, rule = 'aic', sls = 0.1, type = 'individual')
+# 
+# rms::validate(f_mi_continuous_all, 
+#               #B = 200,
+#               B = 58,
+#               method = 'crossvalidation',
+#               bw = TRUE, rule = 'aic', type = 'residual')
+# Factors retained
+# preopsepsis fsteroid    prcreatf    prplatef    numagef  
+
+f_mi_continuous_red <- fit.mult.impute(deathn ~ preopsepsis + fsteroid +  
+                                         poly(prcreat,2) + poly(prplate,2) + 
+                                         poly(numage,2), lrm, mi.cont, 
+                                       data = df)
+f_mi_continuous_red <- update(f_mi_continuous_red, x = TRUE, y = TRUE)
+# anova(f_mi_continuous_red)
+# AIC(f_mi_continuous_red);BIC(f_mi_continuous_red)
+
+## ---- compare-cc-mi ----
+rocobj1 <- pROC::plot.roc(f_cc_categorical_all$y, 
+                          as.numeric(predict(f_cc_categorical_all, type = "fitted"))[!is.na(as.numeric(predict(f_cc_categorical_all, type = "fitted")))],  
+                          main="Statistical comparison", percent=TRUE, col="#1c61b6")
+
+rocobj2 <- pROC::lines.roc(f_mi_categorical_all$y,
+                           as.numeric(predict(f_mi_categorical_all, type = "fitted")), 
+                           percent=TRUE, col="#008600")  
+
+rocobj3 <- pROC::lines.roc(f_mi_categorical_red$y,
+                           as.numeric(predict(f_mi_categorical_red, type = "fitted")), 
+                           percent=TRUE, col="red") 
+
+rocobj4 <- pROC::lines.roc(f_cc_continuous_all$y,
+                           as.numeric(predict(f_cc_continuous_all, type = "fitted"))[!is.na(as.numeric(predict(f_cc_continuous_all, type = "fitted")))],
+                           percent=TRUE, col="orange")
+
+rocobj5 <- pROC::lines.roc(f_mi_continuous_all$y,
+                           as.numeric(predict(f_mi_continuous_all, type = "fitted")), 
+                           percent=TRUE, col="purple")  
+
+rocobj6 <- pROC::lines.roc(f_mi_continuous_red$y,
+                           as.numeric(predict(f_mi_continuous_red, type = "fitted")), 
+                           percent=TRUE, col="black")
+
+
+# testobj <- pROC::roc.test(rocobj1, rocobj2, rocobj3)  
+
+# text(50, 50, labels=paste("p-value =", format.pval(testobj$p.value)), adj=c(0, .5))  
+legend("bottomright", legend=c(sprintf("Complete Case: AUC = %g%%, BIC = %g",round(rocobj1$auc,1), 
+                                       round(BIC(f_cc_categorical_all),0)),
+                               sprintf("Imputed: AUC = %g%%, BIC = %g",round(rocobj2$auc,1),
+                                       round(BIC(f_mi_categorical_all),0)),
+                               sprintf("Imputed Reduced: AUC = %g%%, BIC = %g",round(rocobj3$auc,1),
+                                       round(BIC(f_mi_categorical_red),0)),
+                               sprintf("Complete Case Continuous: AUC = %g%%, BIC = %g",round(rocobj4$auc,1), 
+                                       round(BIC(f_cc_continuous_all),0)),
+                               sprintf("Imputed Continuous: AUC = %g%%, BIC = %g",round(rocobj5$auc,1),
+                                       round(BIC(f_mi_continuous_all),0)),
+                               sprintf("Imputed Continuous Reduced: AUC = %g%%, BIC = %g",round(rocobj6$auc,1),
+                                       round(BIC(f_mi_continuous_red),0))), 
+       col=c("#1c61b6", "#008600", "red","orange","purple","black"), lwd=2)
+
+## ---- not-used ----
+f.mi <- update(f.mi, x = TRUE, y = TRUE)
+v2 <- rms::validate(f.mi, B=200, bw = TRUE, rule = 'p', sls = 0.1, type = 'individual')
+
+f.mi <- fit.mult.impute(deathn ~ preopsepsis + fsteroid + 
+                          prcreatf + prplatef + 
+                          numagef, lrm, mi, 
+                        data = df)
+
+f.mi <- update(f.mi, x = TRUE, y = TRUE)
+v2 <- rms::validate(f.mi, B=200, bw = TRUE, rule = 'p', sls = 0.1, type = 'individual')
+
+f.mi
+anova(f.mi)
+
+s.f.mi <- summary(f.mi)
+latex(s, file = '', size = 'small', label = 'tab:miORreduced')
+plot(s.f.mi)
+
+
+nom <- nomogram(f.mi, fun=function(x) 1/(1+exp(-x)),  # or fun=plogis
+                fun.at = c(.001,.01,.05,seq(.1,.9,by=.1),.95,.99,.999),
+                funlabel = "Risk of Death", conf.int = TRUE)
+plot(nom, xfrac=.46, col.grid = gray(c(0.8, 0.95)), varname.label = FALSE, ia.space = 1, lmgp = 0.2)
+
+fit_gam <- mgcv::gam(deathn ~ preopdialysis + preopventilat + 
+                       preopsepsis + fsteroid + preopaki + 
+                       s(prcreat) + s(prwbc) + s(prplate) + 
+                       s(numage) + s(pralbum), data = DT, family="binomial")
+
+fit_gam <- mgcv::gam(deathn ~  preopsepsis + fsteroid + 
+                       s(prcreat) + s(prplate) + 
+                       s(numage) , data = DT, family="binomial")
+
+summary(fit_gam)
+anova(fit_gam)
+plot(fit_gam)
+
+dev.off()
+
+f.mi <- fit.mult.impute(deathn ~ preopsepsis + fsteroid + 
+                          prcreatf + prplatef + 
+                          numagef, lrm, mi, 
+                        data = df, subset = 1:300)
+anova(f.mi)
+
+phat <- predict(f.mi, df[301:583,], type = 'fitted')
+v <- rms::val.prob(phat, DT$deathn[301:583], m = 20, cex = 0.6)
+
+
+rocobj1 <- pROC::plot.roc(DT$deathn[!is.na(DT$prplate)], as.numeric(predict(fit_gam, type = "response")),  
+                          main="Statistical comparison", percent=TRUE, col="#1c61b6")
+
+rocobj2 <- pROC::lines.roc(DT$deathn,as.numeric(predict(f.mi, type = "fitted")), 
+                           percent=TRUE, col="#008600")  
+testobj <- pROC::roc.test(rocobj1, rocobj2)  
+
+text(50, 50, labels=paste("p-value =", format.pval(testobj$p.value)), adj=c(0, .5))  
+legend("bottomright", legend=c(sprintf("GAM: AUC = %g%%, AIC = %g",round(rocobj1$auc,1), 
+                                       round(AIC(fit_gam),0)),
+                               sprintf("GLM: AUC = %g%%, AIC = %g",round(rocobj2$auc,1),
+                                       round(AIC(f.mi),0))), 
+       col=c("#1c61b6", "#008600"), lwd=2)
+
+# cal <- rms::calibrate(f.mi, B = 200)
+# plot(cal, subtitles = F)
+
+# latex(v2, digits = 2, B = 15, size = 'Ssize', file = '')
+
+# f.mi
+# anova(f.mi)
+
+# pred.logit <- Hmisc::Function(f.mi)
+# 
+# dev.off()
+# nom <- nomogram(f.mi, fun=function(x) 1/(1+exp(-x)),  # or fun=plogis
+#                 fun.at = c(.001,.01,.05,seq(.1,.9,by=.1),.95,.99,.999),
+#                 funlabel = "Risk of Death")
+# plot(nom, xfrac=.45)
+
+## ---- mice ----
+imp <- mice(as.data.frame(DT[,-which(colnames(DT) %in% c("CaseID")),with=F]), seed = 23109)
+imp
+stripplot(imp, pch = 20, cex = 1.2)
+complete(imp,1) %>% str
+
+fit <- lapply(1:5, function (i) {
+  i = 1
+  ds <- as.data.table(mice::complete(imp, action = i))
+  # ds <- mice::complete(imp, action = i)
+  ds
+  
+  ds[, numage := cut(numage, breaks = c(min(numage, na.rm = T),50, 60, 65, max(numage, na.rm = T)), 
+                     include.lowest = TRUE, labels = c("[18,50]","(50,60]", "(60,65]", "(65,69]"))]
+  ds[, pralbum := cut(pralbum, breaks = c(min(pralbum, na.rm = T), 1.5, 3, max(pralbum, na.rm = T)), include.lowest = TRUE, 
+                      labels = c("[1,1.5]","(1.5,3]","(3,4.6]"))]
+  ds[, prwbc := cut(prwbc, breaks = c(min(prwbc, na.rm = T), 4, 20, 50, max(prwbc, na.rm = T)), include.lowest = TRUE, 
+                    labels = c("[0.1,4]","(4,20]","(20,50]","(50,124.3]"))]
+  ds[, prcreat := cut(prcreat, breaks = c(min(prcreat, na.rm = T), 1.13, 2.26, max(prcreat, na.rm = T)), include.lowest = TRUE, 
+                      labels = c("[0.3,1.13]","(1.13,2.26]","(2.26,8.7]"))]
+  ds[, prplate := cut(prplate, breaks = c(min(prplate, na.rm = T), 150, max(prplate, na.rm = T)), include.lowest = TRUE, 
+                      labels = c("[17,150]","(150,996]"))]
+  str(ds)
+  summary(glm(death ~ preopdialysis + preopventilat + preopsepsis + fsteroid + 
+                preopaki + prcreat + prplate + numage + pralbum + prwbc,
+              data = ds, family = "binomial"))
+})
+
+fit1 <- with(imp, expr = {
+  cut(prwbc, 
+      breaks = c(min(prwbc, na.rm = T), 4, 20, 50, max(prwbc, na.rm = T)), 
+      include.lowest = TRUE, 
+      labels = c("[0.1,4]","(4,20]","(20,50]","(50,124.3]")) 
+}
+)
+
+
+
+with(imp, lrm(as.formula(paste("death ~",paste0(col.names[c(-1,-2)], collapse = "+")))))
+
+with(imp, lrm(death~pralbum+prwbc))
+
+plot(tp, margin = 0.1);text(tp)
+
+dev.off()
+par(mfrow=c(2,2))
+plot(a)
+Hmisc:::plot.aregImpute()
+
+
+Hmisc::Ecdf(DT$pralbum, add = TRUE, col = 'gray', lwd = 2, subtitles = FALSE)
+
+Hmisc::describe(DT)
+mice:::pred
+
+
+Hmisc::redun(
+  as.formula(paste("~",paste0(col.names[c(-1,-2)], collapse = "+"))),
+  # ~ prplate + pralbum + prwbc,
+  # transformed = T, 
+  # imputed = T, show.na = T, 
+  data = DT)
+
+
+## ---- single-imputation ----
+
+imp <- Hmisc::impute(df)
+
+
+
+
+
+
+
+

@@ -1,0 +1,136 @@
+# needed packages
+if (!requireNamespace("pacman", quietly = TRUE)) {
+  install.packages("pacman")
+}
+
+pacman::p_load(caret)
+pacman::p_load(plyr)
+pacman::p_load(brglm2)
+pacman::p_load(pROC)
+pacman::p_load(reshape2)
+pacman::p_load(ggplot2)
+pacman::p_load(splines)
+
+# number of bootstrap samples
+nboot <- 5
+set.seed(12345)
+
+mydata <- read.csv("https://stats.idre.ucla.edu/stat/data/binary.csv")
+## view the first few rows of the data
+head(mydata)
+
+# training set. this should be your 530 samples
+DT <- mydata
+
+# in what follows, i assume your dataset is called DT, and the column for the
+# response is labelled illeus, and is coded 0,1
+# define your response and store it in the object response
+response <- DT$admit
+
+boot_samples <- caret::createResample(response, nboot, list = F)
+
+# formula for the models
+# this is where you would put the different model definition that
+# will then be passed to glm. you need to input your covariates which should be in DT
+# at this point you would have already run the stepwise model, and so you should know
+# which variables were selected for the stepwise model
+logreg_8vars <- as.formula(paste0("admit ~ ", paste(c("gre","gpa","rank"),
+                                                              collapse = "+")))
+
+logreg_7vars <- as.formula(paste0("admit ~ ", paste(c("bs(gre)","bs(gpa)"),
+                                                    collapse = "+")))
+
+logreg_6vars <- as.formula(paste0("admit ~ ", paste(c("preopdialysis","preopventilat","preopsepsis","fsteroid","preopaki",
+                                                       "prcreatf","prwbcf","prplatef","numagef","pralbumf"),
+                                                     collapse = "+")))
+
+fit <- glm(logreg_6vars, data = DT, family = binomial(link = "logit"),
+           method = "brglmFit")
+brier = as.numeric(mean((predict(fit, DT, type = "response") - testing$illeus)^2, na.rm = TRUE))
+
+logreg_5vars <- as.formula(paste0("illeus ~ ", paste(c("preopdialysis","preopventilat","preopsepsis","fsteroid","preopaki",
+                                                       "prcreatf","prwbcf","prplatef","numagef","pralbumf"),
+                                                     collapse = "+")))
+logreg_stepwise <- as.formula(paste0("illeus ~ ", paste(c("preopdialysis","preopventilat","preopsepsis","fsteroid","preopaki",
+                                                       "prcreatf","prwbcf","prplatef","numagef","pralbumf"),
+                                                     collapse = "+")))
+
+# combine them in a list
+list_models <- list(logreg_8vars,
+                    logreg_7vars)#,
+                    # logreg_6vars,
+                    # logreg_5vars,
+                    # logreg_stepwise)
+
+# names of the models
+model_names <- c("logreg_8vars",
+                 "logreg_7vars")#,
+                 # "logreg_6vars",
+                 # "logreg_5vars",
+                 # "logreg_stepwise")
+
+names(list_models) <- model_names
+
+# this is used to store results. you may create another matrix to store goodness of fit results
+# each of these matrices are of dimension nboot x number of models
+accuracy <- ROC <- BIC_res <- AIC_res <- brier <- matrix(NA, nrow = nboot, ncol = length(list_models))
+
+
+# label the matrix columns
+dimnames(accuracy)[[2]] <- model_names
+dimnames(ROC)[[2]] <- model_names
+dimnames(BIC_res)[[2]] <- model_names
+dimnames(AIC_res)[[2]] <- model_names
+dimnames(brier)[[2]] <- model_names
+
+# do the bootstraps and fit the models
+for (b in 1:nboot) {
+
+  inTrain = boot_samples[,b]
+  training = DT[inTrain,]
+  testing = DT[-inTrain,]
+
+  res <- plyr::ldply(list_models, function(x) {
+
+    # fit model
+    fit <- glm(x, data = training, family = binomial(link = "logit"),
+               method = "brglmFit")
+# browser()
+    # calculate measures of fit
+    c(accuracy = mean((predict(fit, testing, type = "response") > 0.5) == testing$admit),
+      auc = as.numeric(pROC::auc(testing$admit, predict(fit, testing, type = "response"))),
+      brier = as.numeric(mean((predict(fit, testing, type = "response") - testing$admit)^2, na.rm = TRUE)),
+      bic = BIC(fit),
+      aic = AIC(fit))
+  })
+
+  # store results
+  accuracy[b,] <- res[,"accuracy"]
+  ROC[b,] <- res[,"auc"]
+  brier[b,] <- res[,"brier"]
+  BIC_res[b,] <- res[,"bic"]
+  AIC_res[b,] <- res[,"aic"]
+
+}
+
+# format data to put in plotting format
+acc_m <- reshape2::melt(accuracy)
+brier_m <- reshape2::melt(brier)
+auc_m <- reshape2::melt(ROC)
+bic_m <- reshape2::melt(BIC_res)
+aic_m <- reshape2::melt(AIC_res)
+
+acc_m$type <- "Accuracy"
+brier_m$type <- "Brier"
+auc_m$type <- "AUC"
+bic_m$type <- "BIC"
+aic_m$type <- "AIC"
+
+# combine results
+res_m <- rbind(auc_m, bic_m, aic_m, brier_m)
+
+# plot results
+ggplot(res_m, aes(x = Var2, y = value, fill = Var2)) +
+  geom_boxplot() +
+  facet_wrap(~type, scales = "free") +
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 65, hjust = 1))

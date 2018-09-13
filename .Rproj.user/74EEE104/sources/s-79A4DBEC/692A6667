@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536772813355.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "692A6667",
+    "lastKnownWriteTime" : 1536779740,
+    "last_content_update" : 1536779740276,
+    "path" : "~/git_repositories/epib607/dalite/001_hist_mean/001-hist-mean-sol.Rmd",
+    "project_path" : "dalite/001_hist_mean/001-hist-mean-sol.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "135,2",
+        "scrollLine" : "0",
+        "tempName" : "Untitled5"
+    },
+    "relative_order" : 16,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

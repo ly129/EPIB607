@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536788046889.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "9E2DBBE7",
+    "lastKnownWriteTime" : 1496458369,
+    "last_content_update" : 1496458369,
+    "path" : "~/Dropbox/consulting/maria/bin/analysis.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "420,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 18,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

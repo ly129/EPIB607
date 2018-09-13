@@ -1,0 +1,358 @@
+# source("bin/functions.R")
+# rm(list=ls())
+# source("bin/functions.R")
+# source("bin/packages.R")
+## ---- load-data ----
+
+# did this step only once cause it takes a long time, but also gives the best results
+# DT <- xlsx::read.xlsx("data/acs_nsqip_puf05-15_cdiff_excluded_emergencyasafeb 23.xlsx", sheetIndex = 1)
+# saveRDS(DT, file = "data/acs_nsqip_puf05-15_cdiff_excluded_emergencyasafeb 23.rds")
+
+# updated
+# DT <- xlsx::read.xlsx("data/acs_nsqip_puf05-15_cdiff_emergencyrealTAC_May30_ASA3+.xlsx", sheetIndex = 1)
+# saveRDS(DT, file = "data/acs_nsqip_puf05-15_cdiff_emergencyrealTAC_May30_ASA3+.rds")
+
+# DT <- readRDS(file = "~/Dropbox/consulting/maria/data/acs_nsqip_puf05-15_cdiff_excluded_emergencyasafeb 23.rds")
+DT <- readRDS(file = "~/Dropbox/consulting/maria/data/acs_nsqip_puf05-15_cdiff_emergencyrealTAC_May30_ASA3+.rds")
+DT <- as.data.table(DT)
+
+# Variables : (revised email from Maria, May 31, 2017) 
+# I revised them now and you can use the variables below: 
+#   -patient age: "numage" (column KV)  for age which we can divide into <50, 50-60, 60-70, 70-80, 80+
+#   -preoperative intubation: preopventilat (LH)
+# -Preoperative septic shock : "preopsepsis" LT (categorical variable) 
+# -Preoperative dialysis dependence "preopdialysis" LM
+# -Preoperative acute renal failure "preopaki" LL 
+# -preoperative wbc count (usually as a categorical variable) : "prwbc" BE
+# -preoperative creatinine  "prcreat" AZ
+# -preoperative platelet count "prplate" BG
+# -preoperative albumin (usually as a categorical variable) "pralbum" BA
+# -preoperative immunosuppression (termed "steroid" in the variable) "fsteroid" LP
+# The other thing we wanted to do is compare how our model does compared to the 
+# mortality calculator of NSQIP that ("mortprcomb" column MV). 
+# Age: Can be either <50, 50-60, >60 or <65 and 65 and over  
+# (the highest risk factor in studies is age >75, but I see in our data that the eldest patient is 69)
+# Albumin : Less than 1.5, 1.5 to 3, and 3 or more
+# WBC : <4, 4-20, 20-49.9, 50 & above
+# Preoperative Creatinine <1.13, 1.13 to 2.26, >=2.26
+# platelets: <150, >=150
+
+col.names <- c("CaseID","death","numage","preopsepsis","preopdialysis","preopaki",
+               "prwbc","prcreat","prplate","pralbum","preopventilat","fsteroid", "mortprcomb")
+length(col.names)
+all(col.names %in% colnames(DT))
+rm.colnames <- colnames(DT)[colnames(DT) %ni% col.names]
+
+DT[, (rm.colnames) := NULL]
+DT$CaseID %>% unique() %>% length()
+str(DT)
+
+# First factor the binary variables
+DT[, table(death, useNA = "always")]
+DT[, `:=`(deathn = death, 
+          death = factor(death, levels = c(0,1), labels = c("Alive","Dead")),
+          preopdialysis = factor(preopdialysis, levels = c(0,1), labels = c("No Preop Dialysis","Preop Dialysis")),
+          preopventilat = factor(preopventilat, levels = c(0,1), labels = c("Not Ventilated", "Ventilated")),
+          preopsepsis = factor(preopsepsis, levels = 0:3, labels = c("No Sepsis","SIRS","Sepsis","Septic Shock")),
+          fsteroid = factor(fsteroid, levels = c(0,1), labels = c("Non-immunosuppressed","Immunosuppressed")),
+          preopaki = factor(preopaki, levels = c(0,1), labels = c("No Preop Aki", "Preop Aki"))
+)]
+
+DT[, table(numage, useNA = "always")]
+DT[is.na(numage), numage:=runif(.N, min = 89, max = 92)]
+DT[, table(numage, useNA = "always")]
+df <- as.data.frame(DT)
+# md.pattern(df)
+imp <- mice::mice(df, m = 1, maxit = 1)
+# plot(imp)
+
+# extract the data in long format
+DT_imp <- as.data.table(complete(imp, action = "long", include = TRUE))
+DT_imp[.imp==0][, table(prwbc, useNA = "always")]
+DT_imp[.imp==1][, table(prwbc, useNA = "always")]
+
+DT_imp <- DT_imp[.imp==1]
+
+
+# attach(DT)
+# label(preopsepsis) <- 'Preoperative Sepsis'
+# label(fsteroid) <- 'Immunosuppressed'
+# label(prcreat) <- 'Preoperative Creatinine (mg/dL)'
+# label(prplate) <- 'Preoperative Platelets (x10^9/L)'
+# label(numage) <- 'Age at operation (years)'
+# 
+# label(preopsepsis) <- 'Preoperative Sepsis'
+# label(fsteroid) <- 'Immunosuppressed'
+# label(prcreatf) <- 'Preoperative Creatinine (mg/dL)'
+# label(prplatef) <- 'Preoperative Platelets (x10^9/L)'
+# label(numagef) <- 'Age at operation (years)'
+
+y1 <- ylab(NULL)
+
+continuous_var <- c("numage","prcreat","pralbum", "prwbc","prplate")
+marginal_plots <- vector("list",length = length(continuous_var))
+
+p1 <- ggplot(df, aes(x = numage, y = deathn)) + 
+  Hmisc::histSpikeg(deathn ~ numage, lowess = TRUE, data = df) + 
+  ylim(0,1) + ylab(NULL)
+
+p2 <- ggplot(df, aes(x = numage, y = deathn, color = preopdialysis)) + 
+  Hmisc::histSpikeg(deathn ~ numage + preopdialysis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + 
+  guides(col = guide_legend(nrow = 2)) + theme(legend.position = "bottom")
+
+p3 <- ggplot(df, aes(x = numage, y = deathn, color = preopventilat)) + 
+  Hmisc::histSpikeg(deathn ~ numage + preopventilat, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + 
+  guides(col = guide_legend(nrow = 2))+ theme(legend.position = "bottom")
+
+p4 <- ggplot(df, aes(x = numage, y = deathn, color = fsteroid)) + 
+  Hmisc::histSpikeg(deathn ~ numage + fsteroid, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + 
+  guides(col = guide_legend(nrow = 2))+ theme(legend.position = "bottom")
+
+p5 <- ggplot(df, aes(x = numage, y = deathn, color = preopsepsis)) + 
+  Hmisc::histSpikeg(deathn ~ numage + preopsepsis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + 
+  guides(col = guide_legend(nrow = 4))+ theme(legend.position = "bottom")
+
+p6 <- ggplot(df, aes(x = numage, y = deathn, color = preopaki)) + 
+  Hmisc::histSpikeg(deathn ~ numage + preopaki, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + 
+  guides(col = guide_legend(nrow = 2))+ theme(legend.position = "bottom")
+
+marginal_plots[[1]] <- cowplot::plot_grid(p1,p2,p3,p4,p5,p6)
+marginal_plots[[1]]
+
+p1 <- ggplot(df, aes(x = prcreat, y = deathn)) + 
+  Hmisc::histSpikeg(deathn ~ prcreat, lowess = TRUE, data = df) + 
+  ylim(0,1) + ylab(NULL)
+
+p2 <- ggplot(df, aes(x = prcreat, y = deathn, color = preopdialysis)) + 
+  Hmisc::histSpikeg(deathn ~ prcreat + preopdialysis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p3 <- ggplot(df, aes(x = prcreat, y = deathn, color = preopventilat)) + 
+  Hmisc::histSpikeg(deathn ~ prcreat + preopventilat, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p4 <- ggplot(df, aes(x = prcreat, y = deathn, color = fsteroid)) + 
+  Hmisc::histSpikeg(deathn ~ prcreat + fsteroid, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p5 <- ggplot(df, aes(x = prcreat, y = deathn, color = preopsepsis)) + 
+  Hmisc::histSpikeg(deathn ~ prcreat + preopsepsis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 4))
+
+p6 <- ggplot(df, aes(x = prcreat, y = deathn, color = preopaki)) + 
+  Hmisc::histSpikeg(deathn ~ prcreat + preopaki, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+marginal_plots[[2]] <- cowplot::plot_grid(p1,p2,p3,p4,p5,p6)
+
+
+p1 <- ggplot(df, aes(x = pralbum, y = deathn)) + 
+  Hmisc::histSpikeg(deathn ~ pralbum, lowess = TRUE, data = df) + 
+  ylim(0,1) + ylab(NULL)
+
+p2 <- ggplot(df, aes(x = pralbum, y = deathn, color = preopdialysis)) + 
+  Hmisc::histSpikeg(deathn ~ pralbum + preopdialysis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p3 <- ggplot(df, aes(x = pralbum, y = deathn, color = preopventilat)) + 
+  Hmisc::histSpikeg(deathn ~ pralbum + preopventilat, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p4 <- ggplot(df, aes(x = pralbum, y = deathn, color = fsteroid)) + 
+  Hmisc::histSpikeg(deathn ~ pralbum + fsteroid, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p5 <- ggplot(df, aes(x = pralbum, y = deathn, color = preopsepsis)) + 
+  Hmisc::histSpikeg(deathn ~ pralbum + preopsepsis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 4))
+
+p6 <- ggplot(df, aes(x = pralbum, y = deathn, color = preopaki)) + 
+  Hmisc::histSpikeg(deathn ~ pralbum + preopaki, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+marginal_plots[[3]] <- cowplot::plot_grid(p1,p2,p3,p4,p5,p6)
+
+
+p1 <- ggplot(df, aes(x = prwbc, y = deathn)) + 
+  Hmisc::histSpikeg(deathn ~ prwbc, lowess = TRUE, data = df) + 
+  ylim(0,1) + ylab(NULL)
+
+p2 <- ggplot(df, aes(x = prwbc, y = deathn, color = preopdialysis)) + 
+  Hmisc::histSpikeg(deathn ~ prwbc + preopdialysis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p3 <- ggplot(df, aes(x = prwbc, y = deathn, color = preopventilat)) + 
+  Hmisc::histSpikeg(deathn ~ prwbc + preopventilat, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p4 <- ggplot(df, aes(x = prwbc, y = deathn, color = fsteroid)) + 
+  Hmisc::histSpikeg(deathn ~ prwbc + fsteroid, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p5 <- ggplot(df, aes(x = prwbc, y = deathn, color = preopsepsis)) + 
+  Hmisc::histSpikeg(deathn ~ prwbc + preopsepsis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 4))
+
+p6 <- ggplot(df, aes(x = prwbc, y = deathn, color = preopaki)) + 
+  Hmisc::histSpikeg(deathn ~ prwbc + preopaki, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+marginal_plots[[4]] <- cowplot::plot_grid(p1,p2,p3,p4,p5,p6)
+
+
+
+p1 <- ggplot(df, aes(x = prplate, y = deathn)) + 
+  Hmisc::histSpikeg(deathn ~ prplate, lowess = TRUE, data = df) + 
+  ylim(0,1) + ylab(NULL)
+
+p2 <- ggplot(df, aes(x = prplate, y = deathn, color = preopdialysis)) + 
+  Hmisc::histSpikeg(deathn ~ prplate + preopdialysis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p3 <- ggplot(df, aes(x = prplate, y = deathn, color = preopventilat)) + 
+  Hmisc::histSpikeg(deathn ~ prplate + preopventilat, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p4 <- ggplot(df, aes(x = prplate, y = deathn, color = fsteroid)) + 
+  Hmisc::histSpikeg(deathn ~ prplate + fsteroid, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1+ theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+p5 <- ggplot(df, aes(x = prplate, y = deathn, color = preopsepsis)) + 
+  Hmisc::histSpikeg(deathn ~ prplate + preopsepsis, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 4))
+
+p6 <- ggplot(df, aes(x = prplate, y = deathn, color = preopaki)) + 
+  Hmisc::histSpikeg(deathn ~ prplate + preopaki, lowess = TRUE, data = df) + 
+  ylim(0,1) + y1 + theme(legend.position = "bottom") + 
+  guides(col = guide_legend(nrow = 2))
+
+marginal_plots[[5]] <- cowplot::plot_grid(p1,p2,p3,p4,p5,p6)
+
+
+# dd <- rms::datadist(df)
+# options(datadist = 'dd')
+# f1 <- rms::lrm(deathn ~ preopdialysis + preopventilat + fsteroid + preopaki + 
+#                 pol(prcreat, 2) + prplate + pol(numage, 2) + preopsepsis + pralbum , data = df)
+# f1
+# anova(f1)
+
+# DT[, table(fsteroid)]
+# DT[, table(preopdialysis)]
+# DT[, xtabs(~preopdialysis + fsteroid)]
+# Hmisc::describe(DT)
+
+# Hmisc::describe(DT)
+# Cutoffs : (email from Maria, Feb 23, 2017)
+# Age: Can be either <50, 50-60, >60 or <65 and 65 and over  (the highest risk factor in studies is age >75, but I see in our data that the eldest patient is 69)
+# Albumin : Less than 1.5, 1.5 to 3, and 3 or more
+# WBC : <4, 4-20, 20-49.9, 50 & above
+# Preoperative Creatinine <1.13, 1.13 to 2.26, >=2.26
+# platelets: <150, >=150
+
+DT[, is.na(numage)] %>% table(useNA = "always")
+DT[, min(numage, na.rm = T)]
+DT[, max(numage, na.rm = T)]
+DT[, numagef := cut(numage, breaks = c(min(numage, na.rm = T),50, 60, 70, 80, max(numage, na.rm = T)), 
+                    include.lowest = TRUE, labels = c("[18,50]","(50,60]", "(60,70]", "(70,80]", "(80, 89]"))]
+DT[, table(numagef, useNA = "always")]
+
+DT_imp[, numagef := cut(numage, breaks = c(min(numage, na.rm = T),50, 60, 70, 80, max(numage, na.rm = T)), 
+                    include.lowest = TRUE, labels = c("[18,50]","(50,60]", "(60,70]", "(70,80]", "(80, 89]"))]
+DT_imp[, table(numagef, useNA = "always")]
+
+
+DT[, is.na(pralbum)] %>% table(useNA = "always")
+DT[, hist(pralbum)]
+DT[, min(pralbum, na.rm = T)]
+DT[, max(pralbum, na.rm = T)]
+# DT[, boxplot(pralbum)]
+DT[, fivenum(pralbum)]
+DT[, pralbumf := cut(pralbum, breaks = c(min(pralbum, na.rm = T), 1.5, 3, max(pralbum, na.rm = T)), include.lowest = TRUE, 
+                     labels = c("[1,1.5]","(1.5,3]","(3,4.6]"))]
+DT[, table(pralbumf, useNA = "always")]
+
+DT_imp[, pralbumf := cut(pralbum, breaks = c(min(pralbum, na.rm = T), 1.5, 3, max(pralbum, na.rm = T)), include.lowest = TRUE, 
+                     labels = c("[1,1.5]","(1.5,3]","(3,4.6]"))]
+DT_imp[, table(pralbumf, useNA = "always")]
+
+
+DT[, is.na(prwbc)] %>% table(useNA = "always")
+DT[, hist(prwbc)]
+DT[, min(prwbc, na.rm = T)]
+DT[, max(prwbc, na.rm = T)]
+# DT[, boxplot(prwbc)]
+DT[, fivenum(prwbc)]
+DT[, prwbcf := cut(prwbc, breaks = c(min(prwbc, na.rm = T), 4, 20, 50, max(prwbc, na.rm = T)), include.lowest = TRUE, 
+                   labels = c("[0.1,4]","(4,20]","(20,50]","(50,124.3]"))]
+DT[, table(prwbcf, useNA = "always")]
+# DT[, prwbcf2 := cut(prwbc, breaks = c(min(prwbc, na.rm = T), 20, max(prwbc, na.rm = T)), include.lowest = TRUE, 
+#                    labels = c("<20",">20"))]
+# DT[, table(prwbcf2, useNA = "always")]
+
+DT_imp[, prwbcf := cut(prwbc, breaks = c(min(prwbc, na.rm = T), 4, 20, 50, max(prwbc, na.rm = T)), include.lowest = TRUE, 
+                   labels = c("[0.1,4]","(4,20]","(20,50]","(50,124.3]"))]
+DT_imp[, table(prwbcf, useNA = "always")]
+
+
+
+DT[, is.na(prcreat)] %>% table(useNA = "always")
+DT[, hist(prcreat)]
+DT[, min(prcreat, na.rm = T)]
+DT[, max(prcreat, na.rm = T)]
+# DT[, boxplot(prcreat)]
+DT[, fivenum(prcreat)]
+DT[, prcreatf := cut(prcreat, breaks = c(min(prcreat, na.rm = T), 1.13, 2.26, max(prcreat, na.rm = T)), include.lowest = TRUE, 
+                     labels = c("[0.3,1.13]","(1.13,2.26]","(2.26,8.7]"))]
+DT[, table(prcreatf, useNA = "always")]
+
+DT_imp[, prcreatf := cut(prcreat, breaks = c(min(prcreat, na.rm = T), 1.13, 2.26, max(prcreat, na.rm = T)), include.lowest = TRUE, 
+                     labels = c("[0.3,1.13]","(1.13,2.26]","(2.26,8.7]"))]
+DT_imp[, table(prcreatf, useNA = "always")]
+
+
+DT[, is.na(prplate)] %>% table(useNA = "always")
+DT[, hist(prplate)]
+DT[, min(prplate, na.rm = T)]
+DT[, max(prplate, na.rm = T)]
+# DT[, boxplot(prplate)]
+DT[, fivenum(prplate)]
+DT[, prplatef := cut(prplate, breaks = c(min(prplate, na.rm = T), 150, max(prplate, na.rm = T)), include.lowest = TRUE, 
+                     labels = c("[17,150]","(150,996]"))]
+DT[, table(prplatef, useNA = "always")]
+str(DT)
+DT[, table(death,deathn)]
+DT_imp[, prplatef := cut(prplate, breaks = c(min(prplate, na.rm = T), 150, max(prplate, na.rm = T)), include.lowest = TRUE, 
+                     labels = c("[17,150]","(150,996]"))]
+DT_imp[, table(prplatef, useNA = "always")]
+
+
+# rm(df)
+df <- as.data.frame(DT)
+# df_imp <- as.mids(as.data.frame(DT_imp))
+df_imp <- as.data.frame(DT_imp)
+df_imp[complete.cases(df_imp),] %>% dim
+# rm(DT)
