@@ -847,12 +847,36 @@ course must be submitted to a GitHub repository.\strut
 
 \begin{table}[H]
 \centering
-\begin{tabular}{l|l|l|l|l}
+\begin{tabular}{l}
 \hline
-[1. Data graphics exercise 2 presentation](https://sahirbhatnagar.com/EPIB607/data-graphics.html) & [2. Hurricane Florence graphic](https://twitter.com/EricHolthaus/status/1040007537234530304) & [3. Review DALITE Q1 Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001\_hist\_mean/001-hist-mean-sol.pdf) & [4. Introduction to the `mosaic` and `ggformula` package](https://cran.r-project.org/package=mosaic) & [5. R Markdown Presentation](https://prezi.com/dvmgx17e\_was/reproducible/?utm\_campaign=share\&utm\_medium=copy)\\
+[1. Data graphics exercise 2 presentation](http://www.vox.com/a/explain-food-america)\\
+\hline
+[2. Hurricane Florence graphic](https://twitter.com/EricHolthaus/status/1040007537234530304)\\
+\hline
+[3. Review DALITE Q1 Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001\_hist\_mean/001-hist-mean-sol.pdf)\\
+\hline
+[4. Introduction to the `mosaic` and `ggformula` package](https://cran.r-project.org/package=mosaic)\\
+\hline
+[5. R Markdown Presentation](https://prezi.com/dvmgx17e\_was/reproducible/?utm\_campaign=share\&utm\_medium=copy)\\
 \hline
 \end{tabular}
 \end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# the pacman package makes it easy to load and install packages}
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"pacman"}\NormalTok{)}
+
+\CommentTok{# pacman will install and load the library}
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(mosaic, learnr)}
+
+\CommentTok{# this will launch the intro tutorial in your web browser}
+\NormalTok{learnr}\OperatorTok{::}\KeywordTok{run_tutorial}\NormalTok{(}\StringTok{"introduction"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"ggformula"}\NormalTok{)}
+
+\CommentTok{# this will launch the refining tutorial in your web browser}
+\NormalTok{learnr}\OperatorTok{::}\KeywordTok{run_tutorial}\NormalTok{(}\StringTok{"refining"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"ggformula"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \section{Week 3}\label{week-3}
 
@@ -1304,6 +1328,12 @@ Assignment & Topic & Template & Data & Due\\
   \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf}{Q1
   (due September 12, 2018)} --
   \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf}{Solutions}
+\item
+  \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves.pdf}{Q2
+  (due September 19, 2018)}
+\item
+  \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT.pdf}{Q3
+  (due September 19, 2018)}
 \end{enumerate}
 
 \chapter{Terms and Concepts}\label{terms-and-concepts}
@@ -1428,7 +1458,7 @@ categorical quantity:
 }
 
 \caption{Commonly used aesthetics in data visualization.
-top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-54}
+top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-55}
 \end{figure}
 
 \section{Coordinate systems}\label{coordinate-systems}
@@ -1462,7 +1492,7 @@ locations in a flat two-dimensional plane.
 }
 
 \caption{Commonly used coordinate systems. Chapter 3
-\citet{Yau}.}\label{fig:unnamed-chunk-55}
+\citet{Yau}.}\label{fig:unnamed-chunk-56}
 \end{figure}
 
 \section{Scales}\label{scales}
@@ -1493,7 +1523,7 @@ one-to-one, then the data visualization becomes ambiguous.
 \caption{Scales link data values to aesthetics. Here, the numbers 1
 through 4 have been mapped onto a position scale, a shape scale, and a
 color scale. For each scale, each number corresponds to a unique
-position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-56}
+position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-57}
 \end{figure}
 
 \section{Context}\label{context}
@@ -1608,7 +1638,7 @@ differentiate different categories.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-57-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-58-1} \end{center}
 
 Also see the
 \href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
@@ -1690,7 +1720,7 @@ for whom at least two-thirds of the students took the SAT.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-58-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-59-1} \end{center}
 
 This plot uses the visual cue of position to represent the math SAT
 score on the vertical axis with. The categorical variable of state is
@@ -1727,7 +1757,7 @@ being used to distinguish sex.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-59-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-60-1} \end{center}
 
 \section{Exercises}\label{exercises}
 
