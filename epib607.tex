@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-09-12}
+    \date{2018-09-13}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -476,7 +476,7 @@ text:
 \caption{}
 \end{figure}
 
-The version of the book you are reading now was built on 2018-09-12 and
+The version of the book you are reading now was built on 2018-09-13 and
 was built on
 \href{https://travis-ci.org/sahirbhatnagar/MATH697}{Travis}.
 
@@ -829,10 +829,6 @@ course must be submitted to a GitHub repository.\strut
 \hline
 [2.2 Data graphics exercise](https://sahirbhatnagar.com/EPIB607/data-graphics.html)\\
 \hline
-[3. Introduction to the `mosaic` package](https://cran.r-project.org/package=mosaic)\\
-\hline
-[4. R Markdown Presentation](https://prezi.com/dvmgx17e\_was/reproducible/?utm\_campaign=share\&utm\_medium=copy)\\
-\hline
 \end{tabular}
 \end{table}
 
@@ -851,9 +847,9 @@ course must be submitted to a GitHub repository.\strut
 
 \begin{table}[H]
 \centering
-\begin{tabular}{l}
+\begin{tabular}{l|l|l|l|l}
 \hline
-1. Histograms, Medians and Means\\
+[1. Data graphics exercise 2 presentation](https://sahirbhatnagar.com/EPIB607/data-graphics.html) & [2. Hurricane Florence graphic](https://twitter.com/EricHolthaus/status/1040007537234530304) & [3. Review DALITE Q1 Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001\_hist\_mean/001-hist-mean-sol.pdf) & [4. Introduction to the `mosaic` and `ggformula` package](https://cran.r-project.org/package=mosaic) & [5. R Markdown Presentation](https://prezi.com/dvmgx17e\_was/reproducible/?utm\_campaign=share\&utm\_medium=copy)\\
 \hline
 \end{tabular}
 \end{table}
@@ -1306,7 +1302,8 @@ Assignment & Topic & Template & Data & Due\\
 \tightlist
 \item
   \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf}{Q1
-  (due September 12, 2018)} 
+  (due September 12, 2018)} --
+  \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf}{Solutions}
 \end{enumerate}
 
 \chapter{Terms and Concepts}\label{terms-and-concepts}
@@ -1468,7 +1465,7 @@ locations in a flat two-dimensional plane.
 \citet{Yau}.}\label{fig:unnamed-chunk-55}
 \end{figure}
 
-\section{Scale}\label{scale}
+\section{Scales}\label{scales}
 
 Scales link data values to aesthetics \citep{wilke}. To map data values
 onto aesthetics, we need to specify which data values correspond to
@@ -1620,6 +1617,64 @@ R package} and
 Scales chapter} \citep{wilke}.
 
 \section{Examples}\label{examples}
+
+\subsection{Hurricane Florence}\label{hurricane-florence}
+
+For Hurricane Florence, \citet{ncar} present the first advance
+forecasted attribution statements about the human influence on a
+tropical cyclone. In Figure \ref{fig:ncar} they present a side-by-side
+comparison of the rainfall based on two forecasts:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Standard Forecast}: With observed initial atmospheric
+  conditions and sea surface temperatures (SST) adapted from NOAA's
+  operational Global Forecast System model. This is the forecast of the
+  actual Hurricane Florence.
+\item
+  \textbf{Modified Forecast}: With observed initial conditions modified
+  to remove the estimated climate change signal from the temperature,
+  moisture, and SST fields to represent a world without climate change.
+  This is a counterfactual forecast of Hurricane Florence if it were to
+  occur in a world without human induced global warming.
+\end{enumerate}
+
+
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{images/ncar_florence} 
+
+}
+
+\caption{Left: is the forecast of the actual Hurricane Florence.
+Right: counterfactual forecast of Hurricane Florence if it were to occur
+in a world without human induced global warming \citep{ncar}.}\label{fig:ncar}
+\end{figure}
+
+The image on the right (modified forecast) looks worse, but the
+situation described on the left (standard forecast) is actually worse.
+They should have instead used perceptually uniform sequential colormaps
+as shown in Figure \ref{fig:viridis}
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=\textwidth]{images/viridis} 
+
+}
+
+\caption{source: \url{https://matplotlib.org/users/colormaps.html}}\label{fig:viridis}
+\end{figure}
+
+These palettes are available in \texttt{R} through the
+\href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
+R package}.
 
 \subsection{SAT Scores}\label{sat-scores}
 
