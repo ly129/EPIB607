@@ -37,7 +37,11 @@ head(cens)
 ```
 
 ```{r}
-
+males <- readxl::read_xlsx("~/Downloads/age-adjusted-cancer-death-rates-females-1930-2014.xlsx",
+skip = 1, n_max = 85) %>% mutate(Gender = "Male")
+females <- readxl::read_xlsx("~/Downloads/age-adjusted-cancer-death-rates-females-1930-2014.xlsx",
+skip = 1, n_max = 85) %>% mutate(Gender = "Female")
+cancer_rates <- dplyr::bind_rows(list(females,males))
 ```
 
 ```{r}

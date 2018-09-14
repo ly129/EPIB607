@@ -1,6 +1,0 @@
-library(RColorBrewer)
-RColorBrewer::display.brewer.all()
-
-
-plot(1:9, pch = 19,
-     col = RColorBrewer::brewer.pal(n = 9, "Blues"))

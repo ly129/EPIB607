@@ -11,7 +11,7 @@
 
 <meta name="author" content="EPIB 607, Fall 2018, McGill University" />
 
-<meta name="date" content="2018-09-11" />
+<meta name="date" content="2018-09-13" />
 
 <title>A2: Histograms, Medians, Means, Boxplots and Standard Deviation</title>
 
@@ -125,7 +125,7 @@ $(document).ready(function () {
 <h1 class="title toc-ignore">A2: Histograms, Medians, Means, Boxplots and Standard Deviation</h1>
 <h3 class="subtitle"><em>Your Name Here and ID number here</em></h3>
 <h4 class="author"><em>EPIB 607, Fall 2018, McGill University</em></h4>
-<h4 class="date"><em>2018-09-11</em></h4>
+<h4 class="date"><em>2018-09-13</em></h4>
 
 </div>
 
@@ -142,6 +142,13 @@ $(document).ready(function () {
 
 <div id="age-structures-of-populations-then-and-now" class="section level1">
 <h1><span class="header-section-number">1</span> Age-structures of Populations, then and now</h1>
+<pre><code>##   Gender Age Freq
+## 1   Male   0 5332
+## 2   Male   1 4570
+## 3   Male   2 4979
+## 4   Male   3 4789
+## 5   Male   4 4884
+## 6   Male   5 4787</code></pre>
 </div>
 <div id="number-of-authors" class="section level1">
 <h1><span class="header-section-number">2</span> Number of Authors</h1>
@@ -168,6 +175,9 @@ knitr::opts_chunk$set(
   fig.width = 10        # fig width
 )
 ## ---- Question-1 ------------------------------------------------------------
+cens &lt;- read.csv(&quot;https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv&quot;)
+head(cens)
+
 
 ## ---- Question-2 ------------------------------------------------------------
 

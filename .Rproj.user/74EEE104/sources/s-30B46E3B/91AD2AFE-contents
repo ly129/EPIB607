@@ -1,0 +1,147 @@
+# [IF interested] PRIMER on latitude and longitude
+# http://www.google.ca/search?client=safari&rls=en&q=latitude+longitude
+
+# [IF interested] More on Oceanography, and the database 
+# http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Surveys/Oceanography/ 
+
+
+# Function to obtain data for a single latitude,logitude location
+# (the function fugures out the smallest 'bounding box'
+# containing that location, and returns the single reading from the
+# 1 location in that box, along with the lat. and long. used as input.)
+
+# You can probably find more efficient ways, and there may be cases
+# it doesn't handle correctly -- if so, please let JH know. 
+
+# Run this piece of code to set up the function
+
+# start of ...
+
+if(!("RCurl" %in% installed.packages())) install.packages("RCurl")
+library(RCurl)
+
+getDataforOneLocation=function(lat,long){
+  if(lat < -90 | lat > 90 | long < -180 | long > 180) return("invalid input")
+  else {
+   SIGN=sign(lat); ABS=abs(lat); INT = as.integer(ABS); DEC= ABS - INT;
+   LAT= SIGN * ( INT+ (2*floor(120*DEC)-1)/240 ); if(LAT==0) LAT = (2*(runif(1) < 0.5)-1)/240; 
+   latS = toString(round(LAT - 0.0001,4)); latN = toString(round(LAT + 0.0001,4))
+  
+   SIGN=sign(long); ABS=abs(long); INT = as.integer(ABS); DEC= ABS - INT;
+   LONG= SIGN * ( INT+ (2*floor(120*DEC)-1)/240 ); if(LONG==0) LONG = (2*(runif(1) < 0.5)-1)/240; 
+   longE = toString(round(LONG + 0.0001,4)); longW = toString(round(LONG - 0.0001,4))
+  
+   #print(c(lat,latS,latN,long,longW,longE))
+   returned=postForm("http://topex.ucsd.edu/cgi-bin/get_srtm30.cgi",
+            "north" = latN, "south" = latS, "east" = longE, "west" = longW ) ;  #print(returned)
+ n=nchar(returned); #print(n) ; 
+ data=substr(returned,2,n-1) ; #print(data)
+ DATA=strsplit(data,"\t"); #print(DATA);
+ LA=as.numeric(DATA[[1]][2]); LO=as.numeric(DATA[[1]][1]); EL=as.numeric(DATA[[1]][3])
+ return(c(lat,LA,long,LO,EL))
+ }
+} 
+
+# end of ...
+
+# test it out on 1 location
+
+getDataforOneLocation(45.5,-75) # near Montreal, 45.5N, 75 West
+
+########## generate random points on a sphere ###########
+ 
+n.draws=200             #    SET SAMPLE SIZE
+show.counter.every = 50
+ 
+# In case you want to be able to obtain the same sample again
+# set.seed(123456) 
+# If you wish to set the seed (rather than rely on the clock)
+# remove the # preceding set.seed(123456) and change the 123456
+# maybe use your id number or a number others won't use.
+# Obviously everyone should use a different starting seed.
+ 
+
+lon = runif(n.draws,-180, 180)
+lat = (180/pi) * asin(2*runif(n.draws, 0,1) - 1)
+
+hist(lat,breaks=17)
+
+# this block queries the website one location at a time so takes time.
+# (precision costs time and money! no free lunch!) 
+
+alt= rep(NA,n.draws)
+for (i in 1:n.draws) {
+if( i %% show.counter.every == 0) print(i)
+  alt[i] = getDataforOneLocation(lat[i],lon[i])[5]    
+}
+
+# end of block
+
+plot(lon,lat,pch=19,cex=0.2,
+ col=c("green", "blue")[1+(alt<0)])
+
+hist(alt,breaks=100)
+
+ds=data.frame(lon,lat,alt)
+
+# water(1) or not(0)
+ds$water = 1*(ds$alt < 0)
+
+summary(ds)
+( sd(ds$water) ) # does this fit with what you know abou 0/1 vars?
+
+# 95% CI for proportion (large-sample approx.n to binomial)
+
+round(mean(ds$water) + c(-1.96,0,1.96)*sd(ds$water)/
+                sqrt(length(ds$water)),2)
+
+# depth of water
+
+water.depth = ds$alt[ds$water==1]
+summary(water.depth)
+
+# 95% CI for mean water depth [fill in missing bits]
+
+( sd.water.depth = sd(water.depth) )
+round(mean(water.depth) + c(-1.96,0,1.96)*
+           sd.water.depth/sqrt(length(water.depth)),0)
+           
+           
+# Bootstrap CIs
+
+# see https://stats.idre.ucla.edu/r/faq/how-can-i-generate-bootstrap-statistics-in-r/
+
+# for proportion that is water 
+
+if(!("boot" %in% installed.packages())) install.packages("boot")
+library(boot)
+
+proportion = function(d, i){
+	d2 <- d[i,]
+	return(mean(d2$water))
+}
+
+bootstrap.proportions = boot(ds,proportion, R=1000)
+str(bootstrap.proportions)
+
+summary(bootstrap.proportions$t)
+sd(bootstrap.proportions$t)
+
+plot(bootstrap.proportions)
+
+boot.ci(boot.out = bootstrap.proportions, 
+ type = c("norm", "basic", "perc", "bca"))
+
+
+
+# Simpler way to do bootstrap for new R users. but not as flexible as boot package --------
+
+if(!("mosaic" %in% installed.packages())) install.packages("mosaic")
+library(mosaic) 
+s <- do(1000) * mean(~ water, data = resample(ds))
+confint(s, method = "perc")
+
+# repeat to get CI for mean water depth
+
+# ... 
+  
