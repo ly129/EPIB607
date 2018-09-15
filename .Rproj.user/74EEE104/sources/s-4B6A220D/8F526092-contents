@@ -1,0 +1,5 @@
+cens <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv")
+head(cens)
+colnames(cens)
+library(mosaic)
+gf_smooth(Freq ~ Age, date = cens)

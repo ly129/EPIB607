@@ -1,0 +1,306 @@
+library(RCurl)
+
+# PRIMER on latitude and longitude
+
+# http://www.google.ca/search?client=safari&rls=en&q=latitude+longitude
+
+
+# example of a 1-off (manual) request 
+
+data=postForm("https://topex.ucsd.edu/cgi-bin/get_srtm30.cgi",
+            "north" = "51.619",
+            "south" = "51.61",
+            "east" = "-9.71",
+            "west" = "-9.72" )
+data
+
+
+# Function to obtain data for a single latitude,logitude location
+# (the function fugures out the smallest 'bounding box'
+# containing that location, and returns the single reading from the
+# 1 location in that box, along with the lat. and long. used as input.
+
+# You can probably find more efficient ways, and there may be cases
+# it doesn't handle correctly -- if so, please let me know.) 
+
+getDataforOneLocation=function(lat,long){
+  if(lat < -90 | lat > 90 | long < -180 | long > 180) return("invalid input")
+  else {
+   SIGN=sign(lat); ABS=abs(lat); INT = as.integer(ABS); DEC= ABS - INT;
+   LAT= SIGN * ( INT+ (2*floor(120*DEC)-1)/240 ); if(LAT==0) LAT = (2*(runif(1) < 0.5)-1)/240; 
+   latS = toString(round(LAT - 0.0001,4)); latN = toString(round(LAT + 0.0001,4))
+  
+   SIGN=sign(long); ABS=abs(long); INT = as.integer(ABS); DEC= ABS - INT;
+   LONG= SIGN * ( INT+ (2*floor(120*DEC)-1)/240 ); if(LONG==0) LONG = (2*(runif(1) < 0.5)-1)/240; 
+   longE = toString(round(LONG + 0.0001,4)); longW = toString(round(LONG - 0.0001,4))
+  
+   #print(c(lat,latS,latN,long,longW,longE))
+   returned=postForm("https://topex.ucsd.edu/cgi-bin/get_srtm30.cgi",
+            "north" = latN, "south" = latS, "east" = longE, "west" = longW ) ;  #print(returned)
+ n=nchar(returned); #print(n) ; 
+ data=substr(returned,2,n-1) ; #print(data)
+ DATA=strsplit(data,"\t"); #print(DATA);
+ LA=as.numeric(DATA[[1]][2]); LO=as.numeric(DATA[[1]][1]); EL=as.numeric(DATA[[1]][3])
+ return(c(lat,LA,long,LO,EL))
+ }
+} 
+
+
+getDataforOneLocation(45.5,-75)
+
+
+#test 1
+for (i in 1:10){
+	a=runif(1,-90,90); o=runif(1,-180,180)
+	d= getDataforOneLocation(a,o) 
+    print(d)
+    }
+        
+
+# lake ontario [coarse grid of 1 x 10 ) x (5 x 4) = 200 datapoints] ; 
+
+d=NULL
+for (la in seq(43,44,1/10) ){
+	for (lo in seq(-80,-75,1/4 ) ){
+	d=rbind(d, getDataforOneLocation(la,lo))
+    } 
+}
+D=d[d[,5]<76,]
+plot(D[,4], D[,2])  
+
+
+# ########################################################
+
+# Function to obtain data for a 'rectangle'
+
+# Again, you can probably find more efficient ways, and there 
+# may be cases it doesn't handle correctly -- if so, please let JH know.
+
+getDataforRectangle=function(latN,latS, longW,longE){
+  if(abs(latN) > 90   | abs(latS)  > 90 | 
+     abs(longW) > 180 | abs(longE) > 180 |
+     latS > latN | longW > longE)  return("invalid input")
+  else {
+  returned=postForm("http://topex.ucsd.edu/cgi-bin/get_srtm30.cgi",
+            "north" = toString(latN), "south" = toString(latS),
+            "east" = toString(longE), "west" = toString(longW) )
+           
+  #print(returned);
+  LINE=strsplit(returned,"\n");
+  n=length(LINE[[1]]) ; #print(n)
+  line=LINE[[1]][2:n]
+  sp = function(x)  as.numeric( (strsplit(x,"\t"))[[1]] )
+  u=matrix(unlist( lapply(line, sp ) ), ncol=3, byrow=TRUE) ; #u 
+  colnames(u) = c("long","lat","elevation.metres")
+  return(data.frame(u))
+  }
+}
+
+# careful with these tests -- remember 120 values for every full degree
+# latitude x 120 values for every full degree longitude !!  
+ 
+# ultra-thin north-south slice (from 50-55 north) thru 10 west:
+
+# (1/120 = 0.00833 , so make the box 0.009 wide !!)
+ 
+data=getDataforRectangle(55, 50, -10.009, -10) ; length(data$lat)
+plot(data$lat,data$elevation.metres,type="l")
+
+
+# East from Vancouver (ultra-thin west-east slice) :
+
+data=getDataforRectangle(50.309, 50.300, -128.0, -89.0) ; length(data$lat)
+plot(data$long,data$elevation.metres,type="l")
+
+########## in fact, the earth is not quite spherical ###########
+
+# the 'iso-latitude' circle  at a given latitude 
+# (or the distance between two longitude lines)
+# becomes smaller the further the latitude is from the equator.
+
+# If we treat the earth as a sphere, the ratio (relative to that at the equator)
+# is cos(latitude * (pi/180)) : cos(0);  
+
+# The diameter from pole to pole is shorter than the diameter at the 
+# equator (it is squished in a bit from both poles)
+
+## See  http://calgary.rasc.ca/latlong.htm for more refined calculations
+
+########## random points on a sphere ###########
+
+# think of the sections of a (peeled) orange ####
+
+library(rgl)
+
+  n=10000
+  open3d()
+  x <- runif(n,-1,1)
+  y <- runif(n,-1,1)
+  z <- runif(n,-1,1) ;  r=sqrt(x^2+y^2+z^2)
+  n.inside=sum(r<=1) ; n.inside
+  x=x[r<=1]; y=y[r<=1]; z=z[r<=1]; r=r[r<=1]
+  x=x/r; y=y/r; z=z/r
+  colours=rep("grey80",n.inside)
+  in.wedge= ( abs(x/y) < 0.4 & y < 0  )
+  colours[in.wedge] = "red"
+  plot3d(x, y, z, size=4, col=colours)
+  plot(x,y,col=colours)
+
+
+# consider a given section, 
+
+# width w at latitude theta [ -pi/2 < theta < pi/2 ] is proportional to cos(theta);
+
+# note equator is in middle at theta = 0.
+
+# so pdf(w) prop. to cos(theta) 
+
+# normalizing constant [yielding integral of 1] = 0.5, so 
+
+# pdf(theta) = 0.5*cos(theta)
+
+# discrete version... (can make slices smaller and smaller)
+
+n.slices=30; d.theta=pi/n.slices
+
+theta=seq(-pi/2,pi/2, d.theta)
+
+pdf=0.5*cos(theta)
+
+plot(theta,pdf, type="l")
+
+# cdf(theta) = 0.5 integral_{-pi/2}^{theta} cos(u) du  = 0.5*(1+sin(theta))
+
+cdf = 0.5*(1+sin(theta))
+
+plot(theta, cdf, cex=0.5) # , type="l" )
+
+# longitude lines laid end to end, but in such a way
+# that we know which ones are which...
+
+y= cumsum(pdf*d.theta ) # cumulative sum 
+y=0
+for (i in 1:n.slices) {
+	d.y= 0.5*(pdf[i]+pdf[i+1])*d.theta
+    segments(theta[i]+0.5*d.theta, y,  theta[i]+0.5*d.theta, y+d.y)
+    y=y+d.y
+}
+
+# entries at randomly selected vertical locations on (0,1) scale
+# find corresponding value on 
+
+n.draws=20
+
+for (i in 1:n.draws) {
+	random.u = runif(1, 0,1)  # red (input)
+	# solving 0.5*(1+sin(theta)) = u for theta gives
+	# theta = inverse.sin (2*u - 1) = arcsin(2*u - 1)
+	random.theta = asin(2*random.u - 1)  # blue (output)
+    points(c(-1.02*pi/2), c(random.u), cex=0.5, pch=19, col="red")
+    segments(-pi/2, random.u,  random.theta, random.u, col="red", lwd=0.5)
+    segments(random.theta, random.u, random.theta, 0, col="blue", lwd=0.5)
+    points( c(random.theta), c(-0.03), cex=0.5, pch=19, col="blue")
+}
+
+# [note the Wolfram page uses  acos(2*random.u - 1), but then
+# their equator is at pi/2, whereas ours is at 0 ]
+
+# take the theta values where the horizontal lines
+# insersect the longitude lines  
+
+# So, to draw from a distribution with a give pdf(.)
+
+# Obtain cdf ...
+
+# draw u ~ Uniform(0,1) ...
+
+# find the . where y intersects cdf
+
+# i.e find ? such that u = cdf(?)
+
+# i.e. inverse.cdf(u) = ?
+
+# this works well if the inverse.cdf function has a closed form
+
+# ANOTHER WAY to remember this way to obtain draws from a given distribution ..
+ 
+# if p is a percentage , then for any p <= 99 ... 
+# 1 percent of the probability mass lies between the p-th and (p+1)-st (per)centiles
+# [ can refine this for intervals smaller than 1 percent ]
+
+# there's    1% between  0%-ile and 1%-ile,  1% between  1%-ile and  2%-ile,  
+#            1% between 10%-ile and 11%-ile, 1% between 11%-ile and 12%-ile,  etc...    
+# so, if want draws from a distribution, take draws u_1, u_2, u_3, ... from the interval 0-1,
+# convert u_i to its counterpaert on the x-axis of the cdf...
+
+## jh 2010.09.05 -- corrections/suggestions welcome
+
+
+
+n.draws=50000
+
+set.seed(2017)
+
+set.seed(20180913)
+every = 500
+
+lon = runif(n.draws,-180, 180)
+lat = (180/pi) * asin(2*runif(n.draws, 0,1) - 1)
+alt= rep(NA,n.draws)
+
+
+ptm <- proc.time()
+
+for (i in 1:n.draws) {
+if( i %% every == 0) print(i)
+  alt[i] = getDataforOneLocation(lat[i],lon[i])[5]    
+}
+
+proc.time() - ptm
+
+
+hist(alt,breaks=100)
+
+EarthLocations20180914=data.frame(lon,lat,alt)
+mean(EarthLocations20180914$alt<0)
+summary(EarthLocations20180914$alt)
+summary(EarthLocations20180914$alt[EarthLocations20180914$alt<0])
+
+setwd("/Users/jameshanley/Dropbox/Courses/bios601/Surveys/Oceanography")
+
+# write.csv(EarthLocations20180914,"EarthLocations20180914.csv")
+# ds=read.csv("EarthLocations20180914.csv")
+head(ds)
+ds$land = 1*(ds$alt > 0)
+plot(ds$lon[ds$land==1],
+     ds$lat[ds$land==1],cex=0.01)
+plot(ds$lon,ds$lat,cex=0.01)
+plot( table( round(ds$lat) ) )
+
+ds=read.csv("ClassList2017.csv",as.is=TRUE)
+
+who2017 = unlist(strsplit(ds$Student.Name,","))[seq(2,20,2)]
+
+# save(ds,file="altAt5000locations.Rdata")
+# save(ds2017,file="altAt3000locations.Rdata")
+
+# load("altAt5000locations.Rdata") # 2016
+# load("altAt3000locations.Rdata") # 2017
+
+
+who2016=c(
+"Zahra",  "Liying","Janie",
+"David",  "Norah","Fatemeh",
+"Lamin",  "Daniel","Zhongya",
+"Xiaoyu", "Kaiqiong", "Fatema")
+
+for(i in 1:length(who2017)) {
+	DS = ds2017[(1+(i-1)*200):(i*200),]
+	wh = substr(who2017[i],2,nchar(who2017[i])-1)
+	DS$who = rep(wh,200)
+	print(paste(wh,".csv",sep=""))
+	write.csv(DS,file=paste(wh,".csv",sep=""))
+}
+
+
+  
