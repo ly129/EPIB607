@@ -6,6 +6,28 @@ if (!requireNamespace("pacman")) install.packages("pacman")
 pacman::p_load(gmailr)
 
 
+# load data ---------------------------------------------------------------
+
+allLocations=read.csv("EarthLocations20180914 copy.csv")
+str(allLocations)
+
+allLocations$water  = 1*(allLocations$alt < 0)
+summary(allLocations)
+
+
+plot(allLocations$lon[allLocations$water==1],
+     allLocations$lat[allLocations$water==1],
+     col="blue",cex=0.02)
+
+plot( table( round(allLocations $lat) ) )
+
+# water only
+
+depthsOfWater = allLocations[allLocations$water==1,]
+depthsOfWater$depth = -depthsOfWater$alt
+str(depthsOfWater)
+summary(depthsOfWater)
+hist(depthsOfWater$depth,breaks=100)
 
 # emails ------------------------------------------------------------------
 

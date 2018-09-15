@@ -18,8 +18,7 @@ recipient = rep(c(               # for testing
   "james.hanley@mcgill.ca",
   "james.hanley@mcgill.ca"), 17)
 
-recipient = c("sahir.bhatnagar@mcgill.ca", 
-              "james.hanley@mcgill.ca")
+recipient = c("sahir.bhatnagar@mcgill.ca")
 
 N.r = length(recipient)
 
@@ -47,7 +46,7 @@ OffsetLand   = 0;
 
 cr = "\n"
 
-m = matrix(NA, N.r,6) # 1st 4 for 607 all  for bios601 
+m = matrix(NA, N.r, 4) # 1st 4 for 607 all  for bios601 
 
 for(i in 1: N.r){
   
