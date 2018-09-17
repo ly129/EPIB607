@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537129013891.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3617195677",
+    "id" : "F4F6001E",
+    "lastKnownWriteTime" : 1537156829,
+    "last_content_update" : 1537156829874,
+    "path" : "~/git_repositories/epib607/exercises/water/water_exercise_epib607.Rmd",
+    "project_path" : "exercises/water/water_exercise_epib607.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "228,0",
+        "scrollLine" : "205",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

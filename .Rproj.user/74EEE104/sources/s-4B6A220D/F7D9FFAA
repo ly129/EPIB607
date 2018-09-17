@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537157149753.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "15|55|45|0|\n",
+    "hash" : "0",
+    "id" : "F7D9FFAA",
+    "lastKnownWriteTime" : 1537159980,
+    "last_content_update" : 1537159980396,
+    "path" : "~/git_repositories/epib607/exercises/water/automate_water_task.R",
+    "project_path" : "exercises/water/automate_water_task.R",
+    "properties" : {
+        "cursorPosition" : "10,78",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

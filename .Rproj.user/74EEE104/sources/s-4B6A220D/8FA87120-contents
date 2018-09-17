@@ -8,7 +8,7 @@ pacman::p_load(gmailr)
 
 # load data ---------------------------------------------------------------
 
-allLocations=read.csv("EarthLocations20180914 copy.csv")
+allLocations <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/earth-locations-20180914.csv")
 str(allLocations)
 
 allLocations$water  = 1*(allLocations$alt < 0)

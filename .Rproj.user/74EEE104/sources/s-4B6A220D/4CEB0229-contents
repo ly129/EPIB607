@@ -6,9 +6,32 @@ if (!requireNamespace("pacman")) install.packages("pacman")
 pacman::p_load(gmailr)
 
 
+# load data ---------------------------------------------------------------
+
+allLocations <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/earth-locations-20180914.csv")
+str(allLocations)
+
+allLocations$water  = 1*(allLocations$alt < 0)
+summary(allLocations)
+
+
+plot(allLocations$lon[allLocations$water==1],
+     allLocations$lat[allLocations$water==1],
+     col="blue",cex=0.02)
+
+plot( table( round(allLocations $lat) ) )
+
+# water only
+
+depthsOfWater = allLocations[allLocations$water==1,]
+depthsOfWater$depth = -depthsOfWater$alt
+str(depthsOfWater)
+summary(depthsOfWater)
+hist(depthsOfWater$depth,breaks=100)
 
 # emails ------------------------------------------------------------------
 
+# stored on local laptop only for security reasons
 emails <- read.csv("~/Documents/EPIB607.csv")
 
 recipient = rep(c(               # for testing
@@ -29,10 +52,10 @@ N.r = length(recipient)
 # use this first time to be authenticated
 # I use option 2
 
-MIME <- gmailr::mime(from="sahir.bhatnagar@gmail.com",       
-                    to="sahir.bhatnagar@mcgill.ca",
-                    subject="hello", 
-                    body="test") 
+MIME <- gmailr::mime(from = "sahir.bhatnagar@gmail.com",       
+                    to = "sahir.bhatnagar@mcgill.ca",
+                    subject = "hello", 
+                    body = "test") 
 send_message(MIME)
 
 # cycle over recipients
@@ -62,10 +85,10 @@ for(i in 1: N.r){
     
     I = OffsetAll + 1:n
     
-    LON = paste("Lon.n.",toString(n)," = c(",
+    LON = paste("Lon.n.",toString(n)," <- c(",
                 paste(round(allLocations$lon[I],3),
                       collapse=","),")", sep="" )
-    LAT = paste("Lat.n.",toString(n)," = c(",
+    LAT = paste("Lat.n.",toString(n)," <- c(",
                 paste(round(allLocations$lat[I],3),
                       collapse=","),")", sep="" )
     WATER = paste("Water.n.",toString(n)," = c(",
@@ -109,31 +132,31 @@ for(i in 1: N.r){
   
   # BODY = paste(BODY,cr,"# ----- Land heights ---------",cr)
   
-  for (n in c(5,20) ) {
-    
-    COL=COL+1
-    
-    I = OffsetLand + 1:n
-    
-    ALT = paste("Elevation.n.",toString(n)," = c(",
-                paste(heightsOfLand$alt[I],
-                      collapse=","),")", sep="" )
-    MEAN = paste("mean(Elevation.n.",toString(n),")",sep="" )
-    
-    m[i,COL] = mean(heightsOfLand$alt[I])
-    
-    # BODY = paste(BODY,cr,LON,cr,LAT,cr,cr,DEPTH,cr,cr,MEAN,cr)
-    
-    OffsetLand = OffsetLand + 1
-    
-  } # n
+  # for (n in c(5,20) ) {
+  #   
+  #   COL=COL+1
+  #   
+  #   I = OffsetLand + 1:n
+  #   
+  #   ALT = paste("Elevation.n.",toString(n)," = c(",
+  #               paste(heightsOfLand$alt[I],
+  #                     collapse=","),")", sep="" )
+  #   MEAN = paste("mean(Elevation.n.",toString(n),")",sep="" )
+  #   
+  #   m[i,COL] = mean(heightsOfLand$alt[I])
+  #   
+  #   # BODY = paste(BODY,cr,LON,cr,LAT,cr,cr,DEPTH,cr,cr,MEAN,cr)
+  #   
+  #   OffsetLand = OffsetLand + 1
+  #   
+  # } # n
   
-  MIME = mime(from="james.hanley@mcgill.ca",       
+  MIME = mime(from="sahir.bhatnagar@gmail.com",       
               to=recipient[i],
               subject="data from random Earth locations", 
               body=BODY) 
   
-  #send_message(MIME)
-  #print(MIME)
+  send_message(MIME)
+  print(MIME)
   
 } # end i (recipient)

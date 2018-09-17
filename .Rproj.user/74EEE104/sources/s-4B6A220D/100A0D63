@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537157146244.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "100A0D63",
+    "lastKnownWriteTime" : 1537148532,
+    "last_content_update" : 1537148532,
+    "path" : "~/git_repositories/epib607/exercises/water/gmailr_EPIB607.R",
+    "project_path" : "exercises/water/gmailr_EPIB607.R",
+    "properties" : {
+        "cursorPosition" : "13,46",
+        "scrollLine" : "3"
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

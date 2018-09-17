@@ -1,0 +1,213 @@
+setwd("/Users/jameshanley/Dropbox/EPIB607/Jim2018/Water")
+
+# START HERE FOR WATER EXERCISE 607 
+
+allLocations=read.csv("EarthLocations20180914 copy.csv")
+str(allLocations)
+
+# switch back if saving in unshared folder
+
+setwd("/Users/jameshanley/Dropbox/Courses/bios601/Surveys/Oceanography")
+
+allLocations$water  = 1*(allLocations$alt < 0)
+summary(allLocations)
+
+
+par(mfrow=c(2,2),mar = c(4,4,2,1) )
+
+plot(allLocations$lon[allLocations$water==1],
+     allLocations$lat[allLocations$water==1],
+     col="blue",cex=0.02)
+     
+plot( table( round(allLocations $lat) ) )
+
+# water only
+
+depthsOfWater = allLocations[allLocations$water==1,]
+depthsOfWater$depth = -depthsOfWater$alt
+str(depthsOfWater)
+summary(depthsOfWater)
+hist(depthsOfWater$depth,breaks=100)
+
+# land only  bios601 extra
+
+heightsOfLand = allLocations[allLocations$water==0,]
+str(heightsOfLand)
+summary(heightsOfLand)
+hist(heightsOfLand$alt,breaks=100)
+
+
+recipient = rep(c(               # for testing
+"james.hanley@mcgill.ca",
+"sahir.bhatnagar@mcgill.ca",
+"james.hanley@mcgill.ca",
+"james.hanley@mcgill.ca",
+"james.hanley@mcgill.ca"), 17)
+
+N.r = length(recipient)
+
+library(gmailr)
+
+# before the mass mailing,
+# use this first time to be authenticated
+# I use option 2
+
+MIME = mime(from="james.hanley.mcgill@gmail.com",       
+                  to="james.hanley@mcgill.ca",
+                  subject="hello", 
+                  body="test") 
+send_message(MIME)
+      
+# cycle over recipients
+
+OffsetAll    = 0; # sequential, from very top (optional)
+OffsetDepths = 0;
+OffsetLand   = 0;  
+
+cr = "\n"
+
+m = matrix(NA, N.r,6) # 1st 4 for 607 all  for bios601 
+
+for(i in 1: N.r){
+	
+  BODY=paste(cr,"# ---- Covered by Water? (1=Yes) -----",cr)
+  
+  COL=0
+  
+  for (n in c(5,20) ) {
+  	
+  	COL = COL +1
+	
+	# for water(1/0)
+	
+	I = OffsetAll + 1:n
+	
+	LON = paste("Lon.n.",toString(n)," = c(",
+	        paste(round(allLocations$lon[I],3),
+	              collapse=","),")", sep="" )
+	LAT = paste("Lat.n.",toString(n)," = c(",
+	        paste(round(allLocations$lat[I],3),
+	              collapse=","),")", sep="" )
+	WATER = paste("Water.n.",toString(n)," = c(",
+	        paste(allLocations$water[I],
+	              collapse=","),")", sep="" )
+	m[i,COL] = mean(allLocations$water[I])
+	HITS = paste("sum(Water.n.",toString(n),")",sep="" )
+	
+	BODY = paste(BODY,cr,LON,cr,LAT,cr,cr,WATER,cr,cr,HITS,cr)
+	              
+	OffsetAll = OffsetAll + n
+
+  } # n
+  
+  BODY = paste(BODY,cr,"# ----- Water Depths ---------",cr)
+  
+  for (n in c(5,20) ) {
+	
+	COL=COL+1
+	
+	I = OffsetDepths + 1:n
+	
+	LON = paste("LON.n.",toString(n)," = c(",
+	        paste(round(allLocations$lon[I],3),
+	              collapse=","),")", sep="" )
+	LAT = paste("LAT.n.",toString(n)," = c(",
+	        paste(round(allLocations$lat[I],3),
+	              collapse=","),")", sep="" )
+	DEPTH = paste("Depth.n.",toString(n)," = c(",
+	        paste(depthsOfWater$depth[I],
+	              collapse=","),")", sep="" )
+	MEAN = paste("mean(Depth.n.",toString(n),")",sep="" )
+	
+	m[i,COL] = mean(depthsOfWater$depth[I])
+	
+	BODY = paste(BODY,cr,LON,cr,LAT,cr,cr,DEPTH,cr,cr,MEAN,cr)
+	
+	OffsetDepths = OffsetDepths + n
+         
+  } # n
+  
+  # BODY = paste(BODY,cr,"# ----- Land heights ---------",cr)
+  
+  for (n in c(5,20) ) {
+	
+	COL=COL+1
+	
+	I = OffsetLand + 1:n
+	
+	ALT = paste("Elevation.n.",toString(n)," = c(",
+	        paste(heightsOfLand$alt[I],
+	              collapse=","),")", sep="" )
+	MEAN = paste("mean(Elevation.n.",toString(n),")",sep="" )
+	
+	m[i,COL] = mean(heightsOfLand$alt[I])
+	
+	# BODY = paste(BODY,cr,LON,cr,LAT,cr,cr,DEPTH,cr,cr,MEAN,cr)
+	
+	OffsetLand = OffsetLand + n
+         
+  } # n
+	               
+      MIME = mime(from="james.hanley@mcgill.ca",       
+                  to=recipient[i],
+                  subject="data from random Earth locations", 
+                  body=BODY) 
+                  
+      #send_message(MIME)
+      #print(MIME)
+
+} # end i (recipient)
+
+#check
+c(OffsetAll,OffsetDepths,OffsetLand)
+N.r * 25
+summary(m)
+round( apply(m,2,sd), 2)
+
+
+par(mfrow=c(2,3),mar = c(4,4,2,1) )
+
+
+plot(table(m[,1]),xlim=c(0,1),
+xlab="Students' Estimates of Proportion Covered by Water",
+main="n=5",ylim=c(0,N.r/1.5),ylab="Frequency")
+
+d.BREAKS=seq(1000,6000,500)
+hist(m[,3],xlim=c(0,6000),
+ylim=c(0, N.r/1.5), breaks=d.BREAKS,
+xlab="Students' Estimates of Mean Ocean Depth (m)",
+main="n=5")
+
+e.BREAKS=seq(0,3000,250)
+hist(m[,5],xlim=c(0,6000),
+ylim=c(0, N.r/1.5), breaks=e.BREAKS,
+xlab="Students' Estimates of Mean Land Evevation (m)",
+main="n=5")
+
+# 
+plot(table(m[,2]),xlim=c(0,1),
+main="n=20",ylim=c(0,N.r/2),ylab="Frequency")
+
+hist(m[,4],xlim=c(0,6000),
+ylim=c(0, N.r/1.5),breaks=d.BREAKS,
+main="n=20",xlab="")
+
+hist(m[,6],xlim=c(0,6000),
+ylim=c(0, N.r/1.5),breaks=e.BREAKS,
+main="n=20",xlab="")
+
+filled.sheet = data.frame(m,stringsAsFactors=FALSE)
+filled.sheet$Student = recipient
+filled.sheet= filled.sheet[,c(7,1:4)]
+names(filled.sheet)=c("Student",
+"PropnW.5.locations",
+"PropnW.25.locations",
+"Mean.5.depths",
+"Mean.25.depths")
+str(filled.sheet)
+summary(filled.sheet)
+
+write.csv(filled.sheet,file="filled.sheet.csv")
+
+ds=read.csv("filled.sheet.csv",as.is=TRUE)
+str(ds)
