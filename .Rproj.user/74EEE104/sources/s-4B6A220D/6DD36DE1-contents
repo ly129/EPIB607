@@ -1,0 +1,10 @@
+msg <-
+  mime() %>%
+  to(emails[85:86, "Email"]) %>%
+  subject("[Fall 2018 - EPIB-607-001 - Inferential Statistics]: In-class exercise on sampling distributions") %>%
+  from("sahir.bhatnagar@gmail.com") %>%
+  html_body(BODY) %>%
+  attach_part(BODY) %>%
+  attach_file(sprintf("~/git_repositories/epib607/exercises/water/students/%s_water_exercise_epib607.pdf", emails[i,"ID"]))
+
+send_message(msg)

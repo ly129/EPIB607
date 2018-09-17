@@ -10,6 +10,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{longtable}
 
 % The geometry package layout settings need to be set here...
 \geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
@@ -246,44 +247,199 @@ We will now turn to estimating the average depth of the ocean. You will
 again make use of the \texttt{automate\_water\_task} function.
 
 \subsection{Determine the average depth of the ocean from the sample of
-5}\label{determine-the-average-depth-of-the-ocean-from-the-sample-of-5}
+5 and
+20}\label{determine-the-average-depth-of-the-ocean-from-the-sample-of-5-and-20}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In the same \texttt{R} script as before, copy the following index
+  vector into it:
+\end{enumerate}
+
+\begin{ShadedResult}
+\begin{verbatim}
+index.n.5 <- c(1,2,3,4,5)
+\end{verbatim}
+\end{ShadedResult}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Use the \texttt{automate\_water\_task} function to get a sample of 5
+  depths. Note: some of the returned samples will not correspond to the
+  same latitudes and longitudes provided to you earlier. This is because
+  we need to restict our sample to locations on water only in order to
+  estimate the mean depth of the ocean. Here we show some example code
+  and its output. You need to specify the \texttt{type} and
+  \texttt{student\_id} argument:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# be sure to provide your own student id}
+\NormalTok{depths.n}\FloatTok{.5}\NormalTok{ <-}\StringTok{ }\KeywordTok{automate_water_task}\NormalTok{(}\DataTypeTok{index =}\NormalTok{ index.n}\FloatTok{.5}\NormalTok{, }\DataTypeTok{student_id =} \DecValTok{222333444}\NormalTok{, }\DataTypeTok{type =} \StringTok{"depth"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\newpage
+
+The \texttt{alt} column gives the depth in meters:
+
+\begin{longtable}[]{@{}lrrrrr@{}}
+\toprule
+& X & lon & lat & alt & water\tabularnewline
+\midrule
+\endhead
+3 & 3 & -134.38257 & 37.742717 & 5028 & 1\tabularnewline
+4 & 4 & -23.62332 & -12.237161 & 5358 & 1\tabularnewline
+17391 & 17391 & -124.01387 & 11.596521 & 4577 & 1\tabularnewline
+46573 & 46573 & -167.19004 & -9.532013 & 3850 & 1\tabularnewline
+23312 & 23312 & 83.01109 & 7.885076 & 3895 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Repeat step 2 for a sample of 20 using the \texttt{index.n.20} vector
+  specified above.
+\item
+  Calculate an estimate of the mean depth of the ocean from your samples
+  of 5 and 20 using the \texttt{mean} function, e.g.,
+  \texttt{mean(depths.n.5\$alt)}.
+\item
+  Enter your estimates of the mean depth of the ocean from your samples
+  of 5 and 20 in this
+  \href{https://docs.google.com/spreadsheets/d/1Mnxeq9nQcTdQycZ7S_62fYFiNC5_a3fibsyodzfwO58/edit?usp=sharing}{Google
+  sheet} next to your name, in the columns titled \texttt{Mean.5.depths}
+  and \texttt{Mean.20.depths}, respectively.
+\end{enumerate}
 
 \section{Plot the sampling distribution of the proportion and
 mean}\label{plot-the-sampling-distribution-of-the-proportion-and-mean}
 
+It is now time to plot the sampling distributions of the proportions and
+means. Once everyone has filled in the
+\href{https://docs.google.com/spreadsheets/d/1Mnxeq9nQcTdQycZ7S_62fYFiNC5_a3fibsyodzfwO58/edit?usp=sharing}{Google
+sheet}, export the sheet as a \texttt{.csv} file by clicking on
+\texttt{File\ -\/-\textgreater{}\ Download\ as\ -\/-\textgreater{}\ Comma-separated\ values\ (.csv,\ current\ sheet)}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Read in the data:
+\end{enumerate}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# read in the results from the Google sheet }
-\NormalTok{m <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"~/Dropbox/mcgill/teaching/EPIB607/Link to Jim2018/Water/filled.sheet.csv"}\NormalTok{, }
-              \DataTypeTok{as.is=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{water_results <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"EPIB607_FALL2018_water_exercise - water.csv"}\NormalTok{, }\DataTypeTok{as.is=}\OtherTok{TRUE}\NormalTok{)}
 
 \CommentTok{# count the number of students who provided a mean and proportion}
-\NormalTok{N.r <-}\StringTok{ }\KeywordTok{nrow}\NormalTok{(m)}
+\NormalTok{N.r <-}\StringTok{ }\KeywordTok{nrow}\NormalTok{(water_results)}
+\end{Highlighting}
+\end{Shaded}
 
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{),}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(}\KeywordTok{table}\NormalTok{(m[,}\DecValTok{3}\NormalTok{]),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}
-     \DataTypeTok{xlab=}\StringTok{"Students' Estimates of Proportion Covered by Water"}\NormalTok{,}
-     \DataTypeTok{main=}\StringTok{"n=5"}\NormalTok{,}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{),}\DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{)}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Plot the students' estimates of the proportion covered by water for
+  samples of size 5. You may use the following code or run your own:
+\end{enumerate}
 
-\NormalTok{d.BREAKS=}\KeywordTok{seq}\NormalTok{(}\DecValTok{1000}\NormalTok{,}\DecValTok{6000}\NormalTok{,}\DecValTok{500}\NormalTok{)}
-\KeywordTok{hist}\NormalTok{(m[,}\DecValTok{5}\NormalTok{],}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{6000}\NormalTok{),}
-     \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{), }\DataTypeTok{breaks=}\NormalTok{d.BREAKS,}
-     \DataTypeTok{xlab=}\StringTok{"Students' Estimates of Mean Ocean Depth (m)"}\NormalTok{,}
-     \DataTypeTok{main=}\StringTok{"n=5"}\NormalTok{)}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{table}\NormalTok{(water_results[,}\StringTok{"PropnW.5.locations"}\NormalTok{]), }
+     \DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+     \DataTypeTok{xlab =} \StringTok{"Students' Estimates of Proportion Covered by Water"}\NormalTok{,}
+     \DataTypeTok{main =} \StringTok{"n = 5"}\NormalTok{, }
+     \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{), }
+     \DataTypeTok{ylab =} \StringTok{"Frequency"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-\KeywordTok{plot}\NormalTok{(}\KeywordTok{table}\NormalTok{(m[,}\DecValTok{4}\NormalTok{]),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}
-     \DataTypeTok{main=}\StringTok{"n=20"}\NormalTok{,}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,N.r}\OperatorTok{/}\DecValTok{2}\NormalTok{),}\DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{)}
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Comment on this graph. Does this shape look sensible to you?
+\end{enumerate}
 
-\KeywordTok{hist}\NormalTok{(m[,}\DecValTok{6}\NormalTok{],}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{6000}\NormalTok{),}
-     \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{),}\DataTypeTok{breaks=}\NormalTok{d.BREAKS,}
-     \DataTypeTok{main=}\StringTok{"n=20"}\NormalTok{,}\DataTypeTok{xlab=}\StringTok{""}\NormalTok{)}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Now plot the students' estimates of the mean depth of the ocean for
+  samples of size 5. You may use the following code or run your own:
+\end{enumerate}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d.BREAKS <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{1000}\NormalTok{,}\DecValTok{6000}\NormalTok{,}\DecValTok{500}\NormalTok{)}
+\KeywordTok{hist}\NormalTok{(water_results[,}\StringTok{"Mean.5.depths"}\NormalTok{], }
+     \DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{6000}\NormalTok{),}
+     \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{), }
+     \DataTypeTok{breaks =}\NormalTok{ d.BREAKS,}
+     \DataTypeTok{xlab =} \StringTok{"Students' Estimates of Mean Ocean Depth (m)"}\NormalTok{,}
+     \DataTypeTok{main =} \StringTok{"n = 5"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Calculate the mean and the standard error of the mean depth for
+  samples of size 5
+\item
+  Comment on this graph (e.g.~range, variability)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Repeat Steps 2 and 3 for samples of size 20.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Compare the two graphs for proportions, and the two graphs for means.
+  What do you notice? You might find it helpful to overlay the
+  distributions on the sample plot. You may use the following code or
+  run your own:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(mosaic)}
 \KeywordTok{library}\NormalTok{(tidyr)}
-\NormalTok{m.melt <-}\StringTok{ }\NormalTok{m }\OperatorTok{%>%}\StringTok{ }\NormalTok{tidyr}\OperatorTok{::}\KeywordTok{gather}\NormalTok{(}\DataTypeTok{key =} \StringTok{"type"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{X, }\OperatorTok{-}\NormalTok{Student)}
-\NormalTok{m.melt.means <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(m.melt, type }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Mean.25.depths"}\NormalTok{,}\StringTok{"Mean.5.depths"}\NormalTok{))}
-\NormalTok{m.melt.props <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(m.melt, type }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"PropnW.25.locations"}\NormalTok{,}\StringTok{"PropnW.5.locations"}\NormalTok{))}
+
+\CommentTok{# first 'melt' the data to get it in plotting form}
+\NormalTok{m.melt <-}\StringTok{ }\NormalTok{water_results }\OperatorTok{%>%}\StringTok{ }\NormalTok{tidyr}\OperatorTok{::}\KeywordTok{gather}\NormalTok{(}\DataTypeTok{key =} \StringTok{"type"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{ID, }\OperatorTok{-}\NormalTok{student)}
+
+\CommentTok{# subset for means}
+\NormalTok{m.melt.means <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(m.melt, type }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Mean.20.depths"}\NormalTok{,}\StringTok{"Mean.5.depths"}\NormalTok{))}
+
+\CommentTok{# plot for means}
 \KeywordTok{gf_density}\NormalTok{(}\OperatorTok{~}\StringTok{ }\NormalTok{value, }\DataTypeTok{data =}\NormalTok{ m.melt.means, }\DataTypeTok{fill =} \OperatorTok{~}\StringTok{ }\NormalTok{type) }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_bw}\NormalTok{()}
+
+\CommentTok{# subset for proportions}
+\NormalTok{m.melt.props <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(m.melt, type }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"PropnW.20.locations"}\NormalTok{,}\StringTok{"PropnW.5.locations"}\NormalTok{))}
+
+\CommentTok{# plot for proportions}
 \KeywordTok{gf_histogram}\NormalTok{(}\OperatorTok{~}\StringTok{ }\NormalTok{value, }\DataTypeTok{data =}\NormalTok{ m.melt.props, }\DataTypeTok{fill =} \OperatorTok{~}\StringTok{ }\NormalTok{type, }\DataTypeTok{position =} \StringTok{"dodge"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_bw}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}

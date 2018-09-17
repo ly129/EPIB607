@@ -225,7 +225,7 @@ cat(paste("index.n.",toString(n)," <- c(",
 
 3. Load a function into your `R` session that JH and SB created to automate the process using the following command:
 
-```{r, echo=TRUE, eval=FALSE}
+```{r, echo=TRUE, eval=TRUE}
 source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
 ```
 
@@ -242,7 +242,7 @@ As before, enter your estimate of the proportion of the earth's surface covered 
 
 We will now turn to estimating the average depth of the ocean. You will again make use of the `automate_water_task` function. 
 
-## Determine the average depth of the ocean from the sample of 5
+## Determine the average depth of the ocean from the sample of 5 and 20
 
 1. In the same `R` script as before, copy the following index vector into it:
 
@@ -254,50 +254,104 @@ cat(paste("index.n.",toString(n)," <- c(",
           ")", sep = ""))
 ```
 
-2. Use the `automate_water_task` function to get a sample of 5 depths. Note: some of the returned samples will not correspond to the same latitudes and longitudes provided to you earlier. This is because we need to restict our sample to locations on water only in order to estimate the mean depth of the ocean. Here is some example code:
+2. Use the `automate_water_task` function to get a sample of 5 depths. Note: some of the returned samples will not correspond to the same latitudes and longitudes provided to you earlier. This is because we need to restict our sample to locations on water only in order to estimate the mean depth of the ocean. Here we show some example code and its output. You need to specify the `type` and `student_id` argument:
 
-```{r, echo=TRUE, eval=TRUE}
+```{r, echo=c(-1), eval=TRUE}
+index.n.5 <- 1:5
 
+# be sure to provide your own student id
+depths.n.5 <- automate_water_task(index = index.n.5, student_id = 222333444, type = "depth")
 ```
 
+\newpage
+
+The `alt` column gives the depth in meters:
+
+```{r, echo=FALSE}
+knitr::kable(depths.n.5)
+```
+
+3. Repeat step 2 for a sample of 20 using the `index.n.20` vector specified above. 
+
+4. Calculate an estimate of the mean depth of the ocean from your samples of 5 and 20 using the `mean` function, e.g., `mean(depths.n.5$alt)`. 
+
+5. Enter your estimates of the mean depth of the ocean from your samples of 5 and 20 in this [Google sheet](https://docs.google.com/spreadsheets/d/1Mnxeq9nQcTdQycZ7S_62fYFiNC5_a3fibsyodzfwO58/edit?usp=sharing) next to your name, in the columns titled `Mean.5.depths` and `Mean.20.depths`, respectively.
 
 
 # Plot the sampling distribution of the proportion and mean
 
+It is now time to plot the sampling distributions of the proportions and means. Once everyone has filled in the [Google sheet](https://docs.google.com/spreadsheets/d/1Mnxeq9nQcTdQycZ7S_62fYFiNC5_a3fibsyodzfwO58/edit?usp=sharing), export the sheet as a `.csv` file by clicking on `File --> Download as --> Comma-separated values (.csv, current sheet)`. 
 
-```{r, echo=TRUE, eval=FALSE}
+1. Read in the data:
 
+```{r, echo=c(-1), eval=FALSE}
+water_results <- read.csv("~/Downloads/EPIB607_FALL2018_water_exercise - sample.sheet.csv", as.is=TRUE)
 # read in the results from the Google sheet 
-m <- read.csv("~/Dropbox/mcgill/teaching/EPIB607/Link to Jim2018/Water/filled.sheet.csv", 
-              as.is=TRUE)
+water_results <- read.csv("EPIB607_FALL2018_water_exercise - water.csv", as.is=TRUE)
 
 # count the number of students who provided a mean and proportion
-N.r <- nrow(m)
+N.r <- nrow(water_results)
+```
 
-par(mfrow=c(2,2),mar = c(4,4,2,1))
-plot(table(m[,3]),xlim=c(0,1),
-     xlab="Students' Estimates of Proportion Covered by Water",
-     main="n=5",ylim=c(0,N.r/1.5),ylab="Frequency")
 
-d.BREAKS=seq(1000,6000,500)
-hist(m[,5],xlim=c(0,6000),
-     ylim=c(0, N.r/1.5), breaks=d.BREAKS,
-     xlab="Students' Estimates of Mean Ocean Depth (m)",
-     main="n=5")
+2. Plot the students' estimates of the proportion covered by water for samples of size 5. You may use the following code or run your own:
 
+```{r, echo=TRUE, eval=FALSE}
+plot(table(water_results[,"PropnW.5.locations"]), 
+     xlim = c(0,1),
+     xlab = "Students' Estimates of Proportion Covered by Water",
+     main = "n = 5", 
+     ylim = c(0, N.r/1.5), 
+     ylab = "Frequency")
+```
+
+a) Comment on this graph. Does this shape look sensible to you?
+
+3. Now plot the students' estimates of the mean depth of the ocean for samples of size 5. You may use the following code or run your own:
+
+```{r, echo=TRUE, eval=FALSE}
+d.BREAKS <- seq(1000,6000,500)
+hist(water_results[,"Mean.5.depths"], 
+     xlim = c(0,6000),
+     ylim = c(0, N.r/1.5), 
+     breaks = d.BREAKS,
+     xlab = "Students' Estimates of Mean Ocean Depth (m)",
+     main = "n = 5")
+```
+
+a) Calculate the mean and the standard error of the mean depth for samples of size 5
+b) Comment on this graph (e.g. range, variability)
+
+4. Repeat Steps 2 and 3 for samples of size 20. 
+
+a) Compare the two graphs for proportions, and the two graphs for means. What do you notice? You might find it helpful to overlay the distributions on the sample plot. You may use the following code or run your own:
+
+```{r, echo=FALSE, eval=FALSE}
 plot(table(m[,4]),xlim=c(0,1),
      main="n=20",ylim=c(0,N.r/2),ylab="Frequency")
 
 hist(m[,6],xlim=c(0,6000),
      ylim=c(0, N.r/1.5),breaks=d.BREAKS,
      main="n=20",xlab="")
+```
 
+```{r, echo=TRUE, eval=FALSE}
 library(mosaic)
 library(tidyr)
-m.melt <- m %>% tidyr::gather(key = "type", value = "value", -X, -Student)
-m.melt.means <- subset(m.melt, type %in% c("Mean.25.depths","Mean.5.depths"))
-m.melt.props <- subset(m.melt, type %in% c("PropnW.25.locations","PropnW.5.locations"))
+
+# first 'melt' the data to get it in plotting form
+m.melt <- water_results %>% tidyr::gather(key = "type", value = "value", -ID, -student)
+
+# subset for means
+m.melt.means <- subset(m.melt, type %in% c("Mean.20.depths","Mean.5.depths"))
+
+# plot for means
 gf_density(~ value, data = m.melt.means, fill = ~ type) + theme_bw()
+
+# subset for proportions
+m.melt.props <- subset(m.melt, type %in% c("PropnW.20.locations","PropnW.5.locations"))
+
+# plot for proportions
 gf_histogram(~ value, data = m.melt.props, fill = ~ type, position = "dodge") + theme_bw()
 ```
 
