@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1537117974921.000,
-    "dirty" : false,
+    "created" : 1537162154211.000,
+    "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1453765430",
-    "id" : "8F657BA8",
+    "hash" : "0",
+    "id" : "3A4D7899",
     "lastKnownWriteTime" : 1537046240,
-    "last_content_update" : 1537046240,
+    "last_content_update" : 1537162447895,
     "path" : "~/Dropbox/mcgill/teaching/EPIB607/Link to Jim2018/Water/SampliesOfEarthLocationsFor607r.R",
     "project_path" : null,
     "properties" : {
-        "cursorPosition" : "211,42",
-        "scrollLine" : "180"
+        "cursorPosition" : "46,23",
+        "scrollLine" : "30"
     },
-    "relative_order" : 8,
+    "relative_order" : 9,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"

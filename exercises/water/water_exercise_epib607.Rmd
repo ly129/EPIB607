@@ -225,7 +225,80 @@ cat(paste("index.n.",toString(n)," <- c(",
 
 3. Load a function into your `R` session that JH and SB created to automate the process using the following command:
 
+```{r, echo=TRUE, eval=FALSE}
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+```
+
+4. Now that the function `automate_water_task` has been loaded into your environment, you can use it to automatically determine which of the locations in your sample of 20 are on water. This function requires the unique index vector shown in Step 2 above as input and returns a binary vector of length 20 (1 for water, 0 for land). You can call the function as follows in `R`:
+
+```{r, echo=TRUE, eval=FALSE}
+landed_in_water <- automate_water_task(index = index.n.20)
+```
+
+As before, enter your estimate of the proportion of the earth's surface covered by water in this [Google sheet](https://docs.google.com/spreadsheets/d/1Mnxeq9nQcTdQycZ7S_62fYFiNC5_a3fibsyodzfwO58/edit?usp=sharing) next to your name, but in the column titled `PropnW.20.locations`.
+
+
+# What is the average depth of the ocean?
+
+We will now turn to estimating the average depth of the ocean. You will again make use of the `automate_water_task` function. 
+
+## Determine the average depth of the ocean from the sample of 5
+
+1. In the same `R` script as before, copy the following index vector into it:
+
 ```{r}
+n <- 5
+cat(paste("index.n.",toString(n)," <- c(",
+                paste(params$ind5,
+                      collapse = ","),
+          ")", sep = ""))
+```
+
+2. Use the `automate_water_task` function to get a sample of 5 depths. Note: some of the returned samples will not correspond to the same latitudes and longitudes provided to you earlier. This is because we need to restict our sample to locations on water only in order to estimate the mean depth of the ocean. Here is some example code:
+
+```{r, echo=TRUE, eval=TRUE}
 
 ```
+
+
+
+# Plot the sampling distribution of the proportion and mean
+
+
+```{r, echo=TRUE, eval=FALSE}
+
+# read in the results from the Google sheet 
+m <- read.csv("~/Dropbox/mcgill/teaching/EPIB607/Link to Jim2018/Water/filled.sheet.csv", 
+              as.is=TRUE)
+
+# count the number of students who provided a mean and proportion
+N.r <- nrow(m)
+
+par(mfrow=c(2,2),mar = c(4,4,2,1))
+plot(table(m[,3]),xlim=c(0,1),
+     xlab="Students' Estimates of Proportion Covered by Water",
+     main="n=5",ylim=c(0,N.r/1.5),ylab="Frequency")
+
+d.BREAKS=seq(1000,6000,500)
+hist(m[,5],xlim=c(0,6000),
+     ylim=c(0, N.r/1.5), breaks=d.BREAKS,
+     xlab="Students' Estimates of Mean Ocean Depth (m)",
+     main="n=5")
+
+plot(table(m[,4]),xlim=c(0,1),
+     main="n=20",ylim=c(0,N.r/2),ylab="Frequency")
+
+hist(m[,6],xlim=c(0,6000),
+     ylim=c(0, N.r/1.5),breaks=d.BREAKS,
+     main="n=20",xlab="")
+
+library(mosaic)
+library(tidyr)
+m.melt <- m %>% tidyr::gather(key = "type", value = "value", -X, -Student)
+m.melt.means <- subset(m.melt, type %in% c("Mean.25.depths","Mean.5.depths"))
+m.melt.props <- subset(m.melt, type %in% c("PropnW.25.locations","PropnW.5.locations"))
+gf_density(~ value, data = m.melt.means, fill = ~ type) + theme_bw()
+gf_histogram(~ value, data = m.melt.props, fill = ~ type, position = "dodge") + theme_bw()
+```
+
 

@@ -41,7 +41,8 @@ automate_water_task <- function(index, student_id, type = c("water", "depth"),
     }
 
     if (any(subset_locations_water$alt * -1 < 0)) warning("Some depths are negative. Try increasing sampling_factor.")
-    return(subset_locations_water$alt * -1)
+    subset_locations_water$alt <- subset_locations_water$alt * -1
+    return(subset_locations_water)
   }
 }
 

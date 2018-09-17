@@ -174,7 +174,8 @@ landed_in_water <- c(1,1,1,0,0)
   manually enter 20 latitudes and longitudes into Google maps. JH and SB
   hope you can appreciate the parallels between this toy exercise and
   that of collecting data for your research projects, i.e., it becomes
-  increasingly difficult to collect more and more samples.
+  increasingly difficult (effort and money!) to collect more and more
+  samples.
 \end{enumerate}
 
 Now that you appreciate the amount of work it takes to estimate the
@@ -187,8 +188,8 @@ are further described in step 2.
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Create an \texttt{R} script and copy paste the following index vector
-  into it:
+  Create an \texttt{R} script and copy the following index vector into
+  it:
 \end{enumerate}
 
 \begin{ShadedResult}
@@ -197,6 +198,95 @@ index.n.20 <- c(2131,2132,2133,2134,2135,2136,2137,2138,2139,2140,
 2141,2142,2143,2144,2145,2146,2147,2148,2149,2150)
 \end{verbatim}
 \end{ShadedResult}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Load a function into your \texttt{R} session that JH and SB created to
+  automate the process using the following command:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{source}\NormalTok{(}\StringTok{"https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Now that the function \texttt{automate\_water\_task} has been loaded
+  into your environment, you can use it to automatically determine which
+  of the locations in your sample of 20 are on water. This function
+  requires the unique index vector shown in Step 2 above as input and
+  returns a binary vector of length 20 (1 for water, 0 for land). You
+  can call the function as follows in \texttt{R}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{landed_in_water <-}\StringTok{ }\KeywordTok{automate_water_task}\NormalTok{(}\DataTypeTok{index =}\NormalTok{ index.n}\FloatTok{.20}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+As before, enter your estimate of the proportion of the earth's surface
+covered by water in this
+\href{https://docs.google.com/spreadsheets/d/1Mnxeq9nQcTdQycZ7S_62fYFiNC5_a3fibsyodzfwO58/edit?usp=sharing}{Google
+sheet} next to your name, but in the column titled
+\texttt{PropnW.20.locations}.
+
+\section{What is the average depth of the
+ocean?}\label{what-is-the-average-depth-of-the-ocean}
+
+We will now turn to estimating the average depth of the ocean. You will
+again make use of the \texttt{automate\_water\_task} function.
+
+\subsection{Determine the average depth of the ocean from the sample of
+5}\label{determine-the-average-depth-of-the-ocean-from-the-sample-of-5}
+
+\section{Plot the sampling distribution of the proportion and
+mean}\label{plot-the-sampling-distribution-of-the-proportion-and-mean}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# read in the results from the Google sheet }
+\NormalTok{m <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"~/Dropbox/mcgill/teaching/EPIB607/Link to Jim2018/Water/filled.sheet.csv"}\NormalTok{, }
+              \DataTypeTok{as.is=}\OtherTok{TRUE}\NormalTok{)}
+
+\CommentTok{# count the number of students who provided a mean and proportion}
+\NormalTok{N.r <-}\StringTok{ }\KeywordTok{nrow}\NormalTok{(m)}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{),}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{table}\NormalTok{(m[,}\DecValTok{3}\NormalTok{]),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+     \DataTypeTok{xlab=}\StringTok{"Students' Estimates of Proportion Covered by Water"}\NormalTok{,}
+     \DataTypeTok{main=}\StringTok{"n=5"}\NormalTok{,}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{),}\DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{)}
+
+\NormalTok{d.BREAKS=}\KeywordTok{seq}\NormalTok{(}\DecValTok{1000}\NormalTok{,}\DecValTok{6000}\NormalTok{,}\DecValTok{500}\NormalTok{)}
+\KeywordTok{hist}\NormalTok{(m[,}\DecValTok{5}\NormalTok{],}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{6000}\NormalTok{),}
+     \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{), }\DataTypeTok{breaks=}\NormalTok{d.BREAKS,}
+     \DataTypeTok{xlab=}\StringTok{"Students' Estimates of Mean Ocean Depth (m)"}\NormalTok{,}
+     \DataTypeTok{main=}\StringTok{"n=5"}\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{table}\NormalTok{(m[,}\DecValTok{4}\NormalTok{]),}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+     \DataTypeTok{main=}\StringTok{"n=20"}\NormalTok{,}\DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,N.r}\OperatorTok{/}\DecValTok{2}\NormalTok{),}\DataTypeTok{ylab=}\StringTok{"Frequency"}\NormalTok{)}
+
+\KeywordTok{hist}\NormalTok{(m[,}\DecValTok{6}\NormalTok{],}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{6000}\NormalTok{),}
+     \DataTypeTok{ylim=}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, N.r}\OperatorTok{/}\FloatTok{1.5}\NormalTok{),}\DataTypeTok{breaks=}\NormalTok{d.BREAKS,}
+     \DataTypeTok{main=}\StringTok{"n=20"}\NormalTok{,}\DataTypeTok{xlab=}\StringTok{""}\NormalTok{)}
+
+\KeywordTok{library}\NormalTok{(mosaic)}
+\KeywordTok{library}\NormalTok{(tidyr)}
+\NormalTok{m.melt <-}\StringTok{ }\NormalTok{m }\OperatorTok{%>%}\StringTok{ }\NormalTok{tidyr}\OperatorTok{::}\KeywordTok{gather}\NormalTok{(}\DataTypeTok{key =} \StringTok{"type"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{X, }\OperatorTok{-}\NormalTok{Student)}
+\NormalTok{m.melt.means <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(m.melt, type }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Mean.25.depths"}\NormalTok{,}\StringTok{"Mean.5.depths"}\NormalTok{))}
+\NormalTok{m.melt.props <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(m.melt, type }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"PropnW.25.locations"}\NormalTok{,}\StringTok{"PropnW.5.locations"}\NormalTok{))}
+\KeywordTok{gf_density}\NormalTok{(}\OperatorTok{~}\StringTok{ }\NormalTok{value, }\DataTypeTok{data =}\NormalTok{ m.melt.means, }\DataTypeTok{fill =} \OperatorTok{~}\StringTok{ }\NormalTok{type) }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_bw}\NormalTok{()}
+\KeywordTok{gf_histogram}\NormalTok{(}\OperatorTok{~}\StringTok{ }\NormalTok{value, }\DataTypeTok{data =}\NormalTok{ m.melt.props, }\DataTypeTok{fill =} \OperatorTok{~}\StringTok{ }\NormalTok{type, }\DataTypeTok{position =} \StringTok{"dodge"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
 
 %\showmatmethods
 
