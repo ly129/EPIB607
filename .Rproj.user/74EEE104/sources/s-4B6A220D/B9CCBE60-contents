@@ -1,0 +1,357 @@
+\documentclass{beamer}
+
+\usepackage{default}
+\usepackage{animate} %need the animate.sty file 
+\usepackage{graphicx}
+%\graphicspath{{/home/sahir/Dropbox/jobs/laval/minicours/slides/}}
+\usepackage{hyperref, url}
+%\usepackage[round,sort]{natbib}   % bibliography omit 'round' option if you prefer square brackets
+%\bibliographystyle{apalike}
+\usepackage{biblatex}
+\bibliography{bib.bib}
+% Removes icon in bibliography
+\setbeamertemplate{bibliography item}[text]
+
+\usepackage[figurename=Fig.]{caption}
+\usepackage{subfig}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{arrows,shapes.geometric}
+\usepackage{color, colortbl,xcolor}
+\definecolor{lightgray}{RGB}{200,200,200}
+\definecolor{myblue}{RGB}{0,89,179}
+\usepackage{comment}
+\setbeamercolor{frametitle}{fg=myblue}
+\setbeamercolor{section in head/foot}{bg=myblue, fg=white}
+\setbeamercolor{author in head/foot}{bg=myblue}
+\setbeamercolor{date in head/foot}{bg=myblue}
+
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}} % used for text wrapping in ctable
+\usepackage{ctable}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\def\widebar#1{\overline{#1}}
+\definecolor{whitesmoke}{rgb}{0.96, 0.96, 0.96}
+
+\usepackage{fontspec}
+%\setsansfont{Fira Sans}
+%\setmonofont{Fira Mono}
+\setsansfont[ItalicFont={Fira Sans Light Italic},BoldFont={Fira Sans},BoldItalicFont={Fira Sans Italic}]{Fira Sans Light}
+\setmonofont[BoldFont={Fira Mono Medium}]{Fira Mono}
+
+
+\setbeamercolor{itemize item}{fg=myblue}
+\setbeamertemplate{itemize item}[square]
+
+\setbeamertemplate{navigation symbols}{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber}
+\setbeamertemplate{footline}{}
+
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{exercise}[theorem]{Exercise}
+
+\titlegraphic{\hfill\includegraphics[height=1cm]{mcgill_logo.png}}
+
+
+%% You also use hyperref, and pick colors 
+\hypersetup{colorlinks,citecolor=orange,filecolor=red,linkcolor=brown,urlcolor=blue}
+
+\newcommand {\framedgraphiccaption}[2] {
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{#1}
+		\caption{#2}
+	\end{figure}
+}
+
+\newcommand {\framedgraphic}[1] {
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{#1}
+	\end{figure}
+}
+
+
+\AtBeginSection[]{
+	\begin{frame}
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+	\end{frame}
+}
+
+\newcommand\Wider[2][3em]{%
+	\makebox[\linewidth][c]{%
+		\begin{minipage}{\dimexpr\textwidth+#1\relax}
+			\raggedright#2
+		\end{minipage}%
+	}%
+}
+
+
+
+
+\begin{document}
+%\sffamily
+
+<<setup, include=FALSE>>=
+rm(list = ls())
+knitr::opts_chunk$set(cache=TRUE, message = FALSE, tidy = FALSE, echo = FALSE, fig.width = 6, fig.asp = 0.618, 
+fig.align = 'center', out.width = "100%", size = 'scriptsize')
+pacman::p_load(knitr)
+# pacman::p_load(ISLR)
+# pacman::p_load(data.table)
+# pacman::p_load(rpart)
+# pacman::p_load(rpart.plot)
+# pacman::p_load(xtable)
+# pacman::p_load(ggplot2)
+# trop <- RSkittleBrewer::RSkittleBrewer("trop")
+# gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20), axis.title = element_text(size = 20), legend.text = element_text(size = 20), legend.title = element_text(size = 20))
+@
+
+\title{Introduction to Regression Trees}
+%\author{Sahir Bhatnagar \inst{1}}
+\author[shortname]{Sahir Rai Bhatnagar, PhD Candidate (Biostatistics) }
+\institute[shortinst]{Department of Epidemiology, Biostatistics and Occupational Health}
+
+%\date
+
+\maketitle
+
+\section{Introduction}
+
+\begin{frame}{What?}
+\begin{itemize}
+	\item A prediction model consisting of a series of \textbf{If-Else} statements
+	\item e.g. Vladimir Guerrero: 7 years, 200 hits. Predict his salary for next year?
+\end{itemize}
+
+\vspace*{0.055cm}
+
+%\Wider[4em]{
+%	\centering
+%	\includegraphics[scale=0.35]{cart_pruned_hockey-crop.pdf}
+%}
+
+
+
+
+\end{frame}
+
+
+\begin{frame}{Background on CART}
+	\begin{itemize}
+	  \setlength\itemsep{1.5em}
+		\item Recursive partitioning or segmentation methods were first introduced in the 1960s
+	\item They were formalized by Breiman et al. (1984)~\cite{breiman1984classification} under the acronym \textbf{CART: Classification and Regression Tree}.
+\item CART can be applied to both regression and classification problems depending on the response (outcome) variable:
+\begin{enumerate}
+		  \setlength\itemsep{1em}
+	\item qualitative (classification)
+	\item quantitative (regression)
+\end{enumerate}
+	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Regression vs. Classification}
+
+\begin{comment}
+
+\Wider[9em]{
+	\begin{figure}
+		\begin{minipage}[h]{0.49\linewidth}
+			\centering
+			\includegraphics[scale=0.4]{cart_pruned-crop.pdf}
+			\caption{Regression}
+			\label{fig:a}
+		\end{minipage}
+		%\hspace{0.5cm}
+		\begin{minipage}[h]{0.49\linewidth}
+			\centering
+			\includegraphics[scale=0.20]{class_tree-crop.pdf}
+			\caption{Classification}
+			\label{fig:b}
+		\end{minipage}
+	\end{figure}
+}
+\end{comment}
+
+\pause
+
+\vspace*{0.45cm}
+
+\begin{itemize}
+	\item Today's class $\to$ regression
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{How does CART work?}
+	
+	Roughly speaking, there are two steps~\cite{james2013introduction}:
+	\pause 
+	
+	\begin{enumerate}
+		\setlength\itemsep{1em}
+		%\item Un arbre de régression et de classification se construit de manière itérative, en découpant à chaque étape la population en deux sousensembles\nocite{lopez2015arbres}
+		%\item Le découpage s’effectue suivant des règles simples portant sur les variables	explicatives, en déterminant la règle optimalequi permet de construire deux populations les	plus différenciées en termes de valeurs de la variable à expliquer
+		\item We divide the predictor space - that is, the set of possible values for
+		$X_1, X_2,\ldots, X_p$, into $J$ non-overlapping and exhaustive regions,
+		$R_1, R_2,\ldots, R_J$.
+		\item For every observation that falls into the region $R_j$, we make the same
+		prediction, which is simply the mean of the response values for the
+		training observations in $R_j$.
+	\end{enumerate}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]{A Mistake in the Data}
+<<table2, results='asis', echo=TRUE, eval = FALSE>>=
+	DT.hit <- as.data.table(Hitters)
+	DT.hit <- DT.hit[!is.na(Salary)]
+	Hitters.cc <- Hitters[!is.na(Hitters$Salary),]
+	ids <- which(rownames(Hitters) %in% c("-Andre Dawson","-Andres Galarraga","-Joe Carter","-Gary Carter","-Tony Gwynn","-Cal Ripken","-Barry Bonds","-Ken Griffey","-Mike Schmidt"))
+	print(xtable(Hitters[ids,c("Years","Hits","Salary")]),add.to.row = list(pos = list(7), command = rep("\\rowcolor[gray]{0.75}",1)))
+@
+	
+\begin{itemize}
+	\item Mike Schmidt started his career in 1972, and was inducted into the Baseball Hall of Fame in 1995.
+\end{itemize}	
+	
+\end{frame}
+
+
+
+
+
+\begin{frame}{And if we continue...}
+
+%\framedgraphic{area5.pdf}
+
+\end{frame}
+
+\begin{frame}{Stop if the number of observations is less than 20}
+
+%\Wider[4em]{
+%\includegraphics[scale=0.45]{tree5.pdf}
+%}
+
+\end{frame}
+
+
+\section{The Details}
+
+
+\begin{frame}{The Details}
+	
+The CART algorithm requires 3 components:
+
+\begin{enumerate}
+		  \setlength\itemsep{1.5em}
+	\item Defining a criterion to select the best partition among all predictors.
+	\item A rule to decide when a node is terminal, i.e., it becomes a leaf.
+	\item Pruning the tree to avoid over-fitting.
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{1. Selecting the Best Partition}
+	The objective is the find the regions $R_1, \ldots, R_J$ that minimize the squared error loss:
+		
+	\begin{equation}
+		\sum_{j=1}^{J} \sum_{i \in R_j}(y_i - \hat{y}_{R_j})^2 \label{eq:obj1}
+	\end{equation}
+	
+	\begin{itemize}
+		\setlength\itemsep{1.5em}
+		\item $\hat{y}_{R_j}$: the mean response for the training observations within the
+		$j$th box \pause
+		\item Finding the solution to~\eqref{eq:obj1} is computationally infeasible (\textit{NP-hard}). Why? 
+	\end{itemize}
+	
+	
+\end{frame}
+
+
+
+
+\section{Comparison with a Linear Model}
+
+\begin{frame}{Comparison: Linear Model vs. CART}
+\vspace*{-0.25cm}
+
+\ctable[pos=h!,doinside=\footnotesize]{lcc}{\tnote{\cmark: yes, \xmark: no}
+}{
+\FL
+\textbf{Characteristic\tmark} & \textbf{\texttt{Linear Model}}   & \textbf{\texttt{CART}} \ML
+\rowcolor{whitesmoke}
+Linearity Assumption & \cmark &    \xmark    \\
+& &  \\
+Distributional Assumptions & \cmark & \xmark \\
+& &  \\
+\rowcolor{whitesmoke}
+Robust to multicollinearity &  \xmark  &  \cmark   \\ 
+%& &  \\
+%High-dimensional data ($n << p$) & \xmark   & \cmark     \\
+& &  \\
+\rowcolor{whitesmoke}
+Handles complex interactions &  \xmark  &  \cmark    \\
+& &  \\
+%Valeurs aberrantes  &    &      \\
+\rowcolor{whitesmoke} 
+Allows for missing data  & \xmark   &  \cmark    \\
+& &  \\
+Confidence Intervals, $p$-values & \cmark & \xmark \LL
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Linear Model}
+<<echo=TRUE, eval=FALSE>>=
+lm(Salary ~ Years * Hits, data = Hitters)
+@
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[allowframebreaks]
+%\nocite{breiman1984classification}
+	\nocite{friedman2001elements}
+	\nocite{james2013introduction}
+	\nocite{lopez2015arbres}
+	\frametitle{References}
+\printbibliography
+\end{frame}
+
+
+\begin{frame}[fragile]{Session Info}
+	\tiny
+	
+	<<echo=FALSE, comment = NA, size = 'tiny'>>=
+	print(sessionInfo(), locale = FALSE)
+	@
+\end{frame}
+
+\end{document}

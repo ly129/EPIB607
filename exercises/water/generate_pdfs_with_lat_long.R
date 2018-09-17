@@ -59,29 +59,28 @@ renderMyDocument <- function(email, id, name, ind5, ind20) {
 
 
 names(emails)
-BODY <- paste("See attached pdf for your randomly sampled latitudes and longitudes for the in-class
-              exercise we will do on sampling distributions for means and proportions, Monday September 17.
-              Note that these latitudes and longitudes are have been randomly sampled for each student in the class.")
+BODY <- paste("See attached pdf for your randomly sampled latitudes and longitudes for the in-class exercise we will do on sampling distributions for means and proportions, Monday September 17. Note that these latitudes and longitudes are have been randomly sampled for each student in the class.")
 
 
-for (i in 1:N.r) {
-  renderMyDocument(email = emails[i, "Email"],
-                   id = emails[i,"ID"],
-                   name = emails[i, "Student.Name"],
-                   ind5 = emails[i, "I_5_start"]:emails[i, "I_5_end"],
-                   ind20 = emails[i, "I_20_start"]:emails[i, "I_20_end"])
+for (i in 1:84) {
+  # renderMyDocument(email = emails[i, "Email"],
+  #                  id = emails[i,"ID"],
+  #                  name = emails[i, "Student.Name"],
+  #                  ind5 = emails[i, "I_5_start"]:emails[i, "I_5_end"],
+  #                  ind20 = emails[i, "I_20_start"]:emails[i, "I_20_end"])
   
-  # msg <- 
-  #   mime() %>%
-  #   to(emails[i, "Email"]) %>%
-  #   subject("[Fall 2018 - EPIB-607-001 - Inferential Statistics]: In-class exercise on sampling distributions") %>% 
-  #   from("sahir.bhatnagar@gmail.com") %>% 
-  #   html_body(BODY) %>%
-  #   attach_part(BODY) %>%
-  #   attach_file(sprintf("exercises/water/%s_water_exercise_epib607.pdf", emails[i,"ID"]))
-  # 
-  # send_message(msg)
-  system(sprintf("rm exercises/water/students/%s_water_exercise_epib607.tex", emails[i,"ID"]))
+  msg <-
+    mime() %>%
+    to(emails[i, "Email"]) %>%
+    subject("[Fall 2018 - EPIB-607-001 - Inferential Statistics]: In-class exercise on sampling distributions") %>%
+    from("sahir.bhatnagar@gmail.com") %>%
+    html_body(BODY) %>%
+    attach_part(BODY) %>%
+    attach_file(sprintf("exercises/water/students/%s_water_exercise_epib607.pdf", emails[i,"ID"]))
+
+  send_message(msg)
+  base::message(sprintf("%s, %s", emails[i,"Student.Name"], emails[i,"ID"]))
+  # system(sprintf("rm exercises/water/students/%s_water_exercise_epib607.tex", emails[i,"ID"]))
   
 }
 
