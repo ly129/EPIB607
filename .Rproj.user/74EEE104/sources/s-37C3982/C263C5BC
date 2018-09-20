@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537483300242.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C263C5BC",
+    "lastKnownWriteTime" : 1537484662,
+    "last_content_update" : 1537484662341,
+    "path" : "~/git_repositories/epib607/assignments/a3/a3_template.Rmd",
+    "project_path" : "assignments/a3/a3_template.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "61,22",
+        "scrollLine" : "52"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
