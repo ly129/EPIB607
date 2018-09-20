@@ -5,3 +5,11 @@
 \beamer@sectionintoc {1}{Parameters, Samples, and Statistics}{2}{0}{1}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {2}{Sampling Distributions}{19}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Exercise 1 Results}{29}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{Normal Curves and Calculations}{38}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {4}{1}{Normal distribution}{39}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Central Limit Theorem}{80}{0}{5}

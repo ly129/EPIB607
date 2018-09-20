@@ -340,6 +340,8 @@ sheet}, export the sheet as a \texttt{.csv} file by clicking on
 \begin{Highlighting}[]
 \CommentTok{# read in the results from the Google sheet }
 \NormalTok{water_results <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"EPIB607_FALL2018_water_exercise - water.csv"}\NormalTok{, }\DataTypeTok{as.is=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{water_results <-}\StringTok{ }\NormalTok{water_results[,}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{]}
+\NormalTok{water_results <-}\StringTok{ }\NormalTok{water_results[}\KeywordTok{complete.cases}\NormalTok{(water_results), ]}
 
 \CommentTok{# count the number of students who provided a mean and proportion}
 \NormalTok{N.r <-}\StringTok{ }\KeywordTok{nrow}\NormalTok{(water_results)}
@@ -428,7 +430,7 @@ sheet}, export the sheet as a \texttt{.csv} file by clicking on
 \KeywordTok{library}\NormalTok{(tidyr)}
 
 \CommentTok{# first 'melt' the data to get it in plotting form}
-\NormalTok{m.melt <-}\StringTok{ }\NormalTok{water_results }\OperatorTok{%>%}\StringTok{ }\NormalTok{tidyr}\OperatorTok{::}\KeywordTok{gather}\NormalTok{(}\DataTypeTok{key =} \StringTok{"type"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{ID, }\OperatorTok{-}\NormalTok{student)}
+\NormalTok{m.melt <-}\StringTok{ }\NormalTok{water_results }\OperatorTok{%>%}\StringTok{ }\NormalTok{tidyr}\OperatorTok{::}\KeywordTok{gather}\NormalTok{(}\DataTypeTok{key =} \StringTok{"type"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{X., }\OperatorTok{-}\NormalTok{student)}
 
 \CommentTok{# subset for means}
 \NormalTok{m.melt.means <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(m.melt, type }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Mean.20.depths"}\NormalTok{,}\StringTok{"Mean.5.depths"}\NormalTok{))}

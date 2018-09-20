@@ -44,7 +44,7 @@ for (i in 1:N.r) {
 } 
 
 
-
+# function to generate separate reports for each students
 renderMyDocument <- function(email, id, name, ind5, ind20) {
   rmarkdown::render(input = "exercises/water/water_exercise_epib607.Rmd",
                     output_file = sprintf("%s_water_exercise_epib607.pdf", id),
@@ -61,7 +61,8 @@ renderMyDocument <- function(email, id, name, ind5, ind20) {
 names(emails)
 BODY <- paste("See attached pdf for your randomly sampled latitudes and longitudes for the in-class exercise we will do on sampling distributions for means and proportions, Monday September 17. Note that these latitudes and longitudes are have been randomly sampled for each student in the class.")
 
-
+# first run the renderMyDocument to get all the pdfs, then comment that code and 
+# run the gmail code
 for (i in 1:84) {
   # renderMyDocument(email = emails[i, "Email"],
   #                  id = emails[i,"ID"],
@@ -84,35 +85,35 @@ for (i in 1:84) {
   
 }
 
-emails[86,]
-allLocations[2126:2130,]
-
-recipient = c("sahir.bhatnagar@mcgill.ca")
-id = "260194225"
-BODY <- paste("See attached pdf for your randomly sampled latitudes and longitudes")
-N.r <- length(recipient)
-renderMyDocument(email = "sahir.bhatnagar@mcgill.ca",
-                 id = "260194225",
-                 ind = 11:20)
-
-i = 1
-MIME = gmailr::mime(from="sahir.bhatnagar@gmail.com",       
-                    to=recipient[i],
-                    subject="[Fall 2018 - EPIB-607-001 - Inferential Statistics]: In-class exercise on sampling distributions", 
-                    body=BODY)
-
-att <- attach_file(mime = MIME, filename = sprintf("exercises/water/%s_water_exercise_epib607.pdf", id))
-MIME$body
-send_message(att)
-
-msg_body <- print(xtable(mtcars), type="html")
-
-msg <- 
-  mime() %>%
-  to(recipient[i]) %>%
-  from("sahir.bhatnagar@gmail.com") %>% 
-  html_body(BODY) %>%
-  attach_part(BODY) %>%
-  attach_file(sprintf("exercises/water/%s_water_exercise_epib607.pdf", id))
-
-send_message(msg)
+# emails[86,]
+# allLocations[2126:2130,]
+# 
+# recipient = c("sahir.bhatnagar@mcgill.ca")
+# id = "260194225"
+# BODY <- paste("See attached pdf for your randomly sampled latitudes and longitudes")
+# N.r <- length(recipient)
+# renderMyDocument(email = "sahir.bhatnagar@mcgill.ca",
+#                  id = "260194225",
+#                  ind = 11:20)
+# 
+# i = 1
+# MIME = gmailr::mime(from="sahir.bhatnagar@gmail.com",       
+#                     to=recipient[i],
+#                     subject="[Fall 2018 - EPIB-607-001 - Inferential Statistics]: In-class exercise on sampling distributions", 
+#                     body=BODY)
+# 
+# att <- attach_file(mime = MIME, filename = sprintf("exercises/water/%s_water_exercise_epib607.pdf", id))
+# MIME$body
+# send_message(att)
+# 
+# msg_body <- print(xtable(mtcars), type="html")
+# 
+# msg <- 
+#   mime() %>%
+#   to(recipient[i]) %>%
+#   from("sahir.bhatnagar@gmail.com") %>% 
+#   html_body(BODY) %>%
+#   attach_part(BODY) %>%
+#   attach_file(sprintf("exercises/water/%s_water_exercise_epib607.pdf", id))
+# 
+# send_message(msg)

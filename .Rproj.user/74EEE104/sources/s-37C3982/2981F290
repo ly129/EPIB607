@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537365986626.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2981F290",
+    "lastKnownWriteTime" : 1536967832,
+    "last_content_update" : 1536967832,
+    "path" : "~/git_repositories/epib607/dalite/002_box_sd_curves/002-box-sd-curves.Rmd",
+    "project_path" : "dalite/002_box_sd_curves/002-box-sd-curves.Rmd",
+    "properties" : {
+        "cursorPosition" : "304,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

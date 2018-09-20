@@ -1,0 +1,20 @@
+pacman::p_load(mosaic)
+pacman::p_load(manipulate)
+
+mNorm <- function( mean=0, sd=1 ) {
+  lo <- mean - 5*sd
+  hi <- mean + 5*sd
+  manipulate(
+    xpnorm( c(A,B), mean, sd, verbose=FALSE, invisible=TRUE ),
+    A = slider(lo, hi, initial=mean-sd),
+    B = slider(lo, hi, initial=mean+sd)
+  )
+}
+mNorm( mean=0, sd=1 )
+
+xpnorm(130, 100,13)
+xpnorm(2.31)
+xqnorm()
+pnorm(q)
+
+xqnorm(0.75, 100, 13)

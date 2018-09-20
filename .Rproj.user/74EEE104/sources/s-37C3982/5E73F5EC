@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537424205227.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4106985222",
+    "id" : "5E73F5EC",
+    "lastKnownWriteTime" : 1537424342,
+    "last_content_update" : 1537424342742,
+    "path" : "~/git_repositories/epib607/index.Rmd",
+    "project_path" : "index.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "703,151",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "687"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
