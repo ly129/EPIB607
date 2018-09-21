@@ -1,5 +1,5 @@
 ---
-title: DALITE Q2 - Boxplots, Standard Deviation and Normal Curves Solutions
+title: DALITE Q2 - Boxplots, Standard Deviation and Normal Curves Solutions.
 author:
   - name: EPIB607 - Inferential Statistics
     affiliation: a
@@ -28,7 +28,7 @@ keywords:
 papersize: letter
 fontsize: 9pt
 # Optional: Force one-column layout, default is two-column
-#one_column: true
+one_column: true
 # Optional: Enables lineno mode, but only if one_column mode is also true
 #lineno: true
 # Optional: Enable one-sided layout, default is two-sided
@@ -55,109 +55,131 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Boxplots
+# Boxplot properties Q1
 
-```{r, eval=FALSE}
-library(mosaic)
-library(tidyr)
-dat <- data.frame(x = rep(1:6, each = 3), y = c(rep(c(1,3,4,6),each=2), rep(c(2,5), each = 5))) %>% 
-  gather(key = "variable", value = "count")
+A boxplot can show whether a data set is:
 
+A. symmetric
+B. skewed
+C. **symmetric and skewed (Correct)**
 
-
-png("~/git_repositories/epib607/dalite/002_box_sd_curves/hist.png", res = 150)
-histogram(~count | variable, data = dat, n = 6, type = "count", xlab = "integers")
-dev.off()
-
-bwplot(~count | variable, data = dat, xlab = "integers")
-
-# arrange the two plots vertically
-print(p1, position=c(0, .6, 1, 1), more=TRUE)
-print(p2, position=c(0, 0, 1, .4))
-
-```
+## Correct rationales
 
 
-## Learning Objectives
-
-1. Recognize that a basic numerical description of a distribution requires both a measure of
-center and a measure of spread.
-2. Use the quartiles and the extremes to provide information about the unequal spread in the
-two sides of a skewed distribution.
-3. Be able to calculate the quartiles and give the five-number summary of a data set of
-using a computer.
-4. Understand that boxplots provide less detail than stemplots or histograms but are especially
-useful for comparing several distributions.
-
-## Videos
-
-1. [Against All Odds Unit 5](https://www.learner.org/courses/againstallodds/unitpages/unit05.html)  
-
-<!--\vspace*{0.25cm}-->
-
-## Required Readings
-
-1. [Against All Odds Unit 5, pages 1-5](https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit03.pdf#page=1)
-
-\vspace*{0.25cm}
-
-# Standard Deviation
-
-## Learning Objectives
-
-1. Know that the sample standard deviation, $s$, is the measure of spread most commonly used when the mean, $\bar{x}$, is used as the measure of center.
-2. Know the formula for the standard deviation $s$ 
-3. Know the basic properties of the standard deviation:
-    a) $s \geq 0$, and only when all data values are identical can $s = 0$
-    b) $s$ increases as the spread about $x$ increases.
-    c) $s$, like $\bar{x}$, is strongly influenced by outliers.
-4. Know that the standard deviation is most useful for symmetric distributions and, in
-particular, for normal distributions.
-5. Know that adding the same constant $a$ to all the observations increases the value of $\bar{x}$ by $a$. However, adding the same constant $a$ to all the observations does not change the value
-of $s$. That's because adding a constant $a$ to all data values shifts the location of the data but
-does not affect its spread.
-6. Know that multiplying all data values by a constant amount $k$ changes $\bar{x}$ and $s$ by
-a factor of $k$.
-
-## Videos
-
-1. [Against All Odds Unit 6](https://www.learner.org/courses/againstallodds/unitpages/unit06.html)
 
 
-## Required Readings
+## Incorrect rationales
 
-\begin{enumerate}
-\item \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit06.pdf#page=1}{Against All Odds Unit 6, pages 1-8}
-\end{enumerate}
+
+
+# Boxplot properties Q2
+
+If one side of the box is longer than the other, it means that side contains more data.
+
+A. TRUE
+B. **FALSE (Correct)**
+
+## Correct rationales
+
+
+
+
+## Incorrect rationales
+
+
+# Boxplot properties Q3
+
+The figure below shows histograms from two different data sets, each one containing 18 values that vary from 1 to 6. The histogram on the left has an equal number of values in each group, and the one on the right has two peaks at 2 and 5. Which of the following statements is true?
+
+![](hist.png)
+
+A. The boxplots for each histogram will be different.
+B. **The boxplots for each histogram will be the same (Correct)**
+C. There is not enough information to tell us if the boxplots will be the same or if they will be different. 
+
+## Correct rationales
+
+
+
+
+## Incorrect rationales
 
 
 
 
 
-# Normal Curves
 
-## Learning Objectives
+# Question : Standard Deviations Q1
 
-1. Understand that the overall shape of a distribution of a large number of observations can be
-summarized by a smooth curve called a density curve.
-2. Know that an area under a density curve over an interval represents the proportion of data
-that falls in that interval.
-3. Recognize the characteristic bell-shapes of normal curves. Locate the mean and standard
-deviation on a normal density curve by eye.
-4. Understand how changing the mean and standard deviation affects a normal density curve.
-    - Know that changing the mean of a normal density curve shifts the curve along the horizontal axis without changing its shape.
-    - Know that increasing the standard deviation produces a flatter and wider bell-shaped curve and that decreasing the standard deviation produces a taller and narrower curve. 
+Researcher 1 takes a sample of 100 men age 18-24 in a certain town. In the same town, Researcher 2 takes a sample of 1000 men age 18-24. Which of the following statements is true?
 
-## Videos
+A. The average height for the sample collected by Researcher 2 will be bigger than the average height for the sample collected by Researcher 1
+B. The standard deviation of heights for the sample collected by Researcher 2 will be smaller than the standard deviation of heights for the sample collected by Researcher 1
+C. The sample collected by Researcher 1 will likely contain the tallest of the 1,100 men.
+D. **The sample collected by Researcher 2 will likely contain the shortest of the 1,100 men. (Correct)**
 
-1. [Against All Odds Unit 7](https://www.learner.org/courses/againstallodds/unitpages/unit07.html)
+## Correct rationales
 
 
-## Required Readings
 
-\begin{enumerate}
-\item \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit07.pdf#page=1}{Against All Odds Unit 7, pages 1-9}
-\end{enumerate}
+
+## Incorrect rationales
+
+
+
+# Standard Deviations Q2
+
+If you add 7 to each entry on a list of numbers (which contains both positive and negative integers), that adds 7 to the standard deviation. 
+
+A. TRUE
+B. **FALSE (Correct)**
+
+## Correct rationales
+
+
+
+
+## Incorrect rationales
+
+
+
+
+
+# Normal Curves Q1
+
+To completely specify the shape of a normal distribution, you must give:
+
+A. the mean and standard deviation (Correct)
+B. the five-number summary (min, Q1, median, Q3, max)
+C. the mean and the median
+D. the mean and the interquartile range
+
+
+## Correct rationales
+
+
+
+
+## Incorrect rationales
+
+
+
+# Normal Curves Q2
+
+Which of the following statements is false regarding normal curves?
+
+A. the mean of a normal density curve shifts the curve along the horizontal axis without changing its shape 
+B. increasing the standard deviation produces a flatter and wider bell-shaped curve and that decreasing the standard deviation produces a taller and narrower curve
+C. area under a density curve over an interval represents the proportion of data that falls in that interval
+D. **unlike the average, the standard deviation is not sensitive to outliers. (Correct)**
+
+
+## Correct rationales
+
+
+
+
+## Incorrect rationales
 
 
 <!-- 
