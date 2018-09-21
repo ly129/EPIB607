@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537555803069.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3591174332",
+    "id" : "90744231",
+    "lastKnownWriteTime" : 1537560760,
+    "last_content_update" : 1537560760753,
+    "path" : "~/git_repositories/epib607/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT-sol.Rmd",
+    "project_path" : "dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT-sol.Rmd",
+    "properties" : {
+        "cursorPosition" : "48,0",
+        "scrollLine" : "33",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

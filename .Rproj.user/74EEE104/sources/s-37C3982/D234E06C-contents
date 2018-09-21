@@ -1283,7 +1283,7 @@ knitr::kable(as.data.frame(rbind(
 
 1. [Q1 (due September 12, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf)  --  [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf)
 2. [Q2 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves.pdf)  --  [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves-sol.pdf)
-3. [Q3 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT.pdf)
+3. [Q3 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT.pdf) -- [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT-sol.pdf)
 4. [Q4 (due September 26, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci.pdf)
 
 
