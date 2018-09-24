@@ -749,7 +749,7 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("[1. Live Poll]()"),
+c("[1. Live Poll](http://etc.ch/tfZA)"),
   c("[2. Normal curves, CLT, Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sampling_dist/EPIB607_sampling_dist.pdf)")
 ))
 
