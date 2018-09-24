@@ -1,0 +1,14 @@
+library(pwr)
+pwr.norm.test(d = 10/15, n = 9, sig.level = 0.05, alternative = c("two.sided"))
+pwr.norm.test(d = 15/15, n = 9, sig.level = 0.05, alternative = c("two.sided"))
+pwr.norm.test(d = 5/15, n = 9, sig.level = 0.05, alternative = c("two.sided"))
+pwr.norm.test(d = 10/15, n = 25, sig.level = 0.05, alternative = c("two.sided"))
+pwr.norm.test(d = 10/15, n = 9, sig.level = 0.01, alternative = c("two.sided"))
+
+
+pwr.norm.test(d = 10/15, sig.level = 0.05, power = 0.80, alternative = c("two.sided"))
+pwr.norm.test(d = 15/15, sig.level = 0.05, power = 0.80, alternative = c("two.sided"))
+pwr.norm.test(d = 5/15, sig.level = 0.05, power = 0.80, alternative = c("two.sided"))
+pwr.norm.test(d = 10/15, sig.level = 0.05, power = 0.80, alternative = c("two.sided"))
+pwr.norm.test(d = 10/15, sig.level = 0.01, power = 0.80, alternative = c("two.sided"))
+

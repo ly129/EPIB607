@@ -8,8 +8,10 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {3}{Exercise 1 Results}{29}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Normal Curves and Calculations}{38}{0}{4}
+\beamer@sectionintoc {4}{Normal Curves and Calculations}{34}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{1}{Normal distribution}{39}{0}{4}
+\beamer@subsectionintoc {4}{1}{Normal distribution}{35}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Central Limit Theorem}{80}{0}{5}
+\beamer@sectionintoc {5}{Central Limit Theorem}{79}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {6}{Confidence Intervals}{104}{0}{6}
