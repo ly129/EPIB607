@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537815541259.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4274001116",
+    "id" : "9756640",
+    "lastKnownWriteTime" : 1537818777,
+    "last_content_update" : 1537818777475,
+    "path" : "~/git_repositories/epib607/polls/002_viz_hist_clt/002-viz-hist-clt.Rmd",
+    "project_path" : "polls/002_viz_hist_clt/002-viz-hist-clt.Rmd",
+    "properties" : {
+        "cursorPosition" : "23,135",
+        "scrollLine" : "15"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

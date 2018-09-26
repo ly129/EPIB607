@@ -1,0 +1,229 @@
+---
+title: "A2: Histograms, Medians, Means, Boxplots and Standard Deviation"
+subtitle: "Karaveer Banipal (260835745)"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    fig_caption: true
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 4
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = FALSE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+```
+
+
+# Age-structures of Populations, then and now
+
+***
+
+> (a)
+
+The earliest year of birth was calculated by adjusting frequencies in the code, giving the earliest year of birth of 1802 for males and 1804 for females.
+
+```{r}
+cens <-read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv")
+oldest_male <- 1911 - cens[110,2]
+oldest_female <- 1911 - cens[218,2]
+oldest_male
+oldest_female
+```
+
+> (b)
+
+The figure below shows the age distribution of Irish population from birth to around 107 years of age. As evident in the graph, there are slightly more males at birth after which females outnumber the males for most of the ages. The number of males and females level off after 90 years of age. The biggest different in frequency is between 45-60 years where females clearly outnumber the males. Generally, females have a higher life expectancy and lower mortality rates (at birth) than men which could help explain the observed trend in population of Ireland.
+
+
+
+```{r}
+library(ggplot2)
+library(mosaic)
+library(dplyr)
+cens <-read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv")
+data_clean <- subset(cens, Freq>0)
+#separate gender
+data_male <- subset(data_clean, Gender== "Male")
+data_female <- subset(data_clean, Gender== "Female")
+
+#plotting the graph
+
+gf_smooth(Freq ~ Age, se = TRUE, color = ~Gender, data = cens) + ggtitle("Age-frequency distribution of Ireland's 1911 census") + theme(plot.title = element_text(hjust = 0.5)) + xlab("Age (years)") + ylab("Count") 
+
+```
+*Figure 1: Distribution of males and females of males and females across different ages. Data was collected on a nation-wide census in Ireland on April 2nd, 1911.*
+
+***
+
+
+> (c) 
+
+The mean age was calcualted by adjusting for frequency in both genders. Calculated mean age is 27.21 years and 29.15 years for males and females respectively.  
+
+```{r}
+
+#calculating mean of males and females separately (taking frequency into account)
+mean_male <- sum(data_male$Age*data_male$Freq)/sum(data_male$Freq)
+mean_male
+mean_female <- sum(data_female$Age*data_female$Freq)/sum(data_female$Freq)
+mean_female
+
+```
+
+The standard deviation is 30.30 years for males and 29.71 years for females. 
+
+```{r}
+#calculating standard deviation for males and females
+sd(data_male$Age)
+sd(data_female$Age)
+```
+
+Interquartile ranges are given in the following order: Q25, Q50, Q75. As computed below, the ranges for males are 25.75 years, 51.50 years and 77.25 years. For females, the interquartile ranges are 25.25 years, 50.50 years and 75.75 years respectively. Both males and females have similar measures of centre.
+
+```{r}
+
+#calculating quartiles for ages of males and females
+quantile(data_male$Age)
+quantile(data_female$Age)
+
+```
+
+> (d) 
+
+This census card is famous because of William Sealy Gosset, the first name on the card. He was a famous statistician who developed t-distribution and t-test which formed the basis of inferential statistics. These concepts are taught in introductory statistics courses around the world.  
+
+# Number of Authors
+
+> (a)
+
+Median number of subjects is reported because median is not affected by the outliers whereas mean is very sensitive to outliers and can provide inaccurate description of the dataset. If the data is not symmetrically distributed, median is a better measure of centre than the mean. 
+
+> (b) 
+
+The standard deviation (SD) can be larger than mean when the data is very widely distributed around the mean. For example, a hypothetical dataset (2,3,4,5,555,6666) has a mean of 1206 and SD of 2648 because the the data points are widely spread across the mean. Therefore, it is possible that some articles in 1976 had many authors while others had less authors, resulting in a SD higher than mean. Another classic example of SD exceeding the mean is a normal symmetrical distribution with a mean of zero. 
+
+
+> (c)
+
+I would use two graphs to present the data in the table. First, I would create a boxplot to present the median number of subjects. This boxpot will have *year* on the x-axis and *median number of subjects* on the y-axis. The boxplot is a suitable way to show the measures of centre and compare the spread of the number of subjects across four years. In order to depict mean number of authors, I would use a line plot with standard deviation bars at each point. *Mean number of authors* will be plotted on y-axis and *year* will be plotted on x-axis. I believe a line plot will be ideal to compare number of authors graphically.  
+
+
+```{r}
+## ---- Question-2 ------------------------------------------------------------
+
+```
+
+# Cancer Deaths in the US
+
+> (a)
+
+Three scales used in the figure are *x-axis* (time in years), *y-axis* (rate) and *colour*. Three variables include *years*, *rate per 100,000 male population* and *cancer site/type*. 
+
+* The variables are mapped onto the scales as follows:
+    + Years are mapped onto the x-axis.
+    + Rate (per 10,000 male population) is mapped onto y-axis.
+    + Cancer type is mapped onto the colour.
+    
+>(b)
+
+The figure depicts age-adjused cancer death rates in males over the 20th and early 21st century. I really like that they have divided the time into 5 year intervals along the x-axis. Also, the figure title and caption provide adequate information about the data being presented. Another positive aspect of the graph is that they have used the colour (a scale) to distinguish between different cancer types in males. One negative aspect is the choice of colour palette, which gets lighter creating a false impression of some orderliness. Since the motive of the graph is to distinguish and follow death rates for different cancers, a palette where each colour stands out distinct would have made it easier to follow each cancer type. Also, the labelling of cancer type makes it confusing to follow the lines across time. Use of a legend on the side along with a distinct colour pallete would have resulted in a more pleasing figure. 
+
+
+> (c)
+
+```{r}
+
+
+library(dplyr)
+library(readxl)
+library(readxl)
+males <- read_excel("C:/Users/jattb/Desktop/age-adjusted-cancer-death-rates-males-1930-2014 adjusted.xlsx", 
+                    skip = 1, n_max = 85) %>%
+  mutate(Gender = "Male")
+
+females <- read_excel("C:/Users/jattb/Desktop/age-adjusted-cancer-death-rates-females-1930-2014 final.xlsx",
+                      skip = 1, n_max = 85) %>%
+  mutate(Gender = "Female")
+
+cancer_rates <- dplyr::bind_rows(list(females,males))
+
+# MELTING TO MAKE READY FOR PLOTTING
+library(tidyr)
+cancer_rates_melt <- tidyr::gather(cancer_rates, key = "Site", value = "Rate", -Year, -Gender)
+#head(cancer_rates_melt, n = 10)
+
+
+#PLOTTING GRAPH FOR QUESTION 3
+final_graph <- gf_smooth(Rate ~ Year | Site, se = TRUE, color = ~Gender, data = cancer_rates_melt)
+final_graph10 <- final_graph + scale_x_continuous(name = "Year") + scale_y_continuous(name = "Age adjusted death rate (per 100,000)")
+cancer_graph <- final_graph10 + ggtitle("Age-adjusted cancer death rates in males and females") + theme(plot.title = element_text(hjust = 0.5))
+cancer_graph
+
+```
+*Figure 2: Comparison of age-adjusted cancer death rates by cancer sites between males and females in US from 1930 to 2014. US population in 2000 was used as a standard to compute 
+adjusted death rates (per 100,000. Uterine includes both uterine cervix and corpus. Source: American Cancer Society, Cancer Facts & Figures 2017.*
+
+***
+
+The graph above shows cancer death rates (age-adjusted to the population of US in 2000) from 1930-2014. Over the years, breast and uterus cancer death rates have declined in women. These can be explained by advances in treatment and early detection via screening. Leukemia death rates have stayed relatively similar over the years but there is a decrease in prostate death rate among men which could be due to increased routine screening with prostate-specific antigen blood test. Slightly increasing liver cancer rates in both males and females can be linked to increasing obesity and alcohol consumption in the country. Stomach and colorectum cancer death rates have decreased dramatically over the years for both genders. Lung cancer death rates are on a constant decline for males, but the rates have just started declining in females. This decrease can be attributed to reduction in smoking rates among the population. The discrepency between males and females reflects different cultural trends as the peak smoking rates for women were a few years later than males. With public health campaign and awareness, lung cancer rates can be expected to further decrease in both sexes.
+
+
+# Does breast-feeding weaken bones?
+
+
+```{r}
+#loading data
+boneloss <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv")
+head(boneloss)
+
+# Separating breastfeeding and other women
+breastfeeding <- subset(boneloss, type== "Breast-feeding")
+other <- subset(boneloss, type== "Other")
+
+# creating boxplot for comparison between two groups
+bp <- ggplot(boneloss, aes(x = type, y = mineral_loss)) + geom_boxplot() 
+bp10 <- bp + scale_x_discrete(name = "") + scale_y_continuous(name = "Percent mineral loss")
+bp_final <- bp10 + ggtitle("Change in mineral content of women's spine over 3 months") + theme(plot.title = element_text(hjust = 0.5))
+bp_final
+
+```
+*Figure 3: Comparison of bone mineral loss between breast-feeding and other women (neither  pregnant nor lactating) over a three month period. The boxplot shows the median, and       interquartile range for both groups.*
+
+***
+
+
+The graph above depicts that median percent mineral change among the breast-feeding women is -3.7, whereas the other group (neither breast feeding no lactating) shows a mean of 0.21 These data distinctively show    
+
+To find out if there is a significant difference between the means of two groups, two sample t-test was conducted with the results presented below. It can be clearly seen that there is a statistically significant difference between the means of both groups (p < 0.05). It is safe to conclude that compared to normal (non pregnant, non-lacating) group there is a greater bone mineral loss among breastfeeding women.  
+
+```{r}
+t.test(breastfeeding$mineral_loss, other$mineral_loss)
+```
+
+# Food in America
+
+[Figure 28](https://cdn3.vox-cdn.com/assets/4569747/FastFoodwithKey-01.png) is my least favourite graphic because it fails to use colour as a tool to represent or distinguish data values. It fails to depict position (a scale) of fast food restaurants onto the map as there are no visible state lines and the colour scheme fails to distinguish between different fast food restaurants. The maroon background of the graph further blurs the map boundary, making it impossible to tell where the west coast ends. The colour palette used is not colour blind friendly. There is also no caption that explains the figure or how the data was collected. It is also not clear what the area (or size) of each dot represents on the map, making it difficult to draw any conclusion from the figure. 
+
+[Figure 17](https://cdn3.vox-cdn.com/assets/4565443/food_stamp_participation.jpg) shows the participation of each state in a food stamp program in 2012. Percent participation (a variable) has been mapped onto the colour (scale). It is my favourite graphic because it uses a sequential pattern of colours to depict the differences in food stamp usage across the states. The palette is also colour blind friendly. There are distinct white boundaries for each state and authors have cleverly used the solid black boundaries to outline the states where food stamp usage has doubled. Using the legend at the top, one can make a relatively good conclusion about the SNAP program usage. 
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```
+

@@ -1,0 +1,253 @@
+---
+title: "A2: Histograms, Medians, Means, Boxplots and Standard Deviation"
+subtitle: "Chinchin Wang 260613316"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 4
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = FALSE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+#create mirror
+options(repos = c(CRAN = "http://cran.rstudio.com")) 
+```
+
+```{r include = FALSE}
+# install necessary packages
+install.packages("pacman")
+pacman::p_load("readxl", "ggplot2", "plyr", "dplyr", "mosaic", "ggplot2", "Hmisc", "plotrix")
+
+```
+
+
+# Age-structures of Populations, then and now
+### a) {-}
+```{r}
+## ---- Question-1a ------------------------------------------------------------
+# retrieve dataset
+cens <-read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv") 
+# create separate data frames by gender & remove zero values
+cens_male <- subset(cens, Gender == "Male" & Freq != 0) 
+cens_female <- subset(cens, Gender == "Female" & Freq != 0) 
+# display last few rows for males and females to find oldest age
+tail(cens_male) 
+tail(cens_female) 
+# find earliest year born by subtracting age from current year
+earliestyear_male <- 1911 - 109
+earliestyear_female <- 1911 - 107
+
+```
+
+i)  The maximum age for males is 109, so the earliest year of birth for males is `r earliestyear_male`. 
+ii) The maximum age for females is 107, so the earliest year of birth for females is `r earliestyear_female`.
+
+### b) {-}
+```{r results=FALSE}
+library(dplyr)
+library(mosaic)
+
+## ---- Question-1b hidden ------------------------------------------------------------
+# bin ages into groups of 10 and add groups to original data frames
+bins <- c("0-9", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80-89", "90+")
+Binned_Age <- cut(cens_male$Age, breaks=c(-1, 9, 19, 29, 39, 49, 59, 69, 79, 89, Inf), labels=bins)
+cbind(cens_male, Binned_Age) 
+Binned_Age <- cut(cens_female$Age, breaks=c(-1, 9, 19, 29, 39, 49, 59, 69, 79, 89, Inf), labels=bins)
+cbind(cens_female, Binned_Age)
+```
+
+```{r}
+## ---- Question-1b ------------------------------------------------------------
+# create separate data frames for each age group
+bin_male_0 <- subset(cens_male, Binned_Age == "0-9")
+bin_male_10 <- subset(cens_male, Binned_Age == "10-19")
+bin_male_20 <- subset(cens_male, Binned_Age == "20-29")
+bin_male_30 <- subset(cens_male, Binned_Age == "30-39")
+bin_male_40 <- subset(cens_male, Binned_Age == "40-49")
+bin_male_50 <- subset(cens_male, Binned_Age == "50-59")
+bin_male_60 <- subset(cens_male, Binned_Age == "60-69")
+bin_male_70 <- subset(cens_male, Binned_Age == "70-79")
+bin_male_80 <- subset(cens_male, Binned_Age == "80-89")
+bin_male_90 <- subset(cens_male, Binned_Age == "90+")
+bin_female_0 <- subset(cens_female, Binned_Age == "0-9")
+bin_female_10 <- subset(cens_female, Binned_Age == "10-19")
+bin_female_20 <- subset(cens_female, Binned_Age == "20-29")
+bin_female_30 <- subset(cens_female, Binned_Age == "30-39")
+bin_female_40 <- subset(cens_female, Binned_Age == "40-49")
+bin_female_50 <- subset(cens_female, Binned_Age == "50-59")
+bin_female_60 <- subset(cens_female, Binned_Age == "60-69")
+bin_female_70 <- subset(cens_female, Binned_Age == "70-79")
+bin_female_80 <- subset(cens_female, Binned_Age == "80-89")
+bin_female_90 <- subset(cens_female, Binned_Age == "90+")
+
+# create data frame for binned groups with frequency sums
+binned_cens_male <- data.frame("Age" = bins, "Freq" = c(sum(bin_male_0$Freq), sum(bin_male_10$Freq), sum(bin_male_20$Freq), sum(bin_male_30$Freq), sum(bin_male_40$Freq), sum(bin_male_50$Freq), sum(bin_male_60$Freq), sum(bin_male_70$Freq), sum(bin_male_80$Freq), sum(bin_female_90$Freq)))
+
+binned_cens_female <- data.frame("Age" = bins, "Freq" = c((sum(bin_female_0$Freq)), sum(bin_female_10$Freq), sum(bin_female_20$Freq), sum(bin_female_30$Freq), sum(bin_female_40$Freq), sum(bin_female_50$Freq), sum(bin_female_60$Freq), sum(bin_female_70$Freq), sum(bin_female_80$Freq), sum (bin_female_90$Freq)))
+
+# make pyramid plot
+library(plotrix)
+par(mar=pyramid.plot(binned_cens_male$Freq, binned_cens_female$Freq, labels = bins, top.labels = c("Male", "Age", "Female"), main = "Population pyramid for Dublin, Ireland in 1911", lxcol = "blue", rxcol = "pink", show.values = TRUE, laxlab= c(0,5000,10000,15000,20000,25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000), raxlab=c(0,5000,10000,15000,20000,25000, 30000, 35000, 40000, 45000, 50000, 55000, 60000), unit = "# of people", gap = 5000))
+
+```
+**Figure 1. Population pyramid for Dublin, Ireland in 1911.** Source: 1911 census of Ireland. Data was sorted by James Hanley. 
+
+As seen in the Figure 1, the age distribution is skewed, with many more young people than old people. The gender distribution is relatively even for younger age groups, but as age increases, there are proportionally more females than males. Therefore, females had a greater life expectancy at the time.
+
+### c) {-}
+```{r}
+
+## ---- Question-1c ------------------------------------------------------------
+library(Hmisc)
+# add 0.5 to each age assuming birthdays are spread out evenly through the year
+weightedage_male <- cens_male$Age+0.5
+weightedage_female <- cens_female$Age+0.5
+#Get average age weighted by frequencies for males and females
+mean_male <- wtd.mean(weightedage_male, weights = cens_male$Freq)
+mean_female <- wtd.mean(weightedage_female, weights = cens_female$Freq) 
+#Get variance and square root for standard deviation for males and females
+var_male <- wtd.var(cens_male$Age, weights = cens_male$Freq)
+var_female <- wtd.var(cens_female$Age, weights = cens_female$Freq)
+sd_male <- sqrt(var_male)
+sd_female <- sqrt(var_female)
+#Get quartiles for males and females
+quartile_male <- wtd.quantile(cens_male$Age, weights = cens_male$Freq)
+quartile_female <- wtd.quantile(cens_female$Age, weights = cens_female$Freq)
+
+```
+
+
+**Table 1. Summary Statistics for Age by Gender**
+
+Gender  | Mean | Standard Deviation | Quartiles (0%, 25%, 50%, 75%, 100%)
+------------- | ------------- | ------------- | -------------
+Male  | `r mean_male` | `r sd_male` | `r quartile_male`
+Female  | `r mean_female` | `r sd_female` | `r quartile_female`
+
+### d) {-}
+This census card contained the name and information of William Sealy Gosset, who developed the Student's t-distribution. Fun fact: he actually immigrated to Ireland from England. 
+
+# Number of Authors
+
+```{r}
+## ---- Question-2 ------------------------------------------------------------
+
+```
+
+### a) {-} 
+The median is resistant to extreme values, meaning it ignores outliers. Whereas the mean would be affected if there were a few articles that studied a very large number of subjects, the median would not.
+
+### b) {-} 
+Yes, the standard deviation (SD) could be larger than the mean, but this implies that the data is skewed rather than normally distributed. If number of authors followed a normal distribution, 95% of the data would be contained within 2 SD of the mean in each direction, which would result in a large amount of negative data points.
+
+### c) {-}
+I would present the data for number of authors and subjects in two separate boxplots, with different boxes for each year. Boxplots provide information about the spread and skew of a distribution. With a boxplot, we would know where the median was for each year, and we would also know the range and whether there were any outliers. We would also be able to see whether the data was normally distributed or if it was indeed skewed, and infer where the mean was based on how the boxes were skewed.
+
+
+# Cancer Deaths in the US
+
+### a) {-}
+1) colour; site of cancer 
+2) position; cancer death rate per 100,000 males (y-axis) 
+3) position; time (x-axis)
+
+### b) {-}
+Each scale mapped one to one to an aesthetic. Position was appropriate to represent the quantitative continuous variables of death rate and time, whereas colour was appropriately used to represent the qualitative categorical variable of cancer site. The colour scale would be better suited for sequential rather than categorical data, as the different shades of grey and blue implies an order even though the sites are discrete. The similar colours also makes it difficult to distinguish between each cancer site and follow site-specific patterns. Finally, instead of labelling each line on the graph itself, a legend could have been placed next to the graph indicating which colour corresponded to which cancer site to make the graph cleaner.
+
+### c) {-}
+
+```{r}
+## ---- Question-3c ------------------------------------------------------------
+library(readxl)
+library(dplyr)
+# load datasets
+males <- readxl::read_xlsx("~/Assignment2/age-adjusted-cancer-death-rates-males-1930-2014.xlsx", skip = 1, n_max = 85) %>% mutate(Gender = "Male")
+females <- readxl::read_xlsx("~/Assignment2/age-adjusted-cancer-death-rates-females-1930-2014.xlsx", skip = 1, n_max = 85) %>% mutate(Gender = "Female")
+#tidy up data frames
+cancer_rates <- dplyr::bind_rows(list(females,males))
+library(tidyr)
+cancer_rates_melt <- tidyr::gather(cancer_rates, key = "Site", value = "Rate",-Year,-Gender)
+
+# remove missing data and merge male & female site names
+new_cancer_rates_melt <- cancer_rates_melt[complete.cases(cancer_rates_melt), ]
+new_cancer_rates_melt$Site[new_cancer_rates_melt$Site == "Pancreas†" | new_cancer_rates_melt$Site == "Pancreas‡"] <- "Pancreas"
+new_cancer_rates_melt$Site[new_cancer_rates_melt$Site == "Liver†" | new_cancer_rates_melt$Site == "Liver‡"] <- "Liver"
+new_cancer_rates_melt$Site[new_cancer_rates_melt$Site == "Uterus†"] <- "Uterus"
+
+#create plot comparing males and females
+library(mosaic)
+gf_line(Rate ~ Year | Gender, data = new_cancer_rates_melt, color = ~Site)%>%
+  gf_labs(title = "Trends in Age-adjusted Cancer Death Rates by Site and Gender, US, 1930-2014", x = "Year", y = "Rate per 100,000 people")
+
+
+```
+**Figure 2. Trends in age-adjusted cancer death rates by site and gender, US, 1930-2014.** Rates are measured per 100,000 with age adjusted to the 2000 US standard population. †Mortality rates for pancreatic and liver cancers are increasing. Source: US Mortality Volumes 1930 to 1959 and US Mortality Data 1960 to 2014, National Center for Health Statistics, Centers for Disease Control and Prevention.
+
+As shown in Figure 2, cancer death rates differ over time and by site. Death rates for lung/bronchal cancer have increased since 1930 substantially for both genders, while death rates for other cancers have either decreased or remained relatively steady (with slight increases in deaths from pancreatic cancer in women and men, as well as leukemia in men). There are also differences in the distribution of cancer sites between males and females. Notably, the death rates for lung and bronchal cancer are much larger than for women, reaching over 2x greater in the 1980s. Death rates from lung cancer also peaked in men ~20 years earlier than in women, likely because smoking was a traditionally male activity. 
+
+# Does breast-feeding weaken bones?
+
+```{r}
+## ---- Question-4 ------------------------------------------------------------
+#obtain dataset
+boneloss <-read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv")
+#make boxplot
+plot(boneloss, main = "Mineral loss in breast-feeding vs. non breast-feeding women over 3 months", ylab = "% Change in Mineral Content", xlab = NULL)
+# find mean and SD for mineral content change in each group
+breast <- subset(boneloss, type == "Breast-feeding")
+nonbreast <- subset(boneloss, type == "Other")
+mean_breast <- mean(breast$mineral_loss)
+mean_nonbreast <- mean(nonbreast$mineral_loss)
+sd_breast <- sd(breast$mineral_loss)
+sd_nonbreast <- sd(nonbreast$mineral_loss)
+
+```
+**Figure 3. Mineral loss in breast-feeding vs. non-breast-feeding women over 3 months.** 47 breast-feeding women were compared to 22 non breast-feeding women of similar age, who were neither pregnant nor lactating (represented by Other). Mineral loss is measured as a percent change in mineral content from the beginning of the study to 3 months later. 
+
+
+**Table 2. Mean % change in mineral content for breast-feeding vs. non breast-feeding women.** 47 breast-feeding women were compared to 22 non breast-feeding women of similar age, who were neither pregnant nor lactating (represented by Other). Mineral loss is measured as a percent change in mineral content from the beginning of the study to 3 months later. 
+
+Type  | Sample Size | Mean | Standard Deviation 
+------------- | ------------- | ------------- | ------------- 
+Breast-feeding  | 47 | `r mean_breast` | `r sd_breast` 
+Other  | 22 | `r mean_nonbreast` | `r sd_nonbreast` 
+
+As shown in Table 2, the mean change in mineral content is more negative for breast-feeding than non breast-feeding women. However, there was a greater spread in the % changes for breast-feeding women, as evidenced by the larger standard deviation. Figure 3 shows that the majority (>75%) of breast-feeding women experienced at least 2% mineral loss, while only ~50% of non-breast feeding women experienced mineral loss at all. Furthermore, the maximum amount of mineral loss for non breast-feeding women was 2%. Therefore, there does appear to be distinctly greater mineral loss for breast-feeding women compared to non-breast feeding women.
+Notably, two distributions overlap, as some breast-feeding women experienced an increase in mineral content. To determine whether there is a statistically significant difference in mineral loss, one could perform a hypothesis test.
+
+# Food in America
+
+```{r}
+## ---- Question-5 ------------------------------------------------------------
+
+```
+
+**Favourite graph:** [Average sales by farm (8)](https://cdn3.vox-cdn.com/assets/4565299/average_value__1_.gif)
+
+This graph displays differences in the average value of agricultural products sold per farm in the US by geographical location. While there are no typical x and y axes, a position scale is used to indicate geographical location via a physical map of the US. There are legends to indicate what distances on the graph represent in miles. A sequential colour scale is used to demarcate the average value of agricultural products sold in dollars. It is visually appealing and easy to interpret. The lighter shades clearly represent less agricultural products sold, while darker shades represent more, and the colour scale varies uniformly across its entire range. To further improve the graph, I would indicate what each region in the map represents. 
+
+**Least favourite graph:** [Total meat consumption (14)](https://cdn1.vox-cdn.com/assets/4565419/meat_consumption.png)
+
+This graph displays differences in meat consumption between countries. Like the previous graph, it uses a position scale to indicate geographical location. It also uses a size scale to differentiate between total meat consumption. The graph does not contain a title nor a legend to indicate what information is displayed. Although the blurb next to the graph tells us that each country's size is skewed according to how much meat they consume, we have no indication of how total meat consumption is measured or what the consumption is for  individual countries. It is also unclear whether the size of each country corresponds directly to its meat consumption, or whether it is how skewed the country appears on the graph relative to a regular map of the world. Additionally, a color scale appears to be in place, yet we have no indication of what variable color is being mapped to. Although this graph displays interesting information, it is very difficult to interpret.
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```

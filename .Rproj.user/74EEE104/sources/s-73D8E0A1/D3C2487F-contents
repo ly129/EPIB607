@@ -1,0 +1,22 @@
+---
+title: "Untitled"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+prob_less_2 <- mosaic::xpnorm(2)
+# round to 2 digits
+prob_less_2 <- round(prob_less_2, 2)
+```
+
+The probability that Z < 2 is `r prob_less_2`
+
+

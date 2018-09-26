@@ -1,0 +1,36 @@
+library(mosaic)
+mean(births ~ wday, data = Births78)
+lm(births ~ wday, data = Births78)
+gf_boxplot(births ~ wday, data = Births78)
+
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+
+index.n.20 <- c(2106,2107,2108,2109,2110,2111,2112,2113,2114,2115,
+                2116,2117,2118,2119,2120,2121,2122,2123,2124,2125)
+depths.n.20 <- automate_water_task(index = index.n.20, student_id = 260194225, type = "depth")
+
+
+
+library(mosaic)
+s <- do(20000) * mean( ~ alt, data = resample(depths.n.20))
+hist(s$mean)
+mean(s$mean)
+mean(depths.n.20$alt)
+
+sd(depths.n.20$alt) / sqrt((length(depths.n.20$alt)))
+sd(s$mean)
+quantile(s$mean, c(0.025, 0.975))
+
+bootstrap <- do(500) * diffmean( age ~ sex, data=resample(HELPrct) )
+confint(bootstrap)
+confint(bootstrap, method = "percentile")
+confint(bootstrap, method = "boot")
+confint(bootstrap, method = "se", df=nrow(HELPrct) - 1)
+confint(bootstrap, margin.of.error = FALSE)
+
+confint(s, method = "perc")
+confint(s, method = "boot")
+confint(s, method = "se")
+confint(s, method = "bootstrap-t")
+mosaic:::confint.do.data.frame()
+plot(s)

@@ -1,0 +1,221 @@
+---
+title: "A2: Histograms, Medians, Means, Boxplots and Standard Deviation"
+subtitle: "Mathew Thomson ID 260845541"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 4
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = FALSE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+```
+
+
+# Age-structures of Populations, then and now
+
+**The 1911 census of Ireland was taken on April 2nd 1911 and was released to the public in 1961. Follow [this link](http://www.census.nationalarchives.ie/help/about19011911census.html) for further details on the census. James Hanley (JH) has scrapped the data for Dublin, collected the age-frequency distribtion by gender and provided here a three column .csv file which looks like this:**
+
+```{r}
+cens <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv") 
+
+head(cens)
+```
+
+**Where the Age column represents the age in 1911, and the Freq column gives the frequency of the number of people for a given age and Gender.**
+
+a) **What was the ealiest year of birth for (i) males and (ii) females? **
+```{r}
+### -----------------------------------------
+## Question 1 -a ##
+
+
+cens.female <- dplyr::filter(cens, Gender == "Female")      # cretaes a separate table for data 
+                                                            # of females
+cens.male <- dplyr::filter(cens, Gender == "Male")          # cretaes a separate table for data 
+                                                            # of males
+cens.female.short <- dplyr::filter(cens.female, Freq >= 1)
+cens.male.short <- dplyr::filter(cens.male, Freq >= 1)
+
+earliest.year.birth.female <- 1911 - max(cens.female.short$Age, na.rm = T)   # these create an object showing earliest year of birth per gender in 1911
+earliest.year.birth.male <- 1911 - max(cens.male.short$Age, na.rm = T)
+```
+for females:
+```{r}
+print(earliest.year.birth.female) #Q1 - a - i
+```
+for males:
+```{r}
+print(earliest.year.birth.male) #Q1 - a - ii
+```
+b) **Create a suitable visulaization of this data and then comment on any patterns you see and give reasons for these patterns. Your choice should leverage all the information provided in the data and be influeced by the message that you are trying to convey. Be sure to include an informative title and figure caption.**
+```{r}
+## -------------------------------------------
+### Question 1 -b ###
+
+library(magrittr)                                  # to allow use of the pipe (%>%)
+
+ggformula::gf_histogram(Freq ~ Age, data = cens, stat = "identity", fill = "blue") %>% 
+  ggformula::gf_facet_wrap( ~ Gender) %>%
+  ggformula::gf_labs(                              # this then creates the histogram with
+    title = "Figure 1",                            # stat set to "identity" and faceting
+    subtitle = "Age-Frequency Distribtion by Gender, Ireland, 1911",
+    caption = "Data Source: National Archives of Ireland",
+    x = "Age",
+    y = "Frequency"                                 # allows to demonstrate Freq on the Y axis,
+  )                                                 # and show Gender as side-by-side figures
+```
+The patterns present in figure 1 show more women in the 25 to 30 year age bracket compared to men. We also see, perhaps more interestingly, large spikes that break with the general trend (visible at 30 and 60, among others). These are likely due to the low-income and low-educated population of Ireland at the time being perhaps unaware of their exact age, prompting census takers to make a general guess.
+
+c) **Calculate the mean age, the standard deviation (SD), and the quartiles: Q25,Q50(median),Q75 separately for males and females.**
+
+```{r}
+## -------------------------------------------
+### Question 1 - c ###
+
+library(tidyr)                # Need to use tidyr for the uncount() function
+
+expanded.data <- cens %>%     # This expands the data set so that the ages occur in the set
+  uncount(cens$Freq)          # with the frequency that is in the Freq collumn
+
+ggformula::df_stats(Age ~ Gender, data = expanded.data) # Provides our final answer
+```
+
+d) **The orignial census cards have been scanned are available online. This one in particular is quite famous. Why?**
+
+Because it is the census card of William Sealy Gosset, who wrote under the pseudonym of "Student"
+the famed inventor of the Student T-distrubution and a brilliant, Irish statistician.
+
+# Number of Authors
+
+**Fletcher et al. (1979, NEJM 301:180-183) studied the characteristics of 612 randomly selected articles published in the NEJM, JAMA, and the Lancet since 1946. Two characteristics examined were the number of authors per article and the number of students studied in each article:**
+
+a) **Why report median number of subjects (instead of average)?**
+
+When there is a high degree of variability in the data (like here in number of subjects studied) or a high number of outliers, it makes sense to use the median as it is less susceptible to influence by extreme values.
+
+b) **In 1976, can the standard deviation of 7.3 really be larger than the mean of 4.9? Explain.**
+
+The standard deviation is a measure of distribution and of proximity to the mean, so it is indeed possible for the standard deviation to be greater than the mean. Likely here have we quite a few outliers on the extreme end with very many authors, and very few authors. Because it is impossible to have negative authors of a paper, however, it is likely that this distribution would have a long right tail. Normal (Gaussian) distributions are a notable example whether the standard deviation is greater than the mean.
+
+c) **In light of (a) and (b), how would you present the data in this table?**
+
+Given the above two points, I would present this data I woudl say that:
+
+* The use of the median as the measure of centre for the "number of subjects studied" indicates that there is a high degree of variability among the observations of this variable. This high level of variablility. The median values range from 16 to 36, but given the high degree of variability, it is hard to say what this means, and it also shows no clear trend over time.
+
+* The large standard deviation in 1976 also indicates a very high degree of variability in data, this time for "number of authors". We see that the that the mean number of authors has been rising (subtly) while the standard deviation has stayed nearer to the same value for the past few decades. In 1976 we see a massive spike in number of authors (almost doubling the previous measurement from 1966), we also see the variability/standard deviation increase enormously. This seems to point to a few highly collaborative papers (so more authors) coming out in 1976 that are pulling the mean up, and driving up the standard deviation. 
+
+# Cancer Deaths in the US
+
+**The American Cancer Society (ACS) recently published age-adjusted cancer death rates by cancer site and gender at [this link](https://www.cancer.org/research/cancer-facts-statistics/all-cancer-facts-figures/cancer-facts-figures-2017.html).**
+
+a) **In the figure [Trends in Age-adjusted Cancer Death Rates by Site, Males, US, 1930-2014 (PDF)](https://www.cancer.org/content/dam/cancer-org/research/cancer-facts-and-statistics/annual-cancer-facts-and-figures/2017/trends-in-age-adjusted-cancer-death-rates-by-site-males-us-1930-2014.pdf) list the scales being used and the variable that has been mapped onto them.**
+
+* *colour* - the variable "type of cancer" is mapped to line colour
+* *Y axis position* - the variable of "death rate to a specific cancer per 100 000 in the male population" is mapped onto y axis position.
+* *X axis position* - the variable of time (year) is mapped onto the x axis
+
+b) **Briefly comment on what you like about the figure, and what could have been improved (e.g. aesthetics, labels, use of color)**
+
+I really like this figure as I find that it communicates its points very clearly and effectively. The axes are clearly labeled, and easy to follow and easy to read. The lines are coloured differently to help differenciate between lines, and also labeled to show which type of cancer's death rates are being shown. In terms of room for improvement, I think that picking more contrasting colours for the lines, with a colour legend would simplify the figure and also make it more accessible to people who are colourblind (avoid shade differenciation problems). This also makes the figure less "busy" by removing the need to label lines.
+
+c) **The data used to make the figures has also been provided on the ACS website in Excel spreasheets: [males], [females]. Plot the data using a graph of your choice with the goal of comparing males vs. females. (you might consider using the function gf_line from the ggformula package). Briefly comment on your comparison. Be sure to include an informative title and figure caption.**
+
+```{r}
+## ---- Question-3 ------------------------------------------------------------
+### Question 3 - c
+## ----------------------------------------- ## combine data sets
+library(dplyr)
+
+males <- readxl::read_xlsx("~/Downloads/age-adjusted-cancer-death-rates-males-1930-2014.xlsx",
+                           skip = 1, n_max = 85) %>% mutate(Gender = "Male")
+females <- readxl::read_xlsx("~/Downloads/age-adjusted-cancer-death-rates-females-1930-2014.xlsx",
+                             skip = 1, n_max = 85) %>% mutate(Gender = "Female") 
+
+cancer_rates <- dplyr::bind_rows(list(females,males))
+
+## ----------------------------------------- ## melt the data to prepare for plotting
+library(tidyr)
+
+cancer_rates_melt <- tidyr::gather(cancer_rates, key = "Site", value = "Rate", -Year, -Gender) 
+
+## ----------------------------------------- ## plot the data, facet for gender + colour code for                                              ## site of neoplasm
+ggformula::gf_smooth(Rate ~ Year, data = cancer_rates_melt, colour = ~ Site) %>%
+  ggformula::gf_facet_wrap( ~ Gender) %>%
+  ggformula::gf_labs(
+    title = "Figure 2: Trends in Age-Adjusted Cancer Death Rates",
+    subtitle = "Comparing Men and Women",
+    caption = "Data Source: American Cancer Society (ACS)",
+    x = "Year (1930-2014)",
+    y = "Age-Adjusted Death Rate per 100,000")
+```
+
+Figure 2 compares the age-adjusted mortality rates in nine cancer sites compared between men and women over time. Here we see that lung cancer rates in the 1980s were very high in men, higher than any other cancer site and almost twice the mortality rate for lung cancer in women at that time. 
+
+Figure 2 also indicates that mortality rates for the cancers studied here are declining, with liver and pancreatic cancers being perhaps the only two types that seem to be increasing (very slighty).
+
+
+# Does breast-feeding weaken bones?
+
+**Breast-feeding mothers secrete calcium into their milk. Some of the calcium may come from their bones, so mothers may lose bone mineral content. Researchers compared 47 breast-feeding women with 22 women of similar age who were neither pregnant nor lactating. They measured the percent change in the mineral content of the women’s spines over three months. A negative value of mineral_loss indicates a loss in mineral content. Do the data show distinctly greater bone mineral loss among the breast-feeding women? Use descriptive statistics, plots and/or tables to justify your conclusion.**
+
+```{r}
+## ----------------------------------------------------------------
+## Question-4
+## ---------------------------- ## load data set into the environment
+
+boneloss <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv")
+
+## ---------------------------- ## create a boxplot to illustrate the difference in distribution
+                                ## and in averages.
+
+library(ggplot2)
+
+ggplot(boneloss, aes(x = type, y = mineral_loss, fill = type)) +
+  geom_boxplot(alpha=0.4) +
+  stat_summary(fun.y=mean, geom="point", shape=20, size=10, color="red", fill="red") +
+  scale_fill_brewer(palette="Set3") +
+  labs(
+    title = "Figure 4: Comparing Mineral Loss \nin Breast-Feeding Women and Control", 
+    y = "Mineral Loss", 
+    x = "",
+    caption = "Data Source: Sahir Bhatnagar - EPIB 607"
+  )
+```
+
+As shown in figure 4, we can see that the data does seem to indicate that distinctly greater bone mineral loss occurs among the breast-feeding women. We can see that the mean (means shown on figure 4 as red dots) and median of the breast-feeding population are substantially below those of the control (other). We can aslo see by that the majority of the data points from breast-feeding women (~75%) occur below the lowest observation in the control group. 
+
+# Food in America
+
+**Vox published a list of Charts that explain food in America. There are 40 maps, charts, and graphs that show where our food and drink comes from and how we eat it.
+Pick your best and least favorite graphic, and briefly explain why using the taxonomy we learned in class and provide a link to the figure.**
+
+My least favourite figure from the provided list is [Figure 1](https://www.vox.com/a/explain-food-america#list-1) because though it is very artistically beautiful to look at, it does not provide very much detailed information. The aesthetics of cows, horses, and other agricultural industries are not scaled; the legend is very long, difficult to read, and poorly corresponds to the figue; it is too crowded to be able to clearly discern what is being cimmunicated; it shows poor geographical binning; and uses too much text. It does, however, clearly show that there is a great deal of diversity in the United States'agricultural products.
+
+My favourite figure is [Figure 18](https://www.vox.com/a/explain-food-america#list-21) because it is highly informative. It combines multiple graphs into a single animation, exhibits strong and clear geographic binning, very clearly shows the trend over time, and the colours used to map the percent obese make sense (largely). It does however have its weaknesses, namely that the .gif format is not pausible, and the animation moves quickly which can make it difficult to follow.
+
+
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```
+

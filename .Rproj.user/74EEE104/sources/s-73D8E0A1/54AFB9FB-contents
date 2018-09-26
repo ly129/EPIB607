@@ -1,0 +1,149 @@
+---
+title: "A3: Sampling Distributions"
+subtitle: "Dayana Shublaq, 260822781"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 3
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = FALSE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+
+library(mosaic)
+```
+
+
+# Normal probability calculations
+
+```{r, fig.keep='none'}
+## ---- Question-1 ------------------------------------------------------------
+#(a)
+#mosaic::xpnorm(q = -1.80, mean = 0, sd = 1)
+prob_less_1.80 <- mosaic::xpnorm(q = -1.80, mean = 0, sd = 1)
+prob_less_1.80 <- round(prob_less_1.80, 2)
+#(b)
+ #mosaic::xpnorm(q = -1.80, mean = 0, sd = 1, lower.tail = FALSE)
+prob_greater_1.80 <- mosaic::xpnorm(q = -1.80, mean = 0, sd = 1, lower.tail = FALSE)
+prob_greater_1.80 <- round(prob_greater_1.80, 2)
+#(c)
+#mosaic::xpnorm(q = 1.60, mean = 0, sd = 1, lower.tail = FALSE)
+prob_greater_1.60 <- mosaic::xpnorm(q = 1.60, mean = 0, sd = 1, lower.tail = FALSE)
+prob_greater_1.60 <- round(prob_greater_1.60, 2)
+#(d)
+#mosaic::xpnorm(q = 1.60, mean =0, sd=1) - mosaic:: xpnorm(q = -1.80, mean =0, sd=1)
+prob_d <- mosaic::xpnorm(q = 1.60, mean =0, sd=1) - mosaic:: xpnorm(q = -1.80, mean =0, sd=1)
+prob_d <- round(prob_d, 2)
+```
+
+1(A).
+
+```{r}
+knitr::knit_exit()
+```
+
+
+# HDL cholesterol
+
+```{r}
+## ---- Question-2 ------------------------------------------------------------
+#a (i)
+mosaic::xpnorm(q=40, mean = 55 , sd = 15.5)
+
+#a (ii)
+mosaic::xpnorm(q=60, mean = 55 , sd = 15.5, lower.tail = F)
+
+#a (iii)
+mosaic::xpnorm(q=c (40,60), mean = 55 , sd = 15.5)
+
+#(iv)
+mosaic::xpnorm(q=c (35,65), mean = 55 , sd = 15.5)
+```
+
+
+
+# Osteoporosis
+
+```{r}
+## ---- Question-3 ------------------------------------------------------------
+
+```
+
+
+
+
+# How deep is the ocean?
+
+```{r}
+## ---- Question-4 - --------------------------------------------------------
+
+# NOTE: for calculating the confidence intervals, all you have to do is enter your 
+# own ybar and standard error for ybar based on the sample size of 5 and sample size of 20
+# the results will then get placed into a table automatically
+
+############ Edit the values below #################
+
+# ybar based on n=5
+ybar.n5 <- 2900
+
+# Standard Error of ybar based on n=5
+SEybar.n5 <- 20
+
+# ybar based on n=20
+ybar.n20 <- 3000
+
+# Standard Error of ybar based on n=20
+SEybar.n20 <- 18
+###################################################
+
+
+# DO NOT EDIT  BELOW THIS LINE
+# 68% CI
+ci68.n5 <- ybar.n5 + c(-1,1) * SEybar.n5
+# 95% CI
+ci95.n5 <- ybar.n5 + c(-2,2) * SEybar.n5
+# 99% CI
+ci99.n5 <- ybar.n5 + c(-3,3) * SEybar.n5
+
+# 68% CI
+ci68.n20 <- ybar.n20 + c(-1,1) * SEybar.n20
+# 95% CI
+ci95.n20 <- ybar.n20 + c(-2,2) * SEybar.n20
+# 99% CI
+ci99.n20 <- ybar.n20 + c(-3,3) * SEybar.n20
+```
+
+
+The results are shown in the Table below:
+
+|Level  |Mean (CI)  for $n=5$            |       Mean (CI)  for $n=20$        |
+|:----|:----------------------------------|:----------------------------------|
+|68\% |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n5, ci68.n5[1], ci68.n5[2])` | `r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n20, ci68.n20[1], ci68.n20[2])`    |
+|95\% |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n5, ci95.n5[1], ci95.n5[2])` | `r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n20, ci95.n20[1], ci95.n20[2])`    |
+|99\% |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n5, ci99.n5[1], ci99.n5[2])` | `r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n20, ci99.n20[1], ci99.n20[2])`    |
+
+
+
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```
+
