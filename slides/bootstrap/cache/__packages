@@ -1,5 +1,6 @@
 base
 knitr
+bindrcpp
 dplyr
 lattice
 ggplot2
@@ -9,4 +10,4 @@ mosaicData
 Matrix
 mosaic
 tidyr
-bindrcpp
+latex2exp

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537987813110.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "69|11|86|0|\n101|44|121|0|\n124|43|126|0|\n",
+    "hash" : "0",
+    "id" : "20CB47DE",
+    "lastKnownWriteTime" : 1437954528,
+    "last_content_update" : 1537989793689,
+    "path" : "~/Downloads/scripts/BootPix.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "135,0",
+        "scrollLine" : "100"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

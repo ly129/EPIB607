@@ -273,10 +273,8 @@
 
 \end{frame}
 
-\begin{frame}[fragile]{Confidence intervals for depths of the ocean}
 
-\vspace*{-0.19in}
-
+\begin{frame}[fragile]{Sampling Distributions}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
@@ -285,7 +283,136 @@
 
 }
 
-\caption[The original data distribution of sampled depths of the ocean]{The original data distribution of sampled depths of the ocean. Note that it is bimodal and not Normal looking.}\label{fig:unnamed-chunk-1}
+\caption[Ideal world]{Ideal world. Sampling distributions are obtained by drawing repeated samples from the population, computing the statistic of interest for each, and collecting (an infinite number of) those statistics as the sampling distribution}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+
+\end{knitrout}
+
+\end{frame}
+
+
+
+\begin{frame}{Sampling Distribution}
+
+\Wider[4em]{
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.33, angle=90]{samplingdist_B_M.pdf}
+	\caption{Averages are less variable than individual observations}
+\end{figure}
+}
+
+\end{frame}
+
+
+
+\frame{\frametitle{Traditional way to calculate CIs}
+	How to construct a CI for the population mean?
+	\begin{itemize}
+		\item The \textbf{CLT} gives us that $\overline{y} \sim
+		\mathcal{N}(\mu,\sigma/\sqrt{n})$ is approximately true when $n$ is
+		large. \pause 
+		\item We can standardize, to get $Z = \frac{\overline{y}-\mu}{\sigma/\sqrt{n}} \sim
+		\mathcal{N}(0,1)$. \pause
+		\item To find a CI with confidence level $\mathcal{C} = 1-\alpha$, we must calculate the critical value $z^*$  such that \begin{equation}
+		P(-z^* < Z < z^*) = \mathcal{C} = 1-\alpha
+		\end{equation}
+		where $\alpha$ is the significance level \pause
+		\begin{itemize}
+			\item That is, we want the value $z^*$ that gives a
+			\textit{lower tail probability} of $(1-\mathcal{C})/2 = \alpha / 2$. \pause
+			\item Often this value is denoted $z^* = z_{\alpha/2}$; thus we have \[P(Z <
+			-z_{\alpha/2}) = \alpha/2,\] and \[P(Z >
+			z_{\alpha/2}) = \alpha/2.\]
+		\end{itemize}
+	\end{itemize}
+} 
+
+\begin{comment}
+\frame{\frametitle{CIs for $\mu$ when $\sigma^2$ is known} Then we
+	have:
+	\[\begin{array}{ccl} 1-\alpha & = & P(-z_{\alpha/2} < Z < z_{\alpha/2})\\
+	& & \\ & = & P\left(-z_{\alpha/2} < \frac{\overline{y}-\mu}{\sigma/\sqrt{n}} < z_{\alpha/2}\right)\\
+	& & \\ & = & P\left(-z_{\alpha/2} <
+	\frac{\mu-\overline{y}}{\sigma/\sqrt{n}} <
+	z_{\alpha/2}\right)\\ \pause
+	& & \\ & = & P\left(-z_{\alpha/2}\frac{\sigma}{\sqrt{n}} <
+	\mu-\overline{y} <
+	z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)\\ \pause
+	& & \\ & = & P\left(\overline{y}-z_{\alpha/2}\frac{\sigma}{\sqrt{n}}
+	< \mu < \overline{y}+z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)\\ & & \\
+	\end{array}\]
+	
+	So a $(1-\alpha)$100\% CI for $\mu$ is
+	\textcolor{blue}{$\overline{y}\pm
+		z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$.} }
+\end{comment}
+
+\begin{frame}{Traditional way to calculate CIs}
+
+\Wider[2em]{
+	
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.15, angle=90]{normal.pdf}
+				\caption{\small The critical value $z^\star$ is the number that catches central probability $\mathcal{C}$ under a standard normal $\mathcal{N}(0,1)$ curve between $-z^\star$ and $z^\star$}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.5\textwidth}  %%<--- here
+			\scriptsize
+			We can use this probability statement about the \underline{standardized version} of the sample mean
+			$(\bar{y} - \mu )/ \sigma / \sqrt{n}$, to place bounds on where we think the true mean lies
+			by examining the probability that $\bar{y}$ is within
+			$z^\star \cdot \frac{\sigma}{\sqrt{n}}$ of $\mu$ \\ 
+			\begin{align*}
+			\mathcal{C} & = P\left(-z^\star \le \frac{\bar{y}-\mu}{\sigma/\sqrt{n}} \le
+			z^\star\right)\\
+			& = P\left(-z^\star\frac{\sigma}{\sqrt{n}}
+			\le \bar{y}-\mu \le +z^\star\frac{\sigma}{\sqrt{n}}\right)\\	
+			& = P\left(-\bar{y}-z^\star\frac{\sigma}{\sqrt{n}} \le
+			-\mu \le -\bar{y}+z^\star\frac{\sigma}{\sqrt{n}}\right)\\ 
+			& = P\left(\bar{y}+z^\star\frac{\sigma}{\sqrt{n}} \ge
+			\mu \ge \bar{y}-z^\star\frac{\sigma}{\sqrt{n}}\right)\\ 
+			& = P\left(\bar{y}-z^\star\frac{\sigma}{\sqrt{n}} \le \mu
+			\le \bar{y}+z^\star\frac{\sigma}{\sqrt{n}}\right)\\
+			& = 1-\alpha
+			\end{align*}
+			
+			We call the interval
+			$\left(\bar{y}-z^\star\frac{\sigma}{\sqrt{n}},
+			\bar{y}+z^\star\frac{\sigma}{\sqrt{n}}\right)$ a \textbf{(1-$\alpha$)100\%
+				confidence interval} for $\mu$.
+		\end{column}
+	\end{columns}
+	
+	
+}
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[fragile]{Confidence intervals for depths of the ocean}
+
+\vspace*{-0.19in}
+
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-2-1} 
+
+}
+
+\caption[The original data distribution of sampled depths of the ocean]{The original data distribution of sampled depths of the ocean. Note that it has multiple modes and not Normal looking.}\label{fig:unnamed-chunk-2}
 \end{figure}
 
 
@@ -304,11 +431,11 @@
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-2-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-3-1} 
 
 }
 
-\caption[The sampling distribution for the mean depth of the ocean with samples of size $n=16$, looks normal (centered at $\mu=37$ and SD equal to $\sigma/\sqrt{16}$) ]{The sampling distribution for the mean depth of the ocean with samples of size $n=16$, looks normal (centered at $\mu=37$ and SD equal to $\sigma/\sqrt{16}$) }\label{fig:unnamed-chunk-2}
+\caption[The sampling distribution for the mean depth of the ocean with samples of size $n=16$, looks normal (centered at $\mu=37$ and SD equal to $\sigma/\sqrt{16}$) ]{The sampling distribution for the mean depth of the ocean with samples of size $n=16$, looks normal (centered at $\mu=37$ and SD equal to $\sigma/\sqrt{16}$) }\label{fig:unnamed-chunk-3}
 \end{figure}
 
 
@@ -317,25 +444,79 @@
 \end{frame}
 
 
+\begin{frame}[fragile]{Since CLT has 'kicked in', we use it to construct a CI}
+\small
+We want to construct a $\mathcal{C} = 95\%$ confidence interval for the mean. Level of significance is $\alpha = 1-\mathcal{C} = 0.05$ \pause
+
+\begin{enumerate}
+	\setlength\itemsep{1em}
+	\item by the CLT $\to$ $\bar{y} \sim \mathcal{N}(mean = 37, sd = \sigma/\sqrt{16} = 4.2)$ \pause
+	\item The critical value $z^\star$ such that $P(Z < -z^\star) = P(Z > z^\star) = \alpha/2 = 0.025$ is given by 
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlstd{mosaic}\hlopt{::}\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
+\end{alltt}
+
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-4-1} 
+
+}
+
+
+\begin{verbatim}
+## [1] -1.959964  1.959964
+\end{verbatim}
+
+\end{knitrout}
+	\pause
+	\item 95\% CI for $\mu$: $(37 - 1.96 \cdot 4.2, 37 + 1.96 \cdot 4.2) = [29, 45]$
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Alternative way of calculating CI with CLT: \texttt{qnorm}}
+
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item In the previous slides we used the standard normal $\mathcal{N}(0, 1)$ to calculate the critical value $z^\star$ needed for the CI
+	\item We were able to use the $\mathcal{N}(0,1)$ for two reasons: \pause
+	\begin{enumerate}
+		\item the CLT \pause 
+		\item the formula used to calculate the CI is based on standardizing $\bar{y} \to \frac{\bar{y} - \mu}{\sigma / \sqrt{n}}$
+	\end{enumerate}
+\end{itemize}
+\pause 
+
+\begin{itemize}
+		\setlength\itemsep{1em}
+	\item There is an alternative, \textbf{yet equivalent}, way to calculate the CI without standardizing $\bar{y}$, and without using the $\pm$ formula \pause
+	\item This is accomplished using \texttt{qnorm} \pause 
+	\item Note: we \textbf{still need the CLT regardless} of whether we use the $\pm$ formula or \texttt{qnorm}
+\end{itemize}
+
+\end{frame}
+
 
 \begin{frame}[fragile]{68\% Confidence interval using \texttt{qnorm}}
 
 \vspace*{-0.09in}
 
-
+\Wider[2em]{
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-3-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-5-1} 
 
 }
 
-\caption{68\% Confidence interval calculated using  \mbox{\texttt{qnorm(p = c(0.16,0.84), 37, 4.2)}}}\label{fig:unnamed-chunk-3}
+\caption{68\% Confidence interval calculated using  \mbox{\texttt{qnorm(p = c(0.16,0.84), mean = 37, sd = 4.2)}}}\label{fig:unnamed-chunk-5}
 \end{figure}
 
 
 \end{knitrout}
 
+}
 \end{frame}
 
 
@@ -345,14 +526,54 @@
 \vspace*{-0.09in}
 
 
+\Wider[2em]{
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-4-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-6-1} 
 
 }
 
-\caption{95\% Confidence interval calculated using  \mbox{\texttt{qnorm(p = c(0.025,0.975), 37, 4.2)}}}\label{fig:unnamed-chunk-4}
+\caption{95\% Confidence interval calculated using  \mbox{\texttt{qnorm(p = c(0.025,0.975), mean = 37, sd = 4.2)}}}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+
+\end{knitrout}
+	
+}
+
+\end{frame}
+
+
+\begin{frame}{Motivation for the Bootstrap}
+\begin{itemize}
+	\setlength\itemsep{2em}
+	\item The $\pm$ and \texttt{qnorm} methods to calculate a CI both require the CLT
+\end{itemize}
+
+\pause
+
+\vspace*{0.2in}
+
+\Large \textcolor{myblue}{Q: What happens if the CLT hasn't `kicked in`? Or you don't believe the CLT?} \\ \ \\
+\pause 
+\Large \textcolor{red}{A: Bootstrap} \\ \ \\
+\end{frame}
+
+
+\section{The Bootstrap}
+
+
+\begin{frame}[fragile]{Ideal world: known sampling distribution}
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-7-1} 
+
+}
+
+\caption{\scriptsize{Ideal world. Sampling distributions are obtained by drawing repeated samples from the population, computing the statistic of interest for each, and collecting (an infinite number of) those statistics as the sampling distribution}}\label{fig:unnamed-chunk-7}
 \end{figure}
 
 
@@ -362,7 +583,61 @@
 
 
 
+\begin{frame}[fragile]{Reality: use the bootstrap distribution instead}
+
+
+
+
+\framedgraphiccaption{boot_diag.pdf}{\scriptsize{Bootstrap world. The bootstrap distribution is obtained by drawing repeated samples from an estimate of the population, computing the statistic of interest for each, and collecting those statistics. The distribution is centered at the observed statistic ($\bar{y}$), not the parameter ($\mu$).}}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Main idea: simulate your own sampling distribution}
+
+
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{mean}\hlstd{(}\hlopt{~} \hlstd{alt,} \hlkwc{data} \hlstd{= depths.n.20)}
+\end{alltt}
+\begin{verbatim}
+## [1] 36.2
+\end{verbatim}
+\begin{alltt}
+\hlkwd{library}\hlstd{(mosaic)}
+\hlstd{s_dist} \hlkwb{<-} \hlkwd{do}\hlstd{(}\hlnum{10000}\hlstd{)} \hlopt{*} \hlkwd{mean}\hlstd{(} \hlopt{~} \hlstd{alt,} \hlkwc{data} \hlstd{=} \hlkwd{resample}\hlstd{(depths.n.20))}
+\end{alltt}
+
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-10-1} 
+
+}
+
+
+
+\end{knitrout}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Main idea: simulate your own sampling distribution}
+
+
+
+\end{frame}
+
+
+
 \end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \begin{frame}{Examples}
 \textbf{Proportions}:
@@ -1170,7 +1445,7 @@ In any normal distribution with mean $\mu$ and standard deviation $\sigma^2$:
 		\item Unbiased: the expected value (mean) of the estimator is equal to the
 		parameter
 		\begin{itemize}
-			\item The sample mean, $\overline{x}$, is unbiased for the population
+			\item The sample mean, $\overline{y}$, is unbiased for the population
 			mean, $\mu$
 		\end{itemize} \pause
 		\item Consistent: as sample size gets larger, the estimator gets
@@ -2163,26 +2438,22 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] bindrcpp_0.2.2     tidyr_0.8.1        mosaic_1.4.0      
+ [1] latex2exp_0.4.0    tidyr_0.8.1        mosaic_1.4.0      
  [4] Matrix_1.2-14      mosaicData_0.17.0  ggformula_0.9.0   
  [7] ggstance_0.3.1     ggplot2_3.0.0.9000 lattice_0.20-35   
-[10] dplyr_0.7.6        knitr_1.20        
+[10] dplyr_0.7.6        bindrcpp_0.2.2     knitr_1.20        
 
 loaded via a namespace (and not attached):
- [1] Rcpp_0.12.18       RColorBrewer_1.1-2 pillar_1.3.0      
- [4] compiler_3.5.1     highr_0.7          plyr_1.8.4        
- [7] bindr_0.1.1        tools_3.5.1        digest_0.6.16     
-[10] nlme_3.1-137       evaluate_0.11      tibble_1.4.2      
-[13] gtable_0.2.0       pkgconfig_2.0.2    rlang_0.2.2       
-[16] ggrepel_0.8.0      ggdendro_0.1-20    gridExtra_2.3     
-[19] withr_2.1.2        stringr_1.3.1      grid_3.5.1        
-[22] tidyselect_0.2.4   mosaicCore_0.6.0   glue_1.3.0        
-[25] R6_2.2.2           pacman_0.4.6       purrr_0.2.5       
-[28] magrittr_1.5       codetools_0.2-15   backports_1.1.2   
-[31] splines_3.5.1      scales_1.0.0       MASS_7.3-50       
-[34] assertthat_0.2.0   colorspace_1.4-0   stringi_1.2.4     
-[37] lazyeval_0.2.1     munsell_0.5.0      broom_0.5.0       
-[40] crayon_1.3.4       Cairo_1.5-9       
+ [1] Rcpp_0.12.18     pillar_1.3.0     compiler_3.5.1   highr_0.7       
+ [5] plyr_1.8.4       bindr_0.1.1      tools_3.5.1      digest_0.6.16   
+ [9] nlme_3.1-137     evaluate_0.11    tibble_1.4.2     gtable_0.2.0    
+[13] pkgconfig_2.0.2  rlang_0.2.2      ggrepel_0.8.0    ggdendro_0.1-20 
+[17] gridExtra_2.3    withr_2.1.2      stringr_1.3.1    grid_3.5.1      
+[21] tidyselect_0.2.4 mosaicCore_0.6.0 glue_1.3.0       R6_2.2.2        
+[25] pacman_0.4.6     purrr_0.2.5      magrittr_1.5     codetools_0.2-15
+[29] backports_1.1.2  splines_3.5.1    scales_1.0.0     MASS_7.3-50     
+[33] assertthat_0.2.0 colorspace_1.4-0 stringi_1.2.4    lazyeval_0.2.1  
+[37] munsell_0.5.0    broom_0.5.0      crayon_1.3.4    
 \end{verbatim}
 
 \end{knitrout}

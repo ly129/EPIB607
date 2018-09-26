@@ -352,9 +352,12 @@ curve(dnorm(x,mean = AVE,sd = SE), add = TRUE, lwd = 2)
 #      adj = c(0,0.5),
 #      col = viridis::inferno(9, end = 0.7, direction = 1)[1],
 #      cex = 0.95)
+lower.x <- qnorm(p = c(0.16), AVE, SE)
+upper.x <- qnorm(p = c(0.84), AVE, SE)
 legend("topright", legend = c("Y: Depths of the ocean",
                               "Sampling distribution for \n means of samples of size 16",
-                              "68% Confidence interval for \n the mean depth of the ocean"),
+                              sprintf("68%% Confidence interval for \n the mean depth of the ocean:\n [%.f, %.f]",
+                                      lower.x, upper.x)),
        col = c("#56B4E9","black",RColorBrewer::brewer.pal(9, "Set1")[4]), 
        y.intersp = 2,
        bty = "n",
@@ -371,8 +374,7 @@ segments(AVE,0, AVE, 0.10,lty="dotted")
 # #text(x = AVE*1.05, y = 0.051, '{', srt = 90, cex = 1.5, family = 'Helvetica Neue UltraLight')
 # text((AVE)*1.25,0.06,latex2exp::TeX("$\\sigma / \\sqrt{16}$"), adj=c(0.5,1.25),
 #      cex=0.95 )
-lower.x <- qnorm(p = c(0.16), AVE, SE)
-upper.x <- qnorm(p = c(0.84), AVE, SE)
+
 step <- (upper.x - lower.x) / 100
 bounds <- c(lower.x, upper.x)
 cord.x <- c(lower.x,seq(lower.x,upper.x,step),upper.x)

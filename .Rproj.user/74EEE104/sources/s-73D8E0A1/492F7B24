@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "42|13|135|0|\n",
-    "hash" : "1564637580",
+    "hash" : "0",
     "id" : "492F7B24",
-    "lastKnownWriteTime" : 1537939299,
-    "last_content_update" : 1537939299790,
+    "lastKnownWriteTime" : 1537983768,
+    "last_content_update" : 1537983768868,
     "path" : "~/git_repositories/epib607/slides/bootstrap/bootstrap_code_for_figures.R",
     "project_path" : "slides/bootstrap/bootstrap_code_for_figures.R",
     "properties" : {
-        "cursorPosition" : "379,63",
-        "scrollLine" : "355"
+        "cursorPosition" : "375,17",
+        "scrollLine" : "363"
     },
     "relative_order" : 9,
     "source_on_save" : false,
