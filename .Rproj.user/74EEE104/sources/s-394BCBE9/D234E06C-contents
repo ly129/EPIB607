@@ -45,7 +45,8 @@ needed_CRAN_pkgs <- c(
   
   # Explicitly used packages:
   "tidyverse", "rmarkdown", "knitr", "mosaic", "mosaicData", "RColorBrewer",
-  "plotly", "janitor", "skimr","kableExtra","mdsr",
+  # "plotly", 
+  "janitor", "skimr","kableExtra","mdsr",
   # "infer", "moderndive",
   
   # Internally used packages:
@@ -685,7 +686,7 @@ learnr::run_tutorial("refining", package = "ggformula")
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
 c("[1. Sampling Distributions](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sampling_dist/EPIB607_sampling_dist.pdf)"),
-c("2. Exercise 1: How deep is the ocean?"),
+c("[2. Exercise 1: How deep is the ocean?](https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/students/260194225_water_exercise_epib607.pdf)"),
 c("3. Assignment 2 questions")
 ))
 
@@ -693,6 +694,21 @@ df %>% kable(col.names = NULL) %>%
   kable_styling(bootstrap_options = c("striped", "hover")) 
   
 ```
+
+### Wednesday September 19
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("[1. DALITE Q2 - due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves.pdf)"),
+c("[2. DALITE Q3 - due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT.pdf)")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
 
 ### Thursday September 20
 
@@ -734,7 +750,21 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("")
+c("[1. Live Poll](http://etc.ch/tfZA)"),
+  c("[2. Normal curves, CLT, Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sampling_dist/EPIB607_sampling_dist.pdf)")
+))
+
+df %>% kable(col.names = NULL) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) 
+  
+```
+
+
+### Wednesday September 26
+
+```{r, results='asis', echo=FALSE, eval=TRUE}
+df <- as.data.frame(rbind(
+c("[1. DALITE Q4 - due by 5pm](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci.pdf)")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -748,7 +778,10 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("1. The Bootstrap")
+c("[1. Review DALITE Q4 Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci-sol.pdf)"),
+c("[2. Normal curves, CLT, Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sampling_dist/EPIB607_sampling_dist.pdf)"),
+c("[3. Bootstrap Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/bootstrap/EPIB607_bootstrap.pdf)"),
+c("[4. Bootstrap article in Scientific American](https://www.dropbox.com/s/cxiq70zxxtyxlb5/EfronDiaconisBootstrap.pdf?dl=0)")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -756,17 +789,68 @@ df %>% kable(col.names = NULL) %>%
   
 ```
 
+#### Code for Bootstrap Confidence Interval
+
+```{r, echo=TRUE, eval=FALSE}
+# function for sampling ocean depths
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+
+# from the in-class exercise
+index.n.20 <- c(2106,2107,2108,2109,2110,2111,2112,
+                2113,2114,2115,2116,2117,2118,2119,
+                2120,2121,2122,2123,2124,2125)
+
+# get depths of ocean sample n=20
+depths.n.20 <- automate_water_task(index = index.n.20, 
+                                   student_id = 260194225, type = "depth")
+
+# change to 100m units
+depths.n.20$alt = round(depths.n.20$alt/100,0)
+
+library(mosaic)
+
+# calculate mean depth for your sample
+mean_depth <- mean(~ alt, data = depths.n.20)
+
+# 10000 bootstrap samples
+s_dist <- do(10000) * mean( ~ alt, data = resample(depths.n.20))
+
+# 95% CI
+CI_95 <- quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
+
+# plot sampling distribution
+hist(s_dist$mean, breaks = 50, col = "#56B4E9",
+     main="",
+     xlab = "mean depth of the ocean (100m) from each bootstrap sample")
+
+# draw red line at the sample mean
+abline(v = mean_depth, lty =1, col = "red", lwd = 4)
+
+# draw black dotted lines at 95% CI
+abline(v = CI_95[1], lty =2, col = "black", lwd = 4)
+abline(v = CI_95[2], lty =2, col = "black", lwd = 4)
+
+# include legend
+library(latex2exp)
+legend("topleft", 
+       legend = c(TeX("$\\bar{y} = 36$"),
+                  sprintf("95%% CI: [%.f, %.f]",CI_95[1], CI_95[2])), 
+       lty = c(1,1), 
+       col = c("red","black"), lwd = 4)
+```
+
+
 
 ### Friday September 28
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-c("Assignment 3 due by 11:59pm")
+  c("Assignment 3 due by 11:59pm")
 ))
 
 df %>% kable(col.names = NULL) %>% 
   kable_styling(bootstrap_options = c("striped", "hover")) 
-  
+
 ```
 
 
@@ -1284,7 +1368,7 @@ knitr::kable(as.data.frame(rbind(
 1. [Q1 (due September 12, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean.pdf)  --  [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/001_hist_mean/001-hist-mean-sol.pdf)
 2. [Q2 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves.pdf)  --  [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves-sol.pdf)
 3. [Q3 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT.pdf) -- [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT-sol.pdf)
-4. [Q4 (due September 26, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci.pdf)
+4. [Q4 (due September 26, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci.pdf) -- [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci-sol.pdf)
 
 
 # Terms and Concepts

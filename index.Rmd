@@ -45,7 +45,8 @@ needed_CRAN_pkgs <- c(
   
   # Explicitly used packages:
   "tidyverse", "rmarkdown", "knitr", "mosaic", "mosaicData", "RColorBrewer",
-  "plotly", "janitor", "skimr","kableExtra","mdsr",
+  # "plotly", 
+  "janitor", "skimr","kableExtra","mdsr",
   # "infer", "moderndive",
   
   # Internally used packages:

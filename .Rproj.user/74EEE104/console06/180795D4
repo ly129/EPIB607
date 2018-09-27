@@ -4331,4 +4331,4 @@ Output created: _book/index.html
 # cp -fvr images _book/
 make[1]: Leaving directory '/home/sahir/git_repositories/epib607'
 Rscript -e 'browseURL("_book/index.html")'
-]0;/home/sahir/git_repositories/epib607> (B[m
+]0;/home/sahir/git_repositories/epib607> (B[m[K> (B[m

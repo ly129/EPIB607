@@ -1,0 +1,28 @@
+mosaic::xpnorm(q = c(-1.96, 1.96))
+
+# function for sampling ocean depths
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+
+# from the in-class exercise
+index.n.20 <- c(2106,2107,2108,2109,2110,2111,2112,
+                2113,2114,2115,2116,2117,2118,2119,
+                2120,2121,2122,2123,2124,2125)
+
+# get depths of ocean sample n=20
+depths.n.20 <- automate_water_task(index = index.n.20, 
+                                   student_id = 260194225, type = "depth")
+
+# change to 100m units
+depths.n.20$alt = round(depths.n.20$alt/100,0)
+
+
+dt <- read.csv("~/Downloads/EPIB607_FALL2018_water_exercise - water.csv")
+head(dt)
+dt <- dt[complete.cases(dt), ]
+plot(dt$Mean.5.depths, 1:nrow(dt), pch=20,
+     xlim=range(pretty(c(dt$lower.mean.5.66, dt$upper.mean.5.66))),
+     xlab='Depth of ocean (m)', ylab='Student (sample)',
+     las=1, cex.axis=0.8, cex=1.5)
+abline(v = 3700, lty = 2, col = "red", lwd = 2)
+segments(x0 = dt$lower.mean.5.66, x1=dt$upper.mean.5.66,
+         y0 = 1:nrow(dt), lend=1)
