@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1538018442582.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C3348A77",
+    "lastKnownWriteTime" : 1538024510,
+    "last_content_update" : 1538024510547,
+    "path" : "~/git_repositories/epib607/dalite/004_normal_ci/004-normal-ci-sol.Rmd",
+    "project_path" : "dalite/004_normal_ci/004-normal-ci-sol.Rmd",
+    "properties" : {
+        "cursorPosition" : "239,83",
+        "scrollLine" : "224",
+        "tempName" : "Untitled6"
+    },
+    "relative_order" : 15,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
