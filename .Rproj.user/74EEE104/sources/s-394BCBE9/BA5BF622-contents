@@ -14,7 +14,7 @@ install:
 - Rscript -e "pacman::p_load(data.table, mosaic, mdsr, mosaicData, RColorBrewer, plotly)"
 - Rscript -e "pacman::p_load(bookdown)"
 - Rscript -e "pacman::p_load(formatR)"
-- Rscript -e "pacman::p_load(tidyverse, janitor, skimr)"
+- Rscript -e "pacman::p_load(tidyverse, janitor, skimr, webshot)"
 - Rscript -e "pacman::p_load(kableExtra)"
 before_script:
 - chmod +x ./_build.sh

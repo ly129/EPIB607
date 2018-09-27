@@ -12,7 +12,9 @@
     "path" : "~/Downloads/260608446_Feng_Chuhan_EPIB607_A3.Rmd",
     "project_path" : null,
     "properties" : {
-        "chunk_output_type" : "console"
+        "chunk_output_type" : "console",
+        "cursorPosition" : "30,0",
+        "scrollLine" : "9"
     },
     "relative_order" : 11,
     "source_on_save" : false,
