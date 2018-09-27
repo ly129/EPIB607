@@ -7,6 +7,10 @@ depths.n.20 <- automate_water_task(index = index.n.20, student_id = 260194225, t
 
 
 library(mosaic)
+s <- do(2) * resample(depths.n.20)
+s
+
+
 s <- do(20000) * mean( ~ alt, data = resample(depths.n.20))
 head(s)
 

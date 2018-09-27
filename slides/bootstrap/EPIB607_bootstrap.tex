@@ -600,14 +600,9 @@ We want to construct a $\mathcal{C} = 95\%$ confidence interval for the mean. Le
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \begin{alltt}
-\hlkwd{mean}\hlstd{(}\hlopt{~} \hlstd{alt,} \hlkwc{data} \hlstd{= depths.n.20)}
-\end{alltt}
-\begin{verbatim}
-## [1] 36.2
-\end{verbatim}
-\begin{alltt}
 \hlkwd{library}\hlstd{(mosaic)}
 \hlstd{s_dist} \hlkwb{<-} \hlkwd{do}\hlstd{(}\hlnum{10000}\hlstd{)} \hlopt{*} \hlkwd{mean}\hlstd{(} \hlopt{~} \hlstd{alt,} \hlkwc{data} \hlstd{=} \hlkwd{resample}\hlstd{(depths.n.20))}
+\hlstd{CI_95} \hlkwb{<-} \hlkwd{quantile}\hlstd{(}\hlopt{~} \hlstd{mean,} \hlkwc{data} \hlstd{= s_dist,} \hlkwc{probs} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
 \end{alltt}
 
 
@@ -622,13 +617,74 @@ We want to construct a $\mathcal{C} = 95\%$ confidence interval for the mean. Le
 \end{frame}
 
 
-\begin{frame}[fragile]{Main idea: simulate your own sampling distribution}
+\begin{frame}[fragile]{Bootstrap code 1}
 
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlcom{# function for sampling ocean depths}
+\hlkwd{source}\hlstd{(}\hlstr{"https://github.com/sahirbhatnagar/EPIB607/raw/
+master/exercises/water/automate_water_task.R"}\hlstd{)}
+
+\hlcom{# from the in-class exercise}
+\hlstd{index.n.20} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{2106}\hlstd{,}\hlnum{2107}\hlstd{,}\hlnum{2108}\hlstd{,}\hlnum{2109}\hlstd{,}\hlnum{2110}\hlstd{,}\hlnum{2111}\hlstd{,}\hlnum{2112}\hlstd{,}
+\hlnum{2113}\hlstd{,}\hlnum{2114}\hlstd{,}\hlnum{2115}\hlstd{,}\hlnum{2116}\hlstd{,}\hlnum{2117}\hlstd{,}\hlnum{2118}\hlstd{,}\hlnum{2119}\hlstd{,}
+\hlnum{2120}\hlstd{,}\hlnum{2121}\hlstd{,}\hlnum{2122}\hlstd{,}\hlnum{2123}\hlstd{,}\hlnum{2124}\hlstd{,}\hlnum{2125}\hlstd{)}
+
+\hlcom{# get depths of ocean sample n=20}
+\hlstd{depths.n.20} \hlkwb{<-} \hlkwd{automate_water_task}\hlstd{(}\hlkwc{index} \hlstd{= index.n.20,}
+\hlkwc{student_id} \hlstd{=} \hlnum{260194225}\hlstd{,} \hlkwc{type} \hlstd{=} \hlstr{"depth"}\hlstd{)}
+
+\hlcom{# change to 100m units}
+\hlstd{depths.n.20}\hlopt{$}\hlstd{alt} \hlkwb{=} \hlkwd{round}\hlstd{(depths.n.20}\hlopt{$}\hlstd{alt}\hlopt{/}\hlnum{100}\hlstd{,}\hlnum{0}\hlstd{)}
+
+\hlkwd{library}\hlstd{(mosaic)}
+
+\hlcom{# calculate mean depth for your sample}
+\hlstd{mean_depth} \hlkwb{<-} \hlkwd{mean}\hlstd{(}\hlopt{~} \hlstd{alt,} \hlkwc{data} \hlstd{= depths.n.20)}
+\end{alltt}
+
+\end{knitrout}
 
 
 \end{frame}
 
+\begin{frame}[fragile]{Bootstrap code 2}
 
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlcom{# 10000 bootstrap samples}
+\hlstd{s_dist} \hlkwb{<-} \hlkwd{do}\hlstd{(}\hlnum{10000}\hlstd{)} \hlopt{*} \hlkwd{mean}\hlstd{(} \hlopt{~} \hlstd{alt,} \hlkwc{data} \hlstd{=} \hlkwd{resample}\hlstd{(depths.n.20))}
+
+\hlcom{# 95% CI}
+\hlstd{CI_95} \hlkwb{<-} \hlkwd{quantile}\hlstd{(}\hlopt{~} \hlstd{mean,} \hlkwc{data} \hlstd{= s_dist,} \hlkwc{probs} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
+
+\hlcom{# plot sampling distribution}
+\hlkwd{hist}\hlstd{(s_dist}\hlopt{$}\hlstd{mean,} \hlkwc{breaks} \hlstd{=} \hlnum{50}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"#56B4E9"}\hlstd{,}
+\hlkwc{main}\hlstd{=}\hlstr{""}\hlstd{,}
+\hlkwc{xlab} \hlstd{=} \hlstr{"mean depth of the ocean (100m) from each bootstrap sample"}\hlstd{)}
+
+\hlcom{# draw red line at the sample mean}
+\hlkwd{abline}\hlstd{(}\hlkwc{v} \hlstd{= mean_depth,} \hlkwc{lty} \hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{4}\hlstd{)}
+
+\hlcom{# draw black dotted lines at 95% CI}
+\hlkwd{abline}\hlstd{(}\hlkwc{v} \hlstd{= CI_95[}\hlnum{1}\hlstd{],} \hlkwc{lty} \hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"black"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{4}\hlstd{)}
+\hlkwd{abline}\hlstd{(}\hlkwc{v} \hlstd{= CI_95[}\hlnum{2}\hlstd{],} \hlkwc{lty} \hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"black"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{4}\hlstd{)}
+
+\hlcom{# include legend}
+\hlkwd{library}\hlstd{(latex2exp)}
+\hlkwd{legend}\hlstd{(}\hlstr{"topleft"}\hlstd{,}
+\hlkwc{legend} \hlstd{=} \hlkwd{c}\hlstd{(}\hlkwd{TeX}\hlstd{(}\hlstr{"$\textbackslash{}\textbackslash{}bar\{y\} = 36$"}\hlstd{),}
+\hlkwd{sprintf}\hlstd{(}\hlstr{"95%% CI: [%.f, %.f]"}\hlstd{,CI_95[}\hlnum{1}\hlstd{], CI_95[}\hlnum{2}\hlstd{])),}
+\hlkwc{lty} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{),}
+\hlkwc{col} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"red"}\hlstd{,}\hlstr{"black"}\hlstd{),} \hlkwc{lwd} \hlstd{=} \hlnum{4}\hlstd{)}
+\end{alltt}
+
+\end{knitrout}
+
+
+\end{frame}
 
 \end{document}
 
@@ -2438,10 +2494,10 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] latex2exp_0.4.0    tidyr_0.8.1        mosaic_1.4.0      
- [4] Matrix_1.2-14      mosaicData_0.17.0  ggformula_0.9.0   
- [7] ggstance_0.3.1     ggplot2_3.0.0.9000 lattice_0.20-35   
-[10] dplyr_0.7.6        bindrcpp_0.2.2     knitr_1.20        
+ [1] tidyr_0.8.1        mosaic_1.4.0       Matrix_1.2-14     
+ [4] mosaicData_0.17.0  ggformula_0.9.0    ggstance_0.3.1    
+ [7] ggplot2_3.0.0.9000 lattice_0.20-35    dplyr_0.7.6       
+[10] bindrcpp_0.2.2     knitr_1.20        
 
 loaded via a namespace (and not attached):
  [1] Rcpp_0.12.18     pillar_1.3.0     compiler_3.5.1   highr_0.7       

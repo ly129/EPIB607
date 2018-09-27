@@ -1,8 +1,8 @@
 {
-    "path" : "~/git_repositories/epib607/slides/sampling_dist",
+    "path" : "~/git_repositories/epib607/dalite/004_normal_ci",
     "sortOrder" : [
         {
-            "ascending" : false,
+            "ascending" : true,
             "columnIndex" : 4
         },
         {
