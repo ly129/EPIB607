@@ -1,0 +1,200 @@
+\documentclass[letterpaper,9pt,twocolumn,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{DALITE Q5 - Bootstrap, Tests of Significance and Small Sample Inference
+for One Mean. Due October 3, 2018 by 5pm.}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Hypothesis testing |  Bootstrap |  t distribution |  One sample mean |  Normal calculations |  Confidence intervals |  Central Limit Theorem (CLT)  }  
+
+\begin{abstract}
+This DALITE quiz will cover the bootstrap, an introduction to
+significance testing, and inference for a single mean using the t
+distribution.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{DALITE Q5 due October 3, 2018 by 5pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section*{Marking}\label{marking}
+\addcontentsline{toc}{section}{Marking}
+
+Completion of this DALITE exercise will be availble to us automatically
+through the DALITE website. Therefore \textbf{you do not need to hand
+anything in}. Marks will be based on the number of correct answers. For
+each question you will receive 0.5 marks for getting the correct answer
+on the first attempt and an additional 0.5 marks if you stick with the
+right answer or switch to the correct answer after seeing someone else's
+rationale. Recall that access to your assignments is managed through
+tokens sent to your e-mail address. You will be sent a new link
+everytime a new assignment has been posted.
+
+\section{Bootstrap}\label{bootstrap}
+
+\subsection{Learning Objectives}\label{learning-objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Understand that the bootstrap can be used to simulate a sampling
+  distribution
+\item
+  Confidence intervals can subsequently be calculated directly from the
+  bootstrap distribution
+\item
+  Bootstrap confidence intervals do not rely on the Central Limit
+  Theorem
+\end{enumerate}
+
+\subsection{Required Readings}\label{required-readings}
+
+\begin{enumerate}
+\item \href{https://www.dropbox.com/s/cxiq70zxxtyxlb5/EfronDiaconisBootstrap.pdf?dl=0}{Computer-Intensive Methods in Statistics by Persi Diaconis and Bradley Efron, Scientific American 1983}
+\end{enumerate}
+
+\vspace*{0.25cm}
+
+\section{Tests of Significance}\label{tests-of-significance}
+
+\subsection{Learning Objectives}\label{learning-objectives-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Understand that a significance test answers the question ``Is this
+  sample outcome good evidence that an effect is present in the
+  population, or could it easily occur just by chance?''
+\item
+  Be able to formulate the null hypothesis and alternative hypothesis
+  for tests about the mean of a population. Understand that the
+  alternative hypothesis is the researcher's point of view.
+\item
+  Understand the concept of a p-value. Know that smaller p-values
+  indicate stronger evidence against the null hypothesis.
+\item
+  Be able to calculate p-values as areas under a normal curve in the
+  setting of tests about the mean of a normal population with known
+  standard deviation.
+\item
+  Be able to test a population mean with a z-test.
+\end{enumerate}
+
+\subsection{Videos}\label{videos}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www.learner.org/courses/againstallodds/unitpages/unit25.html}{Against
+  All Odds Unit 25}
+\end{enumerate}
+
+\subsection{Required Readings}\label{required-readings-1}
+
+\begin{enumerate}
+\item \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit25.pdf#page=1}{Against All Odds Unit 25, pages 1-12}
+\item \href{http://www.medicine.mcgill.ca/epidemiology/hanley/BionanoWorkshop/P-Values.pdf}{JH notes on p-values}
+\item \href{https://www.dropbox.com/s/luzhlatvx9hvwyn/Ch14IntroToInference.pdf?dl=0}{B\&M chapter 14, pages 345-359}
+\end{enumerate}
+
+\section{Small Sample Inference for One
+Mean}\label{small-sample-inference-for-one-mean}
+
+\subsection{Learning Objectives}\label{learning-objectives-2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Understand when to use t-procedures for a single sample and how they
+  differ from the z-procedures covered in Units 24 and 25.
+\item
+  Understand what a t-distribution is and how it differs from a normal
+  distribution.
+\item
+  Know how to check whether the underlying assumptions for a t-test or
+  t-confidence interval are reasonably satisfied.
+\item
+  Be able to calculate a t-confidence interval for a population mean.
+\item
+  Be able to test a population mean with a t-test. Be able to calculate
+  the t-test statistic and to determine the p-value as an area under a
+  t-density curve.
+\item
+  Be able to adapt one-sample t-procedures to analyze matched pairs
+  data.
+\end{enumerate}
+
+\subsection{Videos}\label{videos-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www.learner.org/courses/againstallodds/unitpages/unit26.html}{Against
+  All Odds Unit 26}
+\end{enumerate}
+
+\subsection{Required Readings}\label{required-readings-2}
+
+\begin{enumerate}
+\item \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit26.pdf#page=1}{Against All Odds Unit 26, pages 1-11}
+\item \href{https://www.dropbox.com/s/qs58c54zh1kui4d/Ch17InferenceAboutPopulationMean.pdf?dl=0}{B\&M Chapter 17, pages 411-422}
+\end{enumerate}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+
