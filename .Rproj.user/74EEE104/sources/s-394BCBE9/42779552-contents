@@ -32,7 +32,6 @@ knitr::opts_chunk$set(
 
 ```{r, results='hide', fig.keep='none'}
 ## ---- Question-1 ------------------------------------------------------------
-prob_less_2 <- mosaic::xpnorm(2)
 
 ```
 
