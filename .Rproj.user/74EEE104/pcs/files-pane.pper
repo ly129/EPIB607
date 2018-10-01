@@ -1,8 +1,8 @@
 {
-    "path" : "~/git_repositories/epib607/dalite/004_normal_ci",
+    "path" : "~/git_repositories/epib607/assignments/a4",
     "sortOrder" : [
         {
-            "ascending" : true,
+            "ascending" : false,
             "columnIndex" : 4
         },
         {
