@@ -10,3 +10,13 @@ mNorm <- function(mean = 0, sd = 1) {
   )
 }
 mNorm(mean = 0, sd = 1)
+
+
+mosaic::xqt(p = c(0.025, 0.975), df = 5)
+xqnorm(p = c(0.025, 0.975), xlim = c(-6,6))
+p1 + ylim(c(-6,6))
+ggformula::gf_dist("norm") %>% 
+  gf_dist("t", df = 3)
+
+gf_dist("norm", color = "red", kind = "qqstep", resolution = 25) %>%
+  gf_dist("norm", color = "black", kind = "qq", resolution = 25, size = 2, alpha = 0.5)

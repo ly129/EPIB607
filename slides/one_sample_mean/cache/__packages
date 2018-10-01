@@ -1,3 +1,11 @@
 base
 knitr
 ggplot2
+bindrcpp
+dplyr
+lattice
+ggstance
+ggformula
+mosaicData
+Matrix
+mosaic

@@ -305,20 +305,146 @@
 	\frac{\overline{y}-\mu}{\sigma/\sqrt{n}} \sim \mathcal{N}(0,1).\] \pause 
 	\item We no longer can use this, so instead we use \[t =
 	\frac{\overline{y}-\mu}{s/\sqrt{n}} \sim t_{(n-1)}\] which follows a
-	\textbf{$t$-distribution} with $n-1$ degrees of freedom based on the $n$ values, $y_1,...,y_n$ in a simple random sample \pause
+	\textbf{$t$-distribution} with $n-1$ degrees of freedom based on the $n$ values, $y_1,...,y_n$ in an SRS \pause
 	\item There is a different $t$ distribution for each sample size. The
 	degrees of freedom specify which distribution we use, and are
 	determined by the denominator used in estimating $s$ which is $(n-1)$.
 \end{itemize} }
 
-\begin{frame}{A note about the conditions}
-\begin{itemize}
-	\setlength\itemsep{1em}
-\item B\&M stress that the \textbf{first} of their conditions as \textit{very important}: \textit{we can regard} our data as a simple random sample (SRS) from  the population 
-	\item The \textbf{second}, observations from the population have a \textit{\underline{Normal}} distribution with unknown mean parameter $\mu$ and unknown standard deviation parameter $\sigma$ less so
-	\item \textit{In practice}, inference procedures \textit{can accommodate some deviations from
-			the Normality condition} when the sample is large enough. (think CLT)
-\end{itemize}
+
+\begin{frame}{$\sigma$ known vs. unknown}
+\begin{center}
+	\begin{tabular}{|l|c|c|} \hline
+		$\sigma$& known & unknown \\ \hline Data & $\{y_1,y_2,...,y_n\}$ &
+		$\{y_1,y_2,...,y_n\}$\\
+		& & \\
+		Pop'n param & $\mu$ & $\mu$\\
+		& & \\
+		Estimator & $\overline{y} = \frac{1}{n}\sum_{i=1}^n y_i$ & $\overline{y} = \frac{1}{n}\sum_{i=1}^n y_i$ \\
+		& & \\
+		SD & $\sigma$ & $s = \sqrt{\frac{\sum_{i=1}^n(y_i-\overline{y})^2}{n-1}}$ \\
+		& & \\
+		SEM & $\sigma/\sqrt{n}$ & $s / \sqrt{n}$ \\
+		& & \\
+		$(1-\alpha)100$\% CI & $\overline{y} \pm z^\star_{1-\alpha/2}$(SEM) & $\overline{y} \pm t^\star_{1-\alpha/2, (n-1)}$(SEM) \\
+		& & \\
+		test statistic & $\frac{\overline{y}-\mu}{\textrm{SEM}}\sim \mathcal{N}(0,1)$ &
+		$\frac{\overline{y}-\mu}{\textrm{SEM}}\sim t_{(n-1)}$ \\
+		\hline
+	\end{tabular}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{$t$ distribution vs. Normal distribution}
+
+\Wider[4em]{
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.33, angle=90]{t_normal_comparison.pdf}
+		\caption{Density curves for the $t$ distribution with 2 and 9 degrees of freedom and for the standard Normal distribution. All are symmetric with center 0. The $t$ distributions are somewhat more spread out.}
+	\end{figure}
+}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{$t_{(5)}$ distribution vs. Standard Normal distribution}
+\begin{minipage}{0.47\textwidth}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{library}\hlstd{(mosaic)}
+\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
+\end{alltt}
+
+\end{knitrout}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-2-1} 
+
+}
+
+
+\begin{verbatim}
+## [1] -1.959964  1.959964
+\end{verbatim}
+
+\end{knitrout}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{library}\hlstd{(mosaic)}
+\hlkwd{xqt}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{=} \hlnum{5}\hlstd{)}
+\end{alltt}
+
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-3-1} 
+
+}
+
+
+\begin{verbatim}
+## [1] -2.570582  2.570582
+\end{verbatim}
+
+\end{knitrout}
+\end{minipage}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{$t_{(30)}$ distribution vs. Standard Normal distribution}
+\begin{minipage}{0.47\textwidth}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{library}\hlstd{(mosaic)}
+\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
+\end{alltt}
+
+\end{knitrout}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-5-1} 
+
+}
+
+
+\begin{verbatim}
+## [1] -1.959964  1.959964
+\end{verbatim}
+
+\end{knitrout}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{library}\hlstd{(mosaic)}
+\hlkwd{xqt}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{=} \hlnum{30}\hlstd{)}
+\end{alltt}
+
+\end{knitrout}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-7-1} 
+
+}
+
+
+\begin{verbatim}
+## [1] -2.042272  2.042272
+\end{verbatim}
+
+\end{knitrout}
+\end{minipage}
 \end{frame}
 
 %\frame{\frametitle{$t$ distributions}
@@ -346,9 +472,9 @@
 			Distribution & \multicolumn{4}{c}{Cumulative Probability}\\
 			& 0.005 & 0.010 & 0.025 & 0.050\\ \hline
 			Normal & -2.58 & -2.33 & -1.96 & -1.64\\
-			$t$(50) & -2.68 & -2.40 & -2.01 & -1.68\\
-			$t$(30) & -2.75 & -2.46 & -2.04 & -1.70\\
-			$t$(10) & -3.17 & -2.76 & -2.23 & -1.81\\
+			$t_(50)$ & -2.68 & -2.40 & -2.01 & -1.68\\
+			$t_(30)$ & -2.75 & -2.46 & -2.04 & -1.70\\
+			$t_(10)$ & -3.17 & -2.76 & -2.23 & -1.81\\
 		\end{tabular}
 	\end{center}
 } \frame{\frametitle{$t$ procedures} We can calculate CIs and
@@ -359,40 +485,114 @@
 	is called a \textcolor{blue}{one-sample $t$-test}. \\ \ \\
 	
 	Collectively, the significance tests and confidence-interval based
-	tests using the $t$ distribution are called $t$ procedures. (Tests
-	using the $Z$ statistic and the Normal distribution are a special
-	case of these.) \\ \ \\
+	tests using the $t$ distribution are called $t$ procedures.  \\ \ \\
 	
-} \frame{\frametitle{Robustness of the $t$ procedures} A statistical
+} 
+\begin{frame}{A note about the conditions for inference about a mean }
+
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item B\&M stress that the \textbf{first} of their conditions as \textit{very important}: \textit{we can regard} our data as a simple random sample (SRS) from  the population \pause 
+	\item The \textbf{second}, observations from the population have a \textit{\underline{Normal}} distribution with unknown mean parameter $\mu$ and unknown standard deviation parameter $\sigma$ less so 
+	\item \textit{In practice}, inference procedures \textit{can accommodate some deviations from
+		the Normality condition} when the sample is large enough. (think CLT)
+\end{itemize}
+\end{frame}
+
+
+\frame{\frametitle{Robustness of the $t$ procedures} A statistical
 	procedure is said to be \textbf{robust} if it is insensitive to
 	violations of the assumptions made. \\ \ \\
 	\begin{itemize}
-		\item Results of $t$ procedures (CIs, significance tests) are exact if the
-		population from which the simple random sample was drawn is Normal. \pause
+		%\item Results of $t$ procedures (CIs, significance tests) are exact if the
+		%population from which the simple random sample was drawn is Normal. \pause
 		\item $t$ procedures are not robust against \textit{extreme}
-		skewness, particularly in small samples, since the procedures are
-		based on using $\overline{x}$ and $s^2$ (which are sensitive to
+		skewness, \underline{in small samples}, since the procedures are
+		based on using $\overline{y}$ and $s$ (which are sensitive to
 		outliers).
 		\item Recall: \textcolor{blue}{Unless there is a very compelling reason
 			(e.g.~known/confirmed error in the recorded data), outliers should not be discarded.}
-		\pause
+		
 	\end{itemize}
 } \frame{\frametitle{Robustness of the $t$ procedures}
 	\begin{itemize}
 		\item $t$ procedures \textbf{are} robust against other forms
 		of non-normality and, even with considerable skew, perform well when $n$ is large. Why?
 		\pause
-		\begin{itemize}
-			\item When $n$ is large, $s^2$ is a good estimate of $\sigma^2$
-			(recall that $s^2$ is unbiased and, like most estimates, precision
+			\item When $n$ is large, $s$ is a good estimate of $\sigma$
+			(recall that $s$ is unbiased and, like most estimates, precision
 			improves with increasing sample size)
-			\item CLT: $\overline{x}$ will be Normal when $n$ is large, even if the
+			\item CLT: $\overline{y}$ will be Normal when $n$ is large, even if the
 			population data are not \item[]
-		\end{itemize}
-		\item ...so how large is large enough?
+
+
 	\end{itemize}
 }
 
+
+
+\begin{frame}{When and why we use the $t$-distribution}
+\mylist{When $\sigma$ is unknown use $t$ distribution. \blue{but why?}; \pause the spread of the $t$ distribution is greater than $\mathcal{N}(0,1)$  }
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is known}
+\[ \underbrace{z_{0.975}}_{\textrm{critical value}}=1.96 = \frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}} \rightarrow \frac{1.96 \sigma}{\sqrt{n}} = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{1.96}{\sqrt{n}}$ standard deviations} \pause
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/unnamed-chunk-8-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is unknown}
+\[ \underbrace{t_{0.975,df=3}}_{\textrm{critical value}}=3.18 = \frac{\bar{y}-\mu_0}{s/\sqrt{n}} \rightarrow 3.18 \frac{s}{\sqrt{n}} = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{3.18}{\sqrt{n}}$ standard deviations} \pause
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/unnamed-chunk-9-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+
+
+
+\begin{frame}{Summary of $t$ distribution}
+\mylist{Its harder to reject the null when using the $t$ distribution; \pause This is due to our uncertainty about the estimated variance ;\pause Larger samples lead to more accurate estimates of $\sigma$; \pause This is reflected in the fact that there is a different $t$ distribution for each sample size  ; \pause As $n \rightarrow \infty$, sample variance $S$ gets closer to $\sigma$; \pause As degrees of freedom increase, $t$ distribution gets closer to Normal distribution}
+\end{frame}
+
+
+\begin{frame}{Summary of $t$ distribution}
+Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t$ starts to look like $\mathcal{N}(0,1)$
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=.6\linewidth]{figure/unnamed-chunk-10-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+
+\end{document}
+
+\begin{comment}
 \frame{\frametitle{Robustness of the $t$ procedures}
 	\begin{itemize}
 		\item When $n<15$ and the data are symmetric and do not exhibit outliers,
@@ -418,13 +618,15 @@
 		\end{itemize}
 	\end{itemize}
 }
+\end{comment}
+
 
 \frame{\frametitle{Confidence intervals for $\mu$ when $\sigma^2$ is
 		unknown} When we must estimate the SE, the $(1-\alpha)$100\%
 	confidence interval now formed is:
 	\begin{eqnarray*}
 		\hbox{CI:} & & \hbox{estimate} \pm \hbox{margin of error}\\
-		& & =\overline{x} \pm t_{\alpha/2}s/\sqrt{n}
+		& & =\overline{y} \pm t_{\alpha/2}s/\sqrt{n}
 	\end{eqnarray*}
 	where $t_{\alpha/2}$ is the quantile of the $t(n-1)$ distribution
 	curve such that
@@ -513,63 +715,7 @@ based on the $n$ values, $y_1, \dots, y_n$ in an  SRS from that universe/populat
 
 \section{t-distribution}
 
-\begin{frame}{When and why we use the $t$-distribution}
-\mylist{When $\sigma$ is unknown use $t$ distribution. \blue{but why?}; \pause the spread of the $t$ distribution is greater than $\mathcal{N}(0,1)$  }
-\end{frame}
 
-
-
-\begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is known}
-\[ \underbrace{z_{0.975}}_{\textrm{critical value}}=1.96 = \frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}} \rightarrow \frac{1.96 \sigma}{\sqrt{n}} = \bar{x}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{1.96}{\sqrt{n}}$ standard deviations} \pause
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=.6\linewidth]{figure/unnamed-chunk-1-1} 
-
-}
-
-
-
-\end{knitrout}
-\end{frame}
-
-
-
-\begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is unknown}
-\[ \underbrace{t_{0.975,df=3}}_{\textrm{critical value}}=3.18 = \frac{\bar{x}-\mu_0}{s/\sqrt{n}} \rightarrow 3.18 \frac{s}{\sqrt{n}} = \bar{x}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{3.18}{\sqrt{n}}$ standard deviations} \pause
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=.6\linewidth]{figure/unnamed-chunk-2-1} 
-
-}
-
-
-
-\end{knitrout}
-\end{frame}
-
-
-
-
-\begin{frame}{Summary of $t$ distribution}
-\mylist{Its harder to reject the null when using the $t$ distribution; \pause This is due to our uncertainty about the estimated variance ;\pause Larger samples lead to more accurate estimates of $\sigma$; \pause This is reflected in the fact that there is a different $t$ distribution for each sample size  ; \pause As $n \rightarrow \infty$, sample variance $S$ gets closer to $\sigma$; \pause As degrees of freedom increase, $t$ distribution gets closer to Normal distribution}
-\end{frame}
-
-
-\begin{frame}{Summary of $t$ distribution}
-Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t$ starts to look like $\mathcal{N}(0,1)$
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=.6\linewidth]{figure/unnamed-chunk-3-1} 
-
-}
-
-
-
-\end{knitrout}
-\end{frame}
 
 
 \begin{frame}{As df (proxy to the sample size) increases $\ldots$}
