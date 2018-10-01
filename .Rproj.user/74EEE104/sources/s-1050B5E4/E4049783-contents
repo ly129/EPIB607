@@ -1350,7 +1350,7 @@ knitr::write_bib(c(
 2. [Data Graphics](https://docs.google.com/presentation/d/1wXgcTzcRKl_leGRfNZjWWPkjwJSTlZSXBCl-fFuLEaE/edit?usp=sharing)
 3. [Sampling Distributions](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sampling_dist/EPIB607_sampling_dist.pdf)
 4. [Bootstrap Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/bootstrap/EPIB607_bootstrap.pdf)
-5. [Inference about a population mean ($\\mu$)](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_mean/EPIB607_one_sample_mean.pdf)
+5. [Inference about a population mean ($\mu$)](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_mean/EPIB607_one_sample_mean.pdf)
 
 
 # Assignments 
