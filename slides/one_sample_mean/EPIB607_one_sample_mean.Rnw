@@ -224,6 +224,7 @@ knit_hooks$set(document = function(x) {
 gsub('\\\\(begin|end)\\{kframe\\}', '', x)
 })
 pacman::p_load(knitr)
+
 # pacman::p_load(ISLR)
 # pacman::p_load(data.table)
 # pacman::p_load(rpart)
@@ -298,8 +299,8 @@ pacman::p_load(knitr)
 		& & \\
 		$(1-\alpha)100$\% CI & $\overline{y} \pm z^\star_{1-\alpha/2}$(SEM) & $\overline{y} \pm t^\star_{1-\alpha/2, (n-1)}$(SEM) \\
 		& & \\
-		test statistic & $\frac{\overline{y}-\mu}{\textrm{SEM}}\sim \mathcal{N}(0,1)$ &
-		$\frac{\overline{y}-\mu}{\textrm{SEM}}\sim t_{(n-1)}$ \\
+		test statistic & $\frac{\overline{y}-\mu_0}{\textrm{SEM}}\sim \mathcal{N}(0,1)$ &
+		$\frac{\overline{y}-\mu_0}{\textrm{SEM}}\sim t_{(n-1)}$ \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -375,29 +376,61 @@ pacman::p_load(knitr)
 %	\end{figure}
 %}
 
-\frame{\frametitle{$t$ distributions} The $t$ distribution is
-	symmetric, but has heavier tails than the Normal distribution. \\ \
-	\\
+
+\begin{frame}{$t$ distributions}
+\begin{itemize}
+	\small
+	\item Is symmetric around 0 ( just like the $\mathcal{N}(0,1)$ )
+	\item Has a shape like that of the Z distribution, but with a SD slightly larger than
+	unity i.e. slightly flatter and heavier-tailed
+	\item Shape becomes indistinguishable from Z distribution as $n \rightarrow \infty$ (in fact as $n$ goes much beyond 30)
+	\item Instead of  $\pm 1.96 \times  $ SEM for 95\% confidence (or to use as the critical value in a null-hypothesis test), we need these multiples (or critical values): \\ \ \\
 	
-	As the degrees of freedom increase (i.e., as $n$ increases), the
-	$t$-distribution becomes more and more similar to a Normal
-	distribution.\\ \ \\
+	\begin{tabular}{r r r r}
+		$n$ & `degrees of freedom' & Multiple & from \texttt{R} \\ 
+		\hline
+		2 & 1 & 12.71 & \texttt{qt(0.975,  1)} \\
+		3 & 2 & 4.30 & \texttt{qt(0.975,  2)}\\
+		4 & 3 & 3.18 & \texttt{qt(0.975,  3)}\\
+		11 &10 & 2.23 & \texttt{qt(0.975, 10)}  \\
+		21 & 20 & 2.09 & \texttt{qt(0.975, 20)} \\
+		31 & 30 & 2.04 & \texttt{qt(0.975, 30)} \\
+		121 & 120 & 1.98 & \texttt{qt(0.975,120)} \\
+		$\infty$ & $\infty$ & 1.96 & \texttt{qt(0.975,Inf)}   \\
+	\end{tabular}
 	
-	In fact, the quantiles/area under the curve are similar for
-	$n\ge30$:
-	\begin{center}
-		\textbf{\underline{Quantiles}}\\ \vspace{.2cm}
-		
-		\begin{tabular}{c|cccc}
-			Distribution & \multicolumn{4}{c}{Cumulative Probability}\\
-			& 0.005 & 0.010 & 0.025 & 0.050\\ \hline
-			Normal & -2.58 & -2.33 & -1.96 & -1.64\\
-			$t_(50)$ & -2.68 & -2.40 & -2.01 & -1.68\\
-			$t_(30)$ & -2.75 & -2.46 & -2.04 & -1.70\\
-			$t_(10)$ & -3.17 & -2.76 & -2.23 & -1.81\\
-		\end{tabular}
-	\end{center}
-} \frame{\frametitle{$t$ procedures} We can calculate CIs and
+\end{itemize}
+\end{frame}
+
+ 
+
+\begin{frame}[fragile]{$t$ distributions}
+Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t$ starts to look like $\mathcal{N}(0,1)$
+<<fig.align='center',echo=FALSE, fig.asp = 0.598>>=
+curve(dnorm(x), -4,4, lty=1, ylab="density", col=1, lwd=2)
+curve(dt(x,3), -4,4, add=TRUE, lty=2, col=2,lwd=2)
+#curve(dt(x,30), -4,4, add=TRUE, lty=4, col=3,lwd=3)
+legend(1.5, .4, c("N(0,1)", "t(df=3)"), col = c(1,2), lty = c(1,2),
+merge = TRUE, bg = "gray90", lwd=c(2,2))
+#legend(1.5, .4, c("N(0,1)", "t(df=15)","t(df=30)"), col = c(1,2,3), lty = c(1,2,4),
+#merge = TRUE, bg = "gray90", lwd=c(2,2,3))
+@
+\end{frame}
+
+\begin{frame}[fragile]{$t$ distributions}
+Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t$ starts to look like $\mathcal{N}(0,1)$
+<<fig.align='center',echo=FALSE, fig.asp = 0.598>>=
+curve(dnorm(x), -4,4, lty=1, ylab="density", col=1, lwd=2)
+#curve(dt(x,3), -4,4, add=TRUE, lty=2, col=2,lwd=2)
+curve(dt(x,30), -4,4, add=TRUE, lty=4, col="blue",lwd=3)
+legend(1.5, .4, c("N(0,1)", "t(df=30)"), col = c(1,"blue"), lty = c(1,4),
+merge = TRUE, bg = "gray90", lwd=c(2,3))
+@
+
+\Large This is where the infamous $n=30$ comes from !!
+\end{frame}
+
+\frame{\frametitle{$t$ procedures} We can calculate CIs and
 	perform significance tests much as before (example coming up
 	soon).\\\ \\
 	
@@ -405,17 +438,29 @@ pacman::p_load(knitr)
 	is called a \textcolor{blue}{one-sample $t$-test}. \\ \ \\
 	
 	Collectively, the significance tests and confidence-interval based
-	tests using the $t$ distribution are called $t$ procedures.  \\ \ \\
+	tests using the $t$ distribution are called \underline{$t$ procedures}.  \\ \ \\
 	
-} 
-\begin{frame}{A note about the conditions for inference about a mean }
+}
+
+\begin{frame}{The one-sample $t$ test}
+
+\Wider[4em]{
+	\centering
+		\includegraphics[scale=0.35]{ttest.pdf}
+	
+}
+
+\end{frame}
+
+ 
+\begin{frame}{A note about the conditions for $t$ procedures}
 
 \begin{itemize}
 	\setlength\itemsep{1em}
 	\item B\&M stress that the \textbf{first} of their conditions as \textit{very important}: \textit{we can regard} our data as a simple random sample (SRS) from  the population \pause 
 	\item The \textbf{second}, observations from the population have a \textit{\underline{Normal}} distribution with unknown mean parameter $\mu$ and unknown standard deviation parameter $\sigma$ less so 
 	\item \textit{In practice}, inference procedures \textit{can accommodate some deviations from
-		the Normality condition} when the sample is large enough. (think CLT)
+		the Normality condition} when the sample is large enough. 
 \end{itemize}
 \end{frame}
 
@@ -424,6 +469,7 @@ pacman::p_load(knitr)
 	procedure is said to be \textbf{robust} if it is insensitive to
 	violations of the assumptions made. \\ \ \\
 	\begin{itemize}
+			\setlength\itemsep{1em}
 		%\item Results of $t$ procedures (CIs, significance tests) are exact if the
 		%population from which the simple random sample was drawn is Normal. \pause
 		\item $t$ procedures are not robust against \textit{extreme}
@@ -436,14 +482,15 @@ pacman::p_load(knitr)
 	\end{itemize}
 } \frame{\frametitle{Robustness of the $t$ procedures}
 	\begin{itemize}
+					\setlength\itemsep{2em}
 		\item $t$ procedures \textbf{are} robust against other forms
 		of non-normality and, even with considerable skew, perform well when $n$ is large. Why?
 		\pause
-			\item When $n$ is large, $s$ is a good estimate of $\sigma$
-			(recall that $s$ is unbiased and, like most estimates, precision
-			improves with increasing sample size)
-			\item CLT: $\overline{y}$ will be Normal when $n$ is large, even if the
-			population data are not \item[]
+		\item When $n$ is large, $s$ is a good estimate of $\sigma$
+		(recall that $s$ is unbiased and, like most estimates, precision
+		improves with increasing sample size) \pause
+		\item CLT: $\overline{y}$ will be Normal when $n$ is large, even if the
+		population data are not
 
 
 	\end{itemize}
@@ -458,8 +505,9 @@ pacman::p_load(knitr)
 
 
 \begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is known}
-\[ \underbrace{z_{0.975}}_{\textrm{critical value}}=1.96 = \frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}} \rightarrow \frac{1.96 \sigma}{\sqrt{n}} = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{1.96}{\sqrt{n}}$ standard deviations} \pause
-<<fig.align='center',out.width='.6\\linewidth',echo=FALSE,cache=TRUE>>=
+\small
+\[ \underbrace{z_{0.975}}_{\textrm{critical value}}=1.96 = \frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}} \rightarrow \frac{1.96 }{\sqrt{n}}\sigma = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{1.96}{\sqrt{n}}$ standard deviations} 
+<<fig.align='center',out.width='.6\\linewidth',echo=FALSE,cache=TRUE, eval = FALSE>>=
 library(ggplot2)
 draws <- rnorm(1e6) ; dens <- density(draws)
 dd <- with(dens,data.frame(x,y))
@@ -475,15 +523,20 @@ arrow = arrow(angle=20,length = unit(0.5, "cm")))+
 annotate("text", label = "P(Z<-1.96)=2.5%", x = -3.5, y = 0.11, size = 6, colour = "red")+
 geom_segment(aes(x = 3.5, y = 0.1, xend = 2.9, yend = 0.02),color="red", 
 arrow = arrow(angle=20,length = unit(0.5, "cm")))+
-annotate("text", label = "P(Z>1.96)=2.5%", x = 3.5, y = 0.11, size = 6, colour = "red")
+annotate("text", label = "P(Z>1.96)=2.5%", x = 3.5, y = 0.11, size = 6, colour = "red") + 
+theme_bw()
+@
+<<echo = TRUE, message=FALSE, eval=TRUE, fig.asp = 0.428>>=
+mosaic::xqnorm(p = c(0.025, 0.975))
 @
 \end{frame}
 
 
 
 \begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is unknown}
-\[ \underbrace{t_{0.975,df=3}}_{\textrm{critical value}}=3.18 = \frac{\bar{y}-\mu_0}{s/\sqrt{n}} \rightarrow 3.18 \frac{s}{\sqrt{n}} = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{3.18}{\sqrt{n}}$ standard deviations} \pause
-<<fig.align='center',out.width='.6\\linewidth',echo=FALSE,warning=FALSE,message=FALSE,cache=TRUE>>=
+\small
+\[ \underbrace{t_{0.975,df=3}^\star}_{\textrm{critical value}}=3.18 = \frac{\bar{y}-\mu_0}{s/\sqrt{n}} \rightarrow  \frac{3.18}{\sqrt{n}}s = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{3.18}{\sqrt{n}}$ standard deviations} 
+<<fig.align='center',out.width='.6\\linewidth',echo=FALSE,warning=FALSE,message=FALSE,cache=TRUE, eval = FALSE>>=
 set.seed(12893)
 draws <- rt(1e6,3) ; dens <- density(draws)
 dd <- with(dens,data.frame(x,y))
@@ -499,177 +552,168 @@ arrow = arrow(angle=20,length = unit(0.5, "cm")))+
 annotate("text", label = "P(t<-3.18)=2.5%", x = -3.5, y = 0.31, size = 6, colour = "red")+
 geom_segment(aes(x = 4.6, y = 0.25, xend = 3.7, yend = 0.02),color="red", 
 arrow = arrow(angle=20,length = unit(0.5, "cm")))+
-annotate("text", label = "P(t>3.18)=2.5%", x = 3.5, y = 0.31, size = 6, colour = "red")
+annotate("text", label = "P(t>3.18)=2.5%", x = 3.5, y = 0.31, size = 6, colour = "red")+ 
+theme_bw()
 @
+
+<<echo = TRUE, message=FALSE, eval=TRUE, fig.asp = 0.428>>=
+mosaic::xqt(p = c(0.025, 0.975), df = 3)
+@
+
 \end{frame}
 
 
 
 
 \begin{frame}{Summary of $t$ distribution}
-\mylist{Its harder to reject the null when using the $t$ distribution; \pause This is due to our uncertainty about the estimated variance ;\pause Larger samples lead to more accurate estimates of $\sigma$; \pause This is reflected in the fact that there is a different $t$ distribution for each sample size  ; \pause As $n \rightarrow \infty$, sample variance $S$ gets closer to $\sigma$; \pause As degrees of freedom increase, $t$ distribution gets closer to Normal distribution}
+\mylist{Its harder to reject the null when using the $t$ distribution; \pause Confidence intervals are also wider; \pause This is due to our uncertainty about the estimated variance ;\pause Larger samples lead to more accurate estimates of $\sigma$; \pause This is reflected in the fact that there is a different $t$ distribution for each sample size  ; \pause As $n \rightarrow \infty$, sample standard deviation $s$ gets closer to $\sigma$; \pause As degrees of freedom increase, $t$ distribution gets closer to Normal distribution}
 \end{frame}
 
 
-\begin{frame}{Summary of $t$ distribution}
-Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t$ starts to look like $\mathcal{N}(0,1)$
-<<fig.align='center',out.width='.6\\linewidth', echo=FALSE>>=
-curve(dnorm(x), -4,4, lty=1, ylab="density", col=1, lwd=2)
-curve(dt(x,15), -4,4, add=TRUE, lty=2, col=2,lwd=2)
-curve(dt(x,30), -4,4, add=TRUE, lty=4, col=3,lwd=3)
-legend(1.5, .4, c("N(0,1)", "t(df=15)","t(df=30)"), col = c(1,2,3), lty = c(1,2,4),
-merge = TRUE, bg = "gray90", lwd=c(2,2,3))
+\section{Examples}
+
+
+\begin{frame}{Application: How fast is your reaction time?}
+\small\url{https://faculty.washington.edu/chudler/java/redgreen.html} 
+
+\framedgraphic{JHReactionTimes.png}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Application: How fast is your reaction time?}
+<<echo = TRUE>>=
+reaction.times <- c(325,327,357,299,378)/1000
+summary(reaction.times)
+round(sd(reaction.times),3)
+length(reaction.times)
+@
+
+\end{frame}
+
+
+\begin{frame}[fragile]{4 ways of calculating a confidence interval}
+
+We are interested in calculating a 95\% confidence interval for the mean reaction time based on the sample of 5 reaction times. \\ \ \\
+\pause
+Four ways of doing this:
+\begin{enumerate}
+	\setlength\itemsep{1em}
+	\item By hand (using formulas and \texttt{R} as a calculator)
+	\item Fitting an intercept-only regression model ($y = \beta_0 + \varepsilon$)
+	\item Using a canned function (\texttt{mosaic::t.test}, \texttt{stats::t.test})
+	\item Bootstrap
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile]{1. By hand }
+<<echo = c(-3,-5,-7)>>=
+n <- length(reaction.times)
+SEM <- sd(reaction.times)/sqrt(n)
+(SEM <- sd(reaction.times)/sqrt(n))
+multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1)
+(multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1))
+by_hand_CI <- mean(reaction.times) + multiple.for.95pct * SEM
+round(by_hand_CI, 3)
 @
 \end{frame}
 
 
-\end{document}
-
-\begin{comment}
-\frame{\frametitle{Robustness of the $t$ procedures}
-	\begin{itemize}
-		\item When $n<15$ and the data are symmetric and do not exhibit outliers,
-		$t$ procedures can be used \pause
-		\item When $n\ge 15$ and the data do not exhibit extreme outliers or
-		extreme skew, $t$ procedures can be used \pause
-		\item When $n\ge 40$, $t$ procedures can be used even if the data are
-		highly skewed
-		\begin{itemize}
-			\item Even when $\sigma$ is not known, can use tests/CIs
-			based on the $Z$ statistic/Normal distribution rather than on the
-			$t$ statistic/$t$ distribution. (Quantiles are very similar.)
-			\item[]
-		\end{itemize}
-		\pause
-		\item If the data are very skewed, there are other options to
-		consider (whether $n$ is large or not):
-		\begin{itemize}
-			\item Transformations (be careful with interpretation!)
-			\item Non-parametric models which do not assume any particular
-			distribution of the data (we will study these in Part 5 of the
-			course)
-		\end{itemize}
-	\end{itemize}
-}
-\end{comment}
 
 
-\frame{\frametitle{Confidence intervals for $\mu$ when $\sigma^2$ is
-		unknown} When we must estimate the SE, the $(1-\alpha)$100\%
-	confidence interval now formed is:
-	\begin{eqnarray*}
-		\hbox{CI:} & & \hbox{estimate} \pm \hbox{margin of error}\\
-		& & =\overline{y} \pm t_{\alpha/2}s/\sqrt{n}
-	\end{eqnarray*}
-	where $t_{\alpha/2}$ is the quantile of the $t(n-1)$ distribution
-	curve such that
-	$P(-t_{\alpha/2} < t_{n-1} < t_{\alpha/2}) = 1-\alpha$. \\\ \\
-	The CI is exactly correct when the distribution of the population
-	data $x$ is Normal, and approximately correct otherwise. \\ \ \\
-	
-	Recall that with highly skewed distributions and small samples, the
-	CLT may not provide a good approximation to the distribution of
-	$\overline{x}$.}
-
-%\frame{\frametitle{Confidence intervals for $\mu$ when $\sigma^2$ is
-%		unknown}
-%	\begin{figure}
-%		\begin{center}
-%			\epsfig{figure=Tables/psls_table_C.eps,scale=.35}
-%		\end{center}
-%	\end{figure}
-%}
-
-\frame{\frametitle{Confidence intervals for $\mu$ when
-		$\sigma^2$ is unknown} Exercise: \\ Compute a 95\% and a 99\%
-	confidence interval for the mean Wechsler score of children at
-	Lake Wobegon assuming variance is unknown. \\ \ \\
-	
-	Recall, for a 95\% \textit{Normal} CI, we use $z_{\alpha/2} =
-	z_{0.025} = 1.96$, and for a 99\% \textit{Normal} CI, we have
-	$z_{\alpha/2} = z_{0.005} = 2.58$. What quantile values
-	$t_{\alpha/2}$ are used to construct CIs if we don't know the
-	variance? }
-
-%\frame{\frametitle{Confidence intervals for $\mu$ when
-%		$\sigma^2$ is unknown}
-%	\begin{figure}
-%		\begin{center}
-%			\rotatebox{90}{\epsfig{figure=Tables/psls_table_C-marked1.eps,scale=.45}}
-%		\end{center}
-%	\end{figure}
-%}
-
-\frame{\frametitle{Confidence intervals for $\mu$ when $\sigma^2$ is
-		unknown} Exercise: \\ Compute a 95\% and a 99\% confidence interval
-	for the mean Wechsler score of children at
-	Lake Wobegon assuming variance is unknown. \\ \ \\
-	
-	Components required to construct the CIs:
-	\begin{itemize}
-		\item $\overline{x} = 112.8$
-		\item $s = \sqrt{160.4} = 12.7$
-		\item $n=9$
-		\item for a 95\% CI, we use $t_{\alpha/2} =
-		t_{0.025} = 2.306$
-		\item for a 99\% CI, we use $t_{\alpha/2} =
-		t_{0.005} = 3.355$
-\end{itemize} }
+\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+<<echo = TRUE>>=
+fit <- stats::lm(reaction.times ~ 1)
+summary(fit)
+stats::confint(fit)
+@
+\end{frame}
 
 
-\begin{frame}{Inference about a population mean}
-\textbf{(FREQUENTIST) INFERENCE for (PARAMETER)} $\mu$ -- the mean of an (effectively) infinite-size universe of $Y$ values --
-based on the $n$ values, $y_1, \dots, y_n$ in an  SRS from that universe/population
-
-
-`\textbf{\textit{Certain conditions apply}}'  \footnote{ B\&M stress that the \textbf{first} of their conditions `\textit{we can regard} our data as a simple random sample (SRS) from  the
-	population' as \textit{very important};\\ { \scriptsize the \textbf{second}, `Observations from the population have a \textit{\underline{Normal}} distribution with unknown mean parameter $\mu$ and and unknown standard deviation parameter $\sigma$' less so: `\textit{In
-			practice}, inference procedures \textit{can accommodate some deviations from
-			the Normality condition} when the sample is large enough.'}}
-
-\textbf{Point-estimate} of $\mu$  :  $\hat{\mu} = \bar{y}$  
-
-\textbf{(Symmetric) Confidence Interval} CI for $\mu$ : $\bar{y} \pm ME,$\\
-\ \  \  where the \underline{M}argin of \underline{E}rror (ME) is a 
+\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+In the regression output:
 \begin{itemize}
-	\item
-	$z$-multiple of SE \footnote{B\&M distinguish the SD of a statistic from its SE. They switch on p. 412: `When the standard deviation of a statistic is estimated from data, the result
-		is called the standard error (SE) of the statistic. The SE  of the sample mean, $\bar{y}$
-		is SEM = $s/\sqrt{n}.$'}, if $n$ is `large' AND \\ \ \\
-	the Y values in the universe have a  `Normal' (Gaussian')  distribution or, if not, $n$ is large enough so that the Central Limit Theorem guarantees that the sampling distribution of possible $\bar{y}$'s of size $n$ from this universe is well enough approximated by a Gaussian distribution
-	\item
-	$t$-multiple of SE if `small' $n$ AND \\ \ \\
-	the Y values in the universe have a  `Normal' (Gaussian')  distribution
+	\setlength\itemsep{1em}
+	\item \texttt{Estimate}: the mean reaction time (an estimate of the intercept $\beta_0$)
+	\item \texttt{t value}: the test statistic 
+	\item \texttt{Std. Error}: the standard error of the mean (SEM)
+	\item \texttt{Pr(>|t|)}: is the $p$-value
+\end{itemize} 
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+
+<<>>=
+options(digits = 3)
+@
+
+\small
+These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
+
+\begin{itemize}
+	\item \texttt{t value} = $\frac{\bar{y} - \mu_0}{s / \sqrt{n}}$ = $\frac{0.33720 - 0}{0.01373}$ = \Sexpr{round(coef(fit)[1]/SEM, 2)}
+	\item \texttt{Pr(>|t|)} \\
+	= $P(\textrm{t value} > t_{(n-1)}) + P(-\textrm{t value} < t_{(n-1)})$ \\
+	 = \small{\texttt{pt(q = 24.56, df = n-1, lower.tail = FALSE)} + \texttt{pt(q = -24.56, df = n-1)}} \\
+	  = \Sexpr{pt(q = 24.56, df = n-1, lower.tail = FALSE)} + \Sexpr{pt(q = -24.56, df = n-1)} = \Sexpr{pt(q = 24.56, df = n-1, lower.tail = FALSE)*2}
 \end{itemize}
+
+
 \end{frame}
 
 
 
+\begin{frame}[fragile]{3. Canned function}
 
-\section{t-distribution}
-
-
-
-
-\begin{frame}{As df (proxy to the sample size) increases $\ldots$}
-Recall that the 97.5th quantile of the $\mathcal{N}(0,1)$ is $Z=1.96$ \pause
-\begin{center}
-\begin{tabular}{c|c}
-$df$ & $t_{0.975,df}$\\
-\hline
-3 & \Sexpr{qt(0.975,3)}\\
-5 & \Sexpr{qt(0.975,5)}\\
-30 & \Sexpr{qt(0.975,30)}\\
-50 & \Sexpr{qt(0.975,50)}\\
-100 & \Sexpr{qt(0.975,100)}\\
-250 & \Sexpr{qt(0.975,250)}\\
-500 & \Sexpr{qt(0.975,500)}
-\end{tabular}
-\end{center}
+<<echo = TRUE>>=
+stats::t.test(reaction.times)
+@
 
 \end{frame}
 
+
+
+\begin{frame}[fragile]{4. Bootstrap}
+
+<<echo = 1:3, fig.asp=0.498>>=
+df_react <- data.frame(reaction.times) # need data.frame to bootstrap
+s_dist <- do(10000) * mean( ~ reaction.times, 
+		data = resample(df_react))
+CI_95 <- quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
+CI_95
+# plot sampling distribution
+hist(s_dist$mean, breaks = 50, col = "#56B4E9",
+main="",
+xlab = "mean reaction time (s) from each bootstrap sample")
+
+# draw red line at the sample mean
+abline(v = mean(reaction.times), lty =1, col = "red", lwd = 4)
+
+# draw black dotted lines at 95% CI
+abline(v = CI_95[1], lty =2, col = "black", lwd = 4)
+abline(v = CI_95[2], lty =2, col = "black", lwd = 4)
+
+# include legend
+library(latex2exp)
+legend("topright", 
+legend = c(TeX("$\\bar{y} = 0.3372$"),
+sprintf("95%% CI: [%.3f, %.3f]",CI_95[1], CI_95[2])), 
+lty = c(1,1), 
+col = c("red","black"), lwd = 4)
+@
+
+\end{frame}
 
 
 
 \end{document}
+
+
+
+
+
+

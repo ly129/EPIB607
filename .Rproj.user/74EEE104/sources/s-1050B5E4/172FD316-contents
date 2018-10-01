@@ -20,3 +20,47 @@ ggformula::gf_dist("norm") %>%
 
 gf_dist("norm", color = "red", kind = "qqstep", resolution = 25) %>%
   gf_dist("norm", color = "black", kind = "qq", resolution = 25, size = 2, alpha = 0.5)
+
+
+reaction.times <- c(325,327,357,299,378)/1000
+n <- length(reaction.times)
+SEM <- sd(reaction.times)/sqrt(n)
+(SEM <- sd(reaction.times)/sqrt(n))
+multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1)
+(multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1))
+by_hand_CI <- mean(reaction.times) + multiple.for.95pct * SEM
+round(by_hand_CI, 3)
+qt(p = c(0.025, 0.975), df = n-1, ncp = SEM/mean(reaction.times))
+
+
+fit <- stats::lm(reaction.times ~ 1)
+summary(fit)
+stats::confint(fit)
+coef(fit)
+
+mosaic::t.test(reaction.times)
+lm(reaction.times~1)
+df_react <- data.frame(reaction.times)
+s_dist <- do(10000) * mean( ~ reaction.times, data = resample(df_react))
+# 95% CI
+CI_95 <- quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
+
+# plot sampling distribution
+hist(s_dist$mean, breaks = 50, col = "#56B4E9",
+     main="",
+     xlab = "mean depth of the ocean (100m) from each bootstrap sample")
+
+# draw red line at the sample mean
+abline(v = mean(reaction.times), lty =1, col = "red", lwd = 4)
+
+# draw black dotted lines at 95% CI
+abline(v = CI_95[1], lty =2, col = "black", lwd = 4)
+abline(v = CI_95[2], lty =2, col = "black", lwd = 4)
+
+# include legend
+library(latex2exp)
+legend("topleft", 
+       legend = c(TeX("$\\bar{y} = 0.3372$"),
+                  sprintf("95%% CI: [%.3f, %.3f]",CI_95[1], CI_95[2])), 
+       lty = c(1,1), 
+       col = c("red","black"), lwd = 4)
