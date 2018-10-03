@@ -596,7 +596,7 @@ length(reaction.times)
 
 We are interested in calculating a 95\% confidence interval for the mean reaction time based on the sample of 5 reaction times. \\ \ \\
 \pause
-Four ways of doing this:
+Five ways of doing this:
 \begin{enumerate}
 	\setlength\itemsep{1em}
 	\item By hand (using the $\pm$ formula and \texttt{R} as a calculator)
@@ -727,6 +727,17 @@ col = c("red","black"), lwd = 4)
 \end{frame}
 
 
+\begin{frame}{Summary}
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item We use $t$ procedures instead of $Z$ when we have very small samples ($n \leq 30$)
+	\item This is because our estimate of $\sigma$ is probably not accurate with such a small sample
+	\item We account for this extra uncertainty by widening the interval $\to$ larger multiplicative factor ($t_{(n-1)}$ > $z^\star$) \pause 
+	\item Reality check: It is unlikely you will have such a small sample unless you're working with rats
+	\item In practice you don't need to worry about $t$ vs. $Z$. The software does it for you.
+	\item However, you should still understand where the numbers are coming from and how it is being calculated. Computers aren't intelligent, they're just well trained. 
+\end{itemize}
+\end{frame}
 
 
 \end{document}

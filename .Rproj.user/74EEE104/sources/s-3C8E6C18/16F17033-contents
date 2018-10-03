@@ -1,54 +1,4 @@
-\documentclass{beamer}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
+\documentclass{beamer}
 
 \usepackage{default}
 \usepackage{animate} %need the animate.sty file 
@@ -258,11 +208,32 @@
 	\begin{textblock*}{\paperwidth}(0pt,\textheight)
 		\raggedright #1\hspace{.5em}
 \end{textblock*}}
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+
 \begin{document}
 %\sffamily
 
+<<setup, include=FALSE>>=
+rm(list = ls())
+library(knitr)
+knitr::opts_chunk$set(cache=TRUE, message = FALSE, tidy = FALSE,warning=FALSE, 
+echo = FALSE, fig.width = 8, fig.asp = 0.8, 
+fig.align = 'center', out.width = "100%", size = 'scriptsize')
+# the kframe environment does not work with allowframebreaks, so remove it
+knit_hooks$set(document = function(x) {
+gsub('\\\\(begin|end)\\{kframe\\}', '', x)
+})
+pacman::p_load(knitr)
 
+# pacman::p_load(ISLR)
+# pacman::p_load(data.table)
+# pacman::p_load(rpart)
+# pacman::p_load(rpart.plot)
+# pacman::p_load(xtable)
+# pacman::p_load(ggplot2)
+# trop <- RSkittleBrewer::RSkittleBrewer("trop")
+# gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20), axis.title = element_text(size = 20), legend.text = element_text(size = 20), legend.title = element_text(size = 20))
+@
 
 %\title{Introduction to Regression Trees}
 %\author{Sahir Bhatnagar \inst{1}}
@@ -352,47 +323,21 @@
 
 \begin{frame}[fragile]{$t_{(5)}$ distribution vs. Standard Normal distribution}
 \begin{minipage}{0.47\textwidth}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{library}\hlstd{(mosaic)}
-\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
-\end{alltt}
-
-\end{knitrout}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-2-1} 
-
-}
-
-
-\begin{verbatim}
-## [1] -1.959964  1.959964
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE, message=FALSE, eval=FALSE>>=
+	library(mosaic)
+	xqnorm(p = c(0.025, 0.975))
+	@
+	<<echo = FALSE, message=FALSE, eval=TRUE>>=
+	library(mosaic)
+	xqnorm(p = c(0.025, 0.975),
+	xlim = c(-6,6))
+	@
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{library}\hlstd{(mosaic)}
-\hlkwd{xqt}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{=} \hlnum{5}\hlstd{)}
-\end{alltt}
-
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-3-1} 
-
-}
-
-
-\begin{verbatim}
-## [1] -2.570582  2.570582
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE>>=
+	library(mosaic)
+	xqt(p = c(0.025, 0.975), df = 5)
+	@
 \end{minipage}
 \end{frame}
 
@@ -400,50 +345,26 @@
 
 \begin{frame}[fragile]{$t_{(30)}$ distribution vs. Standard Normal distribution}
 \begin{minipage}{0.47\textwidth}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{library}\hlstd{(mosaic)}
-\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
-\end{alltt}
-
-\end{knitrout}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-5-1} 
-
-}
-
-
-\begin{verbatim}
-## [1] -1.959964  1.959964
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE, message=FALSE, eval=FALSE>>=
+	library(mosaic)
+	xqnorm(p = c(0.025, 0.975))
+	@
+	<<echo = FALSE, message=FALSE, eval=TRUE>>=
+	library(mosaic)
+	xqnorm(p = c(0.025, 0.975),
+	xlim = c(-4,4))
+	@
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{library}\hlstd{(mosaic)}
-\hlkwd{xqt}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{=} \hlnum{30}\hlstd{)}
-\end{alltt}
-
-\end{knitrout}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-7-1} 
-
-}
-
-
-\begin{verbatim}
-## [1] -2.042272  2.042272
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE, message=FALSE, eval=FALSE>>=
+	library(mosaic)
+	xqt(p = c(0.025, 0.975), df = 30)
+	@
+	<<echo = FALSE, message=FALSE, eval=TRUE>>=
+	library(mosaic)
+	xqt(p = c(0.025, 0.975), df = 30,
+	xlim = c(-4,4))
+	@
 \end{minipage}
 \end{frame}
 
@@ -485,30 +406,26 @@
 
 \begin{frame}[fragile]{$t$ distributions}
 Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t$ starts to look like $\mathcal{N}(0,1)$
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-8-1} 
-
-}
-
-
-
-\end{knitrout}
+<<fig.align='center',echo=FALSE, fig.asp = 0.598>>=
+curve(dnorm(x), -4,4, lty=1, ylab="density", col=1, lwd=2)
+curve(dt(x,3), -4,4, add=TRUE, lty=2, col=2,lwd=2)
+#curve(dt(x,30), -4,4, add=TRUE, lty=4, col=3,lwd=3)
+legend(1.5, .4, c("N(0,1)", "t(df=3)"), col = c(1,2), lty = c(1,2),
+merge = TRUE, bg = "gray90", lwd=c(2,2))
+#legend(1.5, .4, c("N(0,1)", "t(df=15)","t(df=30)"), col = c(1,2,3), lty = c(1,2,4),
+#merge = TRUE, bg = "gray90", lwd=c(2,2,3))
+@
 \end{frame}
 
 \begin{frame}[fragile]{$t$ distributions}
 Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t$ starts to look like $\mathcal{N}(0,1)$
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-9-1} 
-
-}
-
-
-
-\end{knitrout}
+<<fig.align='center',echo=FALSE, fig.asp = 0.598>>=
+curve(dnorm(x), -4,4, lty=1, ylab="density", col=1, lwd=2)
+#curve(dt(x,3), -4,4, add=TRUE, lty=2, col=2,lwd=2)
+curve(dt(x,30), -4,4, add=TRUE, lty=4, col="blue",lwd=3)
+legend(1.5, .4, c("N(0,1)", "t(df=30)"), col = c(1,"blue"), lty = c(1,4),
+merge = TRUE, bg = "gray90", lwd=c(2,3))
+@
 
 \Large This is where the infamous $n=30$ comes from !!
 \end{frame}
@@ -590,24 +507,28 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is known}
 \small
 \[ \underbrace{z_{0.975}}_{\textrm{critical value}}=1.96 = \frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}} \rightarrow \frac{1.96 }{\sqrt{n}}\sigma = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{1.96}{\sqrt{n}}$ standard deviations} 
-
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{mosaic}\hlopt{::}\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
-\end{alltt}
-
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-11-1} 
-
-}
-
-
-\begin{verbatim}
-## [1] -1.959964  1.959964
-\end{verbatim}
-
-\end{knitrout}
+<<fig.align='center',out.width='.6\\linewidth',echo=FALSE,cache=TRUE, eval = FALSE>>=
+library(ggplot2)
+draws <- rnorm(1e6) ; dens <- density(draws)
+dd <- with(dens,data.frame(x,y))
+q <- quantile(draws, ecdf(draws)(-1.96))
+qplot(x,y,data=dd,geom="line")+
+geom_ribbon(data=subset(dd,x<q),aes(ymax=y),ymin=0,
+fill="red",colour=NA,alpha=0.5)+geom_ribbon(data=subset(dd,x>abs(q)),aes(ymax=y),ymin=0,
+fill="red",colour=NA,alpha=0.5)+
+annotate("text", x =-3.5, y = 0.38, label = "Total shaded area is 5%")+
+ylab("probability density")+ xlab("z")+
+geom_segment(aes(x = -3.5, y = 0.1, xend = -2.9, yend = 0.02),color="red", 
+arrow = arrow(angle=20,length = unit(0.5, "cm")))+
+annotate("text", label = "P(Z<-1.96)=2.5%", x = -3.5, y = 0.11, size = 6, colour = "red")+
+geom_segment(aes(x = 3.5, y = 0.1, xend = 2.9, yend = 0.02),color="red", 
+arrow = arrow(angle=20,length = unit(0.5, "cm")))+
+annotate("text", label = "P(Z>1.96)=2.5%", x = 3.5, y = 0.11, size = 6, colour = "red") + 
+theme_bw()
+@
+<<echo = TRUE, message=FALSE, eval=TRUE, fig.asp = 0.428>>=
+mosaic::xqnorm(p = c(0.025, 0.975))
+@
 \end{frame}
 
 
@@ -615,25 +536,29 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \begin{frame}[fragile]{Rejecting the Null ($H_0: \mu = \mu_0$) when $\sigma$ is unknown}
 \small
 \[ \underbrace{t_{0.975,df=3}^\star}_{\textrm{critical value}}=3.18 = \frac{\bar{y}-\mu_0}{s/\sqrt{n}} \rightarrow  \frac{3.18}{\sqrt{n}}s = \bar{y}-\mu_0   \] which means that to reject $H_0$ the difference between your sample mean and $\mu_0$ needs to be \blue{greater than $\frac{3.18}{\sqrt{n}}$ standard deviations} 
+<<fig.align='center',out.width='.6\\linewidth',echo=FALSE,warning=FALSE,message=FALSE,cache=TRUE, eval = FALSE>>=
+set.seed(12893)
+draws <- rt(1e6,3) ; dens <- density(draws)
+dd <- with(dens,data.frame(x,y))
+q <- quantile(draws, ecdf(draws)(qt(0.025,df=3)))
+qplot(x,y,data=dd,geom="line")+
+geom_ribbon(data=subset(dd,x<q),aes(ymax=y),ymin=0,
+fill="red",colour=NA,alpha=0.5)+geom_ribbon(data=subset(dd,x>abs(q)),aes(ymax=y),ymin=0,
+fill="red",colour=NA,alpha=0.5)+xlim(-5,5)+
+annotate("text", x =-3.5, y = 0.6, label = "Total shaded area is 5%")+
+ylab("probability density")+ xlab("t")+
+geom_segment(aes(x = -4.6, y = 0.25, xend = -3.6, yend = 0.02),color="red", 
+arrow = arrow(angle=20,length = unit(0.5, "cm")))+
+annotate("text", label = "P(t<-3.18)=2.5%", x = -3.5, y = 0.31, size = 6, colour = "red")+
+geom_segment(aes(x = 4.6, y = 0.25, xend = 3.7, yend = 0.02),color="red", 
+arrow = arrow(angle=20,length = unit(0.5, "cm")))+
+annotate("text", label = "P(t>3.18)=2.5%", x = 3.5, y = 0.31, size = 6, colour = "red")+ 
+theme_bw()
+@
 
-
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{mosaic}\hlopt{::}\hlkwd{xqt}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{=} \hlnum{3}\hlstd{)}
-\end{alltt}
-
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-13-1} 
-
-}
-
-
-\begin{verbatim}
-## [1] -3.182446  3.182446
-\end{verbatim}
-
-\end{knitrout}
+<<echo = TRUE, message=FALSE, eval=TRUE, fig.asp = 0.428>>=
+mosaic::xqt(p = c(0.025, 0.975), df = 3)
+@
 
 \end{frame}
 
@@ -657,30 +582,12 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 
 
 \begin{frame}[fragile]{Application: How fast is your reaction time?}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{reaction.times} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{325}\hlstd{,}\hlnum{327}\hlstd{,}\hlnum{357}\hlstd{,}\hlnum{299}\hlstd{,}\hlnum{378}\hlstd{)}\hlopt{/}\hlnum{1000}
-\hlkwd{summary}\hlstd{(reaction.times)}
-\end{alltt}
-\begin{verbatim}
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  0.2990  0.3250  0.3270  0.3372  0.3570  0.3780
-\end{verbatim}
-\begin{alltt}
-\hlkwd{round}\hlstd{(}\hlkwd{sd}\hlstd{(reaction.times),}\hlnum{3}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.031
-\end{verbatim}
-\begin{alltt}
-\hlkwd{length}\hlstd{(reaction.times)}
-\end{alltt}
-\begin{verbatim}
-## [1] 5
-\end{verbatim}
-
-\end{knitrout}
+<<echo = TRUE>>=
+reaction.times <- c(325,327,357,299,378)/1000
+summary(reaction.times)
+round(sd(reaction.times),3)
+length(reaction.times)
+@
 
 \end{frame}
 
@@ -689,7 +596,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 
 We are interested in calculating a 95\% confidence interval for the mean reaction time based on the sample of 5 reaction times. \\ \ \\
 \pause
-Five ways of doing this:
+Four ways of doing this:
 \begin{enumerate}
 	\setlength\itemsep{1em}
 	\item By hand (using the $\pm$ formula and \texttt{R} as a calculator)
@@ -702,35 +609,17 @@ Five ways of doing this:
 \end{frame}
 
 \begin{frame}[fragile]{1. By hand using the $\pm$ formula}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{n} \hlkwb{<-} \hlkwd{length}\hlstd{(reaction.times)}
-\hlstd{SEM} \hlkwb{<-} \hlkwd{sd}\hlstd{(reaction.times)}\hlopt{/}\hlkwd{sqrt}\hlstd{(n)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.01372734
-\end{verbatim}
-\begin{alltt}
-\hlstd{ybar} \hlkwb{<-} \hlkwd{mean}\hlstd{(reaction.times)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.3372
-\end{verbatim}
-\begin{alltt}
-\hlstd{multiple.for.95pct} \hlkwb{<-} \hlstd{stats}\hlopt{::}\hlkwd{qt}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{= n}\hlopt{-}\hlnum{1}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-## [1] -2.776445  2.776445
-\end{verbatim}
-\begin{alltt}
-\hlstd{by_hand_CI} \hlkwb{<-} \hlstd{ybar} \hlopt{+} \hlstd{multiple.for.95pct} \hlopt{*} \hlstd{SEM}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.29909 0.37531
-\end{verbatim}
-
-\end{knitrout}
+<<echo = c(-3,-5,-7,-9)>>=
+n <- length(reaction.times)
+SEM <- sd(reaction.times)/sqrt(n)
+(SEM <- sd(reaction.times)/sqrt(n))
+ybar <- mean(reaction.times)
+(ybar <- mean(reaction.times))
+multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1)
+(multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1))
+by_hand_CI <- ybar + multiple.for.95pct * SEM
+round(by_hand_CI, 5)
+@
 \end{frame}
 
 \begin{frame}[fragile]{2. Using \texttt{stats::qt}}
@@ -738,59 +627,25 @@ Five ways of doing this:
 
 \vspace*{0.2in}
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{n} \hlkwb{<-} \hlkwd{length}\hlstd{(reaction.times)}
-\hlstd{SEM} \hlkwb{<-} \hlkwd{sd}\hlstd{(reaction.times)}\hlopt{/}\hlkwd{sqrt}\hlstd{(n)}
-\hlstd{ybar} \hlkwb{<-} \hlkwd{mean}\hlstd{(reaction.times)}
+<<echo = TRUE>>=
+n <- length(reaction.times)
+SEM <- sd(reaction.times)/sqrt(n)
+ybar <- mean(reaction.times)
 
-\hlcom{# scaled version of the standard t distribution}
-\hlstd{qt_ls} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{p}\hlstd{,} \hlkwc{df}\hlstd{,} \hlkwc{mean}\hlstd{,} \hlkwc{sd}\hlstd{)} \hlkwd{qt}\hlstd{(}\hlkwc{p} \hlstd{= p,} \hlkwc{df} \hlstd{= df)} \hlopt{*} \hlstd{sd} \hlopt{+} \hlstd{mean}
+# scaled version of the standard t distribution
+qt_ls <- function(p, df, mean, sd) qt(p = p, df = df) * sd + mean
 
-\hlkwd{qt_ls}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{= n} \hlopt{-} \hlnum{1}\hlstd{,} \hlkwc{mean} \hlstd{= ybar,} \hlkwc{sd} \hlstd{= SEM)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.2990868 0.3753132
-\end{verbatim}
-
-\end{knitrout}
+qt_ls(p = c(0.025, 0.975), df = n - 1, mean = ybar, sd = SEM)
+@
 \end{frame}
 
 
 \begin{frame}[fragile]{3. Fitting an intercept-only regression model}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{fit} \hlkwb{<-} \hlstd{stats}\hlopt{::}\hlkwd{lm}\hlstd{(reaction.times} \hlopt{~} \hlnum{1}\hlstd{)}
-\hlkwd{summary}\hlstd{(fit)}
-\end{alltt}
-\begin{verbatim}
-## 
-## Call:
-## stats::lm(formula = reaction.times ~ 1)
-## 
-## Residuals:
-##       1       2       3       4       5 
-## -0.0122 -0.0102  0.0198 -0.0382  0.0408 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  0.33720    0.01373   24.56 1.63e-05 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 0.0307 on 4 degrees of freedom
-\end{verbatim}
-\begin{alltt}
-\hlstd{stats}\hlopt{::}\hlkwd{confint}\hlstd{(fit)}
-\end{alltt}
-\begin{verbatim}
-##                 2.5 %    97.5 %
-## (Intercept) 0.2990868 0.3753132
-\end{verbatim}
-
-\end{knitrout}
+<<echo = TRUE>>=
+fit <- stats::lm(reaction.times ~ 1)
+summary(fit)
+stats::confint(fit)
+@
 \end{frame}
 
 
@@ -810,17 +665,19 @@ In the regression output:
 
 \begin{frame}[fragile]{3. Fitting an intercept-only regression model}
 
-
+<<>>=
+options(digits = 3)
+@
 
 \small
 These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 \begin{itemize}
-	\item \texttt{t value} = $\frac{\bar{y} - \mu_0}{s / \sqrt{n}}$ = $\frac{0.33720 - 0}{0.01373}$ = 24.56
+	\item \texttt{t value} = $\frac{\bar{y} - \mu_0}{s / \sqrt{n}}$ = $\frac{0.33720 - 0}{0.01373}$ = \Sexpr{round(coef(fit)[1]/SEM, 2)}
 	\item \texttt{Pr(>|t|)} \\ \ \\
 	= $P(\textrm{t value} > t_{(n-1)}) + P(-\textrm{t value} < t_{(n-1)})$ \\ \ \\
 	 = \small{\texttt{pt(q = 24.56, df = n-1, lower.tail = FALSE)} +  \texttt{pt(q = -24.56, df = n-1)}} \\ \ \\
-	  = \ensuremath{8.1549827\times 10^{-6}} + \ensuremath{8.1549827\times 10^{-6}} = \ensuremath{1.6309965\times 10^{-5}}
+	  = \Sexpr{pt(q = 24.56, df = n-1, lower.tail = FALSE)} + \Sexpr{pt(q = -24.56, df = n-1)} = \Sexpr{pt(q = 24.56, df = n-1, lower.tail = FALSE)*2}
 \end{itemize}
 
 
@@ -830,26 +687,9 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 \begin{frame}[fragile]{4. Canned function}
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{stats}\hlopt{::}\hlkwd{t.test}\hlstd{(reaction.times)}
-\end{alltt}
-\begin{verbatim}
-## 
-## 	One Sample t-test
-## 
-## data:  reaction.times
-## t = 20, df = 4, p-value = 2e-05
-## alternative hypothesis: true mean is not equal to 0
-## 95 percent confidence interval:
-##  0.299 0.375
-## sample estimates:
-## mean of x 
-##     0.337
-\end{verbatim}
-
-\end{knitrout}
+<<echo = TRUE>>=
+stats::t.test(reaction.times)
+@
 
 \end{frame}
 
@@ -857,42 +697,36 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 \begin{frame}[fragile]{5. Bootstrap}
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{df_react} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(reaction.times)} \hlcom{# need data.frame to bootstrap}
-\hlstd{s_dist} \hlkwb{<-} \hlkwd{do}\hlstd{(}\hlnum{10000}\hlstd{)} \hlopt{*} \hlkwd{mean}\hlstd{(} \hlopt{~} \hlstd{reaction.times,}
-                \hlkwc{data} \hlstd{=} \hlkwd{resample}\hlstd{(df_react))}
-\hlstd{CI_95} \hlkwb{<-} \hlkwd{quantile}\hlstd{(}\hlopt{~} \hlstd{mean,} \hlkwc{data} \hlstd{= s_dist,} \hlkwc{probs} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
-\end{alltt}
-\begin{verbatim}
-##  2.5% 97.5% 
-## 0.315 0.362
-\end{verbatim}
+<<echo = 1:3, fig.asp=0.498>>=
+df_react <- data.frame(reaction.times) # need data.frame to bootstrap
+s_dist <- do(10000) * mean( ~ reaction.times, 
+		data = resample(df_react))
+CI_95 <- quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
+CI_95
+# plot sampling distribution
+hist(s_dist$mean, breaks = 50, col = "#56B4E9",
+main="",
+xlab = "mean reaction time (s) from each bootstrap sample")
 
+# draw red line at the sample mean
+abline(v = mean(reaction.times), lty =1, col = "red", lwd = 4)
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-20-1} 
+# draw black dotted lines at 95% CI
+abline(v = CI_95[1], lty =2, col = "black", lwd = 4)
+abline(v = CI_95[2], lty =2, col = "black", lwd = 4)
 
-}
-
-
-
-\end{knitrout}
+# include legend
+library(latex2exp)
+legend("topright", 
+legend = c(TeX("$\\bar{y} = 0.3372$"),
+sprintf("95%% CI: [%.3f, %.3f]",CI_95[1], CI_95[2])), 
+lty = c(1,1), 
+col = c("red","black"), lwd = 4)
+@
 
 \end{frame}
 
 
-\begin{frame}{Summary}
-\begin{itemize}
-	\setlength\itemsep{1em}
-	\item We use $t$ procedures instead of $Z$ when we have very small samples ($n \leq 30$)
-	\item This is because our estimate of $\sigma$ is probably not accurate with such a small sample
-	\item We account for this extra uncertainty by widening the interval $\to$ larger multiplicative factor ($t_{(n-1)}$ > $z^\star$) \pause 
-	\item Reality check: It is unlikely you will have such a small sample unless you're working with rats
-	\item In practice you don't need to worry about $t$ vs. $Z$. The software does it for you.
-	\item However, you should still understand where the numbers are coming from and how it is being calculated. Computers aren't intelligent, they're just well trained. 
-\end{itemize}
-\end{frame}
 
 
 \end{document}
