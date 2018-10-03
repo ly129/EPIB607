@@ -592,14 +592,15 @@ length(reaction.times)
 \end{frame}
 
 
-\begin{frame}[fragile]{4 ways of calculating a confidence interval}
+\begin{frame}[fragile]{5 ways of calculating a confidence interval}
 
 We are interested in calculating a 95\% confidence interval for the mean reaction time based on the sample of 5 reaction times. \\ \ \\
 \pause
 Four ways of doing this:
 \begin{enumerate}
 	\setlength\itemsep{1em}
-	\item By hand (using formulas and \texttt{R} as a calculator)
+	\item By hand (using the $\pm$ formula and \texttt{R} as a calculator)
+	\item Using the quantile function for the $t$ distribution \texttt{stats::qt}
 	\item Fitting an intercept-only regression model ($y = \beta_0 + \varepsilon$)
 	\item Using a canned function (\texttt{mosaic::t.test}, \texttt{stats::t.test})
 	\item Bootstrap
@@ -607,22 +608,39 @@ Four ways of doing this:
 
 \end{frame}
 
-\begin{frame}[fragile]{1. By hand }
-<<echo = c(-3,-5,-7)>>=
+\begin{frame}[fragile]{1. By hand using the $\pm$ formula}
+<<echo = c(-3,-5,-7,-9)>>=
 n <- length(reaction.times)
 SEM <- sd(reaction.times)/sqrt(n)
 (SEM <- sd(reaction.times)/sqrt(n))
+ybar <- mean(reaction.times)
+(ybar <- mean(reaction.times))
 multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1)
 (multiple.for.95pct <- stats::qt(p = c(0.025, 0.975), df = n-1))
-by_hand_CI <- mean(reaction.times) + multiple.for.95pct * SEM
-round(by_hand_CI, 3)
+by_hand_CI <- ybar + multiple.for.95pct * SEM
+round(by_hand_CI, 5)
+@
+\end{frame}
+
+\begin{frame}[fragile]{2. Using \texttt{stats::qt}}
+\textit{Note: \texttt{R} only provides the standard $t$ distribution. In order to get a scaled version we must define our own function.}
+
+\vspace*{0.2in}
+
+<<echo = TRUE>>=
+n <- length(reaction.times)
+SEM <- sd(reaction.times)/sqrt(n)
+ybar <- mean(reaction.times)
+
+# scaled version of the standard t distribution
+qt_ls <- function(p, df, mean, sd) qt(p = p, df = df) * sd + mean
+
+qt_ls(p = c(0.025, 0.975), df = n - 1, mean = ybar, sd = SEM)
 @
 \end{frame}
 
 
-
-
-\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+\begin{frame}[fragile]{3. Fitting an intercept-only regression model}
 <<echo = TRUE>>=
 fit <- stats::lm(reaction.times ~ 1)
 summary(fit)
@@ -631,7 +649,7 @@ stats::confint(fit)
 \end{frame}
 
 
-\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+\begin{frame}[fragile]{3. Fitting an intercept-only regression model}
 In the regression output:
 \begin{itemize}
 	\setlength\itemsep{1em}
@@ -645,7 +663,7 @@ In the regression output:
 \end{frame}
 
 
-\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+\begin{frame}[fragile]{3. Fitting an intercept-only regression model}
 
 <<>>=
 options(digits = 3)
@@ -656,9 +674,9 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 \begin{itemize}
 	\item \texttt{t value} = $\frac{\bar{y} - \mu_0}{s / \sqrt{n}}$ = $\frac{0.33720 - 0}{0.01373}$ = \Sexpr{round(coef(fit)[1]/SEM, 2)}
-	\item \texttt{Pr(>|t|)} \\
-	= $P(\textrm{t value} > t_{(n-1)}) + P(-\textrm{t value} < t_{(n-1)})$ \\
-	 = \small{\texttt{pt(q = 24.56, df = n-1, lower.tail = FALSE)} + \texttt{pt(q = -24.56, df = n-1)}} \\
+	\item \texttt{Pr(>|t|)} \\ \ \\
+	= $P(\textrm{t value} > t_{(n-1)}) + P(-\textrm{t value} < t_{(n-1)})$ \\ \ \\
+	 = \small{\texttt{pt(q = 24.56, df = n-1, lower.tail = FALSE)} +  \texttt{pt(q = -24.56, df = n-1)}} \\ \ \\
 	  = \Sexpr{pt(q = 24.56, df = n-1, lower.tail = FALSE)} + \Sexpr{pt(q = -24.56, df = n-1)} = \Sexpr{pt(q = 24.56, df = n-1, lower.tail = FALSE)*2}
 \end{itemize}
 
@@ -667,7 +685,7 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 
 
-\begin{frame}[fragile]{3. Canned function}
+\begin{frame}[fragile]{4. Canned function}
 
 <<echo = TRUE>>=
 stats::t.test(reaction.times)
@@ -677,7 +695,7 @@ stats::t.test(reaction.times)
 
 
 
-\begin{frame}[fragile]{4. Bootstrap}
+\begin{frame}[fragile]{5. Bootstrap}
 
 <<echo = 1:3, fig.asp=0.498>>=
 df_react <- data.frame(reaction.times) # need data.frame to bootstrap
@@ -707,6 +725,7 @@ col = c("red","black"), lwd = 4)
 @
 
 \end{frame}
+
 
 
 

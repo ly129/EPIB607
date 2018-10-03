@@ -1,0 +1,196 @@
+---
+title: "A3: Sampling Distributions Solutions"
+subtitle: "Your Name Here and ID number here"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 3
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = TRUE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+```
+
+
+# Normal probability calculations (25 points)
+
+```{r, fig.keep = 'none'}
+## ---- Question-1 ------------------------------------------------------------
+library(mosaic)
+##1a
+a <- xpnorm(q = -1.8, mean = 0, sd = 1, lower.tail = TRUE)
+a <- round(a, 2)
+
+##1b
+b <- xpnorm(q = -1.8, mean = 0, sd = 1, lower.tail = FALSE)
+b <- round(b, 2)
+
+##1c
+c <- xpnorm(q = 1.6, mean = 0, sd = 1, lower.tail = FALSE)
+c <- round(c, 2)
+
+##1d
+d <- xpnorm(q = 1.6, mean = 0, sd = 1, lower.tail = TRUE) - 
+  xpnorm(q = -1.8, mean = 0, sd = 1, lower.tail = TRUE)
+d <- round(d, 2)
+```
+
+1a. (5 points) P(Y < −1.80) The probability that Y is less than -1.80 is `r a`
+
+1b. (5 points) P(Y > −1.80) The probability that Y is greater than -1.80 is `r b`
+
+1c. (5 points) P(Y ≥ 1.60) The probability that Y is greater than or equal to 1.60 is `r c`
+
+1d. (10 points) P(−1.8 < Y ≤ 1.6) The probability that Y is greater than -1.8 and less than or equal to 1.6 is `r d`
+
+# HDL cholesterol (25 points)
+
+Marks are deducted if results were not provided in proper units (percentages and proportions), and if results were not provided in proper sentences.
+
+```{r, fig.keep = 'none'}
+## ---- Question-2 ------------------------------------------------------------
+#2i
+aa <- xpnorm(q = 40, mean = 55, sd = 15.5, lower.tail = TRUE)
+aa <- aa * 100
+aa <- round(aa, 2)
+
+#2ii
+bb <- xpnorm(q = 60, mean = 55, sd = 15.5, lower.tail = FALSE)
+bb <- bb * 100
+bb <- round(bb, 2)
+
+#2iii
+cc <- xpnorm(q = 60, mean = 55, sd = 15.5, lower.tail = TRUE) - 
+  xpnorm(q = 40, mean = 55, sd = 15.5, lower.tail = TRUE)
+cc <- round(cc, 2)
+
+##2iv
+dd <- xpnorm(q = 65, mean = 55, sd = 15.5, lower.tail = TRUE) - 
+  xpnorm(q = 35, mean = 55, sd = 15.5, lower.tail = TRUE)
+dd <- round(dd, 2)
+```
+
+2i. (5 points) The percent of women who have low values of HDL (40 mg/dL or less) is `r aa`%.
+
+2ii. (5 points) The percent of women have protective levels of HDL (HDL levels of 60 mg/dL or more) is `r bb`%.
+
+2iii. (5 points) The proportion of women who have HDL in the range of 40-60 mg/dL is `r cc`.
+
+2iv. (10 points) The proportion of women who have HDL in the range of 35-65 mg/dL is `r dd`. 
+
+
+# Osteoporosis (25 points)
+
+```{r, fig.keep = 'none'}
+## ---- Question-3 ------------------------------------------------------------
+##3a
+aaa <- xpnorm(q = -2.5, mean = 0, sd = 1, lower.tail = TRUE)
+aaa <- aaa * 100
+aaa <- round(aaa, 2)
+
+##3b
+bbb <- xpnorm(q = -2.5, mean = -2, sd = 1, lower.tail = TRUE)
+bbb <- bbb * 100
+bbb <- round(bbb, 2)
+
+##3c
+ccc <- xpnorm(q = -1, mean = 0, sd = 1, lower.tail = TRUE) - 
+  xpnorm(q = -2.5, mean = 0, sd = 1, lower.tail = TRUE)
+ccc <- ccc * 100
+ccc <- round(ccc, 2)
+
+##3d
+ddd <- xpnorm(q = -1, mean = -2, sd = 1, lower.tail = TRUE) - 
+  xpnorm(q = -2.5, mean = -2, sd = 1, lower.tail = TRUE)
+ddd <- ddd * 100
+ddd <- round(ddd, 2)
+
+```
+
+3a. (5 points) The percent of healthy young adults who have osteoporosis is `r aaa`%.
+
+3b. (5 points) The percent of women aged 70-79 who have osteoporosis is `r bbb`%.
+
+3c. (5 points) The percent of healthy young adults who have osteopenia is `r ccc`%.
+
+3d. (10 points) The percent of women aged 70-79 who have osteoporosis is `r ddd`%.
+
+
+# How deep is the ocean? (25 points)
+
+```{r}
+## ---- Question-4 - --------------------------------------------------------
+
+# NOTE: for calculating the confidence intervals, all you have to do is enter your 
+# own ybar and standard error for ybar based on the sample size of 5 and sample size of 20
+# the results will then get placed into a table automatically
+
+############ Edit the values below #################
+
+# ybar based on n=5
+ybar.n5 <- 2900
+
+# Standard Error of ybar based on n=5
+SEybar.n5 <- 800
+
+# ybar based on n=20
+ybar.n20 <- 3000
+
+# Standard Error of ybar based on n=20
+SEybar.n20 <- 350
+###################################################
+
+
+# DO NOT EDIT  BELOW THIS LINE
+# 68% CI
+ci68.n5 <- ybar.n5 + c(-1,1) * SEybar.n5
+# 95% CI
+ci95.n5 <- ybar.n5 + c(-2,2) * SEybar.n5
+# 99% CI
+ci99.n5 <- ybar.n5 + c(-3,3) * SEybar.n5
+
+# 68% CI
+ci68.n20 <- ybar.n20 + c(-1,1) * SEybar.n20
+# 95% CI
+ci95.n20 <- ybar.n20 + c(-2,2) * SEybar.n20
+# 99% CI
+ci99.n20 <- ybar.n20 + c(-3,3) * SEybar.n20
+```
+
+
+a) (5 points) The sample mean of the n = 5 sample is `r ybar.n5` and the sample mean of the n = 20 sample is `r ybar.n20`. The standard error of the sample mean of the n = 5 sample is `r SEybar.n5` and the standard error of the sample mean of the n = 20 sample is `r SEybar.n20`.
+
+b) (5 points) The confidence intervals for both samples are shown in the Table below:
+
+|Level  |Mean (CI)  for $n=5$            |       Mean (CI)  for $n=20$        |
+|:----|:----------------------------------|:----------------------------------|
+|68\% |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n5, ci68.n5[1], ci68.n5[2])` | `r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n20, ci68.n20[1], ci68.n20[2])`    |
+|95\% |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n5, ci95.n5[1], ci95.n5[2])` | `r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n20, ci95.n20[1], ci95.n20[2])`    |
+|99\% |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n5, ci99.n5[1], ci99.n5[2])` | `r sprintf("%#.2f (%#.2f, %#.2f)", ybar.n20, ci99.n20[1], ci99.n20[2])`    |
+
+c) (15 points) As sample size increases the width of the interval _should_ get smaller for a given level of confidence. However in some cases you might notice (for a given level of confidence) that the width of the interval might increase with sample size. This is because the estimate of the standard deviation isn't accurate, i.e., an $n=20$ is not enough data points to accurately estimate the standard deviation
+
+
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```
+

@@ -1,4 +1,0 @@
-duration = faithful$eruptions    # the eruption durations 
-var(duration)                    # apply the var function 
-
-sum((faithful$eruptions - mean(faithful$eruptions))^2) / (length(faithful$eruptions)-1)

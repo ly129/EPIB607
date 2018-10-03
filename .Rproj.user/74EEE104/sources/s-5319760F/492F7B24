@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537915873900.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "42|13|135|0|\n",
+    "hash" : "0",
+    "id" : "492F7B24",
+    "lastKnownWriteTime" : 1537983768,
+    "last_content_update" : 1537983768868,
+    "path" : "~/git_repositories/epib607/slides/bootstrap/bootstrap_code_for_figures.R",
+    "project_path" : "slides/bootstrap/bootstrap_code_for_figures.R",
+    "properties" : {
+        "cursorPosition" : "375,17",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

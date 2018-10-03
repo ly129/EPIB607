@@ -685,14 +685,15 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \end{frame}
 
 
-\begin{frame}[fragile]{4 ways of calculating a confidence interval}
+\begin{frame}[fragile]{5 ways of calculating a confidence interval}
 
 We are interested in calculating a 95\% confidence interval for the mean reaction time based on the sample of 5 reaction times. \\ \ \\
 \pause
 Four ways of doing this:
 \begin{enumerate}
 	\setlength\itemsep{1em}
-	\item By hand (using formulas and \texttt{R} as a calculator)
+	\item By hand (using the $\pm$ formula and \texttt{R} as a calculator)
+	\item Using the quantile function for the $t$ distribution \texttt{stats::qt}
 	\item Fitting an intercept-only regression model ($y = \beta_0 + \varepsilon$)
 	\item Using a canned function (\texttt{mosaic::t.test}, \texttt{stats::t.test})
 	\item Bootstrap
@@ -700,7 +701,7 @@ Four ways of doing this:
 
 \end{frame}
 
-\begin{frame}[fragile]{1. By hand }
+\begin{frame}[fragile]{1. By hand using the $\pm$ formula}
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \begin{alltt}
@@ -711,25 +712,53 @@ Four ways of doing this:
 ## [1] 0.01372734
 \end{verbatim}
 \begin{alltt}
+\hlstd{ybar} \hlkwb{<-} \hlkwd{mean}\hlstd{(reaction.times)}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.3372
+\end{verbatim}
+\begin{alltt}
 \hlstd{multiple.for.95pct} \hlkwb{<-} \hlstd{stats}\hlopt{::}\hlkwd{qt}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{= n}\hlopt{-}\hlnum{1}\hlstd{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] -2.776445  2.776445
 \end{verbatim}
 \begin{alltt}
-\hlstd{by_hand_CI} \hlkwb{<-} \hlkwd{mean}\hlstd{(reaction.times)} \hlopt{+} \hlstd{multiple.for.95pct} \hlopt{*} \hlstd{SEM}
+\hlstd{by_hand_CI} \hlkwb{<-} \hlstd{ybar} \hlopt{+} \hlstd{multiple.for.95pct} \hlopt{*} \hlstd{SEM}
 \end{alltt}
 \begin{verbatim}
-## [1] 0.299 0.375
+## [1] 0.29909 0.37531
+\end{verbatim}
+
+\end{knitrout}
+\end{frame}
+
+\begin{frame}[fragile]{2. Using \texttt{stats::qt}}
+\textit{Note: \texttt{R} only provides the standard $t$ distribution. In order to get a scaled version we must define our own function.}
+
+\vspace*{0.2in}
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlstd{n} \hlkwb{<-} \hlkwd{length}\hlstd{(reaction.times)}
+\hlstd{SEM} \hlkwb{<-} \hlkwd{sd}\hlstd{(reaction.times)}\hlopt{/}\hlkwd{sqrt}\hlstd{(n)}
+\hlstd{ybar} \hlkwb{<-} \hlkwd{mean}\hlstd{(reaction.times)}
+
+\hlcom{# scaled version of the standard t distribution}
+\hlstd{qt_ls} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{p}\hlstd{,} \hlkwc{df}\hlstd{,} \hlkwc{mean}\hlstd{,} \hlkwc{sd}\hlstd{)} \hlkwd{qt}\hlstd{(}\hlkwc{p} \hlstd{= p,} \hlkwc{df} \hlstd{= df)} \hlopt{*} \hlstd{sd} \hlopt{+} \hlstd{mean}
+
+\hlkwd{qt_ls}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{df} \hlstd{= n} \hlopt{-} \hlnum{1}\hlstd{,} \hlkwc{mean} \hlstd{= ybar,} \hlkwc{sd} \hlstd{= SEM)}
+\end{alltt}
+\begin{verbatim}
+## [1] 0.2990868 0.3753132
 \end{verbatim}
 
 \end{knitrout}
 \end{frame}
 
 
-
-
-\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+\begin{frame}[fragile]{3. Fitting an intercept-only regression model}
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \begin{alltt}
@@ -765,7 +794,7 @@ Four ways of doing this:
 \end{frame}
 
 
-\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+\begin{frame}[fragile]{3. Fitting an intercept-only regression model}
 In the regression output:
 \begin{itemize}
 	\setlength\itemsep{1em}
@@ -779,7 +808,7 @@ In the regression output:
 \end{frame}
 
 
-\begin{frame}[fragile]{2. Fitting an intercept-only regression model}
+\begin{frame}[fragile]{3. Fitting an intercept-only regression model}
 
 
 
@@ -788,9 +817,9 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 \begin{itemize}
 	\item \texttt{t value} = $\frac{\bar{y} - \mu_0}{s / \sqrt{n}}$ = $\frac{0.33720 - 0}{0.01373}$ = 24.56
-	\item \texttt{Pr(>|t|)} \\
-	= $P(\textrm{t value} > t_{(n-1)}) + P(-\textrm{t value} < t_{(n-1)})$ \\
-	 = \small{\texttt{pt(q = 24.56, df = n-1, lower.tail = FALSE)} + \texttt{pt(q = -24.56, df = n-1)}} \\
+	\item \texttt{Pr(>|t|)} \\ \ \\
+	= $P(\textrm{t value} > t_{(n-1)}) + P(-\textrm{t value} < t_{(n-1)})$ \\ \ \\
+	 = \small{\texttt{pt(q = 24.56, df = n-1, lower.tail = FALSE)} +  \texttt{pt(q = -24.56, df = n-1)}} \\ \ \\
 	  = \ensuremath{8.1549827\times 10^{-6}} + \ensuremath{8.1549827\times 10^{-6}} = \ensuremath{1.6309965\times 10^{-5}}
 \end{itemize}
 
@@ -799,7 +828,7 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 
 
-\begin{frame}[fragile]{3. Canned function}
+\begin{frame}[fragile]{4. Canned function}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -811,13 +840,13 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 ## 	One Sample t-test
 ## 
 ## data:  reaction.times
-## t = 24.564, df = 4, p-value = 1.63e-05
+## t = 20, df = 4, p-value = 2e-05
 ## alternative hypothesis: true mean is not equal to 0
 ## 95 percent confidence interval:
-##  0.2990868 0.3753132
+##  0.299 0.375
 ## sample estimates:
 ## mean of x 
-##    0.3372
+##     0.337
 \end{verbatim}
 
 \end{knitrout}
@@ -826,7 +855,7 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 
 
 
-\begin{frame}[fragile]{4. Bootstrap}
+\begin{frame}[fragile]{5. Bootstrap}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -837,12 +866,12 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 \hlstd{CI_95} \hlkwb{<-} \hlkwd{quantile}\hlstd{(}\hlopt{~} \hlstd{mean,} \hlkwc{data} \hlstd{= s_dist,} \hlkwc{probs} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
 \end{alltt}
 \begin{verbatim}
-##   2.5%  97.5% 
-## 0.3150 0.3622
+##  2.5% 97.5% 
+## 0.315 0.362
 \end{verbatim}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-19-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-20-1} 
 
 }
 
@@ -851,6 +880,7 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 \end{knitrout}
 
 \end{frame}
+
 
 
 
