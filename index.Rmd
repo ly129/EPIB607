@@ -867,11 +867,7 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-  c("[1. Live Poll](http://etc.ch/tfZA)"),
-  c("[2. Bootstrap Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/bootstrap/EPIB607_bootstrap.pdf)"),
-c("[3. Bootstrap article in Scientific American](https://www.dropbox.com/s/cxiq70zxxtyxlb5/EfronDiaconisBootstrap.pdf?dl=0)"),
-c("[4. Overview Grid](https://www.dropbox.com/s/t7a1bnxdid9y6i3/OverviewGrid.pdf?dl=0)"),
-c("[5. Inference about a population mean ($\\mu$)](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_mean/EPIB607_one_sample_mean.pdf)")
+c("Provincial Elections - No Class")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -897,8 +893,12 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-
-  c(" ")
+  c("[1. Live Poll](http://etc.ch/tfZA)"),
+  c("[2. DALITE Q5](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/005_hypothesis_t/005-hypothesis-t-sol.pdf)"),
+  c("[3. Bootstrap Confidence Intervals](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/bootstrap/EPIB607_bootstrap.pdf)"),
+c("[4. Bootstrap article in Scientific American](https://www.dropbox.com/s/cxiq70zxxtyxlb5/EfronDiaconisBootstrap.pdf?dl=0)"),
+c("[5. Overview Grid](https://www.dropbox.com/s/t7a1bnxdid9y6i3/OverviewGrid.pdf?dl=0)"),
+c("[6. Inference about a population mean ($\\mu$)](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_mean/EPIB607_one_sample_mean.pdf)")
 ))
 
 df %>% kable(col.names = NULL) %>% 
@@ -1392,7 +1392,7 @@ knitr::kable(as.data.frame(rbind(
 2. [Q2 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves.pdf)  --  [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/002_box_sd_curves/002-box-sd-curves-sol.pdf)
 3. [Q3 (due September 19, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT.pdf) -- [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/003_parameters_samplingdist_CLT/003-parameter-samplingdist-CLT-sol.pdf)
 4. [Q4 (due September 26, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci.pdf) -- [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/004_normal_ci/004-normal-ci-sol.pdf)
-5. [Q5 (due October 3, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/005_hypothesis_t/005-hypothesis-t.pdf)
+5. [Q5 (due October 3, 2018)](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/005_hypothesis_t/005-hypothesis-t.pdf) -- [Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/005_hypothesis_t/005-hypothesis-t-sol.pdf)
 
 
 # Terms and Concepts

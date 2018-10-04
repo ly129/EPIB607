@@ -1,0 +1,423 @@
+\documentclass[letterpaper,9pt,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{DALITE Q5 - Bootstrap, Tests of Significance and Small Sample Inference
+for One Mean. Solutions.}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Hypothesis testing |  Bootstrap |  t distribution |  One sample mean |  Normal calculations |  Confidence intervals |  Central Limit Theorem (CLT)  }  
+
+\begin{abstract}
+This DALITE quiz will cover the bootstrap, an introduction to
+significance testing, and inference for a single mean using the t
+distribution.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{DALITE Q5 due October 3, 2018 by 5pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section{Hypothesis tests 1}\label{hypothesis-tests-1}
+
+The average human gestation time is 266 days from conception. A
+researcher suspects that proper nutrition plays an important role and
+that poor women with inadequate food intake would have shorter gestation
+times even when given vitamin supplements. A random sample of 20 poor
+women given vitamin supplements throughout the pregnancy has a mean
+gestation time from conception of \(\bar{y}\)=256 days. The null
+hypothesis for the researcher's test is
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{\(\textrm{H}_0\): \(\mu\) = 266 (Correct)}
+\item
+  \(\textrm{H}_0\): \(\mu\) = 256
+\item
+  \(\textrm{H}_0\): \(\mu\) \textless{} 266
+\item
+  \(\textrm{H}_0\): \(\bar{y}\) = 266
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales}
+
+\begin{itemize}
+\tightlist
+\item
+  The null hypothesis is usually a statement of ``no effect'' or ``no
+  difference.''
+\item
+  The null hypothesis is the statement of no effect, so if there was no
+  effect, the average gestation time would be the population mean.
+\item
+  The null hypothesis of this study is that the average gestation period
+  of women with proper nutrition and poor women with inadequate food
+  intake is the same that is 266 days. Hence, the population mean (all
+  poor women) have the gestation period of 266 days.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales}
+
+\begin{itemize}
+\tightlist
+\item
+  The null hypothesis is ``the accepted fact'', which in this case is
+  that poorer nutrion will yield results lower than the mean
+  (\textless{}266) or H null: u\textless{}266
+\item
+  The researcher is testing that the hypothesis that poor women with
+  inadequate food intake will have lower gestation time
+\end{itemize}
+
+\section{Hypothesis tests 2}\label{hypothesis-tests-2}
+
+The average human gestation time is 266 days from conception. A
+researcher suspects that proper nutrition plays an important role and
+that poor women with inadequate food intake would have shorter gestation
+times even when given vitamin supplements. A random sample of 20 poor
+women given vitamin supplements throughout the pregnancy has a mean
+gestation time from conception of \(\bar{y}\)=256 days. The researcher's
+alternative hypothesis for the test is
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(\textrm{H}_a\): \(\mu \neq 256\)
+\item
+  \textbf{\(\textrm{H}_a\): \(\mu < 266\) (Correct)}
+\item
+  \(\textrm{H}_a\): \(\mu < 256\)
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-1}
+
+\begin{itemize}
+\tightlist
+\item
+  The alternative hypothesis is the point of view of the researchers. In
+  this scenario, the researchers are suspecting that there will be a
+  shorter gestation time for poor women in comparison to an average
+  woman. The alternative hypothesis should be one-sided because the
+  investigators only want to know if gestation time will be shorter and
+  not if it is overall different (shorter or greater) from the average
+  gestation time.
+\item
+  Researcher has specified a specific direction - that the sample would
+  generate a mean gestation time less than 266. Therefore the
+  alternative hypothesis is that \(\mu\) is less than 266.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-1}
+
+\section{Hypothesis test 3}\label{hypothesis-test-3}
+
+The average human gestation time is 266 days from conception. A
+researcher suspects that proper nutrition plays an important role and
+that poor women with inadequate food intake would have shorter gestation
+times even when given vitamin supplements. A random sample of 20 poor
+women given vitamin supplements throughout the pregnancy has a mean
+gestation time from conception of \(\bar{y}\)=256 days. Human gestation
+times are approximately Normal with standard deviation \(\sigma\) = 16
+days. The p-value for the researcher's test is (provide your calculation
+in the rationale)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  more than 0.1
+\item
+  \textbf{less than 0.01 (Correct)}
+\item
+  less than 0.001
+\item
+  less than 0.05
+\item
+  less than 0.025
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-2}
+
+\begin{itemize}
+\tightlist
+\item
+  \(Z= (y - \mu)/ (\sigma / sqrt (n))\) = -2.795 \(\to\)
+  \texttt{pnorm(-2.795,\ mean\ =\ 0\ ,\ sd=1\ )\ =\ 0.00026}
+\item
+  \texttt{mosaic::xpnorm(q=\ (256\ -\ 266)/(16/sqrt(20)))}
+\item
+  \texttt{stats::pnorm(q\ =\ 256,\ mean\ =\ 266,\ sd\ =\ 16/(sqrt(20)),\ lower.tail\ =\ T)}
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-2}
+
+\begin{itemize}
+\tightlist
+\item
+  \(t* = (256-266) / (16 / \sqrt(20))\) = -2.795. degrees of freedom =
+  n-1 = 19. p-value is between 0.01 and 0.005. This is a one tailed
+  t-test so divide by 2 and p-value is between 0.005 and 0.0025.
+  Therefore, less than 0.01.
+\item
+  \((256 - 266)/16 = -0.625 \to\) \texttt{pnorm(-0.625)} corresponds to
+  a p value of 0.27
+\item
+  \(t = (\bar{y}-\mu)/(\sigma/\sqrt{n})\) then use \(t\) distribution
+  with df=19
+\end{itemize}
+
+\section{Hypothesis tests 4}\label{hypothesis-tests-4}
+
+Average human gestation time is 266 days, when counted from conception.
+A hospital gives a 90\% confidence interval for the mean gestation time
+from conception among its patients. That interval is 264 \(\pm\) 5 days.
+Is the mean gestation time in that hospital significantly different from
+266 days?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{It is not significantly different at the 10\% level and
+  therefore is also not significantly different at the 5\% level.
+  (Correct)}
+\item
+  It is not significantly different at the 10\% level but might be
+  significantly different at the 5\% level. c. It is significantly
+  different at the 10\% level
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-3}
+
+\begin{itemize}
+\tightlist
+\item
+  The average human gestation time falls within the interval of the
+  hospital which is 259-269 days, therefore the mean gestation time is
+  not significantly different at the 10\% level and since the 5\% level
+  is even more specific, then it is not significantly different at the
+  5\% level either.
+\item
+  266 is included in the 259-269 range, therefore the mean gestation
+  time in the hospital is not significantly different from 266 days at
+  the 10\% level. Looking at the significance at the 5\% level would
+  make the confidence interval bigger, meaning there's not significant
+  different there either
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-3}
+
+\begin{itemize}
+\tightlist
+\item
+  Because 266 falls at the upper tail of the 90\% confidence interval,
+  therefore it is significant different at 10\% significance level
+\item
+  It is significantly different at the 10\% level, since the CI does not
+  contain the value zero.
+\item
+  The 90\% CI includes 266, but the 95\% CI may not include 266, in
+  which case a value like 266 would only be observed less than or equal
+  to 5\% of the time.
+\item
+  To be significantly different, p-value should be less than 5\%.
+\item
+  As 266 falls within 264+/- 5 days, it is not significant at the 10\%
+  level, but it may not fall under this range because when the level of
+  confidence is increased, the confidence interval becomes smaller.
+\end{itemize}
+
+\section{One sample mean}\label{one-sample-mean}
+
+We prefer the \(t\) procedures to the \(z\) procedures for inference
+about a population mean because
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(z\) can be used only for large samples
+\item
+  \textbf{\(z\) requires that you know the population standard deviation
+  \(\sigma\) (Correct)}
+\item
+  \(z\) requires that you can regard your data as an SRS from the
+  population
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-4}
+
+\begin{itemize}
+\tightlist
+\item
+  The reason we can use z on large samples is because when we have large
+  samples, we can use the sample sd as an estimate for the population
+  sd. The core reason for using t is because we don't know the
+  population sd and we can't estimate the sd with the small sample size.
+\item
+  because you don't know population sd, only sample sd for t procedures
+\item
+  Z test needs to have a known population standard deviation sigma and
+  either a normal distribution or the sample size n is large. If the
+  population standard deviation is unknown and the sample size is small
+  then t test statistic can be used.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-4}
+
+\begin{itemize}
+\tightlist
+\item
+  df are smaller for t-test, and you do not need a SD value
+\end{itemize}
+
+\section{One sample mean 2}\label{one-sample-mean-2}
+
+Because \(t\) procedures are robust, the most important condition for
+their safe use is that
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  the population standard deviation \(\sigma\) is known
+\item
+  the population distribution is exactly Normal
+\item
+  \textbf{the data can be regarded as an SRS from the population
+  (Correct)}
+\item
+  the CLT hasn't kicked in yet
+\item
+  the sample size is small
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-5}
+
+\begin{itemize}
+\tightlist
+\item
+  The point of the t test is that sigma is not known (rules out A) The
+  CLT says that the population distribution doesn't matter (rules out B)
+  We want the CLT to kick in (rules out D) The larger the sample size
+  the better(rules out E).
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-5}
+
+\begin{itemize}
+\tightlist
+\item
+  We should only use t procedures if the CLT is not applicable.
+\item
+  In order to use the T procedure comfortably, the sample size must be
+  large and the population distribution must be normal.
+\end{itemize}
+
+\section{Bootstrap}\label{bootstrap}
+
+Which of the following statements \emph{best} describes the utility of
+the bootstrap
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  The bootstrap frees us from the requirement of using simple formulas
+  to derive confidence intervals
+\item
+  The bootstrap allows us to simulate a sampling distribution
+\item
+  \textbf{The bootstrap frees us from the assumption of a Gaussian
+  sampling distribution for the mean (as per the CLT) (Correct)}
+\item
+  The bootstrap tells us if the sampling distribution is asymmetric
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-6}
+
+\begin{itemize}
+\tightlist
+\item
+  Computer intensive methods can solve most problems without assuming
+  that the data have a Gaussian distribution.
+\item
+  The bootstrap frees us from the assumption that the data conform to a
+  bell-shaped normal distribution.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-6}
+
+\begin{itemize}
+\tightlist
+\item
+  due to the nature of bootstrap, you can resample things MANY times,
+  which means that CLT will always kick in giving a gaussian
+  distribution instead of assuming one exists
+\item
+  Bootstrap is useful in because it does not require the CLT and
+  \textbf{the population} does not have to be normally distributed
+\item
+  The bootstrap doesn't rely on CLT, and gives us freedom from having to
+  assume the normal distribution of \textbf{the population}.
+\item
+  The bootstrap allows us to derive estimates when often-used theories
+  do not apply. This is especially useful when n is small (e.g.~CLT
+  requires n \textgreater{} 30 to assume normality).
+\end{itemize}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+
