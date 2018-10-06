@@ -1,0 +1,17 @@
+base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
+dplyr
+knitr
+kableExtra
+lattice
+ggplot2
+ggstance
+ggformula
+mosaicData
+Matrix
+mosaic
