@@ -21,7 +21,7 @@
 
 
 
-\title{Assignment 5 - Inference for a Population Mean. Due October 12, 11:59pm
+\title{Assignment 5 - Inference for a Population Mean. Due October 14, 11:59pm
 2018}
 
 \author[a]{EPIB607 - Inferential Statistics}
@@ -46,14 +46,14 @@ in an R Markdown document using the provided template. You are free to
 choose any function from any package to complete the assignment. Concise
 answers will be rewarded. Be brief and to the point. Please submit both
 the compiled HTML report and the source file (.Rmd) to myCourses by
-October 12, 2018, 11:59pm. Both HTML and .Rmd files should be saved as
+October 14, 2018, 11:59pm. Both HTML and .Rmd files should be saved as
 `IDnumber\_LastName\_FirstName\_EPIB607\_A5'.
 \end{abstract}
 
 \dates{This version was compiled on \today}
 \doi{\url{https://sahirbhatnagar.com/EPIB607/}}
 
-\pinpfootercontents{Assignment 5 due October 12, 2018 by 11:59pm}
+\pinpfootercontents{Assignment 5 due October 14, 2018 by 11:59pm}
 
 \begin{document}
 
@@ -71,8 +71,8 @@ October 12, 2018, 11:59pm. Both HTML and .Rmd files should be saved as
 \section*{Template}\label{template}
 \addcontentsline{toc}{section}{Template}
 
-The \texttt{.Rmd} template for Assignment 4 is available
-\href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a4/a4_template.Rmd}{here}
+The \texttt{.Rmd} template for Assignment 5 is available
+\href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a5/a5_template.Rmd}{here}
 
 \section{Food intake and weight gain}\label{food-intake-and-weight-gain}
 
@@ -85,195 +85,181 @@ maintained this diet for 8 weeks, so they consumed a total of 56,000
 extra calories. According to theory, 3500 extra calories will translate
 into a weight gain of 1 pound. Therfore we expect each of these subjects
 to gain 56,000/3500=16 pounds (lb). Here are the weights (given in the
-\texttt{weight\_gain.csv} file) before and after the 8-week period
+\texttt{weightgain.csv} file) before and after the 8-week period
 expressed in kilograms (kg):
-
-\begin{tabular}{r|r|r}
-\hline
-subject & before & after\\
-\hline
-1 & 55.7 & 61.7\\
-\hline
-2 & 54.9 & 58.8\\
-\hline
-3 & 59.6 & 66.0\\
-\hline
-4 & 62.3 & 66.2\\
-\hline
-5 & 74.2 & 79.0\\
-\hline
-6 & 75.6 & 82.3\\
-\hline
-7 & 70.7 & 74.3\\
-\hline
-8 & 53.3 & 59.3\\
-\hline
-9 & 73.3 & 79.1\\
-\hline
-10 & 63.4 & 66.0\\
-\hline
-11 & 68.1 & 73.4\\
-\hline
-12 & 73.7 & 76.9\\
-\hline
-13 & 91.7 & 93.1\\
-\hline
-14 & 55.9 & 63.0\\
-\hline
-15 & 61.7 & 68.2\\
-\hline
-16 & 57.8 & 60.3\\
-\hline
-\end{tabular}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{weight <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"weight_gain.csv"}\NormalTok{)}
+\NormalTok{weight <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"weightgain.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{ShadedResult}
+\begin{verbatim}
+#     subject before after
+#  1        1   55.7  61.7
+#  2        2   54.9  58.8
+#  3        3   59.6  66.0
+#  4        4   62.3  66.2
+#  5        5   74.2  79.0
+#  6        6   75.6  82.3
+#  7        7   70.7  74.3
+#  8        8   53.3  59.3
+#  9        9   73.3  79.1
+#  10      10   63.4  66.0
+#  11      11   68.1  73.4
+#  12      12   73.7  76.9
+#  13      13   91.7  93.1
+#  14      14   55.9  63.0
+#  15      15   61.7  68.2
+#  16      16   57.8  60.3
+\end{verbatim}
+\end{ShadedResult}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
   Calculate a 95\% confidence interval for the mean weight change and
-  give a sentence explaining the meaning of the 95\%.
+  give a sentence explaining the meaning of the 95\%. State your
+  assumptions.
+\item
+  Calculate a 95\% bootstrap confidence interval for the mean weight
+  change and compare it to the one obtained in part (a). Comment on the
+  bootstrap sampling distribution and compare it to the assumptions you
+  made in part (a).
 \item
   Convert the units of the mean weight gain and 95\% confidence interval
   to pounds. Note that 1 kilogram is equal to 2.2 pounds.
 \item
-  Test the null hypothesis that the mean weight gain is 16 lbs. Be sure
-  to specify the null and alternative hypotheses. What do you conclude?
+  Test the null hypothesis that the mean weight gain is 16 lbs. State
+  your assumptions and justify your choice of test. Be sure to specify
+  the null and alternative hypotheses. What do you conclude?
 \end{enumerate}
 
-\section{Deer mice}\label{deer-mice}
+\newpage
 
-Deer mice are small rodents native to North America. Their adult body
-lengths (excluding tail) are known to vary approximately Normally, with
-mean \(\mu = 86\) millimeters (mm) and standard deviation \(\sigma=8\)
-mm. Deer mice are found in diverse habitats and exhibit different
-adaptations to their environment. A random sample of 14 deer mice in a
-rich forest habitat gives an average body length of \(\bar{y} = 91.1\)
-mm. Assume that the standard deviation \(\sigma\) of all deer mice in
-this area is also 8 mm.
+\section{Attitudes toward school}\label{attitudes-toward-school}
+
+The Survey of Study Habits and Attitudes (SSHA) is a psychological test
+that measures the motivation, attitude toward school, and study habits
+of students. Scores range from 0 to 200. The mean score for U.S. college
+students is about 115, and the standard deviation is about 30. A teacher
+who suspects that older students have better attitudes toward school
+gives the SSHA to 25 students who are at least 30 years of age. Their
+mean score is \(\bar{y}\) = 132.2 with a sample standard deviation
+\(s = 28\).
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  What is the standard deviation of the mean length \(\bar{y}\)?
+  The teacher asks you to carry out a formal statistical test for her
+  hypothesis. Perform a test, provide a 95\% confidence interval and
+  state your conclusion clearly.
 \item
-  What critical value do you need to use in order to compute a 95\%
-  confidence interval for the mean \(\mu\)
-\item
-  Give a i) 90\% confidence interval and ii) 95\% confidence interval
-  for the mean body length of all deer mice in the forest habitat.
-\item
-  Why does the 90\% interval have a smaller margin of error?
+  What assumptions did you use in part (a). Which of these assumptions
+  is most important to the validity of your conclusion in part (a).
 \end{enumerate}
 
-\section{Does breast-feeding weaken
-bones?}\label{does-breast-feeding-weaken-bones}
+\section{Does a full moon affect
+behavior?}\label{does-a-full-moon-affect-behavior}
 
-Breast-feeding mothers secrete calcium into their milk. Some of the
-calcium may come from their bones, so mothers may lose bone mineral
-content. Researchers compared 47 breast-feeding women with 22 women of
-similar age who were neither pregnant nor lactating. They measured the
-percent change in the mineral content of the women's spines over three
-months. A negative value of \texttt{mineral\_loss} indicates a loss in
-mineral content. The data can be read into \texttt{R} and a boxplot
-comparing the two groups is shown in the Figure below:
+Many people believe that the moon influences the actions of some
+individuals. A study of dementia patients in nursing homes recorded
+various types of disruptive behaviors every day for 12 weeks. Days were
+classified as moon days if they were in a 3-day period centered at the
+day of the full moon. For each patient, the average number of disruptive
+behaviors was computed for moon days and for all other days. The
+hypothesis is that moon days will lead to more disruptive behavior. We
+look at a data set consisting of observations on 15 dementia patients in
+nursing homes (available in the \texttt{fullmoon.csv} file):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{boneloss <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv"}\NormalTok{)}
-\KeywordTok{head}\NormalTok{(boneloss)}
+\NormalTok{fullmoon <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"fullmoon.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{ShadedResult}
 \begin{verbatim}
-#     type mineral_loss
-#  1 Other          2.4
-#  2 Other          0.0
-#  3 Other          0.9
-#  4 Other         -0.2
-#  5 Other          1.0
-#  6 Other          1.7
+#     patient moon_days other_days
+#  1        1      3.33       0.27
+#  2        2      3.67       0.59
+#  3        3      2.67       0.32
+#  4        4      3.33       0.19
+#  5        5      3.33       1.26
+#  6        6      3.67       0.11
+#  7        7      4.67       0.30
+#  8        8      2.67       0.40
+#  9        9      6.00       1.59
+#  10      10      4.33       0.60
+#  11      11      3.33       0.65
+#  12      12      0.67       0.69
+#  13      13      1.33       1.26
+#  14      14      0.33       0.23
+#  15      15      2.00       0.38
 \end{verbatim}
 \end{ShadedResult}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(mosaic)}
-\NormalTok{ggformula}\OperatorTok{::}\KeywordTok{gf_boxplot}\NormalTok{(mineral_loss }\OperatorTok{~}\StringTok{ }\NormalTok{type, }\DataTypeTok{data =}\NormalTok{ boneloss)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics{a5_ttest_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  Give a 95\% confidence interval for the mean mineral loss for each
-  group.
+  Calculate a 95\% confidence interval for the mean difference in
+  disruptive behaviors. State the assumptions you used to calculate this
+  interval.
 \item
-  Based on these confidence intervals, are you convinced that the data
-  show distinctly greater bone mineral loss among the breast-feeding
-  women?
+  Calculate a 95\% bootstrap confidence interval for the mean difference
+  in disruptive behaviors and compare to the one obtained in part (a).
+  Comment on the bootstrap sampling distribution and compare it to the
+  assumptions you made in part (a).
 \item
-  (\textbf{BONUS}) Let \(\bar{y}_1\) be the mean mineral loss for
-  breast-feeding women and \(\bar{y}_2\) be the mean mineral loss for
-  the other group. Construct a 95\% bootstrap confidence interval for
-  the difference \(\bar{y}_2 - \bar{y}_1\) based on \(B=10000\)
-  bootstrap samples. Interpret this confidence interval and compare it
-  to the ones obtained in b. \emph{Hint}: split the data in two
-  data.frames by \texttt{type}. For each data.frame, create \(B\)
-  resamples and calculate the means for each. Plot the histogram of the
-  difference in means, which gives you the bootstrap distribution for
-  the difference. From this you can use the \texttt{quantile} function
-  to calculate the 95\% CI.
+  Test the hypothesis that moon days will lead to more disruptive
+  behavior. State your assumptions and provide a brief conclusion based
+  on your analysis.
+\item
+  Find the minimum value of the mean difference in disruptive behaviors
+  (\(\bar{y}\)) needed to reject the null hypothesis.
+\item
+  What is the probability of detecting an increase of 1.0 aggressive
+  behavior per day during moon days? \emph{Hint: calculate the
+  probability of the event calculated in part (d) using a normal
+  distribution with \(\mu=1\) and \(\sigma =\) the standard error of the
+  mean}
 \end{enumerate}
+
+\newpage 
 
 \section{How deep is the ocean?}\label{how-deep-is-the-ocean}
 
 This question is based on the
 \href{https://github.com/sahirbhatnagar/EPIB607/blob/master/exercises/water/students/260194225_water_exercise_epib607.pdf}{in-class
-Exercise} on sampling distributions. Refer to the
-\href{https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/bootstrap/EPIB607_bootstrap.pdf}{slides
-on Bootstrap confidence intervals} for \texttt{R} code on how to
-calculate bootstrap confidence intervals. For your sample of \(n=20\) of
-depths of the ocean, calculate the
+Exercise} on sampling distributions and builds on
+\href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a4/a4_clt_ci.pdf}{Question
+4 from Assignment 4}. For your sample of \(n=20\) of depths of the ocean
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  95\% Confidence interval using the \(\pm\) formula
+  Calculate a 95\% Confidence interval using the \(t\) procedure
 \item
-  95\% Confidence interval using the \texttt{qnorm} function
-\item
-  95\% Confidence interval using \(B=10000\) bootstrap samples
-\item
-  Plot all three confidence intervals on the same plot and comment on
-  the difference/similarities between the 3 intervals. You may use the
-  \texttt{compare\_CI} function provided below to produce the plot. This
-  takes as input, the sample mean (\texttt{ybar}), and the CIs
-  calculated from a,b,c in the form of a numeric vector of length 2 into
-  the arguments \texttt{PM}, \texttt{QNORM} and \texttt{BOOT},
-  respectively.
+  Plot the qnorm, bootstrap, and \(t\) procedure confidence intervals on
+  the same plot and comment on the how the \(t\) interval compares to
+  the other 2 intervals. You may use the \texttt{compare\_CI} function
+  provided below to produce the plot.
 \end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{compare_CI <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(ybar, PM, QNORM, BOOT, }
+\NormalTok{compare_CI <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(ybar, QNORM, BOOT, TPROCEDURE,}
                        \DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\StringTok{"#E41A1C"}\NormalTok{,}\StringTok{"#377EB8"}\NormalTok{,}\StringTok{"#4DAF4A"}\NormalTok{)) \{}
 
-\NormalTok{  dt <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{"plus_minus"}\NormalTok{, }\StringTok{"qnorm"}\NormalTok{, }\StringTok{"bootstrap"}\NormalTok{),}
+\NormalTok{  dt <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{"qnorm"}\NormalTok{, }\StringTok{"bootstrap"}\NormalTok{, }\StringTok{"t"}\NormalTok{),}
                    \DataTypeTok{ybar =} \KeywordTok{rep}\NormalTok{(ybar, }\DecValTok{3}\NormalTok{),}
-                   \DataTypeTok{low =} \KeywordTok{c}\NormalTok{(PM[}\DecValTok{1}\NormalTok{], QNORM[}\DecValTok{1}\NormalTok{], BOOT[}\DecValTok{1}\NormalTok{]),}
-                   \DataTypeTok{up =} \KeywordTok{c}\NormalTok{(PM[}\DecValTok{2}\NormalTok{], QNORM[}\DecValTok{2}\NormalTok{], BOOT[}\DecValTok{2}\NormalTok{])}
+                   \DataTypeTok{low =} \KeywordTok{c}\NormalTok{(QNORM[}\DecValTok{1}\NormalTok{], BOOT[}\DecValTok{1}\NormalTok{], TPROCEDURE[}\DecValTok{1}\NormalTok{]),}
+                   \DataTypeTok{up =} \KeywordTok{c}\NormalTok{(QNORM[}\DecValTok{2}\NormalTok{], BOOT[}\DecValTok{2}\NormalTok{], TPROCEDURE[}\DecValTok{2}\NormalTok{])}
 \NormalTok{  )}
   
   \KeywordTok{plot}\NormalTok{(dt}\OperatorTok{$}\NormalTok{ybar, }\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(dt), }\DataTypeTok{pch =} \DecValTok{20}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{), }
@@ -288,15 +274,15 @@ depths of the ocean, calculate the
   
   \KeywordTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{,}
          \DataTypeTok{legend =} \KeywordTok{c}\NormalTok{(}\KeywordTok{eval}\NormalTok{(}\KeywordTok{substitute}\NormalTok{( }\KeywordTok{expression}\NormalTok{(}\KeywordTok{paste}\NormalTok{(mu,}\StringTok{" = "}\NormalTok{,}\DecValTok{37}\NormalTok{)))),}
-                    \KeywordTok{sprintf}\NormalTok{(}\StringTok{"plus/minus CI: [%.f, %.f]"}\NormalTok{,PM[}\DecValTok{1}\NormalTok{], PM[}\DecValTok{2}\NormalTok{]),}
                     \KeywordTok{sprintf}\NormalTok{(}\StringTok{"qnorm CI: [%.f, %.f]"}\NormalTok{,QNORM[}\DecValTok{1}\NormalTok{], QNORM[}\DecValTok{2}\NormalTok{]),}
-                    \KeywordTok{sprintf}\NormalTok{(}\StringTok{"bootstrap CI: [%.f, %.f]"}\NormalTok{,BOOT[}\DecValTok{1}\NormalTok{], BOOT[}\DecValTok{2}\NormalTok{])),}
-         \DataTypeTok{lty =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+                    \KeywordTok{sprintf}\NormalTok{(}\StringTok{"bootstrap CI: [%.f, %.f]"}\NormalTok{,BOOT[}\DecValTok{1}\NormalTok{], BOOT[}\DecValTok{2}\NormalTok{]),}
+                    \KeywordTok{sprintf}\NormalTok{(}\StringTok{"t CI: [%.f, %.f]"}\NormalTok{,TPROCEDURE[}\DecValTok{1}\NormalTok{], TPROCEDURE[}\DecValTok{2}\NormalTok{])),}
+         \DataTypeTok{lty =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{),}
          \DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,col), }\DataTypeTok{lwd =} \DecValTok{4}\NormalTok{)}
 \NormalTok{\}}
 
 \CommentTok{# example of how to use the function:}
-\KeywordTok{compare_CI}\NormalTok{(}\DataTypeTok{ybar =} \DecValTok{36}\NormalTok{, }\DataTypeTok{PM =} \KeywordTok{c}\NormalTok{(}\DecValTok{28}\NormalTok{, }\DecValTok{40}\NormalTok{), }\DataTypeTok{QNORM =} \KeywordTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{,}\DecValTok{40}\NormalTok{), }\DataTypeTok{BOOT =} \KeywordTok{c}\NormalTok{(}\DecValTok{31}\NormalTok{, }\DecValTok{38}\NormalTok{))}
+\KeywordTok{compare_CI}\NormalTok{(}\DataTypeTok{ybar =} \DecValTok{36}\NormalTok{, }\DataTypeTok{QNORM =} \KeywordTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{,}\DecValTok{40}\NormalTok{), }\DataTypeTok{BOOT =} \KeywordTok{c}\NormalTok{(}\DecValTok{31}\NormalTok{, }\DecValTok{38}\NormalTok{), }\DataTypeTok{TPROCEDURE =} \KeywordTok{c}\NormalTok{(}\DecValTok{28}\NormalTok{, }\DecValTok{40}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
