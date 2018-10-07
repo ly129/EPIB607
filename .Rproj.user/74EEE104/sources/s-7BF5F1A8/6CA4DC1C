@@ -7,15 +7,15 @@
     "folds" : "",
     "hash" : "0",
     "id" : "6CA4DC1C",
-    "lastKnownWriteTime" : 1538625339,
-    "last_content_update" : 1538625339,
+    "lastKnownWriteTime" : 1538922083,
+    "last_content_update" : 1538922083459,
     "path" : "~/git_repositories/epib607/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "1370,132",
+        "cursorPosition" : "962,21",
         "docOutlineVisible" : "0",
-        "scrollLine" : "1364"
+        "scrollLine" : "948"
     },
     "relative_order" : 2,
     "source_on_save" : false,

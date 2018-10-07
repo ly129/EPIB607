@@ -953,7 +953,7 @@ df %>% kable(col.names = NULL) %>%
 ```
 
 
-### Friday October 12
+### Sunday October 14
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
@@ -1370,7 +1370,7 @@ knitr::kable(as.data.frame(rbind(
     "[a3_template.Rmd](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a3/a3_template.Rmd)","","September 28, 2018"),
   c("4","[CLT, Confidence Intervals and Bootstrap](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a4/a4_clt_ci.pdf)",
     "[a4_template.Rmd](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a4/a4_template.Rmd)","","October 5, 2018"),
-  c("5","Confidence Intervals","","","October 12, 2018"),
+  c("5","[Inference for one sample mean](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a5/a5_ttest.pdf)","[a5_template.Rmd](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a5/a5_template.Rmd)","[[1. Weight gain]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/weightgain.csv) [[2. Full moon]](https://github.com/sahirbhatnagar/EPIB607/raw/master/data/fullmoon.csv)","October 14, 2018"),
   c("6","Tests of Significance and p-values","","","October 19, 2018"),
   c("7","One-Sample Inference","","","November 2, 2018"),
   c("8","Two-Sample Inference","","","November 9, 2018"),
