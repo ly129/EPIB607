@@ -1,0 +1,214 @@
+\documentclass[letterpaper,10pt,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{Poll 3 - Sampling Distribution, Confidence Intervals}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Sampling distribution |  Confidence interval |  qnorm |  pnorm  }  
+
+\begin{abstract}
+This live poll was conducted on October 4, 2018.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{Poll 3 - October 4, 2018}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section{Which R function would we use to answer the following question:
+what is the probability of seeing an IQ score as extreme as 130 (select
+all that
+apply)?}\label{which-r-function-would-we-use-to-answer-the-following-question-what-is-the-probability-of-seeing-an-iq-score-as-extreme-as-130-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  pnorm \textbf{(Correct)}
+\item
+  qnorm
+\item
+  dnorm
+\item
+  rnorm
+\end{enumerate}
+
+\section{Which R function would we use to answer the following question:
+What is the 75th percentile of the IQ scores distribution (select all
+that
+apply)?}\label{which-r-function-would-we-use-to-answer-the-following-question-what-is-the-75th-percentile-of-the-iq-scores-distribution-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  pnorm
+\item
+  qnorm \textbf{(Correct)}
+\item
+  dnorm
+\item
+  rnorm
+\end{enumerate}
+
+\section{\texorpdfstring{The population SD is unknown and is denoted by
+\(\sigma\). In an SRS of size \(n\), the standard deviation of that
+sample
+is}{The population SD is unknown and is denoted by \textbackslash{}sigma. In an SRS of size n, the standard deviation of that sample is}}\label{the-population-sd-is-unknown-and-is-denoted-by-sigma.-in-an-srs-of-size-n-the-standard-deviation-of-that-sample-is}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the sample standard deviation \textbf{(Correct)}
+\item
+  the sample standard deviation divided by \(\sqrt{n}\)
+\item
+  \(\sigma / \sqrt{n}\)
+\end{enumerate}
+
+\section{\texorpdfstring{The sampling distribution of \(\bar{y}\)
+(select all that
+apply):}{The sampling distribution of \textbackslash{}bar\{y\} (select all that apply):}}\label{the-sampling-distribution-of-bary-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  describes how the statistic \(\bar{y}\) varies in all possible SRSs of
+  the same size from the same population \textbf{(Correct)}
+\item
+  is Normally distributed
+\item
+  is Normally distributed only if the population distribution is Normal
+\item
+  is usually unknown \textbf{(Correct)}
+\item
+  is centered around the population mean \(\mu\) \textbf{(Correct)}
+\item
+  has an SD greater than the population SD for an SRS of size \(n\)
+\end{enumerate}
+
+\section{The central limit theorem applies to one random
+sample}\label{the-central-limit-theorem-applies-to-one-random-sample}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  TRUE
+\item
+  FALSE \textbf{(Correct)}
+\end{enumerate}
+
+\section{\texorpdfstring{A 95\% confidence interval for the mean \(\mu\)
+(select all that
+apply)}{A 95\% confidence interval for the mean \textbackslash{}mu (select all that apply)}}\label{a-95-confidence-interval-for-the-mean-mu-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  is a random quantity \textbf{(Correct)}
+\item
+  tells us that in the long run, 95\% of your intervals will contain the
+  mean \(\mu\) \textbf{(Correct)}
+\item
+  tells us that in the long run, 95\% of your intervals will contain the
+  sample mean \(\bar{y}\)
+\end{enumerate}
+
+\section{\texorpdfstring{Which of the following assumptions are needed
+to be able to use a formula of the form
+\(\bar{y} \pm z^\star (\sigma / \sqrt{n})\) (select all that
+apply)}{Which of the following assumptions are needed to be able to use a formula of the form \textbackslash{}bar\{y\} \textbackslash{}pm z\^{}\textbackslash{}star (\textbackslash{}sigma / \textbackslash{}sqrt\{n\}) (select all that apply)}}\label{which-of-the-following-assumptions-are-needed-to-be-able-to-use-a-formula-of-the-form-bary-pm-zstar-sigma-sqrtn-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the population distribution must be normal
+\item
+  the CLT has `kicked in' \textbf{(Correct)}
+\item
+  we have an SRS of size \(n\) from the population of interest
+  \textbf{(Correct)}
+\end{enumerate}
+
+\section{\texorpdfstring{A 95\% CI for the mean \(\mu\) is given by
+\(\bar{y} \pm z^\star (\sigma / \sqrt{n})\). This can be calculated in R
+using the following command (select all that
+apply)}{A 95\% CI for the mean \textbackslash{}mu is given by \textbackslash{}bar\{y\} \textbackslash{}pm z\^{}\textbackslash{}star (\textbackslash{}sigma / \textbackslash{}sqrt\{n\}). This can be calculated in R using the following command (select all that apply)}}\label{a-95-ci-for-the-mean-mu-is-given-by-bary-pm-zstar-sigma-sqrtn.-this-can-be-calculated-in-r-using-the-following-command-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\bar{y}\) + qnorm(p = c(0.025, 0.975)) \((\sigma / \sqrt{n})\)
+  \textbf{(Correct)}
+\item
+  \(\bar{y}\) + qnorm(p = c(0.025, 0.975), mean = \(\bar{y}\), sd =
+  \(\sigma\)) \((\sigma / \sqrt{n})\)
+\item
+  \(\bar{y}\) + qnorm(p = c(0.025, 0.975), mean = \(\bar{y}\), sd =
+  \(\sigma / \sqrt{n}\))
+\item
+  \(\bar{y}\) + qnorm(p = c(0.025, 0.975), mean = 0, sd =
+  \(\sigma / \sqrt{n}\))
+\item
+  qnorm(p = c(0.025, 0.975), mean = \(\bar{y}\), sd =
+  \(\sigma / \sqrt{n}\)) \textbf{(Correct)}
+\end{enumerate}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+

@@ -1,0 +1,280 @@
+\documentclass[letterpaper,10pt,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{Poll 2 - Data Visualization, Histograms, Measures of Center, CLT}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Descriptive stats |  Confidence Interval |  p-value |  Gaussian distribution |  CLT |  Simple linear regression  }  
+
+\begin{abstract}
+This live poll was conducted on September 24, 2018. This is meant to
+review some of the main concepts we have learned up untill now. Correct
+answers are indicated by check marks. Number of votes and number of
+participants are indicated in the figure legend. For some questions,
+several selections were allowed.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{Poll 2 - September 24, 2018}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section{Which of the following aesthetics can be used to represent
+continuous data (select all that
+apply)?}\label{which-of-the-following-aesthetics-can-be-used-to-represent-continuous-data-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  position \textbf{(Correct)}
+\item
+  shape
+\item
+  size \textbf{(Correct)}
+\item
+  color \textbf{(Correct)}
+\item
+  line width \textbf{(Correct)}
+\item
+  line type
+\end{enumerate}
+
+\section{Which of the following statement characterizes a scale (select
+all that
+apply)?}\label{which-of-the-following-statement-characterizes-a-scale-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Defines a unique mapping between data \& aesthetics \textbf{(Correct)}
+\item
+  Must be 1-to-many between data \& aesthetics
+\item
+  Must be 1-to-1 between data \& aesthetics \textbf{(Correct)}
+\end{enumerate}
+
+\section{Which color palette would you use to distinguish groups of data
+from each other (select all that
+apply)?}\label{which-color-palette-would-you-use-to-distinguish-groups-of-data-from-each-other-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sequential (Brewer palette)
+\item
+  Qualitative (Brewer palette) \textbf{(Correct)}
+\item
+  Diverging (Brewer palette)
+\item
+  Viridis
+\end{enumerate}
+
+\section{Which color palette would you use to represent continuous data
+values, such as income, temperature, or speed (select all that
+apply)?}\label{which-color-palette-would-you-use-to-represent-continuous-data-values-such-as-income-temperature-or-speed-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sequential (Brewer palette) \textbf{(Correct)}
+\item
+  Qualitative (Brewer palette)
+\item
+  Diverging (Brewer palette) \textbf{(Correct)}
+\item
+  Viridis \textbf{(Correct)}
+\end{enumerate}
+
+\section{The area under a frequency histogram must equal to
+1}\label{the-area-under-a-frequency-histogram-must-equal-to-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  TRUE
+\item
+  FALSE \textbf{(Correct)}
+\end{enumerate}
+
+\section{A boxplot can show whether a data set
+is}\label{a-boxplot-can-show-whether-a-data-set-is}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  symmetric
+\item
+  skewed
+\item
+  symmetric and skewed \textbf{(Correct)}
+\end{enumerate}
+
+\section{If one side of the box is longer than the other, it means that
+side contains more
+data.}\label{if-one-side-of-the-box-is-longer-than-the-other-it-means-that-side-contains-more-data.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  TRUE
+\item
+  FALSE \textbf{(Correct)}
+\end{enumerate}
+
+\section{To construct a boxplot, we need (select all that
+apply)}\label{to-construct-a-boxplot-we-need-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Interquartile range
+\item
+  Minimum \textbf{(Correct)}
+\item
+  Maximum \textbf{(Correct)}
+\item
+  Standard deviation
+\item
+  Mean
+\item
+  Median \textbf{(Correct)}
+\item
+  Mode
+\item
+  Skewness
+\item
+  1st quartile (Q1) \textbf{(Correct)}
+\item
+  3rd quartile (Q3) \textbf{(Correct)}
+\end{enumerate}
+
+\section{In a distribution with a long left tail, the mean
+is}\label{in-a-distribution-with-a-long-left-tail-the-mean-is}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  greater than the median
+\item
+  less than the median \textbf{(Correct)}
+\item
+  equal to the median
+\end{enumerate}
+
+\section{Which of the following are true concerning a parameter (select
+all that
+apply)?}\label{which-of-the-following-are-true-concerning-a-parameter-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A numerical constant \textbf{(Correct)}
+\item
+  Pertains to a population \textbf{(Correct)}
+\item
+  Is unknown \textbf{(Correct)}
+\item
+  is known
+\item
+  Is a statistic
+\item
+  \(\bar{y}\) and \(p\) (the sample proportion) are parameters
+\end{enumerate}
+
+\section{The standard error of the mean (SEM) describes (select all that
+apply)}\label{the-standard-error-of-the-mean-sem-describes-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How far \(\bar{y}\) could typically deviate from \(\mu\)
+  \textbf{(Correct)}
+\item
+  How far an individual \(y\) typically deviates from \(\mu\) or from
+  \(\bar{y}\)
+\end{enumerate}
+
+\section{The Central Limit Theorem states that (select all that
+apply)}\label{the-central-limit-theorem-states-that-select-all-that-apply}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\bar{y} \sim \mathcal{N}(\mu, \sigma / \sqrt{n})\)
+\item
+  \(\bar{y} \sim \mathcal{N}(\mu, \sigma / \sqrt{n})\) for large enough
+  \(n\)
+\item
+  \(\bar{y} \sim \mathcal{N}(\mu, \sigma / \sqrt{n})\) for large enough
+  \(n\) and finite variance \textbf{(Correct)}
+\item
+  The sampling distribution of \(\bar{y}\) is, for a large enough \(n\)
+  and finite variance, close to Gaussian in shape no matter what the
+  shape of the distribution of individual \(Y\) values
+  \textbf{(Correct)}
+\end{enumerate}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+

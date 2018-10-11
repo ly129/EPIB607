@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539282669359.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C283965F",
+    "lastKnownWriteTime" : 1539285159,
+    "last_content_update" : 1539285159380,
+    "path" : "~/git_repositories/epib607/polls/003_sampling_dist_CI/003-sampling-dist-CI.Rmd",
+    "project_path" : "polls/003_sampling_dist_CI/003-sampling-dist-CI.Rmd",
+    "properties" : {
+        "cursorPosition" : "86,0",
+        "scrollLine" : "77"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

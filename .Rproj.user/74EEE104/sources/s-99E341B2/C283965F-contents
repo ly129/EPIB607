@@ -1,0 +1,275 @@
+---
+title: Poll 3 - Sampling Distribution, Confidence Intervals
+
+# Use letters for affiliations
+author:
+  - name: EPIB607 - Inferential Statistics
+    affiliation: a
+#  - name: Second Author
+#    affiliation: a,b
+address:
+  - code: a
+    address: Fall 2018, McGill University
+#  - code: b
+#    address: Department of Neat Tricks, Whereever State University, Someplace, MC, 67890
+
+# For footer text  TODO(fold into template, allow free form two-authors)
+lead_author_surname: Bhatnagar and Hanley
+
+# Place DOI URL or CRAN Package URL here
+doi: "https://sahirbhatnagar.com/EPIB607/"
+
+# Abstract
+abstract: |
+  This live poll was conducted on October 4, 2018. 
+
+# Optional: Acknowledgements
+#acknowledgements: |
+#  This template package builds upon, and extends, the work of the excellent
+#  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
+#  [PNAS LaTeX](http://www.pnas.org/site/authors/latex.xhtml) macros. Both these sources are
+#  gratefully acknowledged as this work would not have been possible without them.  Our extensions
+#  are under the same respective licensing term
+#  ([GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html) and
+#  [LPPL (>= 1.3)](https://www.latex-project.org/lppl/)).
+
+# Optional: One or more keywords
+keywords:
+  - Sampling distribution
+  - Confidence interval
+  - qnorm
+  - pnorm
+
+# Paper size for the document, values of letterpaper and a4paper
+papersize: letter
+
+# Font size of the document, values of 9pt (default), 10pt, 11pt and 12pt
+fontsize: 10pt
+
+# Optional: Force one-column layout, default is two-column
+one_column: true
+
+# Optional: Enables lineno mode, but only if one_column mode is also true
+#lineno: true
+
+# Optional: Enable one-sided layout, default is two-sided
+#one_sided: true
+
+# Optional: Enable section numbering, default is unnumbered
+numbersections: true
+
+# Optional: Specify the depth of section number, default is 5
+#secnumdepth: 5
+
+# Optional: Skip inserting final break between acknowledgements, default is false
+skip_final_break: true
+
+# Optional: Bibliography 
+bibliography: pinp
+
+# Optional: Enable a 'Draft' watermark on the document
+watermark: false
+
+# Customize footer, eg by referencing the vignette
+footer_contents: "Poll 3 - October 4, 2018"
+
+# Produce a pinp document
+output: pinp::pinp
+
+# Required: Vignette metadata for inclusion in a package.
+vignette: >
+  %\VignetteIndexEntry{YourPackage-vignetteentry}
+  %\VignetteKeywords{YourPackage, r, anotherkeyword}
+  %\VignettePackage{Due Sepetember 12, 2018}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+
+# Which R function would we use to answer the following question: what is the probability of seeing an IQ score as extreme as 130 (select all that apply)?
+
+1. pnorm **(Correct)**
+2. qnorm
+3. dnorm
+4. rnorm
+
+
+# Which R function would we use to answer the following question: What is the 75th percentile of the IQ scores distribution (select all that apply)?
+
+1. pnorm 
+2. qnorm **(Correct)**
+3. dnorm
+4. rnorm
+
+# The population SD is unknown and is denoted by $\sigma$. In an SRS of size $n$, the standard deviation of that sample is 
+
+1. the sample standard deviation **(Correct)**
+2. the sample standard deviation divided by $\sqrt{n}$
+3. $\sigma / \sqrt{n}$
+
+
+# The sampling distribution of $\bar{y}$ (select all that apply):
+
+1. describes how the statistic $\bar{y}$ varies in all possible SRSs of the same size from the same population **(Correct)**
+2. is Normally distributed
+3. is Normally distributed only if the population distribution is Normal
+4. is usually unknown **(Correct)**
+5. is centered around the population mean $\mu$ **(Correct)**
+6. has an SD greater than the population SD for an SRS of size $n$
+
+# The central limit theorem applies to one random sample
+
+1. TRUE
+2. FALSE **(Correct)**
+
+
+# A 95% confidence interval for the mean $\mu$  (select all that apply)
+
+1. is a random quantity **(Correct)**
+2. tells us that in the long run, 95%  of your intervals will contain the mean $\mu$ **(Correct)**
+3. tells us that in the long run, 95%  of your intervals will contain the sample mean $\bar{y}$
+
+
+# Which of the following assumptions are needed to be able to use a formula of the form $\bar{y} \pm  z^\star (\sigma / \sqrt{n})$ (select all that apply)
+
+1. the population distribution must be normal
+2. the CLT has 'kicked in' **(Correct)**
+3. we have an SRS of size $n$ from the population of interest **(Correct)**
+
+# A 95% CI for the mean $\mu$ is given by $\bar{y} \pm  z^\star (\sigma / \sqrt{n})$. This can be calculated in R using the following command (select all that apply)
+
+1. $\bar{y}$ + qnorm(p = c(0.025, 0.975)) $(\sigma / \sqrt{n})$ **(Correct)**
+2. $\bar{y}$ + qnorm(p = c(0.025, 0.975), mean = $\bar{y}$, sd = $\sigma$) $(\sigma / \sqrt{n})$
+3. $\bar{y}$ + qnorm(p = c(0.025, 0.975), mean = $\bar{y}$, sd = $\sigma / \sqrt{n}$)
+4. $\bar{y}$ + qnorm(p = c(0.025, 0.975), mean = 0, sd = $\sigma / \sqrt{n}$)
+5. qnorm(p = c(0.025, 0.975), mean = $\bar{y}$, sd = $\sigma / \sqrt{n}$) **(Correct)**
+
+<!-- 
+We support several options via the YAML header
+
+- Setting a DOI or URL footer, for example for the CRAN package URL,
+  which is placed in the bottom-left footer of the title page and even pages;
+- Setting a footer label, for example _YourPackage Vignette_ stating
+  your package, which is placed in the bottom-right footer on odd
+  pages;
+- Setting a free-form author field used on the inside footer;
+- Optional _Draft_ watermarking;
+
+
+
+## References 
+
+Here we differ from PNAS and suggest natbib. References will appear in
+author-year form. Use `\citet{}`, `\citep{}`, etc as usual.
+
+We default to the `jss.bst` style. To switch to a different bibliography
+style, please use `biblio-style: style` in the YAML header.
+
+
+## Inline R Code 
+
+The PNAS sample included a fixed PNG image here, but this document prefers
+to show the results and embedding of _R_ code. 
+
+```{r figex, fig.width=3, fig.height=3, cache=TRUE, echo=TRUE, fig.cap="Narrow ggplot2 figure"}
+library(ggplot2)
+ggplot(mtcars, aes(wt, mpg)) +
+    geom_point(size=3, aes(colour=factor(cyl))) +
+    theme(legend.position="none")
+```
+
+Here we use a standard knitr bloc with explicit options for
+
+- figure width and height (`fig.width`, `fig.height`), both set to three inches;
+- whether the code is shown (`echo=TRUE`); and
+- the caption (`fig.cap`) as shown above.
+
+
+## Digital Figures 
+
+Markdown, Pandoc and LaTeX support `.eps` and `.pdf` files.
+
+Figures and Tables should be labelled and referenced in the standard way
+using the `\label{}` and `\ref{}` commands.
+
+The R examples above show how to insert a column-wide
+figure. To insert a figure wider than one column, please use the
+`\begin{figure*}...\end{figure*}` environment. 
+
+One (roundabout) way of doing this is to _not_ actually plot a figure, but to
+save it in a file as the following segment shows:
+
+```{r densityPlot, echo=TRUE}
+library(ggplot2)
+p <- ggplot(data = midwest,
+            mapping = aes(x = area,
+                          fill = state,
+                          color = state)) +
+    geom_density(alpha = 0.3)
+## save to file
+suppressMessages(ggsave("densities.pdf", p))
+```
+
+This file is then included via standard LaTeX commands.
+
+\begin{figure*}
+  \begin{center}
+    \includegraphics[width=0.66\textwidth, height=3.5in]{densities} 
+  \end{center}
+  \caption{Wide ggplot2 figure}\label{fig}
+\end{figure*}
+
+
+## Typeset Code (But Do Not Run It) 
+
+We can also just show code.
+
+```r
+xx <- faithful[,"eruptions"]
+fit <- density(xx)
+plot(fit)
+```
+
+This simply used a pandoc bloc started and ended by three backticks,
+with `r` as the language choice.  Similarly, _many_ other languages
+can be typeset directly simply by relying on pandoc.
+
+
+## Single column equations 
+
+Authors may use 1- or 2-column equations in their article, according to
+their preference.
+
+To allow an equation to span both columns, options are to use the
+`\begin{figure*}...\end{figure*}` environment mentioned above for
+figures, or to use the `\begin{widetext}...\end{widetext}` environment
+as shown in equation \ref{eqn:example} below.
+
+Please note that this option may run into problems with floats and
+footnotes, as mentioned in the [cuted package
+documentation](http://texdoc.net/pkg/cuted). In the case of problems
+with footnotes, it may be possible to correct the situation using
+commands `\footnotemark` and `\footnotetext`.
+
+\begin{equation}
+  \begin{aligned}
+(x+y)^3&=(x+y)(x+y)^2\\
+       &=(x+y)(x^2+2xy+y^2) \\
+       &=x^3+3x^2y+3xy^3+x^3. 
+       \label{eqn:example} 
+  \end{aligned}
+\end{equation}
+
+
+pandoc writes all tables using longtable, which fails in 2-column mode
+
+  Species                    CBS     CV     G3
+  ----------------------- ------ ------ ------
+  1\. Acetaldehyde           0.0    0.0    0.0
+  2\. Vinyl alcohol          9.1    9.6   13.5
+  3\. Hydroxyethylidene     50.8   51.2   54.0
+
+  : Comparison of the fitted potential energy surfaces and ab initio
+  benchmark electronic energy calculations
+
+-->
+
