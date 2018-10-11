@@ -1,0 +1,170 @@
+---
+title: "IPS9 in R: Inference for means (Chapter 7)"
+author: "Bonnie Lin and Nicholas Horton (nhorton@amherst.edu)"
+date: "July 22, 2018"
+output: 
+  pdf_document:
+    fig_height: 3
+    fig_width: 5
+  html_document:
+    fig_height: 3
+    fig_width: 5
+  word_document:
+    fig_height: 4
+    fig_width: 6
+---
+
+
+```{r, include = FALSE}
+# Don't delete this chunk if you are using the mosaic package
+# This loads the mosaic and dplyr packages
+require(mosaic)
+```
+
+```{r, include = FALSE}
+# knitr settings to control how R chunks work.
+knitr::opts_chunk$set(
+  tidy = FALSE,     # display code as typed
+  size = "small"    # slightly smaller font for code
+)
+```
+
+## Introduction and background 
+
+These documents are intended to help describe how to undertake analyses introduced 
+as examples in the Ninth Edition of \emph{Introduction to the Practice of Statistics} (2017) by Moore, McCabe, and Craig.
+
+More information about the book can be found [here](https://macmillanlearning.com/Catalog/product/introductiontothepracticeofstatistics-ninthedition-moore).
+The data used in these documents can be found under Data Sets in the [Student Site](https://www.macmillanlearning.com/catalog/studentresources/ips9e?_ga=2.29224888.526668012.1531487989-1209447309.1529940008#). This
+file as well as the associated R Markdown reproducible analysis source file used to create it can be found at https://nhorton.people.amherst.edu/ips9/.
+
+This work leverages initiatives undertaken by Project MOSAIC (http://www.mosaic-web.org), an NSF-funded effort to improve the teaching of statistics, calculus, science and computing in the undergraduate curriculum. In particular, we utilize the `mosaic` package, which was written to simplify the use of R for introductory statistics courses. A short summary of the R needed to teach introductory statistics can be found in the mosaic package vignettes (http://cran.r-project.org/web/packages/mosaic).  A paper describing the mosaic approach was published in the *R Journal*: https://journal.r-project.org/archive/2017/RJ-2017-024.
+  
+## Chapter 7: Inference for means
+This file replicates the analyses from Chapter 7: Inference for means.
+
+First, load the packages that will be needed for this document: 
+```{r load-packages}
+library(mosaic)
+library(readr)
+```
+
+### Section 7.1: Inference for the mean of a population 
+First, we need to clean up the data of average time spent watching TV and draw a 
+simple random sample (SRS) of size 8 for this problem.
+We use the following functions to find the mean, standard deviation, and 95% confidence 
+interval as shown on page 411-412. We also check the assumptions and conditions for a 
+Student's t-test by looking at the qq plot. 
+```{r eg7-1, message=FALSE}
+TVTime <- read_csv("https://nhorton.people.amherst.edu/ips9/data/chapter07/EG07-01TVTIME.csv")
+TVTime <- TVTime %>% select(Time) %>% head(., 8)
+favstats(~ Time, data = TVTime)
+t.test(~ Time, data = TVTime) 
+# Figure 7.2
+gf_qq(~ Time, data = TVTime) %>%
+  gf_labs(x = "Normal score", y = "Time (hours per week)") 
+```
+
+Then, we can conduct a significance test on the null hypothesis that the sample mean 
+would be equal to the overall U.S. average as demonstrated on page 414: 
+
+```{r eg7-3}
+t.test(~ Time, data = TVTime, alternative = "less")
+```
+
+### Section 7.2: Comparing two means
+By performing a significance test between the S&P 500 return and an investor's 
+stock portfolio (page 415-418), we can assess the quality of a broker's management of 
+this portfolio.
+```{r eg7-4, message=FALSE}
+STOCK <- read_csv("https://nhorton.people.amherst.edu/ips9/data/chapter07/EG07-04STOCK.csv")
+favstats(~ Return, data = STOCK)
+sigtest_STOCK <- t.test(~ Return, data = STOCK, alternative = "two.sided")
+confint_STOCK <- with(sigtest_STOCK, conf.int)
+confint_STOCK - 0.95
+```
+We can use the `with()` function to extract the confidence interval from the 
+t.test output. To obtain the corresponding interval for the underperformance, we
+can estimate the confidence interval of the amount that the investor should be 
+compensated with. 
+
+```{r eg7-7, message=FALSE}
+GEPARTS <- read_csv("https://nhorton.people.amherst.edu/ips9/data/chapter07/EG07-07GEPARTS.csv") 
+gf_dhistogram(~ Diff, data = GEPARTS, binwidth = 1/3, center = 1/6)
+with(GEPARTS, t.test(OptionOn, OptionOff, var.equal = TRUE, conf.level = 0.90))
+```
+
+```{r eg7-11, message=FALSE}
+DRP <- read_csv("https://nhorton.people.amherst.edu/ips9/data/chapter07/EG07-11DRP.csv")
+# Figure 7.12, page 438
+gf_qq(~ drp, color = ~ group, data = DRP) %>%
+  gf_qqline(color = "black", linetype = "solid") %>%
+  gf_labs(x = "Normal score", y = "Treatment/Control group DRP scores")
+# Summary statistics, page 439
+favstats(drp ~ group, data = DRP)
+
+# 95% confidence interval for difference between treatment and control groups
+t.test(drp ~ group, data = DRP)
+```
+Note that textbook reports the difference as the mean of treatment minus the mean of the control, 
+while the `t.test()` function here reports the differnece in the opposite order. 
+
+```{r eg7-13}
+t.test(drp ~ group, data = DRP, alternative = "greater")
+```
+Again, note that the negated t value can be attributed to the same reason as above. 
+
+```{r eg7-16,message=FALSE}
+# Example 7.16, page 444
+EATER <- read_csv("https://nhorton.people.amherst.edu/ips9/data/chapter07/EG07-16EATER.csv") %>% 
+  na.omit()
+favstats(WTLOSS ~ Group, data = EATER)
+diffmean(WTLOSS ~ Group, data = EATER)
+# Note that R calculates the difference of the early-eater mean from the later-eater mean
+
+# 95% confidence intervals, page 476
+t.test(WTLOSS ~ Group, data = EATER, var.equal = TRUE) 
+#Equal variances asssumed
+t.test(WTLOSS ~ Group, data = EATER) 
+#Equal variances not assumed 
+#var.equal is FALSE by default
+```
+Since the last row of the dataset had missing values, we piped the data into the `na.omit()` to 
+remove the N/A's from our analysis. 
+
+Another way to think about the `var.equal` argument in the `t.test()` function above is 
+in terms of pooled variances. If we want to use the pooled  two-sample *t* procedure, we have to 
+specify `var.equal` to be TRUE. We will demonstrate that in the following example: 
+```{r eg7-18, message=FALSE}
+# Example 7.19, page 451-452
+BP_CA <- read_csv("https://nhorton.people.amherst.edu/ips9/data/chapter07/EG07-18BP_CA.csv")
+## XX possibly wrong datapoint? 
+favstats(dec ~ group, data = BP_CA)
+t.test(dec ~ group, data = BP_CA, var.equal = TRUE, conf.level = 0.90)
+```
+
+```{r eg7-25, message=FALSE}
+### Example 7.25, page 470
+SONGS <- read_csv("https://nhorton.people.amherst.edu/ips9/data/chapter07/EG07-25SONGS.csv")
+## Checking the Normality condition
+gf_qq(~ total_secs, data = SONGS) %>% 
+  gf_qqline(linetype = "dashed", color = "red") %>% 
+  gf_labs(x = "Normal score", y = "Time (seconds)")
+## Check the condition after *transforming* the variable
+gf_qq(~ log(total_secs), data = SONGS) %>% 
+  gf_qqline(linetype = "dashed", color = "red") %>% 
+  gf_labs(x = "Normal score", y = "Time (seconds)")
+
+log_total_secs_SONGS <- SONGS %>% mutate(log_total_secs = log(total_secs))
+
+## Comparing the 95% confidence intervals
+### With transformation
+t.test(~ log_total_secs, data = log_total_secs_SONGS)
+### Without transformation
+t.test(~ total_secs, data = SONGS)
+```
+
+Since the logarithmic transformation made the Normal quantile plot distribution appear 
+approximately Normal, we created a dataset called `log_total_secs` with the 
+transformed variable. 
+### Section 7.3: Additional topics on inference

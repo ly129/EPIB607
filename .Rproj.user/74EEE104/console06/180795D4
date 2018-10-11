@@ -1885,4 +1885,4 @@ SHLVL=23
 PROMPT_COMMAND=echo -ne "\033]0;${PWD/#${HOME}/~}\007"
 R_PLATFORM=x86_64-pc-linux-gnu
 R_LIBS_SITE=/usr/local/lib/R/site-library:/usr/lib/R/site-library:/^C
-]0;/home/sahir/git_repositories/epib607> (B[m
+]0;/home/sahir/git_repositories/epib607> (B[m[K> (B[m
