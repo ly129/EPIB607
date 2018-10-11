@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="terms-and-concepts.html">
-<link rel="next" href="vectorization-apply-and-for-loops.html">
+<link rel="prev" href="slides.html">
+<link rel="next" href="assignments.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -273,291 +273,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-graphics" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> Data Graphics</h1>
-<p>Data graphics can be understood in terms of five basic elements <span class="citation">(Baumer, Kaplan, and Horton <a href="#ref-baumer2017mdsr">2017</a>)</span>:</p>
+<div id="polls" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Polls</h1>
 <ol style="list-style-type: decimal">
-<li>Aesthetics or visual cues</li>
-<li>Coordinate system</li>
-<li>Scales</li>
-<li>Context</li>
-<li>Facets and layers</li>
+<li><a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/polls/001_day1_basic_concepts/001-day1.pdf">Day 1</a></li>
+<li><a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/polls/002_viz_hist_clt/002-viz-hist-clt.pdf">Graphics, CLT</a></li>
+<li><a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/polls/003_sampling_dist_CI/003-sampling-dist-CI.pdf">Sampling Distributions, CI</a></li>
 </ol>
-<div id="aesthetics-or-visual-cues" class="section level2">
-<h2><span class="header-section-number">11.1</span> Aesthetics or Visual cues</h2>
-<p>Aesthetics or visual cues are graphical elements that draw the eye to what you want your audience to focus upon. They are the fundamental building blocks of data graphics, and the choice of which visual cues to use to represent which quantities is the central question for the data graphic composer. Nathan Yau identifies nine distinct visual cues, for which we also list whether that cue is used to encode a numerical or categorical quantity:</p>
-<ol style="list-style-type: decimal">
-<li>Position (numerical): where in relation to other things?</li>
-<li>Length (numerical): how big (in one dimension)?</li>
-<li>Angle (numerical): how wide? parallel to something else?</li>
-<li>Direction (numerical) at what slope? In a time series, going up or down?</li>
-<li>Shape (categorical) belonging to which group?</li>
-<li>Area (numerical) how big (in two dimensions)?</li>
-<li>Volume (numerical) how big (in three dimensions)?</li>
-<li>Shade (either) to what extent? how severely?</li>
-<li>Color (either) to what extent? how severely? Beware of red/green color blindness</li>
-</ol>
-
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-59"></span>
-<img src="images/cues.jpg" alt="Commonly used aesthetics in data visualization. top: Chapter 3 Yau (2013), bottom: Chapter 2 Wilke (2018)" width="672" /><img src="images/scales.jpg" alt="Commonly used aesthetics in data visualization. top: Chapter 3 Yau (2013), bottom: Chapter 2 Wilke (2018)" width="574" />
-<p class="caption">
-Figure 11.1: Commonly used aesthetics in data visualization. top: Chapter 3 <span class="citation">Yau (<a href="#ref-Yau">2013</a>)</span>, bottom: Chapter 2 <span class="citation">Wilke (<a href="#ref-wilke">2018</a>)</span>
-</p>
-</div>
-<!--: position, shape, size, color, line width, line type. Some of these aesthetics can represent both continuous and discrete data (position, size, line width, color) while others can only represent discrete data (shape, line type)-->
-</div>
-<div id="coordinate-systems" class="section level2">
-<h2><span class="header-section-number">11.2</span> Coordinate systems</h2>
-<p>How are the data points organized? While any number of coordinate systems are possible, three are most common.</p>
-<div id="cartesian" class="section level3">
-<h3><span class="header-section-number">11.2.1</span> Cartesian</h3>
-<p>This is the familiar (<span class="math inline">\(x, y\)</span>)-rectangular coordinate system with two perpendicular axes.</p>
-</div>
-<div id="polar" class="section level3">
-<h3><span class="header-section-number">11.2.2</span> Polar</h3>
-<p>The radial analog of the Cartesian system with points identified by their radius <span class="math inline">\(\rho\)</span> and angle <span class="math inline">\(\theta\)</span>.</p>
-</div>
-<div id="geographic" class="section level3">
-<h3><span class="header-section-number">11.2.3</span> Geographic</h3>
-<p>This is the increasingly important system in which we have locations on the curved surface of the Earth, but we are trying to represent these locations in a flat two-dimensional plane.</p>
-
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-60"></span>
-<img src="images/geography.jpg" alt="Commonly used coordinate systems. Chapter 3 Yau (2013)." width="509" />
-<p class="caption">
-Figure 11.2: Commonly used coordinate systems. Chapter 3 <span class="citation">Yau (<a href="#ref-Yau">2013</a>)</span>.
-</p>
-</div>
-</div>
-</div>
-<div id="scales" class="section level2">
-<h2><span class="header-section-number">11.3</span> Scales</h2>
-<p>Scales link data values to aesthetics <span class="citation">(Wilke <a href="#ref-wilke">2018</a>)</span>. To map data values onto aesthetics, we need to specify which data values correspond to which specific aesthetics values. For example, if our graphic has an x axis, then we need to specify which data values fall onto particular positions along this axis. Similarly, we may need to specify which data values are represented by particular shapes or colors. This mapping between data values and aesthetics values is created via scales. A scale defines a unique mapping between data and aesthetics. Importantly, a scale must be one-to-one, such that for each specific data value there is exactly one aesthetics value and vice versa. If a scale isn’t one-to-one, then the data visualization becomes ambiguous.</p>
-
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-61"></span>
-<img src="images/scales2.jpg" alt="Scales link data values to aesthetics. Here, the numbers 1 through 4 have been mapped onto a position scale, a shape scale, and a color scale. For each scale, each number corresponds to a unique position, shape, or color and vice versa (Wilke 2018)." width="515" />
-<p class="caption">
-Figure 11.3: Scales link data values to aesthetics. Here, the numbers 1 through 4 have been mapped onto a position scale, a shape scale, and a color scale. For each scale, each number corresponds to a unique position, shape, or color and vice versa <span class="citation">(Wilke <a href="#ref-wilke">2018</a>)</span>.
-</p>
-</div>
-</div>
-<div id="context" class="section level2">
-<h2><span class="header-section-number">11.4</span> Context</h2>
-<p>The purpose of data graphics is to help the viewer make meaningful comparisons, but a bad data graphic can do just the opposite: It can instead focus the viewer’s attention on meaningless artifacts, or ignore crucial pieces of relevant but external knowledge. Context can be added to data graphics in the form of titles or subtitles that explain what is being shown, axis labels that make it clear how units and scale are depicted, or reference points or lines that contribute relevant external information. While one should avoid cluttering up a data graphic with excessive annotations, it is necessary to provide proper context <span class="citation">(Baumer, Kaplan, and Horton <a href="#ref-baumer2017mdsr">2017</a>)</span>.</p>
-</div>
-<div id="facets-and-layers" class="section level2">
-<h2><span class="header-section-number">11.5</span> Facets and layers</h2>
-<p>One of the fundamental challenges of creating data graphics is condensing multivariate information into a two-dimensional image. While three-dimensional images are occasionally useful, they are often more confusing than anything else. Instead, here are three common ways of incorporating more variables into a two-dimensional data graphic.</p>
-<div id="facets" class="section level3">
-<h3><span class="header-section-number">11.5.1</span> Facets</h3>
-<p>A single data graphic can be composed of several small multiples of the same basic plot, with one (discrete) variable changing in each of the small sub-images. An example of facets is shown in Figure <a href="data-graphics.html#fig:HELP">11.4</a></p>
-
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
-<span class="kw">gf_boxplot</span>(avg_drinks <span class="op">~</span><span class="st"> </span>racegrp <span class="op">|</span><span class="st"> </span>sex, <span class="dt">data =</span> HELPrct)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:HELP"></span>
-<img src="epib607_files/figure-html/HELP-1.png" alt="The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care." width="768" />
-<p class="caption">
-Figure 11.4: The HELP study was a clinical trial for adult inpatients recruited from a detoxification unit. Patients with no primary care physician were randomized to receive a multidisciplinary assessment and a brief motivational intervention or usual care, with the goal of linking them to primary medical care.
-</p>
-</div>
-</div>
-<div id="layers" class="section level3">
-<h3><span class="header-section-number">11.5.2</span> Layers</h3>
-<p>It is sometimes appropriate to draw a new layer on top of an existing data graphic. This new layer can provide context or comparison, but there is a limit to how many layers humans can reliably parse.</p>
-</div>
-<div id="animation" class="section level3">
-<h3><span class="header-section-number">11.5.3</span> Animation</h3>
-<p>If time is the additional variable, then an animation can sometimes effectively convey changes in that variable. Of course, this doesn’t work on the printed page, and makes it impossible for the user to see all the data at once.</p>
-</div>
-</div>
-<div id="color" class="section level2">
-<h2><span class="header-section-number">11.6</span> Color</h2>
-<p>Approximately 8 percent of the population—most of whom are men—have some form of color blindness. Most commonly, this renders them incapable of seeing colors accurately, most notably of distinguishing between red and green. Compounding the problem, many of these people do not know that they are color-blind. Thus, for professional graphics it is worth thinking carefully about which colors to use.</p>
-<p>Thankfully, we have been freed from the burden of having to create such intelligent palettes by the research of Cynthia Brewer, creator of the <a href="http://colorbrewer2.org/learnmore/schemes_full.html">ColorBrewer website</a> (and <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">R package</a>). Brewer has created colorblind-safe palettes in a variety of hues for three different types of numeric data in a single variable:</p>
-<div id="sequential" class="section level3">
-<h3><span class="header-section-number">11.6.1</span> Sequential</h3>
-<p>The ordering of the data has only one direction. Positive integers are sequential because they can only go up: they can’t go past 0. (Thus, if 0 is encoded as white, then any darker shade of gray indicates a larger number.)</p>
-</div>
-<div id="diverging" class="section level3">
-<h3><span class="header-section-number">11.6.2</span> Diverging</h3>
-<p>The ordering of the data has two directions. In an election forecast, we com- monly see states colored based on how they are expected to vote for the president. Since red is associated with Republicans and blue with Democrats, states that are solidly red or blue are on opposite ends of the scale. But “swing states” that could go either way may appear purple, white, or some other neutral color that is “between” red and blue.</p>
-</div>
-<div id="qualitative" class="section level3">
-<h3><span class="header-section-number">11.6.3</span> Qualitative</h3>
-<p>There is no ordering of the data, and we simply need color to differentiate different categories.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(RColorBrewer)
-RColorBrewer<span class="op">::</span><span class="kw">display.brewer.all</span>()</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-62-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>Also see the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis R package</a> and <a href="https://serialmentor.com/dataviz/color-basics.html">the Color Scales chapter</a> <span class="citation">(Wilke <a href="#ref-wilke">2018</a>)</span>.</p>
-</div>
-</div>
-<div id="examples" class="section level2">
-<h2><span class="header-section-number">11.7</span> Examples</h2>
-<div id="hurricane-florence" class="section level3">
-<h3><span class="header-section-number">11.7.1</span> Hurricane Florence</h3>
-<p>For Hurricane Florence, <span class="citation">Reed et al. (<a href="#ref-ncar">2018</a>)</span> present the first advance forecasted attribution statements about the human influence on a tropical cyclone. In Figure <a href="data-graphics.html#fig:ncar">11.5</a> they present a side-by-side comparison of the rainfall based on two forecasts:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Standard Forecast</strong>: With observed initial atmospheric conditions and sea surface temperatures (SST) adapted from NOAA’s operational Global Forecast System model. This is the forecast of the actual Hurricane Florence.</li>
-<li><strong>Modified Forecast</strong>: With observed initial conditions modified to remove the estimated climate change signal from the temperature, moisture, and SST fields to represent a world without climate change. This is a counterfactual forecast of Hurricane Florence if it were to occur in a world without human induced global warming.</li>
-</ol>
-
-<div class="figure" style="text-align: center"><span id="fig:ncar"></span>
-<img src="images/ncar_florence.jpg" alt="Left: is the forecast of the actual Hurricane Florence. Right: counterfactual forecast of Hurricane Florence if it were to occur in a world without human induced global warming (Reed et al. 2018)." width="576" />
-<p class="caption">
-Figure 11.5: Left: is the forecast of the actual Hurricane Florence. Right: counterfactual forecast of Hurricane Florence if it were to occur in a world without human induced global warming <span class="citation">(Reed et al. <a href="#ref-ncar">2018</a>)</span>.
-</p>
-</div>
-<p>The image on the right (modified forecast) looks worse, but the situation described on the left (standard forecast) is actually worse. They should have instead used perceptually uniform sequential colormaps as shown in Figure <a href="data-graphics.html#fig:viridis">11.6</a></p>
-
-<div class="figure" style="text-align: center"><span id="fig:viridis"></span>
-<img src="images/viridis.png" alt="source: https://matplotlib.org/users/colormaps.html" width="350" />
-<p class="caption">
-Figure 11.6: source: <a href="https://matplotlib.org/users/colormaps.html" class="uri">https://matplotlib.org/users/colormaps.html</a>
-</p>
-</div>
-<p>These palettes are available in <code>R</code> through the <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis R package</a>.</p>
-</div>
-<div id="sat-scores" class="section level3">
-<h3><span class="header-section-number">11.7.2</span> SAT Scores</h3>
-<p>The bar graph below displays the average score on the math portion of the 2010 SAT (with possible scores ranging from 200 to 800) among states for whom at least two-thirds of the students took the SAT.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mdsr)
-pacman<span class="op">::</span><span class="kw">p_load</span>(mosaic)
-<span class="kw">gf_colh</span>(state <span class="op">~</span><span class="st"> </span>math, <span class="dt">data =</span> <span class="kw">subset</span>(SAT_<span class="dv">2010</span>, sat_pct <span class="op">&gt;</span><span class="st"> </span><span class="dv">66</span>)) </code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-63-1.png" width="768" style="display: block; margin: auto;" /></p>
-<p>This plot uses the visual cue of position to represent the math SAT score on the vertical axis with. The categorical variable of state is arrayed on the horizontal axis. It would not be appropriate to consider the state variable to be ordinal, since the ordering is not meaningful in the context of math SAT scores. The coordinate system is Cartesian, although as noted previously, the horizontal coordinate is meaningless. Context is provided by the axis labels and title.</p>
-</div>
-<div id="swimming-records" class="section level3">
-<h3><span class="header-section-number">11.7.3</span> Swimming records</h3>
-<p>Next, we consider a time series that shows the progression of the world record times in the 100-meter freestyle swimming event for men and women. The Figure below displays the times as a function of the year in which the new record was set. At some level this is simply a scatterplot that uses position on both the vertical and horizontal axes to indicate swimming time and chronological time, respectively, in a Cartesian plane. The numeric scale on the vertical axis is linear, in units of seconds, while the scale on the horizontal axis is also linear, measured in years. But there is more going on here. Color is being used as a visual cue to distinguish the categorical variable sex. Furthermore, since the points are connected by lines, direction is being used to indicate the progression of the record times. (In this case, the records can only get faster, so the direction is always down.) One might even argue that angle is being used to compare the descent of the world records across time and/or gender. In fact, in this case shape is also being used to distinguish sex.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pacman<span class="op">::</span><span class="kw">p_load</span>(mosaicData)
-<span class="kw">gf_point</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">shape =</span> <span class="op">~</span><span class="st"> </span>sex, <span class="dt">size =</span> <span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">gf_line</span>(time <span class="op">~</span><span class="st"> </span>year , <span class="dt">data =</span> SwimRecords, <span class="dt">color =</span> <span class="op">~</span><span class="st"> </span>sex)</code></pre></div>
-<p><img src="epib607_files/figure-html/unnamed-chunk-64-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-</div>
-<div id="exercises" class="section level2">
-<h2><span class="header-section-number">11.8</span> Exercises</h2>
-<div id="exercise-1" class="section level3">
-<h3><span class="header-section-number">11.8.1</span> Exercise 1</h3>
-<p>For this exercise, refer to the article assigned to your team in the <a href="https://sahirbhatnagar.com/EPIB607/terms-and-concepts.html">Terms and Concepts</a> exercise.</p>
-<ol style="list-style-type: decimal">
-<li>Identify the aesthetics and scale(s). If your article did not contain a graphic, pick a Table in your paper and think about what graphic could have been used instead. See <a href="https://serialmentor.com/dataviz/directory-of-visualizations.html">Fundamentals of Data Visualization</a> and <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#1.%20Correlation">Top 50 ggplot2 Visualizations</a> for examples of graphics.</li>
-<li>How many variables are depicted in the graphic? Explicitly link each variable to an aesthetic that you listed above.</li>
-<li>Critique this data graphic using the taxonomy described in this chapter.</li>
-</ol>
-</div>
-<div id="exercise-2" class="section level3">
-<h3><span class="header-section-number">11.8.2</span> Exercise 2</h3>
-<p>Vox published a list of <a href="http://www.vox.com/a/explain-food-america">Charts that explain food in America</a>. There are 40 maps, charts, and graphs that show where our food and drink comes from and how we eat it.</p>
-<p>Pick your best and least favorite graphic. One representative from each group will present in 1 minute or less their rationale for the groups choices.</p>
-<!--
-# Icebreakers {#intro}
-
-## The Lady Tasting Tea
-
-This example is adapted from _Start Teaching with R_ [@startwithR] and [JH notes unit 8_B](http://www.medicine.mcgill.ca/epidemiology/hanley/med2/unit8b_epi_nov21.pdf).  
-
-There is a famous story about a lady who claimed that
-tea with milk tasted different depending on whether the
-milk was added to the tea or the tea added to the milk.
-The story is famous because of the setting in which she
-made this claim. She was attending a party in Cambridge,
-England, in the 1920s. Also in attendance were a number
-of university dons and their wives. The scientists in at-
-tendance scoffed at the woman and her claim. What, after
-all, could be the difference?
-All the scientists but one, that is. Rather than simply
-dismiss the woman’s claim, he proposed that they decide
-how one should test the claim. The tenor of the conversa-
-tion changed at this suggestion, and the scientists began
-to discuss how the claim should be tested. Within a few
-minutes cups of tea with milk had been prepared and
-presented to the woman for tasting.
-At this point, you may be wondering who the innova-
-tive scientist was and what the results of the experiment
-were. The scientist was R. A. Fisher, who first described
-
-
-![](images/teacups.jpg)
-
-
-```r
-library(mosaic)
-rflip()
-```
-
-
-```r
-rflip(10)
-```
-
-
-
-```r
-mu = 500
-sigma = 100
-x = rnorm(500, mean=mu, sd=sigma)
-favstats(x)
-meanconfint = function (x, sigma, level = 0.95, ...) {
-  se = sigma / sqrt(length(x))
-  mu = mean(x)
-  z = qnorm(1 - (1 - level)/2)
-  out = c(mu, mu - z * se, mu + z * se)
-  names(out) = c("mean", "lower", "upper")
-  return(out)
-}
-meanconfint(x, sigma = sigma)
-randomx = do(50) * rnorm(500, mean=mu, sd=sigma)
-ci = data.frame(t(apply(randomx, 1, meanconfint, sigma=sigma, level=0.90)))
-head(ci, 3)
-
-xyplot(1:nrow(ci) ~ mean, data=ci, xlim=range(ci), xlab="SAT score", ylab="Index")
-ladd(panel.abline(v=500, col="lightgray", lty=2))
-ladd(with(ci, panel.arrows(x0 = lower, y0=1:nrow(ci), y1=1:nrow(ci), cex=0.5,
-                           x1=upper, code=3)))
-
-head(t(apply(randomx, 1, meanconfint, sigma=sigma, level=0.9)), 3)
-
-```
-
-
-
-```r
-T <- chisq(substance ~ shuffle(sex), data = HELPrct); T
-Substance.Null <- do(999) * chisq(substance ~ shuffle(sex), data = HELPrct)
-histogram( ~ X.squared, data = Substance.Null, v = T, width = 0.25)
-prop1( ~(X.squared >= T), data = Substance.Null)
-```
-
--->
-
-</div>
-</div>
-</div>
-
-
-
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-baumer2017mdsr">
-<p>Baumer, Benjamin S., Daniel T. Kaplan, and Nicholas J. Horton. 2017. <em>Modern Data Science with R</em>. Chapman; Hall/CRC Press: Boca Raton. <a href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487" class="uri">https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487</a>.</p>
-</div>
-<div id="ref-Yau">
-<p>Yau, Nathan. 2013. <em>Data Points: Visualization That Means Something</em>. 1st ed. Wiley Publishing.</p>
-</div>
-<div id="ref-wilke">
-<p>Wilke, Claus O. 2018. <em>Fundamentals of Data Visualization</em>. <a href="https://serialmentor.com/dataviz/" class="uri">https://serialmentor.com/dataviz/</a>.</p>
-</div>
-<div id="ref-ncar">
-<p>Reed, Kevin A., Alyssa M. Stansfield, Michael F. Wehner, Lawrence Berkeley, and Colin M. Zarzycki. 2018. “The Human Influence on Hurricane Florence.” <a href="https://you.stonybrook.edu/kareed/2018/09/12/estimating-the-potential-impact-of-climate-change-on-hurricane-florence/" class="uri">https://you.stonybrook.edu/kareed/2018/09/12/estimating-the-potential-impact-of-climate-change-on-hurricane-florence/</a>.</p>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="terms-and-concepts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vectorization-apply-and-for-loops.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="slides.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="assignments.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -587,7 +317,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/sahirbhatnagar/EPIB607/edit/master/descriptives.Rmd",
+"link": "https://github.com/sahirbhatnagar/EPIB607/edit/master/index.Rmd",
 "text": "Edit"
 },
 "download": ["epib607.pdf"],
