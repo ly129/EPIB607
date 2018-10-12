@@ -782,7 +782,7 @@ Don't treat any one study as last word on the topic. \newline
 \end{frame}
 
 
-\begin{frame}[fragile]{Rejection Region}
+\begin{frame}[fragile]{Test using critical values}
 \begin{itemize}
 
 	\item An observed mean freezing temperature greater than -0.5341 rejects the null hypothesis:
@@ -819,7 +819,7 @@ Don't treat any one study as last word on the topic. \newline
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Rejection Region}
+\begin{frame}[fragile]{Test using critical values}
 
 
 	\begin{minipage}{0.47\textwidth}
@@ -830,12 +830,14 @@ Don't treat any one study as last word on the topic. \newline
 \hlkwc{mean} \hlstd{=} \hlopt{-}\hlnum{0.540}\hlstd{,}
 \hlkwc{sd} \hlstd{=} \hlnum{0.008}\hlopt{/}\hlkwd{sqrt}\hlstd{(}\hlnum{5}\hlstd{))}
 \end{alltt}
-
+\begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-4-1} 
 
 }
 
+\caption[critical value under the null distribution]{critical value under the null distribution}\label{fig:unnamed-chunk-4}
+\end{figure}
 
 
 \end{knitrout}
@@ -848,19 +850,121 @@ Don't treat any one study as last word on the topic. \newline
 \hlkwc{mean} \hlstd{=} \hlopt{-}\hlnum{0.540}\hlstd{,}
 \hlkwc{sd} \hlstd{=} \hlnum{0.008}\hlopt{/}\hlkwd{sqrt}\hlstd{(}\hlnum{5}\hlstd{))}
 \end{alltt}
-
+\begin{figure}
 
 {\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-5-1} 
 
 }
 
+\caption[test statistic under the null distribution]{test statistic under the null distribution}\label{fig:unnamed-chunk-5}
+\end{figure}
 
 
 \end{knitrout}
 \end{minipage}	
 	
+Thus we reject $H_0$ at $\alpha = 0.05$.
+\end{frame}
+
+\frame{\frametitle{Type I and II errors} What does it mean to reject
+	$H_0$ at level $\alpha$?
+	\begin{itemize}
+		\item It means that, if $H_0$ were true and the procedure (sampling data,
+		performing the significance test) were repeated many times, the
+		testing procedure would reject $H_0$ $\alpha100$\% of the time.
+	\end{itemize}
+\centering
+\includegraphics[angle=90, scale=0.25]{type1.pdf}
+
+} \frame{\frametitle{Type I and II errors} In this special setting
+	we give special names to the false positive and false negative
+	rates:
+	\begin{itemize}
+		\item \textbf{Type I error ($\alpha$):} probability that a significance test will
+		reject $H_0$ when in fact $H_0$ is true.
+		\item \textbf{Type II error ($\beta$):} probability that a significance test will
+		fail to reject $H_0$ when $H_0$ is not true.
+		\item[]
+	\end{itemize}
+	The Type I error is the significance level of the test, $\alpha$,
+	which is often set to 0.05. \\ \ \\
+	As we will see in a moment, the Type II error, $\beta$, is
+	determined by the sample size and the chosen Type I error
+	rate/significance level. (Therefore, with $\alpha$ fixed at, say
+	0.05, the only way to reduce $\beta$ is to increase $n$ or decrease
+	$s$.)}
+
+\frame{\frametitle{Type I and II errors}
+	\begin{figure}
+		\begin{center}
+			\epsfig{figure=HypTest1.pdf,width=4.2in,height=3.4in}
+		\end{center}
+	\end{figure}
+} \frame{\frametitle{Type I and II errors}
+	\begin{figure}
+		\begin{center}
+			\epsfig{figure=HypTest2.pdf,width=4.2in,height=3.4in}
+		\end{center}
+	\end{figure}
+} \frame{\frametitle{Type I and II errors}
+
+\small
+\begin{itemize}
+	\item the blue area represents the Type I error -- the probability of
+	rejecting $H_0$ \textbf{if $H_0$ is true}.
+	\item the purple area represents the Type II error -- the probability of
+	\textit{not} rejecting $H_0$ \textbf{if $H_A$ is in fact true} (and therefore $H_0$
+	should be rejected). 
+\end{itemize}
+
+\vspace*{-0.2in}
+
+	\begin{figure}
+		\begin{center}
+			\includegraphics[scale=0.35]{HypTest3.pdf}
+		\end{center}
+	\end{figure}
+} 
+
+
+\begin{frame}[fragile]{Type I and II errors}
+
+
+\begin{minipage}{0.47\textwidth}
+	\small
+			\begin{enumerate}
+		\item[(i)] the variability of the sampling distribution of $\overline{y}$ 
+		\item[(ii)] the distance between $\mu_0$ and the true value of $\mu$ (in our previous slide we called this $\mu_A$) will affect the Type II error
+	\end{enumerate}
+
+\end{minipage}
+\begin{minipage}{0.47\textwidth}
+\includegraphics[scale=0.25]{HypTest3.pdf}
+\end{minipage}	
+
 
 \end{frame}
+
+
+\begin{frame}[fragile]{Power}
+
+\vspace*{-0.2in}
+
+\begin{defm}[Power]
+	The probability that a fixed level $\alpha$ significance test will reject $H_0$ when a particular alternative value of the parameter is true is called the \textbf{power} of the test to detect the alternative
+\end{defm}
+
+
+\vspace*{-0.08in}
+
+\centering
+\includegraphics[scale=0.35]{HypTest3.pdf}
+
+
+\end{frame}
+
+
+
 
 \begin{frame}{Statistical Power and Sample Size: 3 questions}
 
@@ -874,19 +978,19 @@ Don't treat any one study as last word on the topic. \newline
 \end{enumerate}
 \end{frame}
 
+
 \section{How much water a farmer/supplier could add to the milk before (s)he has a 10\% , 50\%, 80\%
-	chance of getting caught (of the buyer ‘detecting’ the cheating)}
+	chance of getting caught (of the buyer detecting the cheating)}
 
 \begin{frame}{Statistical Power: the chance of getting caught}
-
 \begin{itemize}
-		\setlength\itemsep{1em}
-	\item We now want to know how much water a farmer could add to the milk before they have a 10\% , 50\%, 80\% chance of getting caught (of the buyer `detecting' the cheating). 
-	\item Assume the buyer continues to use an $n$ of 5, and the same $\sigma =0.008^{\circ}$C, and  bases the boundary for rejecting/accepting the product on a $\alpha = 0.05$, and a 1-sided test which translates to the buyer setting the cutoff at $$-0.540 + 1.645 \times 0.008/\sqrt{5}  = -0.534^{\circ}\textrm{C}.$$ 
+	\setlength\itemsep{1em}
+	\item We now want to know how much water a farmer could add to the milk before they have a 10\% , 50\%, 80\% chance of getting caught (of the buyer detecting the cheating). 
+	\item Assume the buyer continues to use an $n$ of 5, and the same $\sigma =0.008^{\circ}$C, and  bases the boundary for rejecting/accepting the product on a $\alpha = 0.05$, and a 1-sided test which translates to the buyer setting the cutoff at $$-0.540 + 1.645 \times 0.008/\sqrt{5}  = -0.534^{\circ}\textrm{C}.$$
 	\item This is equivalent to \texttt{qnorm(p = 0.95, mean = -0.540, sd = 0.008/sqrt(5))}
-
 \end{itemize}
 \end{frame}
+
 
 
 \begin{frame}{Statistical Power: the chance of getting caught}

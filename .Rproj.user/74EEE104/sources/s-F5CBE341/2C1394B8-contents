@@ -1,0 +1,312 @@
+---
+title: Assignment 5 - Inference for a Population Mean. Due October 14, 11:59pm 2018
+author:
+  - name: EPIB607 - Inferential Statistics
+    affiliation: a
+#  - name: Second Author
+#    affiliation: a,b
+address:
+  - code: a
+    address: Fall 2018, McGill University
+#  - code: b
+#    address: Department of Neat Tricks, Whereever State University, Someplace, MC, 67890
+lead_author_surname: Bhatnagar and Hanley
+doi: "https://sahirbhatnagar.com/EPIB607/"
+abstract: |
+  In this assignment you will practice conducting inference for a one sample mean using either the z procedure, t procedure, or the bootstrap. Answers should be given in full sentences (DO NOT just provide the number). All figures should have appropriately labeled axes, titles and captions (if necessary). All graphs and calculations are to be completed in an R Markdown document using the provided template. You are free to choose any function from any package to complete the assignment. Concise answers will be rewarded. Be brief and to the point. Please submit both the compiled HTML report and the source file (.Rmd) to myCourses by October 14, 2018, 11:59pm. Both HTML and .Rmd files should be saved as 'IDnumber_LastName_FirstName_EPIB607_A5'. 
+# Optional: Acknowledgements
+#acknowledgements: |
+#  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
+#  [PNAS LaTeX](http://www.pnas.org/site/authors/latex.xhtml) macros. Both these sources are
+#  ([GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html) and
+#  [LPPL (>= 1.3)](https://www.latex-project.org/lppl/)).
+# Optional: One or more keywords
+keywords:
+  - t-test
+  - One sample mean
+  - Bootstrap
+papersize: letter
+fontsize: 9pt
+# Optional: Force one-column layout, default is two-column
+one_column: true
+# Optional: Enables lineno mode, but only if one_column mode is also true
+#lineno: true
+# Optional: Enable one-sided layout, default is two-sided
+#one_sided: true
+# Optional: Enable section numbering, default is unnumbered
+numbersections: true
+# Optional: Specify the depth of section number, default is 5
+#secnumdepth: 5
+# Optional: Skip inserting final break between acknowledgements, default is false
+skip_final_break: true
+# Optional: Bibliography 
+bibliography: pinp
+# Optional: Enable a 'Draft' watermark on the document
+watermark: false
+footer_contents: "Assignment 5 due October 14, 2018 by 11:59pm"
+output: pinp::pinp
+# Required: Vignette metadata for inclusion in a package.
+vignette: >
+  %\VignetteIndexEntry{YourPackage-vignetteentry}
+  %\VignetteKeywords{YourPackage, r, anotherkeyword}
+  %\VignettePackage{Due October 14, 2018}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+# Template {-}
+
+The `.Rmd` template for Assignment 5 is available [here](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a5/a5_template.Rmd)
+
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+```
+
+
+
+# Food intake and weight gain
+
+If we increase our food intake, we generally gain weight. Nutrition scientists can calculate the amount of weight gain that would be associated with a given increase in calories. In one study, 16 nonobese adults, aged 25 to 36 years, were fed 1000 calories per day in excess of the calories needed to maintain a stable body weight. The subjects maintained this diet for 8 weeks, so they consumed a total of 56,000 extra calories. According to theory, 3500 extra calories will translate into a weight gain of 1 pound. Therfore we expect each of these subjects to gain 56,000/3500=16 pounds (lb). Here are the weights (given in the `weightgain.csv` file) before and after the 8-week period expressed in kilograms (kg):
+
+```{r, eval=FALSE, echo=TRUE}
+weight <- read.csv("weightgain.csv")
+```
+
+<br>
+
+```{r, echo=FALSE, eval=TRUE}
+weight <- read.csv("~/git_repositories/epib607/assignments/a5/weightgain.csv")
+weight
+# weight$diff <- weight$after - weight$before
+
+# library(mosaic)
+# s_dist <- do(10000) * mean(~ diff, data = resample(weight))
+# hist(s_dist$mean)
+```
+
+
+a. Calculate a 95% confidence interval for the mean weight change and give a sentence explaining the meaning of the 95%. State your assumptions. 
+b. Calculate a 95% bootstrap confidence interval for the mean weight change and compare it to the one obtained in part (a). Comment on the bootstrap sampling distribution and compare it to the assumptions you made in part (a).
+c. Convert the units of the mean weight gain and 95% confidence interval to pounds. Note that 1 kilogram is equal to 2.2 pounds. 
+d. Test the null hypothesis that the mean weight gain is 16 lbs. State your assumptions and justify your choice of test. Be sure to specify the null and alternative hypotheses. What do you conclude?
+
+
+\newpage
+
+# Attitudes toward school
+
+The Survey of Study Habits and Attitudes (SSHA) is a psychological test that measures the motivation, attitude toward school, and study habits of students. Scores range from 0 to 200. The mean score for U.S. college students is about 115, and the standard deviation is about 30. A teacher who suspects that older students have better attitudes toward school gives the SSHA to 25 students who are at least 30 years of age. Their mean score is $\bar{y}$ = 132.2 with a sample standard deviation $s = 28$. 
+
+a. The teacher asks you to carry out a formal statistical test for her hypothesis. Perform a test, provide a 95% confidence interval and state your conclusion clearly. 
+b. What assumptions did you use in part (a). Which of these assumptions is most important to the validity of your conclusion in part (a).
+
+
+
+# Does a full moon affect behavior?
+
+Many people believe that the moon influences the actions of some individuals. A study of dementia patients in nursing homes recorded various types of disruptive behaviors every day for 12 weeks. Days were classified as moon days if they were in a 3-day period centered at the day of the full moon. For each patient, the average number of disruptive behaviors was computed for moon days and for all other days. The hypothesis is that moon days will lead to more disruptive behavior. We look at a data set consisting of observations on 15 dementia patients in nursing homes (available in the `fullmoon.csv` file): 
+
+```{r, echo=TRUE, eval=FALSE}
+fullmoon <- read.csv("fullmoon.csv")
+```
+
+```{r, eval=TRUE, echo=FALSE}
+# moon <- load("~/Downloads/FullMoon.RData")
+# FullMoon$aggdiff <- NULL
+# colnames(FullMoon) <- c("patient","moon_days", "other_days")
+# write.csv(FullMoon, file = "fullmoon.csv", quote = FALSE, row.names = FALSE)
+fullmoon <- read.csv("~/git_repositories/epib607/assignments/a5/fullmoon.csv")
+fullmoon
+# fullmoon$diff <- fullmoon$moon_days - fullmoon$other_days
+# s_dist <- do(10000) * mean(~ diff, data = resample(fullmoon))
+# hist(s_dist$mean)
+# knitr::kable(fullmoon)
+```
+
+a. Calculate a 95% confidence interval for the mean difference in disruptive behaviors. State the assumptions you used to calculate this interval.
+b. Calculate a 95% bootstrap confidence interval for the mean difference in disruptive behaviors and compare to the one obtained in part (a). Comment on the bootstrap sampling distribution and compare it to the assumptions you made in part (a).
+c. Test the hypothesis that moon days will lead to more disruptive behavior. State your assumptions and provide a brief conclusion based on your analysis. 
+d. Find the minimum value of the mean difference in disruptive behaviors ($\bar{y}$) needed to reject the null hypothesis. 
+e. What is the probability of detecting an increase of 1.0 aggressive behavior per day during moon days? _Hint: calculate the probability of the event calculated in part (d) using a normal distribution with $\mu=1$ and $\sigma =$ the standard error of the mean_
+
+
+\newpage 
+
+# How deep is the ocean?
+
+This question is based on the [in-class Exercise](https://github.com/sahirbhatnagar/EPIB607/blob/master/exercises/water/students/260194225_water_exercise_epib607.pdf) on sampling distributions and builds on [Question 4 from Assignment 4](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a4/a4_clt_ci.pdf). For your sample of $n=20$ of depths of the ocean
+
+a. Calculate a 95% Confidence interval using the $t$ procedure
+b. Plot the qnorm, bootstrap, and $t$ procedure confidence intervals on the same plot and comment on the how the $t$ interval compares to the other 2 intervals. You may use the `compare_CI` function provided below to produce the plot. 
+  
+  
+```{r, echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
+compare_CI <- function(ybar, QNORM, BOOT, TPROCEDURE,
+                       col = c("#E41A1C","#377EB8","#4DAF4A")) {
+
+  dt <- data.frame(type = c("qnorm", "bootstrap", "t"),
+                   ybar = rep(ybar, 3),
+                   low = c(QNORM[1], BOOT[1], TPROCEDURE[1]),
+                   up = c(QNORM[2], BOOT[2], TPROCEDURE[2])
+  )
+  
+  plot(dt$ybar, 1:nrow(dt), pch = 20, ylim = c(0, 5), 
+       xlim = range(pretty(c(dt$low, dt$up))),
+       xlab = "Depth of ocean (m)", ylab = "Confidence Interval Type",
+       las = 1, cex.axis = 0.8, cex = 3)
+  
+  abline(v = 37, lty = 2, col = "black", lwd = 2)
+  segments(x0 = dt$low, x1 = dt$up,
+           y0 = 1:nrow(dt), lend = 1,
+           col = col, lwd = 4)
+  
+  legend("topleft",
+         legend = c(eval(substitute( expression(paste(mu," = ",37)))),
+                    sprintf("qnorm CI: [%.f, %.f]",QNORM[1], QNORM[2]),
+                    sprintf("bootstrap CI: [%.f, %.f]",BOOT[1], BOOT[2]),
+                    sprintf("t CI: [%.f, %.f]",TPROCEDURE[1], TPROCEDURE[2])),
+         lty = c(1,1,1,1),
+         col = c("black",col), lwd = 4)
+}
+
+# example of how to use the function:
+compare_CI(ybar = 36, QNORM = c(25,40), BOOT = c(31, 38), TPROCEDURE = c(28, 40))
+```
+  
+
+
+
+<!-- 
+We support several options via the YAML header
+
+- Setting a DOI or URL footer, for example for the CRAN package URL,
+  which is placed in the bottom-left footer of the title page and even pages;
+- Setting a footer label, for example _YourPackage Vignette_ stating
+  your package, which is placed in the bottom-right footer on odd
+  pages;
+- Setting a free-form author field used on the inside footer;
+- Optional _Draft_ watermarking;
+
+
+
+## References 
+
+Here we differ from PNAS and suggest natbib. References will appear in
+author-year form. Use `\citet{}`, `\citep{}`, etc as usual.
+
+We default to the `jss.bst` style. To switch to a different bibliography
+style, please use `biblio-style: style` in the YAML header.
+
+
+## Inline R Code 
+
+The PNAS sample included a fixed PNG image here, but this document prefers
+to show the results and embedding of _R_ code. 
+
+```{r figex, fig.width=3, fig.height=3, cache=TRUE, echo=TRUE, fig.cap="Narrow ggplot2 figure"}
+library(ggplot2)
+ggplot(mtcars, aes(wt, mpg)) +
+    geom_point(size=3, aes(colour=factor(cyl))) +
+    theme(legend.position="none")
+```
+
+Here we use a standard knitr bloc with explicit options for
+
+- figure width and height (`fig.width`, `fig.height`), both set to three inches;
+- whether the code is shown (`echo=TRUE`); and
+- the caption (`fig.cap`) as shown above.
+
+
+## Digital Figures 
+
+Markdown, Pandoc and LaTeX support `.eps` and `.pdf` files.
+
+Figures and Tables should be labelled and referenced in the standard way
+using the `\label{}` and `\ref{}` commands.
+
+The R examples above show how to insert a column-wide
+figure. To insert a figure wider than one column, please use the
+`\begin{figure*}...\end{figure*}` environment. 
+
+One (roundabout) way of doing this is to _not_ actually plot a figure, but to
+save it in a file as the following segment shows:
+
+```{r densityPlot, echo=TRUE}
+library(ggplot2)
+p <- ggplot(data = midwest,
+            mapping = aes(x = area,
+                          fill = state,
+                          color = state)) +
+    geom_density(alpha = 0.3)
+## save to file
+suppressMessages(ggsave("densities.pdf", p))
+```
+
+This file is then included via standard LaTeX commands.
+
+\begin{figure*}
+  \begin{center}
+    \includegraphics[width=0.66\textwidth, height=3.5in]{densities} 
+  \end{center}
+  \caption{Wide ggplot2 figure}\label{fig}
+\end{figure*}
+
+
+## Typeset Code (But Do Not Run It) 
+
+We can also just show code.
+
+```r
+xx <- faithful[,"eruptions"]
+fit <- density(xx)
+plot(fit)
+```
+
+This simply used a pandoc bloc started and ended by three backticks,
+with `r` as the language choice.  Similarly, _many_ other languages
+can be typeset directly simply by relying on pandoc.
+
+
+## Single column equations 
+
+Authors may use 1- or 2-column equations in their article, according to
+their preference.
+
+To allow an equation to span both columns, options are to use the
+`\begin{figure*}...\end{figure*}` environment mentioned above for
+figures, or to use the `\begin{widetext}...\end{widetext}` environment
+as shown in equation \ref{eqn:example} below.
+
+Please note that this option may run into problems with floats and
+footnotes, as mentioned in the [cuted package
+documentation](http://texdoc.net/pkg/cuted). In the case of problems
+with footnotes, it may be possible to correct the situation using
+commands `\footnotemark` and `\footnotetext`.
+
+\begin{equation}
+  \begin{aligned}
+(x+y)^3&=(x+y)(x+y)^2\\
+       &=(x+y)(x^2+2xy+y^2) \\
+       &=x^3+3x^2y+3xy^3+x^3. 
+       \label{eqn:example} 
+  \end{aligned}
+\end{equation}
+
+
+pandoc writes all tables using longtable, which fails in 2-column mode
+
+  Species                    CBS     CV     G3
+  ----------------------- ------ ------ ------
+  1\. Acetaldehyde           0.0    0.0    0.0
+  2\. Vinyl alcohol          9.1    9.6   13.5
+  3\. Hydroxyethylidene     50.8   51.2   54.0
+
+  : Comparison of the fitted potential energy surfaces and ab initio
+  benchmark electronic energy calculations
+
+-->
+
