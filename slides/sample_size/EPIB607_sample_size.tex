@@ -867,7 +867,7 @@ Thus we reject $H_0$ at $\alpha = 0.05$.
 \end{frame}
 
 \frame{\frametitle{Type I and II errors} What does it mean to reject
-	$H_0$ at level $\alpha$?
+	$H_0$ at level $\alpha$? \pause 
 	\begin{itemize}
 		\item It means that, if $H_0$ were true and the procedure (sampling data,
 		performing the significance test) were repeated many times, the
@@ -881,11 +881,12 @@ Thus we reject $H_0$ at $\alpha = 0.05$.
 	rates:
 	\begin{itemize}
 		\item \textbf{Type I error ($\alpha$):} probability that a significance test will
-		reject $H_0$ when in fact $H_0$ is true.
+		reject $H_0$ when in fact $H_0$ is true. \pause
 		\item \textbf{Type II error ($\beta$):} probability that a significance test will
 		fail to reject $H_0$ when $H_0$ is not true.
 		\item[]
 	\end{itemize}
+\pause 
 	The Type I error is the significance level of the test, $\alpha$,
 	which is often set to 0.05. \\ \ \\
 	As we will see in a moment, the Type II error, $\beta$, is
@@ -906,41 +907,41 @@ Thus we reject $H_0$ at $\alpha = 0.05$.
 			\epsfig{figure=HypTest2.pdf,width=4.2in,height=3.4in}
 		\end{center}
 	\end{figure}
-} \frame{\frametitle{Type I and II errors}
+} 
 
+\frame{\frametitle{Type I and II errors}
 \small
 \begin{itemize}
-	\item the blue area represents the Type I error -- the probability of
+	\item \pause[2] The blue area represents the Type I error -- the probability of
 	rejecting $H_0$ \textbf{if $H_0$ is true}.
-	\item the purple area represents the Type II error -- the probability of
+	\item \pause[3] The purple area represents the Type II error -- the probability of
 	\textit{not} rejecting $H_0$ \textbf{if $H_A$ is in fact true} (and therefore $H_0$
 	should be rejected). 
 \end{itemize}
 
 \vspace*{-0.2in}
 
-	\begin{figure}
-		\begin{center}
-			\includegraphics[scale=0.35]{HypTest3.pdf}
-		\end{center}
-	\end{figure}
+\pause[1]
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.30]{HypTest3-2.pdf}
+	\end{center}
+\end{figure}
 } 
 
 
 \begin{frame}[fragile]{Type I and II errors}
+\small
+\begin{itemize}
+	%\item the variability of the sampling distribution of $\overline{y}$ 
+	\item Notice the distribution of the alternative has a different center, but the same SD 
+	\item The distance between $\mu_0$ and the true value of $\mu$ (in our previous slide we called this $\mu_A$) will affect the Type II error. This distance is denoted as $\Delta$.
+\end{itemize}
 
 
-\begin{minipage}{0.47\textwidth}
-	\small
-			\begin{enumerate}
-		\item[(i)] the variability of the sampling distribution of $\overline{y}$ 
-		\item[(ii)] the distance between $\mu_0$ and the true value of $\mu$ (in our previous slide we called this $\mu_A$) will affect the Type II error
-	\end{enumerate}
+\centering
+\includegraphics[scale=0.30]{HypTest3-3.pdf}
 
-\end{minipage}
-\begin{minipage}{0.47\textwidth}
-\includegraphics[scale=0.25]{HypTest3.pdf}
-\end{minipage}	
 
 
 \end{frame}
@@ -958,7 +959,7 @@ Thus we reject $H_0$ at $\alpha = 0.05$.
 \vspace*{-0.08in}
 
 \centering
-\includegraphics[scale=0.35]{HypTest3.pdf}
+\includegraphics[scale=0.31]{HypTest3-3.pdf}
 
 
 \end{frame}
@@ -966,29 +967,52 @@ Thus we reject $H_0$ at $\alpha = 0.05$.
 
 
 
-\begin{frame}{Statistical Power and Sample Size: 3 questions}
+\begin{frame}{Power and Sample Size: 3 questions}
 
 \begin{enumerate}
 	\setlength\itemsep{1em}
-	\item How much water a farmer/supplier could add to the milk before (s)he has a 10\% , 50\%, 80\%
-	chance of getting caught (of the buyer ‘detecting’ the cheating)
-	\item Assume a 99:1 mix of mild and water, and ask what the chances are of detecting cheating if the buyer uses samples
-	n=10, 15 or 20 rather than just 5 measurements
-	\item At what $n$ does the chance of detecting cheating reach 80\%, a commonly used (but arbitrary) criterion used in sample-size planning by investigators seeking funding for their proposed research
-\end{enumerate}
+	\item How much water a supplier could add to the milk before they have a 10\% , 50\%, 80\%
+	chance of getting caught, i.e., of the buyer detecting the cheating ? \pause
+	\item Assume a 99:1 mix of milk and water. What are the chances of detecting cheating if the buyer uses samples $n$=10, 15 or 20 rather than just 5 measurements? \pause
+	\item At what $n$ does the chance of detecting cheating reach 80\%? (\textit{a commonly used, but arbitrary, criterion used in sample-size planning by investigators seeking funding for their proposed research}
+	\end{enumerate}
+
 \end{frame}
 
 
-\section{How much water a farmer/supplier could add to the milk before (s)he has a 10\% , 50\%, 80\%
-	chance of getting caught (of the buyer detecting the cheating)}
+\section{How much water a supplier could add to the milk before they have a 10\% , 50\%, 80\% chance of getting caught, i.e., of the buyer detecting the cheating ?}
 
 \begin{frame}{Statistical Power: the chance of getting caught}
 \begin{itemize}
 	\setlength\itemsep{1em}
-	\item We now want to know how much water a farmer could add to the milk before they have a 10\% , 50\%, 80\% chance of getting caught (of the buyer detecting the cheating). 
-	\item Assume the buyer continues to use an $n$ of 5, and the same $\sigma =0.008^{\circ}$C, and  bases the boundary for rejecting/accepting the product on a $\alpha = 0.05$, and a 1-sided test which translates to the buyer setting the cutoff at $$-0.540 + 1.645 \times 0.008/\sqrt{5}  = -0.534^{\circ}\textrm{C}.$$
+	\item We want to know how much water a farmer could add to the milk before they have a 10\% , 50\%, 80\% chance of getting caught (of the buyer detecting the cheating). 
+	\item Assume the buyer continues to use an $n=5$, and the same $\sigma =0.008^{\circ}$C, and  bases the boundary for rejecting/accepting the product on a $\alpha = 0.05$, and a 1-sided test which translates to the buyer setting the cutoff at $$-0.540 + 1.645 \times 0.008/\sqrt{5}  = -0.534^{\circ}\textrm{C}.$$
 	\item This is equivalent to \texttt{qnorm(p = 0.95, mean = -0.540, sd = 0.008/sqrt(5))}
 \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{The cutoff at $\alpha = 0.05$}
+\begin{itemize}
+	\item $-0.540 + 1.645 \times 0.008/\sqrt{5}  = -0.534^{\circ}\textrm{C}.$
+\end{itemize}
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlstd{mosaic}\hlopt{::}\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlnum{0.95}\hlstd{,} \hlkwc{mean} \hlstd{=} \hlopt{-}\hlnum{0.540}\hlstd{,} \hlkwc{sd} \hlstd{=} \hlnum{0.008}\hlopt{/}\hlkwd{sqrt}\hlstd{(}\hlnum{5}\hlstd{))}
+\end{alltt}
+
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-6-1} 
+
+}
+
+
+\begin{verbatim}
+## [1] -0.5341152
+\end{verbatim}
+
+\end{knitrout}
 \end{frame}
 
 
@@ -997,9 +1021,21 @@ Thus we reject $H_0$ at $\alpha = 0.05$.
 \small
 \begin{itemize}
 	\setlength\itemsep{1em}
-	\item Assume that  mixtures of M\% milk and W\% water  would freeze at a mean of $$\mu =  (M/100) \times -0.545^{\circ}C + (W/100) \times 0 ^{\circ}C$$ and that the $\sigma$ would remain unchanged. 
-	\item Thus, mixtures of 99\% milk and 1\% water  would freeze at a mean of $\mu =  (99/100) \times -0.540^{\circ}C + (1/100) \times 0 ^{\circ}C = -0.5346 ^{\circ} C.$ Mixtures of 98:2  would freeze at $\mu =  -0.5292^{\circ}C.$  
-\end{itemize}
+	\item Assume that  mixtures of M\% milk and W\% water  would freeze at a mean of $$\mu =  (M/100) \times -0.545^{\circ}C + (W/100) \times 0 ^{\circ}C$$ and that the $\sigma$ would remain unchanged. \pause 
+	\item Thus, mixtures of 99\% milk and 1\% water  would freeze at a mean of $\mu =  (99/100) \times -0.540^{\circ}C + (1/100) \times 0 ^{\circ}C = -0.5346 ^{\circ} C.$ 
+	\end{itemize}
+
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		\% milk & \% water & mean ($\mu$) \\ 
+		\hline 
+		99 & 1 & -0.5346$^{\circ}C$ \\ 
+		98 & 2 & -0.5292$^{\circ}C$ \\ 
+		97 & 3 & -0.5238$^{\circ}C$ \\ 
+		\hline 
+	\end{tabular} 
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -1027,8 +1063,7 @@ it is based on the \underline{null} distribution shown at the bottom.
 \end{frame}
 
 
-\section{Assume a 99:1 mix of mild and water, and ask what the chances are of detecting cheating if the buyer uses samples
-	n=10, 15 or 20 rather than just 5 measurements}
+\section{Assume a 99:1 mix of milk and water. What are the chances of detecting cheating if the buyer uses samples $n$=10, 15 or 20 rather than just 5 measurements?}
 
 \begin{frame}{More measurements}
 
@@ -1067,7 +1102,7 @@ You can check these for yourself in \texttt{R} using this expression:\\ \ \\
 \end{frame}
 
 
-\section{At what $n$ does the chance of detecting cheating reach 80\%, a commonly used (but arbitrary) criterion used in sample-size planning by investigators seeking funding for their proposed research}
+\section{At what $n$ does the chance of detecting cheating reach 80\%?}
 
 \begin{frame}{What sample size needed?}
 
@@ -1147,7 +1182,7 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-7-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-8-1} 
 
 }
 
@@ -1167,7 +1202,7 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 \end{alltt}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-8-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-9-1} 
 
 }
 
@@ -1196,7 +1231,7 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-10-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-11-1} 
 
 }
 
@@ -1219,7 +1254,7 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-12-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-13-1} 
 
 }
 
@@ -1273,7 +1308,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-13-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-14-1} 
 
 }
 
@@ -1287,7 +1322,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-14-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-15-1} 
 
 }
 
@@ -1383,7 +1418,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \end{alltt}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-16-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-17-1} 
 
 }
 
@@ -1409,7 +1444,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \end{alltt}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-18-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-19-1} 
 
 }
 
@@ -1656,7 +1691,7 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 \end{verbatim}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-25-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-26-1} 
 
 }
 
