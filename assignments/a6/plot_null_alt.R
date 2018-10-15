@@ -7,11 +7,14 @@
 #'   Defaults to 'less'
 #' @param legend show legend? Defaults to TRUE
 #' @param ... other arguments passed to graphics::title
+#' @details requires the latex2exp package to be installed
 
 power_plot <- function(n, s, mu0, mha, cutoff, 
                        alternative = c("less","greater"),
                        legend = TRUE, ...) {
   
+  if (!requireNamespace("latex2exp")) 
+    stop("you need to install the 'latex2exp' package for this function to work")
   cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", 
                  "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
   alternative <- match.arg(alternative)

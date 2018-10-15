@@ -1,13 +1,13 @@
 {
-    "path" : "~/git_repositories/epib607/slides/sample_size",
+    "path" : "~/git_repositories/epib607/assignments/a6",
     "sortOrder" : [
-        {
-            "ascending" : false,
-            "columnIndex" : 4
-        },
         {
             "ascending" : true,
             "columnIndex" : 2
+        },
+        {
+            "ascending" : false,
+            "columnIndex" : 4
         }
     ]
 }
