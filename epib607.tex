@@ -1143,10 +1143,73 @@ Assignment 5 due by 11:59pm\\
 \centering
 \begin{tabular}{l}
 \hline
-\\
+1. [Epi Seminar (4-5 pm): Banning P-value use, or Misuse?](https://www.mcgill.ca/epi-biostat-occh/files/epi-biostat-occh/shernandez-diaz-announcement-15oct18.pdf?utm\_medium=email\&utm\_campaign=EBOH-e-News\&utm\_source=Envoke-All-contacts)\\
+\hline
+2. [P-values, Power and Sample Size](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sample\_size/EPIB607\_sample\_size.pdf)\\
 \hline
 \end{tabular}
 \end{table}
+
+\subsubsection{Code for distribution plots under the null and
+alternative}\label{code-for-distribution-plots-under-the-null-and-alternative}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{source}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R"}\NormalTok{)}
+
+\NormalTok{mu0 <-}\StringTok{ }\OperatorTok{-}\FloatTok{0.540} \CommentTok{# mean under the null}
+\NormalTok{mha <-}\StringTok{ }\FloatTok{0.99}\OperatorTok{*-}\FloatTok{0.540} \CommentTok{# mean under the alternative}
+\NormalTok{s <-}\StringTok{ }\FloatTok{0.0080} \CommentTok{# sample/population SD}
+\NormalTok{n <-}\StringTok{ }\DecValTok{5} \CommentTok{# sample size}
+\NormalTok{cutoff <-}\StringTok{ }\NormalTok{mu0 }\OperatorTok{+}\StringTok{ }\KeywordTok{qnorm}\NormalTok{(}\FloatTok{0.95}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{s }\OperatorTok{/}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(n)}
+
+\CommentTok{#' Plot null and alternative distributions}
+\CommentTok{#' @param n sample size}
+\CommentTok{#' @param s population standard deviation (or estimated standard deviation)}
+\CommentTok{#' @param mu0 mean under the null hypothesis}
+\CommentTok{#' @param mha mean under the alternative hypothesis}
+\CommentTok{#' @param alternative is alternative hypothesis greater than or less than mu0.}
+\CommentTok{#'   Defaults to 'less'}
+\CommentTok{#' @param legend show legend? Defaults to TRUE}
+\CommentTok{#' @param ... other arguments passed to graphics::title}
+\CommentTok{#' @details requires the latex2exp package to be installed}
+
+\KeywordTok{power_plot}\NormalTok{(}\DataTypeTok{n =}\NormalTok{ n, }
+           \DataTypeTok{s =}\NormalTok{ s,  }
+           \DataTypeTok{mu0 =}\NormalTok{ mu0, }
+           \DataTypeTok{mha =}\NormalTok{ mha, }
+           \DataTypeTok{cutoff =}\NormalTok{ cutoff,}
+           \DataTypeTok{alternative =} \StringTok{"greater"}\NormalTok{,}
+           \DataTypeTok{xlab =} \StringTok{"Freezing point (degrees C)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Code for looking at power as a function of sample size
+and
+noise}\label{code-for-looking-at-power-as-a-function-of-sample-size-and-noise}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{source}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R"}\NormalTok{)}
+
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(manipulate) }\CommentTok{# or library(manipulate)}
+
+\NormalTok{mu0 <-}\StringTok{ }\OperatorTok{-}\FloatTok{0.540} \CommentTok{# mean under the null}
+\NormalTok{mha <-}\StringTok{ }\FloatTok{0.99}\OperatorTok{*-}\FloatTok{0.540} \CommentTok{# mean under the alternative}
+\NormalTok{s <-}\StringTok{ }\FloatTok{0.0080} \CommentTok{# sample/population SD}
+\NormalTok{n <-}\StringTok{ }\DecValTok{5} \CommentTok{# sample size}
+\NormalTok{cutoff <-}\StringTok{ }\NormalTok{mu0 }\OperatorTok{+}\StringTok{ }\KeywordTok{qnorm}\NormalTok{(}\FloatTok{0.95}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{s }\OperatorTok{/}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(n)}
+
+\NormalTok{manipulate}\OperatorTok{::}\KeywordTok{manipulate}\NormalTok{(}
+\KeywordTok{power_plot}\NormalTok{(}\DataTypeTok{n =}\NormalTok{ sample_size, }\DataTypeTok{s =}\NormalTok{ sample_sd,  }
+    \DataTypeTok{mu0 =}\NormalTok{ mu0, }\DataTypeTok{mha =}\NormalTok{ mha, }
+    \DataTypeTok{cutoff =}\NormalTok{ cutoff,}
+    \DataTypeTok{alternative =} \StringTok{"greater"}\NormalTok{,}
+    \DataTypeTok{xlab =} \StringTok{"Freezing point (degrees C)"}\NormalTok{),}
+    \DataTypeTok{sample_size =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{100}\NormalTok{),}
+    \DataTypeTok{sample_sd =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\FloatTok{0.01}\NormalTok{, }\DataTypeTok{initial =} \FloatTok{0.008}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
 \subsection{Wednesday October 17}\label{wednesday-october-17}
 
@@ -1620,7 +1683,7 @@ categorical quantity:
 }
 
 \caption{Commonly used aesthetics in data visualization.
-top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-60}
+top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-62}
 \end{figure}
 
 \section{Coordinate systems}\label{coordinate-systems}
@@ -1654,7 +1717,7 @@ locations in a flat two-dimensional plane.
 }
 
 \caption{Commonly used coordinate systems. Chapter 3
-\citet{Yau}.}\label{fig:unnamed-chunk-61}
+\citet{Yau}.}\label{fig:unnamed-chunk-63}
 \end{figure}
 
 \section{Scales}\label{scales}
@@ -1685,7 +1748,7 @@ one-to-one, then the data visualization becomes ambiguous.
 \caption{Scales link data values to aesthetics. Here, the numbers 1
 through 4 have been mapped onto a position scale, a shape scale, and a
 color scale. For each scale, each number corresponds to a unique
-position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-62}
+position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-64}
 \end{figure}
 
 \section{Context}\label{context}
@@ -1800,7 +1863,7 @@ differentiate different categories.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-63-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-65-1} \end{center}
 
 Also see the
 \href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
@@ -1882,7 +1945,7 @@ for whom at least two-thirds of the students took the SAT.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-64-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-66-1} \end{center}
 
 This plot uses the visual cue of position to represent the math SAT
 score on the vertical axis with. The categorical variable of state is
@@ -1919,7 +1982,7 @@ being used to distinguish sex.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-65-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-67-1} \end{center}
 
 \section{Exercises}\label{exercises}
 
