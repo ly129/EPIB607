@@ -1,177 +1,146 @@
-rm(list=ls())
+#' Plot null and alternative distributions
+#' @param n sample size
+#' @param s population standard deviation (or estimated standard deviation)
+#' @param mu0 mean under the null hypothesis
+#' @param mha mean under the alternative hypothesis
+#' @param alternative is alternative hypothesis greater than or less than mu0.
+#'   Defaults to 'less'
+#' @param legend show legend? Defaults to TRUE
+#' @param ... other arguments passed to graphics::title
 
-#this code works for greater alternative 
-alternative <- "greater"
-
-mu.m=-0.540 # mu under the null
-mu.1pct = 0.99* mu.m # under the alternative
-sigma=0.008 # sd
-n=20 # sample size
-SEM = sigma/sqrt(n)
-
-if(alternative == "greater"){
-  crit.value = mu.m + qnorm(0.95)*SEM
-} else {
-  crit.value = mu.m - qnorm(0.95)*SEM
+power_plot <- function(n, s, mu0, mha, cutoff, 
+                       alternative = c("less","greater"),
+                       legend = TRUE, ...) {
+  
+  cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", 
+                 "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+  alternative <- match.arg(alternative)
+  SEM <- s / sqrt(n)
+  
+  if (alternative == "greater") {
+    if (mha < mu0) stop("mean under Ha is less than the null. select alternative='less'")
+    
+    x <- seq(mu0 - 4.25*SEM, mha + 3*SEM, length = 1000)
+    dh0 <- dnorm(x, mu0, SEM)
+    dh1 <- dnorm(x, mha, SEM)
+    ht <- 1.1 * dnorm(mu0, mu0, SEM)
+    
+    
+    plot.new()
+    plot.window(xlim = range(x), ylim = c(.01*ht, 3.2*ht)) 
+    axis(1)
+    title(...)
+    # null
+    green <- seq(mu0 - 3 * SEM, cutoff, length.out = 1000)
+    d <- c(dnorm(green,mu0,SEM),0)
+    I <- 1
+    polygon(c(green,cutoff),d + I * ht, col = cbPalette[4], border = NA)
+    
+    red <- seq(cutoff, mu0 + 3 * SEM, length.out = 1000)
+    d <- c(dnorm(red, mu0, SEM), 0)
+    polygon(c(red,cutoff), d + I * ht, col = "red", border = NA)
+    points(mu0, I * ht, cex = 0.7, pch = 19)
+    text(labels = latex2exp::TeX(sprintf("$\\mu_{H_0} = %#.4f$", mu0)), 
+         x = mu0, y = I*ht*.90)
+    
+    # alternative
+    green <- seq(mha - 3 * SEM, cutoff, length.out = 1000)
+    d <- c(dnorm(green, mha, SEM), 0)
+    polygon(c(green,cutoff),d + (I + 1) * ht, col = cbPalette[6], border = NA)
+    points(mha, (I + 1) * ht, cex = 0.7, pch = 19)
+    text(labels = latex2exp::TeX(sprintf("$\\mu_{H_A} = %#.4f$", mha)), 
+         x = mha, y = (I + 1) * ht * .95)
+    
+    red <- seq(cutoff, mha + 3 * SEM, length.out = 1000)
+    d <- c(dnorm(red, mha, SEM), 0)
+    polygon(c(red,cutoff), d + (I + 1) * ht, col = cbPalette[2], border = NA)
+    
+    alpha <- pnorm(cutoff, mu0, SEM, lower.tail = FALSE)
+    beta <- pnorm(cutoff, mha, SEM)
+    
+    labs.h0 <- latex2exp::TeX(sprintf("$\\alpha$ = %#.3f", alpha))
+    labs.h1a <- latex2exp::TeX(sprintf("$\\beta$ = %#.3f", beta))
+    labs.h1b <- latex2exp::TeX(sprintf("$1 - \\beta$ = %#.3f",1 - beta))
+    
+    if (legend) legend("topleft", legend = c(labs.h0, labs.h1a, labs.h1b), pch = 15,cex = 1.2,
+                       col = c("red", cbPalette[c(6,2)]))
+    
+    segments(cutoff,(I)*ht*0.2,
+             cutoff,(I+1)*ht,lwd=0.5,col="red")
+    text(labels = latex2exp::TeX(sprintf("cutoff = %#.4f$", cutoff)), 
+         x = cutoff, y = (I)*ht*0.15)
+    
+    arrows(mu0,(I-0.25)*ht,
+           cutoff,(I-0.25)*ht,length=0.05,
+           code=3,angle=20,col=cbPalette[6],lwd=1.5)
+    arrows(cutoff,(I+1-0.25)*ht,
+           mha,(I+1-0.25)*ht,length=0.05,
+           code=3,angle=15,col="red",lwd=1.5)
+    segments(mha, I * ht, mha,
+             (I + 2) * ht * 1.2,lwd=0.5,col="grey60")
+  } 
+  
+  if (alternative == "less") {
+    if (mha > mu0) stop("mean under Ha is greater than the null. select alternative='greater'")
+    # browser()
+    x <- seq(mha - 4.25*SEM, mu0 + 3*SEM, length = 1000)
+    dh0 <- dnorm(x, mu0, SEM)
+    dh1 <- dnorm(x, mha, SEM)
+    ht <- 1.1 * dnorm(mu0, mu0, SEM)
+    
+    plot.new()
+    plot.window(xlim = range(x), ylim = c(.01*ht, 3.2*ht)) 
+    axis(1)
+    title(...)
+    # null
+    green <- seq(mu0 + 3 * SEM, cutoff, length.out = 1000)
+    d <- c(dnorm(green,mu0,SEM),0)
+    I <- 1
+    polygon(c(green,cutoff),d + I * ht, col = cbPalette[4], border = NA)
+    
+    red <- seq(mu0 - 3 * SEM, cutoff, length.out = 1000)
+    d <- c(dnorm(red, mu0, SEM), 0)
+    polygon(c(red,cutoff), d + I * ht, col = "red", border = NA)
+    points(mu0, I * ht, cex = 0.7, pch = 19)
+    text(labels = latex2exp::TeX(sprintf("$\\mu_{H_0} = %#.4f$", mu0)), 
+         x = mu0, y = I*ht*.90)
+    
+    # alternative
+    green <- seq(mha + 3 * SEM, cutoff, length.out = 1000)
+    d <- c(dnorm(green, mha, SEM), 0)
+    polygon(c(green,cutoff),d + (I + 1) * ht, col = cbPalette[6], border = NA)
+    points(mha, (I + 1) * ht, cex = 0.7, pch = 19)
+    text(labels = latex2exp::TeX(sprintf("$\\mu_{H_A} = %#.4f$", mha)), 
+         x = mha, y = (I + 1) * ht * .95)
+    
+    red <- seq(mha - 3 * SEM, cutoff, length.out = 1000)
+    d <- c(dnorm(red, mha, SEM), 0)
+    polygon(c(red,cutoff), d + (I + 1) * ht, col = cbPalette[2], border = NA)
+    
+    alpha <- pnorm(cutoff, mu0, SEM, lower.tail = TRUE)
+    beta <- pnorm(cutoff, mha, SEM, lower.tail = FALSE)
+    
+    labs.h0 <- latex2exp::TeX(sprintf("$\\alpha$ = %#.3f", alpha))
+    labs.h1a <- latex2exp::TeX(sprintf("$\\beta$ = %#.3f", beta))
+    labs.h1b <- latex2exp::TeX(sprintf("$1 - \\beta$ = %#.3f",1 - beta))
+    
+    if (legend) legend("topleft", legend = c(labs.h0, labs.h1a, labs.h1b), pch = 15,cex = 1.2,
+                       col = c("red", cbPalette[c(6,2)]))
+    
+    segments(cutoff,(I)*ht*0.2,
+             cutoff,(I+1)*ht,lwd=0.5,col="red")
+    text(labels = latex2exp::TeX(sprintf("cutoff = %#.4f$", cutoff)), 
+         x = cutoff, y = (I)*ht*0.15)
+    
+    arrows(mu0,(I-0.25)*ht,
+           cutoff,(I-0.25)*ht,length=0.05,
+           code=3,angle=20,col=cbPalette[6],lwd=1.5)
+    arrows(cutoff,(I+1-0.25)*ht,
+           mha,(I+1-0.25)*ht,length=0.05,
+           code=3,angle=15,col="red",lwd=1.5)
+    segments(mha, I * ht, mha,
+             (I + 2) * ht * 1.2,lwd=0.5,col="grey60")
+    
+    
+  }
 }
-
-Green="blue"
-ht=1.6*dnorm(0,0,SEM)
-
-dev.off()
-par(mfrow=c(1,1),mar = c(5,0.001,0.001,0.001) )
-plot(c(mu.m-4.25*SEM,mu.1pct+3*SEM),c(-1.5*ht,16*ht), 
-     col="white",xlab="Freezing point (degrees C)")
-segments(mu.1pct,0,mu.1pct,
-         12*ht,lwd=0.5,col="grey60")
-# text(-0.51,3*ht,"Probability (pct.)
-#      of exceeding cutoff",adj=c(1,0),col="red")
-# 
-# text(-0.555,16*ht,
-#      expression(paste(
-#        sigma,
-#        " = 0.0080;  SEM = ",
-#        sigma/sqrt(n))) ,
-#      adj=c(0,0))
-# 
-# text(-0.555,15*ht,
-#      "cutoff = -0.54 + 1.645*SEM (alpha=0.05, 1 sided alternative)",
-#      adj=c(0,0))
-# text(-0.555,16*ht,
-#      expression(paste(
-#        sigma,
-#        " = 0.0080;  SEM = ",
-#        sigma/sqrt(n))) ,
-#      adj=c(0,0))
-
-# n=5
-# sem = sigma/sqrt(n)
-# 
-# n80 = round(( ( 1.645+0.84)^2 ) * (sigma/0.0054)^2,1)
-
-I=0    
-# for ( m in c(1:2,n80/5,3,4) ){
-  # m=2.72
-  # if(m==1) text(-0.52,-ht/2,"Added Water",
-  #               cex=0.75, adj=c(0,0.5))
-  m = n
-  SEM = sem/sqrt(m)
-  
-  text(-0.55,(I+1.0)*ht,
-       paste("n =",toString(n*m)) ,
-       adj=c(1,0))
-  
-  
-  
-  crit.value = mu.m + 1.646 * SEM
-  
-  rect(mu.m-4*sem,(I-0.8)*ht, mu.1pct+3*sem,(I+2.2)*ht)
-  # null
-  green= seq(mu.m-3*SEM,crit.value,length.out=50)
-  d = c(dnorm(green,mu.m,SEM),0)
-  polygon(c(green,crit.value),d + I*ht,col=Green,border=NA)
-  
-  text(-0.548,(I+1.0)*ht,
-       paste("SEM = ",
-             toString(round(SEM,4))), 
-       cex=0.65,adj=c(0,0))
-  
-  red= seq(crit.value,mu.m+3*SEM,length.out=50)
-  d = c(dnorm(red,mu.m,SEM),0)
-  polygon(c(red,crit.value),d + I*ht,col="red",border=NA)
-  points(mu.m,I*ht,cex=0.3,pch=19)
-  
-  #alt
-  green= seq(mu.1pct-3*SEM,
-             crit.value,length.out=50)
-  d = c(dnorm(green,mu.1pct,SEM),0)
-  polygon(c(green,crit.value),d + (I+1)*ht,col=Green,border=NA)
-  points(mu.1pct,(I+1)*ht,cex=0.3,pch=19)
-  
-  red= seq(crit.value,mu.1pct+3*SEM,length.out=50)
-  d = c(dnorm(red,mu.1pct,SEM),0)
-  polygon(c(red,crit.value),d + (I+1)*ht,col="red",border=NA)
-  
-  segments(crit.value,I*ht ,
-           crit.value,(I+1)*ht,lwd=0.5,col="red")
-  
-  arrows(mu.m,(I-0.25)*ht,
-         crit.value,(I-0.25)*ht,length=0.05,
-         code=3,angle=20,col=Green,lwd=1.5)
-  arrows(crit.value,(I+1-0.25)*ht,
-         mu.1pct,(I+1-0.25)*ht,length=0.05,
-         code=3,angle=15,col="red",lwd=1.5)
-  
-  x = mu.1pct+1*SEM
-  y = (I+1)*ht+0.8*max(d)
-  
-  if(m!=round(m))rect(
-    x - 0.0011,y-0.10*ht,
-    x + 0.0011,y+0.60*ht,
-    col="beige",border="purple",
-    lwd=2)
-  
-  text(x, y,
-       paste(toString( round(100*pnorm( 
-         crit.value,mu.1pct, 
-         SEM,lower.tail=FALSE)) ),"%",sep=""),
-       adj=c(0.5,0),col="red")
-  
-  if(m!=round(m)){
-    text(-0.5305,(I+1.55)*ht,"qnorm(0.8,
-         lower.tail=FALSE)
-         -0.84",		cex=0.65,family="mono",adj=c(0,0.5),col="red")
-    x = (crit.value+mu.1pct)/2
-    lines(x+c(0,0,0.005),
-          (I+1-0.25+c(0,-.3,-.3))*ht,col="red")
-    text(x+0.005,
-         (I+1-0.25-0.3)*ht,
-         "0.84 * SEM",col="red",
-         adj=c(-0.1,0.5),cex=0.65)
-    
-    text(-0.553,(I-0.4)*ht,"qnorm(0.05,
-         lower.tail=FALSE)
-         1.96",		cex=0.65,family="mono",adj=c(0,0),col=Green)
-    
-    x = (crit.value+mu.m)/2
-    lines(x+c(0,0,-0.005),
-          (I-0.25+c(0,-.15,-.15))*ht,col=Green)
-    text(x-0.005,
-         (I-0.25-0.15)*ht,
-         "1.645 * SEM",col=Green,
-         adj=c(1.1,0),cex=0.65)
-    
-    sum <- "(1.645 + 0.84)"
-    
-    txt = substitute(
-      paste("n = ",  
-            s^2,
-            phantom(0),
-            scriptstyle(x), 
-            phantom(0), 
-            (sigma/Delta)^2),
-      list(s = sum))
-    
-    rect(-0.554,(I+1.55)*ht,
-         -0.5445,(I+2.17)*ht,
-         col="beige",border="purple",
-         lwd=4)
-    
-    
-    
-    text(-0.553,(I+1.6)*ht,txt, 
-         adj=c(0,0), cex=0.75)
-    
-    arrows(mu.m,   (I-0.6)*ht,
-           mu.1pct,(I-0.6)*ht,length=0.05,
-           code=3,angle=20,lwd=1.5)
-    text(mu.1pct,(I-0.6)*ht,
-         expression(paste(
-           Delta, " = 1.645*SEM + 0.84*SEM")),
-         adj=c(-0.1,0.5), cex=0.75
-    )
-    
-    
-  } # special
-  
-  I = I+3
