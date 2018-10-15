@@ -11,7 +11,7 @@ cutoff <- mu0 + 1.646 * SEM # cutoff
 
 # x <- seq(mu0-3.5*SEM, mu0+3.5*SEM, length=1000)
 
-
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
 
 power_plot <- function(n, s, mu0, mha, cutoff, 
                        alternative = c("less","greater"),
@@ -163,6 +163,68 @@ power_plot(n = n, s = s,
            # alternative = "greater",
            xlab = "Freezing point (degrees C)")
 
+n <- 13.6
+s <- 0.0080
+mu0 <- -0.540
+mha <- 0.99*-0.540
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+power_plot(n = n, s = s,  
+           mu0 = mu0, mha = mha, 
+           cutoff = cutoff,
+           alternative = "greater",
+           xlab = "Freezing point (degrees C)")
+I = 1
+axis(2)
+text(-0.5325,600,"qnorm(0.8, \nlower.tail=FALSE)=\n-0.84",
+     cex=.65,family="mono",adj=c(0,0.5),col="red")
+x = (cutoff+mha)/2
+text(x-.001, 330,
+     "0.84 * SEM",col="red",
+     adj=c(-0.1,0.5),cex=0.65)
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", 
+               "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+text(-0.548,100,"qnorm(0.05, \nlower.tail=FALSE)=\n 1.96",
+     cex=0.65,family="mono",adj=c(0,0),col=cbPalette[6])
+text(x-.001, 130, "1.645 * SEM",col=cbPalette[6], 
+     adj=c(1.1,0),cex=0.65)
+arrows(mu0,   100,
+       mha,100,length=0.05,
+       code=3,angle=20,lwd=1.5)
+text(mha-.0055,80, expression(paste(
+       Delta, " = 1.645*SEM + 0.84*SEM")),
+     adj=c(-0.1,0.5), cex=0.75)
+
+n <- 13.6
+s <- 0.0080
+mu0 <- -0.540
+mha <- 0.99*-0.540
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+power_plot(n = n, s = s,  
+           mu0 = mu0, mha = mha, 
+           cutoff = cutoff,
+           alternative = "greater",
+           xlab = "Freezing point (degrees C)")
+I = 1
+axis(2)
+text(-0.5325,600,"qnorm(0.8, \nlower.tail=FALSE)=\n-0.84",
+     cex=.65,family="mono",adj=c(0,0.5),col="red")
+x = (cutoff+mha)/2
+text(x-.001, 330,
+     "0.84 * SEM",col="red",
+     adj=c(-0.1,0.5),cex=0.65)
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", 
+               "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+text(-0.548,100,"qnorm(0.05, \nlower.tail=FALSE)=\n 1.645",
+     cex=0.65,family="mono",adj=c(0,0),col=cbPalette[6])
+text(x-.001, 130, "1.645 * SEM",col=cbPalette[6], 
+     adj=c(1.1,0),cex=0.65)
+arrows(mu0,   100,
+       mha,100,length=0.05,
+       code=3,angle=20,lwd=1.5)
+text(mha-.0055,80, latex2exp::TeX("$\\Delta$= 1.645*SEM + 0.84*SEM"),
+     adj=c(-0.1,0.5), cex=0.75)
+
+
 pacman::p_load(manipulate)
 manipulate::manipulate(power_plot(n = n, s = s,  
                                   mu0 = mu0, mha = mha, 
@@ -173,3 +235,29 @@ manipulate::manipulate(power_plot(n = n, s = s,
                        s = manipulate::slider(40, 200))
 
 
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+pacman::p_load(manipulate) # or library(manipulate)
+mu0 <- -0.540 # mean under the null
+mha <- 0.99*-0.540 # mean under the alternative
+s <- 0.0080
+n <- 5
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+manipulate::manipulate(
+  power_plot(n = sample_size, s = sample_sd,  
+             mu0 = mu0, mha = mha, 
+             cutoff = cutoff,
+             alternative = "greater",
+             xlab = "Freezing point (degrees C)"),
+  sample_size = manipulate::slider(5, 100),
+  sample_sd = manipulate::slider(0.001, 0.01, initial = 0.008))
+
+
+
+
+power_plot(n = 9, 
+           s = 15,  
+           mu0 = 100, 
+           mha = 110, 
+           cutoff = 100 + qnorm(0.95) * 15 / sqrt(9),
+           alternative = "greater",
+           xlab = "Average IQ Score")

@@ -235,3 +235,29 @@ manipulate::manipulate(power_plot(n = n, s = s,
                        s = manipulate::slider(40, 200))
 
 
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+pacman::p_load(manipulate) # or library(manipulate)
+mu0 <- -0.540 # mean under the null
+mha <- 0.99*-0.540 # mean under the alternative
+s <- 0.0080
+n <- 5
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+manipulate::manipulate(
+  power_plot(n = sample_size, s = sample_sd,  
+             mu0 = mu0, mha = mha, 
+             cutoff = cutoff,
+             alternative = "greater",
+             xlab = "Freezing point (degrees C)"),
+  sample_size = manipulate::slider(5, 100),
+  sample_sd = manipulate::slider(0.001, 0.01, initial = 0.008))
+
+
+
+
+power_plot(n = 9, 
+           s = 15,  
+           mu0 = 100, 
+           mha = 110, 
+           cutoff = 100 + qnorm(0.95) * 15 / sqrt(9),
+           alternative = "greater",
+           xlab = "Average IQ Score")

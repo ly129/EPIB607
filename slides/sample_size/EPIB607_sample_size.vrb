@@ -1,0 +1,17 @@
+\frametitle{Null and alternative distribution plots}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{power_plot}\hlstd{(}\hlkwc{n} \hlstd{=} \hlnum{9}\hlstd{,} \hlkwc{s} \hlstd{=} \hlnum{15}\hlstd{,} \hlkwc{mu0} \hlstd{=} \hlnum{100}\hlstd{,} \hlkwc{mha} \hlstd{=} \hlnum{110}\hlstd{,}
+        \hlkwc{cutoff} \hlstd{=} \hlnum{100} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlnum{0.95}\hlstd{)} \hlopt{*} \hlnum{15} \hlopt{/} \hlkwd{sqrt}\hlstd{(}\hlnum{9}\hlstd{),}
+        \hlkwc{alternative} \hlstd{=} \hlstr{"greater"}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"Average IQ Score"}\hlstd{)}
+\end{alltt}
+
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-17-1}
+
+}
+
+
+
+\end{knitrout}

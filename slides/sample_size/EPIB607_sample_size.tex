@@ -741,6 +741,17 @@ Don't treat any one study as last word on the topic. \newline
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Testing using the $p$-value}
+Appropriate wordings to accompany $p=0.0252$:
+\begin{itemize}
+	\setlength\itemsep{1.5em}
+	\item If we test samples of \underline{pure milk}, only 2.6\% of test results would be this high or higher.
+	\pause 
+	\item \underline{IF} the \underline{only} factor operating here were sampling variation, only  2.6\% of test results on pure milk  \underline{would be} this high or higher.
+\end{itemize}
+
+\end{frame}
+
 \begin{frame}[fragile]{Test using a $Z$ statistic}
 \begin{itemize}
 	\setlength\itemsep{.7em}
@@ -1250,6 +1261,330 @@ You can check these for yourself in \texttt{R} using this expression:\\ \ \\
 \end{frame}
 
 
+
+\begin{frame}[fragile]{Code for null and alternative distribution plots}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{source}\hlstd{(}\hlstr{"https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/
+master/assignments/a6/plot_null_alt.R"}\hlstd{)}
+
+\hlstd{mu0} \hlkwb{<-} \hlopt{-}\hlnum{0.540} \hlcom{# mean under the null}
+\hlstd{mha} \hlkwb{<-} \hlnum{0.99}\hlopt{*-}\hlnum{0.540} \hlcom{# mean under the alternative}
+\hlstd{s} \hlkwb{<-} \hlnum{0.0080} \hlcom{# sample/population SD}
+\hlstd{n} \hlkwb{<-} \hlnum{5} \hlcom{# sample size}
+\hlstd{cutoff} \hlkwb{<-} \hlstd{mu0} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlnum{0.95}\hlstd{)} \hlopt{*} \hlstd{s} \hlopt{/} \hlkwd{sqrt}\hlstd{(n)}
+
+\hlkwd{power_plot}\hlstd{(}\hlkwc{n} \hlstd{= n,}
+        \hlkwc{s} \hlstd{= s,}
+        \hlkwc{mu0} \hlstd{= mu0,}
+        \hlkwc{mha} \hlstd{= mha,}
+        \hlkwc{cutoff} \hlstd{= cutoff,}
+        \hlkwc{alternative} \hlstd{=} \hlstr{"greater"}\hlstd{,}
+        \hlkwc{xlab} \hlstd{=} \hlstr{"Freezing point (degrees C)"}\hlstd{)}
+\end{alltt}
+
+\end{knitrout}
+\end{frame}
+
+
+\begin{frame}[fragile]{Code for power as a function of sample size and noise}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{source}\hlstd{(}\hlstr{"https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/
+master/assignments/a6/plot_null_alt.R"}\hlstd{)}
+
+\hlstd{pacman}\hlopt{::}\hlkwd{p_load}\hlstd{(manipulate)} \hlcom{# or library(manipulate)}
+
+\hlstd{mu0} \hlkwb{<-} \hlopt{-}\hlnum{0.540} \hlcom{# mean under the null}
+\hlstd{mha} \hlkwb{<-} \hlnum{0.99}\hlopt{*-}\hlnum{0.540} \hlcom{# mean under the alternative}
+\hlstd{s} \hlkwb{<-} \hlnum{0.0080}
+\hlstd{n} \hlkwb{<-} \hlnum{5}
+\hlstd{cutoff} \hlkwb{<-} \hlstd{mu0} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlnum{0.95}\hlstd{)} \hlopt{*} \hlstd{s} \hlopt{/} \hlkwd{sqrt}\hlstd{(n)}
+
+\hlstd{manipulate}\hlopt{::}\hlkwd{manipulate}\hlstd{(}
+\hlkwd{power_plot}\hlstd{(}\hlkwc{n} \hlstd{= sample_size,} \hlkwc{s} \hlstd{= sample_sd,}
+        \hlkwc{mu0} \hlstd{= mu0,} \hlkwc{mha} \hlstd{= mha,}
+        \hlkwc{cutoff} \hlstd{= cutoff,}
+        \hlkwc{alternative} \hlstd{=} \hlstr{"greater"}\hlstd{,}
+        \hlkwc{xlab} \hlstd{=} \hlstr{"Freezing point (degrees C)"}\hlstd{),}
+        \hlkwc{sample_size} \hlstd{= manipulate}\hlopt{::}\hlkwd{slider}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{100}\hlstd{),}
+        \hlkwc{sample_sd} \hlstd{= manipulate}\hlopt{::}\hlkwd{slider}\hlstd{(}\hlnum{0.001}\hlstd{,} \hlnum{0.01}\hlstd{,} \hlkwc{initial} \hlstd{=} \hlnum{0.008}\hlstd{))}
+\end{alltt}
+
+\end{knitrout}
+\end{frame}
+
+
+\begin{frame}{Interpreting p-values from statistical tests}
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item In the milk example, an $n=5$ gives an SEM of	$\sigma/\sqrt{5}$ = 0.0080/2236 = 0.0036. So the cutoff for a 1 sided test with $\alpha$ = 0.05 is $1.645 \times 0.0036 = 0.0059$ above -0.5400,
+	i.e,. at - 0.5341. 
+	\item This is computed under the null (innocence) hypothesis, namely that what we are testing is pure milk, with no added water. \pause 
+	\item The 1 sided alternative is that we are testing a `less than 100\%, more than 0\%' mix, where the
+	mean is above (to right of) -0.540, i.e., on the (upper) 'added water' side of the null. 
+	\item Formally, these two hypotheses are 
+	$$\textrm{H}_0: \mu = -0.540; \  H_{alt}: \mu > -0.540.$$
+	\pause 
+	\item Since the mean of the 5 measurements, namely -0.533$^{\circ}$C, is to the right of (\textbf{exceeds}) this threshold, it would be considered `statistically significant at the 0.05 level.' The actual p-value is \texttt{pnorm(-0.533, mean=-0.54, sd = 0.0036, lower.tail=FALSE)} = \underline{0.026}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Is this good evidence that the producer is adding water to the milk?}
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\pause 
+	\item Do  not jump to conclusions and immediately accuse the supplier of cheating
+	\pause 
+	\item In particular, it would not be appropriate -- or accurate -- to say that you are 1 - 0.026 = 0.974 = 97.4\% certain that the supplier is cheating. 
+	\item Remember that a \underline{p-value} is a probability \underline{concerning the data}, \textbf{conditional} on (i.e., computed	under the  assumption that) H$_0$  being (is) true.  In other words, the p-value has to do with P(data $|$ `innocence'), whereas at issue is the reverse,  P(`innocence' $|$ data).
+	\pause 
+	\item As to this latter probability (of being innocent), there are a lot of other factors to consider first, before accusing the supplier of cheating.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Other factors to consider before accusing the supplier}
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item First, did you (re-)check the calculations?  How recently was the instrument 
+	calibrated? etc. \pause 
+	\item JH calls these \textbf{Type III errors}: the data were wrong, or the
+		instrument was wrong, or the technician mis-calculated something. 
+	\item It should remind us that, in the \textit{real} world, there are \textit{many} alternative hypotheses, not just the one.
+	\pause 
+	\item Second, why did you chose to test \textbf{this} supplier? \pause
+	\begin{itemize}
+		\item Is it someone that the manager suspected based on previous data, or based on knowing that he is behind in his loan payments to the bank? 
+		\item Or maybe the laboratory manager merely asked a technician to start randomly testing, and the first supplier (blindly) chosen was the manager's brother-in-law?
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Are all $p$-values created equal?}
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item So, you can see that, just as in medical tests, there are\textbf{ many other pieces of evidence} or information, or circumstances, besides the $p$-value, that bear on the probability of innocence or guilt.
+	\item This is very nicely brought out in the article `Are all p-values created equal?' which you can
+	here: { \footnotesize \url{http://www.biostat.mcgill.ca/hanley/BionanoWorkshop/AreAllSigPValuesCreatedEqual.pdf}}
+	
+	\item Sadly, the mixing up of P(data $|$ hypothesis) and P(data $|$ data) -- often referred to as
+	`The Prosecutor's Fallacy' -- is  common, and can lead to serious harm. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{When does the $p$-value work well?}
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item The use of $p$-values works well in \underline{Quality Control}, where the aim is to detect
+	(the \underline{few})  deviations ('\underline{bad}' ones)  from the desired specifications, to stop and fix	the offending machine, or to flag defective batches. \pause 
+	\item It is not clear that it is equally effective at identifying the (\underline{few}) truly active (`{good}) compounds	via the mass testing of lots of compounds, most of which are expected to be inactive -- and then investing all one's effort in these few `good' ones at the next stage of development.
+\end{itemize}
+\end{frame}
+
+
+\section{Another example on power: Lake Wobegon}
+
+\begin{frame}[fragile]{Power: Lake Wobegon}
+\small
+\begin{itemize}
+	\item It is claimed that the children of Lake Wobegon are above
+	average. Take a simple random sample of 9 children from Lake
+	Wobegon, and measure their IQ to obtain a sample mean of 112.8. 
+	\item IQ scores are scaled to be Normally distributed with mean 100 and
+	standard deviation 15. 
+	\item Does this sample provide evidence to reject the null hypothesis of no difference between children of Lake Wobegon and the general population? \pause 
+	\item[]\item[1.] \textcolor{blue}{Null and alternative hypotheses:} The claim made is
+	that the population of children Lake Wobegon have higher than
+	average intellidence. Thus the null hypothesis is that the
+	population has average intelligence, or a score of 100. Therefore
+	$H_0: \mu=100$, and the (one-sided) alternative is $H_A: \mu >
+	100$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Lower limit of 95\% CI}
+\small
+	\begin{enumerate}
+		\item \underline{Hypotheses.} $H_0: \mu = 100$, $H_A: \mu > 100$.
+		\item \underline{Calculate 95\% CI.}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlstd{mosaic}\hlopt{::}\hlkwd{xqnorm}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.05}\hlstd{,}\hlnum{1}\hlstd{),} \hlnum{112.8}\hlstd{,} \hlnum{15}\hlopt{/}\hlkwd{sqrt}\hlstd{(}\hlnum{9}\hlstd{))}
+\end{alltt}
+
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-16-1} 
+
+}
+
+
+\begin{verbatim}
+## [1] 104.5757      Inf
+\end{verbatim}
+
+\end{knitrout}
+\pause 
+\item \underline{Statement.} The lower limit of the CI excludes $\mu_0=100$, and so \underline{there is evidence to suggest} that the children at Lake Wobegon are brighter than other children at the $\alpha=0.05$ level.
+	\end{enumerate}
+
+\end{frame}
+
+\frame{\frametitle{Power} Steps to finding power:
+	\begin{enumerate}
+		\item State null hypothesis, $H_0$, and state a specific alternative, $H_A$, as the minimum (clinical/substantive) departure from the null hypothesis that would
+		be of interest. \pause
+		\item Find the values of $\overline{y}$ that lead to rejection of
+		$H_0$. \pause
+		\item Calculate the probability of observing the values found in
+		(2) when the alternative is true.
+	\end{enumerate}
+} \frame{\frametitle{Power} Example: Lake Wobegon\\
+	Suppose you hope to use a \textbf{one-sided} test to show that the children from Lake
+	Wobegon are at least 10 points higher than average on the IQ test. What power do you have
+	to detect this with the sample of 9 children if using a 0.05-level test? \\ \ \\ \pause
+	\begin{enumerate}
+		\item \underline{Hypotheses.} $H_0: \mu = 100$, $H_A: \mu > 110$. \pause
+		\item[] \item \underline{Find values of the sample mean that reject the
+			null.}\\ \ \\ The test will reject $H_0$ at the 0.05 level whenever
+		\[z = \frac{\overline{y}-\mu_0}{\sigma/\sqrt{n}} =
+		\frac{\overline{y}-100}{15/\sqrt{9}} \ge 1.645.\] Now we must
+		translate this back to values of $\overline{y}$...
+	\end{enumerate}
+} \frame{\frametitle{Power} Example: Lake Wobegon\\
+	\begin{enumerate}
+		\item[2.] \underline{Values of the sample mean that reject $H_0$
+			(con't)}\\ \ \\
+		The test will reject $H_0$ at the 0.05 level whenever \[
+		\frac{\overline{y}-100}{15/\sqrt{9}} \ge 1.645,\] which means we
+		reject $H_0$ whenever \[ \overline{y} \ge 1.645\times 15/\sqrt{9}+100 = 108.2\]
+		If $H_0$ is true, the probability of seeing an IQ score as big as
+		108.2 or bigger is 5\%.
+	\end{enumerate}
+} \frame{\frametitle{Power} Example: Lake Wobegon\\
+	\begin{enumerate}
+		\item[3.] \underline{Find the probability of rejecting $H_0$ if
+			$\mu=\mu_A=110$.}\\ \ \\
+		$P(\overline{y} > 108.2|\mu=\mu_A=110) $
+		\begin{eqnarray*} \qquad \qquad & = &
+			P\left(\left.\frac{\overline{y}-\mu_A}{\sigma/\sqrt{n}}
+			> \frac{108.2-110}{15/\sqrt{9}}\right|\mu=\mu_A=110\right)\\
+			& = & P\left(z > -0.36\right)\\
+			& = & 0.64\\
+		\end{eqnarray*}
+		So there is approximately a 2/3 chance of detecting a difference of
+		10 points on the IQ scale at the 0.05 level of significance with a
+		sample size of 9.
+	\end{enumerate}
+} 
+
+
+\begin{frame}[fragile]{Null and alternative distribution plots}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{alltt}
+\hlkwd{power_plot}\hlstd{(}\hlkwc{n} \hlstd{=} \hlnum{9}\hlstd{,} \hlkwc{s} \hlstd{=} \hlnum{15}\hlstd{,} \hlkwc{mu0} \hlstd{=} \hlnum{100}\hlstd{,} \hlkwc{mha} \hlstd{=} \hlnum{110}\hlstd{,}
+        \hlkwc{cutoff} \hlstd{=} \hlnum{100} \hlopt{+} \hlkwd{qnorm}\hlstd{(}\hlnum{0.95}\hlstd{)} \hlopt{*} \hlnum{15} \hlopt{/} \hlkwd{sqrt}\hlstd{(}\hlnum{9}\hlstd{),}
+        \hlkwc{alternative} \hlstd{=} \hlstr{"greater"}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"Average IQ Score"}\hlstd{)}
+\end{alltt}
+
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-17-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+
+
+\frame{\frametitle{Power} Example: Lake Wobegon\\ \ \\
+	If you hoped to use a \underline{two-sided test} to show that the children from Lake Wobegon are at
+	least 10 points higher than average on the IQ test, what power do you have with the
+	sample size of 9 and a 0.05-level test? \pause
+	\begin{enumerate}
+		\item \underline{Hypotheses.} $H_0: \mu = 100$, $H_A: \mu = 110$.\pause 
+		\item[] \item \underline{Find values of the sample mean that reject the
+			null.}\\ \ \\ The test will reject $H_0$ at the 0.05 level whenever
+		\[z = \frac{\overline{y}-\mu_0}{\sigma/\sqrt{n}} =
+		\frac{\overline{y}-100}{15/\sqrt{9}} \ge \textcolor{red}{1.96}
+		\qquad \hbox{\textbf{\textcolor{blue}{OR when}}}\]
+		\[z = \frac{\overline{y}-\mu_0}{\sigma/\sqrt{n}} =
+		\frac{\overline{y}-100}{15/\sqrt{9}} \le \textcolor{red}{-1.96}\]
+		since we are performing a two-sided test.
+	\end{enumerate}
+} \frame{\frametitle{Power} Thus we reject $H_0$ if $\overline{y}
+	\ge 1.96\times5+100 = 109.8$ \textbf{OR} if $\overline{y} \le
+	-1.96\times5+100 = 90.2$
+	\begin{enumerate}
+		\item[3.] \underline{Find the probability of rejecting $H_0$ if
+			$\mu=\mu_A=110$.}\\ \ \\
+		$P(\overline{y} > 109.8 \hbox{\textbf{ OR }} \overline{y} <
+		90.2|\mu=\mu_A=110) $
+		\begin{eqnarray*} \qquad & = & P(\overline{y} >
+			109.8|\mu_A=110) + P(\overline{y} < 90.2|\mu_A=110)\\
+			& = & P\left(\left.\frac{\overline{y}-\mu_A}{\sigma/\sqrt{n}}
+			> \frac{109.8-110}{15/\sqrt{9}}\right|\mu_A=110\right)\\
+			&  & \quad + P\left(\left.\frac{\overline{y}-\mu_A}{\sigma/\sqrt{n}}
+			< \frac{90.2-110}{15/\sqrt{9}}\right|\mu_A=110\right)\\
+			& = & P\left(z > -0.04\right) + P\left(z < -3.96\right)\\
+			& = & 0.52 + 3.7\times10^{-5} \approx 0.52\\
+		\end{eqnarray*}
+		There is about a 1/2 chance of detecting a difference of 10 pts on
+		the IQ scale at the 0.05 level of significance with $n=9$ using a
+		two-sided alternative hypothesis.
+	\end{enumerate}
+} \frame{\frametitle{Power} 
+\small 
+
+\begin{itemize}
+	\item Steps 1 and 2 used to find the power of a one-sided test to detect a difference of $x$ points above (or below) the population mean are similar to the steps for finding the power of a two-sided test to detect a difference of $x$ points on either side of the population mean. 
+	\item However for a two-sided test, there will be two sets of values of $\overline{y}$
+		that lead us to reject $H_0$ (also, $z_\alpha$ for one-sided and
+		$z_{\alpha/2}$ for two-sided).  %\pause
+		
+		\item \textbf{However}, there is one critical difference in the third step: we need to
+		calculate the probability of seeing $\overline{y}$ in either of the two tails (rejection
+		regions) of the null distribution under the assumption that the true distribution has
+		mean $\mu_A$. So there will be two probabilities to calculate in the third step. 
+		\pause
+		
+		\item Note: If we felt that the minimum significant departure from $\mu_0$
+		was different above and below (e.g., we are interested in increases
+		of blood pressure of at least 3.5mmHg and decreases of blood
+		pressure of at least 2mmHg), we perform the calculations as though
+		we were interested in the minimum of the two values (Why?).
+\end{itemize}
+ } 
+
+\frame{\frametitle{Power} Exercises: Lake Wobegon\\ \ \\
+	Find the power of the following tests, assuming two-sided
+	alternative hypotheses:
+	\begin{enumerate}
+		\item A 0.05-level test to detect a difference of 15 points on the
+		IQ scale using the 9 children.
+		\item A 0.05-level test to detect a difference of 5 points on the
+		IQ scale using the 9 children.
+		\item A 0.05-level test to detect a difference of 10 points on the
+		IQ scale using 25 children.
+		\item A 0.01-level test to detect a difference of 10 points on the
+		IQ scale using the 9 children.
+\end{enumerate} }
+
 \end{document}
 
 
@@ -1291,7 +1626,7 @@ You can check these for yourself in \texttt{R} using this expression:\\ \ \\
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-15-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-19-1} 
 
 }
 
@@ -1311,7 +1646,7 @@ You can check these for yourself in \texttt{R} using this expression:\\ \ \\
 \end{alltt}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-16-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-20-1} 
 
 }
 
@@ -1340,7 +1675,7 @@ You can check these for yourself in \texttt{R} using this expression:\\ \ \\
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-18-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-22-1} 
 
 }
 
@@ -1363,7 +1698,7 @@ You can check these for yourself in \texttt{R} using this expression:\\ \ \\
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-20-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-24-1} 
 
 }
 
@@ -1417,7 +1752,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-21-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-25-1} 
 
 }
 
@@ -1431,7 +1766,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-22-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-26-1} 
 
 }
 
@@ -1527,7 +1862,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \end{alltt}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-24-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-28-1} 
 
 }
 
@@ -1553,7 +1888,7 @@ Sample size increases $\rightarrow$ degrees of freedom increase $\rightarrow$ $t
 \end{alltt}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-26-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-30-1} 
 
 }
 
@@ -1800,7 +2135,7 @@ These are based on the (useless) null hypothesis $H_0: \mu_0 = 0$ \\ \ \\
 \end{verbatim}
 
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-33-1} 
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-37-1} 
 
 }
 

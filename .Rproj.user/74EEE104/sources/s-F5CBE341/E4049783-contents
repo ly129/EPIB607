@@ -978,14 +978,72 @@ df %>% kable(col.names = NULL) %>%
 
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
-
-  c(" ")
+  c("1. [Epi Seminar (4-5 pm): Banning P-value use, or Misuse?](https://www.mcgill.ca/epi-biostat-occh/files/epi-biostat-occh/shernandez-diaz-announcement-15oct18.pdf?utm_medium=email&utm_campaign=EBOH-e-News&utm_source=Envoke-All-contacts)"),
+c("2. [P-values, Power and Sample Size](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sample_size/EPIB607_sample_size.pdf)")
 ))
 
 df %>% kable(col.names = NULL) %>% 
   kable_styling(bootstrap_options = c("striped", "hover")) 
   
 ```
+
+#### Code for distribution plots under the null and alternative
+
+```{r, eval=FALSE, echo=TRUE}
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+
+mu0 <- -0.540 # mean under the null
+mha <- 0.99*-0.540 # mean under the alternative
+s <- 0.0080 # sample/population SD
+n <- 5 # sample size
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+
+#' Plot null and alternative distributions
+#' @param n sample size
+#' @param s population standard deviation (or estimated standard deviation)
+#' @param mu0 mean under the null hypothesis
+#' @param mha mean under the alternative hypothesis
+#' @param alternative is alternative hypothesis greater than or less than mu0.
+#'   Defaults to 'less'
+#' @param legend show legend? Defaults to TRUE
+#' @param ... other arguments passed to graphics::title
+#' @details requires the latex2exp package to be installed
+
+power_plot(n = n, 
+           s = s,  
+           mu0 = mu0, 
+           mha = mha, 
+           cutoff = cutoff,
+           alternative = "greater",
+           xlab = "Freezing point (degrees C)")
+```
+
+
+
+#### Code for looking at power as a function of sample size and noise
+
+```{r, echo=TRUE, eval=FALSE}
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+
+pacman::p_load(manipulate) # or library(manipulate)
+
+mu0 <- -0.540 # mean under the null
+mha <- 0.99*-0.540 # mean under the alternative
+s <- 0.0080 # sample/population SD
+n <- 5 # sample size
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+
+manipulate::manipulate(
+power_plot(n = sample_size, s = sample_sd,  
+	mu0 = mu0, mha = mha, 
+	cutoff = cutoff,
+	alternative = "greater",
+	xlab = "Freezing point (degrees C)"),
+	sample_size = manipulate::slider(5, 100),
+	sample_sd = manipulate::slider(0.001, 0.01, initial = 0.008))
+```
+
+
 
 
 ### Wednesday October 17

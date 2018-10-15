@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-10-11">
+<meta name="date" content="2018-10-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -742,10 +742,70 @@ Assignment 5 due by 11:59pm
 <tbody>
 <tr>
 <td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li><a href="https://www.mcgill.ca/epi-biostat-occh/files/epi-biostat-occh/shernandez-diaz-announcement-15oct18.pdf?utm_medium=email&amp;utm_campaign=EBOH-e-News&amp;utm_source=Envoke-All-contacts">Epi Seminar (4-5 pm): Banning P-value use, or Misuse?</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li><a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sample_size/EPIB607_sample_size.pdf">P-values, Power and Sample Size</a>
 </td>
 </tr>
 </tbody>
-</table>
+</table></li>
+</ol></li>
+</ol>
+<div id="code-for-distribution-plots-under-the-null-and-alternative" class="section level4">
+<h4><span class="header-section-number">5.7.1.1</span> Code for distribution plots under the null and alternative</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R&quot;</span>)
+
+mu0 &lt;-<span class="st"> </span><span class="fl">-0.540</span> <span class="co"># mean under the null</span>
+mha &lt;-<span class="st"> </span><span class="fl">0.99</span><span class="op">*-</span><span class="fl">0.540</span> <span class="co"># mean under the alternative</span>
+s &lt;-<span class="st"> </span><span class="fl">0.0080</span> <span class="co"># sample/population SD</span>
+n &lt;-<span class="st"> </span><span class="dv">5</span> <span class="co"># sample size</span>
+cutoff &lt;-<span class="st"> </span>mu0 <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.95</span>) <span class="op">*</span><span class="st"> </span>s <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(n)
+
+<span class="co">#&#39; Plot null and alternative distributions</span>
+<span class="co">#&#39; @param n sample size</span>
+<span class="co">#&#39; @param s population standard deviation (or estimated standard deviation)</span>
+<span class="co">#&#39; @param mu0 mean under the null hypothesis</span>
+<span class="co">#&#39; @param mha mean under the alternative hypothesis</span>
+<span class="co">#&#39; @param alternative is alternative hypothesis greater than or less than mu0.</span>
+<span class="co">#&#39;   Defaults to &#39;less&#39;</span>
+<span class="co">#&#39; @param legend show legend? Defaults to TRUE</span>
+<span class="co">#&#39; @param ... other arguments passed to graphics::title</span>
+<span class="co">#&#39; @details requires the latex2exp package to be installed</span>
+
+<span class="kw">power_plot</span>(<span class="dt">n =</span> n, 
+           <span class="dt">s =</span> s,  
+           <span class="dt">mu0 =</span> mu0, 
+           <span class="dt">mha =</span> mha, 
+           <span class="dt">cutoff =</span> cutoff,
+           <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>,
+           <span class="dt">xlab =</span> <span class="st">&quot;Freezing point (degrees C)&quot;</span>)</code></pre></div>
+</div>
+<div id="code-for-looking-at-power-as-a-function-of-sample-size-and-noise" class="section level4">
+<h4><span class="header-section-number">5.7.1.2</span> Code for looking at power as a function of sample size and noise</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&quot;https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R&quot;</span>)
+
+pacman<span class="op">::</span><span class="kw">p_load</span>(manipulate) <span class="co"># or library(manipulate)</span>
+
+mu0 &lt;-<span class="st"> </span><span class="fl">-0.540</span> <span class="co"># mean under the null</span>
+mha &lt;-<span class="st"> </span><span class="fl">0.99</span><span class="op">*-</span><span class="fl">0.540</span> <span class="co"># mean under the alternative</span>
+s &lt;-<span class="st"> </span><span class="fl">0.0080</span> <span class="co"># sample/population SD</span>
+n &lt;-<span class="st"> </span><span class="dv">5</span> <span class="co"># sample size</span>
+cutoff &lt;-<span class="st"> </span>mu0 <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.95</span>) <span class="op">*</span><span class="st"> </span>s <span class="op">/</span><span class="st"> </span><span class="kw">sqrt</span>(n)
+
+manipulate<span class="op">::</span><span class="kw">manipulate</span>(
+<span class="kw">power_plot</span>(<span class="dt">n =</span> sample_size, <span class="dt">s =</span> sample_sd,  
+    <span class="dt">mu0 =</span> mu0, <span class="dt">mha =</span> mha, 
+    <span class="dt">cutoff =</span> cutoff,
+    <span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>,
+    <span class="dt">xlab =</span> <span class="st">&quot;Freezing point (degrees C)&quot;</span>),
+    <span class="dt">sample_size =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="dv">5</span>, <span class="dv">100</span>),
+    <span class="dt">sample_sd =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="dt">initial =</span> <span class="fl">0.008</span>))</code></pre></div>
+</div>
 </div>
 <div id="wednesday-october-17" class="section level3">
 <h3><span class="header-section-number">5.7.2</span> Wednesday October 17</h3>
