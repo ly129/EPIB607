@@ -7,14 +7,14 @@
     "folds" : "",
     "hash" : "0",
     "id" : "9DFE5C9F",
-    "lastKnownWriteTime" : 1539354972,
-    "last_content_update" : 1539354972263,
+    "lastKnownWriteTime" : 1539560350,
+    "last_content_update" : 1539560350115,
     "path" : "~/git_repositories/epib607/assignments/a6/a6_power_proportions.Rmd",
     "project_path" : "assignments/a6/a6_power_proportions.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "74,475",
-        "scrollLine" : "63"
+        "cursorPosition" : "72,40",
+        "scrollLine" : "54"
     },
     "relative_order" : 14,
     "source_on_save" : false,

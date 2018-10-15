@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539560479063.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3917015048",
+    "id" : "2B7E14E7",
+    "lastKnownWriteTime" : 1539566050,
+    "last_content_update" : 1539566050591,
+    "path" : "~/git_repositories/epib607/assignments/a6/a6-solutions.Rmd",
+    "project_path" : "assignments/a6/a6-solutions.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "36,18",
+        "scrollLine" : "21"
+    },
+    "relative_order" : 16,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

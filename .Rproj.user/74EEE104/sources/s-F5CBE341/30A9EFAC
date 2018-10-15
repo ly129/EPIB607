@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539564126827.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2571294021",
+    "id" : "30A9EFAC",
+    "lastKnownWriteTime" : 1539566053,
+    "last_content_update" : 1539566053670,
+    "path" : "~/git_repositories/epib607/assignments/a6/plot_null_alt.R",
+    "project_path" : "assignments/a6/plot_null_alt.R",
+    "properties" : {
+        "cursorPosition" : "57,11",
+        "scrollLine" : "37",
+        "tempName" : "Untitled11"
+    },
+    "relative_order" : 18,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

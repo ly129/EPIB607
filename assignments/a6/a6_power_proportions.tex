@@ -75,67 +75,36 @@ October 21, 2018, 11:59pm. Both HTML and .Rmd files should be saved as
 The \texttt{.Rmd} template for Assignment 6 is available
 \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a6/a6_template.Rmd}{here}
 
-\section{Food intake and weight gain}\label{food-intake-and-weight-gain}
+\section{Power and sample size calculations -
+1}\label{power-and-sample-size-calculations---1}
 
-If we increase our food intake, we generally gain weight. Nutrition
-scientists can calculate the amount of weight gain that would be
-associated with a given increase in calories. In one study, 16 nonobese
-adults, aged 25 to 36 years, were fed 1000 calories per day in excess of
-the calories needed to maintain a stable body weight. The subjects
-maintained this diet for 8 weeks, so they consumed a total of 56,000
-extra calories. According to theory, 3500 extra calories will translate
-into a weight gain of 1 pound. Therfore we expect each of these subjects
-to gain 56,000/3500=16 pounds (lb). Here are the weights (given in the
-\texttt{weightgain.csv} file) before and after the 8-week period
-expressed in kilograms (kg):
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{weight <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"weightgain.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{ShadedResult}
-\begin{verbatim}
-#     subject before after
-#  1        1   55.7  61.7
-#  2        2   54.9  58.8
-#  3        3   59.6  66.0
-#  4        4   62.3  66.2
-#  5        5   74.2  79.0
-#  6        6   75.6  82.3
-#  7        7   70.7  74.3
-#  8        8   53.3  59.3
-#  9        9   73.3  79.1
-#  10      10   63.4  66.0
-#  11      11   68.1  73.4
-#  12      12   73.7  76.9
-#  13      13   91.7  93.1
-#  14      14   55.9  63.0
-#  15      15   61.7  68.2
-#  16      16   57.8  60.3
-\end{verbatim}
-\end{ShadedResult}
+Suppose we wished to assess, via a formal statistical test, whether (at
+an \textit{population}, rather than an individual, level) a
+step-counting device or app is unbiased (\(H_0\)) or under-counts
+(\(H_1\)). Suppose we will do so the way Case et al. did, but measuring
+\(n\) persons just once each. We observe the device count when the true
+count on the treadmill reaches 500. The statistical test will declare
+the test `positive' (the departure from 500 is
+\textit{statistically significant}) if the mean of the \(n\)
+observations is \textit{below} \(500 - 1.96 \times s/n^{1/2}\), where s
+is the SD of the \(n\) observations, and the 1.96 (assume the ultimate
+\(n\) will be large enough that the \(t\) and \(z\) distributions are
+interchangeable) is chosen to give the test a type I error of 5\%. Since
+each person is only being measured once, we will not be able to
+distinguish the genuine between-person variance, \(\sigma^2_B\) from the
+within-person variance, \(\sigma^2_W.\) Thus the sample variance,
+\(s^2\) will be an estimate of \(\sigma^2 = \sigma^2_B +\sigma^2_W\).
 
 \begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
 \item
-  Calculate a 95\% confidence interval for the mean weight change and
-  give a sentence explaining the meaning of the 95\%. State your
-  assumptions.
+Using a planned sample size of $n=25$, and $\sigma = 60$ steps as a pre-study best-guess as to the  $s$ that might  be observed in them, calculate the critical value  $500 - 1.96\times  s/n^{1/2}$.
 \item
-  Calculate a 95\% bootstrap confidence interval for the mean weight
-  change and compare it to the one obtained in part (a). Comment on the
-  bootstrap sampling distribution and compare it to the assumptions you
-  made in part (a).
+Now imagine that in an infinite sample,  the mean would not be the null 500, but $\mu=470.$
+Calculate the probability that the mean in the sample of 25  will be less than this critical value. (Use the same $s$ for the alternative that you used for the null.)
 \item
-  Convert the units of the mean weight gain and 95\% confidence interval
-  to pounds. Note that 1 kilogram is equal to 2.2 pounds.
-\item
-  Test the null hypothesis that the mean weight gain is 16 lbs. State
-  your assumptions and justify your choice of test. Be sure to specify
-  the null and alternative hypotheses. What do you conclude?
+By trial and error, or better still by deriving a general formula, adjust the $n$ until this probability (i.e., the power) is 80\%. Show the 2 probabilities in a diagram, as was done in Figure 4 in section 4.3.2 of the notes.
+\item Show that this $n$ satisfies the equality $$1.96\times SE_{null}[\bar{y}] + 0.84 \times SE_{alt}[\bar{y}] = 30.$$
+
 \end{enumerate}
 
 \newpage
