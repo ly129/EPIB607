@@ -78,26 +78,19 @@ The \texttt{.Rmd} template for Assignment 6 is available
 \section{Power and sample size calculations -
 1}\label{power-and-sample-size-calculations---1}
 
-Suppose we wished to assess, via a formal statistical test, whether (at
-an \textit{population}, rather than an individual, level) a
-step-counting device or app is unbiased (\(H_0\)) or under-counts
-(\(H_1\)). Suppose we will do so the way Case et al. did, but measuring
-\(n\) persons just once each. We observe the device count when the true
-count on the treadmill reaches 500. The statistical test will declare
-the test `positive' (the departure from 500 is
-\textit{statistically significant}) if the mean of the \(n\)
-observations is \textit{below} \(500 - 1.96 \times s/n^{1/2}\), where s
-is the SD of the \(n\) observations, and the 1.96 (assume the ultimate
-\(n\) will be large enough that the \(t\) and \(z\) distributions are
-interchangeable) is chosen to give the test a type I error of 5\%. Since
-each person is only being measured once, we will not be able to
-distinguish the genuine between-person variance, \(\sigma^2_B\) from the
-within-person variance, \(\sigma^2_W.\) Thus the sample variance,
-\(s^2\) will be an estimate of \(\sigma^2 = \sigma^2_B +\sigma^2_W\).
+Following the study by
+\href{http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Surveys/SmartphoneSteps.pdf}{Case
+et al., JAMA, 2015}, suppose we wished to assess, via a formal
+statistical test, whether (at an \textit{population}, rather than an
+individual, level) a step-counting device or app is unbiased (\(H_0\))
+or under-counts (\(H_1\)). Suppose we will do so the way
+\href{http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Surveys/SmartphoneSteps.pdf}{Case
+et al.} did, but measuring \(n\) persons just once each. We observe the
+device count when the true count on the treadmill reaches 500.
 
 \begin{enumerate}
 \item
-Using a planned sample size of $n=25$, and $\sigma = 60$ steps as a pre-study best-guess as to the  $s$ that might  be observed in them, calculate the critical value  $500 - 1.96\times  s/n^{1/2}$.
+Using a planned sample size of $n=25$, and $\sigma = 60$ steps as a pre-study best-guess as to the  $s$ that might  be observed in them, calculate the critical value at $\alpha = 0.05$.
 \item
 Now imagine that in an infinite sample,  the mean would not be the null 500, but $\mu=470.$
 Calculate the probability that the mean in the sample of 25  will be less than this critical value. (Use the same $s$ for the alternative that you used for the null.)

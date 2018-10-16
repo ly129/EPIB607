@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "3482548098",
     "id" : "9DFE5C9F",
-    "lastKnownWriteTime" : 1539560350,
-    "last_content_update" : 1539560350115,
+    "lastKnownWriteTime" : 1539657601,
+    "last_content_update" : 1539657601289,
     "path" : "~/git_repositories/epib607/assignments/a6/a6_power_proportions.Rmd",
     "project_path" : "assignments/a6/a6_power_proportions.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "72,40",
-        "scrollLine" : "54"
+        "cursorPosition" : "78,185",
+        "scrollLine" : "69"
     },
     "relative_order" : 14,
     "source_on_save" : false,

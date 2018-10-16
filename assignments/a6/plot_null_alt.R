@@ -236,13 +236,13 @@ power_plot <- function(n, s, mu0, mha, cutoff,
 }
 
 
-n <- 3
-s <- 0.0068
-mu0 <- .86
-mha <- .88
-cutoff <- mu0 + qnorm(c(0.005, 0.995)) * s / sqrt(n)
-power_plot(n = n, s = s,
-           mu0 = mu0, mha = mha,
-           cutoff = cutoff,
-           alternative = "equal",
-           xlab = "Freezing point (degrees C)")
+# n <- 3
+# s <- 0.0068
+# mu0 <- .86
+# mha <- .88
+# cutoff <- mu0 + qnorm(c(0.005, 0.995)) * s / sqrt(n)
+# power_plot(n = n, s = s,
+#            mu0 = mu0, mha = mha,
+#            cutoff = cutoff,
+#            alternative = "equal",
+#            xlab = "Freezing point (degrees C)")

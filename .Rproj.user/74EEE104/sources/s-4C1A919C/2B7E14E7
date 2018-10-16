@@ -5,7 +5,7 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3917015048",
+    "hash" : "0",
     "id" : "2B7E14E7",
     "lastKnownWriteTime" : 1539566050,
     "last_content_update" : 1539566050591,
@@ -13,8 +13,8 @@
     "project_path" : "assignments/a6/a6-solutions.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "36,18",
-        "scrollLine" : "21"
+        "cursorPosition" : "34,7",
+        "scrollLine" : "24"
     },
     "relative_order" : 16,
     "source_on_save" : false,
