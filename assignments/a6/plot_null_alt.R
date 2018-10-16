@@ -196,12 +196,12 @@ power_plot <- function(n, s, mu0, mha, cutoff,
          x = mha, y = (I + 1) * ht * .95)
     
     # lower tail for alternative
-    red <- seq(mha - 3 * SEM, min(cutoff), length.out = 1000)
+    red <- seq(mha - 4.25 * SEM, min(cutoff), length.out = 1000)
     d <- c(dnorm(red, mha, SEM), 0)
     polygon(c(red,min(cutoff)), d + (I + 1) * ht, col = cbPalette[2], border = NA)
     
     # upper tail for alternative
-    red <- seq(max(cutoff), mha + 3 * SEM, length.out = 1000)
+    red <- seq(max(cutoff), mha + 4.25 * SEM, length.out = 1000)
     d <- c(0, dnorm(red, mha, SEM))
     polygon(c(max(cutoff), red), d + (I + 1) * ht, col = cbPalette[2], border = NA)
     
@@ -209,7 +209,7 @@ power_plot <- function(n, s, mu0, mha, cutoff,
       pnorm(max(cutoff), mu0, SEM, lower.tail = FALSE) 
     power <- pnorm(min(cutoff), mha, SEM, lower.tail = TRUE) +  
       pnorm(max(cutoff), mha, SEM, lower.tail = FALSE)
-    beta <- 1-power
+    beta <- 1 - power
 
     labs.h0 <- latex2exp::TeX(sprintf("$\\alpha$ = %#.3f", alpha))
     labs.h1a <- latex2exp::TeX(sprintf("$\\beta$ = %#.3f", beta))
@@ -236,13 +236,13 @@ power_plot <- function(n, s, mu0, mha, cutoff,
 }
 
 
-# n <- 3
-# s <- 0.0068
-# mu0 <- .86
-# mha <- .88
-# cutoff <- mu0 + qnorm(c(0.005, 0.995)) * s / sqrt(n)
-# power_plot(n = n, s = s,  
-#            mu0 = mu0, mha = mha, 
-#            cutoff = cutoff,
-#            alternative = "equal",
-#            xlab = "Freezing point (degrees C)")
+n <- 3
+s <- 0.0068
+mu0 <- .86
+mha <- .88
+cutoff <- mu0 + qnorm(c(0.005, 0.995)) * s / sqrt(n)
+power_plot(n = n, s = s,
+           mu0 = mu0, mha = mha,
+           cutoff = cutoff,
+           alternative = "equal",
+           xlab = "Freezing point (degrees C)")
