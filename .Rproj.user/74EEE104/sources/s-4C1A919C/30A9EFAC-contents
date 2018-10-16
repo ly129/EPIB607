@@ -236,13 +236,50 @@ power_plot <- function(n, s, mu0, mha, cutoff,
 }
 
 
-# n <- 3
-# s <- 0.0068
-# mu0 <- .86
-# mha <- .88
-# cutoff <- mu0 + qnorm(c(0.005, 0.995)) * s / sqrt(n)
-# power_plot(n = n, s = s,
-#            mu0 = mu0, mha = mha,
+# examples
+# # less than alternative  ----
+# n <- 5 # sample size
+# s <- 0.0080 # standard deviation
+# mu0 <- -0.540 # mean undder the null
+# mha <- 1.01 * mu0 # mean under the alternative
+# cutoff <- mu0 + qnorm(0.05) * s / sqrt(n)
+# power_plot(n = n,
+#            s = s,
+#            mu0 = mu0,
+#            mha = mha,
+#            cutoff = cutoff,
+#            alternative = "less",
+#            xlab = "")
+# 
+# 
+# # greater than alternative  ----
+# n <- 5 # sample size
+# s <- 0.0080 # standard deviation
+# mu0 <- -0.540 # mean undder the null
+# mha <- 0.99 * mu0 # mean under the alternative
+# cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+# power_plot(n = n, 
+#            s = s,
+#            mu0 = mu0, 
+#            mha = mha,
+#            cutoff = cutoff,
+#            alternative = "greater",
+#            xlab = "")
+# 
+# 
+# # two-sided alternative ----
+# n <- 3 # sample size
+# s <- 0.088 # standard deviation
+# mu0 <- .86 # mean undder the null
+# mha <- .88 # mean under the alternative
+# cutoff <- mu0 + qnorm(c(0.025, 0.975)) * s / sqrt(n)
+# power_plot(n = n, 
+#            s = s,
+#            mu0 = mu0, 
+#            mha = mha,
 #            cutoff = cutoff,
 #            alternative = "equal",
-#            xlab = "Freezing point (degrees C)")
+#            xlab = "")
+
+
+
