@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "3358936021",
     "id" : "2B7E14E7",
-    "lastKnownWriteTime" : 1539566050,
-    "last_content_update" : 1539566050591,
+    "lastKnownWriteTime" : 1539658968,
+    "last_content_update" : 1539658968068,
     "path" : "~/git_repositories/epib607/assignments/a6/a6-solutions.Rmd",
     "project_path" : "assignments/a6/a6-solutions.Rmd",
     "properties" : {
         "chunk_output_type" : "console",
-        "cursorPosition" : "34,7",
-        "scrollLine" : "24"
+        "cursorPosition" : "50,21",
+        "scrollLine" : "31"
     },
     "relative_order" : 16,
     "source_on_save" : false,

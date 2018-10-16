@@ -32,12 +32,26 @@ knitr::opts_chunk$set(
 
 ```{r, results='hide', fig.keep='none'}
 ## ---- Question-1 ------------------------------------------------------------
-n <- 25
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+n <- 40
 s <- 60
-SEM <- s / sqrt(n)
-cutoff <- 500 - 1.96 * SEM
-qnorm(p = 0.05, mean = 500, sd = SEM)
-qnorm(p=0.005)
+mu0 <- 500
+mha <- 470
+cutoff <- mu0 + qnorm(0.01) * s / sqrt(n)
+power_plot(n = n, s = s,
+           mu0 = mu0, mha = mha,
+           cutoff = cutoff,
+           alternative = "less",
+           xlab = "Mean Step Count")
+
+sample_size_needed <- (qnorm(0.99)+qnorm(0.8))^2 * (s / 30)^2
+
+power_plot(n = sample_size_needed, s = s,
+           mu0 = mu0, mha = mha,
+           cutoff = cutoff,
+           alternative = "less",
+           xlab = "Mean Step Count")
+
 ```
 
 

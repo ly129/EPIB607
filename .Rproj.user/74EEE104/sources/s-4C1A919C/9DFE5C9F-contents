@@ -1,5 +1,5 @@
 ---
-title: Assignment 6 - Power, Sample Size and Inference for a Population Proportion. Due October 21, 11:59pm 2018
+title: Assignment 6 - Power, Sample Size and Inference for a Population Proportion. Due October 26, 5:00pm 2018
 author:
   - name: EPIB607 - Inferential Statistics
     affiliation: a
@@ -13,7 +13,7 @@ address:
 lead_author_surname: Bhatnagar and Hanley
 doi: "https://sahirbhatnagar.com/EPIB607/"
 abstract: |
-  In this assignment you will practice conducting inference for a one sample proportion as well as conducting power and sample size calculations. Answers should be given in full sentences (DO NOT just provide the number). All figures should have appropriately labeled axes, titles and captions (if necessary). Units for means and CIs should be provided. All graphs and calculations are to be completed in an R Markdown document using the provided template. You are free to choose any function from any package to complete the assignment. Concise answers will be rewarded. Be brief and to the point. Please submit both the compiled HTML report and the source file (.Rmd) to myCourses by October 21, 2018, 11:59pm. Both HTML and .Rmd files should be saved as 'IDnumber_LastName_FirstName_EPIB607_A6'. 
+  In this assignment you will practice conducting inference for a one sample proportion as well as conducting power and sample size calculations. Answers should be given in full sentences (DO NOT just provide the number). All figures should have appropriately labeled axes, titles and captions (if necessary). Units for means and CIs should be provided. State your hypotheses and assumptions when applicable. All graphs and calculations are to be completed in an R Markdown document using the provided template. You are free to choose any function from any package to complete the assignment. Concise answers will be rewarded. Be brief and to the point. Please submit both the compiled HTML report and the source file (.Rmd) to myCourses by October 26, 2018, 5:00pm. Both HTML and .Rmd files should be saved as 'IDnumber_LastName_FirstName_EPIB607_A6'. 
 # Optional: Acknowledgements
 #acknowledgements: |
 #  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
@@ -45,13 +45,13 @@ skip_final_break: true
 bibliography: pinp
 # Optional: Enable a 'Draft' watermark on the document
 watermark: false
-footer_contents: "Assignment 6 due October 21, 2018 by 11:59pm"
+footer_contents: "Assignment 6 due October 26, 2018 by 5:00pm"
 output: pinp::pinp
 # Required: Vignette metadata for inclusion in a package.
 vignette: >
   %\VignetteIndexEntry{YourPackage-vignetteentry}
   %\VignetteKeywords{YourPackage, r, anotherkeyword}
-  %\VignettePackage{Due October 21, 2018}
+  %\VignettePackage{Due October 26, 2018}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
   chunk_output_type: console
@@ -70,106 +70,82 @@ library(kableExtra)
 
 
 
-# Power and sample size calculations - 1
+# Bias in step counters
 
 Following the study by [Case et al., JAMA, 2015](http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Surveys/SmartphoneSteps.pdf), suppose we wished to assess, via a formal statistical test, whether (at an \textit{population}, rather than an individual, level)  a step-counting device or app is unbiased ($H_0$) or under-counts ($H_1$). Suppose we will do so the way [Case et al.](http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Surveys/SmartphoneSteps.pdf) did, but  measuring $n$ persons just once each. We observe the device count when the true count on the treadmill reaches 500. 
 
-\begin{enumerate}
-\item
-Using a planned sample size of $n=25$, and $\sigma = 60$ steps as a pre-study best-guess as to the  $s$ that might  be observed in them, calculate the critical value at $\alpha = 0.05$.
-\item
-Now imagine that in an infinite sample,  the mean would not be the null 500, but $\mu=470.$
-Calculate the probability that the mean in the sample of 25  will be less than this critical value. (Use the same $s$ for the alternative that you used for the null.)
-\item
-By trial and error, or better still by deriving a general formula, adjust the $n$ until this probability (i.e., the power) is 80\%. Show the 2 probabilities in a diagram, as was done in Figure 4 in section 4.3.2 of the notes.
-\item Show that this $n$ satisfies the equality $$1.96\times SE_{null}[\bar{y}] + 0.84 \times SE_{alt}[\bar{y}] = 30.$$
+a. Using a planned sample size of $n=25$, and $\sigma = 60$ steps as a pre-study best-guess as to the  $s$ that might be observed in them, calculate the critical value at $\alpha = 0.01$.
+b. Now imagine that the mean would not be the null 500, but $\mu=470.$ Calculate the probability that the mean in the sample of 25 will be less than this critical value. Use the same $s$ for the alternative that you used for the null. What is this probability called?
+c. Determine the sample size required for 80\% power using a 1\% level of significance. Plot the null and alternative distributions in a diagram using the \href{https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R}{\texttt{plot\_power}} function. An example of how to use this function and its output is shown below:
 
-\end{enumerate}  
+```{r, echo=TRUE, eval=TRUE, fig.width=7}
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+
+mu0 <- -0.540 # mean under the null
+mha <- 0.99*-0.540 # mean under the alternative
+s <- 0.0080 # sample/population SD
+n <- 5 # sample size
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+
+power_plot(n = n, 
+           s = s,  
+           mu0 = mu0, 
+           mha = mha, 
+           cutoff = cutoff,
+           alternative = "greater",
+           xlab = "Freezing point (degrees C)")
+
+```
+
+
+
+# Boosting sales
+
+You want to see if a redesign of the cover of a mail-order catalog will increase sales. A very large number of customers will receive the original catalog and a random sample of customers will receive the one with the new cover. For planning purposes, you are willing to assume that the sales from the new catalog will be approximately normal with $\sigma=50$ dollars and that the mean for the original catalog will be $\mu = 25$ dollars. You decide to use a sample size of $n = 900$. You wish to test $$H_0: \mu = 25 \qquad H_a: \mu > 25$$You decide to reject $H_0$ if $\bar{y} > 26$ and fail to reject $H_0$ otherwise. 
+
+a. Find the probability of a Type I error.
+b. Find the probability of a Type II error when $\mu = 28$ dollars. 
+c. Find the probability of a Type II error when $\mu = 30$ dollars. 
+d. The distribution of sales is not normal because many customers buy nothing. Why is it nonetheless reasonable in this circumstance to assume that the mean will be approximately normal?
+
+# Fill the bottles
+
+Bottles of a popular cola drink are supposed to contain 300 milliliters (ml) of cola. There is some
+variation from bottle to bottle because the filling machinery is not perfectly precise. Assume the standard deviation ($\sigma$) of the filling process is 3 ml. An inspector, who suspects that the bottler is underfilling, measures the contents of a sample of six bottles. Power calculations help us see how large a shortfall in the bottle contents the test can be expected to detect.
+
+a. Find the power of a 5% significance test against the alternative $\mu= 299$ ml.
+b. Find the power against the alternative $\mu = 295$ ml.
+c. Is the power against $\mu = 290$ higher or lower than the value you found in (b)? Explain why this result makes sense.
+d. Make a plot of the power as a function of the shortfall ($\Delta$), and comment on the plot. 
+
+
+# Drunken cyclists
+
+In the United States approximately 900 people die in bicycle accidents each year. One study examined the records of 1711 bicyclists aged 15 or older who were fatally injured in bicycle accidents between 1987 and 1991 and were tested for alcohol. Of these, 542 tested positive for alcohol (blood alcohol concentration of 0.01% or higher).
+
+a. To do statistical inference for these data, we think in terms of a model where $p$ is parameter that represents the probability that a tested bicycle rider is positive for alcohol. Find a 99% confidence interval for $p$.
+b. Can you conclude from your analysis of this study that alcohol causes fatal bicycle accidents? Explain
+c. In this study 386 bicyclists had blood alcohol levels above 0.10%, a level defining legally drunk in many states at the time. Give a 99% confidence interval for the proportion who were legally drunk according to this criterion. 
+
 
 \newpage
 
-# Attitudes toward school
+# Handling contact lenses
 
-The Survey of Study Habits and Attitudes (SSHA) is a psychological test that measures the motivation, attitude toward school, and study habits of students. Scores range from 0 to 200. The mean score for U.S. college students is about 115, and the standard deviation is about 30. A teacher who suspects that older students have better attitudes toward school gives the SSHA to 25 students who are at least 30 years of age. Their mean score is $\bar{y}$ = 132.2 with a sample standard deviation $s = 28$. 
+Failure to follow recommended contact lens wear and care practices can lead to serious eye infection. A survey of a random sample of 281 Americans who wear contact lenses regularly asked about contact lens practices. The survey found that 139 respondents do not consistently wash their hands before handing their contact lenses. 
 
-a. The teacher asks you to carry out a formal statistical test for her hypothesis. Perform a test, provide a 95% confidence interval and state your conclusion clearly. 
-b. What assumptions did you use in part (a). Which of these assumptions is most important to the validity of your conclusion in part (a).
-
-
-
-# Does a full moon affect behavior?
-
-Many people believe that the moon influences the actions of some individuals. A study of dementia patients in nursing homes recorded various types of disruptive behaviors every day for 12 weeks. Days were classified as moon days if they were in a 3-day period centered at the day of the full moon. For each patient, the average number of disruptive behaviors was computed for moon days and for all other days. The hypothesis is that moon days will lead to more disruptive behavior. We look at a data set consisting of observations on 15 dementia patients in nursing homes (available in the `fullmoon.csv` file): 
-
-```{r, echo=TRUE, eval=FALSE}
-fullmoon <- read.csv("fullmoon.csv")
-```
-
-```{r, eval=TRUE, echo=FALSE}
-# moon <- load("~/Downloads/FullMoon.RData")
-# FullMoon$aggdiff <- NULL
-# colnames(FullMoon) <- c("patient","moon_days", "other_days")
-# write.csv(FullMoon, file = "fullmoon.csv", quote = FALSE, row.names = FALSE)
-fullmoon <- read.csv("~/git_repositories/epib607/assignments/a5/fullmoon.csv")
-fullmoon
-# fullmoon$diff <- fullmoon$moon_days - fullmoon$other_days
-# s_dist <- do(10000) * mean(~ diff, data = resample(fullmoon))
-# hist(s_dist$mean)
-# knitr::kable(fullmoon)
-```
-
-a. Calculate a 95% confidence interval for the mean difference in disruptive behaviors. State the assumptions you used to calculate this interval.
-b. Calculate a 95% bootstrap confidence interval for the mean difference in disruptive behaviors and compare to the one obtained in part (a). Comment on the bootstrap sampling distribution and compare it to the assumptions you made in part (a).
-c. Test the hypothesis that moon days will lead to more disruptive behavior. State your assumptions and provide a brief conclusion based on your analysis. 
-d. Find the minimum value of the mean difference in disruptive behaviors ($\bar{y}$) needed to reject the null hypothesis. 
-e. What is the probability of detecting an increase of 1.0 aggressive behavior per day during moon days? _Hint: calculate the probability of the event calculated in part (d) using a normal distribution with $\mu=1$ and $\sigma =$ the standard error of the mean_
+a. Obtain a plus four 99% confidence interval for the proportion $p$ of all American contact lens wearers who do not consistently wash their hands before handing their lenses. Verify that the conditions for your confidence interval are met.
+b. Obtain a large sample 99% confidence interval for the proportion $p$ of all American contact lens wearers who do not consistently wash their hands before handing their lenses. How does this compare to the interval you calculated in part (a)? 
+c. The researchers indicated that this survey had a substantial nonresponse rate. How does this information affect your interpretation of the confidence interval in context?
+d. Survey participants simply answered a questionnaire, and no attempt was made to verify the answers. How does this information affect your interpretation of the confidence interval in context?
 
 
-\newpage 
+# Cancer-detecting dogs
 
-# How deep is the ocean?
+A study was designed to determine whether dogs can be trained to identify urine specimens from individuals with bladder cancer. Dogs were first trained to discriminate between urine specimens from patients with bladder cancer and urine specimens from patients with other conditions. After the training was completed, the dogs had to pick one of seven new urine specimens. Each time, only one of the seven urine specimens came from a patient with bladder cancer. Out of 54 trials, the dogs identified the correct urine specimen 22 times. 
 
-This question is based on the [in-class Exercise](https://github.com/sahirbhatnagar/EPIB607/blob/master/exercises/water/students/260194225_water_exercise_epib607.pdf) on sampling distributions and builds on [Question 4 from Assignment 4](https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a4/a4_clt_ci.pdf). For your sample of $n=20$ of depths of the ocean
-
-a. Calculate a 95% Confidence interval using the $t$ procedure
-b. Plot the qnorm, bootstrap, and $t$ procedure confidence intervals on the same plot and comment on the how the $t$ interval compares to the other 2 intervals. You may use the `compare_CI` function provided below to produce the plot. 
-  
-  
-```{r, echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
-compare_CI <- function(ybar, QNORM, BOOT, TPROCEDURE,
-                       col = c("#E41A1C","#377EB8","#4DAF4A")) {
-
-  dt <- data.frame(type = c("qnorm", "bootstrap", "t"),
-                   ybar = rep(ybar, 3),
-                   low = c(QNORM[1], BOOT[1], TPROCEDURE[1]),
-                   up = c(QNORM[2], BOOT[2], TPROCEDURE[2])
-  )
-  
-  plot(dt$ybar, 1:nrow(dt), pch = 20, ylim = c(0, 5), 
-       xlim = range(pretty(c(dt$low, dt$up))),
-       xlab = "Depth of ocean (m)", ylab = "Confidence Interval Type",
-       las = 1, cex.axis = 0.8, cex = 3)
-  
-  abline(v = 37, lty = 2, col = "black", lwd = 2)
-  segments(x0 = dt$low, x1 = dt$up,
-           y0 = 1:nrow(dt), lend = 1,
-           col = col, lwd = 4)
-  
-  legend("topleft",
-         legend = c(eval(substitute( expression(paste(mu," = ",37)))),
-                    sprintf("qnorm CI: [%.f, %.f]",QNORM[1], QNORM[2]),
-                    sprintf("bootstrap CI: [%.f, %.f]",BOOT[1], BOOT[2]),
-                    sprintf("t CI: [%.f, %.f]",TPROCEDURE[1], TPROCEDURE[2])),
-         lty = c(1,1,1,1),
-         col = c("black",col), lwd = 4)
-}
-
-# example of how to use the function:
-compare_CI(ybar = 36, QNORM = c(25,40), BOOT = c(31, 38), TPROCEDURE = c(28, 40))
-```
-  
-
-
+a. If the dogs were simply picking a urine specimen at random, we would expect them to be correct, on average, 1 out of 7 times. The experiment was designed to test whether dogs can perform better than chance. State the null and alternative hypotheses for this test. 
+b. Obtain the test statistic and the P-value. What do you conclude?
 
 <!-- 
 We support several options via the YAML header

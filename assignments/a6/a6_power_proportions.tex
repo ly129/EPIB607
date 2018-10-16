@@ -22,7 +22,7 @@
 
 
 \title{Assignment 6 - Power, Sample Size and Inference for a Population
-Proportion. Due October 21, 11:59pm 2018}
+Proportion. Due October 26, 5:00pm 2018}
 
 \author[a]{EPIB607 - Inferential Statistics}
 
@@ -42,19 +42,20 @@ sample proportion as well as conducting power and sample size
 calculations. Answers should be given in full sentences (DO NOT just
 provide the number). All figures should have appropriately labeled axes,
 titles and captions (if necessary). Units for means and CIs should be
-provided. All graphs and calculations are to be completed in an R
-Markdown document using the provided template. You are free to choose
-any function from any package to complete the assignment. Concise
-answers will be rewarded. Be brief and to the point. Please submit both
-the compiled HTML report and the source file (.Rmd) to myCourses by
-October 21, 2018, 11:59pm. Both HTML and .Rmd files should be saved as
+provided. State your hypotheses and assumptions when applicable. All
+graphs and calculations are to be completed in an R Markdown document
+using the provided template. You are free to choose any function from
+any package to complete the assignment. Concise answers will be
+rewarded. Be brief and to the point. Please submit both the compiled
+HTML report and the source file (.Rmd) to myCourses by October 26, 2018,
+5:00pm. Both HTML and .Rmd files should be saved as
 `IDnumber\_LastName\_FirstName\_EPIB607\_A6'.
 \end{abstract}
 
 \dates{This version was compiled on \today}
 \doi{\url{https://sahirbhatnagar.com/EPIB607/}}
 
-\pinpfootercontents{Assignment 6 due October 21, 2018 by 11:59pm}
+\pinpfootercontents{Assignment 6 due October 26, 2018 by 5:00pm}
 
 \begin{document}
 
@@ -75,8 +76,7 @@ October 21, 2018, 11:59pm. Both HTML and .Rmd files should be saved as
 The \texttt{.Rmd} template for Assignment 6 is available
 \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a6/a6_template.Rmd}{here}
 
-\section{Power and sample size calculations -
-1}\label{power-and-sample-size-calculations---1}
+\section{Bias in step counters}\label{bias-in-step-counters}
 
 Following the study by
 \href{http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Surveys/SmartphoneSteps.pdf}{Case
@@ -89,165 +89,188 @@ et al.} did, but measuring \(n\) persons just once each. We observe the
 device count when the true count on the treadmill reaches 500.
 
 \begin{enumerate}
-\item
-Using a planned sample size of $n=25$, and $\sigma = 60$ steps as a pre-study best-guess as to the  $s$ that might  be observed in them, calculate the critical value at $\alpha = 0.05$.
-\item
-Now imagine that in an infinite sample,  the mean would not be the null 500, but $\mu=470.$
-Calculate the probability that the mean in the sample of 25  will be less than this critical value. (Use the same $s$ for the alternative that you used for the null.)
-\item
-By trial and error, or better still by deriving a general formula, adjust the $n$ until this probability (i.e., the power) is 80\%. Show the 2 probabilities in a diagram, as was done in Figure 4 in section 4.3.2 of the notes.
-\item Show that this $n$ satisfies the equality $$1.96\times SE_{null}[\bar{y}] + 0.84 \times SE_{alt}[\bar{y}] = 30.$$
-
-\end{enumerate}
-
-\newpage
-
-\section{Attitudes toward school}\label{attitudes-toward-school}
-
-The Survey of Study Habits and Attitudes (SSHA) is a psychological test
-that measures the motivation, attitude toward school, and study habits
-of students. Scores range from 0 to 200. The mean score for U.S. college
-students is about 115, and the standard deviation is about 30. A teacher
-who suspects that older students have better attitudes toward school
-gives the SSHA to 25 students who are at least 30 years of age. Their
-mean score is \(\bar{y}\) = 132.2 with a sample standard deviation
-\(s = 28\).
-
-\begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  The teacher asks you to carry out a formal statistical test for her
-  hypothesis. Perform a test, provide a 95\% confidence interval and
-  state your conclusion clearly.
+  Using a planned sample size of \(n=25\), and \(\sigma = 60\) steps as
+  a pre-study best-guess as to the \(s\) that might be observed in them,
+  calculate the critical value at \(\alpha = 0.01\).
 \item
-  What assumptions did you use in part (a). Which of these assumptions
-  is most important to the validity of your conclusion in part (a).
+  Now imagine that the mean would not be the null 500, but \(\mu=470.\)
+  Calculate the probability that the mean in the sample of 25 will be
+  less than this critical value. Use the same \(s\) for the alternative
+  that you used for the null. What is this probability called?
+\item
+  Determine the sample size required for 80\% power using a 1\% level of
+  significance. Plot the null and alternative distributions in a diagram
+  using the
+  \href{https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R}{\texttt{plot\_power}}
+  function. An example of how to use this function and its output is
+  shown below:
 \end{enumerate}
-
-\section{Does a full moon affect
-behavior?}\label{does-a-full-moon-affect-behavior}
-
-Many people believe that the moon influences the actions of some
-individuals. A study of dementia patients in nursing homes recorded
-various types of disruptive behaviors every day for 12 weeks. Days were
-classified as moon days if they were in a 3-day period centered at the
-day of the full moon. For each patient, the average number of disruptive
-behaviors was computed for moon days and for all other days. The
-hypothesis is that moon days will lead to more disruptive behavior. We
-look at a data set consisting of observations on 15 dementia patients in
-nursing homes (available in the \texttt{fullmoon.csv} file):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{fullmoon <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"fullmoon.csv"}\NormalTok{)}
+\KeywordTok{source}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R"}\NormalTok{)}
+
+\NormalTok{mu0 <-}\StringTok{ }\FloatTok{-0.540} \CommentTok{# mean under the null}
+\NormalTok{mha <-}\StringTok{ }\FloatTok{0.99}\OperatorTok{*-}\FloatTok{0.540} \CommentTok{# mean under the alternative}
+\NormalTok{s <-}\StringTok{ }\FloatTok{0.0080} \CommentTok{# sample/population SD}
+\NormalTok{n <-}\StringTok{ }\DecValTok{5} \CommentTok{# sample size}
+\NormalTok{cutoff <-}\StringTok{ }\NormalTok{mu0 }\OperatorTok{+}\StringTok{ }\KeywordTok{qnorm}\NormalTok{(}\FloatTok{0.95}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{s }\OperatorTok{/}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(n)}
+
+\KeywordTok{power_plot}\NormalTok{(}\DataTypeTok{n =}\NormalTok{ n, }
+           \DataTypeTok{s =}\NormalTok{ s,  }
+           \DataTypeTok{mu0 =}\NormalTok{ mu0, }
+           \DataTypeTok{mha =}\NormalTok{ mha, }
+           \DataTypeTok{cutoff =}\NormalTok{ cutoff,}
+           \DataTypeTok{alternative =} \StringTok{"greater"}\NormalTok{,}
+           \DataTypeTok{xlab =} \StringTok{"Freezing point (degrees C)"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{ShadedResult}
 \begin{verbatim}
-#     patient moon_days other_days
-#  1        1      3.33       0.27
-#  2        2      3.67       0.59
-#  3        3      2.67       0.32
-#  4        4      3.33       0.19
-#  5        5      3.33       1.26
-#  6        6      3.67       0.11
-#  7        7      4.67       0.30
-#  8        8      2.67       0.40
-#  9        9      6.00       1.59
-#  10      10      4.33       0.60
-#  11      11      3.33       0.65
-#  12      12      0.67       0.69
-#  13      13      1.33       1.26
-#  14      14      0.33       0.23
-#  15      15      2.00       0.38
+#  Loading required namespace: latex2exp
 \end{verbatim}
 \end{ShadedResult}
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Calculate a 95\% confidence interval for the mean difference in
-  disruptive behaviors. State the assumptions you used to calculate this
-  interval.
-\item
-  Calculate a 95\% bootstrap confidence interval for the mean difference
-  in disruptive behaviors and compare to the one obtained in part (a).
-  Comment on the bootstrap sampling distribution and compare it to the
-  assumptions you made in part (a).
-\item
-  Test the hypothesis that moon days will lead to more disruptive
-  behavior. State your assumptions and provide a brief conclusion based
-  on your analysis.
-\item
-  Find the minimum value of the mean difference in disruptive behaviors
-  (\(\bar{y}\)) needed to reject the null hypothesis.
-\item
-  What is the probability of detecting an increase of 1.0 aggressive
-  behavior per day during moon days? \emph{Hint: calculate the
-  probability of the event calculated in part (d) using a normal
-  distribution with \(\mu=1\) and \(\sigma =\) the standard error of the
-  mean}
-\end{enumerate}
+\begin{center}\includegraphics{a6_power_proportions_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
-\newpage 
+\section{Boosting sales}\label{boosting-sales}
 
-\section{How deep is the ocean?}\label{how-deep-is-the-ocean}
-
-This question is based on the
-\href{https://github.com/sahirbhatnagar/EPIB607/blob/master/exercises/water/students/260194225_water_exercise_epib607.pdf}{in-class
-Exercise} on sampling distributions and builds on
-\href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a4/a4_clt_ci.pdf}{Question
-4 from Assignment 4}. For your sample of \(n=20\) of depths of the ocean
+You want to see if a redesign of the cover of a mail-order catalog will
+increase sales. A very large number of customers will receive the
+original catalog and a random sample of customers will receive the one
+with the new cover. For planning purposes, you are willing to assume
+that the sales from the new catalog will be approximately normal with
+\(\sigma=50\) dollars and that the mean for the original catalog will be
+\(\mu = 25\) dollars. You decide to use a sample size of \(n = 900\).
+You wish to test \[H_0: \mu = 25 \qquad H_a: \mu > 25\]You decide to
+reject \(H_0\) if \(\bar{y} > 26\) and fail to reject \(H_0\) otherwise.
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  Calculate a 95\% Confidence interval using the \(t\) procedure
+  Find the probability of a Type I error.
 \item
-  Plot the qnorm, bootstrap, and \(t\) procedure confidence intervals on
-  the same plot and comment on the how the \(t\) interval compares to
-  the other 2 intervals. You may use the \texttt{compare\_CI} function
-  provided below to produce the plot.
+  Find the probability of a Type II error when \(\mu = 28\) dollars.
+\item
+  Find the probability of a Type II error when \(\mu = 30\) dollars.
+\item
+  The distribution of sales is not normal because many customers buy
+  nothing. Why is it nonetheless reasonable in this circumstance to
+  assume that the mean will be approximately normal?
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{compare_CI <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(ybar, QNORM, BOOT, TPROCEDURE,}
-                       \DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\StringTok{"#E41A1C"}\NormalTok{,}\StringTok{"#377EB8"}\NormalTok{,}\StringTok{"#4DAF4A"}\NormalTok{)) \{}
+\section{Fill the bottles}\label{fill-the-bottles}
 
-\NormalTok{  dt <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{"qnorm"}\NormalTok{, }\StringTok{"bootstrap"}\NormalTok{, }\StringTok{"t"}\NormalTok{),}
-                   \DataTypeTok{ybar =} \KeywordTok{rep}\NormalTok{(ybar, }\DecValTok{3}\NormalTok{),}
-                   \DataTypeTok{low =} \KeywordTok{c}\NormalTok{(QNORM[}\DecValTok{1}\NormalTok{], BOOT[}\DecValTok{1}\NormalTok{], TPROCEDURE[}\DecValTok{1}\NormalTok{]),}
-                   \DataTypeTok{up =} \KeywordTok{c}\NormalTok{(QNORM[}\DecValTok{2}\NormalTok{], BOOT[}\DecValTok{2}\NormalTok{], TPROCEDURE[}\DecValTok{2}\NormalTok{])}
-\NormalTok{  )}
-  
-  \KeywordTok{plot}\NormalTok{(dt}\OperatorTok{$}\NormalTok{ybar, }\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(dt), }\DataTypeTok{pch =} \DecValTok{20}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{), }
-       \DataTypeTok{xlim =} \KeywordTok{range}\NormalTok{(}\KeywordTok{pretty}\NormalTok{(}\KeywordTok{c}\NormalTok{(dt}\OperatorTok{$}\NormalTok{low, dt}\OperatorTok{$}\NormalTok{up))),}
-       \DataTypeTok{xlab =} \StringTok{"Depth of ocean (m)"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Confidence Interval Type"}\NormalTok{,}
-       \DataTypeTok{las =} \DecValTok{1}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{0.8}\NormalTok{, }\DataTypeTok{cex =} \DecValTok{3}\NormalTok{)}
-  
-  \KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =} \DecValTok{37}\NormalTok{, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =} \StringTok{"black"}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
-  \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =}\NormalTok{ dt}\OperatorTok{$}\NormalTok{low, }\DataTypeTok{x1 =}\NormalTok{ dt}\OperatorTok{$}\NormalTok{up,}
-           \DataTypeTok{y0 =} \DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(dt), }\DataTypeTok{lend =} \DecValTok{1}\NormalTok{,}
-           \DataTypeTok{col =}\NormalTok{ col, }\DataTypeTok{lwd =} \DecValTok{4}\NormalTok{)}
-  
-  \KeywordTok{legend}\NormalTok{(}\StringTok{"topleft"}\NormalTok{,}
-         \DataTypeTok{legend =} \KeywordTok{c}\NormalTok{(}\KeywordTok{eval}\NormalTok{(}\KeywordTok{substitute}\NormalTok{( }\KeywordTok{expression}\NormalTok{(}\KeywordTok{paste}\NormalTok{(mu,}\StringTok{" = "}\NormalTok{,}\DecValTok{37}\NormalTok{)))),}
-                    \KeywordTok{sprintf}\NormalTok{(}\StringTok{"qnorm CI: [%.f, %.f]"}\NormalTok{,QNORM[}\DecValTok{1}\NormalTok{], QNORM[}\DecValTok{2}\NormalTok{]),}
-                    \KeywordTok{sprintf}\NormalTok{(}\StringTok{"bootstrap CI: [%.f, %.f]"}\NormalTok{,BOOT[}\DecValTok{1}\NormalTok{], BOOT[}\DecValTok{2}\NormalTok{]),}
-                    \KeywordTok{sprintf}\NormalTok{(}\StringTok{"t CI: [%.f, %.f]"}\NormalTok{,TPROCEDURE[}\DecValTok{1}\NormalTok{], TPROCEDURE[}\DecValTok{2}\NormalTok{])),}
-         \DataTypeTok{lty =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{),}
-         \DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,col), }\DataTypeTok{lwd =} \DecValTok{4}\NormalTok{)}
-\NormalTok{\}}
+Bottles of a popular cola drink are supposed to contain 300 milliliters
+(ml) of cola. There is some variation from bottle to bottle because the
+filling machinery is not perfectly precise. Assume the standard
+deviation (\(\sigma\)) of the filling process is 3 ml. An inspector, who
+suspects that the bottler is underfilling, measures the contents of a
+sample of six bottles. Power calculations help us see how large a
+shortfall in the bottle contents the test can be expected to detect.
 
-\CommentTok{# example of how to use the function:}
-\KeywordTok{compare_CI}\NormalTok{(}\DataTypeTok{ybar =} \DecValTok{36}\NormalTok{, }\DataTypeTok{QNORM =} \KeywordTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{,}\DecValTok{40}\NormalTok{), }\DataTypeTok{BOOT =} \KeywordTok{c}\NormalTok{(}\DecValTok{31}\NormalTok{, }\DecValTok{38}\NormalTok{), }\DataTypeTok{TPROCEDURE =} \KeywordTok{c}\NormalTok{(}\DecValTok{28}\NormalTok{, }\DecValTok{40}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Find the power of a 5\% significance test against the alternative
+  \(\mu= 299\) ml.
+\item
+  Find the power against the alternative \(\mu = 295\) ml.
+\item
+  Is the power against \(\mu = 290\) higher or lower than the value you
+  found in (b)? Explain why this result makes sense.
+\item
+  Make a plot of the power as a function of the shortfall (\(\Delta\)),
+  and comment on the plot.
+\end{enumerate}
+
+\section{Drunken cyclists}\label{drunken-cyclists}
+
+In the United States approximately 900 people die in bicycle accidents
+each year. One study examined the records of 1711 bicyclists aged 15 or
+older who were fatally injured in bicycle accidents between 1987 and
+1991 and were tested for alcohol. Of these, 542 tested positive for
+alcohol (blood alcohol concentration of 0.01\% or higher).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  To do statistical inference for these data, we think in terms of a
+  model where \(p\) is parameter that represents the probability that a
+  tested bicycle rider is positive for alcohol. Find a 99\% confidence
+  interval for \(p\).
+\item
+  Can you conclude from your analysis of this study that alcohol causes
+  fatal bicycle accidents? Explain
+\item
+  In this study 386 bicyclists had blood alcohol levels above 0.10\%, a
+  level defining legally drunk in many states at the time. Give a 99\%
+  confidence interval for the proportion who were legally drunk
+  according to this criterion.
+\end{enumerate}
+
+\newpage
+
+\section{Handling contact lenses}\label{handling-contact-lenses}
+
+Failure to follow recommended contact lens wear and care practices can
+lead to serious eye infection. A survey of a random sample of 281
+Americans who wear contact lenses regularly asked about contact lens
+practices. The survey found that 139 respondents do not consistently
+wash their hands before handing their contact lenses.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Obtain a plus four 99\% confidence interval for the proportion \(p\)
+  of all American contact lens wearers who do not consistently wash
+  their hands before handing their lenses. Verify that the conditions
+  for your confidence interval are met.
+\item
+  Obtain a large sample 99\% confidence interval for the proportion
+  \(p\) of all American contact lens wearers who do not consistently
+  wash their hands before handing their lenses. How does this compare to
+  the interval you calculated in part (a)?
+\item
+  The researchers indicated that this survey had a substantial
+  nonresponse rate. How does this information affect your interpretation
+  of the confidence interval in context?
+\item
+  Survey participants simply answered a questionnaire, and no attempt
+  was made to verify the answers. How does this information affect your
+  interpretation of the confidence interval in context?
+\end{enumerate}
+
+\section{Cancer-detecting dogs}\label{cancer-detecting-dogs}
+
+A study was designed to determine whether dogs can be trained to
+identify urine specimens from individuals with bladder cancer. Dogs were
+first trained to discriminate between urine specimens from patients with
+bladder cancer and urine specimens from patients with other conditions.
+After the training was completed, the dogs had to pick one of seven new
+urine specimens. Each time, only one of the seven urine specimens came
+from a patient with bladder cancer. Out of 54 trials, the dogs
+identified the correct urine specimen 22 times.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  If the dogs were simply picking a urine specimen at random, we would
+  expect them to be correct, on average, 1 out of 7 times. The
+  experiment was designed to test whether dogs can perform better than
+  chance. State the null and alternative hypotheses for this test.
+\item
+  Obtain the test statistic and the P-value. What do you conclude?
+\end{enumerate}
 
 %\showmatmethods
 
