@@ -384,13 +384,13 @@ plot(0:3/3, dbinom(x = 0:3, size = 3, prob = 0.5), type = "h")
 
 \frame{\frametitle{Requirements for $y$ to have a Binomial (n, $\pi $) distribution} 
 	\begin{enumerate}
-\item Fixed sample size $n.$ \pause
+\item Fixed sample size $n.$ 
 \item Elements selected at random (i.e. same probability of being sampled) and independent of each other;
-\item Each element in ``population'' is 0 or 1, but we are only interested in estimating proportion  ($\pi $) of 1's;  we are not interested in individuals. \pause
+\item Each element in ``population'' is 0 or 1, but we are only interested in estimating proportion  ($\pi $) of 1's;  we are not interested in individuals. 
 \item Denote by $y_{i}$ the value of the $i$-th sampled element.  P($y_{i}=1)$ is constant (it is $\pi$) across $i$.
 \end{enumerate} }
 
-
+\begin{comment}
 \begin{frame}
 \begin{figure}
 	\begin{center}
@@ -399,6 +399,14 @@ plot(0:3/3, dbinom(x = 0:3, size = 3, prob = 0.5), type = "h")
 			%There are $2^n$ possible (distinct) sequences of 0's and 1's, each with its probability. We are not interested in these $2^n$ probabilities, but in the probability that the sample  contains $y$ 1's and $(n-y)$ 0's. There are only ($n$+1) possibilities for $y$, namely 0 to $n.$ Fortunately, each of the $nC_y$ sequences that lead to the same sum or count ($y$), has the same probability. So we group the 2$^n$ sequences into $(n+1)$ sets, according to the sum or count. Each sequence in the set with  $y$ 1's and $(n-y)$ 0's has the same probability, namely $\pi ^{y}(1-\pi )^{n-y}$. Thus, in lieu of adding all such probabilities, we simply multiply this  probability by the number, $^{n}C _{y}$ -- shown in black -- of unique sequences in the set. Check: the numbers in black add to 2$^n.$ Nowadays, the $(n+1)$ probabilities are easily obtained by supplying a value for the \texttt{prob} argument in the \texttt{R} function \texttt{dbinom}, instead of  computing the binomial coefficient $nC_y$ by hand.}
 	\end{center}
 \end{figure}
+\end{frame}
+\end{comment}
+
+
+\begin{frame}[fragile]{}
+<<fig.asp = 0.858, echo = FALSE, eval = TRUE>>=
+source("MakeBinomial3.R")
+@
 \end{frame}
 
 
@@ -550,7 +558,7 @@ hist(rbinom(1000, 100, 0.3))
 @
 \end{frame}
 
-\begin{frame}{Example from AAO Unit 21}
+\begin{frame}{Example 1 from AAO Unit 21}
 A drug manufacturer claims that its flu vaccine is 85\% effective; in other words, each person who is vaccinated stands an 85\% chance of developing immunity. Suppose that 200 randomly selected people are vaccinated. Let $Y$ be the number that develops immunity.
 
 \begin{enumerate}
@@ -562,7 +570,7 @@ develop immunity? (Hint: Use a normal distribution to approximate the distributi
 \end{frame}
 
 
-\begin{frame}[fragile]{Example from AAO Unit 21 - Exact Method}
+\begin{frame}[fragile]{Example 1 from AAO Unit 21 - Exact Method}
 
 <<echo = TRUE, eval = TRUE, fig.asp = 0.618>>=
 mosaic::xpbinom(q = c(165, 180), size = 200, prob = 0.85)
@@ -577,6 +585,296 @@ mosaic::xpnorm(q = c(165,180), mean = 200 * 0.85,
 @
 \end{frame}
 
+
+
+\begin{frame}{Example 2 from AAO Unit 21}
+People with O- blood are called universal donors because most people can receive an O-blood transfusion. The probability of having blood type O- is 0.066. Suppose a random sample of five people show up during a blood drive to donate blood. Let $Y$ be the number of people with blood type O-.
+
+\begin{enumerate}
+	\item What is the probability that none of the five people has blood type O-?
+	\item What is the probability that exactly one of the five has blood type O-?
+	\item What is the probability that no more than one of the five people has blood type O-?
+	\item What is the probability that at least one of the five has blood type O-?
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]{1. What is the probability that none of the five people has blood type O-?}
+
+$$ 
+P(Y = 0) = \binom{5}{0} 0.066^0 (1- 0.066)^5
+$$
+
+
+<<echo = TRUE, eval = TRUE>>=
+stats::dbinom(x = 0, size = 5, prob = 0.066)
+(1-0.066)^5
+@
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{2. What is the probability that exactly one of the five has blood type O-?}
+
+$$ 
+P(Y = 1) = \binom{5}{1} 0.066^1 (1- 0.066)^4
+$$
+
+
+<<echo = TRUE, eval = TRUE>>=
+stats::dbinom(x = 1, size = 5, prob = 0.066)
+@
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{3. What is the probability that no more than one of the five people has blood type O-?}
+\footnotesize
+\begin{align*}
+P(Y \leq 1) & = P(Y = 0) + P(Y = 1) \\
+& = \binom{5}{0} 0.066^0 (1- 0.066)^5 + \binom{5}{1} 0.066^1 (1- 0.066)^4
+\end{align*}
+
+
+<<echo = TRUE, eval = TRUE, fig.asp = 0.218>>=
+stats::dbinom(x = 0, size = 5, prob = 0.066) + 
+	stats::dbinom(x = 1, size = 5, prob = 0.066)
+stats::pbinom(q = 1, size = 5, prob = 0.066)
+mosaic::xpbinom(q = 1, size = 5, prob = 0.066)
+@
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{4. What is the probability that more than one of the five has blood type O-?}
+\footnotesize
+\begin{align*}
+P(Y > 1) & = P(Y = 2) + P(Y = 3) + P(Y=4) + P(Y=5) \\
+& = 1 - P(Y \leq 1)
+\end{align*}
+
+
+<<echo = TRUE, eval = TRUE, fig.asp = 0.318>>=
+1 - stats::pbinom(q = 1, size = 5, prob = 0.066)
+mosaic::xpbinom(q = 1, size = 5, prob = 0.066, lower.tail = FALSE)
+@
+
+\end{frame}
+
+
+
+\section{Inference concerning a proportion $\pi$, based on s.r.s. of size $n$}
+
+
+
+\begin{frame}{Examples}
+\small 
+The \textbf{Parameter} $\pi$ of interest: the proportion ...
+\begin{itemize}
+	\item with undiagnosed hypertension / seeing MD during a 1-year span 
+	\item who would respond to a specific therapy 
+	\item still breast-feeding at 6 months
+	\item of pairs where response on treatment $>$  response on placebo
+	\item of Earth's surface covered by water
+	\item who \textit{would} enrol in a long-term study or answer a questionnaire
+	\item of twin pairs where left-handed twin dies first
+	\item able to tell imported from domestic beer in a ``triangle taste test''
+\end{itemize}
+
+Inference via \textbf{Statistic}: the number ($y$) or proportion $p = y/n$ `positive' in an s.r.s. of size $n$.
+
+\end{frame}
+
+
+
+\begin{frame}{Frequentist vs. Bayesian Inference}
+\small 
+\Wider[5em]{
+\begin{tabular}{ll}
+	\textbf{Frequentist ($\S 2.1$}) & \textbf{Bayesian  ($\S 2.2$)} \\
+	& \\
+	- based on prob[ data $| \theta$ ], i.e. & - based on prob[ $\theta | $data ], i.e.,  \\
+	- probability statements about data & - probability statements about $\pi $  \\
+	& \\
+	Evidence (P-value) against $H_{0}$: $\pi = \pi_{0}$ & - point estimate: \\
+	& mean/median/mode of  \\
+	Test of H$_{0}$: Is P-value $<$ (preset) $\alpha$? & posterior distribution of $\pi$ \\
+	CI:  interval estmate & - (credible) interval  \\ 
+\end{tabular}
+}
+\end{frame}
+
+
+
+
+\begin{frame}
+\Wider[5em]{
+
+\includegraphics[width=4.95in,height=3.7in]{BinomialsVarious.pdf}
+
+	
+}
+\end{frame}
+
+
+
+\begin{frame}{Justification for the $n \times \pi$ and $n \times (1-\pi)$ $\geq 10$ }
+notes on the Figure from the previous slide:
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item \textbf{Binomial distributions}, on (0,1) scale (rather than \texttt{0:n}). Bigger  expected numbers of { \color{blue}{`\textbf{positives}'} } \textbf{\underline{and}} { \color{red}{`\textbf{negatives}'}} imply less probability mass at the extreme(s) and thus help to approximate the (binomial) sampling distribution by a Gaussian distribution with mean $\pi$ and 
+	$\sigma = \frac{ \{\pi(1-\pi)\}^{1/2}}{\sqrt{n}}.$
+		\item The amount of space needed at each extreme in order to accommodate a Gaussian distribution that does not spill over beyond the (0,1) boundaries is just another way to explain the (`taught but not explained')  rule-of-thumb that the expected numbers, $n \times \pi$ and $n \times (1-\pi)$ should should exceed 10 (or 5, or 8, depending on the textbook, and the edition!)
+\end{itemize}
+\end{frame}
+
+
+\section{Frequentist Confidence Interval for $\pi$, based on an observed proportion $p = y/n$ \texttt{stats::binom.test} and \texttt{mosaic::binom.test} in \texttt{R}}
+
+
+\begin{frame}{Some background}
+\small
+
+\begin{itemize}
+	\item \underline{It is sad} that even today, with more emphasis on CI's and less on p-values and tests, we have to go through the `\texttt{.test}' to get to the CI. It is also of note that the procedure mentions the model (binomial) rather than the target parameter, the proportion $\pi.$ \pause
+	
+	\item The base \texttt{stats::binom.test} function in \texttt{R} has just one method, the Clopper-Pearson one. The \texttt{mosaic::binom.test} one has it and four others, and these allow us to appreciate why different ones might be used in different circumstances. We will start with the most familiar of them, the so-called `Wald' CI, which, because of its `point estimate $\pm \textrm{Margin.Of.Error}$' form, is \textit{symmetric}. \pause 
+	
+	\item The \texttt{mosaic::binom.test} allows for a vector of individual 0's and 1's, rather than the tallies of 1's and 0's required for \texttt{stats::binom.test} \pause 
+	
+	\item In practice, \textbf{CIs for proportions, and functions thereof, will come from regression models}. 
+	
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{CI based on Gaussian approximation to sampling distribution of the sample proportion $p$ -- the `Wald' method in \texttt{mosaic::binom.test}}
+\small
+\begin{itemize}
+	\item The Wald CI has been taught as having the form: $$p \pm z^\star \times \textrm{SE}[p]$$ \pause
+\item If the population sampled from has an (unknown) proportion $\pi$ of 1's
+and an (unknown) proportion $1-\pi$ of 0's, then the \underline{theoretical} SD of all of the 1's and 0's sampled from is $\sigma_{0/1} = \sqrt{\pi(1-\pi)}$. \pause
+\item Since we don't know the true value of $\sigma_{0/1} = \sqrt{\pi(1-\pi)}$, we replace it with a version where we \underline{substitute} $p$ for $\pi$, i.e. the estimated SD of all of the 1's and 0's sampled from is $\widehat{\sigma_{0/1}} = \sqrt{p(1-p)}$.
+
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{CI based on Normal approximation to sampling distribution of the sample proportion $p$ -- the `Wald' method in \texttt{mosaic::binom.test}}
+\small
+\begin{itemize}
+	\item Dividing this $\widehat{\sigma_{0/1}}$ by the square root of $n$, we get the standard error, our best estimate of the spread of the sampling distribution of a sample proportion, i.e.,
+	$$SE[p] = \frac{\sqrt{p(1-p)}}{\sqrt{n}} \ \ \ \  \ = \ \frac{\widehat{\sigma_{0/1}}}{\sqrt{n}} \  .$$ \pause
+	\item So, as it is \underline{traditionally} presented,  the CI becomes
+	$$p \  \pm  \ z^\star \times \sqrt{\frac{p(1-p)}{n}}.$$ \pause 
+	\item As we will see below, now that we seldom calculate a CI `from scratch,'  \underline{today} the Wald CI is better presented in the \underline{\texttt{R-computational} form}
+	\scriptsize{$$\texttt{qnorm(p=c(0.025,0.975),  mean= p,  sd = sqrt(p*(1-p))/sqrt(n))}.$$}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sampling distribution of $p$}
+
+\begin{center}
+	\begin{figure}
+\includegraphics[scale=0.3,angle=90]{prop1.pdf}
+	\end{figure}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Example 1: Assessing the prevalence of HPV infections}
+\small
+NHANES found that 515 of a sample of 1921 women aged 14 to 59 years currently tested positive for HPV. Provide a 99\% confidence interval for HPV prevalence. 
+
+<<echo = TRUE, eval = TRUE, fig.asp = 0.308>>=
+n <- 1921
+number_infected <- 515
+p <- number_infected / n
+s <- sqrt(p * (1 - p))
+SEP <- s / sqrt(n)
+mosaic::xqnorm(p=c(0.005,0.995), mean = p, sd = SEP)
+@
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Example 2: Assessing the prevalence of HPV infections}
+
+<<echo = TRUE, eval = TRUE, fig.asp = 0.308, size = "tiny">>=
+mosaic::binom.test(x = 515, n = 1921, ci.method=c("wald"), conf.level=0.99)
+@
+Note: HPV positive $\ne$ `success' !!
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Example 2: Proportion of Earth Covered by Water}
+
+Suppose our observed proportion of `water' locations was $p = 4/5,$ or 80\%.
+
+<<echo = TRUE, eval = TRUE, fig.asp = 0.308, size = "tiny">>=
+mosaic::binom.test(x = 4, n = 5, ci.method=c("wald"), conf.level=0.95)
+@
+
+\pause 
+
+Clearly  the proportion or percentage of the Earth's surface covered by water cannot
+be \underline{1.15} or \underline{115}\%.  
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Example 2: Proportion of Earth Covered by Water}
+
+<<echo = TRUE, eval = TRUE, fig.asp = 0.308>>=
+stats::qnorm(p=c(0.025,0.975), mean = 0, sd = sqrt(0 * 1 / 5))
+stats::qnorm(p=c(0.025,0.975), mean = 0.2, sd = sqrt(0.2 * 0.8 / 5))
+stats::qnorm(p=c(0.025,0.975), mean = 0.4, sd = sqrt(0.4 * 0.6 / 5))
+stats::qnorm(p=c(0.025,0.975), mean = 0.6, sd = sqrt(0.6 * 0.4 / 5))
+stats::qnorm(p=c(0.025,0.975), mean = 0.8, sd = sqrt(0.8 * 0.2 / 5))
+stats::qnorm(p=c(0.025,0.975), mean = 1, sd = sqrt(1 * 0 / 5))
+@
+
+
+\end{frame}
+
+
+
+\begin{frame}{Example 2: Proportion of Earth Covered by Water}
+Thus, \textbf{\underline{whatever your result}}, the Wald 95\% CI gives a \textit{\textbf{nonsensical}} result. Using the Normal/Gaussian approximation to the Binomial sampling distribution does not work when $n=5.$
+\end{frame}
+
+
+\section{What to do if a symmetric Gaussian-based CI doesn't make sense?}
+
+
+\begin{frame}{What to do if a symmetric Gaussian-based CI doesn't make sense?}
+\begin{itemize}
+	\setlength\itemsep{1em}
+\item \textbf{Answer}: use a non-symmetric one, and one that respects the (0,1) scale. \pause 
+\item The other 4 methods in \texttt{mosaic::binom.test} do respect the (0,1) scale \pause 
+\item We can also switch to the ($-\infty, \infty$)  \textit{logit} scale, computing the CI in this scale, and then back-transforming to the (0,1) scale $\to$ logistic regression.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{1. Asymmetric (Wilson and Clopper-Pearson) Methods}
+content...
+\end{frame}
+
+\begin{frame}[fragile]{}
+<<fig.asp = 0.858, echo = FALSE, eval = TRUE>>=
+source("wilsonCI.R")
+@
+\end{frame}
 
 \end{document}
 
