@@ -25,7 +25,7 @@
 <meta name="author" content="Sahir Bhatnagar and James Hanley">
 
 
-<meta name="date" content="2018-10-16">
+<meta name="date" content="2018-10-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -170,11 +170,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.7.1" data-path="schedule.html"><a href="schedule.html#monday-october-15"><i class="fa fa-check"></i><b>5.7.1</b> Monday October 15</a></li>
 <li class="chapter" data-level="5.7.2" data-path="schedule.html"><a href="schedule.html#wednesday-october-17"><i class="fa fa-check"></i><b>5.7.2</b> Wednesday October 17</a></li>
 <li class="chapter" data-level="5.7.3" data-path="schedule.html"><a href="schedule.html#thursday-october-18"><i class="fa fa-check"></i><b>5.7.3</b> Thursday October 18</a></li>
-<li class="chapter" data-level="5.7.4" data-path="schedule.html"><a href="schedule.html#friday-october-19"><i class="fa fa-check"></i><b>5.7.4</b> Friday October 19</a></li>
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="schedule.html"><a href="schedule.html#week-8"><i class="fa fa-check"></i><b>5.8</b> Week 8</a><ul>
 <li class="chapter" data-level="5.8.1" data-path="schedule.html"><a href="schedule.html#monday-october-22"><i class="fa fa-check"></i><b>5.8.1</b> Monday October 22</a></li>
 <li class="chapter" data-level="5.8.2" data-path="schedule.html"><a href="schedule.html#thursday-october-25"><i class="fa fa-check"></i><b>5.8.2</b> Thursday October 25</a></li>
+<li class="chapter" data-level="5.8.3" data-path="schedule.html"><a href="schedule.html#friday-october-26"><i class="fa fa-check"></i><b>5.8.3</b> Friday October 26</a></li>
 </ul></li>
 <li class="chapter" data-level="5.9" data-path="schedule.html"><a href="schedule.html#week-9"><i class="fa fa-check"></i><b>5.9</b> Week 9</a><ul>
 <li class="chapter" data-level="5.9.1" data-path="schedule.html"><a href="schedule.html#monday-october-29"><i class="fa fa-check"></i><b>5.9.1</b> Monday October 29</a></li>
@@ -825,22 +825,50 @@ manipulate<span class="op">::</span><span class="kw">manipulate</span>(
 <tbody>
 <tr>
 <td style="text-align:left;">
+<a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/006_proportions/006-proportions-sol.pdf">1. DALITE Q6 Solutions</a>
 </td>
 </tr>
-</tbody>
-</table>
-</div>
-<div id="friday-october-19" class="section level3">
-<h3><span class="header-section-number">5.7.4</span> Friday October 19</h3>
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
-<tbody>
 <tr>
 <td style="text-align:left;">
-Assignment 6 due by 11:59pm
+<ol start="2" style="list-style-type: decimal">
+<li><a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sample_size/EPIB607_sample_size.pdf">P-values, Power and Sample Size</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li><a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_prop/EPIB607_one_sample_prop.pdf">Inference about a population proportion</a>
 </td>
 </tr>
 </tbody>
-</table>
+</table></li>
+</ol></li>
+</ol>
+<div id="code-for-clopper-pearson-confidence-intervals" class="section level4">
+<h4><span class="header-section-number">5.7.3.1</span> Code for Clopper-Pearson Confidence Intervals</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># upper limit --&gt; lower tail needs 2.5%</span>
+manipulate<span class="op">::</span><span class="kw">manipulate</span>(
+mosaic<span class="op">::</span><span class="kw">xpbinom</span>(<span class="dv">4</span>, <span class="dt">size =</span> <span class="dv">5</span>, <span class="dt">prob =</span> proba),
+<span class="dt">proba =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="fl">0.001</span>, <span class="fl">0.999</span>, <span class="dt">step =</span> <span class="fl">0.001</span>))
+
+<span class="co"># lower limit --&gt; upper tail needs 2.5%</span>
+<span class="co"># when lower.tail=FALSE, pbinom doesnt include k, i.e., P(Y &gt; k)</span>
+manipulate<span class="op">::</span><span class="kw">manipulate</span>(
+mosaic<span class="op">::</span><span class="kw">xpbinom</span>(<span class="dv">3</span>, <span class="dt">size =</span> <span class="dv">5</span>, <span class="dt">prob =</span> proba, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>),
+<span class="dt">proba =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="fl">0.001</span>, <span class="fl">0.999</span>, <span class="dt">step =</span> <span class="fl">0.001</span>))
+
+
+<span class="co"># upper limit --&gt; lower tail needs 2.5%</span>
+manipulate<span class="op">::</span><span class="kw">manipulate</span>(
+mosaic<span class="op">::</span><span class="kw">xpbinom</span>(<span class="dv">16</span>, <span class="dt">size =</span> <span class="dv">20</span>, <span class="dt">prob =</span> proba),
+<span class="dt">proba =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="fl">0.001</span>, <span class="fl">0.999</span>, <span class="dt">step =</span> <span class="fl">0.001</span>))
+
+
+<span class="co"># lower limit --&gt; upper tail needs 2.5%</span>
+manipulate<span class="op">::</span><span class="kw">manipulate</span>(
+mosaic<span class="op">::</span><span class="kw">xpbinom</span>(<span class="dv">15</span>, <span class="dt">size =</span> <span class="dv">20</span>, <span class="dt">prob =</span> proba, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>),
+<span class="dt">proba =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="fl">0.001</span>, <span class="fl">0.999</span>, <span class="dt">step =</span> <span class="fl">0.001</span>))</code></pre></div>
+</div>
 </div>
 </div>
 <div id="week-8" class="section level2">
@@ -862,6 +890,18 @@ Assignment 6 due by 11:59pm
 <tbody>
 <tr>
 <td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="friday-october-26" class="section level3">
+<h3><span class="header-section-number">5.8.3</span> Friday October 26</h3>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:left;">
+Assignment 6 due by 59pm
 </td>
 </tr>
 </tbody>

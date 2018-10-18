@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-17}
+    \date{2018-10-18}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -476,7 +476,7 @@ text:
 \caption{}
 \end{figure}
 
-The version of the book you are reading now was built on 2018-10-17 and
+The version of the book you are reading now was built on 2018-10-18 and
 was built on
 \href{https://travis-ci.org/sahirbhatnagar/MATH697}{Travis}.
 
@@ -1228,21 +1228,44 @@ noise}\label{code-for-looking-at-power-as-a-function-of-sample-size-and-noise}
 \centering
 \begin{tabular}{l}
 \hline
-\\
+[1. DALITE Q6 Solutions](https://github.com/sahirbhatnagar/EPIB607/raw/master/dalite/006\_proportions/006-proportions-sol.pdf)\\
+\hline
+2. [P-values, Power and Sample Size](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sample\_size/EPIB607\_sample\_size.pdf)\\
+\hline
+3. [Inference about a population proportion](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one\_sample\_prop/EPIB607\_one\_sample\_prop.pdf)\\
 \hline
 \end{tabular}
 \end{table}
 
-\subsection{Friday October 19}\label{friday-october-19}
+\subsubsection{Code for Clopper-Pearson Confidence
+Intervals}\label{code-for-clopper-pearson-confidence-intervals}
 
-\begin{table}[H]
-\centering
-\begin{tabular}{l}
-\hline
-Assignment 6 due by 11:59pm\\
-\hline
-\end{tabular}
-\end{table}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# upper limit --> lower tail needs 2.5%}
+\NormalTok{manipulate}\OperatorTok{::}\KeywordTok{manipulate}\NormalTok{(}
+\NormalTok{mosaic}\OperatorTok{::}\KeywordTok{xpbinom}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DataTypeTok{size =} \DecValTok{5}\NormalTok{, }\DataTypeTok{prob =}\NormalTok{ proba),}
+\DataTypeTok{proba =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\FloatTok{0.999}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.001}\NormalTok{))}
+
+\CommentTok{# lower limit --> upper tail needs 2.5%}
+\CommentTok{# when lower.tail=FALSE, pbinom doesnt include k, i.e., P(Y > k)}
+\NormalTok{manipulate}\OperatorTok{::}\KeywordTok{manipulate}\NormalTok{(}
+\NormalTok{mosaic}\OperatorTok{::}\KeywordTok{xpbinom}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DataTypeTok{size =} \DecValTok{5}\NormalTok{, }\DataTypeTok{prob =}\NormalTok{ proba, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{),}
+\DataTypeTok{proba =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\FloatTok{0.999}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.001}\NormalTok{))}
+
+
+\CommentTok{# upper limit --> lower tail needs 2.5%}
+\NormalTok{manipulate}\OperatorTok{::}\KeywordTok{manipulate}\NormalTok{(}
+\NormalTok{mosaic}\OperatorTok{::}\KeywordTok{xpbinom}\NormalTok{(}\DecValTok{16}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{prob =}\NormalTok{ proba),}
+\DataTypeTok{proba =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\FloatTok{0.999}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.001}\NormalTok{))}
+
+
+\CommentTok{# lower limit --> upper tail needs 2.5%}
+\NormalTok{manipulate}\OperatorTok{::}\KeywordTok{manipulate}\NormalTok{(}
+\NormalTok{mosaic}\OperatorTok{::}\KeywordTok{xpbinom}\NormalTok{(}\DecValTok{15}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{prob =}\NormalTok{ proba, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{),}
+\DataTypeTok{proba =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\FloatTok{0.001}\NormalTok{, }\FloatTok{0.999}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.001}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
 \section{Week 8}\label{week-8}
 
@@ -1264,6 +1287,17 @@ Assignment 6 due by 11:59pm\\
 \begin{tabular}{l}
 \hline
 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Friday October 26}\label{friday-october-26}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l}
+\hline
+Assignment 6 due by 59pm\\
 \hline
 \end{tabular}
 \end{table}
@@ -1490,6 +1524,9 @@ Group project due by 11:59pm.\\
 \item
   \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sample_size/EPIB607_sample_size.pdf}{P-values,
   Power and Sample Size}
+\item
+  \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_prop/EPIB607_one_sample_prop.pdf}{Inference
+  about a population proportion}
 \end{enumerate}
 
 \chapter{Polls}\label{polls}
@@ -1683,7 +1720,7 @@ categorical quantity:
 }
 
 \caption{Commonly used aesthetics in data visualization.
-top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-62}
+top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-63}
 \end{figure}
 
 \section{Coordinate systems}\label{coordinate-systems}
@@ -1717,7 +1754,7 @@ locations in a flat two-dimensional plane.
 }
 
 \caption{Commonly used coordinate systems. Chapter 3
-\citet{Yau}.}\label{fig:unnamed-chunk-63}
+\citet{Yau}.}\label{fig:unnamed-chunk-64}
 \end{figure}
 
 \section{Scales}\label{scales}
@@ -1748,7 +1785,7 @@ one-to-one, then the data visualization becomes ambiguous.
 \caption{Scales link data values to aesthetics. Here, the numbers 1
 through 4 have been mapped onto a position scale, a shape scale, and a
 color scale. For each scale, each number corresponds to a unique
-position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-64}
+position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-65}
 \end{figure}
 
 \section{Context}\label{context}
@@ -1863,7 +1900,7 @@ differentiate different categories.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-65-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-66-1} \end{center}
 
 Also see the
 \href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
@@ -1945,7 +1982,7 @@ for whom at least two-thirds of the students took the SAT.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-66-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-67-1} \end{center}
 
 This plot uses the visual cue of position to represent the math SAT
 score on the vertical axis with. The categorical variable of state is
@@ -1982,7 +2019,7 @@ being used to distinguish sex.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-67-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-68-1} \end{center}
 
 \section{Exercises}\label{exercises}
 
