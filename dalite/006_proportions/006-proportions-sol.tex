@@ -1,0 +1,478 @@
+\documentclass[letterpaper,9pt,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{DALITE Q6 - Binomial Distribution and Inference for one Proportion.
+Solutions.}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Binomial distribution |  One sample proportion |  Hypothesis testing  }  
+
+\begin{abstract}
+This DALITE quiz will cover the binomial distribution and inference for
+a sample proportion. You need to understand the binomial distribution
+before moving on to the chapter on one sample proportions. This is
+analgous to learning the normal distribution before inference for a
+single mean.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{DALITE Q5 due October 3, 2018 by 5pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section{Binomial Distribution 1}\label{binomial-distribution-1}
+
+In which of the following would Y not have a Binomial distribution?
+Provide your justification in the rationale.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{Y = Number, out of 60 occupants of 30 randomly chosen cars,
+  wearing seatbelts. (Correct)}
+\item
+  Y = Number, out of 60 occupants of 60 randomly chosen cars, wearing
+  seatbelts.
+\item
+  Y = Number, out of simple random sample of 100 individuals, that are
+  left-handed.
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales}
+
+\begin{itemize}
+\tightlist
+\item
+  60 occupants from 30 cars would mean more than one occupant per car -
+  whether each occupant is wearing a seatbelt or not isn't independent
+  if more than one comes from the same car.
+\item
+  There is a chance that if someone in the car is not wearing a
+  seatbelt, the other passenger in the car is not too. This means that
+  it is not independent. \#idiotswhodon'twearseatbeltsdrivetogether
+\item
+  Not independent, idiots who don't wear seatbelts in cars drive
+  together!!! VROOM VROOM
+\item
+  If there are more than one occupant in a car, they may influence each
+  other to wear or not wear a seat belt.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Richard: ``hey Timmy, only losers wear seat belts, be cool like me
+    and don't wear your seat belt''
+  \item
+    Timothy: ``oh snap, you're right Ricky, not wearing a seat belt is
+    the fleekest''
+  \item
+    Richard and Timothy: ``we're going to live forever''
+  \end{itemize}
+\item
+  The outcome does not fall into one of two categories as someone can be
+  left-handed, right-handed, or ambidextrous.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales}
+
+\begin{itemize}
+\tightlist
+\item
+  Each trial does not have an equal probability of success as there are
+  more right-handed people than left-handed people.
+\item
+  Because in this case the observations are not independent. If the
+  first volunteer selected is left-handed, the second one is more likely
+  to be right-handed because there are more right-handed individuals
+  than left-handed in the remaining sample.
+\end{itemize}
+
+\section{Binomial Distribution 2}\label{binomial-distribution-2}
+
+In which of the following would Y not have a Binomial distribution?
+Provide your justification in the rationale.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{You want to know what percent of married people believe that
+  mothers of young children should not be employed outside the home. You
+  plan to interview 50 people, and for the sake of convenience you
+  decide to interview both the husband and the wife in 25 married
+  couples. The random variable Y is the number among the 50 persons
+  interviewed who think mothers should not be employed. (Correct)}
+\item
+  You observe the sex of the next 50 children born at a local hospital;
+  Y is the number of girls among them.
+\item
+  Y = number of occasions, out of a randomly selected sample of 100
+  occasions during the year, in which you were indoors.
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Husband's opinion may depend on wife's opinion, and vice versa -
+  observations aren't independent.
+\item
+  One of the conditions for the binomial distribution is that the trials
+  must be independent. In A, they are selecting 25 married couples in
+  order to gather data on 50 people, but in this scenario either the
+  husband or the wife could influence the other, so the trials are not
+  independent.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-1}
+
+\section{Binomial Distribution 3}\label{binomial-distribution-3}
+
+The U.S. National Center for Health Statistics reports that
+approximately 12\% of emergency department visits result in hospital
+admissions. Consider 20 randomly selected emergency department visits
+and assume that visits to emergency departments are independent. What is
+the approximate probability that at most 2 of the 20 visits would result
+in hospital admissions?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{0.5631 (Correct)}
+\item
+  0.2740
+\item
+  0.1344
+\item
+  0.2891
+\item
+  0.4369
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-2}
+
+\begin{itemize}
+\tightlist
+\item
+  We have to callculate the probability at 0,1, and 2 and add them up:
+  For 0: (1)(1)(0.88)\^{}20 For 1: 20(0.12)(0.88)\^{}19 For 2:
+  190(0.12)\textsuperscript{2(0.88)}18 Adding these all up equals 0.5631
+\item
+  P(X\textless{} or=2) = P(X=2)+P(X=1)+P(X=0) = 0.5631
+\item
+  pbinom(2, 20, 0.12, lower.tail = TRUE)
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-2}
+
+\begin{itemize}
+\tightlist
+\item
+  1- pbinom(2, size = 20, prob = 0.12)
+\end{itemize}
+
+\section{Binomial DIstribution 4}\label{binomial-distribution-4}
+
+The U.S. National Center for Health Statistics reports that
+approximately 12\% of emergency department visits result in hospital
+admissions. Consider 20 randomly selected emergency department visits
+and assume that visits to emergency departments are independent. How
+many hospital admissions do we expect, on average, in a random sample of
+20 emergency department visits?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  2
+\item
+  \textbf{2.4 (Correct)}
+\item
+  12
+\item
+  24
+\item
+  1.4533
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-3}
+
+\begin{itemize}
+\tightlist
+\item
+  mean of a binomial distribution = np = 20*0.12 = 2.4
+\item
+  \(\mu\) = np = (20)(0.12) = 2.4 hospital admissions
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-3}
+
+\begin{itemize}
+\tightlist
+\item
+  0.12 x 20 = 2.4 But we can't in a random sample get .4, so we choose
+  2.
+\end{itemize}
+
+\section{Binomial Distribution 5}\label{binomial-distribution-5}
+
+The U.S. National Center for Health Statistics reports that
+approximately 12\% of emergency department visits result in hospital
+admissions. Consider 20 randomly selected emergency department visits
+and assume that visits to emergency departments are independent. If Y is
+the number of emergency department visits that result in hospital
+admissions in random samples of 20 visits, what is approximately the
+standard deviation of Y?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{1.45 (Correct)}
+\item
+  2.11
+\item
+  4.46
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-4}
+
+\begin{itemize}
+\tightlist
+\item
+  The standard deviation of U can be solved using the equation sigma =
+  sqrt(np(1-p)) = sqrt(20\emph{.12}(1-0.12)) = 1.45
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-4}
+
+\section{Binomial Distribution 6}\label{binomial-distribution-6}
+
+According to the 2015 U.S. census update, approximately 13\% of
+Americans are black. Let Y be the number of blacks in a random sample of
+1500 Americans. What is the probability that the sample will contain 200
+or more blacks?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  pbinom(q = 200, size = 1500, prob = 0.13)
+\item
+  1-dbinom(x = 200, size = 1500, prob = 0.13)
+\item
+  dbinom(x = 200, size = 1500, prob = 0.13)
+\item
+  \texttt{pnorm(200, mean = 195, sd = 13.025, lower.tail = FALSE)}
+  \textbf{(Correct)}
+\item
+  \texttt{1 - pbinom(q = 200, size = 1500, prob = 0.13, lower.tail = FALSE)}
+  \textbf{(Correct)}
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-5}
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\alph{enumi})}
+  \tightlist
+  \item
+    is not correct because it is looking at all values below 200 b) is
+    not correct because it is looking at the probability of getting
+    anything but 200 c) is not correct because it is looking at getting
+    exactly 200 e) is not correct because it is looking at all values
+    below \textbf{201} d) since sample size is large, we can use normal
+    approximation for binomial distribution
+  \end{enumerate}
+\item
+  In this case, we can use the normal approximation because n is large
+  enough, n*p = 195 \textgreater{} 10, n(1-p) = 1305 \textgreater{} 10.
+  Therefore, we can use pnorm function with q=200, lower.tail false. A
+  doesn't specify a lower.tail=FALSE, so R gives lower.tail = TRUE by
+  default. dbinom are wrong.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-5}
+
+\begin{itemize}
+\item
+  because you are calculating the sample that will contain 200 or more,
+  lower.tail is false.
+\item
+  \begin{enumerate}
+  \def\labelenumi{\Alph{enumi})}
+  \setcounter{enumi}{4}
+  \tightlist
+  \item
+    would be right if it didn't have the 1 - before the code.
+  \end{enumerate}
+\item
+  Enough ppl not to do a t-test
+\end{itemize}
+
+\section{One Sample Proportion 1}\label{one-sample-proportion-1}
+
+A CDC report on secondhand smoke at home gives the following 95\%
+confidence interval for the percent of California households that are
+free of secondhand smoke: (90.8, 92.2). The correct interpretation for
+this confidence interval is that we can be 95\% confident that
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  the proportion of households free of secondhand smoke in another
+  sample of California households would be between 0.908 and 0.922
+\item
+  the population mean number of households in California that are free
+  of secondhand smoke is between 90.8 and 92.2
+\item
+  \textbf{the true proportion of all California households that are free
+  of secondhand smoke is between 0.908 and 0.922 (Correct)}
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-6}
+
+\begin{itemize}
+\tightlist
+\item
+  The answer is C because the confidence interval looks at where the
+  true population proportion will fall 95\% of the time.
+\item
+  A is not right because the CI is only for that trial, not for all
+  trials. B is not right because they are not talking about a mean value
+  but a proportion.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-6}
+
+\section{One Sample Proportion 2}\label{one-sample-proportion-2}
+
+A CDC report on secondhand smoke at home gives the following 95\%
+confidence interval for the percent of California households that are
+free of secondhand smoke: (90.8, 92.2). What is the margin of error for
+this interval?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{0.007 (Correct)}
+\item
+  0.014
+\item
+  0.028
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-7}
+
+\begin{itemize}
+\tightlist
+\item
+  The margin of error is half the width of the confidence interval.
+\item
+  The margin of error is half of the confidence interval. 92.2 - 90.8 /
+  2 = 0.007
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-7}
+
+\section{One Sample Proportion 3}\label{one-sample-proportion-3}
+
+How many observations must be recorded to estimate a population with
+unknown proportion p to within +/- 0.02 with 95\% confidence?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  n=25
+\item
+  n=1225
+\item
+  \textbf{n=2401 (Correct)}
+\item
+  n=2350
+\item
+  n=1691
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-8}
+
+\begin{itemize}
+\tightlist
+\item
+  We would have to guess p in this case because it is not given. It is
+  best to assume p is 0.5 when it is unknown because the margin of error
+  is largest when p is 0.5 so by doing so we are giving a more
+  conservation estimation for how many people we will need. We then use
+  the formula n=(z/m)\^{}2(p)(1-p) where p=0.5, z=1.96, m=0.02.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-8}
+
+\begin{itemize}
+\tightlist
+\item
+  1691 = (1.645/0.02)\^{}2 * (0.5 * (1-0.5))
+\item
+  Using the formula: n = (z*/m)(p)(1-p) = (1.96/0.02)(0.5)(1-0.5) = 24.5
+  = 25. Here, test is conservative and p is set to 0.5.
+\end{itemize}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+

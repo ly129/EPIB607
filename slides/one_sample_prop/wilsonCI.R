@@ -190,7 +190,7 @@ if(wilsonCP){
     
     Yy = yo+0.4*Y
     
-    text(P.L,Yy,txt,
+    text(P.L-ifelse(J==2, 0.1,0),Yy,txt,
          col="blue",adj=c(1,1),cex=0.65,family="mono")
     
     txt=expression(paste(Sigma,"[4:5]"))
@@ -231,7 +231,7 @@ prob=0.943)"
     
     Yy = yo+0.4*Y
     
-    text(0.99*P.U,Yy,txt,
+    text(0.99*P.U+ifelse(J==2,0.1,0),Yy,txt,
          col="red",adj=c(1,1),family="mono",cex=0.65)
     
     

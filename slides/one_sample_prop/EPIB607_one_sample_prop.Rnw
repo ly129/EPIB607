@@ -867,14 +867,214 @@ Thus, \textbf{\underline{whatever your result}}, the Wald 95\% CI gives a \texti
 
 
 \begin{frame}{1. Asymmetric (Wilson and Clopper-Pearson) Methods}
-content...
+\small
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item The text in the next Figure is a shortened, more concrete, and more modern version of what Wilson wrote in 1927. He began by saying that by adding (symmetric) margins of error to the point estimate,
+	the usual method up to then (and still today) gives the wrong impression that the truth varies around the point estimate when in fact \underline{it is the point estimate that varies around the truth !!} \pause 
+	
+	\item So, he suggests that we should reverse our logic and ask under what worst case scenarios  involving the truth would we have observed (such) an extreme point estimate.\pause
+	
+
+\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{}
-<<fig.asp = 0.858, echo = FALSE, eval = TRUE>>=
+
+\begin{frame}{1. Asymmetric (Wilson and Clopper-Pearson) Methods}
+\small
+\begin{itemize}
+	\setlength\itemsep{.71em}
+	\item We begin with one of these scenarios, say the one where the point estimate lands to the right of (is above) the truth. \underline{By trial and error} we can find a lower value for the truth, namely $\pi_{Lower},$ such that the observed value would be a over-estimate, located at the 97.5\%ile. \pause 
+	
+	\item Then we consider the reverse scenario, and we find a value for the truth, namely $\pi_{Upper},$ such that the observed value would be an under-estimate, located at the 2.5\%ile.\pause 
+	
+	\item Since the sampling distributions at $\pi = \pi_{Lower}$ and $\pi = \pi_{Upper}$ may well have very different shapes and widths, the observed proportion, p, will not be equidistant from $\pi = \pi_{Lower}$ and $\pi = \pi_{Upper}.$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+<<wilson, echo = FALSE, eval = TRUE, fig.asp=.9, cache=FALSE>>=
 source("wilsonCI.R")
 @
 \end{frame}
+
+
+\begin{frame}[fragile]{Clopper-Pearson 95\% CI when $p = 4/5$}
+<<echo=TRUE, eval=FALSE>>=
+# upper limit --> lower tail needs 2.5%
+manipulate::manipulate(
+mosaic::xpbinom(4, size = 5, prob = proba),
+proba = manipulate::slider(0.001, 0.999, step = 0.001))
+
+# lower limit --> upper tail needs 2.5%
+# when lower.tail=FALSE, pbinom doesnt include k, i.e., P(Y > k)
+manipulate::manipulate(
+mosaic::xpbinom(3, size = 5, prob = proba, lower.tail = FALSE),
+proba = manipulate::slider(0.001, 0.999, step = 0.001))
+@
+
+\blue{Question:} Should the interval be different when $p=16/20=0.8 = 4/5$?
+\end{frame}
+
+
+\begin{frame}[fragile]{Clopper-Pearson 95\% CI when $p = 16/20$}
+<<echo=TRUE, eval=FALSE>>=
+# upper limit --> lower tail needs 2.5%
+manipulate::manipulate(
+mosaic::xpbinom(16, size = 20, prob = proba),
+proba = manipulate::slider(0.001, 0.999, step = 0.001))
+
+
+# lower limit --> upper tail needs 2.5%
+manipulate::manipulate(
+mosaic::xpbinom(15, size = 20, prob = proba, lower.tail = FALSE),
+proba = manipulate::slider(0.001, 0.999, step = 0.001))
+@
+\end{frame}
+
+
+\begin{frame}[fragile]{Clopper-Pearson 95\% CI in R}
+<<echo=TRUE>>=
+mosaic::binom.test(x=4, n=5, ci.method=c("Clopper-Pearson"))
+mosaic::binom.test(x=16, n=20, ci.method=c("Clopper-Pearson"))
+@
+\end{frame}
+
+
+\begin{frame}{Binomial-based (95\%) CIs for $\pi$ using a nomogram}
+\small
+\begin{itemize}
+	\setlength\itemsep{.11em}
+	\item The panels in the next Figure present binomial-based (95\%) CIs for a proportion
+	using the `nomogram' format introduced by Clopper and Pearson -- but using
+	the Wilson method to compute them. 
+	\item  \textit{\textbf{Example}}: in the case of an observed proportion of  say 16/20 = 0.8, the Nomogram yields a 95\% CI of 56.3\% (solid  square located above p=0.8, on the innermost -- [n = 20] -- blue band) to 94.3\% (solid circle located at the same p on the innermost -- [n  = 20] -- red band). 
+
+	\item Read \textbf{horizontally}, the nomogram shows the variability of proportions from s.r.s samples of size $n$. Read \textbf{vertically}, it shows: (i) CI $\rightarrow$ symmetry as $p \rightarrow 0.5$ or  $n \nearrow $ [in fact, as  $n \times p \  \textrm{and} \ n(1 - p) \nearrow $ \ ]
+	(ii) the widest ME's are at $p=0.5;$ thus, they can be used as the `widest ME' scenario.
+	
+	\item The next chart shows what $n$ will give a desired margin of error. It also shows the `\textit{quadruple the effort to halve the uncertainty}' rule. And -- at their widest -- how wide the ME's are for various values of $n.$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\Wider[5em]{	
+\includegraphics[width=4.95in,height=3.7in]{Nomogram.pdf}
+}
+\end{frame}
+
+\begin{frame}{2. Add 2 to numerator, 4 to denominator rule}
+\small
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item The confidence interval  $\hat{p} \pm z \sqrt{\hat{p}(1-\hat{p})/n}$ for $\pi$ is easy
+	to calculate. It is also easy to understand, because it rests directly on the approximately Normal distribution of $p.$ \pause 
+	\item Unfortunately, confidence levels from this interval are often quite inaccurate unless the sample is very large. Simulations show that the actual confidence level is usually less than the confidence level you asked for in choosing the critical value $z$. That's bad. \pause 
+	\item What is worse, accuracy does not consistently get better as the sample size n increases. There are ``lucky'' and ``unlucky'' combinations of the sample size $n$ and the true population proportion $p.$ 
+	
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{2. Add 2 to numerator, 4 to denominator rule}
+\small
+\begin{itemize}
+	\setlength\itemsep{1em}
+
+	\item Fortunately, there is a simple modification that has been shown experimentally
+	to successfully improve the accuracy of the confidence interval. We call it the ``plus
+	four'' method, because all you need to do is \textit{add four imaginary observations, 
+		two successes and two failures}. With the added observations, the plus four estimate of $\pi$ is
+	$$\widetilde{p} =\frac{\textrm{number of `positives' in the sample} + 2}{n+4}$$ 
+	
+	\item \underline{The formula for the confidence interval is exactly as before}, with the new sample
+	size and number of `positives.' You do not need software that offers the plus four
+	interval - just enter the new sample size (actual size + 4) and number of `positives'
+	into the large-sample procedure.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{3. 95\% CI for $\pi$ using a transformation of scale}
+
+\begin{itemize}
+	\item Based on \textbf{Gaussian distribution of the \underline{logit} \underline{transformation}} of  the point estimate ($p$, the observed proportion) and of  the parameter $\pi.$
+\end{itemize}
+
+\small
+\textbf{Parameter: \footnote{UPPER CASE / Greek = parameter; lower case / Roman = statistic.} }
+
+logit$\{ \pi \}$
+= log$\{ ODDS \}$ \footnote{Here, $\textrm{log} = `natural'$ log, i.e. to base e, which some write as $\ln.$} 
+=   log$\big\{ \frac{\pi}{(1-\pi)} \big\}$ 
+=  log$ \big\{ \frac{ \textrm{PROPORTION ``Positive''} }
+{ \textrm{PROPORTION ``Negative''} } \big\}$ \\
+
+\textbf{Statistic: } logit$\{ p \}$
+= log$\{ odds \}$ 
+=  log$ \big\{ \frac{ \textrm{proportion ``Positive''} }
+{ \textrm{proportion ``Negative''} } \big\}.$ \\ \ \\
+
+\textbf{Reverse transformation} (to get back from LOGIT to $\pi $) ...
+$$\pi = \frac{\textrm{ODDS}}{1 + \textrm{ODDS}} = \frac{\exp [LOGIT]}{1 + \exp[LOGIT]}.$$
+likewise...
+$$p = \frac{odds}{1 \textrm{ }+ \textrm{ }odds} = \frac{\exp [logit]}{1\textrm{ }+\textrm{ }\exp [logit]}.$$
+
+
+\end{frame}
+
+\begin{frame}{3. 95\% CI for $\pi$ using a transformation of scale}
+\small
+
+$\pi _{LOWER} = \frac{\exp \{\textrm{LOWER limit of LOGIT}\}}{1 + \exp \{\textrm{LOWER limit of LOGIT}\}} 
+=\frac{\exp \{logit - z_{\alpha/2}SE[logit]\}}{1 + \exp \{logit - z_{\alpha/2}SE[logit]\}} $ \\ \ \\
+
+$\pi _{UPPER}$ likewise.  \\ \ \\
+
+$SE[logit] = \big\{ \frac{1}{\# \textrm{ positive} }
++ \frac{1}{\# \textrm{ negative} }
+\big\}^{1/2}$ \\ \ \\
+
+
+
+\begin{itemize}
+	\item $p = 16/20 \Rightarrow odds = 16/4 \Rightarrow  logit = \log[16/4] = 1.386.$ 
+
+\item $SE[logit] =\{1/16 + 1/4 \}^{1/2} = 0.559$ 
+
+\item $  \Rightarrow \textrm{95\% CI in LOGIT[}\pi] \textrm{ scale: } 1.386 \pm 1.96\times 0.559
+= \{0.290, 2.482\}$ \footnote{  
+	\texttt{qnorm(p=c(0.025,0.975), mean=log(16/4), sd=sqrt(1/16+1/4))}: 0.290 to 2.482.}
+
+\item $ \Rightarrow \textrm{CI in } \pi \textrm{ scale: }  \{ \exp(0.290)/(1+\exp(0.290), \
+\exp(2.482)/(1+\exp(2.482) \}$ 
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{4. 95\% CI for $\pi$ using logistic regression}
+
+<<echo=TRUE, eval=TRUE>>=
+fit <- glm(cbind(16,4) ~ 1, family=binomial)
+@
+
+<<results='asis', echo = FALSE>>=
+xtable::xtable(fit)
+@
+
+<<echo=TRUE, eval=TRUE>>=
+plogis(fit$coef[1])
+round(plogis(confint(fit)),2)
+@
+
+\end{frame}
+
+
 
 \end{document}
 
