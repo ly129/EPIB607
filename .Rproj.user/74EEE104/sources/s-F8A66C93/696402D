@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539841531630.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "696402D",
+    "lastKnownWriteTime" : 1539294431,
+    "last_content_update" : 1539294431,
+    "path" : "~/git_repositories/epib607/dalite/006_proportions/006-proportions.Rmd",
+    "project_path" : "dalite/006_proportions/006-proportions.Rmd",
+    "properties" : {
+        "cursorPosition" : "8,21",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 21,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540005831751.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "49521609",
+    "lastKnownWriteTime" : 1540171289,
+    "last_content_update" : 1540171289561,
+    "path" : "~/Dropbox/mcgill/teaching/EPIB607/midterm/EPIB607_midterm_fall2018.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "503,987",
+        "scrollLine" : "500",
+        "source_window_id" : ""
+    },
+    "relative_order" : 19,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

@@ -1,0 +1,247 @@
+%% header.tex
+%%
+%% Copyright (C) 2016 - 2017  Dirk Eddelbuettel
+%%
+%% This file is part of samples-rmarkdown-metropolis repository.
+%%
+%% samples-rmarkdown-metropolis is free software: you can redistribute it
+%% and/or modify it under the terms of the GNU General Public License as
+%% published by the Free Software Foundation, either version 2 of the
+%% License, or (at your option) any later version.
+%%
+%% samples-rmarkdown-metropolis is distributed in the hope that it will be
+%% useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+%% Public License for more details.
+%%
+%% You should have received a copy of the GNU General Public License along with
+%% samples-rmarkdown-metropolis.  If not, see <http://www.gnu.org/licenses/>.
+
+%% If you have the Fira font installed, to actually have it used it 
+%% via rmarkdown you need to declare it here 
+%\setsansfont[ItalicFont={Fira Sans Light Italic},BoldFont={Fira Sans},BoldItalicFont={Fira Sans Italic}]{Fira Sans Light}
+%\setmonofont[BoldFont={Fira Mono Medium}]{Fira Mono}
+
+%% You can set various Metropolis options via \metroset{} here
+%\metroset{....}
+
+%% You can redefine colours, mostly by borrowing from Beamer
+
+\usepackage{graphicx}
+\graphicspath{ {/home/sahir/Dropbox/jobs/laval/minicours/slides/} }
+\usepackage{hyperref, url}
+\usepackage[round,sort]{natbib}   % bibliography omit 'round' option if you prefer square brackets
+\usepackage[figurename=Fig.]{caption}
+\usepackage{subfig}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{arrows,shapes.geometric}
+\usepackage{animate} %need the animate.sty file 
+\usepackage{color, colortbl,xcolor}
+\definecolor{lightgray}{RGB}{200,200,200}
+\definecolor{myblue}{RGB}{0,89,179}
+\setbeamercolor{frametitle}{bg=myblue}
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}} % used for text wrapping in ctable
+\usepackage{ctable}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+%\usepackage{calrsfs}
+%\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+%\newcommand{\La}{\mathcal{L}}
+%\newcommand{\Lb}{\pazocal{L}}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\def\widebar#1{\overline{#1}}
+
+\definecolor{whitesmoke}{rgb}{0.96, 0.96, 0.96}
+\definecolor{pinkish}{RGB}{255,223,247}
+\definecolor{blueish}{RGB}{204,255,255}
+\definecolor{lime}{RGB}{0,0,200}
+
+\usepackage[ruled,vlined,noresetcount]{algorithm2e}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds,intersections,fit}
+\tikzset{isometricYXZ/.style={x={(1cm,0cm)}, y={(-1.299cm,-0.75cm)}, z={(0cm,1cm)}}}
+\newcommand*\ab{.4}
+
+
+\usetikzlibrary{shapes.geometric,arrows,shapes.symbols,decorations.pathreplacing,positioning,decorations.markings, matrix, overlay-beamer-styles}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, draw=black, fill=pinkish,text width=11.5cm]
+\tikzstyle{startstop2} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, draw=black, fill=background,text width=11.5cm]
+\tikzstyle{startstop3} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, draw=black, fill=beige,text width=11.5cm]
+\tikzstyle{startstop4} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, draw=black, fill=blueish,text width=11.5cm]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=blue!30,text width=1.5cm]
+\tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=orange!30,text width=2cm]
+\tikzstyle{decision} = [diamond, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{both} = [thick,<->,>=stealth, red]
+
+
+\tikzset{myshade/.style={minimum size=.4cm,shading=radial,inner color=white,outer color={#1!90!gray}}}
+\newcommand\mycirc[1][]{\tikz\node[circle,myshade=#1]{};}
+\newcommand\myrect[1][]{\tikz\node[rectangle,myshade=#1]{};}
+\newcommand\mystar[1][]{\tikz\node[star,star points=15,star point height=2pt,myshade=#1]{};}
+\newcommand\mydiamond[1][]{\tikz\node[diamond,myshade=#1]{};}
+\newcommand\myellipse[1][]{\tikz\node[ellipse,myshade=#1]{};}
+\newcommand\mykite[1][]{\tikz\node[kite,myshade=#1]{};}
+\newcommand\mydart[1][]{\tikz\node[dart,myshade=#1]{};}
+\newcommand\mycloud[1][]{\tikz\node[cloud,myshade=#1]{};}
+
+\tikzset{
+    ncbar angle/.initial=90,
+    ncbar/.style={
+        to path=(\tikztostart)
+        -- ($(\tikztostart)!#1!\pgfkeysvalueof{/tikz/ncbar angle}:(\tikztotarget)$)
+        -- ($(\tikztotarget)!($(\tikztostart)!#1!\pgfkeysvalueof{/tikz/ncbar angle}:(\tikztotarget)$)!\pgfkeysvalueof{/tikz/ncbar angle}:(\tikztostart)$)
+        -- (\tikztotarget)
+    },
+    ncbar/.default=0.5cm,
+}
+
+\tikzset{square left brace/.style={ncbar=0.5cm}}
+\tikzset{square right brace/.style={ncbar=-0.5cm}}
+
+\tikzset{round left paren/.style={ncbar=0.4cm,out=110,in=-110}}
+\tikzset{round right paren/.style={ncbar=0.5cm,out=60,in=-60}}
+
+
+
+
+
+\pgfdeclareplotmark{students}
+{\shade[draw=red!60!black,ball color=red!70] (0pt, 0pt) circle [radius=5pt];} 	
+\pgfdeclareplotmark{working}
+{\shade[draw=blue!60!black,ball color=blue!70] (0pt, 0pt) circle [radius=5pt];}
+\pgfdeclareplotmark{retired}
+{\shade[draw=green!60!black,ball color=green!70] (0pt, 0pt) circle [radius=5pt];}
+
+
+
+\def\layersep{2.5cm}
+\def\Xmean{\skew3\widebar{X}}
+\def\Ymean{\widebar{Y}}
+\def\xmean{\bar{x}}
+\def\ymean{\bar{y}}
+\def\dint{\displaystyle\int}
+\def\dsum{\displaystyle\sum}
+
+
+\setbeamercolor{itemize item}{fg=myblue}
+\setbeamertemplate{itemize item}[square]
+
+\setbeamertemplate{navigation symbols}{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber}
+\setbeamertemplate{footline}{}
+
+
+%\metroset{numbering=fraction, block = fill, titleformat = smallcaps, titleformat plain= smallcaps}
+\metroset{block = fill, titleformat = smallcaps, titleformat plain= smallcaps}
+
+\setbeamercolor{background canvas}{bg=white}
+
+%% change fontsize of R code
+\let\oldShaded\Shaded
+\let\endoldShaded\endShaded
+\renewenvironment{Shaded}{\scriptsize\oldShaded}{\endoldShaded}
+
+%% change fontsize of output
+\let\oldverbatim\verbatim
+\let\endoldverbatim\endverbatim
+\renewenvironment{verbatim}{\scriptsize\oldverbatim}{\endoldverbatim}
+
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{exercise}[theorem]{Exercise}
+
+
+%% You also use hyperref, and pick colors 
+\hypersetup{colorlinks,citecolor=orange,filecolor=red,linkcolor=brown,urlcolor=blue}
+
+\newcommand {\framedgraphiccaption}[2] {
+            \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{#1}
+            \caption{#2}
+            \end{figure}
+}
+
+\newcommand {\framedgraphic}[1] {
+            \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{#1}
+            \end{figure}
+}
+
+\usepackage[cal=cm]{mathalfa}
+
+
+\newcommand{\tm}[1]{\textrm{{#1}}}
+\newcommand{\bx}{\textbf{\emph{x}}}
+\newcommand{\by}{\textbf{\emph{y}}}
+\newcommand{\bX}{\textbf{X}}
+\newcommand{\bW}{\textbf{W}}
+\newcommand{\bY}{\textbf{Y}}
+\newcommand{\bD}{\textbf{D}}
+\newcommand{\bH}{\textbf{H}}
+\newcommand{\trans}{\top}
+\newcommand{\bXtilde}{\widetilde{\bX}}
+\newcommand{\bYtilde}{\widetilde{\bY}}
+\newcommand{\bDtilde}{\widetilde{\bD}}
+\newcommand{\Xtilde}{\widetilde{X}}
+\newcommand{\Ytilde}{\widetilde{Y}}
+\newcommand{\Dtilde}{\widetilde{D}}
+\newcommand{\bu}{\textbf{u}}
+\newcommand{\bU}{\textbf{U}}
+\newcommand{\bV}{\textbf{V}}
+\newcommand{\bE}{\textbf{E}}
+\newcommand{\bb}{\textbf{\emph{b}}}
+\newcommand{\bI}{\mathbcal{I}}
+\newcommand{\be}{\boldsymbol{\varepsilon}}
+\newcommand{\bSigma}{\boldsymbol{\Sigma}}
+\newcommand{\bLambda}{\boldsymbol{\Lambda}}
+\newcommand{\bTheta}{\boldsymbol{\Theta}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+%\newcommand{\ltwonorm}[1]{\lVert #1 \rVert}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand {\bs}{\boldsymbol}
+%\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\xf}{\mathcal{X}}
+\newcommand{\pfrac}[2]{\left( \frac{#1}{#2}\right)}
+\newcommand{\e}{{\mathsf E}}
+\newcommand{\bt}{\boldsymbol{\theta}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\bbk}{\boldsymbol{\beta}_{(k)}}
+\newcommand{\bbkt}{\widetilde{\boldsymbol{\beta}}_{(k)}}
+\newcommand{\bgamma}{\boldsymbol{\gamma}}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+\newcommand{\bPsi}{\boldsymbol{\Psi}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\diag}{diag} % operator and subscript
+
+
+\definecolor{myblues}{cmyk}{10,0,0,0}
+\definecolor{darktangerine}{rgb}{1.0, 0.66, 0.07}
+\definecolor{deepink}{RGB}{255,20,147}
+
+
+%\usepackage{amsthm}
+\setbeamertemplate{theorems}[numbered]
+
+%% when rendered with rmarkdown, somehow the unicode char for the dot
+%% disappears so we redefine it here -- that is an older comments, seems font-specific
+%\renewcommand{\textbullet}{$\cdot$}
+%\renewcommand{\itemBullet}{▸}   % unicode U+25b8 'black right pointing small triangle'
+
+%% The institute macro puts a small line for affiliation at the bottom
+\institute{le 8 février, 2018} 
+
+%% We can also place a logo
+\titlegraphic{\hfill\includegraphics[height=1cm]{ulaval-logo.jpg}}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

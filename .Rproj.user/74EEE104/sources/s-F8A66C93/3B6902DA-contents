@@ -1,0 +1,92 @@
+---
+title: "A2: Histograms, Medians, Means, Boxplots and Standard Deviation"
+subtitle: "Your Name Here and ID number here"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 4
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = FALSE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+```
+
+
+# Age-structures of Populations, then and now
+
+```{r}
+## ---- Question-1 ------------------------------------------------------------
+cens <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/age_sex_frequencies_ireland.csv")
+head(cens)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+# Number of Authors
+
+```{r}
+## ---- Question-2 ------------------------------------------------------------
+
+```
+
+
+
+# Cancer Deaths in the US
+
+```{r}
+## ---- Question-3 ------------------------------------------------------------
+
+```
+
+
+
+
+# Does breast-feeding weaken bones?
+
+```{r}
+## ---- Question-4 ------------------------------------------------------------
+
+```
+
+
+
+
+
+# Food in America
+
+```{r}
+## ---- Question-5 ------------------------------------------------------------
+
+```
+
+
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```
+

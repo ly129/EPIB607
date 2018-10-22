@@ -1,0 +1,678 @@
+( Z.beta=( sqrt(102)*(1.2-1) -qnorm(0.95) )/
+(sqrt(1.2)) )
+
+pnorm(-Z.beta,lower.tail=FALSE)
+
+ppois(qpois(0.95,102),
+            102*1.2,lower.tail=FALSE)
+
+pnorm(qnorm(0.95) - 
+   2*(sqrt(1.2) - 1)*(sqrt(102)),
+   lower.tail=FALSE )
+
+survival::cipoisson(6)
+
+# Peds
+y  =   24
+PT = 2159 
+
+nrc = 50
+n   = nrc^2
+
+B=5000
+BB=3000
+
+par(mfrow=c(1,1),mar = rep(0.01,4) )
+plot(c(0,1),c(0,1),ylim=c(-8,nrc+5),
+xlim = c(0,nrc+59),col="white")
+
+v=seq(1/2,nrc+1/2,1)
+segments(0.5, v, nrc+1/2, v,
+ col="lightblue",lwd=0.6)
+segments(v, 0.5, v, nrc+1/2, 
+ col="lightblue",lwd=0.6)
+
+set.seed(2018)
+
+row=sample(1:nrc,y)
+col=sample(1:nrc,y)
+
+points(col,row,pch=19,cex=0.25)
+
+m=matrix(0,nrc,nrc)
+for(i in 1:y) m[row[i],col[i]] = 1
+sum(m)
+
+text(nrc/2,nrc+2.5,
+paste(toString(y),
+"Needlestick Injuries in",
+toString(PT),"Intern-Months (IM)"),
+cex=0.85)
+text(nrc/2,-5,
+paste("Total of rectangular areas represents", toString(PT),"IM"),
+cex=0.7)
+
+library(mosaic)
+
+bootstrap <- do(B) * sum( resample(m) )
+
+
+t=table(bootstrap$sum)
+maxt=max(t)
+
+O=nrc+2
+
+lines(O+ as.numeric(dimnames(t)[[1]]),
+ 0.3*(t/maxt)*nrc,type="h")
+
+points(O+y,-1,pch=19,cex=0.5)
+
+q=quantile(bootstrap$sum,
+ probs=c(0.025,0.975))
+arrows(O+q,-1.5,O+q,-0.25,length=0.05,angle=20)
+text(O+q[1],-2.5,toString(q[1]),cex=0.6)
+text(O+q[2],-2.5,toString(q[2]),cex=0.6)
+
+for(i in seq(4,52,4)) text(
+       O+i,-6.5,toString(i),cex=0.5)
+
+text(O+y,-4.5,
+paste("No. Injuries in (bootstrap) samples of", toString(PT),"IM"),
+cex=0.75)
+
+
+
+already=TRUE
+
+if(!already){
+	
+# search for mu.upper
+
+N = (nrc*10)^2
+
+DY=10
+
+Y = round( 100*(y+2*sqrt(y)) )
+set.seed(1947)
+
+P.count.le.y = NULL
+MU.U = NULL
+
+P =0.5
+while(P > 0.01) {
+ M=rep(0,N)
+ M[sample(1:N,Y)] = 1
+ bootstrap = do(BB)*sum(resample(M,size=n))
+ P = sum(bootstrap$sum <= y)/BB
+ MU.U=c(MU.U,Y/100)
+ P.count.le.y = c(P.count.le.y,P) 
+ Y = Y+DY	
+}
+
+# search for mu.lower
+
+Y = round( 100*(y-1.51*sqrt(y)) )
+set.seed(1974)
+
+P.count.ge.y = NULL
+MU.L = NULL
+
+P =0.5
+while(P > 0.01) {
+ M=rep(0,N)
+ M[sample(1:N,Y)] = 1
+ bootstrap = do(BB)*sum(resample(M,size=n))
+ P = sum(bootstrap$sum >= y)/BB
+ MU.L=c(MU.L,Y/100)
+ P.count.ge.y = c(P.count.ge.y,P) 
+ Y = Y-DY	
+}
+
+} # already
+
+
+points(O+MU.U,
+0.79*nrc+ (nrc/3)*15*P.count.le.y,
+      cex=0.15,pch=19)
+smooth=stats::filter(P.count.le.y,
+   rep(1/10,10))
+lines(O+MU.U,0.79*nrc+ (nrc/3)*15*smooth )
+
+yy = abs(smooth-0.025)
+U=MU.U[which(yy==min(yy,na.rm=TRUE))]
+text(O+U,1.08*nrc,
+ expression(paste(
+  "Try ", mu," values above 24 until...")),   
+ cex=0.6,col="red",adj=c(0.5,0))
+segments(O+MU.U[1],
+         0.79*nrc+ (nrc/3)*15*0.025,
+         O+MU.U[length(MU.U)],
+         0.79*nrc+ (nrc/3)*15*0.025)
+text(O+4+MU.U[length(MU.U)],
+         0.79*nrc+ (nrc/3)*15*0.035,
+         paste("Prob[ <=",
+               toString(y)," | mu ]"),
+         adj=c(0,0.5),cex=0.5,col="red")
+text(O-4+MU.L[length(MU.L)],
+         0.79*nrc+ (nrc/3)*15*0.035,
+         paste("Prob[ >=",
+               toString(y)," | mu ]"),
+         adj=c(1,0.5),cex=0.5,col="blue")
+for(P in seq(0.02,0.03,0.005)){
+	segments(
+	     O+1+MU.U[length(MU.U)],
+	      0.79*nrc+ (nrc/3)*15*P,
+         O+3+MU.U[length(MU.U)],
+          0.79*nrc+ (nrc/3)*15*P)
+    segments(
+	     O-1+MU.L[length(MU.L)],
+	      0.79*nrc+ (nrc/3)*15*P,
+         O-3+MU.L[length(MU.L)],
+          0.79*nrc+ (nrc/3)*15*P)
+    text(O+4+MU.U[length(MU.U)],
+         0.79*nrc+ (nrc/3)*15*P,
+         toString(P),adj=c(0,0.5),
+         cex=0.5)
+    text(O-4+MU.L[length(MU.L)],
+         0.79*nrc+ (nrc/3)*15*P,
+         toString(P),adj=c(1,0.5),
+         cex=0.5)
+}      
+
+segments(O+U,0.92*nrc+ (nrc/3)*15*0.025,
+       O+U,0.34*nrc,,col="red",
+       lty="dotted")
+
+
+M=rep(0,N)
+M[sample(1:N,100*U)] = 1
+
+bootstrap = do(B)*sum(resample(M,size=n))
+t=table(bootstrap$sum)
+
+xx=O+ as.numeric(dimnames(t)[[1]])
+yy=0.36*nrc
+segments(xx,yy,
+         xx,yy+0.3*(t/maxt)*nrc,col="red")
+text(O+U,yy-0.02*nrc,expression(mu[U]),
+ adj=c(0.5,1.5),col="red")
+text(O+U,yy-0.07*nrc,
+paste(toString(U),"/",toString(PT),"IM"),
+ adj=c(0.5,1.5),col="red",cex=0.65)
+ 
+text(O+U-8,0.75*nrc,
+paste("No. Injuries in samples of", toString(PT),"IM"),
+cex=0.65,col="red",
+adj=c(0,0.5))
+
+text(O+U-8,0.71*nrc,
+paste("from", 
+toString(100*PT),"IM,",
+toString(round(U*100)),"Injuries"),
+cex=0.65,col="red",
+adj=c(0,0.5))
+
+ 
+# Lower
+
+points(O+y,0.345*nrc,pch=19,cex=0.5)
+
+points(O+MU.L,
+ 0.79*nrc+ (nrc/3)*15*P.count.ge.y,
+ cex=0.15,pch=19)
+
+smooth=stats::filter(P.count.ge.y,
+ rep(1/10,10))
+lines(O+MU.L, 
+0.79*nrc+ (nrc/3)*15*smooth )
+
+yy = abs(smooth-0.025)
+L=MU.L[which(yy==min(yy,na.rm=TRUE))]
+text(O+L,1.08*nrc,
+ expression(paste(
+  "Try ", mu," values below 24, until...")),   
+ cex=0.6,col="blue",adj=c(0.5,0))
+M=rep(0,N)
+M[sample(1:N,100*L)] = 1
+
+segments(O+L,0.92*nrc+ (nrc/3)*15*0.025,
+       O+L,0.34*nrc,col="blue",
+       lty="dotted")
+
+bootstrap = do(B)*sum(resample(M,size=n))
+t=table(bootstrap$sum)
+
+xx=O+0.3+ as.numeric(dimnames(t)[[1]])
+yy=0.36*nrc
+segments(xx,yy,
+         xx,yy+0.3*(t/maxt)*nrc,col="blue")
+text(O+L,yy-0.02*nrc,expression(mu[L]),
+ adj=c(0.5,1.5),col="blue")
+text(O+L,yy-0.07*nrc,
+paste(toString(L),"/",toString(PT),"IM"),
+ adj=c(0.5,1.5),col="blue",cex=0.65)
+
+
+text(O+L+8.5,0.75*nrc,
+paste("No. injuries in", toString(PT),"IM from"),
+cex=0.65,col="blue",
+adj=c(1,0.5))
+
+text(O+L+8.5,0.71*nrc,
+paste( 
+toString(100*PT),"IM,",
+toString(round(L*100)),"Injuries"),
+cex=0.65,col="blue",
+adj=c(1,0.5))
+
+
+
+
+
+# Que lung ca deaths 
+
+y  =     33
+PT = 131200
+
+
+fit.mu = summary(glm(y ~ -1 + PT,
+ family = poisson(link=identity) ))
+fit.mu  
+
+round(10^5*qnorm(c(0.025,0.50,0.975),
+      mean = fit.mu$coefficients[1,1],
+      sd   = fit.mu$coefficients[1,2]),1) 
+
+fit.log.mu = summary( glm(y ~ 1+ offset(log(PT)), family = poisson))
+fit.log.mu
+
+round(
+ 10^5 * exp(
+  qnorm(c(0.025,0.50,0.975),
+        mean = fit.log.mu$coefficients[1,1],
+        sd   = fit.log.mu$coefficients[1,2])
+    ),1)
+
+
+sqrt(1/33)
+
+y=24
+summary(glm(y ~ 1,family=poisson(link=identity) ) )  
+
+summary(glm(y ~ 1,family=poisson ) )  
+
+
+
+Jeffreys
+
+y=6
+
+qgamma( c(0.025,0.975), y+0.5)
+
+
+y=30
+
+y +1.96*c(-1,1)*(sqrt(y))
+
+y=16
+z=qnorm(.975)
+
+( mu.L = ( (-z + sqrt(z^2 +4*y))/2 )^2 )
+
+mu.L + z*sqrt(mu.L)
+
+z=qnorm(.025)
+
+( mu.U = ( (-z + sqrt(z^2 +4*y))/2 )^2 )
+
+
+table=FALSE
+if(table){
+
+Y=30
+
+s="&"
+U = matrix(NA,Y+1,3)
+L = matrix(NA,Y+1,3)
+for(y in 0:Y){
+ col=0
+ for(alpha.over.2 in c(0.025,0.05,0.10)){
+	col=col+1
+	l=qgamma(c(alpha.over.2,1-alpha.over.2),
+	  c(y, y+1))
+	L[y+1,col] = format(round(l[1],2),nsmall=2)
+	U[y+1,col] = format(round(l[2],2),nsmall=2)
+	}
+	txt=paste(toString(y),s,
+	          L[y+1,1],s,U[y+1,1], s,
+	          L[y+1,2],s,U[y+1,2], s,
+	          L[y+1,3],s,U[y+1,3],"$$$")
+	
+  message(noquote(txt))
+  if(y %% 5 ==4) message(noquote(
+  " & & & & & &  $$$"))
+}
+	
+} # table
+
+
+LE=FALSE
+
+if(LE){
+	
+setwd( 
+"/Users/jameshanley/Dropbox/Courses/bios601/Intensity-Rates")
+}
+
+P=read.table("Canada2011P.txt")$V5
+D=read.table("Canada2011D.txt")$V5
+sum(D); 100/sqrt(sum(D))
+sum(P)
+m=D/P
+
+L = cumsum(m)
+S = exp(-L) ; sum(S)
+V.L= cumsum( D/(P^2) )
+V.S = (S^2) * V.L
+
+VV = matrix(NA,length(L),length(L))
+
+for(i in 1:length(L)){
+   for(j in 1:length(L)){
+   	   VV[i,j] = V.S[min(i,j)]
+   }
+}
+
+sum(S)
+round(cov2cor(VV)[1:110,1:15],2)
+sum(diag(VV))
+sqrt(sum(VV))
+100/sqrt( sum(D) )
+plot(0:109,V.S)
+
+#plot(y,l,type="l")
+
+sum(VV)
+
+E.0 =sum(S)
+
+v=rep(NA,length(S))
+v.per=rep(NA,length(S))
+for(i in 1:length(S)){
+   d=D ; p=P
+   d[i] = d[i]-1
+   m=d/p
+   ll = cumsum(m)
+   s = exp(-ll) ;
+   (d[i]+1)*(sum(s) - E.0)^2 
+   v.per[i]=(sum(s) - E.0)^2
+   v[i] = (d[i]+1)*(sum(s) - E.0)^2
+}
+sqrt(sum(v))
+plot(1:length(S),v,cex=0.5,pch=19)
+lines(1:length(S),1000*v.per,cex=0.5,pch=19)
+
+
+est=rep(NA,100)
+for(b in 1:10000){
+   d = rpois(110,D) ; 
+   m=d/P
+   ll = cumsum(m)
+   s = exp(-ll) ; 
+   est[b] = sum(s)
+}
+mean(est)
+sd(est)
+100*sd(est)/mean(est)
+
+100/sqrt(sum(D))
+
+
+# Chiang
+
+#25 
+
+m = D/P
+q = 1 - exp(-m) 
+l = 100000*c(1,cumprod(1-q))
+B=length(D)
+L = (l[1:B]+l[2:(1+B)])/2
+
+e=(cumsum(L[B:1]))[B:1]/l[1:B]
+e = c(e,0)
+
+
+V.qi = (q^2)*(1-q)/D
+
+a = rep(1/2, B)
+col.5 = (l[1:B]^2) * (e[2:(B+1)] - a)^2 
+
+col.2 =  V.qi
+
+col.6 = col.5 * col.2
+
+col.7 = (cumsum(col.6[B:1]))[B:1]
+
+col.8 = col.7/(l[1:B]^2)
+
+sqrt(col.8)
+
+
+} # LE
+
+
+
+
+library(mosaic)
+
+
+# shapes
+
+C=c("grey20","blue","red")
+
+shapes=FALSE
+
+if(shapes){
+ MU=matrix(
+ c( seq(1.2,9.6,2.1),
+    seq(12.5,32.5,4.7)),
+ 5,2)
+    
+ MU.MAX = MU[length(MU)]
+ range = 0:(MU.MAX+3*sqrt(MU.MAX))
+ par(mfrow=c(5,1),mar = c(2.5,1,0.5,1) )
+ for(r in 1:5) {
+ 	for(c in 1:2){
+  mass = dpois(range,MU[r,c])
+  w = ( mass>(0.005*max(mass)) )
+  if(c==1) max.mass = 1.2*max(mass)
+  if(c==1) plot(range[w], mass[w], type="h",yaxt="n",
+		   ylim=c(-0.3,1)*max.mass,
+		   xlim=c(0,max(range)),
+		   lwd=1.5,col=C[c])
+  if(c >1) lines(range[w], mass[w],
+        type="h",col=C[c],lwd=1.5)
+  if(r==1 & c==1){
+  	text(30,0.8*max(mass),
+  "Poisson Distributions
+with Various Means",cex=1.5)
+    text(35,-0.25*max(mass),
+  "y",cex=1.5,font=3)
+  	
+  } 
+  points(MU[r,c],-0.05*max.mass,
+         cex=1,pch="|",col=C[c])
+  text(MU[r,c],-0.15*max.mass,
+       toString(MU[r,c]),
+       adj=c(0.5,1),col=C[c],cex=1.2,
+       font=2 )
+  if(r==1 & c==1) text(65,0.85*max.mass,
+       "Poisson Distributions, Various Means",
+       adj=c(0.5,1),cex=1.5 )
+ }
+ }
+} # end shapes
+ 	  
+
+nomogram=TRUE
+
+if(nomogram){
+	
+	par(mfrow=c(1,2),mar = rep(0.1,4) )
+	
+for(panel in 1:2){
+	
+ S = c(1, 16, 0, 15, 2, 17)
+ 
+ yy=0:70; y=0:70
+ x=0:50
+ YLIM=c(-0.07,1.13)*max(yy)
+ XLIM=c(-0.1,1.1)*max(x)
+  
+ if(panel==2){
+ 	 x = (0:8) ; y=0:8
+ 	 yy = 25 * 2^x
+ 	 XLIM=c(-0.1,1.1) * (max(x)+1)
+     YLIM=c(-0.11,1.10)* (max(x)+0.25)
+ }
+ 
+ plot(c(0,1),c(0,1),
+   ylim=YLIM,xlim=XLIM,col="white",yaxt="n")
+ #segments(0,0,max(x),max(x))
+ LW=1.5
+ if(panel==1) LW=0.25
+ segments(min(x),y,
+          max(x),y,col="lightblue",lwd=LW)
+ segments(x,min(y),
+          x,max(y),col="lightblue",lwd=LW)
+ if(panel==1){
+ 	segments(min(x),seq(10,60,10),
+          max(x),seq(10,60,10),   
+          col="lightblue",lwd=1)
+    segments(seq(10,40,10),min(y),
+          seq(10,40,10),max(y),
+          col="lightblue",lwd=1)
+ 	
+ }
+ for(X in x){
+ 	if(panel==2){
+ 	 text(min(x)-0.1 - 0.2*(X==0),X,
+ 	  toString(25*2^X),
+ 	  cex=0.65,adj=c(1,0.5))
+     text(X,min(y)-0.45-0.5*(X==0),
+      toString(25*2^X),
+      cex=0.65,adj=c(1,0.5),srt=30)
+ 	 text(X,max(y)+0.15,toString(25*2^X),
+ 	  cex=0.65,adj=c(0.5,0),srt=30)
+ 	 }
+ 	if(panel==1 & (X %% 10) == 0){
+ 	 text(min(x)-1-1*(X==0),X,toString(X),
+ 	  cex=0.65,adj=c(1,0.5))
+ 	 text(max(x)+1+1*(X==0),X,toString(X),
+ 	  cex=0.65,adj=c(0,0.5))
+     text(X,min(y)-0.45 - 1*(X==0),toString(X),
+      cex=0.65,adj=c(1,0.5),srt=30)
+ 	 text(X,max(y),toString(X),
+ 	  cex=0.65,adj=c(0.5,0))
+ 	 }
+ }
+ if(panel==1){
+ 	text(min(x)-1-1*(X==0),60,toString(60),
+ 	  cex=0.65,adj=c(1,0.5))
+ 	text(min(x)-1-1*(X==0),70,toString(70),
+ 	  cex=0.65,adj=c(1,0.5))
+ 	text(max(x)+1+1*(X==0),60,toString(60),
+ 	  cex=0.65,adj=c(0,0.5))
+ 	text(max(x)+1+1*(X==0),70,toString(70),
+ 	  cex=0.65,adj=c(0,0.5))
+ 	
+
+ }
+ if(panel==2) for(h in c(seq(30,45,5),
+            seq(60,90,10),
+            seq(110,190,10),
+            seq(225,375,25),
+            seq(450, 750,50),
+            seq(900, 1500,100),
+            seq(1800,3000,200),
+            seq(3600,6000,400)) ) points(
+            -0.04,
+  log(h/25)/log(2),pch=19,cex=0.15)
+ 
+ 
+ text(mean(x),max(y)+
+        0.75*(panel==2) + 
+        0.08*max(yy)*(panel==1),
+ expression(
+  paste("95% CIs for ",mu)),
+  adj=c(0.5,0.5),cex=1.25)
+    
+  text(mean(x),min(y)-
+              1.1*(panel==2)-
+              0.08*max(y)*(panel==1),
+ "Observed count, y",
+  adj=c(0.5,0),cex=0.8)
+  
+ text(-0.75-2*(panel==1),mean(y),
+ expression(mu),adj=c(1,0.5),cex=1.25)
+ 
+ for(Y in yy) {
+ 	Yy = log(Y/25)/log(2)
+ 	if(panel==1) Yy=Y
+ 	L=qgamma(c(0.025,0.975),c(Y, Y+1))
+ 	fold = L[2]/L[1]
+ 	Ll = log(L/25)/log(2)
+ 	if(panel==1) Ll=L  
+ 	if(panel==1 & Y <= 50){
+ 		segments(Yy-0.30,Ll[2],
+ 		         Yy+0.30,Ll[2],
+ 		         col="red",lwd=0.5)
+ 		segments(Yy,Ll[1],
+ 		         Yy,Ll[2],lwd=0.5)
+ 		segments(Yy-0.30,Ll[1],
+ 		         Yy+0.30,Ll[1],
+ 		         col="blue",lwd=0.5)
+
+ 		points(Yy,Yy,cex=0.25,pch=19)
+ 		if(panel==2) text(Yy+0.15,Yy,
+ 		 toString(round(fold,2)),
+ 		 adj=c(0.5,1.5),cex=0.65,
+ 		 srt=90)
+ 		 pctME = 100*qnorm(0.975)/sqrt(Y)
+ 		if(panel==2) text(Yy+0.75,Yy,
+ 		 paste(
+ 		   toString(round(pctME,1)),
+ 		   "% ME",sep=""),
+ 		 adj=c(0,0.5),cex=0.65)
+ 	} 
+ 	if(panel==2){
+ 		segments(Yy-0.10,Ll[2],
+ 		         Yy+0.10,Ll[2],
+ 		         col="red",lwd=1.25)
+ 		segments(Yy,Ll[1],
+ 		         Yy,Ll[2],lwd=1.25)
+ 		segments(Yy-0.10,Ll[1],
+ 		         Yy+0.10,Ll[1],
+ 		         col="blue",lwd=1.25)
+
+ 		points(Yy,Yy,cex=0.5,pch=19)
+ 		text(Yy+0.15,Yy,
+ 		 toString(round(fold,2)),
+ 		 adj=c(0.5,1.5),cex=0.65,
+ 		 srt=90)
+ 		 pctME = 100*qnorm(0.975)/sqrt(Y)
+ 		text(Yy+0.75,Yy,
+ 		 paste(
+ 		   toString(round(pctME,1)),
+ 		   "% ME",sep=""),
+ 		 adj=c(0,0.5),cex=0.65)
+ 	} 
+ 	 	 
+ 	 	 
+ } # n
+} # panel
+} # nomogram
+
+
+
+
