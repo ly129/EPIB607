@@ -1,13 +1,13 @@
 {
-    "path" : "~/git_repositories/epib607/assignments/a6",
+    "path" : "~/git_repositories/epib607/dalite/006_proportions",
     "sortOrder" : [
-        {
-            "ascending" : true,
-            "columnIndex" : 2
-        },
         {
             "ascending" : false,
             "columnIndex" : 4
+        },
+        {
+            "ascending" : true,
+            "columnIndex" : 2
         }
     ]
 }

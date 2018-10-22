@@ -893,6 +893,20 @@ mosaic<span class="op">::</span><span class="kw">xpbinom</span>(<span class="dv"
 </table></li>
 </ol></li>
 </ol>
+<div id="code-for-poisson-confidence-intervals" class="section level4">
+<h4><span class="header-section-number">5.8.1.1</span> Code for Poisson Confidence Intervals</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># upper limit --&gt; lower tail needs 2.5%</span>
+manipulate<span class="op">::</span><span class="kw">manipulate</span>(
+mosaic<span class="op">::</span><span class="kw">xppois</span>(<span class="dv">6</span>, <span class="dt">lambda =</span> LAMBDA), 
+<span class="dt">LAMBDA =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="fl">0.01</span>, <span class="dv">20</span>, <span class="dt">step =</span> <span class="fl">0.01</span>))
+
+
+<span class="co"># lower limit --&gt; upper tail needs 2.5%</span>
+<span class="co"># when lower.tail=FALSE, ppois doesnt include k, i.e., P(Y &gt; k)</span>
+manipulate<span class="op">::</span><span class="kw">manipulate</span>(
+mosaic<span class="op">::</span><span class="kw">xppois</span>(<span class="dv">5</span>, <span class="dt">lambda =</span> LAMBDA, <span class="dt">lower.tail =</span> <span class="ot">FALSE</span>),
+<span class="dt">LAMBDA =</span> manipulate<span class="op">::</span><span class="kw">slider</span>(<span class="fl">0.01</span>, <span class="dv">20</span>, <span class="dt">step =</span> <span class="fl">0.01</span>))</code></pre></div>
+</div>
 </div>
 <div id="thursday-october-25" class="section level3">
 <h3><span class="header-section-number">5.8.2</span> Thursday October 25</h3>
