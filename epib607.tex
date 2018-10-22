@@ -1282,6 +1282,25 @@ Intervals}\label{code-for-clopper-pearson-confidence-intervals}
 \end{tabular}
 \end{table}
 
+\subsubsection{Code for Poisson Confidence
+Intervals}\label{code-for-poisson-confidence-intervals}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# upper limit --> lower tail needs 2.5%}
+\NormalTok{manipulate}\OperatorTok{::}\KeywordTok{manipulate}\NormalTok{(}
+\NormalTok{mosaic}\OperatorTok{::}\KeywordTok{xppois}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DataTypeTok{lambda =}\NormalTok{ LAMBDA), }
+\DataTypeTok{LAMBDA =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\FloatTok{0.01}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.01}\NormalTok{))}
+
+
+\CommentTok{# lower limit --> upper tail needs 2.5%}
+\CommentTok{# when lower.tail=FALSE, ppois doesnt include k, i.e., P(Y > k)}
+\NormalTok{manipulate}\OperatorTok{::}\KeywordTok{manipulate}\NormalTok{(}
+\NormalTok{mosaic}\OperatorTok{::}\KeywordTok{xppois}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DataTypeTok{lambda =}\NormalTok{ LAMBDA, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{),}
+\DataTypeTok{LAMBDA =}\NormalTok{ manipulate}\OperatorTok{::}\KeywordTok{slider}\NormalTok{(}\FloatTok{0.01}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DataTypeTok{step =} \FloatTok{0.01}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
 \subsection{Thursday October 25}\label{thursday-october-25}
 
 \begin{table}[H]
@@ -1725,7 +1744,7 @@ categorical quantity:
 }
 
 \caption{Commonly used aesthetics in data visualization.
-top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-63}
+top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-64}
 \end{figure}
 
 \section{Coordinate systems}\label{coordinate-systems}
@@ -1759,7 +1778,7 @@ locations in a flat two-dimensional plane.
 }
 
 \caption{Commonly used coordinate systems. Chapter 3
-\citet{Yau}.}\label{fig:unnamed-chunk-64}
+\citet{Yau}.}\label{fig:unnamed-chunk-65}
 \end{figure}
 
 \section{Scales}\label{scales}
@@ -1790,7 +1809,7 @@ one-to-one, then the data visualization becomes ambiguous.
 \caption{Scales link data values to aesthetics. Here, the numbers 1
 through 4 have been mapped onto a position scale, a shape scale, and a
 color scale. For each scale, each number corresponds to a unique
-position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-65}
+position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-66}
 \end{figure}
 
 \section{Context}\label{context}
@@ -1905,7 +1924,7 @@ differentiate different categories.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-66-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-67-1} \end{center}
 
 Also see the
 \href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
@@ -1987,7 +2006,7 @@ for whom at least two-thirds of the students took the SAT.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-67-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-68-1} \end{center}
 
 This plot uses the visual cue of position to represent the math SAT
 score on the vertical axis with. The categorical variable of state is
@@ -2024,7 +2043,7 @@ being used to distinguish sex.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-68-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-69-1} \end{center}
 
 \section{Exercises}\label{exercises}
 
