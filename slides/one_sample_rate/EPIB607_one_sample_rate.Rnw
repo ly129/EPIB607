@@ -714,6 +714,65 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 \end{frame} 
 
 
+\begin{frame}{CI for the rate  parameter $\lambda$}
+
+\begin{itemize}
+	\item To calculate a CI for the ID parameter, we \textbf{treat the PT \underline{denominator} as a constant}, and the \textbf{\underline{numerator}, $y$,  as a Poisson random variable}, with expectation $E[y] = \mu = \lambda \times PT$, so that
+$$\lambda = \mu \div \textrm{PT},$$
+$$\hat{\lambda} = \hat{\mu} \div \textrm{PT} = y\div\textrm{ PT},$$
+
+\vspace*{0.3in}
+\begin{equation}
+\boxed{\textrm{CI for }\lambda = \{\textrm{CI for }\mu\} \div \textrm{PT}.}
+\end{equation}
+
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{CI for the rate  parameter $\lambda$}
+
+
+\begin{itemize}
+
+	\small
+	\item The $y=211$ leads to a (large-sample, SE-based) 
+	$$\textrm{95\% CI  for }\mu: \: \: 211 \pm 1.96 \times \sqrt{211} \Rightarrow 211 \pm 28.5
+	\Rightarrow [182.5, 239.5]$$ 
+	$$\textrm{95\% CI  for }\lambda: \: \:  [182.5, 239.5] \div 232,978\textrm{WY}
+	\Rightarrow [\textbf{78.3}, \textbf{102}]\textrm{ per }100,000\textrm{WY}$$ 
+	
+	\pause 
+	
+\item Whereas it matters little which method -- exact or approximate -- to use for the 95\% CI from the 2002 data, the number of deaths in 1971 is a much smaller $y=33.$ Thus we will use a non-symmetric first principles CI for $\mu$: 
+
+<<echo=TRUE>>=
+qgamma(c(0.025,0.975), c(33,34))
+@
+
+\pause 
+
+\item 
+
+To accompany the point estimate of 25 deaths per 100,000WY, we have  
+	$$\textrm{95\% CI  for }\lambda: \: \:  [22.7, 46.3] \div 131,200\textrm{WY}
+	\Rightarrow [\textbf{17.3}, \textbf{35.3}]\textrm{ per }100,000\textrm{WY}$$ 
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{CI for the rate  parameter $\lambda$ using canned function}
+
+<<echo=TRUE>>=
+stats::poisson.test(x = 33, T = 131200)
+@
+
+\end{frame}
+
+
 
 \end{document}
 
