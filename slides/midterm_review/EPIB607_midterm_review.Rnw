@@ -1226,8 +1226,11 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 	\begin{itemize}
 			\setlength\itemsep{.71em}
 		\item We need to first define the reference (null) distribution. Then the parameter of interest \pause
-		\item Binomial(n=20, p=0.5) is the reference distribution where $p$ is the proportion of people who would receive superior UVA and UVB protection from your product. \pause 
-		\item[] $H_0: p = 0.5 \qquad$ $H_a: p \neq 0.5$ \pause
+		\item Binomial(n=20, $\pi$=0.5) is the reference distribution where $\pi$ is the proportion of people who would receive superior UVA and UVB protection from your product. \pause
+		The following are all equivalent: 
+		\item[] $H_0: \pi = 0.5 \qquad$ $H_a: \pi > 0.5$ \pause
+		\item[] $H_0: \pi_{\textrm{your product}}=\pi_{\textrm{their product}} = 0.5 \qquad$ $H_a: \pi_{\textrm{your product}} > \pi_{\textrm{their product}}$ \pause
+		\item[] $H_0: \pi_{\textrm{your product}}-\pi_{\textrm{their product}} = 0 \qquad$ $H_a: \pi_{\textrm{your product}} > \pi_{\textrm{their product}}$ \pause
 		\item You must define your own $\alpha$. Here we choose $\alpha=0.05$ 		
 	\end{itemize}
       
@@ -1246,8 +1249,8 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 	
 	\item Exact $p$-value:
 	<<echo = TRUE, eval=TRUE>>=
-	pbinom(12, 20, 0.5, lower.tail = FALSE)*2
-	(1 - pbinom(12, 20, 0.5)) * 2
+	pbinom(12, 20, 0.5, lower.tail = FALSE)
+	1 - pbinom(12, 20, 0.5)
 	@
 	\pause 
 
@@ -1255,7 +1258,7 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 	<<echo = TRUE>>=
 	SEp <- sqrt(0.5*0.5/20) # under the null
 	zstat <- (0.65 - 0.5) / SEp
-	pnorm(zstat, lower.tail = FALSE) * 2
+	pnorm(zstat, lower.tail = FALSE)
 	@
 	
 	
@@ -1275,7 +1278,8 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 	\item Exact CI (Clopper-Pearson or Nomogram):
 	<<echo = TRUE, eval=TRUE, comment=NA>>=
 	mosaic::binom.test(x = 13, n = 20, p = 0.5, 
-	ci.method = "Clopper-Pearson")
+	ci.method = "Clopper-Pearson",
+	alternative = "greater")
 	@
 	
 
@@ -1298,7 +1302,8 @@ $$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 =
 	\item Approximate 95\% CI:
 	<<echo = TRUE, eval=TRUE, comment=NA>>=
 	mosaic::binom.test(x = 13, n = 20, p = 0.5, 
-	ci.method = "Wald")
+	ci.method = "Wald",
+	alternative = "greater")
 	@
 	
 		
