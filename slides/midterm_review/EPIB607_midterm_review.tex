@@ -679,6 +679,25 @@
 \end{frame}
 
 
+\frame{\frametitle{The Central Limit Theorem (CLT)} 
+	
+	\begin{itemize}
+		\item The sampling distribution of $\bar{y}$ is, for a large enough $n$, close to Gaussian in shape no matter what the shape of the distribution of individual $Y$ values. 
+		\item This phenomenon is referred to as the CENTRAL LIMIT THEOREM 
+		\item The CLT applied also to a \underline{sample proportion}, \underline{slope}, \underline{correlation}, or any other statistic created by \underline{aggregation of individual observations}
+	\end{itemize}
+	
+	\begin{thm}[Central Limit Theorem]
+		\begin{center}
+			if $Y \sim ???(\mu_Y, \sigma_Y)$, then \\ \ \\
+			$\bar{y} \sim \mathcal{N}(\mu_Y, \sigma_Y / \sqrt{n})$
+		\end{center}
+	\end{thm}
+	
+	\vspace{1.25cm}
+	%pause
+}
+
 \begin{frame}{Confidence Interval}
 
 \begin{defm}[Confidence Interval]
@@ -996,6 +1015,17 @@
 
 \end{frame}
 
+\begin{frame}{Power and Sample Size: 3 questions}
+
+\begin{enumerate}
+	\setlength\itemsep{1em}
+	\item How much water a supplier could add to the milk before they have a 10\% , 50\%, 80\%
+	chance of getting caught, i.e., of the buyer detecting the cheating ? \pause
+	\item Assume a 99:1 mix of milk and water. What are the chances of detecting cheating if the buyer uses samples $n$=10, 15 or 20 rather than just 5 measurements? \pause
+	\item At what $n$ does the chance of detecting cheating reach 80\%? (\textit{a commonly used, but arbitrary, criterion used in sample-size planning by investigators seeking funding for their proposed research})
+\end{enumerate}
+
+\end{frame}
 
 
 \begin{frame}[fragile]{If the supplier added 1\% water to the milk}
@@ -1032,6 +1062,62 @@
 \begin{center}
 	\includegraphics[scale=0.5]{../sample_size/SampleSize1pctWaterAdded.pdf} 
 \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{The balancing formula}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-15-1} 
+
+}
+
+
+
+\end{knitrout}
+\end{frame}
+
+
+\begin{frame}{What sample size needed?}
+
+\begin{itemize}
+\setlength\itemsep{1em}
+\item The `balancing formula', in SEM terms, is simply the $n$ where
+$$ 1.645 \times SEM + 0.84 \times SEM = \Delta.$$
+Replacing each of the  SEMs (assumed equal, because we assumed the variability
+is approx. the same under both scenarios) by $\sigma/\sqrt{n}$,  i.e.,
+
+$$ 1.645 \times \sigma/\sqrt{n} + 0.84 \times \sigma/\sqrt{n} = \Delta.$$
+
+and solving for $n$, one gets
+
+$$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 = 
+(1.645 + 0.84)^2  \times \bigg\{ \frac{Noise}{Signal} \bigg\}^2 .$$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{What sample size needed? General Formula}
+
+\begin{itemize}
+	\setlength\itemsep{2em}
+	\item Two sided alternative:
+	$$\Delta = z_{1-\alpha/2} \times SEM + z_{1-\beta} \times SEM$$
+	
+		\item One sided alternative:
+	$$\Delta = z_{1-\alpha} \times SEM + z_{1-\beta} \times SEM$$
+\end{itemize}
+
+\end{frame}
+
+
+\section{One sample proportion}
+
+
+\begin{frame}
+\Wider[5em]{	
+	\includegraphics[width=4.95in,height=3.7in]{../one_sample_prop/Nomogram.pdf}
+}
 \end{frame}
 
 
@@ -1156,24 +1242,7 @@ probability of success
 
 
 
-\frame{\frametitle{The Central Limit Theorem (CLT)} 
-	
-	\begin{itemize}
-		\item The sampling distribution of $\bar{y}$ is, for a large enough $n$, close to Gaussian in shape no matter what the shape of the distribution of individual $Y$ values. 
-		\item This phenomenon is referred to as the CENTRAL LIMIT THEOREM 
-		\item The CLT applied also to a \underline{sample proportion}, \underline{slope}, \underline{correlation}, or any other statistic created by \underline{aggregation of individual observations}
-	\end{itemize}
-	
-	\begin{thm}[Central Limit Theorem]
-		\begin{center}
-			if $Y \sim ???(\mu_Y, \sigma_Y)$, then \\ \ \\
-			$\bar{y} \sim \mathcal{N}(\mu_Y, \sigma_Y / \sqrt{n})$
-		\end{center}
-	\end{thm}
-	
-	\vspace{1.25cm}
-	%pause
-}
+
 
 
 

@@ -627,6 +627,25 @@ mosaic::xqnorm(p = 0.0104, mean = 100, sd = 13)
 \end{frame}
 
 
+\frame{\frametitle{The Central Limit Theorem (CLT)} 
+	
+	\begin{itemize}
+		\item The sampling distribution of $\bar{y}$ is, for a large enough $n$, close to Gaussian in shape no matter what the shape of the distribution of individual $Y$ values. 
+		\item This phenomenon is referred to as the CENTRAL LIMIT THEOREM 
+		\item The CLT applied also to a \underline{sample proportion}, \underline{slope}, \underline{correlation}, or any other statistic created by \underline{aggregation of individual observations}
+	\end{itemize}
+	
+	\begin{thm}[Central Limit Theorem]
+		\begin{center}
+			if $Y \sim ???(\mu_Y, \sigma_Y)$, then \\ \ \\
+			$\bar{y} \sim \mathcal{N}(\mu_Y, \sigma_Y / \sqrt{n})$
+		\end{center}
+	\end{thm}
+	
+	\vspace{1.25cm}
+	%pause
+}
+
 \begin{frame}{Confidence Interval}
 
 \begin{defm}[Confidence Interval]
@@ -1104,6 +1123,83 @@ xlab = "Freezing point (degrees C)")
 \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{The balancing formula}
+<<echo=FALSE, eval=TRUE>>=
+n <- 13.6
+s <- 0.0080
+mu0 <- -0.540
+mha <- 0.99*-0.540
+cutoff <- mu0 + qnorm(0.95) * s / sqrt(n)
+power_plot(n = n, s = s,  
+mu0 = mu0, mha = mha, 
+cutoff = cutoff,
+alternative = "greater",
+xlab = "Freezing point (degrees C)")
+I = 1
+axis(2)
+text(-0.5325,600,"qnorm(0.8, \nlower.tail=FALSE)=\n-0.84",
+cex=.65,family="mono",adj=c(0,0.5),col="red")
+x = (cutoff+mha)/2
+text(x-.001, 330,
+"0.84 * SEM",col="red",
+adj=c(-0.1,0.5),cex=0.65)
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", 
+"#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+text(-0.548,100,"qnorm(0.05, \nlower.tail=FALSE)=\n 1.645",
+cex=0.65,family="mono",adj=c(0,0),col=cbPalette[6])
+text(x-.001, 130, "1.645 * SEM",col=cbPalette[6], 
+adj=c(1.1,0),cex=0.65)
+arrows(mu0,   100,
+mha,100,length=0.05,
+code=3,angle=20,lwd=1.5)
+text(mha-.0054,80, latex2exp::TeX("Delta = 1.645*SEM + 0.84*SEM"),
+adj=c(-0.1,0.5), cex=0.75)
+@
+\end{frame}
+
+
+\begin{frame}{What sample size needed?}
+
+\begin{itemize}
+\setlength\itemsep{1em}
+\item The `balancing formula', in SEM terms, is simply the $n$ where
+$$ 1.645 \times SEM + 0.84 \times SEM = \Delta.$$
+Replacing each of the  SEMs (assumed equal, because we assumed the variability
+is approx. the same under both scenarios) by $\sigma/\sqrt{n}$,  i.e.,
+
+$$ 1.645 \times \sigma/\sqrt{n} + 0.84 \times \sigma/\sqrt{n} = \Delta.$$
+
+and solving for $n$, one gets
+
+$$  n = (1.645 + 0.84)^2  \times \bigg\{ \frac{\sigma}{\Delta} \bigg\}^2 = 
+(1.645 + 0.84)^2  \times \bigg\{ \frac{Noise}{Signal} \bigg\}^2 .$$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{What sample size needed? General Formula}
+
+\begin{itemize}
+	\setlength\itemsep{2em}
+	\item Two sided alternative:
+	$$\Delta = z_{1-\alpha/2} \times SEM + z_{1-\beta} \times SEM$$
+	
+		\item One sided alternative:
+	$$\Delta = z_{1-\alpha} \times SEM + z_{1-\beta} \times SEM$$
+\end{itemize}
+
+\end{frame}
+
+
+\section{One sample proportion}
+
+
+\begin{frame}
+\Wider[5em]{	
+	\includegraphics[width=4.95in,height=3.7in]{../one_sample_prop/Nomogram.pdf}
+}
+\end{frame}
+
 
 
 \section{Examples}
@@ -1190,24 +1286,7 @@ xlab = "Freezing point (degrees C)")
 
 
 
-\frame{\frametitle{The Central Limit Theorem (CLT)} 
-	
-	\begin{itemize}
-		\item The sampling distribution of $\bar{y}$ is, for a large enough $n$, close to Gaussian in shape no matter what the shape of the distribution of individual $Y$ values. 
-		\item This phenomenon is referred to as the CENTRAL LIMIT THEOREM 
-		\item The CLT applied also to a \underline{sample proportion}, \underline{slope}, \underline{correlation}, or any other statistic created by \underline{aggregation of individual observations}
-	\end{itemize}
-	
-	\begin{thm}[Central Limit Theorem]
-		\begin{center}
-			if $Y \sim ???(\mu_Y, \sigma_Y)$, then \\ \ \\
-			$\bar{y} \sim \mathcal{N}(\mu_Y, \sigma_Y / \sqrt{n})$
-		\end{center}
-	\end{thm}
-	
-	\vspace{1.25cm}
-	%pause
-}
+
 
 
 

@@ -1146,7 +1146,8 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
 c("1. Final exam date: December 6th, Otto MAASS 112 (cap 220) available from 9am-6pm "),
-c("2. [Inference about a population rate](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_rate/EPIB607_one_sample_rate.pdf)")
+c("2. [Midterm Review](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/midterm_review/EPIB607_midterm_review.pdf)"),
+c("3. [Inference about a population rate](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_rate/EPIB607_one_sample_rate.pdf)")
 ))
 
 
@@ -1477,6 +1478,7 @@ knitr::write_bib(c(
 6. [P-values, Power and Sample Size](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/sample_size/EPIB607_sample_size.pdf)
 7. [Inference about a population proportion](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_prop/EPIB607_one_sample_prop.pdf)
 8. [Inference about a population rate](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_rate/EPIB607_one_sample_rate.pdf)
+9. [Midterm Review](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/midterm_review/EPIB607_midterm_review.pdf)
 
 # Polls
 
