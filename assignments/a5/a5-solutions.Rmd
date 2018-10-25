@@ -17,7 +17,7 @@ editor_options:
 ```{r include = FALSE}
 ## ---- Setup ------------------------------------------------------------------
 knitr::opts_chunk$set(
-  echo = FALSE,          # don't show code
+  echo = TRUE,          # don't show code
   warning = FALSE,       # don't show warnings
   message = FALSE,       # don't show messages (less serious warnings)
   cache = FALSE,         # set to TRUE to save results from last compilation
@@ -28,66 +28,283 @@ knitr::opts_chunk$set(
 ```
 
 
-# Food intake and weight gain
+# Food intake and weight gain (30 points)
 
 ```{r, results='hide', fig.keep='none'}
-## ---- Question-1 ------------------------------------------------------------
+## ---- Question-1A ------------------------------------------------------------
+
+library(mosaic)
+
+# Creating objects with given information
+q1_n <- 16
+q1_µ <- 16
+
+# Loading the dataset
+weight <- read.csv("weightgain.csv")
+
+# Creating new variable for weight change
+weight$change <- weight$after-weight$before
+weight$change_lb <- weight$change*2.2
+
+# Calculating the mean of weight change and rounding
+ybar_change <- mean(weight$change)
+ybar_change_r <- round(ybar_change, 2)
+
+# Calculating the sample standard deviation
+ssd_change <- sd(weight$change)
+
+# Calculating the standard error of the mean
+se_change <- ssd_change/sqrt(nrow(weight))
+
+# critical values
+q1_cv95 <- qt(p = c(0.025, 0.975), df = 15)
+q1_cv95.r <- round(q1_cv95,2)
+
+# Calculating a 95% confidence interval
+qt_scaled <- function(p, df, mean, sd) qt(p = p, df = df) * sd + mean
+q1_ci95 <- qt_scaled(p = c(0.025, 0.975), 
+                     df = nrow(weight) - 1, 
+                     mean = ybar_change, 
+                     sd = se_change)
+q1_ci95.r <- round(q1_ci95, 2)
+
+```
+
+a) (10 points, 5 for the correct CI, 2 for interpretation, 3 for assumptions) The 95% confidence interval for the mean weight change is `r ybar_change_r` kg (`r q1_ci95.r[1]` kg, `r q1_ci95.r[2]` kg). If the method used in this study were repeated many times, 95% of the time, the interval `r q1_ci95.r[1]` kg and `r q1_ci95.r[2]` kg will cover the true mean weight change. As this confidence interval was calculated using the *t* procedure, we are assuming that (1) we can regard our data as a simple random sample (SRS) from the population, and (2) observations for the population have a Normal distribution.
+
+```{r results='hide'}
+## ---- Question-1B ------------------------------------------------------------
+
+# Calculating a 95% bootstrap confidence interval for the mean weight change 
+set.seed(2018)
+q1_dist <- do(10000) * mean( ~ change, data = resample(weight))
+q1_boot <- round(quantile(~ mean, data = q1_dist, probs = c(0.025, 0.975)),2)
+```
+
+b) (5 points, need to mention either narrower or wider or asymmetric) The 95% bootstrap confidence interval for the mean weight change is `r ybar_change_r` kg (`r q1_boot[1]` kg, `r q1_boot[2]` kg). This confidence interval is slightly asymmetric compared to the one obtained using the *t* procedure. Under the *t* procedure, we also had to assume that the observations for the population have a Normal distribution, whereas bootstrap frees us from this assumption. 
+
+```{r results='hide'}
+## ---- Question-1C ------------------------------------------------------------
+
+# Converting the units of the mean weight gain and 95% confidence interval from kg to pounds
+
+# Mean of weight change
+ybar_change_lb <- ybar_change*2.2
+
+ybar.r_change_lb <- round(ybar_change_lb, 2)
+
+# Sample standard deviation
+ssd_change_lb <- ssd_change*2.2
+
+
+# T-procedure 95% CI
+q1_ci95_lb <- q1_ci95*2.2
+q1_ci95_lb <- round(q1_ci95_lb, 2)
+
+
+# Bootstrap 95% CI
+q1_boot_lb <- q1_boot*2.2
+q1_boot_lb <- round(q1_boot_lb, 2)
+
+
+```
+
+c) (5 points, only needed to convert either the bootstrap or the t interval. The mean should be from the original sample, not from the bootstrap sample if they provided the bootstrap CI in lbs)
+
+|CI type  |Mean (95% CI) (lb)            |
+|:----|:----------------------------------|
+*t* procedure\ |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar_change_lb, q1_ci95_lb[1], q1_ci95_lb[2])` |
+|Bootstrap\ |`r sprintf("%#.2f (%#.2f, %#.2f)", ybar_change_lb, q1_boot_lb[1], q1_boot_lb[2])` |
+
+<style>
+.nobullet li {
+  list-style-type: none;
+}
+</style>
+
+(d) (10 points, can use the bootstrap or t interval, or t-test pvalue, 5points for specifying hypothesis, 5 points for statement) The null hypothesis is that the theory of weight gain is the same as the measured weigth gain, $H_0: \mu = \mu_o = 16$ lbs, and the alternative hypothesis is $H_a: \mu \neq 16$ lbs (two tailed test). I want to test it using the bootstrap method beacause I don't want to assume that the CLT has kicked in and the sampling distribution is normal. Assuming it is a simple random sample, our sample has a mean of `r ybar.r_change_lb` lbs with a bootstrap 95%CI of `r q1_boot_lb`lbs. The upper limit of the confidence interval is below 16 lbs, therefore there is evidence that supports rejecting the null hypothesis. Based on our data, I infer that there is a difference between the theory of weight gain and our measure of weight gain. 
+
+# Attitudes toward school (20 points)
+
+
+a) (12 points, 4 for Ho Ha, 5 for CI, 3 for statement. You could use the t if you dont trust the population sigma, or the z if you do) 
+
+## Using the t procedure
+
+```{r, results='hide', fig.keep='none'}
+## ---- Question-2 ------------------------------------------------------------
+student_score1 <- round(qt_scaled(p = 0.05, df = 24, mean = 132.2, sd = 28/sqrt(25)), 2)
+student_score2 <- round(qt_scaled(p = c(0.25, 0.975), df = 24, mean = 132.2, sd = 28/sqrt(25)), 2)
 
 ```
 
 
+The null hypothesis is that older student mean SSHA score equals all student mean SSHA scores, $H_0: \mu = \mu_0 = 115$. The alternate hypothesis is that older student mean SSHA score is greater than 115, $H_a: \mu > 115$ (ie: one-tail test). The sample size is on the smaller side (ie: below 30), so I chose to use a one sample t-test because I don't trust the sample sd to be a good estimate of the population sd. A two tailed 95% CI is `r student_score2`. For the one tailed t-test, the 95% CI is `r student_score1`, $+\infty$, which has a lower bound that is above the student population mean score of 115. Based on this, I reject the null hypothesis and infer that there is a difference in SSHA score between older students and the general population of sutdents. We can conlcude that compared to the general population of students, older students have better attitudes, motivations, and study habits with respect to school.
 
-# Attitudes toward school
 
+## Using the z procedure
 
 ```{r}
 ## ---- Question-2 ------------------------------------------------------------
-
+mu.ssha <- 115
+sigma.ssha <- 30
+ybar.ssha <- 132.2
+sdev.ssha.sample <- 28
+nssha <- 25
+## a ## -----------------------------------------------------------------------
+zvalue.ssha <- (ybar.ssha - mu.ssha)/(sigma.ssha/sqrt(nssha))
+pvalue.ssha <- pnorm(zvalue.ssha, lower.tail = F) 
+CI95ssha <- ybar.ssha + c(-(sigma.ssha/sqrt(nssha)), sigma.ssha/sqrt(nssha))
 ```
 
 
+Assuming that the standard deviation of the all U.S. college students of 30 is accurate and taken as sigma, we calculate a 95% confidence interval for ybar of `r CI95ssha` and a single sided (right side, Halt is that mu > 115) p value using the z statistic (because sigma is known) of `r pvalue.ssha`. Assuming that the null hyposthesis is true, the p value calculated would make the probability of observing the ybar we have very rare. Together with the fact that the mu of 115 is not contained within our 95% confidence interval, this provides evidence that the null hypothesis may be untrue.
 
-# Does a full moon affect behavior?
+
+
+b) (8 points, 3 points for SRS, 3 for either the sampling distribution or population distribution being normal) We are assuming that this is a simple random sample of older students and that the sampling distribution is normal. We are *not* assuming that the standard deviation of the sample is an estimate for the standard deviation of the population. The most important assumption is that it is a simple random sample that is representative of all older students. We've also assumed that the CLT kicked in and that the sampling distribution is normal. 
+
+
+Also valid: 
+I assumed that the null hypothesis is true, and that the standard deviation of the all U.S. college students of 30 is accurate and taken as sigma, and that the sample distribution here is enough that the CLT has kicked in. Of these, the fact that sigma = 30 and that the CLT has kicked in are the most important for the validity of my conclusion in part a. If they are not true, then the analyses performed would have no basis and our results would be false.
+
+
+# Does a full moon affect behavior? (40 points)
 
 ```{r}
 ## ---- Question-3 ------------------------------------------------------------
-fullmoon <- read.csv("~/git_repositories/epib607/assignments/a5/fullmoon.csv")
-fullmoon
-fullmoon$diff <- fullmoon$moon_days - fullmoon$other_days
-n <- nrow(fullmoon)
-SEM <- sd(fullmoon$diff)/sqrt(n)
-qt_ls <- function(p, df, mean, sd) qt(p, df) * sd + mean
-
-qt_ls(p = c(0.025, 0.975), df = n-1, mean = mean(fullmoon$diff), sd = SEM)
-mean(fullmoon$diff) + qt(p = c(0.025, 0.975), df = n-1) * SEM
-
-mean(fullmoon$diff) + qt(p = c(0.05), df = n-1) * SEM
-
-t_stat <- (mean(fullmoon$diff) - 0) / SEM
-t_stat
-
-pt(-t_stat, n-1, lower.tail = T) + pt(t_stat, n-1, lower.tail = F)
-
-summary(lm(fullmoon$diff~1))
-
-
-
-stats::confint(lm(fullmoon$diff~1), level = 0.9)
-
-library(mosaic)
-s_dist <- do(10000) * mean(~ diff, data = resample(fullmoon))
-hist(s_dist$mean)
-quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
-
+fullmoon <- read.csv("fullmoon.csv")
 ```
 
+a. (8 points, 4 for CI and using t dist, 4 for assumptions, either CLT or that population distribution is Normal)
+
+```{r}
+## a ## -----------------------------------------------------------------------
+moon.diff <- fullmoon$moon_days - fullmoon$other_days
+
+moon.mean <- mean(moon.diff)
+moon.sdev <- sd(moon.diff)
+moon.n <- length(moon.diff)
+
+t95.moon <- qt(0.975, df = moon.n-1)
+
+moon.error <- t95.moon*moon.sdev/sqrt(moon.n)
+
+CI95.moon.t <- moon.mean + c(-moon.error, moon.error)
+```
+
+Assuming that our sample is representative of the population, that the difference in distruptive events is normally distributed in the population, and that the Central Limit Theorem (CLT) has kicked in, I calculated a 95% confidence interval of mean difference of `r round(moon.mean, 2)` ± `r round(moon.error, 2)` (`r round(CI95.moon.t, 2)`) distruptive events on full moon days when compared to other days. This was done using the t statistic due to the unknown sigma and small sample size of n = 15.
+
+b. (8 points, should give similar results to the t as bootstrap distribution is normal, 5 points for CI, 3 for saying that assumptions in (a) are somewhat verified by the symmetry of the bootstrap distribution)
+
+```{r}
+## b ## -----------------------------------------------------------------------
+moon.expanded <- cbind(fullmoon, moon.diff)
+s_dist.moon <- do(10000) * mean(~ moon.diff, data = resample(moon.expanded))
+CI.95.moon.boot <- quantile(~ mean, data = s_dist.moon, probs = c(0.025, 0.975))
+
+hist(s_dist.moon$mean, breaks = 50, col = "#56B4E9",
+     main="Fig. 2: Bootstrap Sample Distribution of Difference in Distruptive Behaviours", xlab = "bootstrap sample means")
+# draw red line at the sample mean
+abline(v = mean(s_dist.moon$mean), lty =1, col = "red", lwd = 4)
+# draw black dotted lines at 95% CI
+abline(v = CI.95.moon.boot[1], lty =2, col = "blue", lwd = 4)
+abline(v = CI.95.moon.boot[2], lty =2, col = "blue", lwd = 4)
+# include legend
+library(latex2exp)
+legend("topleft",
+       legend = c(TeX("$\\bar{y} = 3.9$"),
+                  sprintf("95%% CI: [%.f, %.f]",CI.95.moon.boot[1], CI.95.moon.boot[2])),
+       lty = c(1,1),
+       col = c("red","black"), lwd = 4)
+```
+
+The 95% bootstrap confidence interval for the mean difference in disruptive behaviors calculated here is a difference of (`r round(CI.95.moon.boot, 2)`) distruptive behaviours. This is a smaller interval than the one calculated with t statistic in part a because the bootstrap doesn't need as wide an interval since it creates a simulated sample distribution adn works with greater precision. Additionally, in figure 2 we see the bootstrap sample distribution. It appears mostly symmetrical (slightly asympetrical), but appears normal. Because of this and the fact that the 95% confidence interval that it gives being similar to our result using the t statistic, we can more or less validate our assumtion in part a of the CLT having kicked in.
+
+c. (8 points, 4 for p-value or CI argument, 2 for assumptions, 2 for statement) 
+
+```{r}
+## c ## -----------------------------------------------------------------------
+tvalue.moon <- (moon.mean-0)/(moon.sdev/sqrt(moon.n))
+
+pvalue.moon <- pt(q = tvalue.moon, df = moon.n-1, lower.tail = F)
+```
+
+$H_0: \mu = 0$ (i.e. that there is no difference in distruptive behaviours on full moon nights when ompared to other nights) and $H_a: \mu > 0$ (i.e. that there are more distruptive behaviours on full moon nights when ompared to other nights). 
+
+I calculate a single-sided (to the right, Halt is that mu > 0) p value using the t statistic (because unknown sigma and small sample size of n = 15) of `r pvalue.moon`. Given the null hyposthesis is true, the p value calculated is the probability of observing a mean difference as extreme as the observed value of `r round(moon.mean, 2)`. We could also say that since $\mu = 0$ is not contained within our 95% confidence interval (either in section a or b), this provides evidence against the null hypothesis.
+
+This is based on the assumptions that the sample distribution here is enough that the CLT has kicked in as well.
+
+d. (8 points) 
+
+```{r}
+## d ## -----------------------------------------------------------------------
+tscore.null <- qt(p = 0.95, df = moon.n-1)
+threshold.ybar <- tscore.null*(moon.sdev/sqrt(moon.n))
+```
+
+Assuming H0 is true, under the null distribution the minimum value in mean difference in distruptive behaviours needed to generate a p of 0.05 is `r round(threshold.ybar, 2)` distruptive behaviours.
+
+e. (8 points, 4 points are given if you incorrectly specified lower.tail = TRUE) 
+
+```{r}
+## e ## -----------------------------------------------------------------------
+# under new H alt distribution, what's the probability of find the ybar from d
+p.detect.increase <- pnorm(q = threshold.ybar, mean = 1, sd = moon.sdev/sqrt(moon.n), lower.tail = FALSE)
+```
+
+Given a  normal distribution with mean = 1 and SEm = `r round(moon.sdev/sqrt(moon.n), 2)`, the probability of detecting an increase of 1 aggressive behavior per day during moon days is 
+`r round(p.detect.increase,2)`
 
 
 
-# How deep is the ocean?
+# How deep is the ocean? (10 points)
+
+
 
 ```{r}
 ## ---- Question-4 - --------------------------------------------------------
+
+#This question is based on the in-class Exercise on sampling distributions and builds on Question 4 from Assignment 4. For your sample of n = 20 of depths of the ocean 
+
+#import data
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+index.n.20 <- c(1381,1382,1383,1384,1385,1386,1387,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400)
+depths.n.20 <- automate_water_task(index = index.n.20, student_id = 260619972, type = "depth")
+
+#change to 100m units
+depths.n.20$alt = round(depths.n.20$alt/100,0)
+
+#mean and SE?? SD??
+mean20 <- mean(depths.n.20$alt)
+se20 <-sd(depths.n.20$alt) / sqrt(20)
+
+#. 95% Confidence interval using the qnorm function qnorm
+qnormCI95 <- qnorm(p = c(0.025, 0.975), mean = mean20, sd = se20) 
+
+
+#. 95% Confidence interval using B = 10000 bootstrap samples 
+bootdepth <- do(10000) * mean( ~ alt, data = resample(depths.n.20)) 
+bootCI95<- quantile(~ mean, data = bootdepth, probs = c(0.025, 0.975))
+
+#a. Calculate a 95% Confidence interval using the t procedure 
+OCEANtpmCI95 <- mean20 + (qt(p = c(0.025, 0.975), df = 19)* (se20))
+
+
+```
+a) (5 points) 95% Confidence interval using the t procedure is  **[`r round(OCEANtpmCI95[1],2)`, `r round(OCEANtpmCI95[2],2)`]** meters
+
+b) (5 points) The qnorm, bootstrap, and t procedure confidence intervals plotted on the same plot. 
+
+The t procedure confidence interval is very similiar when compared to the other 2 intervals. It is interesting to note that both CI by qnorm and t procedure are symmetric around the sample mean of 40.8 meters. In a sense that with qnorm the CI is approx 5.92 meters and t procedure approx 6.32 meters below and above the mean of 40.8 meters. However, the bootstrap CI is not perfectly symmetrical on both sides of the mean within the interval. Nonetheless, since all intervals look relatively similar,  it can be suggested that the central limit theorum has kicked in with our sample size of 20 samples of depths of the ocean. I could perform inference based on the Normal distirbution. 
+
+```{r}
+
+#b. Plot the qnorm, bootstrap, and t procedure confidence intervals on the same plot and comment on the how the t interval compares to the other 2 intervals. You may use the compare_CI function provided below to produce the plot.
+
+
+
 
 compare_CI <- function(ybar, QNORM, BOOT, TPROCEDURE,
                        col = c("#E41A1C","#377EB8","#4DAF4A")) {
@@ -116,6 +333,10 @@ compare_CI <- function(ybar, QNORM, BOOT, TPROCEDURE,
          lty = c(1,1,1,1),
          col = c("black",col), lwd = 4)
 }
+
+#compare_CI(ybar = 36, QNORM = c(25,40), BOOT = c(31, 38), TPROCEDURE = c(28, 40))
+
+compare_CI(ybar = mean20, QNORM = c(qnormCI95[1],qnormCI95[2]), BOOT = c(bootCI95[1], bootCI95[2]), TPROCEDURE= c(OCEANtpmCI95[1],OCEANtpmCI95[2]))
 
 ```
 

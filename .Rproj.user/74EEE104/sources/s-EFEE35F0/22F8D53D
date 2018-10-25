@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540441968491.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "22F8D53D",
+    "lastKnownWriteTime" : 1515363783,
+    "last_content_update" : 1515363783,
+    "path" : "~/Dropbox/jobs/hec/talkHEC/Bhatnagar_23andme_research.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "381,119",
+        "scrollLine" : "375"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

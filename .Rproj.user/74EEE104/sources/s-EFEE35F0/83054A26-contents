@@ -1,0 +1,342 @@
+---
+title: Final - These are questions that didnt make it to the midterm but could be used for the final. October 29, 11:30am - 1:30pm 2018
+author:
+  - name: EPIB607 - Inferential Statistics
+    affiliation: a
+#  - name: Second Author
+#    affiliation: a,b
+address:
+  - code: a
+    address: Fall 2018, McGill University
+#  - code: b
+#    address: Department of Neat Tricks, Whereever State University, Someplace, MC, 67890
+lead_author_surname: Bhatnagar and Hanley
+doi: "https://sahirbhatnagar.com/EPIB607/"
+abstract: |
+  This is a 2 hour, open book exam. Calculators are permitted. Cellular phones are not permitted. The exam is out of 100. Write down all your answers in the provided booklet. Provide units and state your assumptions when applicable. If a question requires use of the z or t probabilites/quantiles, write the corresponding R code instead. Some commonly used quantiles are provided. 
+# Optional: Acknowledgements
+#acknowledgements: |
+#  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
+#  [PNAS LaTeX](http://www.pnas.org/site/authors/latex.xhtml) macros. Both these sources are
+#  ([GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html) and
+#  [LPPL (>= 1.3)](https://www.latex-project.org/lppl/)).
+# Optional: One or more keywords
+keywords:
+  - Descriptive statistics
+  - Confidence intervals
+  - p-values
+  - Sampling distributions
+  - Central Limit Theorem
+  - z and t procedures
+  - one sample mean
+  - one sample proportion
+papersize: letter
+fontsize: 12pt
+# Optional: Force one-column layout, default is two-column
+one_column: true
+# Optional: Enables lineno mode, but only if one_column mode is also true
+#lineno: true
+# Optional: Enable one-sided layout, default is two-sided
+#one_sided: true
+# Optional: Enable section numbering, default is unnumbered
+numbersections: true
+# Optional: Specify the depth of section number, default is 5
+#secnumdepth: 5
+# Optional: Skip inserting final break between acknowledgements, default is false
+skip_final_break: true
+# Optional: Bibliography 
+bibliography: pinp
+# Optional: Enable a 'Draft' watermark on the document
+watermark: false
+footer_contents: "Midterm - October 29, 11:30am - 1:30pm 2018"
+output: pinp::pinp
+# Required: Vignette metadata for inclusion in a package.
+vignette: >
+  %\VignetteIndexEntry{YourPackage-vignetteentry}
+  %\VignetteKeywords{YourPackage, r, anotherkeyword}
+  %\VignettePackage{Midterm - October 29, 11:30am - 1:30pm 2018}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20),
+                          axis.title = element_text(size = 20), 
+                          legend.text = element_text(size = 20), 
+                          legend.title = element_text(size = 20))
+
+# A Prefix nulling hook.
+
+# Make sure to keep the default for normal processing.
+default_output_hook <- knitr::knit_hooks$get("output")
+
+# Output hooks handle normal R console output.
+knitr::knit_hooks$set( output = function(x, options) {
+
+  comment <- knitr::opts_current$get("comment")
+  if( is.na(comment) ) comment <- ""
+  can_null <- grepl( paste0( comment, "\\s*\\[\\d?\\]" ),
+                     x, perl = TRUE)
+  do_null <- isTRUE( knitr::opts_current$get("null_prefix") )
+  if( can_null && do_null ) {
+    # By default R print output aligns at the right brace.
+    align_index <- regexpr( "\\]", x )[1] - 1
+    # Two cases: start or newline
+    re <- paste0( "^.{", align_index, "}\\]")
+    rep <- comment
+    x <- gsub( re, rep,  x )
+    re <- paste0( "\\\n.{", align_index, "}\\]")
+    rep <- paste0( "\n", comment )
+    x <- gsub( re, rep,  x )
+  }
+
+  default_output_hook( x, options )
+
+})
+
+knitr::opts_template$set("kill_prefix"=list(comment=NA, null_prefix=TRUE))
+
+```
+
+You may make use of the following quantiles
+
+|R Code                     |       Value        |
+|:--------------------------|:----------------------------------|
+|`qnorm(p = c(0.05, 0.95))` |`r qnorm(p = c(0.05, 0.95))`    |
+|`qnorm(p = c(0.025, 0.975))` |`r qnorm(p = c(0.025, 0.975))`    |
+|`qnorm(p = c(0.005, 0.995))` |`r qnorm(p = c(0.005, 0.995))`    |
+
+
+# Descriptive Statistics 
+
+
+## (12 points, 1 each) True or false, and explain briefly.
+
+a. If you add 7 to each value on a list, you add 7 to the SD.
+b. If you double each value on a list, you double the SD.
+c. If you change the sign of each value on a list, you change the sign of the SD.
+d. If you duplicate each value in a list, you leave the SD approximately unchanged.
+e. If all the values in a list are positive, you cannot have a SD which is larger than the mean.
+f. Half the values on a list are always below the mean.
+g. In a large list, the distribution of measurements follows the normal curve quite closely.
+h. If two large populations have exactly the same average value of 50 and the same SD of 10, then the percentage of values between 40 and 60 must be exactly the same for both populations.
+i. The bootstrap distribution is centered at the the population parameter.
+j. An researcher has a computer file of pre-treatment WBCs for patients. They range from 2,800 to 38,600. By accident, the highest WBC gets changed to 386,000. This affects the mean but not the median and the IQR.
+k. For the men in a large U.S. sample survey (the HANES study), mean income in the different age groups increased with age until 50 or so and then gradually declined. Thus, the income of a typical man increases as he ages until 50 or so and then starts decreasing.
+
+
+## (6 points) The following is part of a table of baseline characteristics in a paper from the Annals of Internal Medicine on a randomized placebo-controlled trial of low-dose aspirin in patients, aged 40-84 years, with chronic stable angina. If you were checking this paper for typographical and other errors before it was published, would you have noticed any statistical error(s)? Explain. 
+
+
+|Characteristic             |       Aspirin Group (n=119)        | Placebo Group (n=102)    |
+|:--------------------------|:----------------------------------|:----------------------------------|
+|Mean age, years |  63.6 $\pm$ 9.3 | 62.4 $\pm$ 8.6 |
+|Mean systolic blood pressure, mm Hg | 132.5 $\pm$ 13.0 | 132.5 $\pm$ 14.4 |
+|Mean diastolic blood pressure, mm Hg  |  80.3 $\pm$ 7.8 | 80.2 $\pm$ 7.9 |
+|Mean cholesterol level, mmol/L      | 5.9 $\pm$ 1.1 | 5.8 $\pm$ 1.3 |
+
+Table: Baseline Characteristics of Participants with Chronic Stable Angina in the U.S. Physicians' Health Study. Plus-minus values are mean $\pm$ SE
+
+
+
+
+## A overview of randomized clinical trials of antiplatelet therapy as prophylaxis against deep venous thrombosis [BMJ on 22 Jan. 1994] found the following:
+
+|Category of trial | \% odds reduction (SD) |
+|:--------------------------|:----------------------------------|
+| General surgery | 37% ( 8) |
+| Traumatic orthopaedic surgery | 31% (13) |
+| elective orthopaedic surgery | 49% (11) |
+
+
+a. Is 37% a statistic or a parameter? Why?
+b. Does each SD refer to (i) variation of individuals or (ii) sampling variation associated with the
+estimate? Explain your reasoning.
+
+
+
+## As part of a survey, a large company asked 1000 of its employees how far they commute to work each day (round trip). The average round trip commute distance was 18 Km, with an SD of 25 Km. 
+
+a. Would a rough sketch of the histogram for the data look more like (a) or (b) or (c)? Or is there a mistake somewhere? Explain your answer.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{hist.jpg} 
+  \end{center}
+\end{figure}
+
+
+<!--Since can only have non-negative values, and SD is larger than mean, must have long right tail as in (c).-->
+
+
+## In a study of the effects of acid rain, a random sample of 100 trees from a particular forest are examined. Forty percent of these show some signs of damage. Which of the following statements are correct?
+
+a. 40% is a parameter
+b. 40% is a statistic
+c. 40% of all trees in this forest show signs of damage
+d. more than 40% of the trees in this forest show some signs of damage 
+e. less than 40% of the trees in this forest show some signs of damage 
+
+
+## In a study of a large number of persons over the age of 75, the mean age was 79.9 (SD=4.2). What can you say about the shape of the age distribution?
+
+
+
+## (10 points) One term, about 700 students enrolled in the "Statistics 2" course at the University of California were asked how many college math courses they had taken, other than the "Statistics 2" course. The average number of courses was about 1.1; the SD was about 1.5. Would the histogram for the data look like (i), (ii), or (iii)? Explain.  
+
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[angle=90,scale=0.4]{hist2-crop.pdf} 
+    \caption{\normalsize Sketches of histograms for distribution of math courses taken at University of California.}\label{fig:fig3}
+\end{center}
+\end{figure}
+
+
+## (5 points) In a class of 100 students, the grades on a test are summarized in the following frequency table. Which interval contains the median grade?
+
+
+\begin{center}
+\large
+\begin{tabular}{lrcc}
+\hline
+\normalsize Grade &\normalsize  Frequency  \\
+\hline
+\normalsize 91-100  &\normalsize  11 \\
+\normalsize 81-90  &\normalsize  31 \\
+\normalsize 71-80  &\normalsize  42 \\
+\normalsize 61-70  &\normalsize  16 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+## (5 points) A sample was taken of the salaries of 20 employees of a large company. The following are the salaries (in thousands of dollars) for this year. For convenience, the data are ordered. 
+
+```{r, echo=FALSE, opts.label="kill_prefix"}
+c(28,31,34,35,37,41,42,42,42,47,47,51,52,52,60,61,67,72,75,80)
+```
+
+a. Suppose each employee in the company receives a \$3,000 raise for next year (each employee's salary is increased by \$3,000). The standard deviation of the salaries for the employees will (select one from the following list of options):
+    - be unchanged
+    - increase by \$3,0000
+    - be multiplied by \$3,000
+    - increase by $\sqrt{\$3,000}$
+b. Suppose each employee in the company receives a 4% reaise for the next year. The standard deviation of the salaries for the employees will (select one from the following list of options):
+    - be unchaged
+    - increase by 16%
+    - increase by 4%
+    - increase by 2%
+
+
+
+# Confidence Intervals, P-values
+
+
+## A health department serves 50,000 households. As part of a survey, a simple random sample of 400 of these households are surveyed. The average number of adults in the sample households is 2.35, and the SD is 1.1. 
+
+a. Sketch a possible frequency distribution showing the variability in the number of adults per household
+b. If possible, find an approximate 95%-confidence interval for the average number of adults in all 50,000 households, and from it an approximate 95%-confidence interval for the total number of adults in all 50,000 households. If this isn't possible, explain why not.
+c. All adults in the 400 sample households are interviewed. This makes 940 people. On the average, the sample people watched 4.2 hours of television the Sunday before the survey, and the SD was 2.1 hours. If possible, find an approximate 95%-confidence interval for the average number of hours spent watching television by all adults in the 50,000 households on that Sunday. If this isn't possible, explain why not.
+
+
+
+## A significance test gives a P-value of .04. From this we can... [indicate True/False for each]
+
+a. reject $H_0$ at the $\alpha$ = .01 level
+b. reject $H_0$ at the $\alpha$ = .05 level
+c. say that the probability that H0 is false is .04. 
+d. say that the probability that H0 is true is .04. 
+
+
+## In a simple random sample (n=225) of all institutions of higher learning in the U.S., the average enrollment was 3,700, with an SD of 6,000. A histogram for the enrollments was plotted and did not follow the normal curve. However, the average enrollment at all institutions in the U.S. was estimated to be around 3,700 (SE = 400). Say whether each of the following statements are true or false, and explain why.
+
+a. It is estimated that 95% of the institutions of higher learning in the U.S. enroll between 3,700-800 = 2,900 and 3,700 + 800 = 4,500 students.
+b. An approximate 95%-confidence interval for the average enrollment of all institutions runs from 2,900 to 4,500.
+c. If someone takes a simple random sample of 225 institutions and goes two SEs either way from the average enrollment of the 225 sample schools, there is about a 95% chance that this interval will cover the average enrollment of all schools.
+
+
+## You have measured the systolic blood pressure (SBP) of a random sample of 25 employees of a company. A 95% confidence interval for the mean systolic blood pressure for the employees of this company is (122, 138). Which of the following statements gives a valid interpretation of this interval?
+
+a. 95% of the sample of employees have a systolic blood pressure between 122 and 138.
+b. 95% of the population of employees have a SBP between 122 and 138.
+c. If the procedure were repeated many times, 95% of the resulting confidence intervals would contain the population mean SBP
+d. The probability that the population mean SBP is between 122 and 138 is 0.95.
+e. If the procedure were repeated many times, 95% of the sample means would be between 122 and 138.
+
+
+## A 95% confidence interval for the mean reading score for a population of third grade students is (44.2, 54.2). Suppose you compute a 99% confidence interval. Which of the following statements is correct?
+
+a. both intervals have the same width
+b. the 99% interval is wider
+c. the 95% interval is wider
+d. you cannot determine which interval is wider unless you know $n$ and $s$
+
+
+## You are reading an article in your field. The article says that the P-value for a significance test is 0.045. Is this result significant at the 5% significance level?
+
+
+## You want to compute a 90% confidence interval for the mean of a population with unknown population standard deviation. The sample size is 30. Give the `R` code of the critical value you would use for this interval
+
+## True or False ? A 90% confidence interval will have a larger margin of error than a 95% confidence interval using the same data.
+
+## True or False ? In a test of significance, a P-value of 0.03 means that there is only probability 0.03 that the null hypothesis is true.
+
+## True or False ? The margin of error in a confidence interval does not take into account errors from such sources as failing to contact subjects or incorrect responses due to the subject's bad memory.
+
+
+
+
+## (5 points) Many journal editors and referees are suggesting that a confidence interval (CI) is often a useful adjunct (or even a replacement for) a statistical test of significance. Suppose that we use a $t$-test to decide whether two sample means are significantly different. 
+
+a. If the means ARE significantly different from each other, what more can the CI tell us? 
+b. If the means ARE NOT significantly different from each other, what more can the CI tell us? 
+
+
+# One-sample mean 
+
+## (8 points) The nicotine content in cigarettes of a certain brand is normally distributed with mean (in milligrams) $\mu$ and standard deviation $\sigma = 0.1$. The brand advertises that the mean nicotine content of its cigarettes is 1.5, but measurements on a random sample of 100 cigarettes of this brand gave a mean $\bar{x}=1.53$. Is this evidence that the mean nicotine content is actually higher than advertised? State the null and alternative hypotheses, your assumptions and a statement discussing the results of your analysis. 
+
+
+## A significance test was performed to test the null hypothesis $H_0: \mu = 2$ versus the alternative $H_a: \mu \neq 2$. The test statistic is z = 1.40. The P-value for this test is approximately
+
+a. 0.16 
+b. 0.08
+c. 0.003
+d. 0.92
+e. 0.70
+
+
+## The diameter of red blood cells in healthy adults has a Gaussian distribution with mean 7.5 microns and standard deviation 0.3 microns. 
+
+a. Approximately what fraction of red blood cells have a diameter between 7.1 and 7.6 microns? 
+b. Would the standard deviation of red blood cells be about the same in a bigger person (with more red blood cells) as in a smaller person (with fewer red cells)? Why/why not? What general lesson does this example give about the relation between the SD of individual observations and the number of observations?
+
+
+
+
+
+
+# One-sample proportion
+
+
+
+
+
+# Sample size 
+
+## (8 points) Suppose we want a 95% confidence interval for the average amount spent on books by students in their first year at university. The interval is to have a margin of error of $5.
+
+a. If the 'best estimate' is that the amounts spent have a standard deviation $s =\$50$, then the number of observations required (in a simple random sample) is closest to (select one from the following options):
+    - 196
+    - 250
+    - 400
+    - 475
+b. The amounts spent by individuals are unlikely to have a normal distribution. Is this critical to your calculations? Explain. 
