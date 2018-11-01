@@ -10,4 +10,4 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {4}{Test of $H_{0}: \mu = \mu _{0}$ $\hskip 1em\relax \Leftrightarrow \hskip 1em\relax $ $\lambda = \lambda _{0}$}{60}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Examples of Poisson and not-so Poisson}{72}{0}{5}
+\beamer@sectionintoc {5}{Examples of Poisson and not-so Poisson variation}{72}{0}{5}
