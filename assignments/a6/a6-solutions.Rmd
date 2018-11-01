@@ -1,5 +1,5 @@
 ---
-title: "A5: Inference for a Population Mean. Solutions. "
+title: "Assignment 6 - Power, Sample Size and Inference for a Population Proportion. Solutions. "
 subtitle: "Your Name Here and ID number here"
 author: "EPIB 607, Fall 2018, McGill University"
 date: "`r Sys.Date()`"
@@ -17,7 +17,7 @@ editor_options:
 ```{r include = FALSE}
 ## ---- Setup ------------------------------------------------------------------
 knitr::opts_chunk$set(
-  echo = FALSE,          # don't show code
+  echo = TRUE,          # don't show code
   warning = FALSE,       # don't show warnings
   message = FALSE,       # don't show messages (less serious warnings)
   cache = FALSE,         # set to TRUE to save results from last compilation
@@ -28,120 +28,260 @@ knitr::opts_chunk$set(
 ```
 
 
-# Power and sample size calculations - 1
+# Bias in step counters
 
-```{r, results='hide', fig.keep='none'}
+```{r results='hide', fig.keep='none'}
 ## ---- Question-1 ------------------------------------------------------------
-source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
-n <- 40
-s <- 60
-mu0 <- 500
-mha <- 470
-cutoff <- mu0 + qnorm(0.01) * s / sqrt(n)
-power_plot(n = n, s = s,
-           mu0 = mu0, mha = mha,
-           cutoff = cutoff,
-           alternative = "less",
-           xlab = "Mean Step Count")
+library(mosaic)
 
-sample_size_needed <- (qnorm(0.99)+qnorm(0.8))^2 * (s / 30)^2
+## a. Using a planned sample size of n = 25, and σ = 60 steps as a pre-study best-guess as to the s that might be observed in them, calculate the critical value at α = 0.01.
 
-power_plot(n = sample_size_needed, s = s,
-           mu0 = mu0, mha = mha,
-           cutoff = cutoff,
-           alternative = "less",
-           xlab = "Mean Step Count")
+step_s <- 60
+step_n <- 25 
+step_critv <- xqnorm(p = 0.01, mean = 500, sd = step_s/sqrt(step_n))
+step_critvdisp <- round(step_critv, 2)
 
+## b. Now imagine that the mean would not be the null 500, but μ = 470. Calculate the probability that the mean in the sample of 25 will be less than this critical value. Use the same s for the alternative that you used for the null. What is this probability called?
+
+step_prob <- round(xpnorm(q = step_critv, mean = 470, sd = step_s/sqrt(step_n)), 2)
 ```
 
 
+a) The null hypothesis is $\mu = \mu_o = 500$ steps and the alternative hypothesis is $\mu < 500$ steps. This would be a one-tailed test on the right tail of the null hypothesis sampling distribution. Assuming an SRS and that the CLT has kicked in (ie: a Gaussian sampling distribution), the critical value would be `r step_critvdisp` steps. 
 
-# Attitudes toward school
+You could also use the $t$ cutoff:
+
+```{r}
+#one sided test, less than
+n_step <- 25
+s_step <- 60
+mu_step <- 500
+se_step <- s_step/sqrt(n_step)
+
+#rearrage t = (ybar-mu)/SE to find ybar
+min_crit_step <- qt(0.01, df = 24, lower.tail=TRUE)*se_step + mu_step
+```
+
+I decided to use t-procedures in this calculation due to a smaller sample size, and the estimation of the true population standard deviation. The minimum value is determined to be `r round(min_crit_step,2)` steps.
+
+b) If the mean steps counted by the step counter was 470 steps (ie: $\mu_a = 470$), the probability of getting a sample of 25 with a mean less than the critical value of `r step_critvdisp` steps is `r step_prob`. This is the statistical power to detect 470 or fewer steps. 
+
+c) 
+
+```{r}
+#sample size for 80% power p = 0.80
+#want to find the value for the probability of 0.80 on the alt hypothesis 
+z_alt <- abs(qnorm(0.80, lower.tail = TRUE, mean = 0))
+#want to fidn the value for the probability of 0.01 for null hypothesis
+z_null <-abs(qnorm(0.01, lower.tail=TRUE, mean = 0))
+#establishing the delta value
+delta_step <- 500-470
+#using the formula
+n_step_80 <- (z_alt+z_null)^2 * (s_step/delta_step)^2
+
+#sahir's function
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+mu0 <- -0.540 # mean under the null
+mha <- 0.99*-0.540 # mean under the alternative
+s <- 0.0080 # sample/population SD
+n <- 5 # sample size
+```
+
+In order to determine a sample size for a 80% power with a 1% level of significance, a specific formula can be used:
+$$\ n = (z + z^*)^2 * (\frac{\sigma}{\Delta})^2$$
+The first step would be to determine the z test statistic, $\ z$ and the critical z value, $\ z^*$. These values can be found to be `r round(z_alt, 2)` for the test statistic, and `r round(z_null, 2)` for the critical z value. The $\sigma$ value has been given as 60 steps, and $\Delta$ can simply be found by taking the difference between the means of the population and sample, `r delta_step` steps. By plugging those values in, a minimum sample size is `r round(n_step_80,0)+1` people to have a power of 80%.
+This can further be demonstrated in the graph given below.
+
+``` {r}
+mu_alt_step <-470
+
+cutoff <- mu_step + qnorm(0.01) * s_step/sqrt(n_step_80)
+power_plot(n = n_step_80,
+           s = s_step,
+           mu0 = mu_step,
+           mha = mu_alt_step,
+           cutoff = cutoff,
+           alternative = "less",
+           xlab = "Steps ")
+```
+
+
+# Boosting sales
 
 
 ```{r}
 ## ---- Question-2 ------------------------------------------------------------
+null_sales <- 25
+sigma_sales <- 50
+n_steps <- 900
+#probability Type 1 error woudl be everything to the right of 26 on null
+type1_sales <- pnorm(26, mean = 25, sd = 50/sqrt(900), lower.tail = FALSE)
 
+#type 2 error is the alt hyp left of cutoff, mu = 28
+type2_sales_28 <- pnorm(26, mean = 28, sd = 50/sqrt(900))
+
+#type 2 error is the alt hyp left of cutoff, mu = 30
+type2_sales_30 <- pnorm(26, mean = 30, sd = 50/sqrt(900))
+
+#ths is ok because CLT kicks in for a sample size of 900 people
 ```
 
+###Find the probability of a Type I error.
+A Type 1 error is when a sample is pulled that is believed to be from the alternative hypothesis when in fact it is from the null hypothesis. It essentially is a false positive. This value is determined by the space outside of the confidence interval, 99% in this case, on the normal curve built around the null hypothesis mean. Thus the probability of a type 1 error would be `r round(type1_sales, 2)`.
+
+###Find the probability of a Type II error when $\mu$ = 28 dollars.
+In comparison, a Type II error occurs when a sample pulled gives evidence that it is from the null hypothesis, when it is from the alternative hypothesis. This is a false negative. To find this, the cutoff given by the null hypothesis needs to be plotted on a normal curve built around the sample mean, and it is the probability of overlap with the curve built off of the null hypothesis mean. This probability, when the sample mean is 28 dollars can be found to be `r round(type2_sales_28,2)`.
+
+###Find the probability of a Type II error when $\mu$ = 30 dollars.
+Following the same idea, the probability for a Type II error when the sample mean is 30 dollars, is `r round(type2_sales_30,2)`.
+
+###The distribution of sales is not normal because many customers buy nothing. Why is it nonetheless reasonable in this circumstance to assume that the mean will be approximately normal?
+Thanks to the large sample size of 900, it is fair to assume that the Central Limit Theorm has kicked in, providing a normal curve and allowing us to conduct our analysis on this data.
 
 
-# Does a full moon affect behavior?
+# Fill the bottles
 
 ```{r}
 ## ---- Question-3 ------------------------------------------------------------
-fullmoon <- read.csv("~/git_repositories/epib607/assignments/a5/fullmoon.csv")
-fullmoon
-fullmoon$diff <- fullmoon$moon_days - fullmoon$other_days
-n <- nrow(fullmoon)
-SEM <- sd(fullmoon$diff)/sqrt(n)
-qt_ls <- function(p, df, mean, sd) qt(p, df) * sd + mean
+q3_mu <- 300
+q3_sigma <- 3
+q3_n <- 6
+q3_q = qnorm(.05, mean=q3_mu, sd=3/sqrt(6))
 
-qt_ls(p = c(0.025, 0.975), df = n-1, mean = mean(fullmoon$diff), sd = SEM)
-mean(fullmoon$diff) + qt(p = c(0.025, 0.975), df = n-1) * SEM
+q3a_power <- pnorm(q3_q, mean = 299, sd = 3/sqrt(6))
+q3a_power <- q3a_power*100
+q3a_power <- round(q3a_power,2)
 
-mean(fullmoon$diff) + qt(p = c(0.05), df = n-1) * SEM
+q3b_power <- pnorm(q3_q, mean = 295, sd=3/sqrt(6)) 
+q3b_power <- q3b_power*100
+q3b_power <- round(q3b_power,2)
 
-t_stat <- (mean(fullmoon$diff) - 0) / SEM
-t_stat
-
-pt(-t_stat, n-1, lower.tail = T) + pt(t_stat, n-1, lower.tail = F)
-
-summary(lm(fullmoon$diff~1))
-
-
-
-stats::confint(lm(fullmoon$diff~1), level = 0.9)
-
-library(mosaic)
-s_dist <- do(10000) * mean(~ diff, data = resample(fullmoon))
-hist(s_dist$mean)
-quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
-
+q3c_power <- pnorm(q3_q, mean = 290, sd=3/sqrt(6)) 
+q3c_power <- q3c_power*100
+q3c_power <- round(q3c_power,2)
 ```
 
+3a. The power of a 5% significance test against the alternative µ = 299 ml is `r q3a_power`%. To determine this, it was assumed that we can regard our data as an SRS from the population and that our observations for the population have a Normal distribution.
 
+3b. The power against the alternative µ = 295 ml is `r q3b_power`%. To determine this, it was assumed that we can regard our data as an SRS from the population and that our observations for the population have a Normal distribution.
 
+3c. The power against µ = 290 (`r q3c_power`%) is higher than the value found in 3b. Talk about delta and how it shift. Distance between hypothesis. This makes sense because the delta in this question is 10, whereas the delta in 3b is 5. A bigger delta means that there is a bigger difference between the two hypotheses. As delta increases (signal increases), the overlap between the two hypothesis will be less and less - assuming the standard error of the mean (noise) remains the same. Since the noise remains the same in 3b and 3c, it makes sense that the power increases as the signal gets further apart and there is less overlap between the two distributions of the hypothesis means. 
 
-# How deep is the ocean?
+3d.
+
+```{r}
+
+delta.change <- seq(0,8, by=0.01)
+plot(delta.change, pnorm(sqrt(6)* delta.change-qnorm(0.95)),
+     xlab ="Delta (Shortfall)", 
+     type ='line', 
+     ylab ="Power",
+     main ="Power as a Function of Shortfall")
+
+```
+Figure 2. Presented is a plot of the power as a function of the shortfall.
+
+3d. Above, a plot was made to demonstrate the relationship of power as a function of the shortfall (∆). It can be observed that as the shortfall increases (delta) and assuming everything else is held constant, the power increases. This is observed in Figure 2 above. 
+
+# Drunken cyclists
 
 ```{r}
 ## ---- Question-4 - --------------------------------------------------------
+#around 900 people die bike accidents
+#1711 people died from bike accidents, 542 tested positive drunk
+#making 99% confidence interval Wald's way 
+p_bike <- 542/1711
+sigma_bike <- sqrt(p_bike*(1-p_bike))
+#using qnorm and plugging everything in
+CI_99_bike <-qnorm(p = c(0.005, 0.995), mean = p_bike, sd = sigma_bike/sqrt(1711))
 
-compare_CI <- function(ybar, QNORM, BOOT, TPROCEDURE,
-                       col = c("#E41A1C","#377EB8","#4DAF4A")) {
+#based off this confidence interval, no? because the proportion is still really low,
+#if the truth was within the confidence interval, thats a low number for a proportion
 
-  dt <- data.frame(type = c("qnorm", "bootstrap", "t"),
-                   ybar = rep(ybar, 3),
-                   low = c(QNORM[1], BOOT[1], TPROCEDURE[1]),
-                   up = c(QNORM[2], BOOT[2], TPROCEDURE[2])
-  )
-  
-  plot(dt$ybar, 1:nrow(dt), pch = 20, ylim = c(0, 5), 
-       xlim = range(pretty(c(dt$low, dt$up))),
-       xlab = "Depth of ocean (m)", ylab = "Confidence Interval Type",
-       las = 1, cex.axis = 0.8, cex = 3)
-  
-  abline(v = 37, lty = 2, col = "black", lwd = 2)
-  segments(x0 = dt$low, x1 = dt$up,
-           y0 = 1:nrow(dt), lend = 1,
-           col = col, lwd = 4)
-  
-  legend("topleft",
-         legend = c(eval(substitute( expression(paste(mu," = ",37)))),
-                    sprintf("qnorm CI: [%.f, %.f]",QNORM[1], QNORM[2]),
-                    sprintf("bootstrap CI: [%.f, %.f]",BOOT[1], BOOT[2]),
-                    sprintf("t CI: [%.f, %.f]",TPROCEDURE[1], TPROCEDURE[2])),
-         lty = c(1,1,1,1),
-         col = c("black",col), lwd = 4)
-}
+#99% CI around those who are drunk
+p_drunk_bike <- 386/1711
+sigma_drunk_bike <- sqrt(p_drunk_bike*(1-p_drunk_bike))
+CI_99_drunk_bike <- qnorm(p = c(0.005, 0.995), mean = p_drunk_bike, sd = sigma_drunk_bike/sqrt(1711))
 
 ```
 
+### To do statistical inference for these data, we think in terms of a model where *p* is parameter that represents the probability that a tested bicycle rider is positive for alcohol. Find a 99% confidence interval for *p*.
+First the probability that a test bicycle rider needs to be calculated based on this sample, which would be 542 testing positive for alcohol out of 1711 fatal bicycle incidents. This propotion is found to be `r round(p_bike,2)`. Since this is a very large sample size, it is fair to assume that the CLT has kicked in, meaning normality can be assumed. Thus a 99% confidence interval built around the probability of `r round(p_bike,2)` would be probabilities of `r round(CI_99_bike, 2)`. Thus 99% of the time, our procedure would produce a CI that covers the true probability that someone would test positive for alcohol in a fatal bike accident is between `r round(CI_99_bike,2)`.
+
+### Can you conclude from your analysis of this study that alcohol causes fatal bicycle accidents? Explain.
+I cannot conclude that alcohol causes fatal bicycle accidents. For that information, a study would need to conducted analyzing the proportion of people who used a bicycle with alcohol in their blood. That way we can measure the proportion of fatal accidents based off of that information. This study only measures how many fatal bicycle accidents had alcohol involved, but there is no information on the number of people riding bicycles with alcohol in their blood.
+
+### In this study 386 bicyclists had blood alcohol levels above 0.10%, a level defining legally drunk in many states at the time. Give a 99% confidence interval for the proportion who were legally drunk according to this criterion.
+First the proportion of those legally drunk needs to be determined. This would be 386 drunk cyclists out of 1711 fatal bicycle accidents. That proportion can be found as `r round(p_drunk_bike,2)`. Building a 99% confidence interval around that number would give us proportions of `r round(CI_99_drunk_bike,2)`. Thus with 99% cconfidence, the true population proportion of drunk cyclists in fatal accidents lies between `r round(CI_99_drunk_bike,2)`.
+
+
+# Handling contact lenses
+
+```{r}
+## ---- Question-5 - --------------------------------------------------------
+q5_dirtycontacts <- 139
+q5_dirtycontactsplus2 <- q5_dirtycontacts + 2
+q5_n <- 281
+q5_nplus4 <- q5_n+4
+
+q5_p_plus4 <- (q5_dirtycontactsplus2)/(q5_nplus4)
+q5_sdplus4 <- sqrt((q5_p_plus4*(1-q5_p_plus4))/q5_nplus4)
+q5_crit99 <- qnorm(p=0.995)
+q5a_ci99 <- q5_p_plus4 + c(-q5_crit99,q5_crit99) * q5_sdplus4
+q5a_ci99 <- round(q5a_ci99,2)
+
+q5b_p <- 139/281
+q5b_n <- 281
+q5b_sd <- sqrt((q5b_p*(1-q5b_p))/q5b_n)
+q5b_ci99 <- q5b_p + c(-q5_crit99,q5_crit99) * q5b_sd
+q5b_ci99 <- round(q5b_ci99,2)
+
+```
+
+5a. The plus four 99% confidence interval for the proportion p of all American contact lens wearers who do not consistently wash their hands before handing their lenses is between `r q5a_ci99[1]` and `r q5a_ci99[2]`. The assumptions are that the sample size is greater than 10, with any counts of successes and failures, and the confidence level has to be over 90%. SRS and normal. Additional The assumptions were that the sample was regarded as an SRS from the population and that the sample size was large enough to ensure that the distribution of ${\widehat{p}}$ is close to Normal.
+
+5b. The large sample 99% confidence interval for the proportion p of all American contact lens wearers who do not consistently wash their hands before handing their lenses is between `r q5b_ci99[1]` and `r q5b_ci99[2]`. The assumptions were that the sample was regarded as an SRS from the population and that the sample size was large enough to ensure that the distribution of ${\widehat{p}}$ is close to Normal. We can make the latter assumption because there are at least 15 successes and 15 failures. 
+
+5c. The researchers indicated that this survey had a substantial nonresponse rate. Nonresponders could be systematically different from responders, potentially causing some bias in the sample results. For example, nonresponders who would rather not take the time to wash their hands may also prefer not to take time answer the survey. Ultimately, statistical methods could be used to overcome this limitation if there were differences among groups, but this breaks the randomization needed for our assumption that this is an SRS if sample is not truly random due to nonresponders. The margin of error in a confidence interval covers only chance variation due to random sampling or random assignment. When interpreting this confidence interval, it may be prudent to limit the generalizability of the results as they not be able to infer the results to a larger target population than if the sample was truly an SRS. The results could only be inferred to perhaps the group of people sampled rather than all contact lens users, as the confidence interval may not be accurate of all contact lens users when it is not truly an SRS.  
+
+5d. Survey participants simply answered a questionnaire, and no attempt was made to verify the answers. This could cause some bias in the sample results. For example, there could be some social desireability bias introduced. If participants are afraid of judgement from the researchers, they may untruthfully answer that they wash their contacts, which would be on the contrary to their unhygienic ways. No verification may lead to respondents answering different than their behaviour. Verification would lead to more accurate results abut their behaviour. The margin of error in a confidence interval covers only chance variation due to random sampling or random assignment. As a result, when interpretting the confidence interval, it may be prudent to state that the confidence interval for proportion of respondents who say they wash their hands instead of this is the confidence interval for proportion of respondents who actually wash their hands before handling their contact lenses. 
+
+# Cancer-detecting dogs
+
+```{r results='hide', fig.keep='none'}
+## ---- Question-6 - --------------------------------------------------------
+
+#A study was designed to determine whether dogs can be trained to identify urine specimens from individuals with bladder cancer. Dogs were first trained to discriminate between urine specimens from patients with bladder cancer and urine specimens from patients with other conditions. After the training was completed, the dogs had to pick one of seven new urine specimens. Each time, only one of the seven urine specimens came from a patient with bladder cancer. Out of 54 trials, the dogs identified the correct urine specimen 22 times.
+
+dogprob <- 1/7
+(dogp <- 22/54)
+dogn <- 54
+# a. If the dogs were simply picking a urine specimen at random, we would expect them to be correct, on average, 1 out of 7 times. The experiment was designed to test whether dogs can perform better than chance. State the null and alternative hypotheses for this test.
 
 
 
+# b. Obtain the test statistic and the P-value. What do you conclude?
+dogpsep <- sqrt((dogprob*(1-dogprob))/dogn)
 
+dogclop <- pbinom(q = 21, size = 54, prob = 1/7, lower.tail = F)
+
+# check with the binom test
+binom.test(x=22,n=54,p=1/7,ci.method="Clopper-Pearson",alternative="greater")
+
+# just to see where the cut off happens for doing lower tail vs upper tail
+pbinom(q = 1, size = 4, prob = .5)
+pbinom(q = 2, size = 4, prob = .5, lower.tail = F)
+
+# taking a look using the Wilson method to see what that would turn up
+dogz <- round(((22/54)-(1/7))/dogpsep, 2)
+dogpvalue <- pnorm(q = 22/54, mean = 1/7, sd = dogpsep, lower.tail = F)
+22/54
+
+```
+
+a) The null hypothesis is that this dogs identify one of the seven samples at random and have a 1/7 chance of being correct, $H_o: \pi = \pi_o = 1/7$. We have trained them to identify the correct urine sample, so the alternative hypothesis is that dogs identify the correct sample more often than they identify any of the six incorrect samples, $H_a: \pi > 1/7$. Alpha level of 0.05. 
+
+b) The proportion of urine samples that dogs correctly identified as coming from patients with cancer was 22/54, ie: they correctly identified samples 40.7% of the time. Using the Clopper-Pearson method gives a p value of `r dogclop`. This is a one-tailed test and assumes an SRS. With the p value being below 0.05, I conlcude that this study provides evidence to support the alternative hypothesis that these trained dogs can detect detect bladder cancer from urine samples more often than not. 
 
 
 # Code {-}

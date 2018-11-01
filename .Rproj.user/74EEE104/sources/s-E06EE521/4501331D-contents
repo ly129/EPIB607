@@ -1,0 +1,89 @@
+source("https://raw.githubusercontent.com/sahirbhatnagar/EPIB607/master/assignments/a6/plot_null_alt.R")
+mu0 <- -0.540 # mean under the null
+mha <- 0.998*-0.540 # mean under the alternative
+s <- 0.0080 # sample/population SD
+n <- 5 # sample size
+cutoff <- mu0 + qnorm(c(0.025, 0.975)) * s / sqrt(n)
+power_plot(n = n,
+           s = s,
+           mu0 = mu0,
+           mha = mha,
+           cutoff = cutoff,
+           alternative = "equal",
+           xlab = "Freezing point (degrees C)")
+
+
+pacman::p_load(manipulate) # or library(manipulate)
+mu0 <- -0.540 # mean under the null
+mha <- 0.998*-0.540 # mean under the alternative
+s <- 0.0080
+n <- 5
+cutoff <- mu0 + qnorm(c(0.025, 0.95)) * s / sqrt(n)
+manipulate::manipulate(
+  power_plot(n = sample_size, s = sample_sd,
+             mu0 = mu0, mha = mha,
+             cutoff = cutoff,
+             alternative = "equal",
+             xlab = "Freezing point (degrees C)"),
+  sample_size = manipulate::slider(5, 500),
+  sample_sd = manipulate::slider(0.001, 0.01, initial = 0.008))
+
+
+power.t.test(delta = abs(-0.540-0.998*-.540), power = 0.80, sd = 0.0080, type = "one", 
+             alternative = "one")
+
+(qnorm(0.975) + qnorm(0.8))^2  * (0.0080/abs(-0.540-0.998*-.540))^2
+(qnorm(0.95) + qnorm(0.8))^2  * (0.0080/abs(-0.540-0.998*-.540))^2
+
+
+library(mosaic)
+gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20),
+               axis.title = element_text(size = 20), 
+               legend.text = element_text(size = 20), 
+               legend.title = element_text(size = 20))
+
+mosaic::xqnorm(p = c(0.025, 0.975), mean = 65.3, sd = 1.25, return = "plot") + 
+  theme_bw() + gg_sy + scale_fill_manual(values = c("black","grey60", "black")) + 
+  scale_x_continuous(breaks = seq(59, 71, .5))
+
+
+qnorm(0.4)
+
+
+manipulate::manipulate(
+  mosaic::xqpois(c(0.025, 0.975), lambda = LAMBDA),
+  LAMBDA = manipulate::slider(1, 200, step = .1))
+
+
+
+
+# upper limit --> lower tail needs 2.5%
+manipulate::manipulate(
+  mosaic::xppois(6, lambda = LAMBDA), 
+  LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
+
+
+# lower limit --> upper tail needs 2.5%
+# when lower.tail=FALSE, ppois doesnt include k, i.e., P(Y > k)
+manipulate::manipulate(
+  mosaic::xppois(5, lambda = LAMBDA, lower.tail = FALSE),
+  LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
+
+
+mosaic::xqnorm(c(0.025, 0.975), mean = 150, sd = sqrt(150))
+qgamma(c(0.025, 0.975), c(150,151))
+
+
+
+manipulate::manipulate(
+  mosaic::xqpois(c(0.025, 0.975), lambda = LAMBDA),
+  LAMBDA = manipulate::slider(1, 300, step = 1))
+
+
+mosaic::xppois(1, lambda = 0.57, lower.tail = FALSE)
+
+# upper limit --> lower tail needs 2.5%
+manipulate::manipulate(
+  mosaic::xppois(6, lambda = LAMBDA), 
+  LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
+

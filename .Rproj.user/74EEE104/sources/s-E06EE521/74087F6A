@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540927485764.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "74087F6A",
+    "lastKnownWriteTime" : 1541019881,
+    "last_content_update" : 1541019881508,
+    "path" : "~/git_repositories/epib607/assignments/a7/a7_rates.Rmd",
+    "project_path" : "assignments/a7/a7_rates.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "2,7",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

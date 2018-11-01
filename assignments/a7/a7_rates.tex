@@ -1,0 +1,214 @@
+\documentclass[letterpaper,9pt,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{Assignment 7 - Inference about a Population Rate (\(\lambda\)). Due
+November 9, 11:59pm 2018}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Poisson distribution |  Rates |  Intensity |  Bootstrap  }  
+
+\begin{abstract}
+In this assignment you will practice conducting inference for a one
+sample rate. Answers should be given in full sentences (DO NOT just
+provide the number). All figures should have appropriately labeled axes,
+titles and captions (if necessary). Units for means and CIs should be
+provided. State your hypotheses and assumptions when applicable. All
+graphs and calculations are to be completed in an R Markdown document
+using the provided template. You are free to choose any function from
+any package to complete the assignment. Concise answers will be
+rewarded. Be brief and to the point. Please submit both the compiled
+HTML report and the source file (.Rmd) to myCourses by November 9, 2018,
+11:59pm. Both HTML and .Rmd files should be saved as
+`IDnumber\_LastName\_FirstName\_EPIB607\_A7'.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{Assignment 7 due November 9, 2018 by 11:59pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section*{Template}\label{template}
+\addcontentsline{toc}{section}{Template}
+
+The \texttt{.Rmd} template for Assignment 7 is available
+\href{https://github.com/sahirbhatnagar/EPIB607/raw/master/assignments/a7/a7_template.Rmd}{here}
+
+\section{Cancers near Pickering nuclear
+station}\label{cancers-near-pickering-nuclear-station}
+
+The observed number of cases of leukemia was 18 in the Pickering nuclear
+station experience. We want to test if this observed number is
+compatible with the expected number of 12.8 cases, or whether it is
+greater than expected.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Calculate the standardized incidence ratio (SIR).
+\item
+  State the null and alternative hypotheses. Calculate the p-value for
+  this test and provide a statement about the evidence.
+\item
+  Compute a 95\% CI for the SIR. Does your statement in part (b) agree
+  with the 95\% CI?
+\end{enumerate}
+
+\section{Self-reported percutaneous injuries in
+interns}\label{self-reported-percutaneous-injuries-in-interns}
+
+Read
+\href{https://www.dropbox.com/s/b5q7vqo2ev6k2me/EPIB607intensity-model-inference-plan-2018.pdf?dl=0}{Section
+6.3 of JH notes on rates}. Reproduce the CIs for the 3 P's (Pediatrics
+Psychiatry Pathology) in Table 1. Show your calculations. You may not
+use canned functions.
+
+\section{RCT of HPV vaccine}\label{rct-of-hpv-vaccine}
+
+This question is based on Table 3 of the article
+\href{https://www.nejm.org/doi/pdf/10.1056/NEJMoa020586}{A Controlled
+trail of a Human Papillomavirus Type 16 Vaccine. Laura A. Koutsky et
+al., for The Proof of Principle Study Investigators. The New England
+Journal of Medicine Vol 347 Nov 21, 2002, p1645} (also available on
+myCourses).
+
+\begin{enumerate}
+
+\item[a.]
+
+For the primary per-protocol efficacy analysis, calculate a 95\% CI to accompany the point estimates of infection rate (per 100 woman years) for both the HPV-16 vaccine and placebo groups. Show your calculations. You may not use canned functions. 
+
+
+\item[b.] 
+
+Based on your results in part (a), is there evidence to suggest that the HPV-16 vaccine reduced infection rates? Explain. 
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+\newpage
+
+\section{Deaths by Horsekicks in the Prussian
+Army}\label{deaths-by-horsekicks-in-the-prussian-army}
+
+This question is in reference to the Deaths by Horsekicks in the
+Prussian Army example presented in the
+\href{https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_rate/EPIB607_one_sample_rate.pdf}{slides
+on one sample rates}. The following dataset gives the number of deaths
+by horsekicks, by year and army corps:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{horsekicks <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"horsekicks.csv"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(horsekicks)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{ShadedResult}
+\begin{verbatim}
+#    year corps1 corps2 corps3 corps4 corps5 corps6 corps7 corps8 corps9
+#  1 1875      0      0      0      0      0      0      0      1      1
+#  2 1876      2      0      0      0      1      0      0      0      0
+#  3 1877      2      0      0      0      0      0      1      1      0
+#  4 1878      1      2      2      1      1      0      0      0      0
+#  5 1879      0      0      0      1      1      2      2      0      1
+#  6 1880      0      3      2      1      1      1      0      0      0
+#    corps10 corps111 corps12 corps13 corps14 total
+#  1       0        0       0       1       0     3
+#  2       0        0       0       1       1     5
+#  3       0        1       0       2       0     7
+#  4       0        1       0       1       0     9
+#  5       0        0       2       1       0    10
+#  6       2        1       4       3       0    18
+\end{verbatim}
+\end{ShadedResult}
+
+\begin{enumerate}
+
+\item[a.] Create a table of observed and expected frequencies, like the one shown in the \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_rate/EPIB607_one_sample_rate.pdf}{slides on one sample rates}
+
+\item[b.] Calculate a 95\% CI for the rate parameter.
+
+\item[c.] (\textbf{BONUS}) Compute a goodness of fit statistic that measures the discrepancy between the observed and expected frequencies. Be sure to group the categories that have low expected values. Include in your answer, the sources you used to help you with this calculation. Write a sentence about your findings.
+\end{enumerate}
+
+\section{Crimes on full moon}\label{crimes-on-full-moon}
+
+This question is based on Tables I and II of the article:
+\href{https://doi.org/10.1136/bmj.289.6460.1789}{Full moon and crime.Br
+Med J (Clin Res Ed) 1984; 289} (also available on myCourses). The
+incidence of crimes reported to three police stations in different towns
+(one rural, one urban, one industrial) was studied to see if it varied
+with the day of the lunar cycle. The period of the study covered
+1978-1982.
+
+\begin{enumerate}
+
+\item[a.] Compare crime rates on FullMoon vs. NotFullMoon days (Table I) statistically by calculating a confidence interval for the daily rates in the two segments of time and seeing if they overlap. 
+
+\item[b.] We don't recommend this way of testing differences; instead we recommend computing a single
+CI for the rate difference or rate ratio. Following the example of the comparison of bone mineral losses (A4, Q3), compute a CI for the ratio and difference of daily rates by bootstrapping.
+
+
+\end{enumerate}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+
