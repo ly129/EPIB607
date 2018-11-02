@@ -1,0 +1,185 @@
+---
+title: DALITE Q7 - Two Sample Inference. Solutions.
+
+# Use letters for affiliations
+author:
+  - name: EPIB607 - Inferential Statistics
+    affiliation: a
+#  - name: Second Author
+#    affiliation: a,b
+address:
+  - code: a
+    address: Fall 2018, McGill University
+#  - code: b
+#    address: Department of Neat Tricks, Whereever State University, Someplace, MC, 67890
+
+# For footer text  TODO(fold into template, allow free form two-authors)
+lead_author_surname: Bhatnagar and Hanley
+
+# Place DOI URL or CRAN Package URL here
+doi: "https://sahirbhatnagar.com/EPIB607/"
+
+# Abstract
+abstract: |
+  This DALITE quiz will cover two sample inference. This builds on the one sample inference we have seen so far.
+
+# Optional: Acknowledgements
+#acknowledgements: |
+#  This template package builds upon, and extends, the work of the excellent
+#  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
+#  [PNAS LaTeX](http://www.pnas.org/site/authors/latex.xhtml) macros. Both these sources are
+#  gratefully acknowledged as this work would not have been possible without them.  Our extensions
+#  are under the same respective licensing term
+#  ([GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html) and
+#  [LPPL (>= 1.3)](https://www.latex-project.org/lppl/)).
+
+# Optional: One or more keywords
+keywords:
+  - Two sample means
+  - Two sample proportions
+
+# Paper size for the document, values of letterpaper and a4paper
+papersize: letter
+
+# Font size of the document, values of 9pt (default), 10pt, 11pt and 12pt
+fontsize: 9pt
+
+# Optional: Force one-column layout, default is two-column
+one_column: true
+
+# Optional: Enables lineno mode, but only if one_column mode is also true
+#lineno: true
+
+# Optional: Enable one-sided layout, default is two-sided
+#one_sided: true
+
+# Optional: Enable section numbering, default is unnumbered
+numbersections: true
+
+# Optional: Specify the depth of section number, default is 5
+#secnumdepth: 5
+
+# Optional: Skip inserting final break between acknowledgements, default is false
+skip_final_break: true
+
+# Optional: Bibliography 
+bibliography: pinp
+
+# Optional: Enable a 'Draft' watermark on the document
+watermark: false
+
+# Customize footer, eg by referencing the vignette
+footer_contents: "DALITE Q7 due November 7, 2018 by 5pm"
+
+# Produce a pinp document
+output: pinp::pinp
+
+# Required: Vignette metadata for inclusion in a package.
+vignette: >
+  %\VignetteIndexEntry{YourPackage-vignetteentry}
+  %\VignetteKeywords{YourPackage, r, anotherkeyword}
+  %\VignettePackage{Due Sepetember 26, 2018}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+# A researcher who wished to test the difference of two (independent) y-bars with reported SEMs, SE0 and SE1 ,  did so by computing which test statistic?
+
+
+a. (ybar1 - ybar0)  / (SE1 + SE0)
+b. (ybar1 - ybar0)  / (SE1 - SE0)
+c. **(ybar1 - ybar0)  / sqrt( (SE1)2 + (SE0)2 ) (Correct)**
+d. (ybar1 - ybar0)  / sqrt( (SE1)2 - (SE0)2 )
+
+
+
+## Correct rationales
+
+
+
+
+## Incorrect rationales
+
+
+
+
+
+# Which distribution is closer to Normal ?
+
+
+a. Body weights of (unrelated) male air passengers
+b. Body weights of  (unrelated) female air passengers
+c. **Sum of weights of a (random male, random female) pair (Correct)**
+d. **Difference of weights of a (random male, random  female) pair (Correct)**
+
+
+## Correct rationales
+
+
+
+## Incorrect rationales
+
+
+
+
+
+
+# Refer to the Table on "Postoperative Effect on Plasma Ascorbic Acid for 105 Cases; Readings on the Same Individuals". You would get contradictory answers if you tested the differences in the means using i. the SE's in columns 1 and 2, and ii. the SE in column 3. TRUE or FALSE? Explain why in your rationale and say which one is correct.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{tab3.jpg}
+\end{figure}
+
+
+a. **TRUE (Correct)**
+b. FALSE
+
+## Correct rationales
+
+
+
+## Incorrect rationales
+
+# How many calories does a fruit juice popsicle labeled "no sugar added" pack? A random sample of 10 popsicles of a particular brand is selected, and the calories per serving are measured. To get a confidence interval for the mean calories per serving of all no-sugar-added popsicles from this brand, you would use
+
+
+a. **the one-sample t interval (Correct)**
+b. the matched pairs t interval
+c. the two sample t interval
+d. the one sample z interval
+
+## Correct rationales
+
+
+
+## Incorrect rationales
+
+# A  study is designed to compare the amount of vitamin C (in milligrams per serving) in oranges that reach the stores either 1 day after being picked or 3 days after being picked. A random sample of 15 oranges is taken for each group. To test whether there is a difference in the mean vitamin C amount of all oranges reaching stores either 1 day or 3 days after being picked, you would use
+
+
+a. the one-sample t test
+b. the one-sample z test
+c. the one-sample t interval
+d. the matched pairs t test
+e. **the two-sample t test (Correct)**
+
+## Correct rationales
+
+
+
+## Incorrect rationales
+
+# There are two common methods for measuring the concentration of a pollutant in fish tissue. Do the results of the two methods differ on the average? You apply both methods to one sample of 18 carp and use
+
+
+a. **the one-sample t test (Correct)**
+b. the one-sample z test
+c. **the matched pairs t test (Correct)**
+d. the two-sample t test
+
+
+## Correct rationales
+
+
+
+## Incorrect rationales

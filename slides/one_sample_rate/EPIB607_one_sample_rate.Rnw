@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 
 \usepackage{default}
 \usepackage{animate} %need the animate.sty file 
@@ -23,7 +23,7 @@
 %\newenvironment{theoremc}[1]
 %{\begin{shaded}\begin{theorem}[#1]}
 %		{\end{theorem}\end{shaded}}
-	
+
 %\newtheorem{examplefirst}{Example}
 %\newtheorem{examplesecond}{Example}
 %\newenvironment<>{examplefirst}[1][]{%
@@ -167,21 +167,21 @@
 
 \AtBeginSection[]{
 	\begin{frame}
-		\vfill
-		\centering
-		\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-			\usebeamerfont{title}\insertsectionhead\par%
-		\end{beamercolorbox}
-		\vfill
-	\end{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+		\usebeamerfont{title}\insertsectionhead\par%
+	\end{beamercolorbox}
+	\vfill
+\end{frame}
 }
 
 \newcommand\Wider[2][3em]{%
-	\makebox[\linewidth][c]{%
-		\begin{minipage}{\dimexpr\textwidth+#1\relax}
-			\raggedright#2
-		\end{minipage}%
-	}%
+\makebox[\linewidth][c]{%
+	\begin{minipage}{\dimexpr\textwidth+#1\relax}
+		\raggedright#2
+	\end{minipage}%
+}%
 }
 
 
@@ -193,21 +193,21 @@
 \usepackage{xparse}
 \NewDocumentCommand\mylist{>{\SplitList{;}}m}
 {
-	\begin{itemize}
-		\ProcessList{#1}{ \insertitem }
-	\end{itemize}
+\begin{itemize}
+	\ProcessList{#1}{ \insertitem }
+\end{itemize}
 }
 \NewDocumentCommand\mynum{>{\SplitList{;}}m}
 {
-	\begin{enumerate}
-		\ProcessList{#1}{ \insertitem }
-	\end{enumerate}
+\begin{enumerate}
+	\ProcessList{#1}{ \insertitem }
+\end{enumerate}
 }
 \newcommand\insertitem[1]{\item #1}
 
 \newcommand\FrameText[1]{%
-	\begin{textblock*}{\paperwidth}(0pt,\textheight)
-		\raggedright #1\hspace{.5em}
+\begin{textblock*}{\paperwidth}(0pt,\textheight)
+	\raggedright #1\hspace{.5em}
 \end{textblock*}}
 
 
@@ -288,11 +288,11 @@ plot(table(DebTrivedi$ofp), xlab = "number of physician office visits", ylab = "
 \begin{frame}{Some observations about the previous plot}
 
 \begin{itemize}
-	\setlength\itemsep{1em}
-	\item Discrete outcome $\to$ 1, 2, 3, ... visits \pause 
-	\item There are rare events, e.g. 1 individual with 89 visits \pause 
-	\item The data are far from normally distributed \pause
-	\item Can theoretically go on forever
+\setlength\itemsep{1em}
+\item Discrete outcome $\to$ 1, 2, 3, ... visits \pause 
+\item There are rare events, e.g. 1 individual with 89 visits \pause 
+\item The data are far from normally distributed \pause
+\item Can theoretically go on forever
 \end{itemize}
 
 \end{frame}
@@ -301,9 +301,9 @@ plot(table(DebTrivedi$ofp), xlab = "number of physician office visits", ylab = "
 
 
 \begin{itemize}
-	\setlength\itemsep{1em}
-	\item The binomial distribution was derived by starting with an experiment consisting of trials or draws and applying the laws of probability to various outcomes of the experiment. \pause 
-	\item There is no simple experiment on which the Poisson distribution is based, although we will shortly describe how it can be obtained by certain limiting operations.
+\setlength\itemsep{1em}
+\item The binomial distribution was derived by starting with an experiment consisting of trials or draws and applying the laws of probability to various outcomes of the experiment. \pause 
+\item There is no simple experiment on which the Poisson distribution is based, although we will shortly describe how it can be obtained by certain limiting operations.
 \end{itemize}
 
 \end{frame}
@@ -312,8 +312,8 @@ plot(table(DebTrivedi$ofp), xlab = "number of physician office visits", ylab = "
 \frametitle{The Poisson Distribution: what it is, and features}
 
 \begin{itemize}
-	\small
-	\setlength\itemsep{1em}
+\small
+\setlength\itemsep{1em}
 \item The (infinite number of) probabilities $P_{0}, P_{1}, ..., P_{y}, ..., $ of observing 
 $Y = 0, 1, 2, \dots , y, \dots $ events in a given amount of ``experience.'' \pause
 
@@ -328,8 +328,8 @@ $Y = 0, 1, 2, \dots , y, \dots $ events in a given amount of ``experience.'' \pa
 
 \item Note the distinction between $\mu$ and $\lambda$
 \begin{itemize}
-	\item $\mu$: expected \textbf{number} of events
-	\item $\lambda$: \textbf{rate} parameter
+\item $\mu$: expected \textbf{number} of events
+\item $\lambda$: \textbf{rate} parameter
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -379,18 +379,18 @@ col = c("black","red"), lty = c(1,1), lwd = 2)
 @
 
 \end{frame}
-	
-	
+
+
 \begin{frame}
 \frametitle{The Poisson Distribution: what it is, and features}
 
 \begin{itemize}
-	\setlength\itemsep{2em}
-	\item  $\sigma^2_Y =  \mu \ \to \ \ \sigma_Y =  \sqrt{\mu}.$ \pause
-	\item  Approximated by $\mathcal{N}(\mu, \sqrt{\mu})$ when $\mu >> 10$ \pause 
-	\item Open-ended (unlike Binomial), but in practice, has finite range. 
-	
-	\item Poisson data sometimes called "numerator only":  (unlike Binomial) may not ``see'' or  count ``non-events''
+\setlength\itemsep{2em}
+\item  $\sigma^2_Y =  \mu \ \to \ \ \sigma_Y =  \sqrt{\mu}.$ \pause
+\item  Approximated by $\mathcal{N}(\mu, \sqrt{\mu})$ when $\mu >> 10$ \pause 
+\item Open-ended (unlike Binomial), but in practice, has finite range. 
+
+\item Poisson data sometimes called "numerator only":  (unlike Binomial) may not ``see'' or  count ``non-events''
 \end{itemize}
 \end{frame}
 
@@ -412,8 +412,8 @@ hist(rpois(1000, 15))
 \frametitle{How it arises}
 
 \begin{itemize}
-	\setlength\itemsep{1em}
-   \item  Count of events or items that \underline{occur randomly}, with \underline{low homogeneous intensity}, in time, space, or `item'-time (e.g. person--time). \pause 
+\setlength\itemsep{1em}
+\item  Count of events or items that \underline{occur randomly}, with \underline{low homogeneous intensity}, in time, space, or `item'-time (e.g. person--time). \pause 
 \item Binomial($n,\pi$) when $n \rightarrow \infty\textrm{ and } \pi \rightarrow 0,$ but $n \times \pi = \mu$ is finite.\pause 
 \item $Y\sim Poisson(\mu_Y)$ if time ($T$) between events follows an $T \sim \textrm{Exponential}(\mu_{T} = 1/\mu_{Y}).$ 
 { \scriptsize   \url{http://www.epi.mcgill.ca/hanley/bios601/Intensity-Rate/Randomness_poisson.pdf}} \pause
@@ -432,7 +432,7 @@ The rationale for using the Poisson distribution in many situations is provided 
 \vspace*{0.5in}
 
 \begin{proposition}[Limit of a binomial is Poisson]
-	Suppose that $Y \sim Binomial(n,\pi)$. If we let $\pi = \mu/n$, then as $n \rightarrow \infty$, $Binomial(n,\pi) \rightarrow Poisson(\mu)$. Another way of saying this: for large $n$ and small $\pi$, we can approximate the $Binomial(n,\pi)$ probability by the $Poisson(\mu = n\pi)$. 
+Suppose that $Y \sim Binomial(n,\pi)$. If we let $\pi = \mu/n$, then as $n \rightarrow \infty$, $Binomial(n,\pi) \rightarrow Poisson(\mu)$. Another way of saying this: for large $n$ and small $\pi$, we can approximate the $Binomial(n,\pi)$ probability by the $Poisson(\mu = n\pi)$. 
 \end{proposition}
 
 \end{frame}
@@ -454,18 +454,18 @@ legend("topright", c("Binomial(100,0.1)", "Poisson(10)"), col = c("black","red")
 \frametitle{Examples}
 
 \begin{itemize}
-	\setlength\itemsep{0.5em}
-	\item numbers of asbestos fibres
-	\item deaths from horse kicks*
-	\item needle-stick or other percutaneous injuries
-	\item bus-driver accidents*
-	\item twin-pairs*
-	\item radioactive disintegrations*
-	\item flying-bomb hits*
-	\item white blood cells
-	\item typographical errors
-	\item cell occupants -- in a given volume, area, line-length, population-time, time, etc. 
-	\footnote{\footnotesize * included in \url{http://www.epi.mcgill.ca/hanley/bios601/Intensity-Rate/}}
+\setlength\itemsep{0.5em}
+\item numbers of asbestos fibres
+\item deaths from horse kicks*
+\item needle-stick or other percutaneous injuries
+\item bus-driver accidents*
+\item twin-pairs*
+\item radioactive disintegrations*
+\item flying-bomb hits*
+\item white blood cells
+\item typographical errors
+\item cell occupants -- in a given volume, area, line-length, population-time, time, etc. 
+\footnote{\footnotesize * included in \url{http://www.epi.mcgill.ca/hanley/bios601/Intensity-Rate/}}
 \end{itemize}
 \end{frame}
 
@@ -474,20 +474,20 @@ legend("topright", c("Binomial(100,0.1)", "Poisson(10)"), col = c("black","red")
 \begin{frame}
 \frametitle{}
 \begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=3.9in,height=2.6in]{DotsinPopulationTime64.pdf}
-		\caption{Events in Population-Time randomly generated from intensities that are constant within (2 squares high by 2 squares wide) `panels', but vary between such panels. In Epidemiology, each square might represent a number of units of population-time, and each dot an event.}
-	\end{center}
+\begin{center}
+\includegraphics[width=3.9in,height=2.6in]{DotsinPopulationTime64.pdf}
+\caption{Events in Population-Time randomly generated from intensities that are constant within (2 squares high by 2 squares wide) `panels', but vary between such panels. In Epidemiology, each square might represent a number of units of population-time, and each dot an event.}
+\end{center}
 \end{figure}
 \end{frame}
 
 \begin{frame}
 \frametitle{}
 \begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=4in,height=2in]{timeStrips63.pdf}
-		\caption{Events in Time: 10 examples, randomly generated from constant over time intensities. Simulated with 1000 Bernoulli$(\tiny{\textrm{small }\pi})$'s per time unit.}
-	\end{center}
+\begin{center}
+\includegraphics[width=4in,height=2in]{timeStrips63.pdf}
+\caption{Events in Time: 10 examples, randomly generated from constant over time intensities. Simulated with 1000 Bernoulli$(\tiny{\textrm{small }\pi})$'s per time unit.}
+\end{center}
 \end{figure}
 \end{frame}
 
@@ -496,13 +496,13 @@ legend("topright", c("Binomial(100,0.1)", "Poisson(10)"), col = c("black","red")
 \frametitle{Does the Poisson Distribution apply to.. ?}
 
 \begin{enumerate}
-	\setlength\itemsep{0.9em}
-		\item Yearly variations in numbers of persons killed in	plane crashes 
-		\item Daily variations in numbers of births
-		\item Weekly variations in numbers of births
-		\item Daily variations in numbers of deaths
-		\item Daily variations in numbers of traffic accidents
-		\item Variations across cookies/pizzas in numbers of chocolate chips/olives
+\setlength\itemsep{0.9em}
+\item Yearly variations in numbers of persons killed in	plane crashes 
+\item Daily variations in numbers of births
+\item Weekly variations in numbers of births
+\item Daily variations in numbers of deaths
+\item Daily variations in numbers of traffic accidents
+\item Variations across cookies/pizzas in numbers of chocolate chips/olives
 \end{enumerate}
 \end{frame}
 
@@ -513,12 +513,12 @@ legend("topright", c("Binomial(100,0.1)", "Poisson(10)"), col = c("black","red")
 
 \begin{frame}[fragile]{Confidence interval for $\mu$}
 \begin{itemize}
-		\setlength\itemsep{2em}
-	\item If the CLT hasn't kicked in, then the usual CI might not be appropriate: $$\textrm{point-estimate} \pm z^\star  \times \textrm{standard error}$$
-	
-	<<echo=TRUE, eval=TRUE, fig.asp=0.418>>=
-	mosaic::xqpois(c(0.025, 0.975), lambda = 6)
-	@
+\setlength\itemsep{2em}
+\item If the CLT hasn't kicked in, then the usual CI might not be appropriate: $$\textrm{point-estimate} \pm z^\star  \times \textrm{standard error}$$
+
+<<echo=TRUE, eval=TRUE, fig.asp=0.418>>=
+mosaic::xqpois(c(0.025, 0.975), lambda = 6)
+@
 
 \end{itemize}
 \end{frame}
@@ -536,11 +536,11 @@ LAMBDA = manipulate::slider(1, 200, step = 1))
 
 \begin{frame}[fragile]{Confidence interval for $\mu$}
 \begin{itemize}
-	\setlength\itemsep{2em}
-	
-	\item Similar to the binomial (Clopper-Pearson CI), we consider a \textit{first-principles} $100(1-\alpha)\%$ CI $[\mu_{LOWER},\: \mu_{UPPER}]$ such that  
-	$$P(Y \ge y \: | \: \mu_{LOWER}) = \alpha/2 \:\: \textrm{ and} \:\:  P(Y \le y \: | \: \mu_{UPPER}) = \alpha/2.$$
-	\item For example, the  95\% CI for $\mu$, based on $y=6,$ is  $[\underline{2.20}, \underline{13.06}].$ 
+\setlength\itemsep{2em}
+
+\item Similar to the binomial (Clopper-Pearson CI), we consider a \textit{first-principles} $100(1-\alpha)\%$ CI $[\mu_{LOWER},\: \mu_{UPPER}]$ such that  
+$$P(Y \ge y \: | \: \mu_{LOWER}) = \alpha/2 \:\: \textrm{ and} \:\:  P(Y \le y \: | \: \mu_{UPPER}) = \alpha/2.$$
+\item For example, the  95\% CI for $\mu$, based on $y=6,$ is  $[\underline{2.20}, \underline{13.06}].$ 
 \end{itemize}
 \end{frame}
 
@@ -577,54 +577,54 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 \frametitle{Confidence interval for $\mu$}
 
 \begin{itemize}
-	\setlength\itemsep{1em}
-	\item For a given confidence level, there is  one CI for each value of $y$.
-	\item Each one can be worked out by trial and error, or -- as has been done for the last 80 years -- directly from the (exact) link between \underline{the tail areas} of the Poisson and \textbf{Gamma} distributions. 
-	\item These  CI's  -- for $y$ up to at least 30  -- were found in special books of statistical tables or in textbooks.
-	\item As you can check, $z$-based intervals are more than adequate beyond this $y$. \textbf{Today}, if you have access to \texttt{R} (or \texttt{Stata} or \texttt{SAS}) you can obtain the first principles CIs directly \textbf{for \textit{any} value of $y.$} 
+\setlength\itemsep{1em}
+\item For a given confidence level, there is  one CI for each value of $y$.
+\item Each one can be worked out by trial and error, or -- as has been done for the last 80 years -- directly from the (exact) link between \underline{the tail areas} of the Poisson and \textbf{Gamma} distributions. 
+\item These  CI's  -- for $y$ up to at least 30  -- were found in special books of statistical tables or in textbooks.
+\item As you can check, $z$-based intervals are more than adequate beyond this $y$. \textbf{Today}, if you have access to \texttt{R} (or \texttt{Stata} or \texttt{SAS}) you can obtain the first principles CIs directly \textbf{for \textit{any} value of $y.$} 
 \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{80\%, 90\% and 95\% CI for mean count $\mu$ if we observe \underline{0 to 30 events} in a certain amount of experience}
- 
- \tiny
- \centering
-	\begin{tabular}{|r  | r r  |   r r  |   r r | }
-		$y$ & \multicolumn{2}{c}{95\%} & \multicolumn{2}{c}{90\%} & \multicolumn{2}{c}{80\%} \\
-		\hline
-		0 & 0.00 & 3.69 & 0.00 & 3.00 & 0.00 & 2.30 \\
-		1 & 0.03 & 5.57 & 0.05 & 4.74 & 0.11 & 3.89 \\
-		2 & 0.24 & 7.22 & 0.36 & 6.30 & 0.53 & 5.32 \\
-		3 & 0.62 & 8.77 & 0.82 & 7.75 & 1.10 & 6.68 \\
-		4 & 1.09 & 10.24 & 1.37 & 9.15 & 1.74 & 7.99 \\
-		& & & & & &  \\
-		5 & 1.62 & 11.67 & 1.97 & 10.51 & 2.43 & 9.27 \\
-		\underline{6} & \underline{2.20} & \underline{13.06} & 2.61 & 11.84 & 3.15 & 10.53 \\
-		7 & 2.81 & 14.42 & 3.29 & 13.15 & 3.89 & 11.77 \\
-		8 & 3.45 & 15.76 & 3.98 & 14.43 & 4.66 & 12.99 \\
-		9 & 4.12 & 17.08 & 4.70 & 15.71 & 5.43 & 14.21 \\
-		& & & & & &  \\
-		10 & 4.80 & 18.39 & 5.43 & 16.96 & 6.22 & 15.41 \\
-		11 & 5.49 & 19.68 & 6.17 & 18.21 & 7.02 & 16.60 \\
-		12 & 6.20 & 20.96 & 6.92 & 19.44 & 7.83 & 17.78 \\
-		13 & 6.92 & 22.23 & 7.69 & 20.67 & 8.65 & 18.96 \\
-		14 & 7.65 & 23.49 & 8.46 & 21.89 & 9.47 & 20.13 \\
-		& & & & & &  \\
-		15 & 8.40 & 24.74 & 9.25 & 23.10 & 10.30 & 21.29 \\
-		16 & 9.15 & 25.98 & 10.04 & 24.30 & 11.14 & 22.45 \\
-		17 & 9.90 & 27.22 & 10.83 & 25.50 & 11.98 & 23.61 \\
-		18 & 10.67 & 28.45 & 11.63 & 26.69 & 12.82 & 24.76 \\
-		19 & 11.44 & 29.67 & 12.44 & 27.88 & 13.67 & 25.90 \\
-		& & & & & &  \\
-		20 & 12.22 & 30.89 & 13.25 & 29.06 & 14.53 & 27.05 \\
-		21 & 13.00 & 32.10 & 14.07 & 30.24 & 15.38 & 28.18 \\
-		22 & 13.79 & 33.31 & 14.89 & 31.41 & 16.24 & 29.32 \\
-		23 & 14.58 & 34.51 & 15.72 & 32.59 & 17.11 & 30.45 \\
-		24 & 15.38 & 35.71 & 16.55 & 33.75 & 17.97 & 31.58 \\
-		\hline
-	\end{tabular}
+
+\tiny
+\centering
+\begin{tabular}{|r  | r r  |   r r  |   r r | }
+$y$ & \multicolumn{2}{c}{95\%} & \multicolumn{2}{c}{90\%} & \multicolumn{2}{c}{80\%} \\
+\hline
+0 & 0.00 & 3.69 & 0.00 & 3.00 & 0.00 & 2.30 \\
+1 & 0.03 & 5.57 & 0.05 & 4.74 & 0.11 & 3.89 \\
+2 & 0.24 & 7.22 & 0.36 & 6.30 & 0.53 & 5.32 \\
+3 & 0.62 & 8.77 & 0.82 & 7.75 & 1.10 & 6.68 \\
+4 & 1.09 & 10.24 & 1.37 & 9.15 & 1.74 & 7.99 \\
+& & & & & &  \\
+5 & 1.62 & 11.67 & 1.97 & 10.51 & 2.43 & 9.27 \\
+\underline{6} & \underline{2.20} & \underline{13.06} & 2.61 & 11.84 & 3.15 & 10.53 \\
+7 & 2.81 & 14.42 & 3.29 & 13.15 & 3.89 & 11.77 \\
+8 & 3.45 & 15.76 & 3.98 & 14.43 & 4.66 & 12.99 \\
+9 & 4.12 & 17.08 & 4.70 & 15.71 & 5.43 & 14.21 \\
+& & & & & &  \\
+10 & 4.80 & 18.39 & 5.43 & 16.96 & 6.22 & 15.41 \\
+11 & 5.49 & 19.68 & 6.17 & 18.21 & 7.02 & 16.60 \\
+12 & 6.20 & 20.96 & 6.92 & 19.44 & 7.83 & 17.78 \\
+13 & 6.92 & 22.23 & 7.69 & 20.67 & 8.65 & 18.96 \\
+14 & 7.65 & 23.49 & 8.46 & 21.89 & 9.47 & 20.13 \\
+& & & & & &  \\
+15 & 8.40 & 24.74 & 9.25 & 23.10 & 10.30 & 21.29 \\
+16 & 9.15 & 25.98 & 10.04 & 24.30 & 11.14 & 22.45 \\
+17 & 9.90 & 27.22 & 10.83 & 25.50 & 11.98 & 23.61 \\
+18 & 10.67 & 28.45 & 11.63 & 26.69 & 12.82 & 24.76 \\
+19 & 11.44 & 29.67 & 12.44 & 27.88 & 13.67 & 25.90 \\
+& & & & & &  \\
+20 & 12.22 & 30.89 & 13.25 & 29.06 & 14.53 & 27.05 \\
+21 & 13.00 & 32.10 & 14.07 & 30.24 & 15.38 & 28.18 \\
+22 & 13.79 & 33.31 & 14.89 & 31.41 & 16.24 & 29.32 \\
+23 & 14.58 & 34.51 & 15.72 & 32.59 & 17.11 & 30.45 \\
+24 & 15.38 & 35.71 & 16.55 & 33.75 & 17.97 & 31.58 \\
+\hline
+\end{tabular}
 
 \end{frame}
 
@@ -632,22 +632,22 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
 \begin{frame}[fragile]{95\% CI for mean count $\mu$ with \texttt{q} function}
 \begin{itemize}
-	\setlength\itemsep{1em}
-	\item To obtain these in \texttt{R}	we use the  natural link between the Poisson and  the \textit{gamma} 
-	distributions.\footnote{
-		{ \tiny \href{http://www.epi.mcgill.ca/hanley/bios601/Mean-Quantile/forAccromathBackTranslate.pdf}{details found here} }} 
-	\item In \texttt{R}, e.g., the 95\% limits for $\mu$ based on $y=6$ are obtained as 
-	
-	<<echo=TRUE, eval=TRUE>>=
-	qgamma(p = c(0.025,0.975), shape = c(6, 7))
-	@
-		
-	\item More generically, for \textit{any} $y$, as
+\setlength\itemsep{1em}
+\item To obtain these in \texttt{R}	we use the  natural link between the Poisson and  the \textit{gamma} 
+distributions.\footnote{
+{ \tiny \href{http://www.epi.mcgill.ca/hanley/bios601/Mean-Quantile/forAccromathBackTranslate.pdf}{details found here} }} 
+\item In \texttt{R}, e.g., the 95\% limits for $\mu$ based on $y=6$ are obtained as 
 
-	<<echo=TRUE, eval=FALSE>>=
-	qgamma(p = c(0.025,0.975), shape = c(y, y+1))
-	@
-		
+<<echo=TRUE, eval=TRUE>>=
+qgamma(p = c(0.025,0.975), shape = c(6, 7))
+@
+
+\item More generically, for \textit{any} $y$, as
+
+<<echo=TRUE, eval=FALSE>>=
+qgamma(p = c(0.025,0.975), shape = c(y, y+1))
+@
+
 \end{itemize}
 \end{frame}
 
@@ -655,12 +655,12 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
 \begin{frame}[fragile]{95\% CI for mean count $\mu$ with canned function}
 \begin{itemize}
-	\setlength\itemsep{1em}
-	\item These limits can \underline{also} be found using  the canned function in \texttt{R} 
-	
-	<<echo=TRUE, eval=TRUE>>=
-	stats::poisson.test(6)
-	@
+\setlength\itemsep{1em}
+\item These limits can \underline{also} be found using  the canned function in \texttt{R} 
+
+<<echo=TRUE, eval=TRUE>>=
+stats::poisson.test(6)
+@
 
 \end{itemize}
 \end{frame}
@@ -679,10 +679,10 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
 \begin{frame}{$z$-based confidence intervals}
 \begin{itemize}
-	\setlength\itemsep{1.1em}
-	\item Thus, a plus/minus CI based on SE = $\hat{\sigma} =  \sqrt{\hat{\mu}} = \sqrt{y},$   is simply
-	$$[ \mu_{L}, \ \mu_{U}] = y  \ \pm \ z^\star \times \sqrt{y}. \ \ \ \ \ \ \ \ \ \ \ \  $$
-	\item Equivalently we can use the \texttt{q} function: $$qnorm(p = c(0.025, 0.975), mean = y, sd = \sqrt{y})$$
+\setlength\itemsep{1.1em}
+\item Thus, a plus/minus CI based on SE = $\hat{\sigma} =  \sqrt{\hat{\mu}} = \sqrt{y},$   is simply
+$$[ \mu_{L}, \ \mu_{U}] = y  \ \pm \ z^\star \times \sqrt{y}. \ \ \ \ \ \ \ \ \ \ \ \  $$
+\item Equivalently we can use the \texttt{q} function: $$qnorm(p = c(0.025, 0.975), mean = y, sd = \sqrt{y})$$
 \pause 
 
 \vspace*{-0.7cm}
@@ -717,15 +717,15 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
 
 \begin{table}
-	\centering
-	\begin{tabular}{cc}
-		year & deaths ($y$) \\
-		\hline
-		1971 & 33 \\
-		2002 & 211 \\
-		\hline
-	\end{tabular}
-	\caption{Deaths from lung cancer in the age-group 55-60 in Quebec in 1971 and 2002}
+\centering
+\begin{tabular}{cc}
+year & deaths ($y$) \\
+\hline
+1971 & 33 \\
+2002 & 211 \\
+\hline
+\end{tabular}
+\caption{Deaths from lung cancer in the age-group 55-60 in Quebec in 1971 and 2002}
 \end{table} 
 
 \pause 
@@ -756,23 +756,23 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
 
 \begin{itemize}
-	\setlength\itemsep{1em}
-	
-	\item So far, we have focused on inference regarding $\mu$, the expected \textbf{number} of events in the amount of experience actually studied.  
-	
-	\item However, for \underline{comparison} purposes, the frequency is more often expressed as a \textbf{rate}, \textbf{intensity} or \textbf{incidence density (ID)}. \pause 
+\setlength\itemsep{1em}
+
+\item So far, we have focused on inference regarding $\mu$, the expected \textbf{number} of events in the amount of experience actually studied.  
+
+\item However, for \underline{comparison} purposes, the frequency is more often expressed as a \textbf{rate}, \textbf{intensity} or \textbf{incidence density (ID)}. \pause 
 \end{itemize}
 
-	\begin{table}
-	\centering
-	\begin{tabular}{cccc}
-		year & deaths ($y$) & person-time (PT)  & rate ($\hat{\lambda}$)  \\
-		\hline
-		1971 & 33 & 131,200 years & 25 per 100,000 women-years\\
-		2002 & 211 & 232,978 years & 91 per 100,000 women-years \\
-		\hline
-	\end{tabular}
-	\caption{Deaths from lung cancer in the age-group 55-60 in Quebec in 1971 and 2002}
+\begin{table}
+\centering
+\begin{tabular}{cccc}
+year & deaths ($y$) & person-time (PT)  & rate ($\hat{\lambda}$)  \\
+\hline
+1971 & 33 & 131,200 years & 25 per 100,000 women-years\\
+2002 & 211 & 232,978 years & 91 per 100,000 women-years \\
+\hline
+\end{tabular}
+\caption{Deaths from lung cancer in the age-group 55-60 in Quebec in 1971 and 2002}
 \end{table} 
 
 \end{frame} 
@@ -782,14 +782,14 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
 \begin{frame}{Rates are better for comparisons}
 \begin{itemize}
-	\setlength\itemsep{1.5em}
-	
-	\item The \textit{statistic}, the empirical rate or empirical incidence density, is 
-	$$rate =\hat{ID} = \hat{\lambda} = y/\textrm{PT}.$$  
-	
-	\item where $y$ is the observed number of events and PT is the amount of Population-Time in which these events were observed. 
-	
-	\item We think of $\hat{ID}$ or $ \hat{\lambda}$ as a  point estimate of the (theoretical) Incidence Density \textit{parameter}, ID or $\lambda$.
+\setlength\itemsep{1.5em}
+
+\item The \textit{statistic}, the empirical rate or empirical incidence density, is 
+$$rate =\hat{ID} = \hat{\lambda} = y/\textrm{PT}.$$  
+
+\item where $y$ is the observed number of events and PT is the amount of Population-Time in which these events were observed. 
+
+\item We think of $\hat{ID}$ or $ \hat{\lambda}$ as a  point estimate of the (theoretical) Incidence Density \textit{parameter}, ID or $\lambda$.
 \end{itemize}
 \end{frame} 
 
@@ -797,13 +797,13 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 \begin{frame}{CI for the rate  parameter $\lambda$}
 
 \begin{itemize}
-	\item To calculate a CI for the ID parameter, we \textbf{treat the PT \underline{denominator} as a constant}, and the \textbf{\underline{numerator}, $y$,  as a Poisson random variable}, with expectation $E[y] = \mu = \lambda \times PT$, so that
-	\begin{align*}
+\item To calculate a CI for the ID parameter, we \textbf{treat the PT \underline{denominator} as a constant}, and the \textbf{\underline{numerator}, $y$,  as a Poisson random variable}, with expectation $E[y] = \mu = \lambda \times PT$, so that
+\begin{align*}
 \lambda &= \mu \div \textrm{PT}\\
 \hat{\lambda} &= \hat{\mu} \div \textrm{PT} \\
 & = y\div\textrm{ PT}
-	\end{align*}
-	
+\end{align*}
+
 
 
 \vspace*{0.3in}
@@ -821,24 +821,24 @@ LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
 \begin{itemize}
 \setlength\itemsep{1.5em}
-	\small
-	\item $y=211$ deaths from lung cancer in 2002 leads to a 95\% CI for $\mu$:
-	
-	<<echo=TRUE>>=
-	qgamma(p = c(0.025, 0.975), shape = c(211, 212))	
-	@
-	
-	\pause 
-	
-	\item From this we can calculate the 95\% CI \textbf{per 100,000 WY} for $\lambda$ using a PT=232978 years:
-	
-	<<echo=TRUE>>=
-	qgamma(p = c(0.025, 0.975), shape = c(211, 212)) / 232978 * 1e5	
-	@
-	
-	\pause
-	
-	\item $y=33$ deaths from lung cancer in 131200 women-years in 1971 leads to a 95\% CI per 100,000 WY for $\lambda$ of
+\small
+\item $y=211$ deaths from lung cancer in 2002 leads to a 95\% CI for $\mu$:
+
+<<echo=TRUE>>=
+qgamma(p = c(0.025, 0.975), shape = c(211, 212))	
+@
+
+\pause 
+
+\item From this we can calculate the 95\% CI \textbf{per 100,000 WY} for $\lambda$ using a PT=232978 years:
+
+<<echo=TRUE>>=
+qgamma(p = c(0.025, 0.975), shape = c(211, 212)) / 232978 * 1e5	
+@
+
+\pause
+
+\item $y=33$ deaths from lung cancer in 131200 women-years in 1971 leads to a 95\% CI per 100,000 WY for $\lambda$ of
 
 <<echo=TRUE>>=
 qgamma(c(0.025,0.975), c(33,34)) / 131200 * 1e5
@@ -870,12 +870,12 @@ stats::poisson.test(x = 33, T = 131200)
 \vspace*{1cm}
 
 \begin{itemize}
-	\setlength\itemsep{1.2em}
-	\item P-Value = Prob[$y$ or more extreme $ |\:H_{0}$]
-		
-	\item With `more extreme' determined by whether $H_{alt}$ is  1-sided or 2-sided. 
-	
-	\item For a \textbf{formal test}, at level $\alpha$, compare this P-value with $\alpha$.
+\setlength\itemsep{1.2em}
+\item P-Value = Prob[$y$ or more extreme $ |\:H_{0}$]
+
+\item With `more extreme' determined by whether $H_{alt}$ is  1-sided or 2-sided. 
+
+\item For a \textbf{formal test}, at level $\alpha$, compare this P-value with $\alpha$.
 \end{itemize}
 
 \end{frame}
@@ -886,18 +886,18 @@ stats::poisson.test(x = 33, T = 131200)
 \small
 
 \begin{itemize}
-	\setlength\itemsep{.3em}
-	\item Cancers in area surrounding the Douglas Point nuclear station \pause
-	\item Denote by $\{CY_{1},CY_{2}, \dots \}$ the numbers of Douglas Point \underline{c}hild-\underline{y}ears of experience in the various age categories that were pooled over.  
-	\item Denote by $\{\lambda^{Ont}_{1}, \lambda^{Ont}_{2},  \dots \}$ the age-specific leukemia incidence rates during the period studied. \pause
-	\item If the underlying incidence rates in Douglas Point were the same as those in the rest of Ontario, the \textbf{\textit{E}}xpected total number of cases of leukemia for Douglas Point would be
-	
-	$$E = \mu_{0} = \sum_{ages} CY_{i} \times \lambda^{Ont}_{i}  = 0.57.$$
-	\pause
-	The actual total number of cases of leukemia \textbf{\textit{O}}bserved in Douglas Point was 
-	$$O = y = \sum_{ages} O_{i}  = 2.$$
-	\pause
-	Age \textit{Standardized Incidence Ratio (SIR)} = $O/E = 2/0.57 = 3.5.$
+\setlength\itemsep{.3em}
+\item Cancers in area surrounding the Douglas Point nuclear station \pause
+\item Denote by $\{CY_{1},CY_{2}, \dots \}$ the numbers of Douglas Point \underline{c}hild-\underline{y}ears of experience in the various age categories that were pooled over.  
+\item Denote by $\{\lambda^{Ont}_{1}, \lambda^{Ont}_{2},  \dots \}$ the age-specific leukemia incidence rates during the period studied. \pause
+\item If the underlying incidence rates in Douglas Point were the same as those in the rest of Ontario, the \textbf{\textit{E}}xpected total number of cases of leukemia for Douglas Point would be
+
+$$E = \mu_{0} = \sum_{ages} CY_{i} \times \lambda^{Ont}_{i}  = 0.57.$$
+\pause
+The actual total number of cases of leukemia \textbf{\textit{O}}bserved in Douglas Point was 
+$$O = y = \sum_{ages} O_{i}  = 2.$$
+\pause
+Age \textit{Standardized Incidence Ratio (SIR)} = $O/E = 2/0.57 = 3.5.$
 \end{itemize}
 
 \end{frame}
@@ -911,9 +911,9 @@ stats::poisson.test(x = 33, T = 131200)
 \blue{Question:}
 
 \begin{itemize}
-	\setlength\itemsep{1.2em}
-	\item Is the $y = 2$ cases of leukemia observed in the Douglas Point experience statistically significantly \underline{higher} than the $E=0.57$  cases ``expected'' for this many child-years of  observation  if in fact the rates in Douglas Point and the rest of Ontario were the same? 
-	\item Or, is the $y=2$ observed in this community compatible with $H_{0}: y \sim \textrm{Poisson}(\mu = 0.57)$?
+\setlength\itemsep{1.2em}
+\item Is the $y = 2$ cases of leukemia observed in the Douglas Point experience statistically significantly \underline{higher} than the $E=0.57$  cases ``expected'' for this many child-years of  observation  if in fact the rates in Douglas Point and the rest of Ontario were the same? 
+\item Or, is the $y=2$ observed in this community compatible with $H_{0}: y \sim \textrm{Poisson}(\mu = 0.57)$?
 \end{itemize}
 
 \end{frame}
@@ -930,13 +930,13 @@ stats::poisson.test(x = 33, T = 131200)
 \begin{frame}[fragile]{A: Is the $O=2$ significantly higher than $E=0.57$}
 \small
 \begin{itemize}
-	\setlength\itemsep{1.2em}
-	\item \red{Answer:} Under  $H_{0}$, the age-specific numbers of leukemias $\{y_{1}=O_{1},\: y_{2}=O_{2},\: \dots \}$ in Douglas Point can be regarded as independent Poisson random variables, so their sum $y$ can be regarded as a single Poisson random variable with $\mu=0.57$. 
-	
-	<<echo=TRUE, fig.asp=0.418>>=
-	mosaic::xppois(1, lambda = 0.57, lower.tail = FALSE)
-	@
-	
+\setlength\itemsep{1.2em}
+\item \red{Answer:} Under  $H_{0}$, the age-specific numbers of leukemias $\{y_{1}=O_{1},\: y_{2}=O_{2},\: \dots \}$ in Douglas Point can be regarded as independent Poisson random variables, so their sum $y$ can be regarded as a single Poisson random variable with $\mu=0.57$. 
+
+<<echo=TRUE, fig.asp=0.418>>=
+mosaic::xppois(1, lambda = 0.57, lower.tail = FALSE)
+@
+
 
 \end{itemize}
 
@@ -948,17 +948,17 @@ stats::poisson.test(x = 33, T = 131200)
 
 \small
 \begin{itemize}
-	\setlength\itemsep{1.2em}
-	
-	\item To get the \underline{CI for the SIR}, divide the CI for Douglas Point $\mu_{DP}$ by the null $\mu_0 = 0.57$ (Ontario scaled down to the same size and age structure as Douglas Point.) We treat it as a constant because the Ontario rates used in the scaling are measured with much less sampling variability that the Douglas Point ones.
-	
-	\pause 
-	
-	\item The $y$ = 2 cases translates to
-	\begin{itemize}
-		\item 95\% CI for $\mu_{DP}$ $\to$ [0.24, 7.22]
-	\item 95\% CI for the SIR $\to$ [0.24/0.57, 7.22/0.57]=[0.4, 12.7].
-	\end{itemize}
+\setlength\itemsep{1.2em}
+
+\item To get the \underline{CI for the SIR}, divide the CI for Douglas Point $\mu_{DP}$ by the null $\mu_0 = 0.57$ (Ontario scaled down to the same size and age structure as Douglas Point.) We treat it as a constant because the Ontario rates used in the scaling are measured with much less sampling variability that the Douglas Point ones.
+
+\pause 
+
+\item The $y$ = 2 cases translates to
+\begin{itemize}
+\item 95\% CI for $\mu_{DP}$ $\to$ [0.24, 7.22]
+\item 95\% CI for the SIR $\to$ [0.24/0.57, 7.22/0.57]=[0.4, 12.7].
+\end{itemize}
 \end{itemize}
 
 \end{frame}
@@ -970,12 +970,12 @@ stats::poisson.test(x = 33, T = 131200)
 
 \small
 \begin{itemize}
-	\setlength\itemsep{1.2em}
-	
-	\item We can \textit{trick}  \texttt{stats::poisson.test} 
-	to get the same CI by putting time as 0.57: 
+\setlength\itemsep{1.2em}
 
-	
+\item We can \textit{trick}  \texttt{stats::poisson.test} 
+to get the same CI by putting time as 0.57: 
+
+
 \end{itemize}
 
 <<echo=TRUE>>=
@@ -992,8 +992,8 @@ stats::poisson.test(x=2,T=0.57)
 \end{document}
 
 {
-	\setbeamercolor{background canvas}{bg=}
-	\includepdf[pages=-]{PoissonAndExtraPoissonVariation.pdf}
+\setbeamercolor{background canvas}{bg=}
+\includepdf[pages=-]{PoissonAndExtraPoissonVariation.pdf}
 }
 
 
@@ -1001,8 +1001,8 @@ stats::poisson.test(x=2,T=0.57)
 
 
 \begin{itemize}
-	\setlength\itemsep{1.2em}
-	\item 
+\setlength\itemsep{1.2em}
+\item 
 \end{itemize}
 
 \end{frame}

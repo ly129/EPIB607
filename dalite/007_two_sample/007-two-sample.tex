@@ -1,0 +1,103 @@
+\documentclass[letterpaper,9pt,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{DALITE Q7 - Two Sample Inference. Due November 7, 2018 by 5pm.}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Two sample means  }  
+
+\begin{abstract}
+This DALITE quiz will cover two sample inference. This builds on the one
+sample inference we have seen so far.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{DALITE Q7 due November 7, 2018 by 5pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section*{Marking}\label{marking}
+\addcontentsline{toc}{section}{Marking}
+
+Completion of this DALITE exercise will be availble to us automatically
+through the DALITE website. Therefore \textbf{you do not need to hand
+anything in}. Marks will be based on the number of correct answers. For
+each question you will receive 0.5 marks for getting the correct answer
+on the first attempt and an additional 0.5 marks if you stick with the
+right answer or switch to the correct answer after seeing someone else's
+rationale. Recall that access to your assignments is managed through
+tokens sent to your e-mail address. You will be sent a new link
+everytime a new assignment has been posted.
+
+\section{Comparing Two Means}\label{comparing-two-means}
+
+\subsection{Videos}\label{videos}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://www.learner.org/courses/againstallodds/unitpages/unit27.html}{Against
+  All Odds Unit 27}
+\end{enumerate}
+
+\subsection{Required Readings}\label{required-readings}
+
+\begin{enumerate}
+\item \href{https://www.learner.org/courses/againstallodds/pdfs/AgainstAllOdds_StudentGuide_Unit27.pdf#page=1}{Against All Odds Unit 27, pages 1-11}
+\item \href{https://www.dropbox.com/s/3o4vwp82lmbpgv9/EPIB607introToRegression.pdf?dl=0}{JH notes Section 1 on Parameter Contrasts}
+\item \href{https://www.dropbox.com/s/pix61mnrt7j4c7t/Ch18Comparing2Means.pdf?dl=0}{B\&M chapter 18 on Comparing Two Means}
+\end{enumerate}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+

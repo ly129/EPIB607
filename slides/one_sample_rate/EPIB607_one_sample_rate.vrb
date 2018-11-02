@@ -3,10 +3,10 @@
 
 \small
 \begin{itemize}
-^^I\setlength\itemsep{1.2em}
+\setlength\itemsep{1.2em}
 
-^^I\item We can \textit{trick}  \texttt{stats::poisson.test}
-^^Ito get the same CI by putting time as 0.57:
+\item We can \textit{trick}  \texttt{stats::poisson.test}
+to get the same CI by putting time as 0.57:
 
 
 \end{itemize}
