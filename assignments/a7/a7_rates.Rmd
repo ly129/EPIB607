@@ -193,7 +193,7 @@ quantile(bootstrap$sum, probs = c(0.025))
 This question is in reference to the Deaths by Horsekicks in the Prussian Army example presented in the [slides on one sample rates](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/one_sample_rate/EPIB607_one_sample_rate.pdf). The following dataset gives the number of deaths by horsekicks, by year and army corps:
 
 ```{r, echo=c(1,3)}
-horsekicks <- read.csv("horsekicks.csv")
+horsekicks <- read.csv("horsekicks.csv", sep = " ")
 horsekicks <- read.csv("~/git_repositories/epib607/assignments/a7/horsekicks.csv", sep = " ")
 head(horsekicks)
 # table(horsekicks$total)

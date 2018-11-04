@@ -87,3 +87,31 @@ manipulate::manipulate(
   mosaic::xppois(6, lambda = LAMBDA), 
   LAMBDA = manipulate::slider(0.01, 20, step = 0.01))
 
+
+x <- c(rep(0,5), rep(10,10), rep(15,12),rep(25,15), rep(35, 20),rep(40, 22), 
+       rep(50, 25), 
+       rep(60, 35), rep(65, 22),rep(75, 20),rep(85, 12),rep(90, 10), rep(100, 5))
+hist(x, breaks = 20)
+
+mean(x)
+median(x)
+
+x <- c(1,  rep(60, 97), rep(70, 60), 99)
+hist(x)
+mean(x)
+median(x)
+sd(x)
+
+y <- c(rep(1,49), 50, rep(99, 49))
+z <- 1:99
+
+sd(x)
+sd(y)
+sd(z)
+
+pacman::p_load(truncnorm)
+x <- truncnorm::rtruncnorm(100, 0, 100, mean = 60)
+hist(x)
+sd(x)
+mean(x)
+median(x)

@@ -1212,7 +1212,8 @@ df %>% kable(col.names = NULL) %>%
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
 
-  c(" ")
+  c("[1. Regression handout](https://www.dropbox.com/s/qpm7ebzgq4e619b/regression_handout.pdf?dl=0)")
+  
 ))
 
 df %>% kable(col.names = NULL) %>% 
