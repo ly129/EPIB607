@@ -1363,10 +1363,110 @@ Midterm\\
 \centering
 \begin{tabular}{l}
 \hline
-[1. Regression handout](https://www.dropbox.com/s/qpm7ebzgq4e619b/regression\_handout.pdf?dl=0)\\
+[1. Muddy cards for Rates](https://github.com/sahirbhatnagar/EPIB607/raw/master/QNA/EPIB607\_Rates\_QNA.pdf)\\
+\hline
+[2. Regression handout](https://www.dropbox.com/s/qpm7ebzgq4e619b/regression\_handout.pdf?dl=0)\\
+\hline
+[3. Parameter Contrasts with Regression](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/regression/EPIB607\_regression\_handout.pdf)\\
 \hline
 \end{tabular}
 \end{table}
+
+\subsubsection{Fitting a regression model for Parameter
+Contrasts}\label{fitting-a-regression-model-for-parameter-contrasts}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# load function to get depths}
+\KeywordTok{source}\NormalTok{(}\StringTok{"https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R"}\NormalTok{)}
+
+\CommentTok{# get 1000 depths}
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{222333444}\NormalTok{)}
+\NormalTok{depths <-}\StringTok{ }\KeywordTok{automate_water_task}\NormalTok{(}\DataTypeTok{index =} \KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{50000}\NormalTok{, }\DecValTok{1000}\NormalTok{), }
+                              \DataTypeTok{student_id =} \DecValTok{222333444}\NormalTok{, }\DataTypeTok{type =} \StringTok{"depth"}\NormalTok{)}
+
+\CommentTok{# separate by north and south hemisphere}
+\NormalTok{depths_north <-}\StringTok{ }\NormalTok{depths[}\KeywordTok{which}\NormalTok{(depths}\OperatorTok{$}\NormalTok{lat}\OperatorTok{>}\DecValTok{0}\NormalTok{),]}
+\NormalTok{depths_south <-}\StringTok{ }\NormalTok{depths[}\KeywordTok{which}\NormalTok{(depths}\OperatorTok{$}\NormalTok{lat}\OperatorTok{<}\DecValTok{0}\NormalTok{),]}
+
+\CommentTok{# restrict sample to 200 (at random)}
+\NormalTok{depths_north <-}\StringTok{ }\NormalTok{depths_north[}\KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(depths_north), }\DecValTok{200}\NormalTok{), ]}
+\NormalTok{depths_south <-}\StringTok{ }\NormalTok{depths_south[}\KeywordTok{sample}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{nrow}\NormalTok{(depths_south), }\DecValTok{200}\NormalTok{), ]}
+
+\CommentTok{# add indicator variable}
+\NormalTok{depths_north}\OperatorTok{$}\NormalTok{South <-}\StringTok{ }\DecValTok{0}
+\NormalTok{depths_south}\OperatorTok{$}\NormalTok{South <-}\StringTok{ }\DecValTok{1}
+
+\CommentTok{# combine data}
+\NormalTok{depths <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(depths_north, depths_south)}
+\KeywordTok{head}\NormalTok{(depths)}
+
+\CommentTok{# calculate mean and sd by hemisphere}
+\NormalTok{means <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ depths, }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(depths}\OperatorTok{$}\NormalTok{South), }\DataTypeTok{FUN =} \StringTok{"mean"}\NormalTok{)}\OperatorTok{$}\NormalTok{alt}
+\NormalTok{sds <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ depths, }\DataTypeTok{by =} \KeywordTok{list}\NormalTok{(depths}\OperatorTok{$}\NormalTok{South), }\DataTypeTok{FUN =} \StringTok{"sd"}\NormalTok{)}\OperatorTok{$}\NormalTok{alt}
+
+\CommentTok{# create boxplot and annotate plot}
+\KeywordTok{boxplot}\NormalTok{(alt }\OperatorTok{~}\StringTok{ }\NormalTok{South, }\DataTypeTok{data =}\NormalTok{ depths,}
+        \DataTypeTok{ylab=}\StringTok{"Ocean Depth (metres)"}\NormalTok{,}
+        \DataTypeTok{xlab=}\StringTok{"NORTH                                                                       SOUTH"}\NormalTok{,}
+        \DataTypeTok{pch=}\DecValTok{19}\NormalTok{,}\DataTypeTok{cex=}\FloatTok{0.25}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), means, }\DataTypeTok{pch=}\DecValTok{19}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\FloatTok{0.9}\NormalTok{, means[}\DecValTok{1}\NormalTok{],}
+     \KeywordTok{expression}\NormalTok{(}\KeywordTok{widehat}\NormalTok{(y[}\DecValTok{0}\NormalTok{])) )}
+\KeywordTok{text}\NormalTok{(}\FloatTok{2.1}\NormalTok{, means[}\DecValTok{2}\NormalTok{],}
+     \KeywordTok{expression}\NormalTok{(}\KeywordTok{widehat}\NormalTok{(y[}\DecValTok{1}\NormalTok{])) )}
+\KeywordTok{segments}\NormalTok{(}\DecValTok{1}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}\DecValTok{2}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}
+         \DataTypeTok{lty=}\StringTok{"dotted"}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(}\DecValTok{1}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}\DecValTok{2}\NormalTok{,means[}\DecValTok{2}\NormalTok{],}
+         \DataTypeTok{lty=}\StringTok{"dotted"}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(}\FloatTok{2.2}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}\FloatTok{2.45}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}
+         \DataTypeTok{lty=}\StringTok{"dotted"}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(}\FloatTok{2.2}\NormalTok{,means[}\DecValTok{2}\NormalTok{],}\FloatTok{2.45}\NormalTok{,means[}\DecValTok{2}\NormalTok{],}
+         \DataTypeTok{lty=}\StringTok{"dotted"}\NormalTok{)}
+\KeywordTok{text}\NormalTok{((}\FloatTok{2.2}\OperatorTok{+}\FloatTok{2.45}\NormalTok{)}\OperatorTok{/}\DecValTok{2}\NormalTok{,means[}\DecValTok{2}\NormalTok{],}
+     \KeywordTok{sprintf}\NormalTok{(}\StringTok{"+ %0.2f m"}\NormalTok{, means[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{means[}\DecValTok{1}\NormalTok{]), }\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\OperatorTok{-}\FloatTok{0.25}\NormalTok{),}\DataTypeTok{cex=}\FloatTok{0.75}\NormalTok{)}
+\KeywordTok{text}\NormalTok{(}\FloatTok{2.5}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}
+     \KeywordTok{expression}\NormalTok{(}\KeywordTok{hat}\NormalTok{(Delta)),}\DataTypeTok{adj=}\KeywordTok{c}\NormalTok{(}\FloatTok{0.5}\NormalTok{,}\DecValTok{0}\NormalTok{)) }
+\KeywordTok{arrows}\NormalTok{(}\FloatTok{0.8}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}\FloatTok{0.43}\NormalTok{,means[}\DecValTok{1}\NormalTok{],}
+       \DataTypeTok{length=}\FloatTok{0.05}\NormalTok{,}\DataTypeTok{angle=}\DecValTok{20}\NormalTok{)}
+\KeywordTok{arrows}\NormalTok{(}\FloatTok{0.8}\NormalTok{,means[}\DecValTok{2}\NormalTok{],}\FloatTok{0.43}\NormalTok{,means[}\DecValTok{2}\NormalTok{],}
+       \DataTypeTok{length=}\FloatTok{0.05}\NormalTok{,}\DataTypeTok{angle=}\DecValTok{20}\NormalTok{)}
+
+
+\CommentTok{# inference}
+\NormalTok{n0 <-}\StringTok{ }\KeywordTok{nrow}\NormalTok{(depths_north)}
+\NormalTok{n1 <-}\StringTok{ }\KeywordTok{nrow}\NormalTok{(depths_south)}
+
+\NormalTok{mean0 <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(depths_north}\OperatorTok{$}\NormalTok{alt)}
+\NormalTok{mean1 <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(depths_south}\OperatorTok{$}\NormalTok{alt)}
+
+\NormalTok{var0 <-}\StringTok{ }\KeywordTok{var}\NormalTok{(depths_north}\OperatorTok{$}\NormalTok{alt)}
+\NormalTok{var1 <-}\StringTok{ }\KeywordTok{var}\NormalTok{(depths_south}\OperatorTok{$}\NormalTok{alt)}
+
+\NormalTok{SEM <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(var0}\OperatorTok{/}\NormalTok{n0 }\OperatorTok{+}\StringTok{ }\NormalTok{var1}\OperatorTok{/}\NormalTok{n1)}
+
+\NormalTok{test_statistic <-}\StringTok{ }\NormalTok{(mean0 }\OperatorTok{-}\StringTok{ }\NormalTok{mean1) }\OperatorTok{/}\StringTok{ }\NormalTok{SEM}
+
+\CommentTok{# t.test}
+\CommentTok{# unequal variances}
+\KeywordTok{t.test}\NormalTok{(alt }\OperatorTok{~}\StringTok{ }\NormalTok{South, }\DataTypeTok{data =}\NormalTok{ depths, }\DataTypeTok{var.equal =} \OtherTok{FALSE}\NormalTok{) }\CommentTok{# default}
+\NormalTok{(mean0 }\OperatorTok{-}\StringTok{ }\NormalTok{mean1) }\OperatorTok{+}\StringTok{ }\KeywordTok{qt}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\FloatTok{0.975}\NormalTok{), }\DataTypeTok{df =} \FloatTok{349.61783}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{SEM}
+\KeywordTok{qnorm}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\FloatTok{0.975}\NormalTok{), }\DataTypeTok{mean =}\NormalTok{ mean0 }\OperatorTok{-}\StringTok{ }\NormalTok{mean1, }\DataTypeTok{sd =}\NormalTok{ SEM)}
+
+\CommentTok{# equal variances}
+\KeywordTok{t.test}\NormalTok{(alt }\OperatorTok{~}\StringTok{ }\NormalTok{South, }\DataTypeTok{data =}\NormalTok{ depths, }\DataTypeTok{var.equal =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{(mean0 }\OperatorTok{-}\StringTok{ }\NormalTok{mean1) }\OperatorTok{+}\StringTok{ }\KeywordTok{qt}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\FloatTok{0.975}\NormalTok{), }\DataTypeTok{df =}\NormalTok{ n0 }\OperatorTok{+}\StringTok{ }\NormalTok{n1 }\OperatorTok{-}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{SEM}
+\KeywordTok{qnorm}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\FloatTok{0.975}\NormalTok{), }\DataTypeTok{mean =}\NormalTok{ mean0 }\OperatorTok{-}\StringTok{ }\NormalTok{mean1, }\DataTypeTok{sd =}\NormalTok{ SEM)}
+
+
+\CommentTok{# regression}
+\NormalTok{fit <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(alt }\OperatorTok{~}\StringTok{ }\NormalTok{South, }\DataTypeTok{data =}\NormalTok{ depths)}
+\KeywordTok{summary}\NormalTok{(fit)}
+
+\CommentTok{# lm assumes equal variances}
+\NormalTok{(mean1 }\OperatorTok{-}\StringTok{ }\NormalTok{mean0) }\OperatorTok{+}\StringTok{ }\KeywordTok{qt}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\FloatTok{0.975}\NormalTok{), }\DataTypeTok{df =}\NormalTok{ n0 }\OperatorTok{+}\StringTok{ }\NormalTok{n1 }\OperatorTok{-}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{*}\StringTok{ }\NormalTok{SEM}
+\end{Highlighting}
+\end{Shaded}
 
 \subsection{Thursday November 8}\label{thursday-november-8}
 
@@ -1573,6 +1673,8 @@ Group project due by 11:59pm.\\
 \item
   \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/midterm_review/EPIB607_midterm_review.pdf}{Midterm
   Review}
+\item
+  \href{https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/regression/EPIB607_regression_handout.pdf}{Regression}
 \end{enumerate}
 
 \chapter{Polls}\label{polls}
@@ -1770,7 +1872,7 @@ categorical quantity:
 }
 
 \caption{Commonly used aesthetics in data visualization.
-top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-65}
+top: Chapter 3 \citet{Yau}, bottom: Chapter 2 \citet{wilke}}\label{fig:unnamed-chunk-66}
 \end{figure}
 
 \section{Coordinate systems}\label{coordinate-systems}
@@ -1804,7 +1906,7 @@ locations in a flat two-dimensional plane.
 }
 
 \caption{Commonly used coordinate systems. Chapter 3
-\citet{Yau}.}\label{fig:unnamed-chunk-66}
+\citet{Yau}.}\label{fig:unnamed-chunk-67}
 \end{figure}
 
 \section{Scales}\label{scales}
@@ -1835,7 +1937,7 @@ one-to-one, then the data visualization becomes ambiguous.
 \caption{Scales link data values to aesthetics. Here, the numbers 1
 through 4 have been mapped onto a position scale, a shape scale, and a
 color scale. For each scale, each number corresponds to a unique
-position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-67}
+position, shape, or color and vice versa \citep{wilke}.}\label{fig:unnamed-chunk-68}
 \end{figure}
 
 \section{Context}\label{context}
@@ -1950,7 +2052,7 @@ differentiate different categories.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-68-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-69-1} \end{center}
 
 Also see the
 \href{https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html}{viridis
@@ -2032,7 +2134,7 @@ for whom at least two-thirds of the students took the SAT.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-69-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-70-1} \end{center}
 
 This plot uses the visual cue of position to represent the math SAT
 score on the vertical axis with. The categorical variable of state is
@@ -2069,7 +2171,7 @@ being used to distinguish sex.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-70-1} \end{center}
+\begin{center}\includegraphics[width=\textwidth]{epib607_files/figure-latex/unnamed-chunk-71-1} \end{center}
 
 \section{Exercises}\label{exercises}
 

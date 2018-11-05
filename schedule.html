@@ -998,11 +998,112 @@ Midterm
 <tbody>
 <tr>
 <td style="text-align:left;">
-<a href="https://www.dropbox.com/s/qpm7ebzgq4e619b/regression_handout.pdf?dl=0">1. Regression handout</a>
+<a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/QNA/EPIB607_Rates_QNA.pdf">1. Muddy cards for Rates</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="https://www.dropbox.com/s/qpm7ebzgq4e619b/regression_handout.pdf?dl=0">2. Regression handout</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/regression/EPIB607_regression_handout.pdf">3. Parameter Contrasts with Regression</a>
 </td>
 </tr>
 </tbody>
 </table>
+<div id="fitting-a-regression-model-for-parameter-contrasts" class="section level4">
+<h4><span class="header-section-number">5.10.1.1</span> Fitting a regression model for Parameter Contrasts</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load function to get depths</span>
+<span class="kw">source</span>(<span class="st">&quot;https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R&quot;</span>)
+
+<span class="co"># get 1000 depths</span>
+<span class="kw">set.seed</span>(<span class="dv">222333444</span>)
+depths &lt;-<span class="st"> </span><span class="kw">automate_water_task</span>(<span class="dt">index =</span> <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50000</span>, <span class="dv">1000</span>), 
+                              <span class="dt">student_id =</span> <span class="dv">222333444</span>, <span class="dt">type =</span> <span class="st">&quot;depth&quot;</span>)
+
+<span class="co"># separate by north and south hemisphere</span>
+depths_north &lt;-<span class="st"> </span>depths[<span class="kw">which</span>(depths<span class="op">$</span>lat<span class="op">&gt;</span><span class="dv">0</span>),]
+depths_south &lt;-<span class="st"> </span>depths[<span class="kw">which</span>(depths<span class="op">$</span>lat<span class="op">&lt;</span><span class="dv">0</span>),]
+
+<span class="co"># restrict sample to 200 (at random)</span>
+depths_north &lt;-<span class="st"> </span>depths_north[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(depths_north), <span class="dv">200</span>), ]
+depths_south &lt;-<span class="st"> </span>depths_south[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(depths_south), <span class="dv">200</span>), ]
+
+<span class="co"># add indicator variable</span>
+depths_north<span class="op">$</span>South &lt;-<span class="st"> </span><span class="dv">0</span>
+depths_south<span class="op">$</span>South &lt;-<span class="st"> </span><span class="dv">1</span>
+
+<span class="co"># combine data</span>
+depths &lt;-<span class="st"> </span><span class="kw">rbind</span>(depths_north, depths_south)
+<span class="kw">head</span>(depths)
+
+<span class="co"># calculate mean and sd by hemisphere</span>
+means &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> depths, <span class="dt">by =</span> <span class="kw">list</span>(depths<span class="op">$</span>South), <span class="dt">FUN =</span> <span class="st">&quot;mean&quot;</span>)<span class="op">$</span>alt
+sds &lt;-<span class="st"> </span><span class="kw">aggregate</span>(<span class="dt">x =</span> depths, <span class="dt">by =</span> <span class="kw">list</span>(depths<span class="op">$</span>South), <span class="dt">FUN =</span> <span class="st">&quot;sd&quot;</span>)<span class="op">$</span>alt
+
+<span class="co"># create boxplot and annotate plot</span>
+<span class="kw">boxplot</span>(alt <span class="op">~</span><span class="st"> </span>South, <span class="dt">data =</span> depths,
+        <span class="dt">ylab=</span><span class="st">&quot;Ocean Depth (metres)&quot;</span>,
+        <span class="dt">xlab=</span><span class="st">&quot;NORTH                                                                       SOUTH&quot;</span>,
+        <span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">cex=</span><span class="fl">0.25</span>)
+<span class="kw">points</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), means, <span class="dt">pch=</span><span class="dv">19</span>)
+<span class="kw">text</span>(<span class="fl">0.9</span>, means[<span class="dv">1</span>],
+     <span class="kw">expression</span>(<span class="kw">widehat</span>(y[<span class="dv">0</span>])) )
+<span class="kw">text</span>(<span class="fl">2.1</span>, means[<span class="dv">2</span>],
+     <span class="kw">expression</span>(<span class="kw">widehat</span>(y[<span class="dv">1</span>])) )
+<span class="kw">segments</span>(<span class="dv">1</span>,means[<span class="dv">1</span>],<span class="dv">2</span>,means[<span class="dv">1</span>],
+         <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>)
+<span class="kw">segments</span>(<span class="dv">1</span>,means[<span class="dv">1</span>],<span class="dv">2</span>,means[<span class="dv">2</span>],
+         <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>)
+<span class="kw">segments</span>(<span class="fl">2.2</span>,means[<span class="dv">1</span>],<span class="fl">2.45</span>,means[<span class="dv">1</span>],
+         <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>)
+<span class="kw">segments</span>(<span class="fl">2.2</span>,means[<span class="dv">2</span>],<span class="fl">2.45</span>,means[<span class="dv">2</span>],
+         <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>)
+<span class="kw">text</span>((<span class="fl">2.2</span><span class="op">+</span><span class="fl">2.45</span>)<span class="op">/</span><span class="dv">2</span>,means[<span class="dv">2</span>],
+     <span class="kw">sprintf</span>(<span class="st">&quot;+ %0.2f m&quot;</span>, means[<span class="dv">2</span>]<span class="op">-</span>means[<span class="dv">1</span>]), <span class="dt">adj=</span><span class="kw">c</span>(<span class="fl">0.5</span>,<span class="op">-</span><span class="fl">0.25</span>),<span class="dt">cex=</span><span class="fl">0.75</span>)
+<span class="kw">text</span>(<span class="fl">2.5</span>,means[<span class="dv">1</span>],
+     <span class="kw">expression</span>(<span class="kw">hat</span>(Delta)),<span class="dt">adj=</span><span class="kw">c</span>(<span class="fl">0.5</span>,<span class="dv">0</span>)) 
+<span class="kw">arrows</span>(<span class="fl">0.8</span>,means[<span class="dv">1</span>],<span class="fl">0.43</span>,means[<span class="dv">1</span>],
+       <span class="dt">length=</span><span class="fl">0.05</span>,<span class="dt">angle=</span><span class="dv">20</span>)
+<span class="kw">arrows</span>(<span class="fl">0.8</span>,means[<span class="dv">2</span>],<span class="fl">0.43</span>,means[<span class="dv">2</span>],
+       <span class="dt">length=</span><span class="fl">0.05</span>,<span class="dt">angle=</span><span class="dv">20</span>)
+
+
+<span class="co"># inference</span>
+n0 &lt;-<span class="st"> </span><span class="kw">nrow</span>(depths_north)
+n1 &lt;-<span class="st"> </span><span class="kw">nrow</span>(depths_south)
+
+mean0 &lt;-<span class="st"> </span><span class="kw">mean</span>(depths_north<span class="op">$</span>alt)
+mean1 &lt;-<span class="st"> </span><span class="kw">mean</span>(depths_south<span class="op">$</span>alt)
+
+var0 &lt;-<span class="st"> </span><span class="kw">var</span>(depths_north<span class="op">$</span>alt)
+var1 &lt;-<span class="st"> </span><span class="kw">var</span>(depths_south<span class="op">$</span>alt)
+
+SEM &lt;-<span class="st"> </span><span class="kw">sqrt</span>(var0<span class="op">/</span>n0 <span class="op">+</span><span class="st"> </span>var1<span class="op">/</span>n1)
+
+test_statistic &lt;-<span class="st"> </span>(mean0 <span class="op">-</span><span class="st"> </span>mean1) <span class="op">/</span><span class="st"> </span>SEM
+
+<span class="co"># t.test</span>
+<span class="co"># unequal variances</span>
+<span class="kw">t.test</span>(alt <span class="op">~</span><span class="st"> </span>South, <span class="dt">data =</span> depths, <span class="dt">var.equal =</span> <span class="ot">FALSE</span>) <span class="co"># default</span>
+(mean0 <span class="op">-</span><span class="st"> </span>mean1) <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), <span class="dt">df =</span> <span class="fl">349.61783</span>) <span class="op">*</span><span class="st"> </span>SEM
+<span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), <span class="dt">mean =</span> mean0 <span class="op">-</span><span class="st"> </span>mean1, <span class="dt">sd =</span> SEM)
+
+<span class="co"># equal variances</span>
+<span class="kw">t.test</span>(alt <span class="op">~</span><span class="st"> </span>South, <span class="dt">data =</span> depths, <span class="dt">var.equal =</span> <span class="ot">TRUE</span>)
+(mean0 <span class="op">-</span><span class="st"> </span>mean1) <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), <span class="dt">df =</span> n0 <span class="op">+</span><span class="st"> </span>n1 <span class="op">-</span><span class="st"> </span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>SEM
+<span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), <span class="dt">mean =</span> mean0 <span class="op">-</span><span class="st"> </span>mean1, <span class="dt">sd =</span> SEM)
+
+
+<span class="co"># regression</span>
+fit &lt;-<span class="st"> </span><span class="kw">lm</span>(alt <span class="op">~</span><span class="st"> </span>South, <span class="dt">data =</span> depths)
+<span class="kw">summary</span>(fit)
+
+<span class="co"># lm assumes equal variances</span>
+(mean1 <span class="op">-</span><span class="st"> </span>mean0) <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>), <span class="dt">df =</span> n0 <span class="op">+</span><span class="st"> </span>n1 <span class="op">-</span><span class="st"> </span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>SEM</code></pre></div>
+</div>
 </div>
 <div id="thursday-november-8" class="section level3">
 <h3><span class="header-section-number">5.10.2</span> Thursday November 8</h3>
