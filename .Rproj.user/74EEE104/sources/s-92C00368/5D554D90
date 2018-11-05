@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541375073255.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5D554D90",
+    "lastKnownWriteTime" : 1541375669,
+    "last_content_update" : 1541375669208,
+    "path" : "~/git_repositories/epib607/dalite/007_two_sample/007-two-sample.Rmd",
+    "project_path" : "dalite/007_two_sample/007-two-sample.Rmd",
+    "properties" : {
+        "cursorPosition" : "239,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

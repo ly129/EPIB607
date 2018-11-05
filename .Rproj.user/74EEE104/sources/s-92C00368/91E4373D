@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541431750491.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "91E4373D",
+    "lastKnownWriteTime" : 1541432062,
+    "last_content_update" : 1541432062767,
+    "path" : "~/git_repositories/epib607/project/EPIB607_project.Rmd",
+    "project_path" : "project/EPIB607_project.Rmd",
+    "properties" : {
+        "cursorPosition" : "119,0",
+        "scrollLine" : "98",
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

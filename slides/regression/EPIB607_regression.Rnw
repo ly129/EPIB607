@@ -240,8 +240,8 @@ pacman::p_load(knitr)
 %\author[shortname]{Sahir Rai Bhatnagar, PhD Candidate (Biostatistics) }
 %\institute[shortinst]{Department of Epidemiology, Biostatistics and Occupational Health}
 
-\title{Inference about a Population Rate ($\lambda$)}
-\subtitle{\href{https://www.dropbox.com/s/b5q7vqo2ev6k2me/EPIB607intensity-model-inference-plan-2018.pdf?dl=0}{JH notes on rates}}
+\title{Parameter Contrasts: Regression Framework}
+\subtitle{\href{https://www.dropbox.com/s/1l3i59rw1qsnmsz/EPIB607introToRegression.pdf?dl=0}{JH notes on regression}}
 \author{Sahir Bhatnagar and James Hanley}
 \institute{
 	EPIB 607\\
@@ -257,18 +257,391 @@ pacman::p_load(knitr)
 
 \maketitle
 
-\section{Poisson Model for Sampling Variability of a Count in a Given Amount of ``Experience''}
+\section{Parameter-contrasts}
 
-\begin{frame}{Motivating example: Demand for medical care}
+\begin{frame}{Introduction to parameter-contrasts}
 
 \begin{itemize}
-	\setlength\itemsep{1em}
-	\item Data from the US National Medical	Expenditure Survey (NMES) for 1987/88
-	\item 4406 individuals, aged 66 and over, who are covered by Medicare, a public insurance program
-	\item The objective of the study was to model the demand for medical care - as captured by \underline{the number} of physician/non-physician office and hospital outpatient visits - by the covariates available for the patients.
+	\setlength\itemsep{2em}
+	\item We started the course by talking about the case where there were no determinants, i.e., no subpopulations $\to$ there was one global parameter ($\mu$, $\pi$, $\lambda$). \pause 
+	\item Now we concern ourselves with determinants of the global parameter. For example:
+	\begin{itemize}
+		\item $\mu_{north}$ vs. $\mu_{south}$
+		\item $\pi_{north}$ vs. $\pi_{south}$
+		\item $\lambda_{north}$ vs. $\lambda_{south}$
+	\end{itemize}
+	\pause 
+	\item Today we introduce population parameter \underline{contrasts} in a regression framework
+	
 \end{itemize}
 
 \end{frame}
+
+
+\begin{frame}{Why regression for parameter-contrasts?}
+
+\begin{itemize}
+	\setlength\itemsep{1.5em}
+\item Why do we start in a regression framework (as opposed to two-sample inference in B\&M and AAO)? \pause 
+\item \textbf{Parameter contrasts are a special case of regression} \pause 
+\item Approach taken in Miettinen, Clayton in Hills, Rothman and Greenland, baby Rothman
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{What is regression?}
+
+\begin{itemize}
+	\setlength\itemsep{2em}
+\item How \textbf{parameters} relate to its determinants \pause
+\item How to link the parameters between the different populations through generic equations, that looks like a regression equation. \pause 
+\item Then once you get data, you can actually fit or get your best estimates of those parameters
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Linear regression: The Concept}
+
+\begin{itemize}
+	\setlength\itemsep{2em}
+	\item A regression model is said to be \textbf{linear} when it is of the form 
+	\begin{align*}
+	\mu & = \mu_0 + \sum_{j=1}^p \beta_j X_j \\
+	& = \mu_0 + \beta_1 X_1 +  \beta_1 X_1 + \cdots +  \beta_p X_p
+	\end{align*}
+	
+	\item Which means that the value of the mean ($\mu$) is viewed as a linear combination of the parameters $\mu_0, \beta_1, \beta_2, \ldots, \beta_p$, the coefficients of the linear combination being the realizations for the $X$'s
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Linear regression: Example}
+
+\begin{itemize}
+	\setlength\itemsep{2em}
+	\item Consider intraoperative mortality in open-heart surgery. 
+	\item Here, $\mu$ designates the incidence (risk) of intraoperative death. \pause 
+	\item For this parameter of occurrence one might consider the determinants 
+	\begin{itemize}
+		\item $X_1$: congestive heart failure (CHF), represented by an indicator variable
+		
+$$
+X_1 = \begin{cases}
+1 & \textrm{if CHF}\\
+0 & \textrm{otherwise}
+\end{cases}
+$$
+		\pause
+		\item $X_2$: duration of cardiac bypass in minutes
+	\end{itemize} 
+	
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Linear regression: Example}
+
+\begin{itemize}
+	\setlength\itemsep{1.7em}
+	\item The model might be taken as 
+$$
+\mu = \mu_0 + \beta_1 X_1 + \beta_2 X_2
+$$
+
+and provides the average risk among population members of a \underline{given} $X_1$ and $X_2$
+
+\item An individual's risk $\mu$ is a linear combination of $\mu_0, \beta_1$ and $\beta_2$
+
+
+\pause 
+
+\item If we had an infinite amount of data, an individual's risk would be determined by their CHF status and the duration of cardiac bypass:
+
+$$
+\mu = \begin{cases}
+\mu_0 + \beta_1 + \beta_2 X_2 &  \textrm{if CHF}\\
+\mu_0 + \beta_2 X_2 &  \textrm{otherwise}
+\end{cases}
+$$
+	
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\section{Regression equations when the truth is known}
+
+\begin{frame}
+\Wider[8em]{
+	\centering
+	\includegraphics[width=4.9in,height=3.6in]{Fig10.pdf}
+}
+\end{frame}
+
+\begin{frame}
+\Wider[8em]{
+	\centering
+	\includegraphics[width=4.9in,height=3.6in]{Fig11.pdf}
+}
+\end{frame}
+
+
+\begin{frame}
+\Wider[8em]{
+	\centering
+	\includegraphics[width=4.9in,height=3.6in]{Fig12.pdf}
+}
+\end{frame}
+
+\begin{frame}
+\Wider[8em]{
+	\centering
+	\includegraphics[width=4.9in,height=3.6in]{Fig13.pdf}
+}
+\end{frame}
+
+
+\begin{frame}
+\Wider[8em]{
+	\centering
+	\includegraphics[width=4.9in,height=3.6in]{Fig14.pdf}
+}
+\end{frame}
+
+
+\begin{frame}
+\Wider[8em]{
+	\centering
+	\includegraphics[width=4.9in,height=3.6in]{Fig15.pdf}
+}
+\end{frame}
+
+
+\begin{frame}
+\Wider[8em]{
+	\centering
+	\includegraphics[width=4.9in,height=3.6in]{Fig16.pdf}
+}
+\end{frame}
+
+
+\section{Fitting the regression equation with our sample data}
+
+
+
+\begin{frame}[fragile]{Depths of the ocean: North vs. South Hemisphere}
+
+<<eval=FALSE, echo=TRUE, size='tiny'>>=
+# load function to get depths
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/
+exercises/water/automate_water_task.R")
+
+# get 1000 depths
+set.seed(222333444)
+depths <- automate_water_task(index = sample(1:50000, 1000), 
+	student_id = 222333444, type = "depth")
+
+# separate by north and south hemisphere
+depths_north <- depths[which(depths$lat>0),]
+depths_south <- depths[which(depths$lat<0),]
+
+# restrict sample to 200 (at random)
+depths_north <- depths_north[sample(1:nrow(depths_north), 200), ]
+depths_south <- depths_south[sample(1:nrow(depths_south), 200), ]
+
+# add indicator variable
+depths_north$South <- 0
+depths_south$South <- 1
+
+# combine data
+depths <- rbind(depths_north, depths_south)
+head(depths)
+
+# calculate mean and sd by hemisphere
+means <- aggregate(x = depths, by = list(depths$South), FUN = "mean")$alt
+sds <- aggregate(x = depths, by = list(depths$South), FUN = "sd")$alt
+@
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Depths of the ocean: North vs. South Hemisphere}
+
+<<eval=TRUE, echo=FALSE, size='tiny'>>=
+# load function to get depths
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+
+# get 1000 depths
+set.seed(222333444)
+depths <- automate_water_task(index = sample(1:50000, 1000), 
+student_id = 222333444, type = "depth")
+
+# separate by north and south hemisphere
+depths_north <- depths[which(depths$lat>0),]
+depths_south <- depths[which(depths$lat<0),]
+
+# restrict sample to 200 (at random)
+depths_north <- depths_north[sample(1:nrow(depths_north), 200), ]
+depths_south <- depths_south[sample(1:nrow(depths_south), 200), ]
+
+# add indicator variable
+depths_north$South <- 0
+depths_south$South <- 1
+
+# combine data
+depths <- rbind(depths_north, depths_south)
+
+# calculate mean and sd by hemisphere
+means <- aggregate(x = depths, by = list(depths$South), FUN = "mean")$alt
+sds <- aggregate(x = depths, by = list(depths$South), FUN = "sd")$alt
+
+# create boxplot and annotate plot
+boxplot(alt ~ South, data = depths,
+ylab="Ocean Depth (metres)",
+xlab="NORTH                                                                       SOUTH",
+pch=19,cex=0.25)
+points(c(1,2), means, pch=19)
+text(0.9, means[1],
+expression(widehat(y[0])) )
+text(2.1, means[2],
+expression(widehat(y[1])) )
+segments(1,means[1],2,means[1],
+lty="dotted")
+segments(1,means[1],2,means[2],
+lty="dotted")
+segments(2.2,means[1],2.45,means[1],
+lty="dotted")
+segments(2.2,means[2],2.45,means[2],
+lty="dotted")
+text((2.2+2.45)/2,means[2],
+sprintf("+ %0.2f m", means[2]-means[1]), adj=c(0.5,-0.25),cex=0.75)
+text(2.5,means[1],
+expression(hat(Delta)),adj=c(0.5,0)) 
+arrows(0.8,means[1],0.43,means[1],
+length=0.05,angle=20)
+arrows(0.8,means[2],0.43,means[2],
+length=0.05,angle=20)
+@
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Standard error of the mean difference}
+
+To perform inference we first need to calculate the SE of the mean difference given by:
+
+\begin{equation}
+SE_{\bar{y_1} - \bar{y_0}} = \sqrt{\frac{s_0^2}{n_0} + \frac{s_1^2}{n_1}}
+\end{equation}
+
+\pause 
+
+<<eval=TRUE, echo=TRUE, size='scriptsize'>>=
+n0 <- nrow(depths_north)
+n1 <- nrow(depths_south)
+
+mean0 <- mean(depths_north$alt)
+mean1 <- mean(depths_south$alt)
+
+var0 <- var(depths_north$alt)
+var1 <- var(depths_south$alt)
+
+(SEM <- sqrt(var0/n0 + var1/n1))
+@
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{95\% Confidence Interval for the Mean Difference}
+
+We can then calculate a 95\% CI for the mean difference given by:
+
+\begin{equation}
+(\bar{y_1} - \bar{y_0}) \pm t^\star_{(n_0 + n_1 - 2)} \times SE_{\bar{y_1} - \bar{y_0}}
+\end{equation}
+
+\pause 
+
+<<eval=TRUE, echo=TRUE, size='scriptsize'>>=
+# assuming equal variances
+(mean1 - mean0) + qt(c(0.025, 0.975), df = n0 + n1 - 2) * SEM 
+
+# similar to z interval
+qnorm(c(0.025, 0.975), mean = mean1 - mean0, sd = SEM)
+@
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Parameter contrasts with regression}
+
+Using the \texttt{lm} function in \texttt{R}:
+
+
+<<eval=TRUE, echo=TRUE, size='scriptsize'>>=
+# regression. lm assumes equal variances
+fit <- lm(alt ~ South, data = depths)
+summary(fit)
+@
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Confidence interval from regression fit}
+
+<<eval=TRUE, echo=TRUE, size='scriptsize'>>=
+confint(fit)
+@
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Unequal variances using \texttt{stats::t.test}}
+
+\texttt{stats::t.test} assumes unequal variances by default:
+
+
+<<eval=TRUE, echo=TRUE, size='scriptsize'>>=
+t.test(alt ~ South, data = depths, var.equal = FALSE) 
+(mean0 - mean1) + qt(c(0.025, 0.975), df = 349.61783) * SEM 
+@
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Equal variances using \texttt{stats::t.test}}
+
+We can specify equal variance assumption in \texttt{stats::t.test}:
+
+<<eval=TRUE, echo=TRUE, size='scriptsize'>>=
+t.test(alt ~ South, data = depths, var.equal = TRUE)
+(mean0 - mean1) + qt(c(0.025, 0.975), df = n0 + n1 - 2) * SEM 
+@
+
+
+\end{frame}
+
+
+\end{document}
+
+
 
 
 \begin{frame}[fragile]{Motivating example: Demand for medical care}

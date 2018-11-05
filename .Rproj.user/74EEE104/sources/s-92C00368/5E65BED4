@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541428159064.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5E65BED4",
+    "lastKnownWriteTime" : 1541429315,
+    "last_content_update" : 1541429315093,
+    "path" : "~/git_repositories/epib607/slides/regression/depths_example.R",
+    "project_path" : "slides/regression/depths_example.R",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
