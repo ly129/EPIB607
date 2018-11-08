@@ -1,0 +1,7 @@
+\BOOKMARK [1][-]{section.1}{When to use the log formula instead of the regression formula?}{}% 1
+\BOOKMARK [1][-]{section.2}{Are there differences in regression approaches for , \040and \040or is it just a difference in the scales?}{}% 2
+\BOOKMARK [1][-]{section.3}{Please explain how to assign the baseline with north and south}{}% 3
+\BOOKMARK [1][-]{section.4}{Not clear why we are doing both a t-test and a regression analysis to test for mean difference? In this case a t test seems to be the appropriate test, are we just applying it to regression to think about it conceptually?}{}% 4
+\BOOKMARK [1][-]{section.5}{Why is a t-test used to conduct inference for regression, but a z-test for the CI?}{}% 5
+\BOOKMARK [1][-]{section.6}{Was what we were doing today the same as least squares regression? If not, how was it different?}{}% 6
+\BOOKMARK [1][-]{section.7}{Is the lm function in R just for difference? How do we adapt it for ratios?}{}% 7

@@ -1,0 +1,67 @@
+\documentclass[landscape,twocolumn,letterpaper,9pt,reqno]{article}
+
+\usepackage{lscape,fancyhdr}
+
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+
+\usepackage{amsmath,epsfig,subfigure,amsthm,amsfonts,epsf,psfrag,rotating,setspace,bm}
+
+\usepackage{verbatim,color} % Allow text colors}
+
+\setlength{\oddsidemargin}{-0.4in}		% default=0in
+\setlength\evensidemargin{-0.4in}
+
+\setlength{\textwidth}{9.8in}		% default=9in
+
+\setlength{\columnsep}{0.5in}		% default=10pt
+
+\setlength{\columnseprule}{0pt}		% default=0pt (no line)
+
+
+\setlength{\textheight}{7.0in}		% default=5.15in
+
+\setlength{\topmargin}{-0.75in}		% default=0.20in
+
+\setlength{\headsep}{0.25in}		% default=0.35in
+
+\setlength{\parskip}{1.2ex}
+
+\setlength{\parindent}{0mm}
+
+\lhead{Course EPIB607: Regression 1 - Q\&A}
+\rhead{jh,sb \ \ \ v. 2018.11.08}
+
+\begin{document}
+
+\section{When to use the log formula instead of the regression formula?}
+
+$\log$ is primarily used when you're interested in the ratio of two parameters. For example, $$\theta = \frac{\mu_{south}}{\mu_{north}}.$$ Taking the $\log$ of both sides, we get $$\log(\theta) = \log(\mu_{south}) - \log(\mu_{north}).$$ This form is much easier to deal with because we can ''trick'' any regression function to run this model. 
+
+\section{Are there differences in regression approaches for $\mu$, $\pi$ and $\lambda$ or is it just a difference in the scales?}
+
+Yes. We can use the linear model for $\mu$. However, because both $\pi$ and $\lambda$ have a restricted domain ($\pi$ must be between 0 and 1, $\lambda$ must be greater than 0), care must be taken as to not obtain nonsensical values. In general we use logistic regression for $\pi$ and poisson regression for $\lambda$. These involve transformations of the original parameter so that the domain ranges from $-\infty$ to $+\infty$. 
+	
+\section{Please explain how to assign the baseline with north and south}	
+
+The baseline is arbitrary. Usually the category of interest is chosen as the ``non-reference'' category. 
+
+\section{Not clear why we are doing both a t-test and a regression analysis to test for mean difference? In this case a t test seems to be the appropriate test, are we just applying it to regression to think about it conceptually?}
+
+The two-sample t-test is a special case of regression when the only determinant of the parameter is the group. Regression is a much more general approach that allows you to include more determinants (i.e. confounders). The t-test can only handle a single determinant, which is often rarely the case in observational health research. 
+
+\section{Why is a t-test used to conduct inference for regression, but a z-test for the CI?}
+
+t procedures are technically correct, but often we have a large enough sample to assume we have a good estimate of $\sigma$, so that we can use the z procedure. 
+
+
+\section{Was what we were doing today the same as least squares regression? If not, how was it different?}
+
+Today was about writing regression equations with parameters. We cheated by assuming the truth was known. Least-squares is a method to estimate the parameters with data. 
+
+\section{Is the lm function in R just for difference? How do we adapt it for ratios?}
+
+\texttt{lm} is just for the difference. We must use the \texttt{glm} function and specify the argument \texttt{family=gaussian(link=log)} to adapt it for ratios. 
+	
+\end{document}

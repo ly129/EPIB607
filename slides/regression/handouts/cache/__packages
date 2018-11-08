@@ -1,0 +1,11 @@
+base
+knitr
+ggplot2
+cowplot
+dplyr
+lattice
+ggstance
+ggformula
+mosaicData
+Matrix
+mosaic

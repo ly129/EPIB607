@@ -1,0 +1,40 @@
+# load function to get depths
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+
+# get 1000 depths
+set.seed(222333444)
+depths <- automate_water_task(index = sample(1:50000, 1000), 
+                              student_id = 222333444, type = "depth")
+
+head(depths)
+# separate by north and south hemisphere
+depths_north <- depths[which(depths$lat>0),]
+depths_south <- depths[which(depths$lat<0),]
+
+# restrict sample to 200 (at random)
+depths_north <- depths_north[sample(1:nrow(depths_north), 200), ]
+depths_south <- depths_south[sample(1:nrow(depths_south), 200), ]
+dim(depths_north)
+dim(depths_south)
+# add indicator variable
+depths_north$South <- 0
+depths_south$South <- 1
+
+# combine data
+depths <- rbind(depths_north, depths_south)
+head(depths)
+
+# calculate mean and sd by hemisphere
+means <- aggregate(x = depths, by = list(depths$South), FUN = "mean")$alt
+sds <- aggregate(x = depths, by = list(depths$South), FUN = "sd")$alt
+
+
+table(depths$South)
+fit <- lm(alt ~ South, data = depths)
+summary(fit)
+
+library(cowplot)
+library(ggplot2)
+theme_set(theme_cowplot())
+ggformula::gf_jitter(alt ~ South, data = depths, width = 0.05)
+
