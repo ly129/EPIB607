@@ -1,0 +1,90 @@
+\documentclass[landscape,twocolumn,letterpaper,9pt,reqno]{article}
+
+\usepackage{lscape,fancyhdr}
+
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+
+\usepackage{amsmath,epsfig,subfigure,amsthm,amsfonts,epsf,psfrag,rotating,setspace,bm}
+
+\usepackage{verbatim,color} % Allow text colors}
+
+\setlength{\oddsidemargin}{-0.4in}		% default=0in
+\setlength\evensidemargin{-0.4in}
+
+\setlength{\textwidth}{9.8in}		% default=9in
+
+\setlength{\columnsep}{0.5in}		% default=10pt
+
+\setlength{\columnseprule}{0pt}		% default=0pt (no line)
+
+
+\setlength{\textheight}{7.0in}		% default=5.15in
+
+\setlength{\topmargin}{-0.75in}		% default=0.20in
+
+\setlength{\headsep}{0.25in}		% default=0.35in
+
+\setlength{\parskip}{1.2ex}
+
+\setlength{\parindent}{0mm}
+
+\lhead{Course EPIB607: Regression handout 003}
+\rhead{jh,sb \ \ \ v. 2018.11.12}
+
+\begin{document}
+
+<<setup, include=FALSE>>=
+rm(list = ls())
+library(knitr)
+knitr::opts_chunk$set(cache=TRUE, message = FALSE, tidy = FALSE,warning=FALSE, 
+echo = FALSE, fig.width = 8, fig.asp = 0.8, 
+fig.align = 'center', out.width = "100%", size = 'normalsize')
+# the kframe environment does not work with allowframebreaks, so remove it
+knit_hooks$set(document = function(x) {
+	gsub('\\\\(begin|end)\\{kframe\\}', '', x)
+})
+pacman::p_load(knitr)
+# trop <- RSkittleBrewer::RSkittleBrewer("trop")
+# gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20), axis.title = element_text(size = 20), legend.text = element_text(size = 20), legend.title = element_text(size = 20))
+@
+
+
+\section{Breastfeeding and respiratory infection I}
+
+A total of 189,612 person-years of follow up were accumulated over the course of the study: 151,690
+among infants who were being breastfed and 37,922 among infants not being breastfed. Over the
+course of follow up the investigators identified 514,230 incident cases of respiratory infection among
+breastfeeding infants and 140,312 among non-breastfeeding infants. Calculate the crude incidence rate difference and 95\% CI comparing infants who were not breastfed with those who were.
+
+<<eval=TRUE, echo=TRUE, size='small'>>=
+cases <- c(514230, 140312)
+PT <- c(151690, 37922)
+not_breastfed <- c(0, 1)
+fit <- glm(cases ~ -1 + PT + PT:not_breastfed, family = poisson(link = identity))
+summary(fit)
+@	
+
+
+
+	
+
+\clearpage
+
+
+
+
+\section{Breastfeeding and respiratory infection II}
+
+Calculate the crude incidence rate ratio and 95\% CI comparing infants who were not breastfed with those who were.
+
+<<eval=TRUE, echo=TRUE, size='small'>>=
+fit <- glm(cases ~ not_breastfed + offset(log(PT)), family = poisson(link = log))
+summary(fit)
+@
+
+
+
+
+\end{document}
