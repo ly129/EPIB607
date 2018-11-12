@@ -80,7 +80,7 @@
 
 \setlength{\parindent}{0mm}
 
-\lhead{Course EPIB607: Regression handout 003}
+\lhead{Course EPIB607: Regression handout 003 (Poisson regression)}
 \rhead{jh,sb \ \ \ v. 2018.11.12}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
@@ -98,9 +98,6 @@ breastfeeding infants and 140,312 among non-breastfeeding infants. Calculate the
 \begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \begin{alltt}
-\hlstd{cases} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{514230}\hlstd{,} \hlnum{140312}\hlstd{)}
-\hlstd{PT} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{151690}\hlstd{,} \hlnum{37922}\hlstd{)}
-\hlstd{not_breastfed} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{1}\hlstd{)}
 \hlstd{fit} \hlkwb{<-} \hlkwd{glm}\hlstd{(cases} \hlopt{~ -}\hlnum{1} \hlopt{+} \hlstd{PT} \hlopt{+} \hlstd{PT}\hlopt{:}\hlstd{not_breastfed,} \hlkwc{family} \hlstd{=} \hlkwd{poisson}\hlstd{(}\hlkwc{link} \hlstd{= identity))}
 \hlkwd{summary}\hlstd{(fit)}
 \end{alltt}
@@ -174,6 +171,21 @@ Calculate the crude incidence rate ratio and 95\% CI comparing infants who were 
 \end{verbatim}
 
 \end{knitrout}
+
+
+
+
+
+
+
+\section{Malaria control with bednets}
+
+See the 2018 Lancet article \textit{Efficacy of Olyset Duo, a bednet containing pyriproxyfen and permethrin, versus a permethrin-only net against clinical malaria in an area with highly pyrethroid-resistant vectors in rural Burkina Faso: a cluster-randomised
+controlled trial} (\texttt{Bednets.pdf} in \texttt{A9} folder of myCourses) by Tiono et. al. Reproduce the Rate ratio (95\% CI) in Table 2. Calculate the rate difference and 95\% CI comparing PPF-treated to Standard long-lasting insecticidal nets.
+
+
+
+
 
 
 

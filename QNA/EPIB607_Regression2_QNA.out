@@ -1,0 +1,8 @@
+\BOOKMARK [1][-]{section.1}{Is there a difference between \040and ?}{}% 1
+\BOOKMARK [1][-]{section.2}{A list of all notations and what they represent?}{}% 2
+\BOOKMARK [1][-]{section.3}{What is the parameter we are trying to find in the ratio linear regression?}{}% 3
+\BOOKMARK [1][-]{section.4}{Why are there t-statistics and F-statistics given as outputs of a regression model? Why are we analyzing t if the F is what is usually reported for regression models?}{}% 4
+\BOOKMARK [1][-]{section.5}{Kind of confused about the overall goal of a regression... Is it just a faster way to get all the individual outputs \(like the estimates, p-value, standard error, etc.\), or does it have some extra use in and of itself?}{}% 5
+\BOOKMARK [1][-]{section.6}{Why is south estimate log\(theta hat\), why isnt it log\(u\) + log \(theta\)}{}% 6
+\BOOKMARK [1][-]{section.7}{Why is the df n-p and not n1+n2-1?}{}% 7
+\BOOKMARK [1][-]{section.8}{When calculating residual \(yi - i\), is i the sample mean for the entire sample, or the sample mean for North and for South? And if it's the latter, are you subtracting i for North from all the North y's and i for South for all the South y's, or subtracting both i for each y?}{}% 8

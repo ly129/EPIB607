@@ -1354,7 +1354,8 @@ df %>% kable(col.names = NULL) %>%
 ```{r, results='asis', echo=FALSE, eval=TRUE}
 df <- as.data.frame(rbind(
 
-  c(" ")
+    c("[1. Regression handout 002](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/regression/handouts/EPIB607_handout_002.pdf)"),
+    c("[2. Regression handout 003](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/regression/handouts/EPIB607_handout_003.pdf)")
 ))
 
 df %>% kable(col.names = NULL) %>% 
