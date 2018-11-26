@@ -1,0 +1,38 @@
+cases <- c(77, 61)
+controls <- c(273, 289)
+open <- c(1,0)
+df <- as.data.frame(cbind(cases, controls, open))
+
+fit <- glm(cbind(cases,controls) ~ open, data = df,
+           family=binomial(link="logit"))
+summary(fit)
+predict(fit, type = "link")
+predict(fit, type = "resp")
+
+plogis(coef(fit)[1])
+61/350
+plogis(sum(coef(fit))) * 350
+(1-plogis(coef(fit)[2])) * 350
+
+
+
+
+
+par(mfrow=c(1, 2))
+curve(log(x/(1-x)), 0, 0.1)
+curve(log(x), 0, 0.1)
+
+
+par(mfrow=c(1, 2))
+curve(log(x/(1-x)), 0, 1)
+curve(log(x), 0, 1)
+
+(RR = (77 / 350) / (61 / 350))
+(OR = (77 / 273) / (61 / 289))
+77/350
+61/350
+138/700
+
+
+
+

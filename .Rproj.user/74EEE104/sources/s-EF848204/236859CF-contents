@@ -1,0 +1,172 @@
+setwd("/Users/jameshanley/Dropbox/EPIB607/Jim2018/IntroRegression")
+ds=read.table("hivTransmsion.txt",header=TRUE)
+ds$n.hivneg= ds$n.pairs - ds$n.hivpos
+str(ds)
+ds
+
+#overall proportion hiv positive
+
+round(sum(ds$n.hivpos)/sum(ds$n.pairs),3)
+
+# intercept-only logit model
+
+fit0=glm(cbind(n.hivpos,ds$n.hivneg) ~ 1,
+  family=binomial, data=ds)
+  
+summary(fit0)
+
+#checks
+ 
+plogis(fit0$coefficients)
+
+round(fit0$fitted.values,3)
+
+# caesarian-only model
+
+# 1st  raw data
+
+( n.s=aggregate(ds$n.pairs,
+ by=list(caesarian=ds$caesarian),sum) )
+
+
+( pos=aggregate(ds$n.hivpos,
+ by=list(caesarian=ds$caesarian),sum) )
+
+( neg=aggregate(ds$n.hivneg,
+ by=list(caesarian=ds$caesarian),sum) )
+
+( or = round(pos$x[2]/neg$x[2]/(pos$x[1]/neg$x[1]),2))
+
+( rr = round((pos$x[2]/n.s$x[2]) / (pos$x[1]/n.s$x[1]),2) )
+
+# fitted or
+
+fit.cae=glm(cbind(n.hivpos,ds$n.hivneg) ~ caesarian,
+  family=binomial, data=ds)
+summary(fit.cae)
+
+# proportion +ve in reg. category (no caesarian)
+
+round(plogis(fit.cae$coefficients[1]),2)
+
+# odds  (+ve : -ve) in reg. category & or (index:ref)
+
+round(exp(fit.cae$coefficients),2)
+
+# check: odds 0.20:1 in ref. category
+ 
+ => prop. pos = 0.2/(1+0.2) = 1/6 = 17% (approx)
+
+# check: odds (0.20 x 0.44) :1 in index category
+
+# ie 0.088:1 => prop. pos = 0.088/(1+0.088) 
+#                           = 8% (approx)
+
+round(fit.cae$fitted.values,3)
+
+###
+
+fit.all4 = glm(cbind(n.hivpos,ds$n.hivneg) ~ 
+  caesarian + as.factor(m.trimesters.tx)+m.advancedHIV+c.LBW,
+   family=binomial, data=ds)
+summary(fit.all4)
+round(fit.all4$fitted.values,3)
+round(exp(fit.all4$coefficients),3)
+
+log(or) for caesarian not that different from crude model 
+
+### risk ratio
+
+# fit caesarian-only model first
+
+fitRisk.cae = glm(cbind(n.hivpos,ds$n.hivneg) ~ 
+  caesarian,
+  family=binomial(link="log"), data=ds)
+summary(fitRisk.cae)
+round(fitRisk.cae$fitted.values,3)
+
+round(exp(fitRisk.cae$coefficients),3)
+
+# (these are easy to check: 0.167 and 0.167 x 0.488
+
+# fit larger model
+
+fitRisk.all4 = glm(cbind(n.hivpos,ds$n.hivneg) ~ 
+  caesarian + as.factor(m.trimesters.tx)+m.advancedHIV+c.LBW,
+   family=binomial(link="log"), data=ds)
+summary(fitRisk.all4)
+round(fitRisk.all4$fitted.values,3)
+round(exp(fitRisk.all4$coefficients),3)
+
+# not very different as far as 
+# caesarian vs. not is concerened
+
+# you can fill in more from these...
+
+
+
+#########  NOW (maybe this should be first)
+#########  dataset for mantel-haenszel or and rr
+#########  for caeasarian vs. not [3 x 2 x 2 = 12 strata]
+
+# make 12 rows, 1 per stratum, 
+
+ds.for.mh=ds[seq(1,23,2),c(2,3,4,6,7)]
+ds.for.mh[,c(6,7)] = ds[seq(2,24,2),c(6,7)]
+colnames(ds.for.mh)[4:7] = c(
+"HIV.pos.indexCat", "HIV.neg.indexCat",
+"HIV.pos.refCat",   "HIV.neg.refCat")
+ds.for.mh$n = apply(ds.for.mh[,4:7],1,sum)
+ds.for.mh
+
+# stratum-specific or's
+
+round(
+ ds.for.mh$HIV.pos.indexCat * ds.for.mh$HIV.neg.refCat /
+(ds.for.mh$HIV.neg.indexCat * ds.for.mh$HIV.pos.refCat ),2) 
+
+# summary or (see Rothman 2012 p 187 eq 10.6
+
+# doesnt matter that it isn't case-control 
+
+( mh.num = sum(ds.for.mh$HIV.pos.indexCat * 
+               ds.for.mh$HIV.neg.refCat / ds.for.mh$n) )
+
+( mh.den = sum(ds.for.mh$HIV.neg.indexCat * 
+               ds.for.mh$HIV.pos.refCat / ds.for.mh$n) )
+
+round(mh.num/mh.den, 2) # MH or
+
+# very close to or fitted by full logistic model
+
+
+########## 
+
+## summary rr (see Rothman 2012 p 179 eq 10.2 )
+
+
+ds.for.mh$n.ref = ds.for.mh$HIV.pos.refCat +
+                  ds.for.mh$HIV.neg.refCat
+                  
+ds.for.mh$n.index = ds.for.mh$HIV.pos.indexCat +
+                    ds.for.mh$HIV.neg.indexCat
+
+( mh.num = sum(ds.for.mh$HIV.pos.indexCat * 
+               ds.for.mh$n.ref / ds.for.mh$n) )
+
+( mh.den = sum(ds.for.mh$HIV.pos.refCat * 
+               ds.for.mh$n.index / ds.for.mh$n) )
+
+round(mh.num / mh.den, 2)
+
+# just about same as regression-based one
+
+
+###### CI's for these 
+
+## (Rothman 2012, p183) or (easier) ones from regression
+
+ 
+
+
+

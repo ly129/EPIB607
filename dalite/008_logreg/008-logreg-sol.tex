@@ -90,12 +90,20 @@ FALSE and explain why in your rationale:
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  TRUE
+  \textbf{TRUE (Correct)}
 \item
   FALSE
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales}
+
+\begin{itemize}
+\tightlist
+\item
+  When we want to calculate the risk difference we have to subtract the
+  two risks from either group so in this case that would be 22.3\% -
+  9.3\%= 13\%
+\end{itemize}
 
 \subsection{Incorrect rationales}\label{incorrect-rationales}
 
@@ -107,12 +115,28 @@ FALSE and explain why in your rationale:
 \item
   TRUE
 \item
-  FALSE
+  \textbf{FALSE (Correct)}
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales-1}
 
+\begin{itemize}
+\tightlist
+\item
+  Estimate for the risk ratio rather than the odds.
+\item
+  2.4 is the risk ratio (when we divide 22.3/9.3) This is not the odds
+  ratio
+\end{itemize}
+
 \subsection{Incorrect rationales}\label{incorrect-rationales-1}
+
+\begin{itemize}
+\tightlist
+\item
+  You divide the risk of the exposed over the risk of the unexposed to
+  get the odds ratio. In this case 22.3/9.3 = 2.40, answer A) True.
+\end{itemize}
 
 \section{The risk ratio is 2.8}\label{the-risk-ratio-is-2.8}
 
@@ -122,12 +146,32 @@ FALSE and explain why in your rationale:
 \item
   TRUE
 \item
-  FALSE
+  \textbf{FALSE (Correct)}
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales-2}
 
+\begin{itemize}
+\tightlist
+\item
+  The odds ratio is 2.8 ((0.223)/(1-0.223)/(0.093/(1-0.093)
+\end{itemize}
+
 \subsection{Incorrect rationales}\label{incorrect-rationales-2}
+
+\begin{itemize}
+\item
+  \begin{enumerate}
+  \def\labelenumi{(\arabic{enumi})}
+  \tightlist
+  \item
+    Find odds first Odds (no diabetes) = 0.093 / (1 - 0.093) = 0.1025
+    Odds (diabetes) = 0.223 / (1 - 0.223) = 0.2870 (2) Exponentiate the
+    odds No diabetes: exp(0.1025) = 1.107937 Diabetes: exp(0.2870) =
+    1.332424 Odds ratio = 1.352424 / 1.107937 = 1.20 Therefore it is
+    false.
+  \end{enumerate}
+\end{itemize}
 
 \section{The two risks can be connected via the equation: risk(\%) =
 22.3 - 13 *
@@ -139,10 +183,17 @@ Diabetes}\label{the-two-risks-can-be-connected-via-the-equation-risk-22.3---13-d
 \item
   TRUE
 \item
-  FALSE
+  \textbf{FALSE (Correct)}
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales-3}
+
+\begin{itemize}
+\tightlist
+\item
+  Since no diabetes is the reference category (X= 0); which is risk(\%)
+  = 9.3 + 13*Diabetes
+\end{itemize}
 
 \subsection{Incorrect rationales}\label{incorrect-rationales-3}
 
@@ -154,12 +205,21 @@ Diabetes}\label{the-two-risks-can-be-connected-via-the-equation-logrisk--2.38-0.
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  TRUE
+  \textbf{TRUE (Correct)}
 \item
   FALSE
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales-4}
+
+\begin{itemize}
+\tightlist
+\item
+  The regression model:
+  \[\log(risk) = \log(\mu_0) + \log(\theta)*Diabetes\] Then
+  \[\log(\mu_0) = \log(0.093) = -2.38\] and
+  \[\log(\theta) =\log(risk\,\,ratio) = \log(0.223/.093) = 0.87\]
+\end{itemize}
 
 \subsection{Incorrect rationales}\label{incorrect-rationales-4}
 
@@ -171,12 +231,21 @@ Diabetes}\label{the-two-risks-can-be-connected-via-the-equation-logrisk1-risk--2
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  TRUE
+  \textbf{TRUE (Correct)}
 \item
   FALSE
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales-5}
+
+\begin{itemize}
+\item
+\end{itemize}
+
+\begin{align*}
+\log[R1/(1-R1)] &= \log [R0/(1-R0)] + \log {[R1/(1-R1)] /[R0/(1-R0)]} \cdot diabetes\\
+\log [R1/(1-R1)] &= \log(9.3/90.7) + \log(2.8) \times diabetes 
+\end{align*}
 
 \subsection{Incorrect rationales}\label{incorrect-rationales-5}
 
@@ -190,15 +259,21 @@ Diabetes}\label{the-two-risks-can-be-connected-via-the-equation-logrisk1-risk-1.
 \item
   TRUE
 \item
-  FALSE
+  \textbf{FALSE (Correct)}
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales-6}
 
+\begin{itemize}
+\tightlist
+\item
+  Coefficients reversed from previous question
+\end{itemize}
+
 \subsection{Incorrect rationales}\label{incorrect-rationales-6}
 
-\section{4 year risk for intermittent
-claudication}\label{year-risk-for-intermittent-claudication}
+\section{4 year risk for intermittent claudication
+I}\label{year-risk-for-intermittent-claudication-i}
 
 Using the coefficients in his Table 12.2, Rothman (2012) calculated a 4
 year risk for intermittent claudication of 6.7\% if the 70-year old man
@@ -215,21 +290,84 @@ all that apply and justify your choices in the rationale)
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  \%Risk{[}Diabetes{]} = 2.7 * (2.5 \^{} Diabetes)
+  \textbf{\%Risk{[}Diabetes{]} = 2.7 * (2.5 \^{} Diabetes) (Correct)}
 \item
-  Odds{[}Diabetes{]} = (2.7/97.3) * ( ((6.7/93.3)/(2.7/97.3)) \^{}
-  Diabetes )
+  \textbf{Odds{[}Diabetes{]} = (2.7/97.3) * ( ((6.7/93.3)/(2.7/97.3))
+  \^{} Diabetes ) (Correct)}
 \item
-  Odds{[}Diabetes{]} = (2.7/97.3) * (2.59 \^{} Diabetes)
+  \textbf{Odds{[}Diabetes{]} = (2.7/97.3) * (2.59 \^{} Diabetes)
+  (Correct)}
 \item
-  log{[} Odds{[}Diabetes{]} {]} = -3.58 + 0.95 * Diabetes
+  \textbf{log{[} Odds{[}Diabetes{]} {]} = -3.58 + 0.95 * Diabetes
+  (Correct)}
 \item
   log{[} Risk{[}Diabetes{]} {]} = -3.58 + 0.95 * Diabetes
 \end{enumerate}
 
 \subsection{Correct rationales}\label{correct-rationales-7}
 
+\begin{itemize}
+\tightlist
+\item
+  A, B, C, and D are correct. If diabetes = 1 and no-diabetes = 0, the
+  equation of A would work: 2.7 * (2.5 \^{} Diabetes) 2.7 * (2.5 \^{} 0)
+  2.7 (1) = 2.7 = the risk among the unexposed, it's the intercept 2.7 *
+  (2.5 \^{} Diabetes) 2.7 * (2.5 \^{} 1) 2.7 (1) = 6.7 = the risk among
+  the exposed E is incorrect because when you calculate the log of
+  theta, we get a value that is NOT 0.95.
+\item
+  A, B, C, and D are correct A is correct because when diabetes =0, \%
+  risk = 2.7, and when diabetes =1, \% risk = 6.75\% which can be
+  rounded down to 6.7\% E is wrong because even though Risk when no
+  diabetes = 0.02717253 ln0.02717253 = 3.60 ln (risk ratio) =
+  ln(6.7/2.7) = 0.909. This is very far off from 0.95 D is correct
+  because: Odds when no diabetes = 0.0279 Ln odds no diabetes = -3.58
+  Odds (diabetes =1) = 0.0718 , this aligns with the values from B
+  (0.0718) and C(0.0719) for diabetes =1. Ln odds ratio = ln (0.0718/
+  0.0279)=0.95
+\end{itemize}
+
 \subsection{Incorrect rationales}\label{incorrect-rationales-7}
+
+\section{4 year risk for intermittent claudication
+II}\label{year-risk-for-intermittent-claudication-ii}
+
+Using the coefficients in his Table 12.2, Rothman (2012) calculated a 4
+year risk for intermittent claudication of 6.7\% if the 70-year old man
+had the example profile, which included normal blood pressure, AND
+diabetes.
+
+If we reversed the outcome and worked with an equation for STAYING FREE
+of intermittent claudication, rather than developing it, the logistic
+equations would
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \textbf{have the same coefficients but all their signs would be
+  reversed (Correct)}
+\item
+  have the same-sign intercept but the other coefficients would have
+  their signs reversed
+\item
+  have the opposite-sign intercept but the same-sign other coefficients
+\end{enumerate}
+
+\subsection{Correct rationales}\label{correct-rationales-8}
+
+\begin{itemize}
+\tightlist
+\item
+  A is correct because we are predicting the opposite effect. B is
+  incorrect because when all other predictors are 0, the risk of
+  developing intermittent claudication cannot be the same as staying
+  free of intermittent claudication. C is incorrect because the slopes
+  for the predictors cannot be the same sign if we are predicting the
+  opposite outcome.
+\end{itemize}
+
+\subsection{Incorrect rationales}\label{incorrect-rationales-8}
 
 %\showmatmethods
 

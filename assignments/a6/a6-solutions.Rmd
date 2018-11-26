@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 ```
 
 
-# Bias in step counters
+# Bias in step counters (30 points)
 
 ```{r results='hide', fig.keep='none'}
 ## ---- Question-1 ------------------------------------------------------------
@@ -47,7 +47,7 @@ step_prob <- round(xpnorm(q = step_critv, mean = 470, sd = step_s/sqrt(step_n)),
 ```
 
 
-a) The null hypothesis is $\mu = \mu_o = 500$ steps and the alternative hypothesis is $\mu < 500$ steps. This would be a one-tailed test on the right tail of the null hypothesis sampling distribution. Assuming an SRS and that the CLT has kicked in (ie: a Gaussian sampling distribution), the critical value would be `r step_critvdisp` steps. 
+a) (10 points) The null hypothesis is $\mu = \mu_o = 500$ steps and the alternative hypothesis is $\mu < 500$ steps. This would be a one-tailed test on the right tail of the null hypothesis sampling distribution. Assuming an SRS and that the CLT has kicked in (ie: a Gaussian sampling distribution), the critical value would be `r step_critvdisp` steps. 
 
 You could also use the $t$ cutoff:
 
@@ -64,9 +64,9 @@ min_crit_step <- qt(0.01, df = 24, lower.tail=TRUE)*se_step + mu_step
 
 I decided to use t-procedures in this calculation due to a smaller sample size, and the estimation of the true population standard deviation. The minimum value is determined to be `r round(min_crit_step,2)` steps.
 
-b) If the mean steps counted by the step counter was 470 steps (ie: $\mu_a = 470$), the probability of getting a sample of 25 with a mean less than the critical value of `r step_critvdisp` steps is `r step_prob`. This is the statistical power to detect 470 or fewer steps. 
+b) (10 points)  If the mean steps counted by the step counter was 470 steps (ie: $\mu_a = 470$), the probability of getting a sample of 25 with a mean less than the critical value of `r step_critvdisp` steps is `r step_prob`. This is the statistical power to detect 470 or fewer steps. 
 
-c) 
+c) (10 points) 
 
 ```{r}
 #sample size for 80% power p = 0.80
@@ -106,7 +106,7 @@ power_plot(n = n_step_80,
 ```
 
 
-# Boosting sales
+# Boosting sales (20 points, 5 each)
 
 
 ```{r}
@@ -139,7 +139,7 @@ Following the same idea, the probability for a Type II error when the sample mea
 Thanks to the large sample size of 900, it is fair to assume that the Central Limit Theorm has kicked in, providing a normal curve and allowing us to conduct our analysis on this data.
 
 
-# Fill the bottles
+# Fill the bottles (20 points, 5 each)
 
 ```{r}
 ## ---- Question-3 ------------------------------------------------------------
@@ -183,7 +183,7 @@ Figure 2. Presented is a plot of the power as a function of the shortfall.
 
 3d. Above, a plot was made to demonstrate the relationship of power as a function of the shortfall (∆). It can be observed that as the shortfall increases (delta) and assuming everything else is held constant, the power increases. This is observed in Figure 2 above. 
 
-# Drunken cyclists
+# Drunken cyclists (10 points)
 
 ```{r}
 ## ---- Question-4 - --------------------------------------------------------
@@ -206,16 +206,20 @@ CI_99_drunk_bike <- qnorm(p = c(0.005, 0.995), mean = p_drunk_bike, sd = sigma_d
 ```
 
 ### To do statistical inference for these data, we think in terms of a model where *p* is parameter that represents the probability that a tested bicycle rider is positive for alcohol. Find a 99% confidence interval for *p*.
-First the probability that a test bicycle rider needs to be calculated based on this sample, which would be 542 testing positive for alcohol out of 1711 fatal bicycle incidents. This propotion is found to be `r round(p_bike,2)`. Since this is a very large sample size, it is fair to assume that the CLT has kicked in, meaning normality can be assumed. Thus a 99% confidence interval built around the probability of `r round(p_bike,2)` would be probabilities of `r round(CI_99_bike, 2)`. Thus 99% of the time, our procedure would produce a CI that covers the true probability that someone would test positive for alcohol in a fatal bike accident is between `r round(CI_99_bike,2)`.
+
+(4 points) First the probability that a test bicycle rider needs to be calculated based on this sample, which would be 542 testing positive for alcohol out of 1711 fatal bicycle incidents. This propotion is found to be `r round(p_bike,2)`. Since this is a very large sample size, it is fair to assume that the CLT has kicked in, meaning normality can be assumed. Thus a 99% confidence interval built around the probability of `r round(p_bike,2)` would be probabilities of `r round(CI_99_bike, 2)`. Thus 99% of the time, our procedure would produce a CI that covers the true probability that someone would test positive for alcohol in a fatal bike accident is between `r round(CI_99_bike,2)`.
 
 ### Can you conclude from your analysis of this study that alcohol causes fatal bicycle accidents? Explain.
-I cannot conclude that alcohol causes fatal bicycle accidents. For that information, a study would need to conducted analyzing the proportion of people who used a bicycle with alcohol in their blood. That way we can measure the proportion of fatal accidents based off of that information. This study only measures how many fatal bicycle accidents had alcohol involved, but there is no information on the number of people riding bicycles with alcohol in their blood.
+
+
+(3 points)  I cannot conclude that alcohol causes fatal bicycle accidents. For that information, a study would need to conducted analyzing the proportion of people who used a bicycle with alcohol in their blood. That way we can measure the proportion of fatal accidents based off of that information. This study only measures how many fatal bicycle accidents had alcohol involved, but there is no information on the number of people riding bicycles with alcohol in their blood.
 
 ### In this study 386 bicyclists had blood alcohol levels above 0.10%, a level defining legally drunk in many states at the time. Give a 99% confidence interval for the proportion who were legally drunk according to this criterion.
-First the proportion of those legally drunk needs to be determined. This would be 386 drunk cyclists out of 1711 fatal bicycle accidents. That proportion can be found as `r round(p_drunk_bike,2)`. Building a 99% confidence interval around that number would give us proportions of `r round(CI_99_drunk_bike,2)`. Thus with 99% cconfidence, the true population proportion of drunk cyclists in fatal accidents lies between `r round(CI_99_drunk_bike,2)`.
+
+(3 points) First the proportion of those legally drunk needs to be determined. This would be 386 drunk cyclists out of 1711 fatal bicycle accidents. That proportion can be found as `r round(p_drunk_bike,2)`. Building a 99% confidence interval around that number would give us proportions of `r round(CI_99_drunk_bike,2)`. Thus with 99% cconfidence, the true population proportion of drunk cyclists in fatal accidents lies between `r round(CI_99_drunk_bike,2)`.
 
 
-# Handling contact lenses
+# Handling contact lenses (10 points, 2.5 each)
 
 ```{r}
 ## ---- Question-5 - --------------------------------------------------------
@@ -246,7 +250,7 @@ q5b_ci99 <- round(q5b_ci99,2)
 
 5d. Survey participants simply answered a questionnaire, and no attempt was made to verify the answers. This could cause some bias in the sample results. For example, there could be some social desireability bias introduced. If participants are afraid of judgement from the researchers, they may untruthfully answer that they wash their contacts, which would be on the contrary to their unhygienic ways. No verification may lead to respondents answering different than their behaviour. Verification would lead to more accurate results abut their behaviour. The margin of error in a confidence interval covers only chance variation due to random sampling or random assignment. As a result, when interpretting the confidence interval, it may be prudent to state that the confidence interval for proportion of respondents who say they wash their hands instead of this is the confidence interval for proportion of respondents who actually wash their hands before handling their contact lenses. 
 
-# Cancer-detecting dogs
+# Cancer-detecting dogs (10 points, 2.5 each)
 
 ```{r results='hide', fig.keep='none'}
 ## ---- Question-6 - --------------------------------------------------------

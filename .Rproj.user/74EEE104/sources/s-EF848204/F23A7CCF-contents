@@ -1,0 +1,177 @@
+# 2012.10.14
+
+# below are several fits ..
+
+# ideally, one should use the Poisson model (with inbuilt var = mu) rather than the
+# N(,) model with inbuilt (assumed) same variance regardless of mu
+
+# also, this rate problem is different from the usual ones we have
+# with mortality, cancer, etc.. in that in such cases, we know
+# the age at which the event (cancer, death) occurred.
+# whereas, with the mutations, we are not there to watch the mutations happen
+# we only get to see the total, at the end... 
+
+# thus the need to integrate the rate function from birth to the age
+# at which the father fathered the child...
+
+# This examples has some lessons about parametrizations and 'centering'
+# of the ages (the 'x') in the likelihood â€” and in any regressions
+
+# recall from regular (simple) regression, the correlation of
+# beta_0_hat and beta_1_hat becomes more pronounced the further the
+# x's are from zero, and that the correlation is zero only if the
+# x's are centered ..  
+
+# the same issues occur when using 2 x's, but one of the x's is the square
+# of the other.... i.e., x and x^2 (or here age and (1/2) age^2 )  
+
+# age and age^2 are very  correlated, but age-30 and its square are 
+# less so.... or even age-15 and its square...
+
+# so its important for maximization/numerical purposes to
+# make the 2-D search less challenging......
+
+setwd("/Users/jameshanley/Dropbox/Courses/bios601/Intensity-Rates")
+
+ds <- read.table("http://www.medicine.mcgill.ca/epidemiology/hanley/bios601/Lifetables/mutationsFathersMothersAge.txt")
+colnames(ds)=c("fathers.age", "mothers.age", "n.mutations")
+ds$aa =  (1/2) * ds$fathers.age * ds$fathers.age
+
+head(ds)
+
+cor(ds)
+plot(ds)
+
+m=lm(n.mutations~mothers.age,data=ds) ; summary(m)
+
+f=lm(n.mutations ~ fathers.age,data=ds) ; summary(f)
+f.no.int = lm(n.mutations~-1+fathers.age,data=ds) ; summary(f.no.int)
+
+
+fm=lm(n.mutations~fathers.age+mothers.age,data=ds); summary(fm)
+
+glm.f=glm(n.mutations~-1+fathers.age,
+          family=poisson(link="identity"),data=ds); 
+summary(glm.f)
+
+glm.fm=glm(n.mutations~fathers.age+mothers.age,
+           family=poisson(link="identity"),data=ds); 
+summary(glm.fm)
+
+
+## 
+
+f.linear.rate=lm(n.mutations~-1+fathers.age+aa,data=ds) ; summary(f.linear.rate)
+
+f.linear.rate.p=glm(n.mutations~-1+fathers.age+aa,data=ds,
+                    family=poisson(link="identity")) ; summary(f.linear.rate.p) # Normal errors
+
+plot(sort(ds$fathers.age),sort(f.linear.rate$fitted.values),type="l")
+
+lines(ds$fathers.age,f.no.int$fitted.values,col="red")
+
+lines(ds$fathers.age,f$fitted.values,col="blue")
+
+plot(15:40,f.no.int$coefficients[1]+0*(15:40))
+lines(15:40,f.linear.rate$coefficients[1]+f.linear.rate$coefficients[2]*(15:40))
+
+plot(15:40,f.linear.rate$coefficients[1]+
+       f.linear.rate$coefficients[2]*(15:40) +
+       f.linear.rate$coefficients[3]*(15:40),type="l")
+
+########  added later 
+
+age=ds$fathers.age
+
+half.age.sq = (age^2)/2
+
+mutations=ds$n.mutations
+
+mu = function(lambda)  lambda * age 
+
+log.lik = function(lambda) -sum( mu(lambda) ) + sum( mutations * log(  mu(lambda) ) )
+
+optim(2,log.lik,method="BFGS",hessian=T,control=list(fnscale=-1,parscale=0.001))
+
+
+mu.linear = function(lambda,beta)  lambda * age +  beta * half.age.sq 
+
+log.lik.linear = function(par)  -sum( mu.linear(par[1],par[2] ) ) + 
+  sum( mutations * log( mu.linear(par[1],par[2]) ) )
+
+optim(c(2.2,-0.01),log.lik.linear,method="BFGS",hessian=T,control=list(fnscale=-1, parscale=c(0.1,0.001))) 
+
+summary( glm(mutations ~ -1 + age + half.age.sq, family=poisson(link="identity"),
+             control=list(trace=T, epsilon=0.0000000000001) ) ) 
+
+
+# this wont work in outer function (since lower upper and f are themselves vectors), 
+# so 'force' the issue ... 
+
+log.lik.LINEAR = function(p1,p2)  -sum( mu.linear(p1,p2 ) ) + 
+  sum( mutations * log( mu.linear(p1,p2) ) )
+
+log.lik.vector = Vectorize( log.lik.LINEAR, c("p1", "p2") )
+
+p1 = seq(2.20,2.3,0.0002) ; length(p1) ; p2= seq(0,0.005, 0.00001) ; length(p2)
+
+log.lik.values = outer(p1, p2, log.lik.vector)
+
+max.log.lik.values  = max(log.lik.values) ; max.log.lik.values
+
+i.max = unlist(apply(log.lik.values,1, function(x) which(x==max.log.lik.values) )) ; i.max
+j.max = unlist(apply(log.lik.values,2, function(x) which(x==max.log.lik.values) )) ; j.max
+
+mle = c(p1[i.max],p2[j.max]) ; mle
+
+rel.log.lik.values = log.lik.values  - max.log.lik.values
+
+contour( p1, p2, rel.log.lik.values, nlevels=100,xlab="p1", ylab="p2", labcex=1.1)
+points(mle[1],mle[2],col="red")
+
+
+######  re-parameterize  , with different age 'origins' or 'centres'
+
+# 
+
+age.c=25  #### age.'centre' .... vary this and see the diff. in shape of contours
+
+rate = function(a,lambda.at.c,beta) lambda.at.c + beta*(a-age.c)
+
+
+# integral = lambda*age + beta*( (1/2) * age^2 ) - 30 * beta * age
+
+# mu.linear.c = function(a,lambda.at.30,beta) integrate(rate, 0, a, 
+#    lambda.at.30 = lambda.at.30, beta=beta)$value
+
+mu.linear.c = function(lambda.at.c,beta) lambda.at.c*age + beta*half.age.sq - age.c * beta * age
+
+
+mu.linear.c(2, 0.01)
+
+log.lik.LINEAR.c = function(p1,p2) -sum( mu.linear.c(p1,p2 ) ) + 
+  sum( mutations * log( mu.linear.c(p1,p2) ) )
+
+log.lik.LINEAR.c(2, .01)
+
+log.lik.vector.c = Vectorize( log.lik.LINEAR.c, c("p1", "p2") )
+
+p1 = seq(2.02,2.15,0.0005) ; length(p1) ; p2= seq(-0.02, 0.002,  0.0001) ; length(p2)
+
+log.lik.values.c = outer(p1, p2, log.lik.vector.c)
+
+# max.log.lik.values.c  = max(log.lik.values.c) ; max.log.lik.values.c
+
+contour( p1, p2, log.lik.values.c, nlevels=100,xlab="p1", ylab="p2", labcex=0.75)
+
+# need to use a single vector
+
+log.lik.LINEAR.c = function(para) -sum( mu.linear.c(para[1],para[2] ) ) + 
+  sum( mutations * log( mu.linear.c(para[1],para[2]) ) )
+
+
+optim(c(2.2,-0.01),log.lik.LINEAR.c,method="BFGS",hessian=T,
+      control=list(fnscale=-1, parscale=c(0.1,0.001)))
+
+
+

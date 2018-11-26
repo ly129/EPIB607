@@ -1,0 +1,152 @@
+rm(list = ls())
+source("~/Dropbox/consulting/greenfield/bin/data.R")
+options(digits = 4, scipen = 999)
+
+
+
+# Plot of imputation ------------------------------------------------------
+
+mice:::bwplot.mids(as.mids(m_comp))
+mice:::plot.mids(m)
+mice:::densityplot.mids(m)
+
+# Plots of outcomes  ------------------------------------------------------
+
+png("results/boxplot.png", res = 150, units = "in", height = 8, width = 11)
+lattice::bwplot(time ~ value | outcome, groups = subject, 
+                data = dplyr::filter(DT_long, outcome %in% c("suicide","CGAS")),
+                type = "l", scales=list(relation="free"))
+dev.off()
+
+png("results/lineplot.png", res = 150, units = "in", height = 8, width = 11)
+lattice::xyplot(value ~ time | outcome, groups = subject, 
+       data = dplyr::filter(DT_long, outcome %in% c("suicide","CGAS")),
+       type = "l", scales=list(relation="free"))
+dev.off()
+
+
+
+d <- describe(DT_long)
+
+p <- with(dplyr::filter(DT_long, outcome %in% c("suicide")), 
+          histboxp(x=value, group=time, sd=TRUE,
+                             bins=200))
+
+p <- with(dplyr::filter(DT_long, outcome %in% c("CGAS")), 
+          histboxp(x=value, group=time, sd=TRUE,
+                   bins=200))
+
+
+
+# Table 1 -----------------------------------------------------------------
+
+
+CreateTableOne(data = (dplyr::filter(m_comp, .imp == 0, time == 1) %>% dplyr::select(-.imp, -subject, -.id)))
+
+dput(names(m_comp))
+
+myVars <- c("ma", "id", "ss", "a", "nss", "has", 
+            "ps", "rds", "sds", "cs", "sts", "ddyp", "Alcohol", "Drugs", "Age", "Sex", 
+            "IFR", "Coddington", "BPD", "Affect", "Cognition", "Impulsivity", "CGAS",  
+            "ConductC", "ConductX", "DepressionC", "DepressionX",  
+            "suicide")
+catVars <- c("ConductX", "DepressionX", "BPD","Sex","ddyp","Alcohol", "Drugs")
+
+tab2 <- CreateTableOne(vars = myVars, data = dplyr::filter(m_comp, .imp == 0, time == 1), 
+                       factorVars = catVars,
+                       strata = c("BPD","DepressionX"),
+                       includeNA = FALSE)
+
+print(tab2, showAllLevels = TRUE,
+      # nonnormal = c("IFR","Coddington"),
+      exact = c("ConductX","Sex","ddyp", "Alcohol", "Drugs"))
+
+tab3Mat <- print(tab2, showAllLevels = TRUE,
+                 # nonnormal = c("IFR","Coddington"),
+                 exact = c("ConductX","aiqsex","ddyp"),
+                 quote = FALSE, noSpaces = TRUE, printToggle = FALSE)
+## Save to a CSV file
+write.csv(tab3Mat, file = "Table1.csv")
+
+# Model Suicide ------------------------------------------------------------------
+
+fit1 <- with(data = as.mids(m_comp), 
+             exp = lme4::lmer(suicide ~ BPD * DepressionX + ConductX + Age + Sex + 
+                                Drugs + Alcohol + 
+                                IFR + Coddington + ddyp + 
+                                ma + id + ss + a +
+                                nss + has + ps + rds + sds + cs + sts + ps +
+                                (1|subject)
+                              )
+             )
+
+pooledModel <- pool(fit1)
+(df_results <- summary(pool(fit1)))
+
+
+suicide_coef <- df_results %>% 
+  as.data.table(keep.rownames = TRUE) %>% 
+  rename(term=rn, estimate=est, conf.low =`lo 95`, conf.high = `hi 95`, p.value=`Pr(>|t|)`) #%>% 
+  # filter(term != "(Intercept)")
+
+# mtcars3$car <- factor(mtcars2$car, levels = mtcars2[order(mtcars$mpg), "car"])
+suicide_coef[, term := factor(term, levels = suicide_coef[order(suicide_coef$estimate)]$term,
+                              labels = c("Youth Protection", "Drugs", "sts", "nss", "has", 
+                                         "sds", "Age", "a", "cs", "ss", "Coddington", "ma", "IFR", "id", 
+                                         "rds", "ps", "Alcohol", "BPD", "Sex=2", "BPD * Depression", 
+                                         "DepressionX", "ConductX", "(Intercept)"))]
+
+# dput(suicide_coef[order(suicide_coef$estimate)]$term)
+
+ggcoef(suicide_coef, exclude_intercept = TRUE)
+
+ggsave(filename = "results/coef_suicide.png", width = 11, height = 8)
+  
+
+suicide_coef[,.(term,estimate=round(estimate,3),standard.error = round(se,3),
+                           p.value = round(p.value,4), lower95=round(conf.low,3), 
+                upper95=round(conf.high,3))]
+
+
+# Model CGAS --------------------------------------------------------------
+
+fit2 <- with(data = as.mids(m_comp), 
+             exp = lme4::lmer(CGAS ~ BPD * DepressionX + ConductX + Age + Sex + 
+                                Drugs + Alcohol + 
+                                IFR + Coddington + ddyp + 
+                                ma + id + ss + a +
+                                nss + has + ps + rds + sds + cs + sts + ps +
+                                (1|subject)
+             )
+)
+
+pooledModel <- pool(fit2)
+(df_results <- summary(pool(fit2)))
+
+
+cgas_coef <- df_results %>% 
+  as.data.table(keep.rownames = TRUE) %>% 
+  rename(term=rn, estimate=est, conf.low =`lo 95`, conf.high = `hi 95`, p.value=`Pr(>|t|)`) #%>% 
+# filter(term != "(Intercept)")
+
+# mtcars3$car <- factor(mtcars2$car, levels = mtcars2[order(mtcars$mpg), "car"])
+# NOTE THAT YOU MUST CHANGE LABELS IF THE COEFFICIENTS CHANGE... 
+# use dput(cgas_coef[order(cgas_coef$estimate)]$term)
+cgas_coef[, term := factor(term, levels = cgas_coef[order(cgas_coef$estimate)]$term,
+                              labels = c("DepressionX", "ConductX", "Drugs", "Youth Protection", "BPD", "Age", 
+                                         "rds", "IFR", "ps", "Coddington", "id", "ma", "ss", "has", "a", 
+                                         "BPD * Depression", "nss", "cs", "sts", "sds", "Alcohol", "Sex=2", 
+                                         "(Intercept)"))]
+
+# dput(cgas_coef[order(cgas_coef$estimate)]$term)
+
+ggcoef(cgas_coef, exclude_intercept = TRUE)
+
+ggsave(filename = "results/coef_cgas.png", width = 11, height = 8)
+
+
+cgas_coef[,.(term,estimate=round(estimate,3),standard.error = round(se,3),
+                p.value = round(p.value,4), lower95=round(conf.low,3), 
+                upper95=round(conf.high,3))]
+
+

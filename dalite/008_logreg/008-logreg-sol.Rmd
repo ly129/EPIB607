@@ -102,12 +102,13 @@ Thus, with respect to the No Diabetes (ref. category) vs. Diabetes (index catego
 
 # The risk difference is 13% 
 
-a. TRUE
+a. **TRUE (Correct)**
 b. FALSE
 
 
 ## Correct rationales
 
+- When we want to calculate the risk difference we have to subtract the two risks from either group so in this case that would be 22.3% - 9.3%= 13%
 
 
 ## Incorrect rationales
@@ -117,28 +118,35 @@ b. FALSE
 # The odds ratio is 2.4
 
 a. TRUE
-b. FALSE
+b. **FALSE (Correct)**
 
 
 ## Correct rationales
 
+- Estimate for the risk ratio rather than the odds.
+- 2.4 is the risk ratio (when we divide 22.3/9.3) This is not the odds ratio
 
 
 ## Incorrect rationales
 
-
+- You divide the risk of the exposed over the risk of the unexposed to get the odds ratio. In this case 22.3/9.3 = 2.40, answer A) True.
 
 # The risk ratio is 2.8
 
 a. TRUE
-b. FALSE
+b. **FALSE (Correct)**
 
 
 ## Correct rationales
 
+- The odds ratio is 2.8 ((0.223)/(1-0.223)/(0.093/(1-0.093)
+
 
 
 ## Incorrect rationales
+
+- (1) Find odds first Odds (no diabetes) = 0.093 / (1 - 0.093) = 0.1025 Odds (diabetes) = 0.223 / (1 - 0.223) = 0.2870 (2) Exponentiate the odds No diabetes: exp(0.1025) = 1.107937 Diabetes: exp(0.2870) = 1.332424 Odds ratio = 1.352424 / 1.107937 = 1.20 Therefore it is false.
+
 
 
 
@@ -146,12 +154,12 @@ b. FALSE
 
 
 a. TRUE
-b. FALSE
+b. **FALSE (Correct)**
 
 
 ## Correct rationales
 
-
+- Since no diabetes is the reference category (X= 0); which is risk(%) = 9.3 + 13*Diabetes
 
 ## Incorrect rationales
 
@@ -168,13 +176,15 @@ b. FALSE
 
 
 
-a. TRUE
+a. **TRUE (Correct)**
 b. FALSE
 
 
 ## Correct rationales
 
-
+- The regression model: $$\log(risk) = \log(\mu_0) + \log(\theta)*Diabetes$$ 
+Then
+$$\log(\mu_0) = \log(0.093) = -2.38$$ and $$\log(\theta) =\log(risk\,\,ratio) = \log(0.223/.093) = 0.87$$
 
 ## Incorrect rationales
 
@@ -187,13 +197,18 @@ b. FALSE
 
 
 
-a. TRUE
+a. **TRUE (Correct)**
 b. FALSE
 
 
 ## Correct rationales
 
+- 
 
+\begin{align*}
+\log[R1/(1-R1)] &= \log [R0/(1-R0)] + \log {[R1/(1-R1)] /[R0/(1-R0)]} \cdot diabetes\\
+\log [R1/(1-R1)] &= \log(9.3/90.7) + \log(2.8) \times diabetes 
+\end{align*}
 
 ## Incorrect rationales
 
@@ -210,12 +225,12 @@ b. FALSE
 
 
 a. TRUE
-b. FALSE
+b. **FALSE (Correct)**
 
 
 ## Correct rationales
 
-
+- Coefficients reversed from previous question
 
 ## Incorrect rationales
 
@@ -223,22 +238,49 @@ b. FALSE
 
 
 
-# 4 year risk for intermittent claudication
+# 4 year risk for intermittent claudication I
 
 Using the coefficients in his Table 12.2, Rothman (2012) calculated a 4 year risk for intermittent claudication of 6.7% if the 70-year old man had the example profile, which included normal blood pressure, AND diabetes.
 
 If the profile did NOT include diabetes, but was otherwise unchanged, then (ignoring small rounding errors) the single equation that connects/expresses/summarizes the risks for those without (reference category) and with diabetes (Index category) can be written as (select all that apply and justify your choices in the rationale)
 
 
-a. %Risk[Diabetes] = 2.7 * (2.5 ^ Diabetes)
-b. Odds[Diabetes] = (2.7/97.3) * ( ((6.7/93.3)/(2.7/97.3)) ^ Diabetes )
-c. Odds[Diabetes] = (2.7/97.3) * (2.59 ^ Diabetes)
-d. log[ Odds[Diabetes] ] = -3.58 + 0.95 * Diabetes
+a. **%Risk[Diabetes] = 2.7 * (2.5 ^ Diabetes) (Correct)**
+b. **Odds[Diabetes] = (2.7/97.3) * ( ((6.7/93.3)/(2.7/97.3)) ^ Diabetes ) (Correct)**
+c. **Odds[Diabetes] = (2.7/97.3) * (2.59 ^ Diabetes) (Correct)**
+d. **log[ Odds[Diabetes] ] = -3.58 + 0.95 * Diabetes (Correct)**
 e. log[ Risk[Diabetes] ] = -3.58 + 0.95 * Diabetes
+
+
+## Correct rationales
+
+- A, B, C, and D are correct. If diabetes = 1 and no-diabetes = 0, the equation of A would work: 2.7 * (2.5 ^ Diabetes) 2.7 * (2.5 ^ 0) 2.7 (1) = 2.7 = the risk among the unexposed, it's the intercept 2.7 * (2.5 ^ Diabetes) 2.7 * (2.5 ^ 1) 2.7 (1) = 6.7 = the risk among the exposed E is incorrect because when you calculate the log of theta, we get a value that is NOT 0.95.
+- A, B, C, and D are correct A is correct because when diabetes =0, % risk = 2.7, and when diabetes =1, % risk = 6.75% which can be rounded down to 6.7% E is wrong because even though Risk when no diabetes = 0.02717253 ln0.02717253 = 3.60 ln (risk ratio) = ln(6.7/2.7) = 0.909. This is very far off from 0.95 D is correct because: Odds when no diabetes = 0.0279 Ln odds no diabetes = -3.58 Odds (diabetes =1) = 0.0718 , this aligns with the values from B (0.0718) and C(0.0719) for diabetes =1. Ln odds ratio = ln (0.0718/ 0.0279)=0.95
+
+## Incorrect rationales
+
+
+
+
+
+# 4 year risk for intermittent claudication II
+
+Using the coefficients in his Table 12.2, Rothman (2012) calculated a 4 year risk for intermittent claudication of 6.7% if the 70-year old man had the example profile, which included normal blood pressure, AND diabetes.
+
+If we reversed the outcome and worked with an equation for STAYING FREE of intermittent claudication, rather than developing it, the logistic equations would
+
+
+a. **have the same coefficients but all their signs would be reversed (Correct)**
+b. have the same-sign intercept but the other coefficients would have their signs reversed
+c. have the opposite-sign intercept but the same-sign other coefficients
 
 
 ## Correct rationales
 
 
 
+- A is correct because we are predicting the opposite effect. B is incorrect because when all other predictors are 0, the risk of developing intermittent claudication cannot be the same as staying free of intermittent claudication. C is incorrect because the slopes for the predictors cannot be the same sign if we are predicting the opposite outcome.
+
+
 ## Incorrect rationales
+

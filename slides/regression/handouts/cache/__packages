@@ -9,3 +9,5 @@ ggformula
 mosaicData
 Matrix
 mosaic
+tidyr
+bindrcpp

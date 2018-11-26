@@ -1,0 +1,151 @@
+# Clayton Hills, example 22.6 p221 
+
+# [jh version 2008.02.24]
+
+# DATA
+
+cases=c(4,2,5,12,8,14);
+
+pt=c(607.9,311.9,1272.1,878.1,888.9,667.5)
+
+e=c(0,1,0,1,0,1)
+
+# 2 age-category indicators *
+
+a50=c(0,0,1,1,0,0)
+a60=c(0,0,0,0,1,1)
+
+# * could also use the gl function (below)
+#   to set up variables that have a pattern
+#   (or use the as.factor to create indicator -- 'dummy' --
+#   variables for categorical variables). But you
+#   have more control' if you set them up 'manually'
+
+# no need to think of exposure as a `factor' since
+# it is already 0/1 and can be included as a linear 
+# (continuous) variable
+
+
+#######################################
+# to fit additive (ie ID Ratio) model
+######################################
+
+# make products with pt
+# (you will need to fill in the blanks ... )
+
+e.pt   =   e*pt 
+a50.pt = a50*pt
+a60.pt = a60*pt
+
+# have a look
+
+cbind(cases,pt,e,a50,a60, e.pt,a50.pt,a60.pt)
+
+# for rate DIFFERENCE models, 
+
+# rate = rate.ref + (linear fn. of x's), so...
+# cases = rate * PT
+# ie.   = rate.ref*PT + PT*(linear fn. of x's), so...
+# need to 'multipy through..' by PT
+# and so terms in model become the products of
+# each 'x' with PT.
+
+# use POISSON variation
+# and IDENTITY link. IDENTITY just means that you
+# are asking that the (untransformed) 
+# E[#cases] = linear predictor = [B0] + B1.X1 + B2.X2 + .. 
+# you are not modelling some transform of E[#cases]
+# (for the multiplicative model below, you will model
+# a transformation , ie the log, of E[#cases] as a
+# function of the linear predictor 
+
+# remember... (? = shorthand for "coefficient to be fitted")
+
+#  rate = ?rate.ref + ? * e + ? * a50 + ? * a60, so
+ 
+#      multiplying across by pt... and expanding...
+
+#  cases = ?rate.ref*pt + ?*e*pt + ?*a50*pt + ?*a60*pt, so
+
+fit.add=glm(cases ~ -1 + pt + e.pt + a50.pt + a60.pt ,
+    family=poisson(link="identity"))
+    
+summary(fit.add)
+    
+fitted.cases = round( ),
+                     1);
+                     
+fitted.cases
+
+residuals = round(residuals(glm(cases~-1 + pt+ e.pt + ... ,
+                     family=poisson(link="identity")) ),
+                     1);
+
+cbind(cases,fitted.cases,residuals)
+
+# etc etc 
+
+#############################################
+# to fit multiplicative (ie ID Ratio) model
+#############################################
+
+# again, with notation that ? = beta to be fitted, X = multiplication
+
+# rate = ?rate.ref X (exp[? * e]) X (exp[? * a50]) X (exp[? * a60])
+
+# cases = rate * pt
+
+# cases = exp[lin. comb'n of ?'s & regressors] * pt
+
+# so, ...
+
+# log(cases) = [lin. comb'n of ?'s & regressors] + log(pt)
+
+# log(cases) = [usual ?0 + ?1 x1  + ?2 x 2 ... ] + offset
+
+# Again, POISSON variation. By default, when you specify
+# Poisson, the LOG link is used, i.e.,  
+# 
+# This is equivalent to 
+#
+# E[rate] = exp(?0) X exp(?1 x1) X exp(?2 x2) .... 
+#
+# so just match up the coefficients with the output
+# 
+
+fit.mult=glm(cases ~ e + a50 + a60,family=poisson,offset=log(pt))
+
+beta.fitted = fit.mult$coefficients
+
+beta.fitted
+
+round(  exp(beta.fitted[1]), 4)
+
+round(  exp(beta.fitted[2:4]), 2)
+
+round(fit.mult$fitted.values,1)
+
+cases
+
+# make levels for age and exposure
+# (could also create manually, see e a50 a60 above)
+
+e=gl(2,1,6,labels=c("1","0"));e
+a=gl(3,2,6,labels=c("40","50","60"));a
+
+
+# etc etc
+
+age=c( 0, 0, 10,10, 20,20)
+
+age=c(45,45, 55,55, 65,65)
+
+fit.mult=glm(cases ~ e + age,family=poisson,offset=log(pt))
+
+beta.fitted = fit.mult$coefficients
+
+beta.fitted
+
+round(  exp(beta.fitted[1]), 4)
+
+round(  exp(beta.fitted[2:3]), 2)

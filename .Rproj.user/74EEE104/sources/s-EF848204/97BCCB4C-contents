@@ -1,0 +1,23 @@
+cases <- c(514230, 140312)
+PT <- c(151690, 37922)
+not_breastfed <- c(0, 1)
+fit <- glm(cases ~ -1 + PT + PT:not_breastfed, family = poisson(link = identity))
+summary(fit)
+confint(fit)
+.31 + qnorm(c(0.025, 0.975)) * 0.010951
+
+
+fit <- glm(cases ~ not_breastfed + offset(log(PT)), family = poisson(link = log))
+summary(fit)
+exp(coef(fit))
+
+
+dat <- readxl::read_xlsx("~/Dropbox/mcgill/teaching/EPIB607/midterm/Fall 2018 - EPIB-607-001 - Inferential Statistics_GradesExport_2018-11-19-02-01.xlsx")
+
+library(dplyr)
+scores <- dat$`Midterm Points Grade <Numeric MaxPoints:100 Weight:15>`
+scores %>% median(na.rm = T)
+scores %>% mean(na.rm = T)
+scores %>% sd(na.rm = T)
+scores %>% density(na.rm=T) %>% plot
+scores %>% hist

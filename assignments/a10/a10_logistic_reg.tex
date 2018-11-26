@@ -1,0 +1,159 @@
+\documentclass[letterpaper,9pt,twoside,printwatermark=false]{pinp}
+
+%% Some pieces required from the pandoc template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Use the lineno option to display guide line numbers if required.
+% Note that the use of elements such as single-column equations
+% may affect the guide line number alignment.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% The geometry package layout settings need to be set here...
+\geometry{layoutsize={0.95588\paperwidth,0.98864\paperheight},%
+          layouthoffset=0.02206\paperwidth,%
+		  layoutvoffset=0.00568\paperheight}
+
+\definecolor{pinpblue}{HTML}{185FAF}  % imagecolorpicker on blue for new R logo
+\definecolor{pnasbluetext}{RGB}{101,0,0} %
+
+
+
+\title{Assignment 10 - Logistic Regression. Due December 2, 11:59pm 2018}
+
+\author[a]{EPIB607 - Inferential Statistics}
+
+  \affil[a]{Fall 2018, McGill University}
+
+\setcounter{secnumdepth}{5}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Bhatnagar and Hanley}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+ \keywords{  Poisson regression |  Rate ratio |  Rate difference |  Person time |  Offset  }  
+
+\begin{abstract}
+In this assignment you will practice logistic regression. Be sure to
+state the regression model in terms of parameters first. Use regression
+functions to fit these models. Answers should be given in full sentences
+(DO NOT just provide the number). All figures should have appropriately
+labeled axes, titles and captions (if necessary). Units for means and
+CIs should be provided. All graphs and calculations are to be completed
+in an R Markdown document. Please submit both the compiled HTML report
+and the source file (.Rmd) to myCourses by December 2, 2018, 11:59pm.
+Both HTML and .Rmd files should be saved as
+`IDnumber\_LastName\_FirstName\_EPIB607\_A10'.
+\end{abstract}
+
+\dates{This version was compiled on \today}
+\doi{\url{https://sahirbhatnagar.com/EPIB607/}}
+
+\pinpfootercontents{Assignment 10 due December 2, 2018 by 11:59pm}
+
+\begin{document}
+
+% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
+% You should only change this length when you've finalised the article contents.
+\verticaladjustment{-2pt}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+
+
+\section*{Template}\label{template}
+\addcontentsline{toc}{section}{Template}
+
+There is no template for this assignment. You may use the same template
+from previous assignments. Be sure to include your code at the end of
+the compiled report.
+
+\section{Kidney Stones}\label{kidney-stones}
+
+The 1986 BMJ article
+\textit{Comparison of treatment of renal calculi by open surgery, percutaneous nephrolithotomy, and extracorporeal shockwave lithotripsy}
+by Charig et. al, was a study designed to compare different methods of
+treating kidney stones in order to establish which was the most cost
+effective and successful. The procedure, either open surgery, or
+percutaneous nephrolithotomy (PN, a keyhole surgery procedure), was
+defined to be successful if stones were eliminated or reduced to less
+than 2 mm after three months. The study collected cases of kidney stones
+treated at a particular UK hospital during 1972-1985. The counts of
+successes for the two surgical procedures, stratified by the size of the
+kidney stone (smaller than 2cm/at least 2cm in diameter) were:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lcc|c}
+        $<$ 2cm & Unsuccessful &  Successful & Total\\
+        Open surgery & 6 & 81 & 87 \\
+        PN           & 36 & 234 & 270 \\
+        \hline
+        Total   & 42 & 315 & 357 \\
+        & & &  \\
+                $\geq$ 2cm & Unsuccessful &  Successful & Total\\
+        Open surgery & 71 & 192 & 263 \\
+        PN           & 25 & 55 & 80 \\
+        \hline
+        Total       & 96 & 247 & 343
+    \end{tabular}
+\end{table}
+
+Enter the data into \texttt{R} as frequency records, and complete the
+following exercises.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Fit a logistic regression model for the failure of the surgical
+  procedure given the surgery type and adjusting for the size of the
+  kidney stone.
+\item
+  Based on the model output, calculate a 95\% confidence interval for
+  the odds ratio of failure of the procedure in open surgery vs.~keyhole
+  surgery.
+\item
+  Based on the model output, calculate the risks of failure and the
+  expected numbers of failures in all four patient categories. Assess
+  the model fit by comparing the expected failure counts to the observed
+  counts using a \(\chi^2\)-goodness of fit test. Note that when
+  applying the \(\chi^2\)-test to a logistic regression model, the test
+  statistic is of the form \[
+  \sum_{i=1}^n \frac{(O_i - E_i)^2}{N_i p_i (1-p_i)} \sim \chi^2_{(n-m)}
+  \] where \(n\) is the number of patient categories, \(m\) is the
+  number of estimated parameters and \(N_i\) is the total number of
+  patients in the category \(i\). The denominator of the test statistic
+  had to be adjusted because now the risks \(p_i\) do not sum to one. In
+  this context, the goodness of fit test is also sometimes referred to
+  as the Hosmer-Lemeshow test.\\
+\item
+  Fit also a saturated logistic model which includes an interaction term
+  between the surgery type and size of the kidney stone. Calculate the
+  expected counts based on this model. Why does it not make sense to
+  test the goodness of fit of a saturated model?
+\item
+  Verify that you will get the exact same results as in part (a) by
+  transforming the data into individual level records.
+\item
+  Fit also a log-linear model for the risk of failure, given the type of
+  surgery and adjusting for the size of the kidney stone, and based on
+  the results, calculate a 95\% confidence interval for the risk ratio
+  of failure of the procedure in open surgery vs.~keyhole surgery.
+\end{enumerate}
+
+%\showmatmethods
+
+
+\bibliography{pinp}
+\bibliographystyle{jss}
+
+
+
+\end{document}
+
