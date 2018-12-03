@@ -1,0 +1,343 @@
+setwd("/Users/jameshanley/Dropbox/EPIB607/Jim2018/IntroRegression")
+
+ds=read.csv("PerceivedAgeAggregatedData.csv") ; ds
+
+age.sex = 
+ glm(n.deaths ~male +as.factor(age.cat) +offset(log(p.years)), 
+     family = poisson, data=ds )
+
+summary(age.sex)
+
+cbind(ds[,c(1,2,3,5,4)],round(age.sex$fitted.values,1))
+
+age.sex.perceived = 
+ glm(n.deaths ~male + as.factor(age.cat) + as.factor(third)+
+ offset(log(p.years)), 
+     family = poisson, data=ds )
+
+summary(age.sex.perceived)
+
+cbind(ds[,c(1,2,3,5,4)],
+ round(age.sex.perceived$fitted.values,1))
+ 
+ 
+# sex-specific models
+
+male.age.perceived = 
+ glm(n.deaths ~ as.factor(age.cat) + as.factor(third) +
+                offset(log(p.years)), 
+     family = poisson, data=ds[ds$male==1,] )
+
+summary(male.age.perceived)
+
+data=ds[ds$male==0,]
+
+data=data[,c(2,3,5,4)]
+data$per100Y = round(100*data[,4]/data[,3],1)
+
+data
+
+age = 
+ glm(n.deaths ~ as.factor(age.cat) +
+                offset(log(p.years)), 
+     family = poisson, data=data)
+
+summary(age)
+
+data$age.fit.no=round(age$fitted.values,1)
+data$age.fit.rate=round(100*data$age.fit.no/data$p.year,1)
+
+data
+ 
+age.pAge = 
+ glm(n.deaths ~ as.factor(age.cat) + as.factor(third) +
+                offset(log(p.years)), 
+     family = poisson, data=data)
+
+summary(age.pAge)
+
+data$age.pAge.fit.no  =round(age.pAge$fitted.values,1)
+data$age.pAge.fit.rate=round(100*data$age.pAge.fit.no/data$p.year,1)
+
+data
+
+##### good fit in females.
+ 
+ 
+ 
+
+# aggregate over both third and age.cat
+
+deaths.m.f=aggregate(ds$n.deaths,by=list(male=ds$male),sum)
+names(deaths.m.f)[2]="n.deaths"; deaths.m.f
+py.m.f=aggregate(ds$p.years,by=list(male=ds$male),FUN="sum")
+names(py.m.f)[2]="p.years"; py.m.f
+rates=deaths.m.f$n.deaths/py.m.f$p.years ; rates
+var.log.rate=1/deaths.m.f$n.deaths; var.log.rate
+
+idr=rates[2]/rates[1] ; idr
+
+exp( log(idr)+c(-1.96,1.96)*sqrt(1/deaths.m.f[1,2] + 1/deaths.m.f[2,2]) )
+
+lambda.hat=deaths.m.f[2,2]/py.m.f[2,2]
+
+(deaths.m.f[2,2]+c(-1.96,1.96)*sqrt(deaths.m.f[2,2]) ) / py.m.f[2,2]
+
+exp(
+ log(lambda.hat)+c(-1.96,1.96)*sqrt(1/deaths.m.f[2,2])
+ )
+ 
+( sqrt(deaths.m.f[2,2])+c(-1.96,1.96)*0.5 )^2 / py.m.f[2,2]
+
+
+c=10; py=781.2 ; c/py
+
+(c +c(-1.96,1.96)*sqrt(c ) ) / py
+
+c(4.80,18.39)/781.2
+
+# 1st vs 2nd thirds .. youngest women
+
+
+yw12.deaths=ds$n.deaths[ds$male==0&ds$age.cat==1&ds$third<3] ; yw12.deaths
+yw12.py=ds$p.years[ds$male==0&ds$age.cat==1&ds$third<3] ; yw12.py
+
+idr= (yw12.deaths[2]/yw12.py[2]) / (yw12.deaths[1]/yw12.py[1] ) ; idr
+
+exp(
+ log(idr)+c(-1.96,1.96)*sqrt(1/yw12.deaths[2] + 1/yw12.deaths[1])
+ )
+ 
+rateratio(c(yw12.deaths[1], yw12.deaths[2], yw12.py[1], yw12.py[2]))
+
+names(sex.and.age.specific.deaths)[3]="n.deaths";     
+sex.and.age.specific.deaths
+
+sex.and.age.specific.py=aggregate(ds$p.years,
+       by=list(male=ds$male,age.cat=ds$age.cat),sum)
+names(sex.and.age.specific.py)[3]="p.years";     
+sex.and.age.specific.py
+
+
+# aggregate over thirds
+
+
+sex.and.age.specific.deaths=aggregate(ds$n.deaths,
+       by=list(male=ds$male,age.cat=ds$age.cat),sum)
+names(sex.and.age.specific.deaths)[3]="n.deaths";     
+sex.and.age.specific.deaths
+
+sex.and.age.specific.py=aggregate(ds$p.years,
+       by=list(male=ds$male,age.cat=ds$age.cat),sum)
+names(sex.and.age.specific.py)[3]="p.years";     
+sex.and.age.specific.py
+
+sex.age=cbind(sex.and.age.specific.deaths,
+              sex.and.age.specific.py[3])
+
+sex.age$rate = sex.age$n.deaths/sex.age$p.years; sex.age
+      sex.and.age.specific.py$p.years;
+sex.age$RateRatio=rep("Ref",6)
+sex.age$RateRatio[c(2,4,6)]=round(sex.age$rate[c(2,4,6)] / 
+                                  sex.age$rate[c(1,3,5)] , 2)
+sex.age
+
+# (b)
+
+world.weights=c(0.46, 0.32, 0.22)
+
+sum( sex.age$rate[seq(1,5,2)] * world.weights )
+sum( sex.age$rate[seq(2,6,2)] * world.weights )
+
+PY.age=aggregate(sex.age$p.years,by=(list(age=sex.age$age.cat)),sum)$x
+
+internal.weights = PY.age/sum(PY.age) ;
+
+sum( sex.age$rate[seq(1,5,2)] * internal.weights )
+sum( sex.age$rate[seq(2,6,2)] * internal.weights )
+
+# (c)
+
+
+c1=sex.age[c(2,4,6),"n.deaths"]
+c0=sex.age[c(1,3,5),"n.deaths"]
+pt1=sex.age[c(2,4,6),"p.years"]
+pt0=sex.age[c(1,3,5),"p.years"]
+
+V=1/c1 + 1/c0 ; round(V,4)
+
+W = (1/V) / sum(1/V) ; round(W,2) 
+
+log.idr = log ( (c1/pt1) / (c0/pt0) ) ; round(log.idr,3)
+
+W.ave=sum(W*log.idr)
+idr.MH=exp(W.ave)
+
+pt=pt1+pt0
+C = c1+c0
+
+exp( log.idr -1.96*sqrt(V) )
+
+V.wa = 1/sum(1/V) ; V.wa
+
+ME=exp(1.96*sqrt(V.wa))
+c(idr.MH/ME, idr.MH*ME)
+
+# M-H
+
+num=c1*pt0/pt ; round(num,1)
+den=c0*pt1/pt ; round(den,1)
+sum(num) ; sum(den) ; sum(num) / sum(den) 
+
+NUM.V = C * pt1 * pt0 / (pt^2)
+
+C
+pt
+sum(NUM.V)
+
+sum(NUM.V) / (  sum(num) * sum(den) )
+
+
+# Q3 (iii)
+
+# Q4 (and expected values portion of Q1)
+
+deaths.12=ds$n.deaths[ds$third<3] ; deaths.12
+py.12=ds$p.years[ds$third<3] ; py.12
+
+c1=deaths.12[seq(2,12,2)] ; c1
+pt1=py.12[seq(2,12,2)] ; pt1
+c0=deaths.12[seq(1,11,2)] ; c0
+pt0=py.12[seq(1,11,2)] ; pt0
+pt=pt1+pt0 ; pt=pt1+pt0;
+C = c1+c0
+
+rate.ratio = ( c1/pt1 ) / ( c0/pt0 ) ; round(rate.ratio,2)
+
+num=sum( c1*pt0/pt ) ; den = sum( c0*pt1/pt )
+
+idr.mh = num/den ; idr.mh
+
+V.mh = sum( C*pt1*pt0/(pt^2) ) / (num*den) ; V.mh
+M.E = exp(1.96*sqrt(V.mh)) ; M.E
+
+v.log = 1/c1 + 1/c0;
+w=(1/v.log) / sum(1/v.log) ; w
+exp( sum(w*log(rate.ratio)) )
+me=exp(1.96*sqrt(1/sum(1/V.mh))) ; me
+
+# crude IDR
+
+(  sum(c1)/sum(pt1) ) / (  sum(c0)/sum(pt0) )
+
+yw12.py=ds$p.years[ds$male==0&ds$age.cat==1&ds$third<3] ; yw12.py
+
+idr= (yw12.deaths[2]/yw12.py[2]) / (yw12.deaths[1]/yw12.py[1] ) ; idr
+
+exp(
+ log(idr)+c(-1.96,1.96)*sqrt(1/yw12.deaths[2] + 1/yw12.deaths[1])
+ )
+ 
+rateratio(c(yw12.deaths[1], yw12.deaths[2], yw12.py[1], yw12.py[2]))
+
+
+idr=rates[2]/rates[1] ; idr
+
+
+#############
+
+# assignment week 2, exercise 2 item iv -- mult regression 
+
+############
+
+ds
+
+# calculate the log of each of 18 rates
+
+ds$log.rate = log(ds$n.deaths / ds$p.years) ; ds
+
+# male is already set up as an indicator variable..
+
+# age.cat is 1 2 3 and R can create 2 indicator
+# ("dummy") variable for the 75-79 and 80- categories
+# with (by default) age 70-75 as the reference actegory.
+
+# simply put  as.factor(ds$age.cat) in the model
+
+# or "roll your own"
+
+ds$I.75 = 1*(ds$age.cat==2) + 0*(1*(ds$age.cat != 2))  ; ds$I.75
+ds$I.80 = 1*(ds$age.cat==3) + 0*(1*(ds$age.cat != 3))  ; ds$I.80  
+
+# we will treat third as an interval variable with values 0 1 2
+
+# (that way the intercept refers to the fitted log.rate for
+# youngest females, who are also youngest looking
+
+# if we left it as 1 2 3 then beta_0 would refer to the log.rate
+# in a nonexistent group. )
+
+ds$PA.as012 = ds$third - 1
+
+
+fit=lm(ds$log.rate ~ ds$PA.as012 + ds$male + ds$I.75 + ds$I.80 ) ; fit
+
+# could also leave out each $ and write 
+
+fit=lm(log.rate ~ PA.as012 + male + I.75 + I.80, data=ds ) ; fit
+
+# could also use lm to create 2 indicator variables from age.cat
+# (or thirds if you wanted to represent it as a categorical variable) 
+
+# fit=lm(log.rate ~ PA.as012 + male + as.factor(age.cat), data=ds ) ; fit
+
+
+summary(fit)
+
+fit$coefficients
+
+# multiplicative model 
+
+exp(fit$coefficients)
+
+
+# plotting
+
+plot(ds$third, ds$log.rate, 
+ ylab="fill in y label", xlab="fill in x label")
+
+# or 
+
+plot(ds$third[ds$male==1], ds$log.rate[ds$male==1], 
+ ylab="fill in y label", xlab="fill in x label", col="blue")
+
+points(ds$third[ds$male==0], ds$log.rate[ds$male==0], 
+ ylab="fill in y label", xlab="fill in x label", col="red")
+ 
+# etc
+
+
+##################################################
+
+# Graphical and informal regression analysis
+# of Danish populatiom mortality rates
+# 1980-84 and 2000-04
+
+raw=scan()
+  0.02666     0.03972
+  0.04179     0.06586
+  0.06923     0.10584
+  0.11970     0.16773
+  0.02359     0.03468 
+  0.03934     0.05815
+  0.06559     0.09622
+  0.11462     0.15808
+
+r=array(raw,c(2,4,2))
+
+r7=as.vector( (2/3)*r[,1:3,1] + (1/3)*r[,2:4,2])
+ 
+e = sex.age[,"p.years"] * r7 ; e
+
+sum(e)
+sum(e[1:4])

@@ -53,7 +53,7 @@
 \usepackage{lscape,fancyhdr}
 
 \usepackage{hyperref}
-
+\usepackage{float}
 \pagestyle{fancy}
 
 \usepackage{amsmath,epsfig,subfigure,amsthm,amsfonts,epsf,psfrag,rotating,setspace,bm}
@@ -80,7 +80,7 @@
 
 \setlength{\parindent}{0mm}
 
-\lhead{Course EPIB607: Regression handout 006 (Logistic regression)}
+\lhead{Course EPIB607: Regression handout 006 (Logistic regression - HIV and Smoking examples)}
 \rhead{jh,sb \ \ \ v. 2018.11.26}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
@@ -89,44 +89,156 @@
 
 \section{Cesarean section and transmission of HIV}
 
+\vspace{-0.1in}
+
+To evaluate the relation between elective cesarean section and vertical (mother-to-child) transmission of human immunodeficiency virus type 1 (HIV-1), the authors performed a meta-analysis using data on individual patients from 15 prospective cohort studies.
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.99]{hivtable.pdf}
+	\includegraphics[scale=1.1]{hivtable.pdf}
 \end{figure}
 
 
-\begin{knitrout}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcc|c}
+			     & Exposed  &   Unexposed & Total  \\		
+		Cases    & $a_i$ &  $b_i$ & $M_{1i}$ \\
+		Controls & $c_i$ 	& $d_i$  	& $M_{0i}$ 	\\	
+		\hline
+		Total & $N_{1i}$ & $N_{0i}$ 	& $T_i$
+	\end{tabular}
+\end{table}
+
+
+$OR_{MH} = \frac{\sum_i \frac{a_i d_i}{T_i}}{\sum_i \frac{b_i c_i}{T_i}}$ \\ \ \\
+$RR_{MH} = \frac{\sum_i \frac{a_i N_{0i}}{T_i}}{\sum_i \frac{b_i N_{1i}}{T_i}}$
+
+\clearpage
+
+\begin{knitrout}\small
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \begin{verbatim}
-## 
 ## Call:
-## glm(formula = cbind(cases, controls) ~ open, family = binomial(link = "logit"), 
-##     data = df)
-## 
-## Deviance Residuals: 
-## [1]  0  0
+## glm(formula = cbind(n.hivpos, n.hivneg) ~ 1, family = binomial(link = logit), 
+##     data = ds)
 ## 
 ## Coefficients:
 ##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -1.5556     0.1409 -11.040   <2e-16 ***
-## open          0.2899     0.1911   1.517    0.129    
+## (Intercept)   -1.671      0.031     -54   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 2.3148e+00  on 1  degrees of freedom
-## Residual deviance: 9.9920e-15  on 0  degrees of freedom
-## AIC: 15.696
+##     Null deviance: 293.95  on 23  degrees of freedom
+## Residual deviance: 293.95  on 23  degrees of freedom
+## AIC: 387.8
 ## 
-## Number of Fisher Scoring iterations: 3
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\end{knitrout}
+
+
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{verbatim}
+## Call:
+## glm(formula = cbind(n.hivpos, n.hivneg) ~ caesarian, family = binomial(link = logit), 
+##     data = ds)
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)   -1.606      0.032   -50.2   <2e-16 ***
+## caesarian     -0.815      0.132    -6.2    7e-10 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 293.95  on 23  degrees of freedom
+## Residual deviance: 247.78  on 22  degrees of freedom
+## AIC: 343.7
+## 
+## Number of Fisher Scoring iterations: 4
 \end{verbatim}
 
 \end{knitrout}
 
 \clearpage
 
-\section{Smoking among women in Whickham, England}
+\vspace{-0.3in}
+
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{verbatim}
+## Call:
+## glm(formula = cbind(n.hivpos, ds$n.hivneg) ~ caesarian + ART1or2 + 
+##     ART3 + m.advancedHIV + c.LBW, family = binomial(link = logit), 
+##     data = ds)
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)     -1.608      0.041   -39.6   <2e-16 ***
+## caesarian       -0.852      0.134    -6.3    2e-10 ***
+## ART1or2         -0.362      0.106    -3.4    6e-04 ***
+## ART3            -1.178      0.114   -10.3   <2e-16 ***
+## m.advancedHIV    0.535      0.090     6.0    3e-09 ***
+## c.LBW            0.581      0.075     7.8    9e-15 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 293.945  on 23  degrees of freedom
+## Residual deviance:  18.393  on 18  degrees of freedom
+## AIC: 122.3
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\end{knitrout}
+
+\vspace{-0.22in}
+
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\begin{verbatim}
+## Call:
+## glm(formula = cbind(n.hivpos, ds$n.hivneg) ~ caesarian + ART1or2 + 
+##     ART3 + m.advancedHIV + c.LBW, family = binomial(link = log), 
+##     data = ds)
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)     -1.793      0.034   -53.2   <2e-16 ***
+## caesarian       -0.720      0.119    -6.0    2e-09 ***
+## ART1or2         -0.278      0.087    -3.2    0.001 ** 
+## ART3            -1.016      0.104    -9.8   <2e-16 ***
+## m.advancedHIV    0.409      0.068     6.0    2e-09 ***
+## c.LBW            0.453      0.057     7.9    2e-15 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 293.945  on 23  degrees of freedom
+## Residual deviance:  21.295  on 18  degrees of freedom
+## AIC: 125.2
+## 
+## Number of Fisher Scoring iterations: 5
+\end{verbatim}
+
+\end{knitrout}
+
+
+\clearpage
+
+\section{Smoking among women in Whickham, UK}
+Consider the following \textit{age stratified} mortality data (Rothman, Table 1-2) from a study that looked at smoking habits of residents of Whickham, England, in the period 1972-1974 and then tracked the survival over the next 20 years of those who were interviewed. 
 
 
 \begin{table}[h]
@@ -166,138 +278,11 @@
 \end{table}
 
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{verbatim}
-## 
-## Call:
-## glm(formula = cbind(cases, controls) ~ open + size, family = binomial(link = "logit"), 
-##     data = df)
-## 
-## Deviance Residuals: 
-##       1        2        3        4  
-## -0.7636   0.3588   0.2756  -0.4695  
-## 
-## Coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -1.9366     0.1704 -11.361  < 2e-16 ***
-## open         -0.3572     0.2291  -1.559    0.119    
-## size          1.2606     0.2390   5.274 1.33e-07 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 33.1239  on 3  degrees of freedom
-## Residual deviance:  1.0082  on 1  degrees of freedom
-## AIC: 26.355
-## 
-## Number of Fisher Scoring iterations: 3
-\end{verbatim}
-
-\end{knitrout}
-
-\clearpage
-
-\section{Diabetes cohort data 1}
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{lcc|c}
-		& Dead &  Censored & Total\\
-		Type II & 218 & 326 & 544 \\
-		Type I & 105 & 253 & 323 \\
-		\hline
-		Total & 323 & 579 & 902
-	\end{tabular}
-\end{table}
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{verbatim}
-## 
-## Call:
-## glm(formula = cbind(cases, controls) ~ type, family = binomial(link = "logit"), 
-##     data = df)
-## 
-## Deviance Residuals: 
-## [1]  0  0
-## 
-## Coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -0.8794     0.1161  -7.576 3.58e-14 ***
-## type          0.4770     0.1454   3.282  0.00103 ** 
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 1.0978e+01  on 1  degrees of freedom
-## Residual deviance: 1.4033e-13  on 0  degrees of freedom
-## AIC: 16.858
-## 
-## Number of Fisher Scoring iterations: 2
-\end{verbatim}
-
-\end{knitrout}
 
 
 
-\clearpage
-
-\section{Diabetes cohort data 2}
-
-Below are the same outcomes tabulated by age:
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{lcc|c}
-		$\leq 40$ & Dead &  Censored & Total\\
-		Type II & 0 & 15 & 15 \\
-		Type I & 1 & 129 & 130 \\
-		\hline
-		Total & 1 & 144 & 145 \\
-		& & & \\
-		$> 40$ & Dead &  Censored & Total\\
-		Type II & 218 & 311 & 529 \\
-		Type I & 104 & 124 & 228 \\
-				\hline
-		Total & 322 & 435 & 757 \\ 
-	\end{tabular}
-\end{table}
 
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{verbatim}
-## 
-## Call:
-## glm(formula = cbind(dead, censored) ~ type + age, family = binomial(link = "logit"), 
-##     data = df)
-## 
-## Deviance Residuals: 
-##        1         2         3         4  
-## -0.41982   0.09091   0.00776  -0.01168  
-## 
-## Coefficients:
-##             Estimate Std. Error z value Pr(>|z|)    
-## (Intercept)  -4.9525     1.0036  -4.935 8.02e-07 ***
-## type         -0.1816     0.1595  -1.139    0.255    
-## age           4.7781     1.0108   4.727 2.28e-06 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 133.81237  on 3  degrees of freedom
-## Residual deviance:   0.18471  on 1  degrees of freedom
-## AIC: 20.745
-## 
-## Number of Fisher Scoring iterations: 5
-\end{verbatim}
-
-\end{knitrout}
 
 
 

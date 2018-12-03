@@ -1,0 +1,432 @@
+---
+title: Midterm - October 29, 11:30am - 1:30pm 2018
+author:
+  - name: EPIB607 - Inferential Statistics
+    affiliation: a
+#  - name: Second Author
+#    affiliation: a,b
+address:
+  - code: a
+    address: Fall 2018, McGill University
+#  - code: b
+#    address: Department of Neat Tricks, Whereever State University, Someplace, MC, 67890
+lead_author_surname: Bhatnagar and Hanley
+doi: "https://sahirbhatnagar.com/EPIB607/"
+abstract: |
+  This is a 2 hour, open book exam. Calculators are permitted. Cellular phones are not permitted. The exam is out of 100. Write down all your answers in the provided booklet. Provide units and state your assumptions when applicable. If a question requires use of the z or t probabilites/quantiles, write the corresponding R code instead. Some commonly used quantiles are provided. 
+# Optional: Acknowledgements
+#acknowledgements: |
+#  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
+#  [PNAS LaTeX](http://www.pnas.org/site/authors/latex.xhtml) macros. Both these sources are
+#  ([GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html) and
+#  [LPPL (>= 1.3)](https://www.latex-project.org/lppl/)).
+# Optional: One or more keywords
+keywords:
+  - Data visualization
+  - Descriptive statistics
+  - Confidence intervals
+  - p-values
+  - Sampling distributions
+  - Central Limit Theorem
+  - z and t procedures
+  - One sample mean
+  - One sample proportion
+  - Bootstrap
+papersize: letter
+fontsize: 12pt
+# Optional: Force one-column layout, default is two-column
+one_column: true
+# Optional: Enables lineno mode, but only if one_column mode is also true
+#lineno: true
+# Optional: Enable one-sided layout, default is two-sided
+#one_sided: true
+# Optional: Enable section numbering, default is unnumbered
+numbersections: true
+# Optional: Specify the depth of section number, default is 5
+#secnumdepth: 5
+# Optional: Skip inserting final break between acknowledgements, default is false
+skip_final_break: true
+# Optional: Bibliography 
+bibliography: pinp
+# Optional: Enable a 'Draft' watermark on the document
+watermark: false
+footer_contents: "Midterm - October 29, 11:30am - 1:30pm 2018"
+output: pinp::pinp
+# Required: Vignette metadata for inclusion in a package.
+vignette: >
+  %\VignetteIndexEntry{YourPackage-vignetteentry}
+  %\VignetteKeywords{YourPackage, r, anotherkeyword}
+  %\VignettePackage{Midterm - October 29, 11:30am - 1:30pm 2018}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20),
+                          axis.title = element_text(size = 20), 
+                          legend.text = element_text(size = 20), 
+                          legend.title = element_text(size = 20))
+
+# A Prefix nulling hook.
+
+# Make sure to keep the default for normal processing.
+default_output_hook <- knitr::knit_hooks$get("output")
+
+# Output hooks handle normal R console output.
+knitr::knit_hooks$set( output = function(x, options) {
+
+  comment <- knitr::opts_current$get("comment")
+  if( is.na(comment) ) comment <- ""
+  can_null <- grepl( paste0( comment, "\\s*\\[\\d?\\]" ),
+                     x, perl = TRUE)
+  do_null <- isTRUE( knitr::opts_current$get("null_prefix") )
+  if( can_null && do_null ) {
+    # By default R print output aligns at the right brace.
+    align_index <- regexpr( "\\]", x )[1] - 1
+    # Two cases: start or newline
+    re <- paste0( "^.{", align_index, "}\\]")
+    rep <- comment
+    x <- gsub( re, rep,  x )
+    re <- paste0( "\\\n.{", align_index, "}\\]")
+    rep <- paste0( "\n", comment )
+    x <- gsub( re, rep,  x )
+  }
+
+  default_output_hook( x, options )
+
+})
+
+knitr::opts_template$set("kill_prefix"=list(comment=NA, null_prefix=TRUE))
+
+```
+
+Some commong quantiles of the normal distribution and a nomogram for confidence intervals of a proportion are provided:
+
+|R Code                     |       Value        |
+|:--------------------------|:----------------------------------|
+|`qnorm(p = c(0.05, 0.95))` |`r round(qnorm(p = c(0.05, 0.95)), 2)`    |
+|`qnorm(p = c(0.025, 0.975))` |`r round(qnorm(p = c(0.025, 0.975)),2)`    |
+|`qnorm(p = c(0.005, 0.995))` |`r round(qnorm(p = c(0.005, 0.995)),2)`    |
+|`qt(p = c(0.025, 0.975), df = 400-1)` |`r round(qt(p = c(0.025, 0.975), df = 400-1), 2)`    |
+|`qt(p = c(0.025, 0.975), df = 25-1)` |`r round(qt(p = c(0.025, 0.975), df = 25-1), 2)`    |
+|`qt(p = c(0.025, 0.975), df = 20-1)` |`r round(qt(p = c(0.025, 0.975), df = 20-1), 2)`    |
+|`qt(p = c(0.025, 0.975), df = 16-1)` |`r round(qt(p = c(0.025, 0.975), df = 16-1), 2)`    |
+
+\begin{figure}[H]
+  \begin{center}
+\includegraphics[scale=0.65]{Nomogram.pdf}
+  \end{center}
+  \caption{\normalsize Wilson 95\% CIs for proportion $\pi$}\label{fig:nomo}
+\end{figure}
+
+
+\newpage
+
+
+# (6 points, 2 each) The Health Evaluation and Linkage to Primary Care (HELP) study was a clinical trial for adult inpatients recruited from a detoxification unit. There are a total of 1472 patients in the database. Below is a subset of the data for 6 variables and their description. For each of the 6 variables, determine the 
+
+a. variable type
+b. the aesthetic you would use to represent the data
+c. the color palette you would use
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(mosaic)
+dt <- mosaicData::HELPrct[, c("id","age", "cesd","substance","mcs","sexrisk")]
+knitr::kable(dt[1:5,])
+```
+
+
+\begin{itemize}
+\item[id] subject identifier
+\item[age] subject age at baseline (in years)
+\item[cesd] Center for Epidemiologic Studies Depression measure (integers from 1 to 60) at baseline (high scores indicate more depressive symptoms)
+\item[substance] primary substance of abuse: alcohol, cocaine or heroin
+\item[mcs] SF-36 Mental Component Score (between 0 and 100, measured at baseline, lower scores indicate worse status)
+\item[sexrisk] Risk Assessment Battery sex risk score (integers between 1 and 14, measured at baseline, higher scores indicate higher risk)
+\end{itemize}
+
+
+
+
+# (6 points, 2 each) Figure \ref{fig:fig2} are sketches of histograms for three lists
+
+a. In scrambled order, the means are 40, 50, 60. Match the histograms with the means.
+b. Is the SD of histogram (iii) around 5, 15, or 50?
+c. The SD for histogram (i) is a lot smaller than that for histogram (iii). Is this statement TRUE or FALSE? Provide a one sentence explanation of your answer.
+
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[angle=90,scale=0.35]{hist-crop.pdf} 
+    \caption{\normalsize Sketches of histograms for three lists.}\label{fig:fig2}
+\end{center}
+\end{figure}
+
+\newpage
+
+# (5 points, 1 each) Figure \ref{fig:fig1} below is a histogram of blood pressure in millimetres of mercury (mm) for all 14,148 women in the Contraceptive Drug Study at the Kaiser Clinic in Walnut Creek, California. The y-axis represents the percentage of women per millimetres of mercury. Use the histogram to answer the following questions:
+
+a. Is the percentage of women with blood pressures above 130 mm around 25%, 50% or, 75%?
+b. Is the percentage of women with blood pressures between 90 mm and 160 mm around 1%, 50%, or 99%?
+c. In which interval are there more women: 135-140 mm or 140-150 mm?
+d. In the interval 125-130 mm, the height of the histogram is about 2.1% per mm. What percentage of the women had blood pressures in this class interval?
+e. Which interval has more women: 97-98 mm or 102-103 mm?
+
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[angle=90,scale=0.5]{bp-crop.pdf} 
+  \end{center}
+  \caption{\normalsize Distribution of blood pressure in millimetres of mercury (mm) for all 14,148 women in the Contraceptive Drug Study at the Kaiser Clinic in Walnut Creek, California.}\label{fig:fig1}
+\end{figure}
+
+
+
+```{r, eval=FALSE, echo=FALSE}
+set.seed(10234)
+par(mfrow=c(1,2))
+x <- rweibull(10000, 4, 2) 
+y <- rweibull(10000, 1.5, 1)
+xlims <- range(x-1,y+1)
+x %>% hist(breaks=30, main = "long left tail", xlim = xlims)
+y %>% hist(breaks=30, main = "long right tail", xlim = xlims)
+favstats(x)
+favstats(y)
+abline(v = mean(y), col = "red")
+abline(v = mean(y)+sd(y), col = "red")
+```
+
+# (7 points, 3/2/2) To allow for the 10% (on average) of people who make reservations but do not show up for their flights, an airline company "over-books", i.e., it takes reservations for up to 145 seats when it only has space on the plane for 140 passengers 
+
+a. If the airline takes 145 reservations, what is the probability that it will not have a seat for every passenger who shows up? State your assumptions and provide the `R` code to calculate this probability.
+b. Would the normal distribution be appropriate here? Why or why not?
+c. Suppose that some of the 145 individuals are related. Does this affect the appropriateness of the probability model you based your calculations on? Why or why not?
+
+
+# (6 points, 3 each) Breast-feeding mothers secrete calcium into their milk. Some of the calcium may come from their bones, so mothers may lose bone mineral content. Researchers compared 47 breast-feeding women with 22 women of similar age who were neither pregnant nor lactating. They measured the percent change in the mineral content of the women's spines over three months. A negative value of `mineral_loss` indicates a loss in mineral content. Consider this box plot of the mineral loss by group:
+
+```{r, echo=F, eval=TRUE, warning=FALSE, message=FALSE, fig.dim=c(6, 4)}
+boneloss <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv")
+library(mosaic)
+ggformula::gf_boxplot(mineral_loss ~ type, data = boneloss) + theme_linedraw() + gg_sy + xlab("group") + ylab("mineral loss")
+# mosaic::IQR(mineral_loss ~ type, data = boneloss)
+```
+
+a. The interquartile range for the breast-feeding group is approximately (select one answer from the following options):
+    a. [-2, -5.3]
+    b. 3.2
+    c. [-8, 2]
+    d. 10
+b. The median mineral loss for the other group is (select one answer from the following options):
+    a. approximately equal to the mean mineral loss for the other group
+    b. less than the mean mineral loss for the other group
+    c. greater than the mean mineral loss for the other group
+    d. there is not enough information in the plot to know
+
+# (7 points, 1/2/2/2) To test out a new version/format of a GRE exam, a simple random sample (SRS) of 400 students among those taking the exam, took the new version. Their scores averaged 65.3 out of 100, and the SD was 25. You are given that $\sqrt{400} \times 25=500$ and $500/400=1.25$
+
+a. What is the parameter of interest?
+b. Provide the `R` code to calculate a 95\% confidence interval for the parameter of interest.
+c. Does the shape of the distribution of individual scores matter for the confidence interval in part (b)? Why or why not? 
+d. The relevant sampling distribution is shown in Figure \ref{fig:samp}. Use it to obtain an approximate 95% confidence interval. Interpret the confidence interval.
+
+
+```{r samp, results='hide', fig.cap='\\normalsize Sampling distribution', fig.dim=c(6.0, 4.0), message=FALSE, echo=FALSE, fig.pos='h'}
+mosaic::xqnorm(p = c(0.025, 0.975), mean = 65.3, sd = 1.25, return = "plot") + 
+  theme_bw() + scale_fill_manual(values = c("black","grey60", "black")) + 
+  scale_x_continuous(breaks = seq(59, 71, .5)) + theme(legend.position = "bottom")
+```
+
+# (3 points, 1 each) Suppose that the probability that HIV will be transmitted from an infected person to an uninfected person during a single sexual conact is 0.01. Suppose that you observe a random selection of 50 sexual contacts. Write the `R` code needed to answer the following questions:
+
+a. The probability that HIV will be transmitted in at least one of the 50 contacts.
+b. The probability that HIV will not be transmitted in 25 contacts.
+c. The probabiility that HIV will be transmitted in no more than 25 contacts.
+
+# (6 points, 2 each) A Vox article (https://www.vox.com/science-and-health/2017/7/31/16021654/p-values-statistical-significance-redefine-0005) attempts to describe what a p-value is. Here are some excerpts from the article. For each one, indicate whether the statement is TRUE or FALSE. If the statement is FALSE, explain why
+
+1. ``When researchers calculate a p-value, they're putting to the test what's known as the null hypothesis. First thing to know: This is not a test of the question the experimenter most desperately wants to answer.''
+2. ``Let's say the experimenter really wants to know if eating one bar of chocolate a day leads to weight loss. To test that, they assign 50 participants to eat one bar of chocolate a day. Another 50 are commanded to abstain from the delicious stuff. Both groups are weighed before the experiment, and then after, and their average weight change is compared. The null hypothesis is the devil's advocate argument. It states: There is no difference in the weight loss of the 50 chocolate eaters versus the 50 chocolate abstainers.''
+3. ``So how do they reject the null hypothesis? They calculate some statistics. The researcher basically asks: How ridiculous would it be to believe the null hypothesis is the true answer, given the results we're seeing?''
+
+<!--
+$$$$$ JIM $$$$$$  indeed, 3. is the 'most wrong' answer.  1 and 2 are not that bad. EXCEPT that
+$$$$$ JIM $$$$$$  if the null H in 2. is referring to THESE particualt 100 subjects, then it is wrong
+$$$$$ JIM $$$$$$  H0 should be about all future person who migh/might not eat chocolate
+$$$$$ JIM $$$$$$  to make it clearly wrong, you couls say in 2: 
+$$$$$$$$$$$$$$$$  There is no difference in the weight loss of the 50 chocolate eaters versus the 50 chocolate abstainers.
+-->
+
+
+
+
+
+# (10 points, 2 each) New laser altimeters can measure elevation to within a few inches, without bias, and with no trend or pattern to the measurements. As part of an experiment, 25 readings were made on the elevation of a mountain peak. Their mean was 81,411 inches, and their SD was 30 inches. Fill in the blanks in part (a), then say whether each of (b-e) is true or false; explain your answers briefly. (You may assume Gaussian variation of the measurements, with no bias)
+
+a. The elevation of the mountain peak is estimated as __________ . There is approximately a ______ % chance that we are over-estimating or under-estimating the true elevation by more than 6 inches.
+b. 81,411 $\pm$ 12 inches is a 95%-confidence interval for the average of the 25 readings.
+c. 81,411 $\pm$ 12 inches is a 95%-confidence interval for the elevation of the mountain peak.
+d. A large majority of the 25 readings were in the range 81,411 $\pm$ 12 inches.
+e. The elevation of the mountain peak is the statistic here; the 81,411 is a parameter.
+
+
+
+# (8 points, 2 each) The US presidential campaign is a very costly affair. One pundit/comedian has suggested that much time and trouble could be saved, if the candidates simply had their height measured. In 20 of the 25 elections where the data are known, the taller candidate has won. Tall people are credited with qualities expected of capable people
+
+a. In order to test this claim about tall people, we need to test it against a null hypothesis. State the null hypothesis in plain English.
+b. Translate the null and the alternative hypotheses into statistical notation.
+c. Write down the steps, including the `R` code, to carry out the statistical test. Include a sentence on how you would report your findings. 
+d. You don't have access to software to run the code you have suggested in part (c), but can you anticipate what your findings will be? Explain.
+
+
+
+
+# (8 points, 2 each) A colony of laboratory mice consisted of several hundred animals. Their average weight was 30g, with a standard deviation of 5g. As part of an experiment, graduate students were instructed to choose 25 animals; no definite method of selection was specified in the instructions to the students. The average weight of the 25 animals selected by the students was 33 grams
+
+a. Was the method of choosing animals used by the graduate student equivalent to drawing animals at random? State the hypotheses and perform a test of significance with a Type I error rate of 5%.
+b. What is the power of this test at a 5% level of significance ?
+c. Calculate a 95% confidence interval for the mean weight of animals selected by the method.
+d. What sample size would be required to obtain a 95% confidence interval that has a width of 2g?
+
+
+
+<!--
+$$ JIM $$  b. awkward. why not say for the bias (diference from mu) associated with this selection method.
+-->
+
+
+
+
+# (12 points, 2 each) The abstract from the article "Does the newborn baby find the nipple by smell?" by Varendo H et al., (Lancet 1994) writes: "We studied the involvement of naturally occurring odours in guiding the baby to the nipple. One breast of each participating mother was washed immediately after delivery. The newborn infant was placed prone between the breasts. Of 20 infants, 16 spontaneously selected the unwashed breast. The washing procedure had no effect on breast temperature. We concluded that the infants responded to olfactory (sense of smell) differences between the washed and unwashed breasts"
+
+a. What is the parameter of interest?
+b. State the implied null and alternative hypotheses concerning this parameter. 
+c. What is the statistic reported? 
+d. What null distribution should be used to test the hypothesis?
+e. Calculate a 95% confidence interval for the parameter of interest. 
+f. A similar study is conducted at a different hopital. Of 100 infants, 80 spontaneously selected the unwashed breast. Do you expect the same confidence limits as those obtained in part (e) ? Justify your answer.
+
+
+
+
+
+
+# (6 points, 3 each) Stephen Jay Gould's book "The Mismeasure of Man" discusses a table from a 1978 article by Epstein reproduced in Table \ref{tab:gould}. Gould read the original article and found that Epstein's original table, reproduced below, reveals that the \textit{SE} column had been copied and re-labelled \textit{SD}. Then, using this SD (the one shown in Table \ref{tab:gould}), and the $N$, Epstein was able to show that the CI's for mean head circumference for people of varied vocational statuses did not overlap, and thus that there were "statistically significant" inter-group differences
+
+
+\textcolor{white}{isfjidjfpoisj}
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{lrcc}
+\hline
+\normalsize Vocational Status & \normalsize  N & \normalsize  Mean (in mm) &\normalsize  SD \\
+\hline
+\normalsize Professional  &\normalsize  25 &\normalsize  569.9 &\normalsize  1.9 \\
+\normalsize Semiprofessional & \normalsize 61& \normalsize 566.5 & \normalsize 1.5 \\
+\normalsize Clerical &\normalsize 107 &\normalsize 566.2 & \normalsize 1.1 \\
+\normalsize Trades &\normalsize 194 & \normalsize 565.7 &\normalsize  0.8 \\
+\normalsize Public service & \normalsize 25 & \normalsize 564.1 & \normalsize 2.5 \\
+\normalsize Skilled trades & \normalsize 351 & \normalsize 562.9 & \normalsize 0.6 \\
+\normalsize Personal services & \normalsize 262 & \normalsize 562.7 & \normalsize 0.7 \\
+\normalsize Laborers & \normalsize 647 & \normalsize 560.7 & \normalsize 0.3 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Head circumferences in mm for people of varied vocational statuses}\label{tab:gould}
+\end{table}
+
+a. How did Gould figure out that Epstein relabelled the SE column to SD?
+b. Based on the table, what would be a reasonable SD for inter-individual headsizes?
+
+
+
+# (10 points, 2 each) Verizon is responsible for maintaining land-line phone service for their customers. Verizon also sells a long-distance service to other (non-Verizon) customers. When something goes wrong, Verizon is responsible for repairs, and is supposed to make repairs as quickly for other customers as for their own. The New York Public Utilities Commission monitored fairness by comparing repair times by Verizon for their customers vs. other customers. The results (in minutes) for a specific class of repairs is shown in the Table \ref{tab:tab2}. You decide to independently draw 10,000 bootstrap samples with replacement from each sample (Verizon and Other), and compute the mean repair time (in minutes) for each bootstrap sample. You then calculate the bootstrap standard deviation from the 10,000 bootstrap samples, separately for Verizon and Other
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{lrcc}
+\hline
+\normalsize Customer  &\normalsize  n  &\normalsize  mean &\normalsize  SD\\
+\hline
+\normalsize Verizon  &\normalsize  1664 &\normalsize  8.41 &\normalsize  16.5\\
+\normalsize Other  &\normalsize  23 &\normalsize  16.69 &\normalsize  19.5\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Repair times (in minutes) for Verizon's own customers vs. Other customers}\label{tab:tab2}
+\end{table}
+
+
+a. What is the center of the bootstrap distribution for i) Verizon customers and ii) Other customers?
+b. Would the bootstrap SD for Verizon be larger, smaller or approximately similar to the SD presented in \mbox{Table \ref{tab:tab2}} for Verizon? Explain
+c. Would the bootstrap SD for Other be larger, smaller or approximately similar to the SD presented in \mbox{Table \ref{tab:tab2}} for Other? Explain
+d. Would the bootstrap SD for Verizon be larger, smaller or approximately similar to the bootstrap SD for Other? Explain
+e. Do you expect the bootstrap to give a very different 95% confidence interval compared to the one obtained by the $z$ (or $t$) procedure for i) Verizon and ii) Other. Why or why not?
+
+<!--
+$$$$$   I presume the SDs in the Table are SD;s not SEMs
+$$$$$   indeed, given they are about the same in both.
+$$$$$   despite the evry different n's
+
+$$$$$ a) and b) .. boostrap SD is a kind of SE and so must be approx sqrt(n) times smaller than SD shown
+$$$$$ c) the SE for the mean absed on the bigger n must be a lot smaller
+$$$$$ d) for ILEC no, for other (smaller n) yes  (can ask z or t for the small one, instead of just z)
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+2. The bootstrap distribution is centered at the observed statistic,
+not the population parameter, for example, at x, not .
+This has two profound implications. First, it means that we do
+not use the mean of the bootstrap statistics as a replacement for
+the original estimate.1 For example, we cannot use the bootstrap
+to improve on x; no matter how many bootstrap samples we take, they are centered at x, not . Instead we use the bootstrap
+to tell how accurate the original estimate is. In this regard the
+bootstrap is like formula methods that use the data twice—once
+to compute an estimate, and again to compute a standard error
+for the estimate. The bootstrap just uses a different approach to
+estimating the standard error.
+-->
+
+<!--Not a confidence interval. For one thing, we don't know what chance process it uses. This is a sample of convenience not a simple random sample.-->
+
+
+

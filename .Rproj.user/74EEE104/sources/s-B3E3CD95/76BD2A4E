@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543437223100.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "338934493",
+    "id" : "76BD2A4E",
+    "lastKnownWriteTime" : 1543517674,
+    "last_content_update" : 1543517674595,
+    "path" : "~/git_repositories/epib607/slides/regression/handouts/whickham.R",
+    "project_path" : "slides/regression/handouts/whickham.R",
+    "properties" : {
+        "cursorPosition" : "9,23",
+        "scrollLine" : "0",
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

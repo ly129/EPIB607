@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543547950523.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "EFC1676",
+    "lastKnownWriteTime" : 1543806490,
+    "last_content_update" : 1543806491005,
+    "path" : "~/Dropbox/mcgill/teaching/EPIB607/final/EPIB607_final_fall2018_v2.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "266,39",
+        "scrollLine" : "248",
+        "source_window_id" : "",
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

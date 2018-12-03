@@ -1,0 +1,39 @@
+cases <- c(514230, 140312)
+PT <- c(151690, 37922)
+not_breastfed <- c(0, 1)
+fit <- glm(cases ~ -1 + PT + PT:not_breastfed, family = poisson(link = identity))
+summary(fit)
+fit <- glm(cases ~ not_breastfed + offset(log(PT)), family = poisson(link = log))
+summary(fit)
+
+fit$fitted.values
+exp(sum(coef(fit)) + log(PT[2]))
+
+
+
+# devtools::install_github('droglenc/NCStats')
+library(NCStats)
+ds=read.csv("~/git_repositories/epib607/slides/regression/handouts/hiv_Transmission.csv",header=TRUE)
+ds$n.hivneg= ds$n.pairs - ds$n.hivpos
+ds$propn = round(ds$n.hivpos/ds$n.pairs,3)
+#overall proportion hiv positive
+#round(sum(ds$n.hivpos)/sum(ds$n.pairs),3)
+# intercept-only logit model
+fit0 <- glm(cbind(n.hivpos,n.hivneg) ~ 1, family=binomial(link=logit), data=ds)
+print(summary(fit0), show.call=TRUE, digits=2)
+#checks
+#plogis(fit0$coefficients)
+
+
+fit.all4 = glm(cbind(n.hivpos,ds$n.hivneg) ~ caesarian + ART1or2 + ART3 + m.advancedHIV + c.LBW,
+               family=binomial(link=logit), data=ds)
+print(summary(fit.all4), show.call=TRUE, digits=2)
+
+exp(sum(coef(fit.all4)[c(1,2,4,5,6)])) / (1+exp(sum(coef(fit.all4)[c(1,2,4,5,6)])))
+
+
+fit.all4 = glm(cbind(n.hivpos,ds$n.hivneg) ~ caesarian + ART1or2 + ART3 + m.advancedHIV + c.LBW,
+               family=binomial(link=log), data=ds)
+print(summary(fit.all4), show.call=TRUE, digits=2)
+
+exp(sum(coef(fit.all4)[c(1,2,4,5,6)]))

@@ -1,0 +1,289 @@
+---
+title: Assignment 9 - Poisson Regression. Solutions.
+subtitle: "Name"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 3
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = TRUE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+```
+
+
+# Bednets (50 points)
+
+```{r, echo=FALSE}
+## ---- Question-1 ------------------------------------------------------------
+# Bednets <- read.csv("~/Library/Mobile Documents/com~apple~CloudDocs/2018 Fall/TA/a9/Bednets.csv")
+Bednets <- read.csv("~/git_repositories/epib607/assignments/a9/Bednets.csv")
+```
+
+**a. (15 points) Reproduce the Rate ratio and 95% CI in Table 2. Start by writing down the model in terms of a regression equation with parameters and determinants. Interpret the rate ratio.**
+
+**(5 points) Parameters**
+
+- $\mu$: Expected number of cases of malaria
+- $\lambda$: Incidence rate of malaria
+- $\lambda_0$: Incidence rate of malaria in the unexposed group
+- $\theta$: Incidence rate ratio of malaria in the exposed group vs. the unexposed group
+
+**(5 points) Relationship between the parameters**
+
+$$\mu = \lambda*PT \\ \lambda = \lambda_0 * \theta^{Exposed} \\ \mu = \lambda_0*\theta^{Exposed} * PT$$
+
+**(5 points) Regression model**
+
+$$log(\mu) = log(\lambda_0) + log(\theta)*Exposed + log(PT)$$
+
+$\\ Where:\\ \\\textrm{Exposed} = \begin{cases} 0: \textrm{Bednet containing pyriproxyfen only} \\ 1: \textrm{Bednet containing permethrin and pyriproxyfen} \end{cases}$
+
+<!--
+**Hypotheses**
+
+- $H_0$: There is no difference in the incidence rate of malaria in the control (unexposed) and treatment (exposed) bednets
+- $H_1$: There is a difference in the incidence rate of malaria in the control (unexposed) and treatment (exposed) bednets
+
+$$ H_0:\ \theta = 1 \\ H_A:\ \theta ≠ 1 $$ 
+-->
+
+```{r, echo = T}
+
+fit1 <- glm(formula = Cases ~ Exposure + offset(log(Person.time)), family = poisson(link = log), data = Bednets)
+summary(fit1)
+
+# Calculating the rate ratio
+rate.ratio <- round(exp(coef(fit1)[2]), 2)
+
+# Calculate 95% CI
+CI.rr <- round(exp(coef(fit1)[2] + qnorm(c(0.025,0.975)) * sqrt(vcov(fit1)[2,2])), 2)
+```
+
+
+```{r, echo=TRUE}
+# Since there are no determinants, we only need the totals
+# this approach is valid as well
+cases <- aggregate(Bednets$Cases, list(Bednets$Exposure),sum)$x
+PT <- aggregate(Bednets$Person.time, list(Bednets$Exposure),sum)$x
+exposure <- c(0,1)
+summary(glm(cases ~ exposure + offset(log(PT)), family = poisson(link = log)))
+```
+
+(10 points for interpretation)
+
+- The rate ratio is **`r rate.ratio`** meaning that the treatment group with bednets containing pyriproxyfen and permethrin had 24% lower incidence rate of malaria compared to the control group with bednets only containing permethryn.
+- The 95% CI of the rate ratio of the incidence rate in the treatment and control bednet groups is **[`r CI.rr`]**. If we were to repeat this method many times, this interval would cover the true rate ratio 95% of the time. Because it does not cover the null hypothesis of rate ratio ($\theta$) = 1 and is less than 1, we conclude the treatment group had lower incidence rate of malaria compared to the control group.
+
+_____________________________________________________________________________________________________________________________________________
+
+**b. (10 points) Perform a goodness of fit test for the model in part (a). Is this a good fit? If not, explain what you might do to improve the fit.**
+
+**Hypotheses**
+
+- $H_0$: There is no difference in the observed and expected number of malaria cases, i.e., the model is a good fit
+- $H_1$: There is a difference in the observed and expected number of malaria cases, i.e., the model is not a good fit
+
+**Fitted Regression Equation for the Expected Counts**
+
+$$\hat\mu = \hat\lambda_0*\hat\theta^{Exposed} * PT = exp(0.69492) * exp(-0.27865)^{Exposed}* PT$$
+
+
+
+```{r, echo = T}
+
+Bednets$Expected.cases <- exp(0.69492)*(exp(-0.27865)^Bednets$Exposure)*Bednets$Person.time
+x <- sum((Bednets$Cases - Bednets$Expected.cases)^2/Bednets$Expected.cases)
+(p.value.chi.1 <- pchisq(q = x, df = nrow(Bednets) - length(coef(fit1)), lower.tail = F))
+```
+
+This is not a good fit because the p-value is `r p.value.chi.1` for the chi-square test given that the null hypothesis is true (there is no difference between the observed and predicted values using the regression model) at a statistical significance of $\alpha$ = 0.05. I would fit a model that included calendar time since this can introduce variation in the response, espcially since this was a step-wedge trial. 
+
+
+_____________________________________________________________________________________________________________________________________________
+
+**c. (15 points) Calculate the rate difference and 95% CI comparing PPF-treated to Standard long-lasting insecticidal nets.**
+
+** (2 points) Parameters**
+
+- $\mu$: Expected # of cases of malaria
+- $\lambda_0$: Incidence rate of malaria in the unexposed
+- $\Delta\lambda$: Incidence rate difference of malaria in exposed minus unexposed
+
+**(1 points) Relationship between the parameters. PT = person-time**
+
+$$\mu = \lambda*PT \\ \lambda = (\lambda_0 + \Delta\lambda*Exposed)*PT$$
+
+** (2 points) Regression model**
+
+$$\mu = \lambda_0*PT+\Delta\lambda*PT*Exposed$$
+$\\ Where:\\ \\\textrm{Exposed} = \begin{cases} 0: \textrm{Bednet containing pyriproxyfen only} \\ 1: \textrm{Bednet containing permethrin and pyriproxyfen} \end{cases}$
+
+<!--
+**Hypotheses**
+
+- $H_0$: There is no difference in the incidence rate of malaria in the control (unexposed) and treatment (exposed) bednets
+- $H_1$: There is a difference in the incidence rate of malaria in the control (unexposed) and treatment (exposed) bednets
+
+$$ H_0:  \Delta\lambda = 0 \\ H_A: \ \Delta\lambda ≠ 0 $$ 
+-->
+
+
+```{r}
+
+# Perform regression to get rate difference
+fit2 <- glm(Cases ~ -1 + Person.time + Person.time:Exposure, family = poisson(link = identity), data = Bednets)
+summary(fit2)
+
+CI.95.rate.diff <- round(qnorm(p = c(0.025, 0.975), mean = coef(fit2)[2], sd = sqrt(vcov(fit2)[2,2])), 2)
+```
+
+(10 points for interpretation, -5 points for not having 0.49 cases per person year less)
+
+- The rate difference is -0.48726 meaning that the treatment group with bednets containing pyriproxyfen and permethrin had **0.49 cases per person year** less than compared to the control group with bednets only containing permethryn.
+- The 95% CI of the rate difference in the treatment and control bednet groups is **[`r CI.95.rate.diff`]**. If we were to repeat this method many times, this interval would cover the true rate difference 95% of the time. Because it does not cover the null hypothesis of rate difference ($\Delta\lambda$) = 0 and is negative, we conclude the treatment group had lower incidence rate of malaria compared to the control.
+
+
+________________________________________________________________________________________________________________________
+
+# Population mortality rates in Denmark (50 points)
+
+```{r, echo=FALSE}
+## ---- Question-2 ------------------------------------------------------------
+
+# Denmark <- read.csv("~/Library/Mobile Documents/com~apple~CloudDocs/2018 Fall/TA/a9/Denmark.csv")
+Denmark <- read.csv("~/git_repositories/epib607/assignments/a9/Denmark.csv")
+
+```
+
+**a. (10 points) Come up with a suitable regression model for this data. Write down the regression equation in terms of parameters and determinants.**
+
+** (5 points) Parameters**
+
+- $\mu$: Expected # of deaths in Denmark
+- $\lambda_0$: Mortality rate of the reference (female aged 70-74 in the time period of 1980-1984) in Denmark
+- $\theta_1$: Mortality rate ratio of time period 2000-2004 over the reference (1980-1984) in Denmark
+- $\theta_2$: Mortality rate ratio of time period 2005-2009 over the reference (1980-1984) in Denmark
+- $\theta_3$: Mortality rate ratio in those aged 75-79 years over the reference (70-74) in Denmark
+- $\theta_4$: Mortality rate ratio in those aged 80-84 years over the reference (70-74) in Denmark
+- $\theta_5$: Mortality rate ratio in those aged 85-89 years over the reference (70-74) in Denmark
+- $\theta_6$: Mortality rate ratio in males over the reference (females) in Denmark
+
+**(2 points) Determinants**
+
+- Time period (1980-1984, 2000-2004, 2005-2009)
+- Age (70-74, 75-79, 80-84, 85-89)
+- Gender (female, male)
+
+**Table 1. Factors for each of the 3 determinants. Reference is a female aged 70-74 in time period 1980-1984.**
+
+|Factors for time period | Factors for age | Factors for gender |
+|:----------------- | :--------------- | :----------------- |
+| Time period 1980-1984 (Reference) | Age 70-74 (Reference) | Female (Reference) |
+| Time period 2000-2004 (**Y2000**) | Age 75-79 (**A75**) | Male (**Male**) |
+| Time period 2005-2009 (**Y2005**) | Age 80-84 (**A80**) | |
+|                               | Age 85-89 (**A85**) | |
+|||
+
+**(1 points) Relationship between the parameters. PT = person-time**
+
+$$\mu = \lambda*PT \\ \lambda = \lambda_0 * \theta_1^{I_{2000}} *\theta_2^{I_{2005}} *\theta_3^{I_{75}} *\theta_4^{I_{80}} *\theta_5^{I_{85}} *\theta_6^{Male} \\ \mu = \lambda_0 * \theta_1^{I_{2000}} *\theta_2^{I_{2005}} *\theta_3^{I_{75}} *\theta_4^{I_{80}} *\theta_5^{I_{85}} *\theta_6^{Male} * PT$$
+
+**(2 points) Regression model**
+
+$$log(\mu) = log(\lambda_0) + log(\theta_1)*I_{2000} + log(\theta_2)*I_{2005} + log(\theta_3)*I_{75} + log(\theta_4)*I_{80} + log(\theta_5)*I_{85} + log(\theta_6)*Male + log(PT)$$ 
+
+$\\ Where:\ \\I_{2000} = \begin{cases} 0: otherwise \\ 1: Time\ period\ 2000-2004 \end{cases} \\I_{2005} = \begin{cases} 0: otherwise \\ 1: Time\ period\ 2005-2009 \end{cases} \\I_{75} = \begin{cases} 0: otherwise \\ 1: Age\ 75-79 \end{cases} \\I_{80} = \begin{cases} 0: otherwise \\ 1: Age\ 80-84 \end{cases} \\I_{85} = \begin{cases} 0: otherwise \\ 1: Age\ 85-89 \end{cases} \\Male = \begin{cases} 0: Female \\ 1: Male\end{cases}$
+
+<!--
+**Hypotheses**
+
+- $H_0$: There is no difference in the mortality rate ratios with the different determinants
+- $H_1$: There is a difference in the mortality rate ratios with the different determinants
+
+$$ H_0: \theta_1 = \theta_2 = \theta_3 = \theta_4 = \theta_5 = \theta_6 = 1 \\ H_A: \theta_1 ≠ 1, \theta_2 ≠ 1, \theta_3 ≠ 1, \theta_4 ≠ 1, \theta_5 ≠ 1, \theta_6 ≠ 1 $$ 
+-->
+_____________________________________________________________________________________________________________________________________________
+
+**b. (15 points) Estimate the parameters of this model using the data in the table above. Provide the fitted regression equation.**
+
+(5 points for running the regression)
+
+```{r, echo = T}
+
+fit3 <- glm(Deaths ~ Year.2000 + Year.2005 + Age.75 + Age.80 + Age.85 + Male + offset(log(PT)), family = poisson(link = log), data = Denmark)
+summary(fit3)
+
+rate.reference <- round(exp(coef(fit3)[1]), 4)
+RR.Y2000 <- round(exp(coef(fit3)[2]), 4)
+RR.Y2005 <- round(exp(coef(fit3)[3]), 4)
+RR.A75 <- round(exp(coef(fit3)[4]), 4)
+RR.A80 <- round(exp(coef(fit3)[5]), 4)
+RR.A85 <- round(exp(coef(fit3)[6]), 4)
+RR.Male <- round(exp(coef(fit3)[7]), 4)
+
+```
+
+** (10 points) Fitted regression model**
+
+$\hat\mu$ = `r rate.reference` * `r RR.Y2000`^$^I_{2000}$ *  `r RR.Y2005`^$^I_{2005}$ * `r RR.A75`^$^I_{75}$ * `r RR.A80`^$^I_{80}$ * `r RR.A85`^$^I_{85}$ * `r RR.Male`^$^{Male} * PT$
+
+or
+
+$\widehat{log(\mu)}$ = `r coef(fit3)[1]` + `r coef(fit3)[2]`*$I_{2000}$ + `r coef(fit3)[3]`*$I_{2005}$ + `r coef(fit3)[4]`*$I_{75}$ + `r coef(fit3)[5]`*$I_{80}$ + `r coef(fit3)[6]`*$I_{85}$ + `r coef(fit3)[7]`*Male + $log(PT)$
+
+
+
+** (not required) Estimates of parameters**
+
+- $\lambda_0$: The mortality rate for women aged 70-74 in the period of 1980-1984 is **`r rate.reference` deaths per person-years**.
+- $\theta_1$: The mortality rate ratio for the mortality rate in Denmark of **time period 2000-2004 over the reference is `r RR.Y2000`**.
+- $\theta_2$: The mortality rate ratio for the mortality rate in Denmark of **time period 2005-2009 over the reference is `r RR.Y2005`**.
+- $\theta_3$: The mortality rate ratio for the mortality rate in Denmark of **age 75-79 over the reference is `r RR.A75`**.
+- $\theta_4$: The mortality rate ratio for the mortality rate in Denmark of **age 80-84 over the reference is `r RR.A80`**.
+- $\theta_5$: The mortality rate ratio for the mortality rate in Denmark of **age 85-89 over the reference is `r RR.A85`**.
+- $\theta_6$: The mortality rate ratio for the mortality rate in Denmark of **male over the reference is `r RR.Male`**.
+
+_____________________________________________________________________________________________________________________________________________
+
+**c. (15 points) Interpret the parameter for gender. Are mortality rates significantly different in males compared with females?**
+
+(-10 points for not having an adjusted interpretation)
+
+The mortality rate ratio in Denmark of male over the reference (female) is `r RR.Male`. This means that, on average, the mortality rate among males is 52% greater than among females **while controlling for Age and Time period**. At a significance level of $\alpha$ = 0.05, the mortality rates are significantly different in males compared with females, controlling for age and time period, with p-value < 0.0001.
+
+_____________________________________________________________________________________________________________________________________________
+
+**d. (10 points) Perform a goodness of fit test for the fitted model in part (b). Is this a good fit?**
+
+```{r}
+
+Denmark$Exp.deaths <- exp(coef(fit3)[1])*(exp(coef(fit3)[2])^Denmark$Year.2000)*(exp(coef(fit3)[3])^Denmark$Year.2005)*(exp(coef(fit3)[4])^Denmark$Age.75)*(exp(coef(fit3)[5])^Denmark$Age.80)*(exp(coef(fit3)[6])^Denmark$Age.85)*(exp(coef(fit3)[7])^Denmark$Male)*Denmark$PT
+
+x2.stat.2 <- sum((Denmark$Deaths - Denmark$Exp.deaths)^2/Denmark$Exp.deaths)
+(p.value.chi.2 <- pchisq(q = x2.stat.2, df = nrow(Denmark) - length(coef(fit3)), lower.tail = F))
+```
+
+This is not a good fit because the p-value was less than 0.0001 for the chi-squared goodness of fit test. It is possible that other factors such as social economic status are not being considered.
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```

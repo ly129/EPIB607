@@ -1,0 +1,8 @@
+par(mfrow=c(1, 2))
+curve(log(x/(1-x)), 0, 0.1)
+curve(log(x), 0, 0.1)
+
+
+par(mfrow=c(1, 2))
+curve(log(x/(1-x)), 0, 1)
+curve(log(x), 0, 1)

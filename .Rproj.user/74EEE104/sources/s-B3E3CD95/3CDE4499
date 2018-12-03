@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543818618271.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3CDE4499",
+    "lastKnownWriteTime" : 1539178119,
+    "last_content_update" : 1539178119,
+    "path" : "~/git_repositories/epib607/assignments/a4/a4-solutions.Rmd",
+    "project_path" : "assignments/a4/a4-solutions.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "145,94",
+        "scrollLine" : "140"
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

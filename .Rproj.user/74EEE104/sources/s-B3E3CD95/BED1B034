@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543236556638.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "34|63|61|0|\n",
+    "hash" : "0",
+    "id" : "BED1B034",
+    "lastKnownWriteTime" : 1543248767,
+    "last_content_update" : 1543248767340,
+    "path" : "~/git_repositories/epib607/slides/regression/handouts/hivTransmsion.R",
+    "project_path" : "slides/regression/handouts/hivTransmsion.R",
+    "properties" : {
+        "cursorPosition" : "18,42",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

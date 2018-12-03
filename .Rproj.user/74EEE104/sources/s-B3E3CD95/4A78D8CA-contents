@@ -1,0 +1,565 @@
+---
+title: Final Exam - December 6, 2pm - 5pm 2018
+author:
+  - name: EPIB607 - Inferential Statistics
+    affiliation: a
+#  - name: Second Author
+#    affiliation: a,b
+address:
+  - code: a
+    address: Fall 2018, McGill University
+#  - code: b
+#    address: Department of Neat Tricks, Whereever State University, Someplace, MC, 67890
+lead_author_surname: Bhatnagar and Hanley
+doi: "https://sahirbhatnagar.com/EPIB607/"
+abstract: |
+  This is a 3 hour, closed book exam. Two formula sheets, double-sided, 8.5 by 11 inches are allowed. Calculators and a translation dictionary are permitted. Cellular phones are not permitted. The exam is out of 100. Write down all your answers in the provided booklet. Provide units and state your assumptions when applicable. If a question requires use of the z or t probabilities/quantiles, write the corresponding R code instead. Some commonly used quantiles are provided. 
+# Optional: Acknowledgements
+#acknowledgements: |
+#  [rticles](https://cran.r-project.org/package=rticles) package, and both packages rely on the
+#  [PNAS LaTeX](http://www.pnas.org/site/authors/latex.xhtml) macros. Both these sources are
+#  ([GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html) and
+#  [LPPL (>= 1.3)](https://www.latex-project.org/lppl/)).
+# Optional: One or more keywords
+keywords:
+papersize: letter
+fontsize: 11pt
+# Optional: Force one-column layout, default is two-column
+one_column: true
+# Optional: Enables lineno mode, but only if one_column mode is also true
+#lineno: true
+# Optional: Enable one-sided layout, default is two-sided
+#one_sided: true
+# Optional: Enable section numbering, default is unnumbered
+numbersections: true
+# Optional: Specify the depth of section number, default is 5
+#secnumdepth: 5
+# Optional: Skip inserting final break between acknowledgements, default is false
+skip_final_break: true
+# Optional: Bibliography 
+bibliography: pinp
+header-includes:
+   - \usepackage{csquotes}
+   - \newcommand{\jh}[1]{\textcolor{red}{\textsf{#1}}}
+# Optional: Enable a 'Draft' watermark on the document
+watermark: false
+footer_contents: "Final Exam - December 6, 2pm - 5pm 2018"
+output: pinp::pinp
+# Required: Vignette metadata for inclusion in a package.
+vignette: >
+  %\VignetteIndexEntry{YourPackage-vignetteentry}
+  %\VignetteKeywords{YourPackage, r, anotherkeyword}
+  %\VignettePackage{Final Exam - December 6, 2pm - 5pm 2018}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(NCStats)
+gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20),
+                          axis.title = element_text(size = 20), 
+                          legend.text = element_text(size = 20), 
+                          legend.title = element_text(size = 20))
+
+# A Prefix nulling hook.
+
+# Make sure to keep the default for normal processing.
+default_output_hook <- knitr::knit_hooks$get("output")
+
+# Output hooks handle normal R console output.
+knitr::knit_hooks$set( output = function(x, options) {
+
+  comment <- knitr::opts_current$get("comment")
+  if( is.na(comment) ) comment <- ""
+  can_null <- grepl( paste0( comment, "\\s*\\[\\d?\\]" ),
+                     x, perl = TRUE)
+  do_null <- isTRUE( knitr::opts_current$get("null_prefix") )
+  if( can_null && do_null ) {
+    # By default R print output aligns at the right brace.
+    align_index <- regexpr( "\\]", x )[1] - 1
+    # Two cases: start or newline
+    re <- paste0( "^.{", align_index, "}\\]")
+    rep <- comment
+    x <- gsub( re, rep,  x )
+    re <- paste0( "\\\n.{", align_index, "}\\]")
+    rep <- paste0( "\n", comment )
+    x <- gsub( re, rep,  x )
+  }
+
+  default_output_hook( x, options )
+
+})
+
+knitr::opts_template$set("kill_prefix"=list(comment=NA, null_prefix=TRUE))
+
+```
+
+Some common quantiles of the normal distribution and a nomogram for confidence intervals for a proportion are provided:
+
+|R Code                     |       Value        |
+|:--------------------------|:----------------------------------|
+|`qnorm(p = c(0.05, 0.95))` |`r round(qnorm(p = c(0.05, 0.95)), 2)`    |
+|`qnorm(p = c(0.025, 0.975))` |`r round(qnorm(p = c(0.025, 0.975)),2)`    |
+|`qnorm(p = c(0.005, 0.995))` |`r round(qnorm(p = c(0.005, 0.995)),2)`    |
+|`qt(p = c(0.025, 0.975), df = 400-1)` |`r round(qt(p = c(0.025, 0.975), df = 400-1), 2)`    |
+|`qt(p = c(0.025, 0.975), df = 25-1)` |`r round(qt(p = c(0.025, 0.975), df = 25-1), 2)`    |
+|`qt(p = c(0.025, 0.975), df = 20-1)` |`r round(qt(p = c(0.025, 0.975), df = 20-1), 2)`    |
+|`qt(p = c(0.025, 0.975), df = 16-1)` |`r round(qt(p = c(0.025, 0.975), df = 16-1), 2)`    |
+
+\begin{figure}[H]
+  \begin{center}
+\includegraphics[scale=0.65]{Nomogram.pdf}
+  \end{center}
+  \caption{\normalsize Wilson 95\% CIs for proportion $\pi$}\label{fig:nomo}
+\end{figure}
+
+
+\newpage
+
+
+# Question 1 [10 marks] {-}
+
+\jh{I fixed a few typos in the preamble above}
+
+A very large class of students is broken down into sections with 25 students each. The sections are led by teaching assistants. On the final exam, the class average is 65, with an SD of 15. However, in one section, the average is only 61. The assistant leading that section is accused of bad teaching. He defends himself this way:
+
+\begin{displayquote}
+``If you took 25 students at random from the class, there is a pretty good chance that they would average below 61 on the final. That's what happened to me ! Chance variation.''
+\end{displayquote}
+
+Is his argument valid? Support your answer with statistical evidence.
+
+
+# Question 2 [10 marks] {-}
+
+A journal article reported a rate ratio of hip fracture in communities with fluoridated vs nonfluoridated water as 1.41 with a 95\% confidence interval of 1.00 to 1.81. \jh{The authors added:} 
+
+\begin{displayquote}
+``We did have a lower confidence limit that was equal to 1.00. Our $p$-value was equal to 0.05 (2-sided). There is still a one in 20 chance that the data may be wrong.''
+\end{displayquote}
+
+Is the authors' interpretation of a $p$-value correct? How would you say it?
+
+# Question 3 [10 marks] {-}
+
+
+Refer to Figure 2 below taken from the BMJ article \textit{Perceived age as clinically useful biomarker of ageing: cohort study} by Christensen et al. (2009). 
+
+\begin{figure}[H]
+  \begin{center}
+\includegraphics[scale=1]{figure2.pdf}
+  \end{center}
+  %\caption{\normalsize Wilson 95\% CIs for proportion $\pi$}\label{fig:nomo}
+\end{figure}
+
+
+a. Give the \texttt{R} code which would produce the $p$-value of 0.011 for the \textit{Top 75}\% category. 
+b. What pattern do you notice about the \jh{shapes of? or is this giving it away? Some may just say the CIs are increasing (or narrowing) and maye be trying to give a substantive answer. Maybe ask for a *statistical* explanation } confidence intervals in the Figure from left (\textit{All} category) to right (\textit{Top 25}\% category)? Provide an explanation for this pattern. 
+
+
+# Question 4 [10 marks] {-}
+
+<!--
+Suppose you were worried that the assumptions behind the symmetric CIs 
+obtainable for each mean, and for the CI and P-value for the difference in means, were not met. How else might you have computed the CIs?
+
+How would you have computed the CI for the ratio? The authors reported a ratio was 1.9 (CI 1.5 to 2.5).
+-->
+
+```{r, echo=FALSE}
+# this takes a while to run so I commented it out here
+# and stored the results in a vector
+# set.seed(1234567)
+# 
+# shape = 0.7; scale=8.5/shape
+# hit=FALSE
+# n1=62
+# while(!hit){
+# 	y1 = 1+rpois(n1,rgamma(n1,shape=shape,scale=scale))
+# ci1=round(qnorm(c(0.025,0.5,0.975),
+#  mean(y1),sd(y1)/sqrt(n1)),1)
+# if(ci1[1]==5.5 & ci1[2]==9.5) hit=TRUE
+# }
+# 
+# shape = 1.0; scale=4.5/shape
+# hit=FALSE
+# n0=187
+# while(!hit){
+# 	y0 = 1+rpois(n0,rgamma(n0,shape=shape,scale=scale))
+# ci0=round(qnorm(c(0.025,0.5,0.975),
+#  mean(y0),sd(y0)/sqrt(n0)),1)
+# if(ci0[1]==4.5 & ci0[2]==5.5) hit=TRUE
+# }
+# dput(y0)
+# dput(y1)
+
+semi.automatic <- c(1, 60, 8, 1, 17, 3, 1, 3, 20, 3, 12, 1, 23, 3, 2, 2, 8, 2, 
+21, 6, 6, 1, 1, 10, 4, 6, 1, 8, 5, 105, 8, 11, 12, 2, 3, 1, 27, 
+1, 10, 2, 1, 3, 4, 1, 27, 1, 7, 1, 5, 1, 7, 17, 3, 36, 16, 1, 
+2, 5, 17, 5, 1, 5)
+
+n1 <- length(semi.automatic)
+
+handgun <- c(2, 2, 1, 5, 6, 7, 5, 5, 4, 1, 1, 2, 7, 3, 8, 4, 11, 4, 6, 7, 
+4, 2, 2, 3, 1, 5, 2, 1, 6, 3, 5, 1, 4, 3, 4, 12, 1, 57, 2, 1, 
+10, 2, 1, 1, 8, 3, 19, 1, 2, 2, 12, 3, 3, 8, 2, 1, 3, 3, 1, 2, 
+28, 4, 8, 8, 1, 5, 2, 1, 4, 2, 4, 1, 1, 2, 3, 3, 20, 1, 8, 3, 
+1, 9, 2, 1, 9, 3, 3, 2, 2, 1, 5, 12, 6, 3, 2, 6, 5, 29, 4, 9, 
+4, 28, 3, 14, 1, 5, 1, 1, 1, 1, 25, 5, 2, 4, 13, 4, 1, 3, 6, 
+1, 2, 1, 1, 1, 13, 6, 9, 6, 15, 4, 9, 14, 6, 4, 2, 13, 1, 4, 
+1, 2, 4, 4, 8, 2, 11, 1, 13, 18, 15, 1, 3, 3, 5, 2, 2, 1, 11, 
+5, 9, 3, 4, 4, 10, 1, 11, 2, 15, 8, 8, 1, 3, 4, 4, 4, 1, 4, 5, 
+2, 12, 2, 9, 10, 1, 3, 5, 2, 7)
+n0 <- length(handgun)
+
+n.wounded.or.killed <- c(semi.automatic,handgun)
+automatic <- c(rep(1,n1),rep(0,n0))
+
+df <- cbind(n.wounded.or.killed, automatic)
+```
+
+
+A recent study compared the mean number of US persons wounded or killed during active shooter incidents with a handgun ($n=187$) and \jh{?versus? rather than and} with a semiautomatic rifle ($n=62$). The mean number of persons wounded or killed and standard deviation (SD) by gun type is provided in Table \ref{tab:tab2}:
+
+Table: \label{tab:tab2} Mean \jh{(SD)}number of persons wounded or killed, \jh{, is important.. must tell you about Miettinen and death by logistic regression} by gun type. 
+
+| Gun type       |     # of active shooter incidents                     |       Mean number wounded or killed (SD)        |
+|:--------------------------:|:--------------------------:|:----------------------------------:|
+|Handgun (\texttt{automatic=0})   |`r n0`    |  `r round(mean(handgun),2)` (`r round(sd(handgun),2)`) |
+|Semiautomatic rifle (\texttt{automatic=1})  |`r n1`    |  `r round(mean(semi.automatic),2)` (`r round(sd(semi.automatic),2)`) |
+
+Assume that \texttt{n.wounded.or.killed} is a vector \jh{of length 249} containing the number of persons wounded or killed in each of the 249 incidents and \texttt{automatic} is a binary vector of length 249 where \texttt{automatic=0} for handgun and \texttt{automatic=1} for semiautomatic rifle \jh{why not call the 0/1 variable automatic rather than have to remember which is 0 and 1}. \newline
+
+```{r, echo=FALSE, eval=FALSE}
+head(df)
+```
+
+The Coalition to Stop Gun Violence analyzed the data and reported the following analysis:
+
+```{r, echo=TRUE, eval=FALSE}
+lm(n.wounded.or.killed ~ automatic)
+```
+
+
+```{r, echo=FALSE}
+#mosaic::t.test(handgun)
+#mosaic::t.test(semi.automatic)
+# mosaic::t.test(n.victims ~ automatic, var.equal=TRUE)
+print(summary( lm(n.wounded.or.killed ~ automatic )),
+signif.stars = FALSE, show.call = FALSE, digits = 2)
+# df <- data.frame(n.victims, automatic)
+# ggformula::gf_boxplot(n.victims ~ factor(semi.automatic), data = df) + 
+# theme_linedraw() + gg_sy + xlab("group") + ylab("mineral loss")+
+# scale_x_discrete(name ="Dose (mg)", 
+# labels=c("0" = "without","1" = "with"))
+```
+
+
+The National Rifle Association also analyzed the data and reported the following analysis:
+
+```{r}
+t.test(n.wounded.or.killed ~ automatic)
+```
+
+a. Give the corresponding \jh{not sure what corresponding means} regression model in terms of population parameters. What is the parameter of interest and what does it represent? 
+b. State the null and alternative hypotheses being tested here. 
+c. Based on their analysis, what would the Coalition to Stop Gun Violence conclude?
+d. Based on their analysis, what would the National Rifle Association conclude?
+e. Are the conclusions of the Coalition to Stop Gun Violence and the National Rifle Association the same? Explain why or why not. 
+f. Provide an alternative analysis strategy to test the hypothesis stated in part (b) and \jh{say} what statistical evidence you would report. What are the primary advantages to your analysis?
+
+
+# Question 5 [10 marks] {-}
+
+Refer to Table 1 below taken from the 2-page letter to the editor \textit{``Looking old for your age": Genetics and Mortality} by Christensen et al. (2004). 
+
+\begin{figure}[H]
+  \begin{center}
+\includegraphics[scale=1]{table1.pdf}
+  \end{center}
+  %\caption{\normalsize Wilson 95\% CIs for proportion $\pi$}\label{fig:nomo}
+\end{figure}
+
+
+a. Using the overall MZ, DZ distribution (last column, row 1), estimate the population proportion of twins that are MZ, and calculate a 95% confidence interval to accompany it.
+b. Given the age categories, how can you be sure that the SD's in rows 2 and 3 of the Table are not standard errors of the means (SEM's) ?
+c. In each of the three age categories, why are the SD's in row 3 larger than the corresponding ones in row 2?
+d. Is there enough information in the Table to formally test whether perceived ages are different from real ages? If yes, provide statistical evidence and a conlcusion \jh{conclusion}. If no, explain what type of analysis \jh{you would recommend} and the information needed to complete this analysis. 
+e. Using \textit{only} the intra-pair correlations for perceived age (columns 1-3, rows 4 [MZ] and 5 [DZ]), the authors claim that the correlations for perceived aged within monozygotic twins are approximately twice the ones for dizygotic twins. Have the authors provided enough statistical evidence in Table 1 to support their claim? If yes, state their evidence. If no, explain what statistical evidence you would provide and how you would calculate it.
+
+
+\clearpage
+
+# Question 6 \jh{presume more than 10 marks} [10 marks] {-}
+
+Refer to Table 2 below taken from the BMJ article \textit{Perceived age as clinically useful biomarker of ageing: cohort study} by Christensen et al. (2009).
+
+\begin{figure}[H]
+  \begin{center}
+\includegraphics[scale=1]{table2.pdf}
+  \end{center}
+  %\caption{\normalsize Wilson 95\% CIs for proportion $\pi$}\label{fig:nomo}
+\end{figure}
+
+The following \texttt{data.frame} contains the data in rows 2 and 3 of Table 2:
+
+```{r, echo=FALSE, kill_prefix=TRUE}
+ds <- read.csv("~/Dropbox/mcgill/teaching/EPIB607/final/PerceivedAgeAggregatedData.csv") 
+# dput(colnames(ds))
+# colnames(ds) <- c("male", "X2nd.third", "X3rd.third", "age.cat.2", "age.cat.3", 
+# "n.deaths", "PT")
+df <- ds[ds$male==0,]
+df <- df[,-1]
+# df$rate.per100Y <- round(100*df[,"deaths"]/df[,"PT"],1)
+print(df, row.names = FALSE)
+# age.sex <- glm(n.deaths ~ male + age.cat.2 + age.cat.3 + offset(log(PT)), 
+#      family = poisson(link = log), data = ds)
+```
+
+where
+
+- \texttt{second} = 1 if perceived age is in 2nd third and 0 otherwise
+- \texttt{third} = 1 if perceived age is in 3rd third and 0 otherwise
+- \texttt{age75} = 1 if actual age group is in \jh{need the word in?} 75-79
+- \texttt{age80} = 1 if actual age group is in \jh{need the word in?} $\geq$ 80
+
+
+\clearpage
+
+
+Two Poisson regression models with \texttt{link=log} are fit to these data. The following is the summary output of \textbf{Model 1}:
+
+```{r, echo=FALSE}
+age <- glm(deaths ~ age75 + age80 + offset(log(PT)), 
+     family = poisson(link=log), data=df)
+print(summary(age), signif.stars = FALSE, digits = 2)
+```
+
+The following is the summary output of \textbf{Model 2}:
+
+```{r, echo=FALSE}
+age.pAge <- glm(deaths ~ age75 + age80 + second + third + offset(log(PT)), 
+     family = poisson(link = log), data=df)
+print(summary(age.pAge), signif.stars = FALSE, digits = 2)
+df$Model1.expected <- round(age$fitted.values,0)
+
+# exp(coef(age)[1] + coef(age)[2] * df$age75 + coef(age)[3] * df$age80) * df$PT
+
+# df$Model1.rate=round(100*df$age.fit.no/df$PT,1)
+
+df$Model2.expected <- round(age.pAge$fitted.values,0)
+```
+
+a. Is the \texttt{data.frame} presented above in \textit{tidy} format? Explain briefly. 
+b. For Models 1 and 2, give the regression equation in terms of population parameters. Define each of the parameters in your model. 
+c. Provide the \texttt{R} code used to fit the regression equations for Models 1 and 2. 
+d. For Models 1 and 2, provide the fitted regression equations for the expected number of deaths. 
+e. Interpret the \texttt{Estimate} for \texttt{third} in Model 2. Explain what it means in the context of the research question and provide a 95% CI for this parameter. 
+f. The \texttt{data.frame} below contains the expected \jh{would fitted be better than expected? also, why not put 1 decimal place so it is clearly they are calculated values} number of deaths based on Model 1 (column \texttt{Model1.expected}) and Model 2 (column \texttt{Model2.expected}). Calculate the missing values. 
+g. You are given that $\sum_{i=1}^{k} (O_i-E_i)^2 / E_i$ is `r round(sum((df$deaths-df$Model1.expected)^2 / df$Model1.expected),0)` for Model 1 and `r round(sum((df$deaths-df$Model2.expected)^2 / df$Model2.expected),0)` for Model 2. Which model is a better fit to the data? Explain why.
+
+
+
+
+```{r, echo=FALSE}
+
+
+# df$Model2.rate=round(100*df$age.pAge.fit.no/df$PT,1)
+# dput(colnames(df))
+# print(df[, c("second", "third", "age75", "age80", "PT", "deaths", "Model1.expected","Model2.expected")],
+#       row.names = FALSE)
+
+df[2, "Model1.expected"] <- "__"
+df[8, "Model2.expected"] <- "__"
+print(df, row.names = FALSE)
+```
+
+
+
+
+
+
+
+# Question 7 [10 marks] {-}
+
+This question is based on the NEJM article \textit{The mode of delivery\jh{ space } and the risk of vertical transmission of human immunodeficiency virus type 1} by the International Perinatal HIV Group (1999). To evaluate the relation \jh{? to evaluate the role of} between elective cesarean section \jh{in reducing the rate of?} and vertical (mother-to-child) transmission of human immunodeficiency virus type 1 (HIV-1), the authors performed a meta-analysis using data on individual patients from 15 prospective cohort studies. Data are provided in Table \ref{tab:tabHIV} below:
+
+<!--
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=1.1]{hivtable.pdf}
+%\end{figure}
+-->
+
+```{r, echo=FALSE, eval=FALSE}
+mode <- rep(c("Elective cesarean","Other"), 12)
+ART <- c(rep("0", 8),rep("1 or 2",8),rep("3",8))
+AMD <- rep(c("No","No","Yes","Yes"), 6)
+LBW <- rep(c(rep("No",4),rep("Yes",4)),3)
+ds <- read.csv("~/git_repositories/epib607/slides/regression/handouts/hiv_Transmission.csv",
+              header = TRUE)
+ds$n.hivneg <- ds$n.pairs - ds$n.hivpos
+ds$risk = round(ds$n.hivpos/ds$n.pairs,3)
+library(kableExtra)
+
+knitr::kable(as.data.frame(cbind(mode,ART,AMD,LBW, ds$n.pairs, ds$n.hivpos, ds$n.hivneg, ds$risk)),
+             col.names = c("Mode of Delivery","ART","Advanced Maternal Disease","Low Birth Weight",
+                           "Mother-Child Pairs","HIV-1 Positive","HIV-1 Negative","Vertical Transmission"),
+             align = c('l', rep("c",7))) %>% 
+    add_header_above(c(" " = 1, "Covariate" = 3, "Number of " = 3, "Probability of" = 1), line = F)
+
+# kableExtra::text_spec()
+# kable(dt) %>%
+#   kable_styling("striped", full_width = F) %>%
+#   column_spec(5:7, bold = T) %>%
+
+
+
+# df <- as.data.frame(cbind(
+#   c("[1. Muddy cards for Rates](https://github.com/sahirbhatnagar/EPIB607/raw/master/QNA/EPIB607_Rates_QNA.pdf)"),
+#   c("[2. Regression handout](https://www.dropbox.com/s/qpm7ebzgq4e619b/regression_handout.pdf?dl=0)"),
+#   c("[3. Parameter Contrasts with Regression](https://github.com/sahirbhatnagar/EPIB607/raw/master/slides/regression/EPIB607_regression_handout.pdf)")
+# ))
+# 
+# df %>% kable(col.names = NULL) %>% 
+#   kable_styling(bootstrap_options = c("striped", "hover")) 
+```
+
+\begin{table}[h]
+\begin{tabular}{lcccccccc}
+	\hline
+	\multicolumn{1}{c}{\textbf{Mode of}} & \multicolumn{1}{c}{\textbf{No. of periods}} &\multicolumn{1}{c}{\textbf{Advanced}} & \multicolumn{1}{c}{\textbf{Low birth weight}}  &\multicolumn{1}{c}{\textbf{Number of mother-}} & \textbf{Number of} & \textbf{Number of} & \multicolumn{2}{c}{\textbf{Prob. Vertical Transmission}} \\
+	\multicolumn{1}{c}{\textbf{delivery}} & \textbf{of ART} & \textbf{maternal disease} & \textbf{of infant} & \textbf{child pairs} & \textbf{HIV-1 positive} & \textbf{HIV-1 negative} & \textbf{Observed} & \textbf{Predicted}\\
+	\hline
+	Elective cesarean & 0 & No & No & 372 & 30 & 342 & 0.081& 0.079 \\
+	Other & 0 & No & No & 3850 & 652 & 3198 & 0.169 &0.167 \\
+	\hline
+	Elective cesarean & 0 & Yes & No & 28 & 5 & 23 & 0.179 & 0.127\\
+	Other & 0 & Yes & No & 303 & 74 & 229 & 0.244 & 0.255\\
+	\hline
+	Elective cesarean & 0 & No & Yes & 110 & 17 & 93 & 0.155 & 0.132\\
+	Other & 0 & No & Yes & 767 & 196 & 571 & 0.256 & 0.264\\
+	\hline
+	Elective cesarean & 0 & Yes & Yes & 27 & 4 & 23 & 0.148 & 0.207\\
+	Other & 0 & Yes & Yes & 114 & 40 & 74 & 0.351 & 0.379\\
+	\hline
+	Elective cesarean & 1 or 2 & No & No & 41 & 0 & 41 & 0 & 0.056\\
+	Other & 1 or 2 & No & No & 441 & 49 & 392 & 0.111 & 0.122\\
+	\hline
+	Elective cesarean & 1 or 2 & Yes & No & 23 & 3 & 20 & 0.13 & 0.092\\
+	Other & 1 or 2 & Yes & No & 186 & 33 & 153 & 0.177 & 0.192\\
+	\hline
+	Elective cesarean & 1 or 2 & No & Yes & 7 & 0 & 7 & 0 & 0.096\\
+	Other & 1 or 2 & No & Yes & 83 & 22 & 61 & 0.265 & 0.199\\
+	\hline
+	Elective cesarean & 1 or 2 & Yes & Yes & 10 & 3 & 7 & 0.3 & 0.154\\
+	Other & 1 or 2 & Yes & Yes & 54 & 19 & 35 & 0.352 & 0.298\\
+	\hline
+	Elective cesarean & 3 & No & No & 124 & 2 & 122 & 0.016 & 0.026\\
+	Other & 3 & No & No & 878 & 49 & 829 & 0.056 & 0.058\\
+	\hline
+	Elective cesarean & 3 & Yes & No & 34 & 1 & 33 & 0.029 & 0.043\\
+	Other & 3 & Yes & No & 208 & 24 & 184 & 0.115 & 0.095\\
+	\hline
+	Elective cesarean & 3 & No & Yes & 25 & 0 & 25 & 0 & 0.045\\
+	Other & 3 & No & Yes & 109 & 11 & 98 & 0.101 & 0.099\\
+	\hline
+	Elective cesarean & 3 & Yes & Yes & 8 & 1 & 7 & 0.125 & 0.074\\
+	Other & 3 & Yes & Yes & 38 & 6 & 32 & 0.158 & 0.158\\
+	\hline
+\end{tabular}
+\caption{Observed and predicted probability of vertical transmission for all combinations of covariates.}\label{tab:tabHIV}
+\end{table}
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, size = 'small'}
+ds.for.mh=read.csv("~/git_repositories/epib607/slides/regression/handouts/hiv_Transmission_mantel_haenszel.csv",
+header=TRUE)
+```
+
+<!--
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcc|c}
+			     & Exposed  &   Unexposed & Total  \\		
+		Cases    & $a_i$ &  $b_i$ & $M_{1i}$ \\
+		Controls & $c_i$ 	& $d_i$  	& $M_{0i}$ 	\\	
+		\hline
+		Total & $N_{1i}$ & $N_{0i}$ 	& $T_i$
+	\end{tabular}
+\end{table}
+
+
+$OR_{MH} = \frac{\sum_i \frac{a_i d_i}{T_i}}{\sum_i \frac{b_i c_i}{T_i}}$ \\ \ \\
+$RR_{MH} = \frac{\sum_i \frac{a_i N_{0i}}{T_i}}{\sum_i \frac{b_i N_{1i}}{T_i}}$
+-->
+
+
+
+
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, size = 'small'}
+# devtools::install_github('droglenc/NCStats')
+library(NCStats)
+ds=read.csv("~/git_repositories/epib607/slides/regression/handouts/hiv_Transmission.csv",header=TRUE)
+ds$n.hivneg= ds$n.pairs - ds$n.hivpos
+ds$propn = round(ds$n.hivpos/ds$n.pairs,3)
+#overall proportion hiv positive
+#round(sum(ds$n.hivpos)/sum(ds$n.pairs),3)
+# intercept-only logit model
+# fit0 <- glm(cbind(n.hivpos,n.hivneg) ~ 1, family=binomial(link=logit), data=ds)
+# print(summary(fit0), show.call=TRUE, digits=2)
+#checks
+#plogis(fit0$coefficients)
+```
+
+
+```{r echo=FALSE, eval=FALSE, message=FALSE, size = 'small'}
+fit.cae=glm(cbind(n.hivpos,n.hivneg) ~ caesarian, family=binomial(link=logit), data=ds)
+print(summary(fit.cae), show.call=TRUE, digits=2, signif.stars = FALSE)
+```
+
+\clearpage
+
+Two binomial regressions are fit to these data. The following is the summary output of \textbf{Model 1}:
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, size = 'small'}
+fit.all4 = glm(cbind(n.hivpos,n.hivneg) ~ caesarian + ART1or2 + ART3 + m.advancedHIV + c.LBW,
+family=binomial(link=logit), data=ds)
+print(summary(fit.all4), show.call=TRUE, digits=2, signif.stars = FALSE)
+# fit.all4$fitted.values
+```
+
+The following is the summary output of \textbf{Model 2}:
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, size = 'small'}
+fit.all4log = glm(cbind(n.hivpos,n.hivneg) ~ caesarian + ART1or2 + ART3 + m.advancedHIV + c.LBW,
+family=binomial(link=log), data=ds)
+print(summary(fit.all4log), show.call=TRUE, digits=2, signif.stars = FALSE)
+# fit.all4log$fitted.values
+# cbind(fit.all4$fitted.values, fit.all4log$fitted.values)
+```
+
+\clearpage
+
+where
+
+- \texttt{caesarian} = 1 if mode of delivery was cesarian and 0 otherwise
+- \texttt{ART1or2} = 1 if number of periods of antiretroviral therapy is 1 or 2, and 0 otherwise
+- \texttt{ART3} = 1 if number of periods of antiretroviral therapy is 3, and 0 otherwise
+- \texttt{m.advancedHIV} = 1 if advanced maternal disease and 0 otherwise
+- \texttt{c.LBW} = 1 if low birth weight of infant ($<$ 2500 grams) and 0 otherwise
+
+
+a. Is Table \ref{tab:tabHIV} in \textit{tidy} format? Explain briefly. 
+b. For Models 1 and 2, give the regression equation in terms of population parameters. Define each of the parameters in your model. 
+c. For Models 1 and 2, provide the fitted regression equations for the expected probability of vertical transmission.
+d. Can you determine which of these two models (Model 1 or Model 2) produced the predicted probabilities of vertical transmission in Table \ref{tab:tabHIV}? Explain. 
+e. There are certain combinations of predictors that have an observed vertical transmission probability of 0 but a predicted value greater than 0. Explain how this is possible. 
+f. Explain what the \texttt{Estimate} for \texttt{caesarian} represents in Model 2.
+g. What statement can you make about cesarians and HIV vertical transmission based on these models? Provide statistical evidence (point estimate and 95% CI) to support your answer.  \jh{add a q. as to which model they would use in speaking to pub. health people?}

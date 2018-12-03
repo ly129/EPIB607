@@ -1,0 +1,1137 @@
+\documentclass{beamer}
+
+\usepackage{default}
+\usepackage{animate} %need the animate.sty file 
+\usepackage{graphicx}
+%\graphicspath{{/home/sahir/Dropbox/jobs/laval/minicours/slides/}}
+\usepackage{hyperref, url}
+%\usepackage[round,sort]{natbib}   % bibliography omit 'round' option if you prefer square brackets
+%\bibliographystyle{apalike}
+\usepackage{biblatex}
+\bibliography{bib.bib}
+% Removes icon in bibliography
+\setbeamertemplate{bibliography item}[text]
+
+\usepackage[normalem]{ulem}
+
+\setbeamertemplate{theorems}[numbered]
+
+
+
+%\newtheorem{prop}{Proposition}
+%\newenvironment{theoremc}[1]
+%{\begin{shaded}\begin{theorem}[#1]}
+%		{\end{theorem}\end{shaded}}
+	
+%\newtheorem{examplefirst}{Example}
+%\newtheorem{examplesecond}{Example}
+%\newenvironment<>{examplefirst}[1][]{%
+%	\setbeamercolor{block title example}{bg=lightgray}%
+%	\begin{example}#2[#1]}{\end{example}}
+%\newenvironment<>{examplesecond}[1][]{%
+%	\setbeamercolor{block title example}{fg=white,bg=blue!75!black}%
+%	\begin{example}#2[#1]}{\end{example}}	
+
+%\usepackage{amsthm}
+
+
+\usepackage[figurename=Fig.]{caption}
+\usepackage{subfig}
+\usepackage{tikz, pgfplots,epsfig}
+\usetikzlibrary{arrows,shapes.geometric}
+\usepackage{color, colortbl,xcolor}
+\definecolor{lightgray}{RGB}{200,200,200}
+\definecolor{palegray}{RGB}{221,221,221}
+\definecolor{myblue}{RGB}{0,89,179}
+\usepackage{comment}
+\setbeamercolor{frametitle}{fg=myblue}
+\setbeamercolor{section in head/foot}{bg=myblue, fg=white}
+\setbeamercolor{author in head/foot}{bg=myblue}
+\setbeamercolor{date in head/foot}{bg=myblue}
+
+\usepackage{shadethm}
+%\colorlet{shadecolor}{blue!15}
+\colorlet{shadecolor}{palegray}
+%\setlength{\shadeboxrule}{.4pt}
+
+\newshadetheorem{thm}{Theorem}
+\newshadetheorem{defm}{Definition}
+\newshadetheorem{exm}{Exercise}
+\newshadetheorem{remarkm}{Remark}
+%\definecolor{shadethmcolor}{HTML}{EDF8FF}
+\definecolor{shadethmcolor}{RGB}{221,221,221}
+%\definecolor{shaderulecolor}{HTML}{45CFFF}
+\definecolor{shaderulecolor}{RGB}{0,89,179}
+\setlength{\shadeboxrule}{.4pt}
+
+
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}} % used for text wrapping in ctable
+\usepackage{ctable}
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\def\widebar#1{\overline{#1}}
+\definecolor{whitesmoke}{rgb}{0.96, 0.96, 0.96}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{bm}
+\def\transpose{{\sf{T}}}
+\def\E{{\skew0\bm{E}}}
+\def\Xvec{{\skew0\bm{X}}}
+\def\Xveca{{\skew0\bm{X}}_1}
+\def\Xvecb{{\skew0\bm{X}}_2}
+
+\def\Yvec{{\skew0\bm{Y}}}
+\def\bmY{{\skew0\bm{Y}}}
+\def\bmX{{\skew0\bm{X}}}
+\def\bmy{{\skew0\bm{y}}}
+\def\bmG{{\skew0\bm{G}}}
+\def\bmS{{\skew0\bm{S}}}
+\def\bmA{{\skew0\bm{A}}}
+\def\bmB{{\skew0\bm{B}}}
+\def\bmD{{\skew0\bm{D}}}
+\def\bmI{{\skew0\bm{I}}}
+\def\bmV{{\skew0\bm{V}}}
+\def\bmU{{\skew0\bm{U}}}
+\def\bv{{\skew0\bm{v}}}
+\def\bw{{\skew0\bm{w}}}
+\def\bmm{{\skew0\bm{m}}}
+\def\bmzero{{\skew0\bm{0}}}
+\def\bx{{\skew0\bm{x}}}
+\def\xveca{{\skew0\bm{x}}_1}
+\def\xvecb{{\skew0\bm{x}}_2}
+
+\def\N{{\skew0\mathcal{N}}}
+\def\T{{\small T}}
+
+\def\mvec{{\skew0\bm{m}}}
+\def\bmmu{{\skew0\bm{\mu}}}
+\def\muvec{{\skew0\bm{\mu}}}
+\def\balpha{{\skew0\bm{\alpha}}}
+\def\bbeta{{\skew0\bm{\beta}}}
+\def\bmtheta{{\skew0\bm{\theta}}}
+\def\btheta{{\skew0\bm{\theta}}}
+
+\def\cvec{{\skew0\mathbf{c}}}
+
+\def\Xbar{\overline{X}}
+
+\definecolor{lightgray}{rgb}{0.91,0.91,0.91}
+\definecolor{purpleblue}{rgb}{0.50,0.50,1.00}
+
+
+
+\usepackage{fontspec}
+%\setsansfont{Fira Sans}
+%\setmonofont{Fira Mono}
+\setsansfont[ItalicFont={Fira Sans Light Italic},BoldFont={Fira Sans},BoldItalicFont={Fira Sans Italic}]{Fira Sans Light}
+\setmonofont[BoldFont={Fira Mono Medium}]{Fira Mono}
+
+
+\setbeamercolor{itemize item}{fg=myblue}
+\setbeamertemplate{itemize item}[square]
+
+\setbeamertemplate{navigation symbols}{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber}
+\setbeamertemplate{footline}{}
+
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{exercise}[theorem]{Exercise}
+
+\titlegraphic{\hfill\includegraphics[height=1cm]{mcgill_logo.png}}
+
+
+%% You also use hyperref, and pick colors 
+\hypersetup{colorlinks,citecolor=orange,filecolor=red,linkcolor=brown,urlcolor=blue}
+
+\newcommand {\framedgraphiccaption}[2] {
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{#1}
+		\caption{#2}
+	\end{figure}
+}
+
+\newcommand {\framedgraphic}[1] {
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{#1}
+	\end{figure}
+}
+
+
+\AtBeginSection[]{
+	\begin{frame}
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+	\end{frame}
+}
+
+\newcommand\Wider[2][3em]{%
+	\makebox[\linewidth][c]{%
+		\begin{minipage}{\dimexpr\textwidth+#1\relax}
+			\raggedright#2
+		\end{minipage}%
+	}%
+}
+
+
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+%\makeatother
+
+\usepackage{xparse}
+\NewDocumentCommand\mylist{>{\SplitList{;}}m}
+{
+	\begin{itemize}
+		\ProcessList{#1}{ \insertitem }
+	\end{itemize}
+}
+\NewDocumentCommand\mynum{>{\SplitList{;}}m}
+{
+	\begin{enumerate}
+		\ProcessList{#1}{ \insertitem }
+	\end{enumerate}
+}
+\newcommand\insertitem[1]{\item #1}
+
+\newcommand\FrameText[1]{%
+	\begin{textblock*}{\paperwidth}(0pt,\textheight)
+		\raggedright #1\hspace{.5em}
+\end{textblock*}}
+
+
+\begin{document}
+%\sffamily
+
+<<setup, include=FALSE>>=
+rm(list = ls())
+library(knitr)
+knitr::opts_chunk$set(cache=TRUE, message = FALSE, tidy = FALSE,warning=FALSE, 
+echo = FALSE, fig.width = 8, fig.asp = 0.8, 
+fig.align = 'center', out.width = "100%", size = 'scriptsize')
+# the kframe environment does not work with allowframebreaks, so remove it
+knit_hooks$set(document = function(x) {
+gsub('\\\\(begin|end)\\{kframe\\}', '', x)
+})
+pacman::p_load(knitr)
+pacman::p_load(tidyr)
+pacman::p_load(dplyr)
+# pacman::p_load(ISLR)
+# pacman::p_load(data.table)
+# pacman::p_load(rpart)
+# pacman::p_load(rpart.plot)
+# pacman::p_load(xtable)
+# pacman::p_load(ggplot2)
+# trop <- RSkittleBrewer::RSkittleBrewer("trop")
+# gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20), axis.title = element_text(size = 20), legend.text = element_text(size = 20), legend.title = element_text(size = 20))
+@
+
+%\title{Introduction to Regression Trees}
+%\author{Sahir Bhatnagar \inst{1}}
+%\author[shortname]{Sahir Rai Bhatnagar, PhD Candidate (Biostatistics) }
+%\institute[shortinst]{Department of Epidemiology, Biostatistics and Occupational Health}
+
+\title{Final Review}
+\subtitle{}
+\author{Sahir Bhatnagar and James Hanley}
+\institute{
+	EPIB 607\\
+	Department of Epidemiology, Biostatistics, and Occupational Health\\
+	McGill University\\
+	
+	\vspace{0.1 in}
+	
+	\texttt{sahir.bhatnagar@mcgill.ca}\\
+	\texttt{\url{https://sahirbhatnagar.com/EPIB607/}}}
+
+%\date
+
+\maketitle
+
+
+\begin{frame}{Exam Details}
+
+\begin{itemize}
+		\setlength\itemsep{.51em}
+			\item \textbf{When:} Thursday December 6, 2 pm - 5 pm. Room 112 of MASS Chemistry Building
+	\item This is a 3 hour, closed book exam. 
+	\item Two sheets of paper, double-sided, 8.5 by 11 inches are allowed.
+	\item Calculators and translation dictionary are permitted. Cellular phones \underline{are not} permitted. 
+	\item The exam is out of 100. Write down all your answers in the provided booklet. 
+	\item Provide units and state your assumptions when applicable. 
+	\item If a question requires use of the $z$ or $t$ probabilites/quantiles, write the corresponding R code instead. Some commonly used quantiles are provided. 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Note on these slides}
+\begin{itemize}
+	\setlength\itemsep{1.5em}
+	\item These slides \textbf{do not} cover all the material on the final
+	\item Review midterm review slides for material prior to midterm, and regression handouts for material after midterm
+\end{itemize}
+\end{frame}
+
+
+\section{Topics to be covered}
+
+\begin{frame}{Topics to be covered}
+
+7 questions on the following topics
+
+\begin{enumerate}
+	\setlength\itemsep{.51em}
+	\item Sampling distributions, confidence intervals
+	\item $p$-values 
+	\item One sample mean/rate/proportion 
+	\item Bootstrap and CLT
+	\item Power
+	\item Standard deviation, standard error
+	\item Linear regression (two sample mean) $\to$ \texttt{t.test, lm} (1)
+	\item Poisson regression $\to$ \texttt{glm} (1)
+	\item Binomial regression $\to$ \texttt{glm} (1) 
+\end{enumerate}
+
+\end{frame}
+
+
+\section{Standard error (SE) vs SD}
+
+
+
+\begin{frame}{Standard error (SE) of a sample statistic}
+\begin{itemize}
+\item Recall: When we are talking about the variability of a
+\textbf{statistic}, we use the term \textbf{standard error} (not
+standard deviation). The standard error of the sample mean is $\sigma/\sqrt{n}$.
+\end{itemize}
+
+
+\begin{remarkm}[SE vs. SD]
+\begin{center}
+	In quantifying the instability of the sample mean ($\bar{y}$) statistic,
+	we talk of SE of the mean (SEM) \\ \ \\
+	SE($\bar{y}$) describes how far $\bar{y}$ could (typically) deviate from $\mu$; \\ \ \\
+	SD($y$) describes how far an individual $y$ (typically) deviates from $\mu$ (or from $\bar{y}$).
+\end{center}
+\end{remarkm}	
+
+
+\end{frame}
+
+\section{Sampling Distributions, CLT, Confidence Intervals and p-values}
+
+
+\begin{frame}{Parameters,  Samples,  and  Statistics}
+\begin{itemize}
+	\item \textbf{Paramter}: An  unknown  numerical  constant  pertaining  to  a  population/universe,  or  in  a  statistical  model. 
+	\begin{itemize}
+		\item $\mu$: population mean $\qquad\qquad$ $\pi$: population proportion
+	\end{itemize}
+	\item \textbf{Statistic}: A  numerical  quantity  calculated  from  a  sample. The  empirical counterpart of the parameter,  used  to  \textit{estimate}  it.
+	\begin{itemize}
+		\item $\bar{y}$: sample mean $\qquad\qquad$ $p$: sample proportion
+	\end{itemize}
+\end{itemize}
+
+\Wider[4em]{
+	\centering
+	\includegraphics[scale=0.35]{../sampling_dist/MeansFig1.png}
+}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Sampling Distributions}
+
+<<fig.asp = 0.518, fig.cap = 'Ideal world. Sampling distributions are obtained by drawing repeated samples from the population, computing the statistic of interest for each, and collecting (an infinite number of) those statistics as the sampling distribution'>>=
+source("../bootstrap/sampling_dist_figure.R")
+@
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Quadruple the work, half the benefit}
+
+\framedgraphiccaption{../sampling_dist/ROOToceanAll.png}{When the sample size increases from 4 to 16, the spread of the sampling distribution for the mean is reduced by a half, i.e., the range is cut in half. This is known as the curse of the $\sqrt{n}$}
+\end{frame}
+
+
+\frame{\frametitle{The Central Limit Theorem (CLT)} 
+
+\begin{itemize}
+\item The sampling distribution of $\bar{y}$ is, for a large enough $n$, close to Gaussian in shape no matter what the shape of the distribution of individual $Y$ values. 
+\item This phenomenon is referred to as the CENTRAL LIMIT THEOREM 
+\item The CLT applied also to a \underline{sample proportion}, \underline{slope}, \underline{correlation}, or any other statistic created by \underline{aggregation of individual observations}
+\end{itemize}
+
+\begin{thm}[Central Limit Theorem]
+\begin{center}
+if $Y \sim ???(\mu_Y, \sigma_Y)$, then \\ \ \\
+$\bar{y} \sim \mathcal{N}(\mu_Y, \sigma_Y / \sqrt{n})$
+\end{center}
+\end{thm}
+
+\vspace{1.25cm}
+%pause
+}
+
+\begin{frame}{Confidence Interval}
+
+\begin{defm}[Confidence Interval]
+A level $C$ confidence interval for a parameter has two parts:
+\begin{enumerate}
+\item An interval calculated from the data, \underline{usually} of the form $$\textrm{estimate} \pm \textrm{margin of error}$$ where the estimate is a sample statistic and the margin of error represents the accuracy of our guess for the parameter.
+\item A confidence level $C$, which gives the probability that the interval will capture the true parameter value in \textit{different possible samples}. That is, the confidence level is the success rate for the method
+\end{enumerate}
+\end{defm}
+
+%\framedgraphic{6899rule.png}
+
+\end{frame}
+
+\frame{\frametitle{Confidence Interval: A simulation study}
+
+\vspace*{-0.1in}
+
+\begin{figure}
+\begin{center}
+\epsfig{figure=../sampling_dist/Part3Figs/CIplots.eps,width=3.2in,height=2.7in}
+\caption{\small{True parameter value is 2 (red line). Each horizontal black line represents a 95\% CI from a sample and contains the true parameter value. The blue CIs do not contain the true parameter value. 95\% of all samples give an interval that contains the population parameter.}}
+\end{center}
+\end{figure}
+}
+
+
+\begin{frame}{Interpreting a frequentist confidence interval}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item The confidence level is the success rate of the method that produces the interval.
+\item We don't know whether the 95\% confidence interval from a \underline{particular
+sample} is one of the 95\% that capture $\theta$ (the unknown population parameter), or one of the unlucky 5\% that miss. 
+\item To say that we are \underline{95\% confident} that the unknown value of $\theta$
+lies between $U$ and $L$ is shorthand for ``We got these numbers using a
+method that gives correct results 95\% of the time.''
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{68\% Confidence interval using \texttt{qnorm}}
+
+<<echo=FALSE>>=
+allLocations <- read.csv("~/git_repositories/epib607/data/earth-locations-20180914.csv")
+allLocations$water  = 1*(allLocations$alt < 0)
+
+# water only
+depthsOfWater = allLocations[allLocations$water==1,]
+depthsOfWater$depth = -depthsOfWater$alt
+panel = 1
+if(panel==1) y = round(depthsOfWater$depth/100)
+f = table(y)
+x=as.numeric(dimnames(f)[[1]])
+Y=0:max(x) 
+FREQ=approx(x,f,Y)$y
+n.bins=length(FREQ)
+max.Y = max(Y); 
+max.X = max.Y
+M = 1.05*max(f)
+FREQ[1+Y] =  FREQ/sum(FREQ)
+AVE = sum(Y*FREQ)
+SD = sqrt(sum( FREQ*(Y-AVE)^2 ) )
+alreadyOrig = FREQ
+already = FREQ
+max.n = 16; 
+show=c(1,2,3,4,5,5,6,7,8,9,16)
+YLIM=sqrt(max.n/(panel^2.5))*max(FREQ)*c(-0.11,0.75)
+XLAB=c("OCEAN DEPTH (units = 100m)","LAND ELEVATION")
+
+SE <- 4.20
+@
+
+
+\vspace*{-0.09in}
+
+\Wider[2em]{
+<<fig.cap="68\\% Confidence interval calculated using  \\mbox{\\texttt{qnorm(p = c(0.16,0.84), mean = 37, sd = 4.2)}}", fig.asp=0.618>>=
+# with 68% ci
+plot(Y,already,pch=19,lwd=1,col="white",
+type="l",ylim=YLIM, xlim=c(0,max.X),
+ylab="Density", xlab=XLAB[panel] )
+polygon(c(0,Y),c(0,FREQ),
+col=c("#56B4E9","bisque","grey98")[panel],
+border="grey10",lwd=1)
+# legend("topright", legend = "Y: Depths of the ocean", 
+#        col = "#56B4E9", pch = 15, pt.cex = 2)
+curve(dnorm(x,mean = AVE,sd = SE), add = TRUE, lwd = 2) 
+# text(1.5*AVE,0.08,
+#      paste("means of samples of size",toString(16)),
+#      adj = c(0,0.5),
+#      col = viridis::inferno(9, end = 0.7, direction = 1)[1],
+#      cex = 0.95)
+lower.x <- qnorm(p = c(0.16), AVE, SE)
+upper.x <- qnorm(p = c(0.84), AVE, SE)
+legend("topright", legend = c("Y: Depths of the ocean",
+"Sampling distribution for \n means of samples of size 16",
+sprintf("68%% Confidence interval for \n the mean depth of the ocean:\n [%.f, %.f]",
+lower.x, upper.x)),
+col = c("#56B4E9","black",RColorBrewer::brewer.pal(9, "Set1")[4]), 
+y.intersp = 2,
+bty = "n",
+pch = c(15,NA,15), lty = c(NA,1,NA), pt.cex = 2, lwd = c(NA,2,NA))
+segments(AVE,0, AVE, 0.10,lty="dotted")
+# text(AVE*1.05,  0.15*YLIM[1],toString(round(AVE,0)), adj=c(0.5,1),
+#      cex=0.85 )
+# text(0.95*AVE,0.15*YLIM[1],expression(mu), adj=c(0.5,1.25),
+#      cex=0.95 )
+# text(.99*AVE,0.07*YLIM[1],"=", adj=c(0.5,1.25),
+#      cex=0.95 )
+# arrows(x0 = AVE, x1 = AVE + SE, y0 = 0.055, length = 0.05)
+# segments(AVE + SE,0, AVE + SE, 0.06,lty="dotted")
+# #text(x = AVE*1.05, y = 0.051, '{', srt = 90, cex = 1.5, family = 'Helvetica Neue UltraLight')
+# text((AVE)*1.25,0.06,latex2exp::TeX("$\\sigma / \\sqrt{16}$"), adj=c(0.5,1.25),
+#      cex=0.95 )
+
+step <- (upper.x - lower.x) / 100
+bounds <- c(lower.x, upper.x)
+cord.x <- c(lower.x,seq(lower.x,upper.x,step),upper.x)
+cord.y <- c(0,dnorm(seq(lower.x,upper.x,step),AVE,SE),0)
+polygon(cord.x,cord.y,col=RColorBrewer::brewer.pal(9, "Set1")[4])
+text(lower.x, -0.005, round(lower.x, 0))
+text(upper.x, -0.005, round(upper.x, 0))
+segments(AVE,0, AVE, 0.10,lty="dotted")
+@
+
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{95\% Confidence interval using \texttt{qnorm}}
+
+\vspace*{-0.09in}
+
+
+\Wider[2em]{
+<<fig.cap="95\\% Confidence interval calculated using  \\mbox{\\texttt{qnorm(p = c(0.025,0.975), mean = 37, sd = 4.2)}}", fig.asp=0.618>>=
+# with 95% ci
+plot(Y,already,pch=19,lwd=1,col="white",
+type="l",ylim=YLIM, xlim=c(0,max.X),
+ylab="Density", xlab=XLAB[panel] )
+polygon(c(0,Y),c(0,FREQ),
+col=c("#56B4E9","bisque","grey98")[panel],
+border="grey10",lwd=1)
+# legend("topright", legend = "Y: Depths of the ocean", 
+#        col = "#56B4E9", pch = 15, pt.cex = 2)
+curve(dnorm(x,mean = AVE,sd = SE), add = TRUE, lwd = 2) 
+# text(1.5*AVE,0.08,
+#      paste("means of samples of size",toString(16)),
+#      adj = c(0,0.5),
+#      col = viridis::inferno(9, end = 0.7, direction = 1)[1],
+#      cex = 0.95)
+lower.x <- qnorm(p = c(0.025), AVE, SE)
+upper.x <- qnorm(p = c(0.975), AVE, SE)
+legend("topright", legend = c("Y: Depths of the ocean",
+"Sampling distribution for \n means of samples of size 16",
+sprintf("95%% Confidence interval for \n the mean depth of the ocean:\n [%.f, %.f]",
+lower.x, upper.x)),
+col = c("#56B4E9","black",RColorBrewer::brewer.pal(9, "Set1")[5]), 
+y.intersp = 2,
+bty = "n",
+pch = c(15,NA,15), lty = c(NA,1,NA), pt.cex = 2, lwd = c(NA,2,NA))
+
+# text(AVE*1.05,  0.15*YLIM[1],toString(round(AVE,0)), adj=c(0.5,1),
+#      cex=0.85 )
+# text(0.95*AVE,0.15*YLIM[1],expression(mu), adj=c(0.5,1.25),
+#      cex=0.95 )
+# text(.99*AVE,0.07*YLIM[1],"=", adj=c(0.5,1.25),
+#      cex=0.95 )
+# arrows(x0 = AVE, x1 = AVE + SE, y0 = 0.055, length = 0.05)
+# segments(AVE + SE,0, AVE + SE, 0.06,lty="dotted")
+# #text(x = AVE*1.05, y = 0.051, '{', srt = 90, cex = 1.5, family = 'Helvetica Neue UltraLight')
+# text((AVE)*1.25,0.06,latex2exp::TeX("$\\sigma / \\sqrt{16}$"), adj=c(0.5,1.25),
+#      cex=0.95 )
+
+step <- (upper.x - lower.x) / 100
+bounds <- c(lower.x, upper.x)
+cord.x <- c(lower.x,seq(lower.x,upper.x,step),upper.x)
+cord.y <- c(0,dnorm(seq(lower.x,upper.x,step),AVE,SE),0)
+polygon(cord.x,cord.y,col=RColorBrewer::brewer.pal(9, "Set1")[5])
+text(lower.x, -0.005, round(lower.x, 0))
+text(upper.x, -0.005, round(upper.x, 0))
+segments(AVE,0, AVE, 0.10,lty="dotted")
+@
+
+}
+
+\end{frame}
+
+\frame{\frametitle{Example: Inference for a single population mean} So what
+does the CI allow us to learn about $\mu$??
+\begin{itemize}
+\setlength\itemsep{2em}
+\item It tells us that if we repeated this procedure again and again
+(collecting a sample mean, and constructing a 95\% CI), 95\% of the
+time, the CI would \textit{cover} $\mu$. 
+\item That is, with 95\% probability, the \textit{procedure}
+will include the true value of $\mu$. Note that we are making \underline{a probability statement about the CI}, not about the parameter. 
+\item Unfortunately, \textcolor{blue}{we do not know whether the true value of $\mu$ is
+contained in the CI in the particular experiment that we have
+performed.}
+\end{itemize}
+}
+
+
+
+\section{Bootstrap}
+
+\begin{frame}{Motivation for the Bootstrap}
+\begin{itemize}
+	\setlength\itemsep{2em}
+	\item The $\pm$ and \texttt{qnorm} methods to calculate a CI both require the CLT
+\end{itemize}
+
+
+\vspace*{0.2in}
+
+\Large \textcolor{myblue}{Q: What happens if the CLT hasn't `kicked in`? Or you don't believe the CLT?} \\ \ \\
+
+\pause 
+
+\Large \textcolor{red}{A: Bootstrap} \\ \ \\
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Reality: use the bootstrap distribution instead}
+
+
+<<fig.asp = 0.518, fig.cap = '\\scriptsize{Bootstrap world. The bootstrap distribution is obtained by drawing repeated samples from an estimate of the population, computing the statistic of interest for each, and collecting those statistics. The distribution is centered at the observed statistic ($\\bar{y}$), not the parameter ($\\mu$).}', eval = FALSE>>=
+#rm(list=ls())
+#source("bootstrap_figure.R")
+@
+
+\framedgraphiccaption{../bootstrap/boot_diag.pdf}{\scriptsize{Bootstrap world. The bootstrap distribution is obtained by drawing repeated samples from an estimate of the population, computing the statistic of interest for each, and collecting those statistics. The distribution is centered at the observed statistic ($\bar{y}$), not the parameter ($\mu$).}}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Main idea: simulate your own sampling distribution}
+
+<<echo = FALSE, eval = FALSE>>=
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/
+exercises/water/automate_water_task.R")
+@
+
+<<echo = c(8,9, 10), message = FALSE, warning = FALSE, tidy = FALSE, fig.width = 7, fig.asp = 0.618>>=
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+index.n.20 <- c(2106,2107,2108,2109,2110,2111,2112,
+2113,2114,2115,2116,2117,2118,2119,
+2120,2121,2122,2123,2124,2125)
+depths.n.20 <- automate_water_task(index = index.n.20, 
+student_id = 260194225, type = "depth")
+depths.n.20$alt = round(depths.n.20$alt/100,0)
+mm <- mean(depths.n.20$alt)
+#head(depths.n.20, n = 3)
+#mean(~ alt, data = depths.n.20)
+library(mosaic)
+s_dist <- do(10000) * mean( ~ alt, data = resample(depths.n.20))
+CI_95 <- quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
+#head(s_dist, n = 3)
+hist(s_dist$mean, breaks = 50, col = "#56B4E9",
+main="",
+xlab = "mean depth of the ocean (100m) from \neach bootstrap sample")
+abline(v = mm, lty =1, col = "red", lwd = 4)
+abline(v = CI_95[1], lty =2, col = "black", lwd = 4)
+abline(v = CI_95[2], lty =2, col = "black", lwd = 4)
+library(latex2exp)
+#text(mm*1.10, 1150, TeX("$\\bar{y} = 36$"))
+legend("topleft", legend = c(TeX("$\\bar{y} = 36$"),sprintf("95%% CI: [%.f, %.f]",CI_95[1], CI_95[2])), 
+lty = c(1,1), 
+col = c("red","black"), lwd = 4)
+@
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Example 1: Food intake and weight gain (A5-Q1)}
+
+\begin{minipage}{0.47\textwidth}
+<<>>=
+weight <- read.csv("weightgain.csv")
+
+# Creating new variable for weight change
+weight$change <- weight$after-weight$before
+knitr::kable(weight)
+#print(weight, row.names=FALSE)
+weight$change_lb <- weight$change*2.2
+
+# Calculating the mean of weight change and rounding
+ybar_change <- mean(weight$change)
+ybar_change_r <- round(ybar_change, 2)
+
+
+
+# Calculating the sample standard deviation
+ssd_change <- sd(weight$change)
+
+# Calculating the standard error of the mean
+se_change <- ssd_change/sqrt(nrow(weight))
+
+
+
+
+# critical values
+q1_cv95 <- qt(p = c(0.025, 0.975), df = 15)
+q1_cv95.r <- round(q1_cv95,2)
+
+# Calculating a 95% confidence interval
+qt_scaled <- function(p, df, mean, sd) qt(p = p, df = df) * sd + mean
+q1_ci95 <- qt_scaled(p = c(0.025, 0.975), 
+df = nrow(weight) - 1, 
+mean = ybar_change, 
+sd = se_change)
+q1_ci95.r <- round(q1_ci95, 2)
+@
+
+<<echo=TRUE, size='tiny'>>=
+mean(weight$change)
+sd(weight$change) / sqrt(16)
+@
+
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\pause 
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item 95\% CI for the mean weight change: 4.73 $\pm$ qt(p = c(0.025, 0.975), df = 16-1)$\times$ 0.44 
+	\item $p$-value: pt(q = (4.73 - 0)/0.44, df=16-1, lower.tail=F)$\times$2 $<$ 0.001 
+	\item This is a paired design $\to$ statistically valid to take difference and perform one-sample inference
+	\item You can also bootstrap the \texttt{change}.
+\end{itemize}
+\end{minipage}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Example 1: Food intake and weight gain (A5-Q1) contd.}
+
+\begin{minipage}{0.47\textwidth}
+
+<<results='hide'>>=
+# Loading the dataset
+weight <- read.csv("~/git_repositories/epib607/assignments/a5/weightgain.csv")
+
+weight <- weight %>% gather(key = "Time", value = "value", before, after) %>% 
+dplyr::arrange(subject) %>% 
+mutate(Time = case_when(Time == "before" ~ 0, Time == "after" ~ 1))
+@
+
+
+<<>>=
+knitr::kable(head(weight, n=16))
+@	
+
+\vspace*{1cm}
+
+\small
+Will a regression on this data provide the same results?
+
+	
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\pause 
+	
+<<echo=FALSE, size='tiny', comment="">>=
+library(NCStats)
+print(summary(lm(value ~ Time, data = weight)), digits = 3, 
+signif.stars=FALSE)
+@
+
+	\begin{itemize}
+	\small
+	\setlength\itemsep{2em}
+	\item Point estimate is the same but standard error is much larger. Why? \pause 
+	\item Hint: Think about assumptions for inference.
+\end{itemize}
+
+\end{minipage}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Ex. 2: Does breast-feeding weaken bones? (A4-Q3)}
+
+\begin{minipage}{0.47\textwidth}
+	<<>>=
+	boneloss <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv")
+	knitr::kable(boneloss[c(1,5,47,48,49),])
+	library(mosaic)
+	ggformula::gf_boxplot(mineral_loss ~ type, data = boneloss)
+	@
+	
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+	\pause 
+	\begin{itemize}
+		\small
+		\setlength\itemsep{1em}
+		\item  Researchers compared 47 breast-feeding women with 22 women of similar age who were neither pregnant nor lactating.
+		\item Is this a paired design?
+		\item How can we test if the data show distinctly greater bone mineral loss among the breast-feeding women?
+	\end{itemize}
+\end{minipage}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Ex. 2 contd. (A4-Q3)}
+	\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item  We could run a linear regression (equivalently a two-sample t.test with equal variances):
+\end{itemize}
+
+	<<size='tiny', echo=c(2,3)>>=
+	print(summary(lm(mineral_loss ~ type, data = boneloss)),signif.stars=FALSE, digits=3, show.call=TRUE)	
+	# remember that var.equal=FALSE is the default in t.test 
+	t.test(mineral_loss ~ type, data = boneloss, var.equal = TRUE)
+	@
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Ex. 2 contd. (A4-Q3)}
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item  Two-sample t.test with unequal variances
+\end{itemize}
+
+<<size='tiny', echo=c(1,2)>>=
+# remember that var.equal=FALSE is the default in t.test 
+t.test(mineral_loss ~ type, data = boneloss)
+@
+
+\pause 
+\begin{itemize}
+	\small
+	\setlength\itemsep{1em}
+	\item  Or we could bootstrap (if we suspected CLT hasn't kicked in, or non-normal population distributions) each group separately and calculate the means. Then take the difference of these means as the sampling distribution for the difference in bone mineral loss. (See A4-Q3 Bonus)
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+\section{One sample mean}
+
+
+\begin{frame}{$\sigma$ known vs. unknown}
+\begin{center}
+	\begin{tabular}{|l|c|c|} \hline
+		$\sigma$& known & unknown \\ \hline Data & $\{y_1,y_2,...,y_n\}$ &
+		$\{y_1,y_2,...,y_n\}$\\
+		& & \\
+		Pop'n param & $\mu$ & $\mu$\\
+		& & \\
+		Estimator & $\overline{y} = \frac{1}{n}\sum_{i=1}^n y_i$ & $\overline{y} = \frac{1}{n}\sum_{i=1}^n y_i$ \\
+		& & \\
+		SD & $\sigma$ & $s = \sqrt{\frac{\sum_{i=1}^n(y_i-\overline{y})^2}{n-1}}$ \\
+		& & \\
+		SEM & $\sigma/\sqrt{n}$ & $s / \sqrt{n}$ \\
+		& & \\
+		$(1-\alpha)100$\% CI & $\overline{y} \pm z^\star_{1-\alpha/2}$(SEM) & $\overline{y} \pm t^\star_{1-\alpha/2, (n-1)}$(SEM) \\
+		& & \\
+		test statistic & $\frac{\overline{y}-\mu_0}{\textrm{SEM}}\sim \mathcal{N}(0,1)$ &
+		$\frac{\overline{y}-\mu_0}{\textrm{SEM}}\sim t_{(n-1)}$ \\
+		\hline
+	\end{tabular}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Assumptions}
+\Wider[3em]{
+\begin{center}
+	\begin{tabular}{|l|c|c|c|} \hline
+		& $z$ & $t$ & Bootstrap \\ 
+		\hline 
+		SRS & \cmark &\cmark &	\cmark\\
+		& & & \\
+		Normal population & \cmark$^\star$ & \cmark$^\star$ &  \xmark\\
+		& & &\\
+		needs CLT &  \cmark$^\star$ & \cmark$^\star$ &  \xmark\\
+		& & &\\
+		$\sigma$ known  & \cmark & \xmark & \xmark\\
+		& & &\\
+		Sampling dist. center at & $\mu$ & $\mu$ & $\bar{y}$\\
+		& & &\\
+		SD & $\sigma$ & $s$ & $s$ \\
+		& & &\\
+		SEM & $\sigma/\sqrt{n}$ & $s / \sqrt{n}$ & SD(bootstrap statistics) \\
+		\hline
+	\end{tabular}
+	
+	\footnotetext[1]{*If population is Normal then CLT is not needed. If population is not Normal then CLT is needed.}
+\end{center}
+}
+\end{frame}
+
+
+
+\begin{frame}{Means, Rates/Counts, Proportions}
+\Wider[3em]{
+				\scriptsize
+	\begin{center}
+		\begin{tabular}{|l|c|c|c|} \hline
+			& mean & rate/count & proportion \\ 
+			\hline 
+			Parameter & $\mu$ & $\lambda$/$\mu$ ($\mu=\lambda\times PT$) &	$\pi$\\
+			& & & \\
+			Statistic & $\bar{y}$ & $\hat{\lambda}$/$y$ or $\hat{\mu}$ &  $p$ or $\hat{\pi}$\\
+			& & &\\
+			Distribution &  Normal($\mu$, $\sigma$), $t_{(df)}$ & Poisson($\mu$) &  Binomial(n, $\pi$)\\
+			& & &\\
+			CI for small $n$  & $\bar{y} \pm$ qt($\cdot$, df=n-1)$\times$SEM & qgamma($\cdot$,shape=c(y,y+1)) & Clopper-Pearson\\
+			& & &\\
+			CI for large $n$  & qnorm($\cdot$, $\bar{y}$,SEM) & qnorm($\cdot$,$y$,$\sqrt{y}$) & qnorm($\cdot$, $p$, $\sqrt{\frac{p(1-p)}{n}}$)\\
+			& & &\\
+			$p$value small $n^*$& pt & ppois & pbinom \\
+			& & &\\
+			$p$value large $n^*$& pnorm & pnorm & pnorm \\
+			\hline
+		\end{tabular}
+		
+		\footnotetext[1]{*need to specify lower.tail=FALSE}
+	\end{center}
+}
+\end{frame}
+
+
+
+\section{One sample proportion}
+
+
+\begin{frame}
+\Wider[5em]{	
+	\includegraphics[width=4.95in,height=3.7in]{../one_sample_prop/Nomogram.pdf}
+}
+\end{frame}
+
+\section{p-values}
+
+\begin{frame}
+\frametitle{$p$-values and statistical tests}
+
+
+%\vspace{18pt}
+\begin{defm}[$p$-value]
+	A \textbf{probability concerning the observed data}, calculated under a \textbf{Null Hypothesis} assumption, i.e., assuming that the only factor operating is sampling or measurement variation. 
+\end{defm}
+
+\begin{itemize} 
+	\item[\underline{Use}] To assess the evidence provided by the sample data
+	in relation to a pre-specified claim or `hypothesis' concerning some parameter(s) or data-generating process. 
+	\item[\underline{Basis}] As with a confidence interval, it makes use of the concept of a \textit{distribution}. 
+	\item[\underline{Caution}] A $p$-value is NOT the probability that the null `hypothesis' is true
+\end{itemize}
+\end{frame}
+
+
+
+
+\section{Regression}
+
+\begin{frame}{Tidy data}
+
+\begin{itemize}
+	\setlength\itemsep{.51em}
+	\item Each variable forms a column.
+	\item Each observation forms a row.
+	\item Each type of observational units forms a table
+	\item Tidy data is ready for regression routines and plotting
+\end{itemize}
+
+
+\framedgraphic{tidy.png}
+
+\end{frame}
+
+
+
+\section{Varia}
+
+\begin{frame}{Other remarks}
+
+\begin{itemize}
+	\setlength\itemsep{.51em}
+	\item Statistical evidence $\to$ point estimate, confidence interval, $p$-value
+\end{itemize}
+
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Examples}
+
+
+
+\begin{frame}{Comparing two sun block lotions}
+
+\begin{example}
+	Your company produces a sun block lotion designed to protect the skin from both UVA and UVB exposure to the sun. You hire a company to compare your product with the product sold by your major competitor. The testing company exposes skin on the back of a sample of 20 people to UVA and UVB rays and measures the protection provided by each product. For 13 of the subjects, your product provided better protection. Do you have evidence to support a commercial claiming that your product provides superior UVA and UVB protection?
+\end{example}
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Comparing two sun block lotions}
+\small
+\begin{enumerate}
+	\setlength\itemsep{1em}
+	\item State the null hypothesis in words. \pause
+	\item State the hypotheses in statistical notation \pause
+	\begin{itemize}
+			\setlength\itemsep{.71em}
+		\item We need to first define the reference (null) distribution. Then the parameter of interest \pause
+		\item Binomial(n=20, $\pi$=0.5) is the reference distribution where $\pi$ is the proportion of people who would receive superior UVA and UVB protection from your product. \pause
+		The following are all equivalent: 
+		\item[] $H_0: \pi = 0.5 \qquad$ $H_a: \pi > 0.5$ \pause
+		\item[] $H_0: \pi_{\textrm{your product}}=\pi_{\textrm{their product}} = 0.5 \qquad$ $H_a: \pi_{\textrm{your product}} > \pi_{\textrm{their product}}$ \pause
+		\item[] $H_0: \pi_{\textrm{your product}}-\pi_{\textrm{their product}} = 0 \qquad$ $H_a: \pi_{\textrm{your product}} > \pi_{\textrm{their product}}$ \pause
+		\item You must define your own $\alpha$. Here we choose $\alpha=0.05$ 		
+	\end{itemize}
+      
+ 
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Comparing two sun block lotion - p-value}
+\small
+\begin{enumerate}
+	\setlength\itemsep{.51em}
+	
+	\item Exact $p$-value:
+	<<echo = TRUE, eval=TRUE>>=
+	pbinom(12, 20, 0.5, lower.tail = FALSE)
+	1 - pbinom(12, 20, 0.5)
+	@
+	\pause 
+
+	\item Approximate $p$-value assuming Normal approximation is ok ($20 \times 0.5 \geq 10$ and $20 \times (1-0.5) \geq 10$)
+	<<echo = TRUE>>=
+	SEp <- sqrt(0.5*0.5/20) # under the null
+	zstat <- (0.65 - 0.5) / SEp
+	pnorm(zstat, lower.tail = FALSE)
+	@
+	
+	
+	
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Comparing two sun block lotion - Exact 95\% CI}
+\small
+\begin{enumerate}
+	\setlength\itemsep{1em}
+	
+	\item Exact CI (Clopper-Pearson or Nomogram):
+	<<echo = TRUE, eval=TRUE, comment=NA>>=
+	mosaic::binom.test(x = 13, n = 20, p = 0.5, 
+	ci.method = "Clopper-Pearson",
+	alternative = "greater")
+	@
+	
+
+	
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[fragile]{Comparing two sun block lotion - Approximate 95\% CI}
+\small
+\begin{enumerate}
+	\setlength\itemsep{1em}
+	
+	\item Approximate 95\% CI:
+	<<echo = TRUE, eval=TRUE, comment=NA>>=
+	mosaic::binom.test(x = 13, n = 20, p = 0.5, 
+	ci.method = "Wald",
+	alternative = "greater")
+	@
+	
+		
+	\item Approximate 95\% CI assuming Normal approximation is ok 
+	<<echo = TRUE>>=
+	qnorm(c(0.025, 0.975), mean = 0.65, sd = sqrt(0.65*0.35 / 20))
+	@
+	
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+\end{document}
