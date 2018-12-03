@@ -911,17 +911,21 @@ t.test(mineral_loss ~ type, data = boneloss)
 			& & &\\
 			Distribution &  Normal($\mu$, $\sigma$), $t_{(df)}$ & Poisson($\mu$) &  Binomial(n, $\pi$)\\
 			& & &\\
-			CI for small $n$  & $\bar{y} \pm$ qt($\cdot$, df=n-1)$\times$SEM & qgamma($\cdot$,shape=c(y,y+1)) & Clopper-Pearson\\
+			CI for small $n$  & $\bar{y} \pm$ qt($\cdot$, df=n-1)$\times$SEM & qgamma($\cdot$,shape=c(y,y+1))$^c$ & Clopper-Pearson\\
 			& & &\\
-			CI for large $n$  & qnorm($\cdot$, $\bar{y}$,SEM) & qnorm($\cdot$,$y$,$\sqrt{y}$) & qnorm($\cdot$, $p$, $\sqrt{\frac{p(1-p)}{n}}$)\\
+			CI for large$^d$ $n$  & qnorm($\cdot$, $\bar{y}$,SEM) & qnorm($\cdot$,$y$,$\sqrt{y}$) & qnorm($\cdot$, $p$, $\sqrt{\frac{p(1-p)}{n}}$)\\
 			& & &\\
-			$p$value small $n^*$& pt & ppois & pbinom \\
+			$p$value small$^{a}$ $n$& pt & ppois & pbinom \\
 			& & &\\
-			$p$value large $n^*$& pnorm & pnorm & pnorm \\
+			$p$value large$^{a}$ $n$& pnorm & pnorm & pnorm \\
 			\hline
 		\end{tabular}
 		
-		\footnotetext[1]{*need to specify lower.tail=FALSE}
+		\footnotetext[1]{need to specify lower.tail=FALSE}
+				\footnotetext[2]{All inference requires SRS}
+					\footnotetext[3]{qgamma gives CI for the count. Divide by PT if you want CI for the rate.}
+			\footnotetext[4]{For Normal and Poisson $n>30$. For Binomial, $np > 10, n(1-p)>10$}
+				
 	\end{center}
 }
 \end{frame}
