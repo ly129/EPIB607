@@ -1,54 +1,4 @@
-\documentclass{beamer}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
+\documentclass{beamer}
 
 \usepackage{default}
 \usepackage{animate} %need the animate.sty file 
@@ -259,11 +209,33 @@
 	\begin{textblock*}{\paperwidth}(0pt,\textheight)
 		\raggedright #1\hspace{.5em}
 \end{textblock*}}
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+
 \begin{document}
 %\sffamily
 
-
+<<setup, include=FALSE>>=
+rm(list = ls())
+library(knitr)
+knitr::opts_chunk$set(cache=TRUE, message = FALSE, tidy = FALSE,warning=FALSE, 
+echo = FALSE, fig.width = 8, fig.asp = 0.8, 
+fig.align = 'center', out.width = "100%", size = 'scriptsize')
+# the kframe environment does not work with allowframebreaks, so remove it
+knit_hooks$set(document = function(x) {
+gsub('\\\\(begin|end)\\{kframe\\}', '', x)
+})
+pacman::p_load(knitr)
+pacman::p_load(tidyr)
+pacman::p_load(dplyr)
+# pacman::p_load(ISLR)
+# pacman::p_load(data.table)
+# pacman::p_load(rpart)
+# pacman::p_load(rpart.plot)
+# pacman::p_load(xtable)
+# pacman::p_load(ggplot2)
+# trop <- RSkittleBrewer::RSkittleBrewer("trop")
+# gg_sy <- theme(legend.position = "bottom", axis.text = element_text(size = 20), axis.title = element_text(size = 20), legend.text = element_text(size = 20), legend.title = element_text(size = 20))
+@
 
 %\title{Introduction to Regression Trees}
 %\author{Sahir Bhatnagar \inst{1}}
@@ -386,18 +358,9 @@ standard deviation). The standard error of the sample mean is $\sigma/\sqrt{n}$.
 
 \begin{frame}[fragile]{Sampling Distributions}
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-1-1} 
-
-}
-
-\caption[Ideal world]{Ideal world. Sampling distributions are obtained by drawing repeated samples from the population, computing the statistic of interest for each, and collecting (an infinite number of) those statistics as the sampling distribution}\label{fig:unnamed-chunk-1}
-\end{figure}
-
-
-\end{knitrout}
+<<fig.asp = 0.518, fig.cap = 'Ideal world. Sampling distributions are obtained by drawing repeated samples from the population, computing the statistic of interest for each, and collecting (an infinite number of) those statistics as the sampling distribution'>>=
+source("../bootstrap/sampling_dist_figure.R")
+@
 
 \end{frame}
 
@@ -468,24 +431,88 @@ method that gives correct results 95\% of the time.''
 
 \begin{frame}[fragile]{68\% Confidence interval using \texttt{qnorm}}
 
+<<echo=FALSE>>=
+allLocations <- read.csv("~/git_repositories/epib607/data/earth-locations-20180914.csv")
+allLocations$water  = 1*(allLocations$alt < 0)
 
+# water only
+depthsOfWater = allLocations[allLocations$water==1,]
+depthsOfWater$depth = -depthsOfWater$alt
+panel = 1
+if(panel==1) y = round(depthsOfWater$depth/100)
+f = table(y)
+x=as.numeric(dimnames(f)[[1]])
+Y=0:max(x) 
+FREQ=approx(x,f,Y)$y
+n.bins=length(FREQ)
+max.Y = max(Y); 
+max.X = max.Y
+M = 1.05*max(f)
+FREQ[1+Y] =  FREQ/sum(FREQ)
+AVE = sum(Y*FREQ)
+SD = sqrt(sum( FREQ*(Y-AVE)^2 ) )
+alreadyOrig = FREQ
+already = FREQ
+max.n = 16; 
+show=c(1,2,3,4,5,5,6,7,8,9,16)
+YLIM=sqrt(max.n/(panel^2.5))*max(FREQ)*c(-0.11,0.75)
+XLAB=c("OCEAN DEPTH (units = 100m)","LAND ELEVATION")
+
+SE <- 4.20
+@
 
 
 \vspace*{-0.09in}
 
 \Wider[2em]{
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+<<fig.cap="68\\% Confidence interval calculated using  \\mbox{\\texttt{qnorm(p = c(0.16,0.84), mean = 37, sd = 4.2)}}", fig.asp=0.618>>=
+# with 68% ci
+plot(Y,already,pch=19,lwd=1,col="white",
+type="l",ylim=YLIM, xlim=c(0,max.X),
+ylab="Density", xlab=XLAB[panel] )
+polygon(c(0,Y),c(0,FREQ),
+col=c("#56B4E9","bisque","grey98")[panel],
+border="grey10",lwd=1)
+# legend("topright", legend = "Y: Depths of the ocean", 
+#        col = "#56B4E9", pch = 15, pt.cex = 2)
+curve(dnorm(x,mean = AVE,sd = SE), add = TRUE, lwd = 2) 
+# text(1.5*AVE,0.08,
+#      paste("means of samples of size",toString(16)),
+#      adj = c(0,0.5),
+#      col = viridis::inferno(9, end = 0.7, direction = 1)[1],
+#      cex = 0.95)
+lower.x <- qnorm(p = c(0.16), AVE, SE)
+upper.x <- qnorm(p = c(0.84), AVE, SE)
+legend("topright", legend = c("Y: Depths of the ocean",
+"Sampling distribution for \n means of samples of size 16",
+sprintf("68%% Confidence interval for \n the mean depth of the ocean:\n [%.f, %.f]",
+lower.x, upper.x)),
+col = c("#56B4E9","black",RColorBrewer::brewer.pal(9, "Set1")[4]), 
+y.intersp = 2,
+bty = "n",
+pch = c(15,NA,15), lty = c(NA,1,NA), pt.cex = 2, lwd = c(NA,2,NA))
+segments(AVE,0, AVE, 0.10,lty="dotted")
+# text(AVE*1.05,  0.15*YLIM[1],toString(round(AVE,0)), adj=c(0.5,1),
+#      cex=0.85 )
+# text(0.95*AVE,0.15*YLIM[1],expression(mu), adj=c(0.5,1.25),
+#      cex=0.95 )
+# text(.99*AVE,0.07*YLIM[1],"=", adj=c(0.5,1.25),
+#      cex=0.95 )
+# arrows(x0 = AVE, x1 = AVE + SE, y0 = 0.055, length = 0.05)
+# segments(AVE + SE,0, AVE + SE, 0.06,lty="dotted")
+# #text(x = AVE*1.05, y = 0.051, '{', srt = 90, cex = 1.5, family = 'Helvetica Neue UltraLight')
+# text((AVE)*1.25,0.06,latex2exp::TeX("$\\sigma / \\sqrt{16}$"), adj=c(0.5,1.25),
+#      cex=0.95 )
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-3-1} 
-
-}
-
-\caption{68\% Confidence interval calculated using  \mbox{\texttt{qnorm(p = c(0.16,0.84), mean = 37, sd = 4.2)}}}\label{fig:unnamed-chunk-3}
-\end{figure}
-
-
-\end{knitrout}
+step <- (upper.x - lower.x) / 100
+bounds <- c(lower.x, upper.x)
+cord.x <- c(lower.x,seq(lower.x,upper.x,step),upper.x)
+cord.y <- c(0,dnorm(seq(lower.x,upper.x,step),AVE,SE),0)
+polygon(cord.x,cord.y,col=RColorBrewer::brewer.pal(9, "Set1")[4])
+text(lower.x, -0.005, round(lower.x, 0))
+text(upper.x, -0.005, round(upper.x, 0))
+segments(AVE,0, AVE, 0.10,lty="dotted")
+@
 
 }
 \end{frame}
@@ -498,18 +525,54 @@ method that gives correct results 95\% of the time.''
 
 
 \Wider[2em]{
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+<<fig.cap="95\\% Confidence interval calculated using  \\mbox{\\texttt{qnorm(p = c(0.025,0.975), mean = 37, sd = 4.2)}}", fig.asp=0.618>>=
+# with 95% ci
+plot(Y,already,pch=19,lwd=1,col="white",
+type="l",ylim=YLIM, xlim=c(0,max.X),
+ylab="Density", xlab=XLAB[panel] )
+polygon(c(0,Y),c(0,FREQ),
+col=c("#56B4E9","bisque","grey98")[panel],
+border="grey10",lwd=1)
+# legend("topright", legend = "Y: Depths of the ocean", 
+#        col = "#56B4E9", pch = 15, pt.cex = 2)
+curve(dnorm(x,mean = AVE,sd = SE), add = TRUE, lwd = 2) 
+# text(1.5*AVE,0.08,
+#      paste("means of samples of size",toString(16)),
+#      adj = c(0,0.5),
+#      col = viridis::inferno(9, end = 0.7, direction = 1)[1],
+#      cex = 0.95)
+lower.x <- qnorm(p = c(0.025), AVE, SE)
+upper.x <- qnorm(p = c(0.975), AVE, SE)
+legend("topright", legend = c("Y: Depths of the ocean",
+"Sampling distribution for \n means of samples of size 16",
+sprintf("95%% Confidence interval for \n the mean depth of the ocean:\n [%.f, %.f]",
+lower.x, upper.x)),
+col = c("#56B4E9","black",RColorBrewer::brewer.pal(9, "Set1")[5]), 
+y.intersp = 2,
+bty = "n",
+pch = c(15,NA,15), lty = c(NA,1,NA), pt.cex = 2, lwd = c(NA,2,NA))
 
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-4-1} 
+# text(AVE*1.05,  0.15*YLIM[1],toString(round(AVE,0)), adj=c(0.5,1),
+#      cex=0.85 )
+# text(0.95*AVE,0.15*YLIM[1],expression(mu), adj=c(0.5,1.25),
+#      cex=0.95 )
+# text(.99*AVE,0.07*YLIM[1],"=", adj=c(0.5,1.25),
+#      cex=0.95 )
+# arrows(x0 = AVE, x1 = AVE + SE, y0 = 0.055, length = 0.05)
+# segments(AVE + SE,0, AVE + SE, 0.06,lty="dotted")
+# #text(x = AVE*1.05, y = 0.051, '{', srt = 90, cex = 1.5, family = 'Helvetica Neue UltraLight')
+# text((AVE)*1.25,0.06,latex2exp::TeX("$\\sigma / \\sqrt{16}$"), adj=c(0.5,1.25),
+#      cex=0.95 )
 
-}
-
-\caption{95\% Confidence interval calculated using  \mbox{\texttt{qnorm(p = c(0.025,0.975), mean = 37, sd = 4.2)}}}\label{fig:unnamed-chunk-4}
-\end{figure}
-
-
-\end{knitrout}
+step <- (upper.x - lower.x) / 100
+bounds <- c(lower.x, upper.x)
+cord.x <- c(lower.x,seq(lower.x,upper.x,step),upper.x)
+cord.y <- c(0,dnorm(seq(lower.x,upper.x,step),AVE,SE),0)
+polygon(cord.x,cord.y,col=RColorBrewer::brewer.pal(9, "Set1")[5])
+text(lower.x, -0.005, round(lower.x, 0))
+text(upper.x, -0.005, round(upper.x, 0))
+segments(AVE,0, AVE, 0.10,lty="dotted")
+@
 
 }
 
@@ -555,7 +618,10 @@ performed.}
 \begin{frame}[fragile]{Reality: use the bootstrap distribution instead}
 
 
-
+<<fig.asp = 0.518, fig.cap = '\\scriptsize{Bootstrap world. The bootstrap distribution is obtained by drawing repeated samples from an estimate of the population, computing the statistic of interest for each, and collecting those statistics. The distribution is centered at the observed statistic ($\\bar{y}$), not the parameter ($\\mu$).}', eval = FALSE>>=
+#rm(list=ls())
+#source("bootstrap_figure.R")
+@
 
 \framedgraphiccaption{../bootstrap/boot_diag.pdf}{\scriptsize{Bootstrap world. The bootstrap distribution is obtained by drawing repeated samples from an estimate of the population, computing the statistic of interest for each, and collecting those statistics. The distribution is centered at the observed statistic ($\bar{y}$), not the parameter ($\mu$).}}
 
@@ -564,24 +630,38 @@ performed.}
 
 \begin{frame}[fragile]{Main idea: simulate your own sampling distribution}
 
+<<echo = FALSE, eval = FALSE>>=
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/
+exercises/water/automate_water_task.R")
+@
 
-
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{library}\hlstd{(mosaic)}
-\hlstd{s_dist} \hlkwb{<-} \hlkwd{do}\hlstd{(}\hlnum{10000}\hlstd{)} \hlopt{*} \hlkwd{mean}\hlstd{(} \hlopt{~} \hlstd{alt,} \hlkwc{data} \hlstd{=} \hlkwd{resample}\hlstd{(depths.n.20))}
-\hlstd{CI_95} \hlkwb{<-} \hlkwd{quantile}\hlstd{(}\hlopt{~} \hlstd{mean,} \hlkwc{data} \hlstd{= s_dist,} \hlkwc{probs} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{))}
-\end{alltt}
-
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-7-1} 
-
-}
-
-
-
-\end{knitrout}
+<<echo = c(8,9, 10), message = FALSE, warning = FALSE, tidy = FALSE, fig.width = 7, fig.asp = 0.618>>=
+source("https://github.com/sahirbhatnagar/EPIB607/raw/master/exercises/water/automate_water_task.R")
+index.n.20 <- c(2106,2107,2108,2109,2110,2111,2112,
+2113,2114,2115,2116,2117,2118,2119,
+2120,2121,2122,2123,2124,2125)
+depths.n.20 <- automate_water_task(index = index.n.20, 
+student_id = 260194225, type = "depth")
+depths.n.20$alt = round(depths.n.20$alt/100,0)
+mm <- mean(depths.n.20$alt)
+#head(depths.n.20, n = 3)
+#mean(~ alt, data = depths.n.20)
+library(mosaic)
+s_dist <- do(10000) * mean( ~ alt, data = resample(depths.n.20))
+CI_95 <- quantile(~ mean, data = s_dist, probs = c(0.025, 0.975))
+#head(s_dist, n = 3)
+hist(s_dist$mean, breaks = 50, col = "#56B4E9",
+main="",
+xlab = "mean depth of the ocean (100m) from \neach bootstrap sample")
+abline(v = mm, lty =1, col = "red", lwd = 4)
+abline(v = CI_95[1], lty =2, col = "black", lwd = 4)
+abline(v = CI_95[2], lty =2, col = "black", lwd = 4)
+library(latex2exp)
+#text(mm*1.10, 1150, TeX("$\\bar{y} = 36$"))
+legend("topleft", legend = c(TeX("$\\bar{y} = 36$"),sprintf("95%% CI: [%.f, %.f]",CI_95[1], CI_95[2])), 
+lty = c(1,1), 
+col = c("red","black"), lwd = 4)
+@
 
 \end{frame}
 
@@ -590,65 +670,47 @@ performed.}
 \begin{frame}[fragile]{Example 1: Food intake and weight gain (A5-Q1)}
 
 \begin{minipage}{0.47\textwidth}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{tabular}{r|r|r|r}
-\hline
-subject & before & after & change\\
-\hline
-1 & 55.7 & 61.7 & 6.0\\
-\hline
-2 & 54.9 & 58.8 & 3.9\\
-\hline
-3 & 59.6 & 66.0 & 6.4\\
-\hline
-4 & 62.3 & 66.2 & 3.9\\
-\hline
-5 & 74.2 & 79.0 & 4.8\\
-\hline
-6 & 75.6 & 82.3 & 6.7\\
-\hline
-7 & 70.7 & 74.3 & 3.6\\
-\hline
-8 & 53.3 & 59.3 & 6.0\\
-\hline
-9 & 73.3 & 79.1 & 5.8\\
-\hline
-10 & 63.4 & 66.0 & 2.6\\
-\hline
-11 & 68.1 & 73.4 & 5.3\\
-\hline
-12 & 73.7 & 76.9 & 3.2\\
-\hline
-13 & 91.7 & 93.1 & 1.4\\
-\hline
-14 & 55.9 & 63.0 & 7.1\\
-\hline
-15 & 61.7 & 68.2 & 6.5\\
-\hline
-16 & 57.8 & 60.3 & 2.5\\
-\hline
-\end{tabular}
+<<>>=
+weight <- read.csv("weightgain.csv")
+
+# Creating new variable for weight change
+weight$change <- weight$after-weight$before
+knitr::kable(weight)
+#print(weight, row.names=FALSE)
+weight$change_lb <- weight$change*2.2
+
+# Calculating the mean of weight change and rounding
+ybar_change <- mean(weight$change)
+ybar_change_r <- round(ybar_change, 2)
 
 
-\end{knitrout}
 
-\begin{knitrout}\tiny
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{mean}\hlstd{(weight}\hlopt{$}\hlstd{change)}
-\end{alltt}
-\begin{verbatim}
-## [1] 4.73125
-\end{verbatim}
-\begin{alltt}
-\hlkwd{sd}\hlstd{(weight}\hlopt{$}\hlstd{change)} \hlopt{/} \hlkwd{sqrt}\hlstd{(}\hlnum{16}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.4364362
-\end{verbatim}
+# Calculating the sample standard deviation
+ssd_change <- sd(weight$change)
 
-\end{knitrout}
+# Calculating the standard error of the mean
+se_change <- ssd_change/sqrt(nrow(weight))
+
+
+
+
+# critical values
+q1_cv95 <- qt(p = c(0.025, 0.975), df = 15)
+q1_cv95.r <- round(q1_cv95,2)
+
+# Calculating a 95% confidence interval
+qt_scaled <- function(p, df, mean, sd) qt(p = p, df = df) * sd + mean
+q1_ci95 <- qt_scaled(p = c(0.025, 0.975), 
+df = nrow(weight) - 1, 
+mean = ybar_change, 
+sd = se_change)
+q1_ci95.r <- round(q1_ci95, 2)
+@
+
+<<echo=TRUE, size='tiny'>>=
+mean(weight$change)
+sd(weight$change) / sqrt(16)
+@
 
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
@@ -670,51 +732,19 @@ subject & before & after & change\\
 
 \begin{minipage}{0.47\textwidth}
 
+<<results='hide'>>=
+# Loading the dataset
+weight <- read.csv("~/git_repositories/epib607/assignments/a5/weightgain.csv")
+
+weight <- weight %>% gather(key = "Time", value = "value", before, after) %>% 
+dplyr::arrange(subject) %>% 
+mutate(Time = case_when(Time == "before" ~ 0, Time == "after" ~ 1))
+@
 
 
-
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{tabular}{r|r|r}
-\hline
-subject & Time & value\\
-\hline
-1 & 0 & 55.7\\
-\hline
-1 & 1 & 61.7\\
-\hline
-2 & 0 & 54.9\\
-\hline
-2 & 1 & 58.8\\
-\hline
-3 & 0 & 59.6\\
-\hline
-3 & 1 & 66.0\\
-\hline
-4 & 0 & 62.3\\
-\hline
-4 & 1 & 66.2\\
-\hline
-5 & 0 & 74.2\\
-\hline
-5 & 1 & 79.0\\
-\hline
-6 & 0 & 75.6\\
-\hline
-6 & 1 & 82.3\\
-\hline
-7 & 0 & 70.7\\
-\hline
-7 & 1 & 74.3\\
-\hline
-8 & 0 & 53.3\\
-\hline
-8 & 1 & 59.3\\
-\hline
-\end{tabular}
-
-
-\end{knitrout}
+<<>>=
+knitr::kable(head(weight, n=16))
+@	
 
 \vspace*{1cm}
 
@@ -726,20 +756,11 @@ Will a regression on this data provide the same results?
 \begin{minipage}{0.5\textwidth}
 	\pause 
 	
-\begin{knitrout}\tiny
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{verbatim}
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)
-(Intercept)    65.74       2.51   26.20   <2e-16
-Time            4.73       3.55    1.33     0.19
-
-Residual standard error: 10 on 30 degrees of freedom
-Multiple R-squared: 0.0559,	Adjusted R-squared: 0.0245 
-F-statistic: 1.78 on 1 and 30 DF,  p-value: 0.192 
-\end{verbatim}
-
-\end{knitrout}
+<<echo=FALSE, size='tiny', comment="">>=
+library(NCStats)
+print(summary(lm(value ~ Time, data = weight)), digits = 3, 
+signif.stars=FALSE)
+@
 
 	\begin{itemize}
 	\small
@@ -757,33 +778,12 @@ F-statistic: 1.78 on 1 and 30 DF,  p-value: 0.192
 \begin{frame}[fragile]{Ex. 2: Does breast-feeding weaken bones? (A4-Q3)}
 
 \begin{minipage}{0.47\textwidth}
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{tabular}{l|l|r}
-\hline
-  & type & mineral\_loss\\
-\hline
-1 & Other & 2.4\\
-\hline
-5 & Other & 1.0\\
-\hline
-47 & Breast-feeding & -5.2\\
-\hline
-48 & Breast-feeding & -2.0\\
-\hline
-49 & Breast-feeding & -2.1\\
-\hline
-\end{tabular}
-
-
-
-{\centering \includegraphics[width=1\linewidth]{figure/unnamed-chunk-13-1} 
-
-}
-
-
-
-\end{knitrout}
+	<<>>=
+	boneloss <- read.csv("https://github.com/sahirbhatnagar/EPIB607/raw/master/data/boneloss.csv")
+	knitr::kable(boneloss[c(1,5,47,48,49),])
+	library(mosaic)
+	ggformula::gf_boxplot(mineral_loss ~ type, data = boneloss)
+	@
 	
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
@@ -807,36 +807,11 @@ F-statistic: 1.78 on 1 and 30 DF,  p-value: 0.192
 	\item  We could run a linear regression (equivalently a two-sample t.test with equal variances):
 \end{itemize}
 
-\begin{knitrout}\tiny
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{verbatim}
-## Call: lm(formula = mineral_loss ~ type, data = boneloss)
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)
-## (Intercept)   -3.587      0.321  -11.18  < 2e-16
-## typeOther      3.896      0.568    6.86  2.7e-09
-## 
-## Residual standard error: 2.2 on 67 degrees of freedom
-## Multiple R-squared: 0.412,	Adjusted R-squared: 0.404 
-## F-statistic:   47 on 1 and 67 DF,  p-value: 2.73e-09
-\end{verbatim}
-\begin{alltt}
-\hlcom{# remember that var.equal=FALSE is the default in t.test }
-\hlkwd{t.test}\hlstd{(mineral_loss} \hlopt{~} \hlstd{type,} \hlkwc{data} \hlstd{= boneloss,} \hlkwc{var.equal} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-##  Two Sample t-test with mineral_loss by type 
-## t = -6.8569, df = 67, p-value = 2.73e-09
-## alternative hypothesis: true difference in means is not equal to 0 
-## 95 percent confidence interval:
-##  -5.030524 -2.762126 
-## sample estimates:
-## mean in group Breast-feeding          mean in group Other 
-##                   -3.5872340                    0.3090909
-\end{verbatim}
-
-\end{knitrout}
+	<<size='tiny', echo=c(2,3)>>=
+	print(summary(lm(mineral_loss ~ type, data = boneloss)),signif.stars=FALSE, digits=3, show.call=TRUE)	
+	# remember that var.equal=FALSE is the default in t.test 
+	t.test(mineral_loss ~ type, data = boneloss, var.equal = TRUE)
+	@
 
 
 \end{frame}
@@ -850,24 +825,10 @@ F-statistic: 1.78 on 1 and 30 DF,  p-value: 0.192
 	\item  Two-sample t.test with unequal variances
 \end{itemize}
 
-\begin{knitrout}\tiny
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlcom{# remember that var.equal=FALSE is the default in t.test }
-\hlkwd{t.test}\hlstd{(mineral_loss} \hlopt{~} \hlstd{type,} \hlkwc{data} \hlstd{= boneloss)}
-\end{alltt}
-\begin{verbatim}
-## Welch Two Sample t-test with mineral_loss by type 
-## t = -8.4985, df = 66.197, p-value = 3.325e-12
-## alternative hypothesis: true difference in means is not equal to 0 
-## 95 percent confidence interval:
-##  -4.811641 -2.981008 
-## sample estimates:
-## mean in group Breast-feeding          mean in group Other 
-##                   -3.5872340                    0.3090909
-\end{verbatim}
-
-\end{knitrout}
+<<size='tiny', echo=c(1,2)>>=
+# remember that var.equal=FALSE is the default in t.test 
+t.test(mineral_loss ~ type, data = boneloss)
+@
 
 \pause 
 \begin{itemize}
@@ -1045,26 +1006,15 @@ F-statistic: 1.78 on 1 and 30 DF,  p-value: 0.192
 		{ \tiny \href{http://www.epi.mcgill.ca/hanley/bios601/Mean-Quantile/forAccromathBackTranslate.pdf}{details found here} }} 
 	\item In \texttt{R}, e.g., the 95\% limits for $\mu$ based on $y=6$ are obtained as 
 	
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{qgamma}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,}\hlnum{0.975}\hlstd{),} \hlkwc{shape} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{6}\hlstd{,} \hlnum{7}\hlstd{))}
-\end{alltt}
-\begin{verbatim}
-## [1]  2.201894 13.059474
-\end{verbatim}
-
-\end{knitrout}
+	<<echo=TRUE, eval=TRUE>>=
+	qgamma(p = c(0.025,0.975), shape = c(6, 7))
+	@
 	
 	\item More generically, for \textit{any} $y$, as
 	
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{qgamma}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,}\hlnum{0.975}\hlstd{),} \hlkwc{shape} \hlstd{=} \hlkwd{c}\hlstd{(y, y}\hlopt{+}\hlnum{1}\hlstd{))}
-\end{alltt}
-
-\end{knitrout}
+	<<echo=TRUE, eval=FALSE>>=
+	qgamma(p = c(0.025,0.975), shape = c(y, y+1))
+	@
 	
 \end{itemize}
 \end{frame}
@@ -1123,46 +1073,25 @@ F-statistic: 1.78 on 1 and 30 DF,  p-value: 0.192
 \small
 \item $y=211$ deaths from lung cancer in 2002 leads to a 95\% CI for $\mu$:
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{qgamma}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{shape} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{211}\hlstd{,} \hlnum{212}\hlstd{))}
-\end{alltt}
-\begin{verbatim}
-## [1] 183.4885 241.4725
-\end{verbatim}
-
-\end{knitrout}
+<<echo=TRUE>>=
+qgamma(p = c(0.025, 0.975), shape = c(211, 212))	
+@
 
 \pause 
 
 \item From this we can calculate the 95\% CI \textbf{per 100,000 WY} for $\lambda$ using a PT=232978 years:
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{qgamma}\hlstd{(}\hlkwc{p} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{shape} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{211}\hlstd{,} \hlnum{212}\hlstd{))} \hlopt{/} \hlnum{232978} \hlopt{*} \hlnum{1e5}
-\end{alltt}
-\begin{verbatim}
-## [1]  78.75788 103.64607
-\end{verbatim}
-
-\end{knitrout}
+<<echo=TRUE>>=
+qgamma(p = c(0.025, 0.975), shape = c(211, 212)) / 232978 * 1e5	
+@
 
 \pause
 
 \item $y=33$ deaths from lung cancer in 131200 women-years in 1971 leads to a 95\% CI per 100,000 WY for $\lambda$ of
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{qgamma}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,}\hlnum{0.975}\hlstd{),} \hlkwd{c}\hlstd{(}\hlnum{33}\hlstd{,}\hlnum{34}\hlstd{))} \hlopt{/} \hlnum{131200} \hlopt{*} \hlnum{1e5}
-\end{alltt}
-\begin{verbatim}
-## [1] 17.31378 35.32338
-\end{verbatim}
-
-\end{knitrout}
+<<echo=TRUE>>=
+qgamma(c(0.025,0.975), c(33,34)) / 131200 * 1e5
+@
 
 
 \end{itemize}
@@ -1260,25 +1189,16 @@ Proportion & &  \\
 
 \begin{frame}[fragile]{Example: Kidney stone removal procedures 1}
 
-\begin{knitrout}\tiny
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{verbatim}
-## 
-## Coefficients:
-##             Estimate Std. Error z value Pr(>|z|)
-## (Intercept)   -1.556      0.141  -11.04   <2e-16
-## open           0.290      0.191    1.52     0.13
-## 
-## (Dispersion parameter for binomial family taken to be 1)
-## 
-##     Null deviance: 2.3148e+00  on 1  degrees of freedom
-## Residual deviance: 9.9920e-15  on 0  degrees of freedom
-## AIC: 15.7
-## 
-## Number of Fisher Scoring iterations: 3
-\end{verbatim}
+<<echo=FALSE, eval=TRUE, size='tiny'>>=
+cases <- c(77, 61)
+controls <- c(273, 289)
+open <- c(1,0)
+df <- as.data.frame(cbind(cases, controls, open))
 
-\end{knitrout}
+fit <- glm(cbind(cases,controls) ~ open, data = df,
+family=binomial(link="logit"))
+print(summary(fit), digits=3, signif.stars=FALSE)
+@
 
 \scriptsize
 \begin{enumerate}
@@ -1315,6 +1235,7 @@ Proportion & &  \\
 \begin{itemize}
 	\setlength\itemsep{.51em}
 	\item Statistical evidence $\to$ point estimate, confidence interval, $p$-value
+	\item If you're short on time and need a conclusion/statement go straight to calculating CI. Easier than p-value. 
 \end{itemize}
 
 
@@ -1393,37 +1314,18 @@ Proportion & &  \\
 	\setlength\itemsep{.51em}
 	
 	\item Exact $p$-value:
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{pbinom}\hlstd{(}\hlnum{12}\hlstd{,} \hlnum{20}\hlstd{,} \hlnum{0.5}\hlstd{,} \hlkwc{lower.tail} \hlstd{=} \hlnum{FALSE}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.131588
-\end{verbatim}
-\begin{alltt}
-\hlnum{1} \hlopt{-} \hlkwd{pbinom}\hlstd{(}\hlnum{12}\hlstd{,} \hlnum{20}\hlstd{,} \hlnum{0.5}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.131588
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE, eval=TRUE>>=
+	pbinom(12, 20, 0.5, lower.tail = FALSE)
+	1 - pbinom(12, 20, 0.5)
+	@
 	\pause 
 
 	\item Approximate $p$-value assuming Normal approximation is ok ($20 \times 0.5 \geq 10$ and $20 \times (1-0.5) \geq 10$)
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{SEp} \hlkwb{<-} \hlkwd{sqrt}\hlstd{(}\hlnum{0.5}\hlopt{*}\hlnum{0.5}\hlopt{/}\hlnum{20}\hlstd{)} \hlcom{# under the null}
-\hlstd{zstat} \hlkwb{<-} \hlstd{(}\hlnum{0.65} \hlopt{-} \hlnum{0.5}\hlstd{)} \hlopt{/} \hlstd{SEp}
-\hlkwd{pnorm}\hlstd{(zstat,} \hlkwc{lower.tail} \hlstd{=} \hlnum{FALSE}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.08985625
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE>>=
+	SEp <- sqrt(0.5*0.5/20) # under the null
+	zstat <- (0.65 - 0.5) / SEp
+	pnorm(zstat, lower.tail = FALSE)
+	@
 	
 	
 	
@@ -1440,25 +1342,11 @@ Proportion & &  \\
 	\setlength\itemsep{1em}
 	
 	\item Exact CI (Clopper-Pearson or Nomogram):
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{mosaic}\hlopt{::}\hlkwd{binom.test}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{13}\hlstd{,} \hlkwc{n} \hlstd{=} \hlnum{20}\hlstd{,} \hlkwc{p} \hlstd{=} \hlnum{0.5}\hlstd{,}
-\hlkwc{ci.method} \hlstd{=} \hlstr{"Clopper-Pearson"}\hlstd{,}
-\hlkwc{alternative} \hlstd{=} \hlstr{"greater"}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
- with 13 out of 20 
-number of successes = 13, number of trials = 20, p-value = 0.1316
-alternative hypothesis: true probability of success is greater than 0.5 
-95 percent confidence interval:
- 0.4419655 1.0000000 
-sample estimates:
-probability of success 
-                  0.65 
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE, eval=TRUE, comment=NA>>=
+	mosaic::binom.test(x = 13, n = 20, p = 0.5, 
+	ci.method = "Clopper-Pearson",
+	alternative = "greater")
+	@
 	
 
 	
@@ -1478,38 +1366,17 @@ probability of success
 	\setlength\itemsep{1em}
 	
 	\item Approximate 95\% CI:
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlstd{mosaic}\hlopt{::}\hlkwd{binom.test}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{13}\hlstd{,} \hlkwc{n} \hlstd{=} \hlnum{20}\hlstd{,} \hlkwc{p} \hlstd{=} \hlnum{0.5}\hlstd{,}
-\hlkwc{ci.method} \hlstd{=} \hlstr{"Wald"}\hlstd{,}
-\hlkwc{alternative} \hlstd{=} \hlstr{"greater"}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
-Exact binomial test (with Wald CI) with 13 out of 20 
-number of successes = 13, number of trials = 20, p-value = 0.1316
-alternative hypothesis: true probability of success is greater than 0.5 
-95 percent confidence interval:
- 0.4745704 1.0000000 
-sample estimates:
-probability of success 
-                  0.65 
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE, eval=TRUE, comment=NA>>=
+	mosaic::binom.test(x = 13, n = 20, p = 0.5, 
+	ci.method = "Wald",
+	alternative = "greater")
+	@
 	
 		
 	\item Approximate 95\% CI assuming Normal approximation is ok 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\begin{alltt}
-\hlkwd{qnorm}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0.025}\hlstd{,} \hlnum{0.975}\hlstd{),} \hlkwc{mean} \hlstd{=} \hlnum{0.65}\hlstd{,} \hlkwc{sd} \hlstd{=} \hlkwd{sqrt}\hlstd{(}\hlnum{0.65}\hlopt{*}\hlnum{0.35} \hlopt{/} \hlnum{20}\hlstd{))}
-\end{alltt}
-\begin{verbatim}
-## [1] 0.4409627 0.8590373
-\end{verbatim}
-
-\end{knitrout}
+	<<echo = TRUE>>=
+	qnorm(c(0.025, 0.975), mean = 0.65, sd = sqrt(0.65*0.35 / 20))
+	@
 	
 \end{enumerate}
 

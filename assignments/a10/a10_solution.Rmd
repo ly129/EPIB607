@@ -1,0 +1,126 @@
+---
+title: "A10: Logistic Regression. Solutions."
+subtitle: "Your Name Here and ID number here"
+author: "EPIB 607, Fall 2018, McGill University"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: false
+    number_sections: true
+    toc_depth: 3
+    keep_md: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r include = FALSE}
+## ---- Setup ------------------------------------------------------------------
+knitr::opts_chunk$set(
+  echo = FALSE,          # don't show code
+  warning = FALSE,       # don't show warnings
+  message = FALSE,       # don't show messages (less serious warnings)
+  cache = FALSE,         # set to TRUE to save results from last compilation
+  fig.align = "center",   # center figures
+  fig.asp = 1,          # fig.aspect ratio
+  fig.width = 10        # fig width
+)
+```
+
+
+# Kidney Stones
+
+```{r, echo=FALSE}
+## ---- Question-1 ------------------------------------------------------------
+
+Bednets <- read.csv("~/git_repositories/epib607/assignments/a10/Bednets.csv")
+
+```
+
+**a.Fit a logistic regression model for the failure of the surgical procedure given the surgery type and adjusting for the size of the kidney stone. (15 marks)** 
+
+```{r, echo = T}
+
+success <- c(81,234,192,55)
+failure <- c(6,36,71,25)
+surgery <- c(1,0,1,0) #Open surgery is coded 1, PN = 0
+size <- c(0,0,1,1) #Large = 1
+model1 <- glm(cbind(failure,success)~surgery+size,family="binomial")
+summary(model1)$coeff
+
+
+```
+
+
+**b. Based on the model output, calculate a 95% confidence interval for the odds ratio of failure of the procedure in open surgery vs. keyhole surgery. (15 marks)**
+
+A 95% confidence interval for the odds ratio of failure in open surgery compared to keyhole surgery is (0.4465, 1.0961). The odds ratio is 0.6996.
+
+```{r, echo = T}
+exp(summary(model1)$coeff[2,1])
+exp(summary(model1)$coeff[2,1]-qnorm(0.975)*summary(model1)$coeff[2,2])
+exp(summary(model1)$coeff[2,1]+qnorm(0.975)*summary(model1)$coeff[2,2])
+
+```
+**c. Based on the model output, calculate the risks of failure and the expected numbers of failures in all four patient categories. Assess the model fit by comparing the expected failure counts to the observed counts using a $\chi^{2}$ goodness of fit test. (20 marks)**
+```{r, echo = T}
+expit <- function(beta){exp(beta)/(1+exp(beta))}
+p.pn.small <- expit(model1$coeff[1])
+p.open.small <- expit(model1$coeff[1]+model1$coeff[2])
+p.pn.large <- expit(model1$coeff[1]+model1$coeff[3])
+p.open.large <- expit(model1$coeff[1]+model1$coeff[2]+model1$coeff[3])
+(prob=c(p.open.small,p.pn.small,p.open.large,p.pn.large))
+rowtot=c(87,270,263,80)
+(exp=c(prob*rowtot))
+```
+From this code we get P(Y =1|X=0,Z=0)=0.1260, P(Y = 1|X=0,Z=1)=0.0916, P(Y =1|X=1,Z=0)=0.3372, P(Y =1|X =1,Z =1)=0.2625.
+The expected and observed numbers of failures are below
+
+```{r table2, echo=F, message=FALSE, warnings=FALSE, results='asis'}
+tabl <- "  
+|       |    <2cm|        |     >2cm|         |    
+|-------|--------|--------|---------|---------|
+|       | open   |  PN    | open    |  PN     |
+Expected|7.9726  | 34.0274|69.0274  | 26.9726 |  
+Observed|6       |  36    |71       |     25  | 
+
+"
+cat(tabl) # output the table in a format good for HTML/PDF/docx conversion
+```
+The $\chi^{2}$ statistic is given by 0.9623 $\sim \chi^{2}_{1}$ and P ( $\chi^{2}_{1}$> 0.9623) = 0.32662.
+
+**d. Fit also a saturated logistic model which includes an interaction term between the surgery type and size of the kidney stone. Cal- culate the expected counts based on this model. Why does it not make sense to test the goodness of fit of a saturated model? (20 marks)**
+```{r, echo = T}
+model2 <- glm(cbind(failure,success)~surgery+size+surgery*size,
+   family="binomial")
+model2$fitted.values*rowtot
+```
+Because under the saturated logistic model the expected values equals to the obnserved values.
+
+**e. Verify that you will get the exact same results as in (a) by transforming the data into individual level records. (10 marks)**
+```{r, echo = T}
+di <- c(rep(c(1,1,1,1), failure), rep(c(0,0,0,0), success))
+zi <- c(rep(c(1,0,1,0), failure), rep(c(1,0,1,0), success))
+xi <- c(rep(c(0,0,1,1), failure), rep(c(0,0,1,1), success))
+model3 <- glm(di~zi+xi,family="binomial")
+summary(model3)$coeff
+```
+**f. Fit also a log-linear model for the risk of failure, given the type of surgery and adjusting for the size of the kidney stone, and based on the results, calculate a 95% confidence interval for the risk ra- tio of failure of the procedure in open surgery vs. keyhole surgery (20 marks). **
+
+```{r, echo = T}
+model4 <- glm(cbind(failure,success) ~ surgery+size,
+       family=binomial(link="log"))
+summary(model4)$coeff
+
+rr <- exp(model4$coeff[2])
+rrl <- exp(model4$coeff[2]-1.96*summary(model4)$coef[2,2])
+rru <- exp(model4$coeff[2]+1.96*summary(model4)$coef[2,2])
+c(rrl,rr,rru)
+```
+The risk ratio is given by 0.7824, with CI (0.5636, 1.0860).
+
+# Code {-}
+
+```{r all-code, ref.label=knitr::all_labels(), echo = TRUE, eval = FALSE}
+
+```
